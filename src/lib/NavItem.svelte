@@ -1,15 +1,23 @@
 <!--JAVASCRIPT---->
 <script>
+	export let external = false;
 	export let href = '/not_found';
 	export let faIcon = '';
 </script>
 
 <!--HTML-->
 <li>
-	<a sveltekit:prefetch {href}>
-		<i class={faIcon} />
-		<slot />
-	</a>
+	{#if !external}
+		<a sveltekit:prefetch {href}>
+			<i class={faIcon} />
+			<slot />
+		</a>
+	{:else}
+		<a {href} target="_blank" rel="noopener noreferrer">
+			<i class={faIcon} />
+			<slot />
+		</a>
+	{/if}
 </li>
 
 <!--CSS-->
@@ -18,7 +26,7 @@
 		border-radius: 1.3rem;
 		padding: 1rem;
 		background: var(--white);
-		width: 15rem;
+		min-width: 10rem;
 	}
 
 	a {
@@ -32,10 +40,10 @@
 		gap: 1rem;
 	}
 
-	@media screen and (max-width: 58rem) {
+	@media screen and (max-width: 75rem) {
 		li {
 			width: 70%;
-			padding: 2rem;
+			padding: 1.5rem;
 		}
 
 		a {
