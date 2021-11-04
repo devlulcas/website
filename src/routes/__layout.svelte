@@ -12,11 +12,13 @@
 		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap"
 		rel="stylesheet"
 	/>
+	<!--ICONS-->
+	<script src="https://kit.fontawesome.com/ed4cb9f4cf.js" crossorigin="anonymous"></script>
 </svelte:head>
 
 <!--BODY-->
-<NavBar />
 <div class="container">
+	<NavBar />
 	<slot />
 </div>
 
@@ -45,6 +47,7 @@
 
 	.container {
 		height: 100vh;
+		overflow-y: hidden;
 	}
 
 	/* TEMA DE COR */
