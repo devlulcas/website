@@ -16,7 +16,7 @@
 		background-color: transparent;
 	}
 
-	@media screen and (min-width: 40rem) {
+	@media screen and (min-width: 58rem) {
 		button {
 			display: none;
 		}
