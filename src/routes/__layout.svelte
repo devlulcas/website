@@ -1,5 +1,6 @@
 <!--JAVASCRIPT-->
 <script>
+	import NavBar from '$lib/NavBar.svelte';
 </script>
 
 <!--HEAD-->
@@ -14,6 +15,7 @@
 </svelte:head>
 
 <!--BODY-->
+<NavBar />
 <div class="container">
 	<slot />
 </div>
