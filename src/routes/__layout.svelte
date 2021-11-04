@@ -37,6 +37,12 @@
 		text-decoration: none;
 	}
 
+	:global(button) {
+		appearance: none;
+		border: none;
+		box-shadow: none;
+	}
+
 	.container {
 		height: 100vh;
 	}
