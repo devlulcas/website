@@ -7,7 +7,7 @@
 <main>
 	<div>
 		<h1>VISH - ALGO DEU ERRADO</h1>
-		<a href="/">Voltar para o início</a>
+		<a sveltekit:prefetch href="/">Voltar para o início</a>
 	</div>
 </main>
 
@@ -24,6 +24,7 @@
 		display: grid;
 		place-items: center;
 		text-align: center;
+		padding: 1rem;
 		background-image: linear-gradient(0deg, #00000000, #ffffffef);
 	}
 
