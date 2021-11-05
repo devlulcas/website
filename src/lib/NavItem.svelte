@@ -24,7 +24,6 @@
 <style>
 	li {
 		border-radius: 1.3rem;
-		padding: 1rem;
 		background: var(--white);
 		min-width: 10rem;
 	}
@@ -37,6 +36,7 @@
 		color: var(--black);
 		text-align: center;
 		width: 100%;
+		padding: 1rem;
 		gap: 1rem;
 	}
 
