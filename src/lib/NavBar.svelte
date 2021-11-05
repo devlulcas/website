@@ -72,13 +72,13 @@
 
 		ul {
 			display: none;
-			margin-top: 10vh;
+			margin-top: 5vh;
 			flex-direction: column;
 			justify-content: flex-start;
 			align-items: center;
 			height: 100vh;
 			width: 100%;
-			gap: 4vh;
+			gap: 2vh;
 		}
 	}
 </style>
