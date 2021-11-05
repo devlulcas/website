@@ -58,8 +58,8 @@
 		height: 100%;
 		border-radius: 0.3rem;
 		border: 0.08rem solid hsla(0, 0%, 100%, 0.25);
-		background-color: hsla(0, 0%, 100%, 0.15);
-		backdrop-filter: blur(1rem);
+		background-color: hsla(0, 0%, 100%, 0.25);
+		backdrop-filter: blur(3rem);
 		opacity: 0;
 		transition: opacity 0.3s ease 0.4s;
 	}
