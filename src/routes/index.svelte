@@ -1,6 +1,17 @@
 <!--JAVASCRIPT-->
 <script>
 	import CtaShortcut from '$lib/CtaShortcut.svelte';
+
+	const icons = [
+		'html5',
+		'css3-alt',
+		'js-square',
+		'node-js',
+		'android',
+		'linux',
+		'figma',
+		'git-alt'
+	];
 </script>
 
 <!--HEAD-->
@@ -11,14 +22,9 @@
 <!--BODY-->
 <main>
 	<div class="herobanner">
-		<div class="tile"><i class="fab fa-html5" /></div>
-		<div class="tile"><i class="fab fa-css3-alt" /></div>
-		<div class="tile"><i class="fab fa-js-square" /></div>
-		<div class="tile"><i class="fab fa-node-js" /></div>
-		<div class="tile"><i class="fab fa-android" /></div>
-		<div class="tile"><i class="fab fa-linux" /></div>
-		<div class="tile"><i class="fab fa-figma" /></div>
-		<div class="tile"><i class="fab fa-git-alt" /></div>
+		{#each icons as icon}
+			<div class="tile"><i class="fab fa-{icon}" /></div>
+		{/each}
 		<div class="tile"><span>kotlin</span></div>
 	</div>
 	<section>
