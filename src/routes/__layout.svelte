@@ -59,7 +59,7 @@
 	}
 
 	/* TIPOGRAFIA */
-	:global(h1, h2, a) {
+	:global(h1, h2, a, span) {
 		font-family: 'Montserrat', sans-serif;
 	}
 
