@@ -19,9 +19,9 @@
 		<NavItem href="/skills" faIcon="fas fa-code">Skills</NavItem>
 		<NavItem href="/projects" faIcon="fas fa-boxes">Projects</NavItem>
 		<NavItem href="/socials" faIcon="fas fa-at">Socials</NavItem>
-		<NavItem href="/contact" faIcon="fas fa-code">Hire me</NavItem>
-		<NavItem href="https://github.com/devlulcas" faIcon="fab fa-github" external>Github</NavItem>
-		<NavItem href="/contact" faIcon="far fa-file">Curriculum</NavItem>
+		<NavItem href="/contact" faIcon="fas fa-hand-sparkles">Hire me</NavItem>
+		<NavItem href="https://github.com/devlulcas" faIcon="fa fa-github" external>Github</NavItem>
+		<NavItem href="/contact" faIcon="fas fa-file">Curriculum</NavItem>
 	</ul>
 </nav>
 
