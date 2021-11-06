@@ -1,6 +1,7 @@
 <!--JAVASCRIPT-->
 <script>
 	import CtaShortcut from '$lib/CtaShortcut.svelte';
+	import NavBar from '$lib/NavBar.svelte';
 
 	const icons = [
 		'html5',
@@ -43,7 +44,7 @@
 <!--CSS-->
 <style>
 	main {
-		height: 100vh;
+		height: 100%;
 		display: grid;
 		grid-template-rows: 1fr 1fr;
 	}
@@ -51,6 +52,7 @@
 	.herobanner {
 		background: url('../../static/images/heroImage.jpg') center center;
 		background-size: cover;
+		height: 100%;
 		display: grid;
 		gap: 1rem;
 		padding: 1rem;
@@ -77,7 +79,8 @@
 		transition: opacity 0.2s ease;
 	}
 	section {
-		padding: 2vh 2vw;
+		height: 100%;
+		padding: 2vh 3vw;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -107,7 +110,7 @@
 	}
 
 	p {
-		margin-top: 1vh;
+		margin-top: 3vh;
 		font-size: calc(1.3vh + 1.3vw);
 	}
 	@media screen and (min-width: 75rem) {
@@ -116,9 +119,6 @@
 			grid-template-rows: 1fr;
 		}
 
-		.herobanner {
-			padding-bottom: calc(5vw + 1vh + 1rem);
-		}
 		section {
 			padding: 3vh 4vw;
 		}
