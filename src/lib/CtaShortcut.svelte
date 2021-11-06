@@ -1,11 +1,11 @@
 <!--HTML-->
-<nav>
+<nav aria-label="shortcuts to contact and projects">
 	<div>
 		<a sveltekit:prefetch href="/contact">Let's talk</a>
 	</div>
 	<p>or</p>
 	<div>
-		<a sveltekit:prefetch href="/projects">first see what I've done</a>
+		<a sveltekit:prefetch href="/projects">maybe first see what I've done</a>
 	</div>
 </nav>
 
