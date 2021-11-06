@@ -69,7 +69,7 @@
 		border-radius: 0.3rem;
 		border: 0.08rem solid hsla(0, 0%, 100%, 0.25);
 		background-color: hsla(0, 0%, 100%, 0.25);
-		backdrop-filter: blur(3rem) saturate(300%);
+		backdrop-filter: blur(4rem) saturate(300%);
 		opacity: 0;
 		transition: opacity 0.3s ease 0.4s;
 	}
