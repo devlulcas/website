@@ -6,11 +6,11 @@
 		{ icon: 'fab fa-js-square', description: 'JS' },
 		{ icon: 'fab fa-node-js', description: 'NODE JS' },
 		{ icon: 'fab fa-android', description: 'ANDROID SDK' },
-		{ icon: 'fab fa-linux', description: 'GNU/LINUX' },
+		{ icon: 'fab fa-linux', description: 'GNU/ LINUX' },
 		{ icon: 'fab fa-figma', description: 'FIGMA' },
 		{ icon: 'fab fa-git-alt', description: 'GIT' },
 		{ icon: 'fas fa-code', description: 'KOTLIN' }, //kt
-		{ icon: 'fas fa-code', description: 'SQLITE/PG' }, //sql
+		{ icon: 'fas fa-code', description: 'SQLITE/ PG' }, //sql
 		{ icon: 'fas fa-code', description: 'SVELTE' }, //svelte
 		{ icon: 'fas fa-code', description: 'ENGLISH' } //english
 	];
@@ -36,13 +36,12 @@
 <!--CSS-->
 <style>
 	main {
-		position: absolute;
-		height: 91%;
+		height: 100%;
 		width: 100%;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 1rem;
-		padding: 1rem 2rem;
+		padding: 1rem;
 		background: var(--white);
 	}
 
@@ -78,7 +77,7 @@
 		justify-content: center;
 		overflow: hidden;
 		padding: 5%;
-		font-size: 2.3vh;
+		font-size: 3.3vh;
 		font-weight: 800;
 		background-color: #000000ab;
 		color: var(--white);
@@ -86,7 +85,7 @@
 		text-align: center;
 		transform: translateY(-100%);
 		transition: 300ms ease-in;
-		word-break: break-all;
+		word-break: break-word;
 	}
 
 	article:hover p {
@@ -96,11 +95,7 @@
 	@media screen and (min-width: 75rem) {
 		main {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
-			height: 87.9%;
-		}
-
-		p {
-			font-size: 3.2rem;
+			height: 100%;
 		}
 	}
 </style>
