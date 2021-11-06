@@ -28,12 +28,14 @@
 		<div class="tile"><span>kotlin</span></div>
 	</div>
 	<section>
-		<h1>Web/Mobile developer</h1>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, corrupti quis! Modi minima
-			delectus doloribus autem dignissimos architecto quasi cupiditate iure facere non excepturi
-			commodi, eveniet sint debitis impedit quo.
-		</p>
+		<div class="content-container">
+			<h1>Web/Mobile developer</h1>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, corrupti quis! Modi minima
+				delectus doloribus autem dignissimos architecto quasi cupiditate iure facere non excepturi
+				commodi, eveniet sint debitis impedit quo.
+			</p>
+		</div>
 		<CtaShortcut />
 	</section>
 </main>
@@ -65,7 +67,7 @@
 		border-radius: 0.3rem;
 		border: 0.08rem solid hsla(0, 0%, 100%, 0.25);
 		background-color: hsla(0, 0%, 100%, 0.25);
-		backdrop-filter: blur(3rem);
+		backdrop-filter: blur(3rem) saturate(300%);
 		opacity: 0;
 		transition: opacity 0.3s ease 0.4s;
 	}
@@ -76,6 +78,9 @@
 	}
 	section {
 		padding: 2vh 2vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	i,
@@ -105,14 +110,14 @@
 		margin-top: 1vh;
 		font-size: calc(1.3vh + 1.3vw);
 	}
-	@media screen and (min-width: 55rem) {
+	@media screen and (min-width: 75rem) {
 		main {
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: 1fr;
 		}
 
 		.herobanner {
-			padding-bottom: 13.5vh;
+			padding-bottom: calc(5vw + 1vh + 1rem);
 		}
 		section {
 			padding: 3vh 4vw;
