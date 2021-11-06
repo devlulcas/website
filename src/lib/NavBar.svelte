@@ -41,9 +41,14 @@
 
 	.basic {
 		display: flex;
+		height: 100%;
+		justify-content: center;
 	}
 
 	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		font-weight: 800;
 		font-size: 3.5vw;
 		color: var(--white);
@@ -67,7 +72,6 @@
 		a {
 			text-align: center;
 			font-size: 3.5rem;
-			width: 100%;
 		}
 
 		ul {
