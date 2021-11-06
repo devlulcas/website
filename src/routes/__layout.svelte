@@ -47,7 +47,8 @@
 
 	.container {
 		height: 100vh;
-		overflow-y: hidden;
+		display: grid;
+		grid-template-rows: 1fr 9fr;
 	}
 
 	/* TEMA DE COR */
