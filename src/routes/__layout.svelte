@@ -56,6 +56,13 @@
 		--white: #fff;
 		--black: #18191f;
 		--blue: #1947e5;
+		--yellow: #ffbd12;
+		--pink: #ff89bb;
+		--dark-gray: #474a57;
+		--gray: #969bab;
+		--light-gray: #eeeff4;
+		--green: #00c6ae;
+		--red: #f95a2c;
 	}
 
 	/* TIPOGRAFIA */
