@@ -12,7 +12,7 @@
 <!--CSS-->
 <style>
 	nav {
-		margin: 10vh 0;
+		margin-bottom: 15vh;
 		display: flex;
 		justify-content: center;
 		gap: 1rem;
@@ -21,7 +21,7 @@
 	a {
 		width: fit-content;
 		position: relative;
-		font-size: 1.3rem;
+		font-size: 2vh;
 		color: var(--blue);
 	}
 
@@ -40,6 +40,6 @@
 	}
 
 	p {
-		font-size: 1.3rem;
+		font-size: 2vh;
 	}
 </style>
