@@ -12,10 +12,9 @@
 <!--CSS-->
 <style>
 	nav {
-		margin-bottom: 15vh;
 		display: flex;
 		justify-content: center;
-		gap: 1rem;
+		gap: 2ch;
 	}
 
 	a {
