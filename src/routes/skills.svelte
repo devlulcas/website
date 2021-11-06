@@ -47,11 +47,13 @@
 	}
 
 	article {
-		background: var(--yellow);
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		overflow: hidden;
+		background: var(--yellow);
 		box-shadow: 0.2rem 0.2rem var(--black);
 		border-radius: 1rem;
 		padding: 5%;
@@ -67,25 +69,38 @@
 		font-size: calc(3vh + 3vw);
 	}
 
-	article:hover i {
-		display: none;
-	}
-
 	p {
-		display: none;
+		position: absolute;
+		width: 101%;
+		height: 101%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		padding: 5%;
+		font-size: 2.3vh;
 		font-weight: 800;
-		font-size: 2.5vh;
+		background-color: #000000ab;
+		color: var(--white);
+		border-radius: 0 0 1.5rem 1.5rem;
+		text-align: center;
+		transform: translateY(-100%);
+		transition: 300ms ease-in;
+		word-break: break-all;
 	}
 
 	article:hover p {
-		display: block;
-		text-align: center;
+		transform: translateY(0%);
 	}
 
 	@media screen and (min-width: 75rem) {
 		main {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			height: 87.9%;
+		}
+
+		p {
+			font-size: 3.2rem;
 		}
 	}
 </style>
