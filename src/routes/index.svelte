@@ -78,7 +78,7 @@
 		transition: opacity 0.2s ease;
 	}
 	section {
-		height: 100%;
+		height: 85%;
 		padding: 2vh 3vw;
 		display: flex;
 		flex-direction: column;
@@ -98,7 +98,7 @@
 
 	h1 {
 		text-align: center;
-		font-size: calc(4vw + 2vh);
+		font-size: calc(4vw + 3vh);
 		color: transparent;
 		background-image: url('../../static/images/heroImage.jpg');
 		background-clip: text;

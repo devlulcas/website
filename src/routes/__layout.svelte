@@ -45,10 +45,14 @@
 		box-shadow: none;
 	}
 
+	:global(.svelte, body) {
+		overflow-y: hidden;
+	}
 	.container {
 		height: 100vh;
 		display: grid;
 		grid-template-rows: 1fr 9fr;
+		overflow: hidden;
 	}
 
 	:global(.sr-only) {

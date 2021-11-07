@@ -41,4 +41,13 @@
 	p {
 		font-size: 2vh;
 	}
+
+	@media screen and (min-width: 75rem) {
+		nav {
+			margin-top: 7rem;
+		}
+		a, p {
+			font-size: 2rem;
+		}
+	}
 </style>

@@ -68,13 +68,19 @@
 			padding: 1rem;
 			display: block;
 		}
-
+		
 		a {
 			text-align: center;
 			font-size: 3.5rem;
 		}
-
+		
+		.basic {
+			display: flex;
+			height: 7vh;
+			justify-content: center;
+		}
 		ul {
+			overflow-y: hidden;
 			display: none;
 			margin-top: 5vh;
 			flex-direction: column;
