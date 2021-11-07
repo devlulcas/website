@@ -1,0 +1,36 @@
+.input {
+	display: flex;
+	align-items: center;
+	background: var(--white);
+	border: 0.3rem solid black;
+	border-radius: 1rem;
+	padding: 0.4rem 0.2rem 0.4rem 1rem;
+}
+
+.input-icon {
+	font-size: 2rem;
+	margin-right: 1rem;
+}
+
+.input-field {
+	font-size: 3rem;
+	width: 100%;
+	border-radius: 0 1rem 1rem 0;
+	border: none;
+	padding-left: 0.5rem;
+}
+
+.input-field--textarea {
+	resize: none;
+	height: 25vh;
+}
+
+.input-field--textarea::-webkit-scrollbar {
+	background: var(--gray);
+	border-radius: 0rem 1rem 1rem 0rem;
+}
+
+.input-field--textarea::-webkit-scrollbar-thumb {
+	background: var(--dark-gray);
+	border-radius: 0rem 1rem 1rem 0rem;
+}
