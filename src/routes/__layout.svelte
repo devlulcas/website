@@ -51,6 +51,18 @@
 		grid-template-rows: 1fr 9fr;
 	}
 
+	:global(.sr-only) {
+		position: absolute;
+		height: 1px;
+		width: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip-path: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border-width: 0;
+	}
+
 	/* TEMA DE COR */
 	:root {
 		font-size: 62.5%;
@@ -64,14 +76,15 @@
 		--light-gray: #eeeff4;
 		--green: #00c6ae;
 		--red: #f95a2c;
+		--blue-violet: #8a2be2;
 	}
 
 	/* TIPOGRAFIA */
-	:global(h1, h2, a, span) {
+	:global(h1, h2, a, span, label, button) {
 		font-family: 'Montserrat', sans-serif;
 	}
 
-	:global(p) {
+	:global(p, input, textarea) {
 		font-family: 'Courier New', Courier, monospace;
 	}
 </style>
