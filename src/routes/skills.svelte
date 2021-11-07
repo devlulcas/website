@@ -22,7 +22,7 @@
 </svelte:head>
 
 <!--BODY-->
-<div>
+<div class="container">
 	<main>
 		{#each skills as skill}
 			<article>
@@ -35,11 +35,13 @@
 
 <!--CSS-->
 <style>
+	.container,
 	main {
-		height: 100%;
-		width: 100%;
+		height: 96%; /*Não entendo o porque, mas 100% funciona no simulador mas num moto g8 power não*/
+	}
+	main {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
 		gap: 1rem;
 		padding: 1rem;
 		background: var(--white);
@@ -55,7 +57,6 @@
 		background: var(--yellow);
 		box-shadow: 0.2rem 0.2rem var(--black);
 		border-radius: 1rem;
-		padding: 5%;
 		transition: all 0.3s ease;
 	}
 
@@ -93,9 +94,12 @@
 	}
 
 	@media screen and (min-width: 75rem) {
+		.container,
+		main {
+			height: 100%;
+		}
 		main {
 			grid-template-columns: 1fr 1fr 1fr 1fr;
-			height: 100%;
 		}
 	}
 </style>
