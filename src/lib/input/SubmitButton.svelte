@@ -2,7 +2,7 @@
 <div class="button-container">
 	<button>
 		Send e-mail
-		<i class="fa fa-code" />
+		<i class="fas fa-paper-plane" />
 	</button>
 	<div class="divider" />
 </div>
