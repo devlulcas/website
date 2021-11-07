@@ -49,7 +49,7 @@
 	}
 
 	.herobanner {
-		background: url('../../static/images/heroImage.jpg') center center;
+		background: url('./images/heroImage.jpg') center center;
 		background-size: cover;
 		height: 100%;
 		display: grid;
@@ -100,7 +100,7 @@
 		text-align: center;
 		font-size: calc(4vw + 3vh);
 		color: transparent;
-		background-image: url('../../static/images/heroImage.jpg');
+		background-image: url('./images/heroImage.jpg');
 		background-clip: text;
 		mix-blend-mode: screen;
 		-webkit-background-clip: text;

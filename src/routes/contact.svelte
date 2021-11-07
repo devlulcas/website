@@ -100,7 +100,7 @@
 
 		.hero-image {
 			display: block;
-			background-image: url('../static/images/heroImage.jpg');
+			background-image: url('./images/heroImage.jpg');
 		}
 	}
 </style>
