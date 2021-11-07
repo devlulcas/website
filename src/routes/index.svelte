@@ -1,7 +1,6 @@
 <!--JAVASCRIPT-->
 <script>
 	import CtaShortcut from '$lib/CtaShortcut.svelte';
-	import NavBar from '$lib/NavBar.svelte';
 
 	const icons = [
 		'html5',
