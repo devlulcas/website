@@ -150,15 +150,22 @@
 	@media screen and (max-width: 75rem) {
 		img {
 			position: absolute;
-			width: 150%;
+			width: 165%;
 		}
 
+		li {
+			font-size: 1rem;
+		}
 		section {
 			padding: 10% 2rem;
 		}
 
+		.card {
+			height: 90%;
+		}
+
 		h2 {
-			margin-bottom: 3rem;
+			margin: 3rem 0;
 		}
 
 		p {
