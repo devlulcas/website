@@ -66,7 +66,7 @@
 
 	h1 {
 		font-size: max(3vw, 5vh);
-		margin: 2rem;
+		margin: 1rem;
 		height: 10%;
 		color: var(--white);
 		text-align: center;
