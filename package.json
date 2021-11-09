@@ -2,6 +2,7 @@
   "name": "my-portfolio",
   "version": "0.0.1",
   "scripts": {
+    "deploy": "node ./gh-pages.js",
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
@@ -11,6 +12,7 @@
   "devDependencies": {
     "@sveltejs/adapter-static": "^1.0.0-next.21",
     "@sveltejs/kit": "next",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
     "svelte": "^3.42.6"
