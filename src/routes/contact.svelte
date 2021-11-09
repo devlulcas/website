@@ -66,7 +66,7 @@
 
 	h1 {
 		font-size: max(3vw, 5vh);
-		padding: 2rem;
+		margin: 2rem;
 		height: 10%;
 		color: var(--white);
 		text-align: center;
@@ -83,7 +83,7 @@
 	.social-container {
 		display: flex;
 		justify-content: space-evenly;
-		padding-top: 5%;
+		padding-top: 2%;
 	}
 
 	.hero-image {

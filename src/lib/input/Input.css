@@ -27,7 +27,7 @@
 .input-field--textarea {
 	border-radius: 0.8rem;
 	resize: none;
-	height: 25vh;
+	height: 20vh;
 }
 
 .input-field--textarea::-webkit-scrollbar {

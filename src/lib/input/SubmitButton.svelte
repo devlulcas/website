@@ -53,7 +53,7 @@
 
 	@media screen and (min-width: 55rem) {
 		button {
-			font-size: 2.4rem;
+			font-size: 2rem;
 		}
 	}
 </style>
