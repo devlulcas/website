@@ -4,11 +4,17 @@
 
 	const projects = {
 		portfolio: {
-			name: 'Portfolio',
+			name: 'portfolio',
 			description: 'This site',
-			liveUrl: 'https://devlulcas.github.io',
-			codeUrl: 'https://github.com/devlulcas/devlulcas.github.io',
-			moreInfoUrl: 'https://google.com',
+			previewImage: {
+				src: '/images/heroImage.jpg',
+				description: 'my cool project'
+			},
+			urls: {
+				liveUrl: 'https://devlulcas.github.io',
+				codeUrl: 'https://github.com/devlulcas/devlulcas.github.io',
+				moreInfoUrl: 'https://google.com'
+			},
 			techs: ['Svelte', 'HTML', 'CSS', 'JS', 'SVELTEKIT', 'GH PAGES']
 		}
 	};
@@ -22,7 +28,7 @@
 <!--BODY-->
 <div class="container">
 	<div class="card">
-		<CardProject {...projects.portfolio} />
+		<CardProject project={projects.portfolio} />
 	</div>
 
 	<div class="card">
@@ -49,22 +55,20 @@
 <!--CSS-->
 <style>
 	.container {
-		--row: calc(50% - 3rem);
-		padding: 1rem;
+		--row: calc(50% - 1rem);
 		width: 100%;
 		height: 100%;
-		background: var(--red);
+		gap: 2rem;
+		padding: 2rem;
+		background: var(--white);
 		display: grid;
-		gap: 1rem;
 		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
 		grid-template-rows: var(--row) var(--row);
 	}
 
-	div {
+	.card {
 		width: 100%;
 		height: 100%;
-		background: var(--light-gray);
 	}
 
 	@media screen and (max-width: 75rem) {
@@ -74,7 +78,7 @@
 		}
 
 		.card {
-			margin-bottom: 1rem;
+			margin-bottom: 1.5rem;
 		}
 	}
 </style>
