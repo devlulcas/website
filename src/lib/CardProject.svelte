@@ -42,7 +42,9 @@
 				Github
 			</a>
 		</div>
-		<a href={project.urls.moreInfoUrl} title="More information">...</a>
+		<a class="more-info" href={project.urls.moreInfoUrl} title="More information">
+			<i class="fas fa-ellipsis-h" />
+		</a>
 	</section>
 </div>
 
@@ -54,7 +56,8 @@
 		border-radius: 2rem;
 		overflow: hidden;
 		background: var(--white);
-		outline: 0.4rem solid var(--black);
+		outline: 0.2rem solid var(--black);
+		box-shadow: 0 0.8rem var(--black);
 	}
 
 	.image-container {
@@ -62,15 +65,18 @@
 		height: 50%;
 		overflow: hidden;
 		position: relative;
+		outline: 0.2rem solid var(--black);
 	}
 
 	img {
+		position: absolute;
 		width: 100%;
 	}
 
 	ul {
 		width: 100%;
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-around;
 		position: absolute;
 		z-index: 1;
@@ -81,11 +87,82 @@
 		background: var(--white);
 		color: var(--black);
 		padding: 1rem;
-		font-size: 2rem;
+		font-size: 1.5rem;
+		border-radius: 2rem;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
+
+	section {
+		padding: 1rem 2rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	h2 {
+		text-transform: capitalize;
+		font-size: 2.5rem;
+		flex-basis: 100%;
+		margin: 1rem 0;
+	}
+
+	p {
+		margin-bottom: 1rem;
+	}
+
+	p,
+	a,
+	i {
+		color: var(--black);
+	}
+	p,
+	a {
+		font-size: 1.5rem;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	a,
+	i {
+		margin-right: 1rem;
+	}
+
+	.more-info {
+		font-size: 5rem;
+		width: 6rem;
+		height: 6rem;
+		border-radius: 50%;
+		background: var(--white);
+		outline: 0.2rem solid var(--black);
+		box-shadow: 0 0.5rem var(--black);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 0;
+	}
+
+	.more-info i {
+		margin-right: 0;
 	}
 
 	@media screen and (max-width: 75rem) {
-    .card {
-    }
+		img {
+			position: absolute;
+			width: 150%;
+		}
+
+		section {
+			padding: 10% 2rem;
+		}
+
+		h2 {
+			margin-bottom: 3rem;
+		}
+
+		p {
+			margin-bottom: 2rem;
+		}
 	}
 </style>
