@@ -60,7 +60,7 @@
 		background: var(--white);
 		outline: 0.2rem solid var(--black);
 		box-shadow: 0 0.8rem var(--black);
-		transition: transform .2s;
+		transition: transform 0.2s;
 	}
 
 	.card:hover {
@@ -155,14 +155,20 @@
 		align-items: center;
 		justify-content: center;
 		margin-right: 0;
+		transition: transform 0.3s;
 	}
 
 	.more-info:hover {
 		transform: scale(1.1);
 	}
 
+	.more-info:hover i {
+		transform: rotate(360deg);
+	}
+
 	.more-info i {
 		margin-right: 0;
+		transition: transform 1s;
 	}
 
 	@media screen and (max-width: 75rem) {
