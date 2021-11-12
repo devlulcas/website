@@ -4,7 +4,7 @@
 	background: var(--white);
 	border: 0.3rem solid black;
 	border-radius: 1rem;
-	padding: 0.4rem 0.2rem 0.4rem 1rem;
+	padding: 0.4rem 0.4rem 0.4rem 1rem;
 }
 
 .input--textarea {
@@ -17,7 +17,7 @@
 }
 
 .input-field {
-	font-size: 3rem;
+	font-size: 2rem;
 	width: 100%;
 	border-radius: 0 1rem 1rem 0;
 	border: none;
