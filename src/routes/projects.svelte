@@ -55,11 +55,11 @@
 <!--CSS-->
 <style>
 	.container {
-		--row: calc(50% - 1rem);
+		--row: calc(50% - 2rem);
 		width: 100%;
 		height: 100%;
-		gap: 2rem;
-		padding: 2rem;
+		gap: 4rem;
+		padding: 4rem;
 		background: var(--white);
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
