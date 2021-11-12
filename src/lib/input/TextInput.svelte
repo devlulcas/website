@@ -5,11 +5,12 @@
 	export let label;
 	export let icon;
 	export let value;
+	export let placeholder;
 </script>
 
 <!--HTML-->
 <div class="input">
 	<label class="sr-only" for={name}>{label}</label>
 	<i class="input-icon {icon}" />
-	<input class="input-field" type="text" {name} id={name} bind:value />
+	<input class="input-field" {placeholder} type="text" {name} id={name} bind:value />
 </div>

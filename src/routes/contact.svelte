@@ -31,10 +31,34 @@
 	<main>
 		<h1>Let's talk!</h1>
 		<form on:submit|preventDefault>
-			<TextInput name="name" label="Your name" icon="fas fa-signature" />
-			<EmailInput name="email" label="Your e-mail" icon="fas fa-envelope" />
-			<TextInput name="subject" label="Subject" icon="fas fa-comment-alt" />
-			<Textarea name="message" label="Leave a message" icon="fa fa-code" />
+			<TextInput
+				name="name"
+				placeholder="How do you want to be called?"
+				label="Your name"
+				icon="fas fa-signature"
+			/>
+
+			<EmailInput
+				name="email"
+				placeholder="Insert your e-mail here"
+				label="Your e-mail"
+				icon="fas fa-envelope"
+			/>
+
+			<TextInput
+				name="subject"
+				placeholder="What's the subject?"
+				label="Subject"
+				icon="fas fa-comment-alt"
+			/>
+
+			<Textarea
+				name="message"
+				placeholder="Leave a message"
+				label="Leave a message"
+				icon="fa fa-code"
+			/>
+
 			<SubmitButton />
 		</form>
 		<div class="social-container">
