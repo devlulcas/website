@@ -9,10 +9,10 @@
 		{ icon: 'fab fa-linux', description: 'GNU/ LINUX' },
 		{ icon: 'fab fa-figma', description: 'FIGMA' },
 		{ icon: 'fab fa-git-alt', description: 'GIT' },
-		{ icon: 'fas fa-code', description: 'KOTLIN' }, //kt
-		{ icon: 'fas fa-code', description: 'SQLITE/ PG' }, //sql
-		{ icon: 'fas fa-code', description: 'SVELTE' }, //svelte
-		{ icon: 'fas fa-code', description: 'ENGLISH' } //english
+		{ src: '/icons/kotlin.svg', icon: 'kotlin', description: 'KOTLIN' }, //kt
+		{ src: '/icons/sql.svg', icon: 'sqlite', description: 'SQLITE/ PG' }, //sql
+		{ src: '/icons/svelte.svg', icon: 'svelte', description: 'SVELTE' }, //svelte
+		{ icon: 'fas fa-flag-usa', description: 'ENGLISH' } //english
 	];
 </script>
 
@@ -26,7 +26,11 @@
 	<main>
 		{#each skills as skill}
 			<article>
-				<i class={skill.icon} />
+				{#if skill.src}
+					<img src={skill.src} alt={skill.icon} />
+				{:else}
+					<i class={skill.icon} />
+				{/if}
 				<p>{skill.description}</p>
 			</article>
 		{/each}
@@ -67,6 +71,10 @@
 	i {
 		color: var(--black);
 		font-size: calc(3vh + 3vw);
+	}
+
+	img {
+		height: calc(3vh + 3vw);
 	}
 
 	p {
