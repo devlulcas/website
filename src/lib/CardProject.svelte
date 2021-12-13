@@ -120,7 +120,7 @@
 
 	h2 {
 		text-transform: capitalize;
-		font-size: 2.5rem;
+		font-size: 3rem;
 		margin: 1rem 0;
 	}
 
