@@ -6,7 +6,7 @@
 </script>
 
 <!--HTML-->
-<li>
+<li on:click>
 	{#if !external}
 		<a sveltekit:prefetch {href}>
 			<i class={faIcon} />
