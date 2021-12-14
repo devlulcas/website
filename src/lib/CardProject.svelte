@@ -8,13 +8,18 @@
 			description: 'my cool project'
 		},
 		urls: {
-			liveUrl: 'https://amazing.net',
-			codeUrl: 'https://amazing/code.net',
+			liveUrl: '/notonline',
+			codeUrl: 'https://github.com/devlulcas',
 			moreInfoUrl: '/aboutthe'
 		},
 		techs: ['magic', 'love', 'code']
 	};
 </script>
+
+<!--HEAD-->
+<svelte:head>
+	<link rel="prefetch" as="image" href={project.previewImage.src} />
+</svelte:head>
 
 <!--HTML-->
 <div class="card">
@@ -83,6 +88,7 @@
 	.image-container:hover ul {
 		opacity: 1;
 	}
+
 	ul {
 		opacity: 0;
 		transition: opacity ease 0.5s;
@@ -143,6 +149,14 @@
 	i {
 		margin-right: 1rem;
 	}
+
+	a:hover {
+		color: var(--dark-gray);
+	}
+
+	a:hover i {
+		color: var(--dark-gray);
+	}
 	.more-info {
 		font-size: 5rem;
 		width: 6rem;
@@ -164,6 +178,7 @@
 
 	.more-info:hover i {
 		transform: rotate(360deg);
+		color: var(--black);
 	}
 
 	.more-info i {
