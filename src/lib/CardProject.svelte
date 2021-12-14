@@ -200,6 +200,10 @@
 			height: 90%;
 		}
 
+		.card:hover {
+			transform: scale(1.01);
+		}
+
 		h2 {
 			margin: 0rem 0 3rem 0;
 		}
