@@ -39,19 +39,20 @@
 
 <!--CSS-->
 <style>
-	.container,
-	main {
-		height: 96%; /*Não entendo o porque, mas 100% funciona no simulador mas num moto g8 power não*/
+	.container {
+		overflow-y: scroll;
 	}
+
 	main {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
-		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		padding: 3rem 4rem;
 		background: var(--white);
 	}
 
 	article {
+		min-height: 20rem;
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -61,11 +62,6 @@
 		background: var(--yellow);
 		box-shadow: 0.2rem 0.2rem var(--black);
 		border-radius: 1rem;
-		transition: all 0.3s ease;
-	}
-
-	article:hover {
-		box-shadow: inset 0.2rem 0.2rem var(--white);
 	}
 
 	i {
@@ -102,12 +98,20 @@
 	}
 
 	@media screen and (min-width: 75rem) {
+		.container {
+			overflow-y: hidden;
+		}
 		.container,
 		main {
 			height: 100%;
 		}
 		main {
+			display: grid;
 			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+
+		article {
+			min-height: 10rem;
 		}
 	}
 </style>
