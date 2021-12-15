@@ -23,7 +23,7 @@ const portfolio = new Project(
 	'prints of my portfolio',
 	'https://devlulcas.github.io',
 	'https://github.com/devlulcas/devlulcas.github.io',
-	'aaa',
+	'/notonline',
 	['HTML', 'CSS', 'JS', 'SVELTE', 'SVELTEKIT', 'GHPAGES']
 );
 
@@ -35,6 +35,4 @@ export const projects = [
 	portfolio,
 	portfolio,
 	portfolio,
-	'aaa',
-	'bb'
 ].slice(0, 6);
