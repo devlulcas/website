@@ -1,23 +1,7 @@
 <!--JAVASCRIPT-->
 <script>
 	import CardProject from '$lib/CardProject.svelte';
-
-	const projects = {
-		portfolio: {
-			name: 'portfolio',
-			description: 'This site',
-			previewImage: {
-				src: '/images/heroImage.jpg',
-				description: 'my cool project'
-			},
-			urls: {
-				liveUrl: 'https://devlulcas.github.io',
-				codeUrl: 'https://github.com/devlulcas/devlulcas.github.io',
-				moreInfoUrl: 'https://google.com'
-			},
-			techs: ['Svelte', 'HTML', 'CSS', 'JS', 'SVELTEKIT', 'GH PAGES']
-		}
-	};
+	import { projects } from '../javascript/projects';
 </script>
 
 <!--HEAD-->
@@ -27,29 +11,11 @@
 
 <!--BODY-->
 <div class="container">
-	<div class="card">
-		<CardProject project={projects.portfolio} />
-	</div>
-
-	<div class="card">
-		<CardProject {...projects.portfolio} />
-	</div>
-
-	<div class="card">
-		<CardProject {...projects.portfolio} />
-	</div>
-
-	<div class="card">
-		<CardProject {...projects.portfolio} />
-	</div>
-
-	<div class="card">
-		<CardProject {...projects.portfolio} />
-	</div>
-
-	<div class="card">
-		<CardProject {...projects.portfolio} />
-	</div>
+	{#each projects as project}
+		<div class="card">
+			<CardProject {project} />
+		</div>
+	{/each}
 </div>
 
 <!--CSS-->
