@@ -64,6 +64,32 @@
 		border-radius: 1rem;
 	}
 
+	@keyframes ticko-ticko {
+		0% {
+			transform: rotate(0deg);
+		}
+		25% {
+			transform: rotate(30deg);
+			filter: opacity(0.4);
+		}
+		50% {
+			transform: rotate(-30deg);
+		}
+		75% {
+			transform: rotate(0deg);
+		}
+	}
+
+	article:hover img,
+	article:hover i {
+		animation: 1000ms ticko-ticko;
+	}
+
+	i,
+	img {
+		transition: transform 0.3s ease;
+	}
+
 	i {
 		color: var(--black);
 		font-size: calc(3vh + 3vw);
