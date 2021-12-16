@@ -31,9 +31,9 @@
 		<div class="content-container">
 			<h1>Web/Mobile developer</h1>
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, corrupti quis! Modi minima
-				delectus doloribus autem dignissimos architecto quasi cupiditate iure facere non excepturi
-				commodi, eveniet sint debitis impedit quo.
+				Hello there, my name is Lucas. I'm mainly a web developer, but I'm also really interested in
+				mobile development (especially native android). Besides code I also really enjoy doing
+				craftsmanship and studying random topics.
 			</p>
 		</div>
 		<CtaShortcut />
