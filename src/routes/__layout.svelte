@@ -80,7 +80,7 @@
 		--light-gray: #eeeff4;
 		--green: #00c6ae;
 		--red: #f95a2c;
-		--blue-violet: #8a2be2;
+		--green-mate: #5b9c8a;
 	}
 
 	/* TIPOGRAFIA */
