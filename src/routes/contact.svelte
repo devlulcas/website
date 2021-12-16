@@ -29,7 +29,10 @@
 <!--BODY-->
 <div class="container">
 	<main>
-		<h1>Let's talk!</h1>
+		<h1>
+			<img src="/images/me.svg" alt="curly hair man" />
+			Let's talk!
+		</h1>
 		<form on:submit|preventDefault>
 			<TextInput
 				name="name"
@@ -81,7 +84,7 @@
 	.container {
 		display: grid;
 		grid-template-columns: 1fr;
-		background: var(--blue-violet);
+		background: var(--green-mate);
 	}
 
 	main {
@@ -93,9 +96,14 @@
 		margin: 1rem;
 		height: 10%;
 		color: var(--white);
-		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
+	h1 img {
+		margin-right: .5ch;
+	}
 	form {
 		display: flex;
 		flex-direction: column;
