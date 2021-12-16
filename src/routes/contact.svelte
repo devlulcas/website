@@ -124,7 +124,7 @@
 
 		.hero-image {
 			display: block;
-			background-image: url('/images/heroImage.jpg');
+			background-image: url('/images/contactHeroImage.jpg');
 		}
 	}
 </style>
