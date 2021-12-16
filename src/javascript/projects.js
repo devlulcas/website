@@ -41,7 +41,7 @@ const portfolio = new Project(
 const badgeGenerator = new Project(
 	'Badge generator',
 	'Badges for your readme',
-	'/badgegenerator_screenshot.png',
+	'badgegenerator_screenshot.png',
 	'prints of badge generator',
 	'https://devlulcas.github.io/badge-generator/',
 	'https://github.com/devlulcas/badge-generator',
@@ -52,7 +52,7 @@ const badgeGenerator = new Project(
 const mySecretDiary = new Project(
 	'My Secret Diary',
 	'An online social media and diary',
-	'/mysecretdiary_screenshot.png',
+	'mysecretdiary_screenshot.png',
 	'my secret diary homepage',
 	'/notonline',
 	'https://github.com/devlulcas/diary-front',
@@ -63,7 +63,7 @@ const mySecretDiary = new Project(
 const myPersonalStartpage = new Project(
 	'Personal startpage',
 	'Custom browser startpage',
-	'/startpage_screenshot.png',
+	'startpage_screenshot.png',
 	'my personal startpage  with a todo, weather and notes app',
 	'https://devlulcas.github.io/personal-startpage/',
 	'https://github.com/devlulcas/personal-startpage',
