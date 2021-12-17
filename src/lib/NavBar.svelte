@@ -16,12 +16,29 @@
 		<a sveltekit:prefetch href="/">Devlulcas</a>
 	</div>
 	<ul class:mobile>
-		<NavItem on:click={() => mobile = false} href="/skills" faIcon="fas fa-code">Skills</NavItem>
-		<NavItem on:click={() => mobile = false} href="/projects" faIcon="fas fa-boxes">Projects</NavItem>
-		<NavItem on:click={() => mobile = false} href="/socials" faIcon="fas fa-at">Socials</NavItem>
-		<NavItem on:click={() => mobile = false} href="/contact" faIcon="fas fa-hand-sparkles">Hire me</NavItem>
-		<NavItem on:click={() => mobile = false} href="https://github.com/devlulcas" faIcon="fa fa-github" external>Github</NavItem>
-		<NavItem on:click={() => mobile = false} href="/curriculum" faIcon="fas fa-file">Curriculum</NavItem>
+		<NavItem on:click={() => mobile = false} href="/skills" faIcon="fas fa-code">
+			Skills
+		</NavItem>
+		
+		<NavItem on:click={() => mobile = false} href="/projects" faIcon="fas fa-boxes">
+			Projects
+		</NavItem>
+		
+		<NavItem on:click={() => mobile = false} href="/socials" faIcon="fas fa-at">
+			Socials
+		</NavItem>
+		
+		<NavItem on:click={() => mobile = false} href="/contact" faIcon="fas fa-hand-sparkles">
+			Hire me
+		</NavItem>
+		
+		<NavItem on:click={() => mobile = false} href="https://github.com/devlulcas" faIcon="fa fa-github" external>
+			Github
+		</NavItem>
+		
+		<NavItem on:click={() => mobile = false} href="/curriculum" faIcon="fas fa-file">
+			Curriculum
+		</NavItem>
 	</ul>
 </nav>
 
