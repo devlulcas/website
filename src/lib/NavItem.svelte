@@ -1,5 +1,6 @@
 <!--JAVASCRIPT---->
 <script>
+	import { page } from '$app/stores';
 	export let external = false;
 	export let href = '/not_found';
 	export let faIcon = '';
@@ -8,12 +9,12 @@
 <!--HTML-->
 <li on:click>
 	{#if !external}
-		<a sveltekit:prefetch {href}>
+		<a class:active={$page.path === href} xsveltekit:prefetch {href}>
 			<i class={faIcon} />
 			<slot />
 		</a>
 	{:else}
-		<a {href} target="_blank" rel="noopener noreferrer">
+		<a class:active={$page.path === href} {href} target="_blank" rel="noopener noreferrer">
 			<i class={faIcon} />
 			<slot />
 		</a>
@@ -38,6 +39,10 @@
 		width: 100%;
 		padding: 1rem;
 		gap: 1rem;
+	}
+
+	.active {
+		color: var(--green-mate);
 	}
 
 	@media screen and (max-width: 75rem) {
