@@ -82,7 +82,7 @@
 
 	img {
 		position: absolute;
-		width: 100%;
+		height: 100%;
 	}
 
 	.image-container:hover ul {
@@ -150,6 +150,9 @@
 		margin-right: 1rem;
 	}
 
+	i {
+		width: 1ch;
+	}
 	a:hover {
 		color: var(--dark-gray);
 	}
@@ -204,7 +207,15 @@
 			transform: scale(1.01);
 		}
 
+		section {
+			justify-content: center;
+		}
+		.about {
+			width: 100%;
+		}
 		h2 {
+			font-size: 2rem;
+			text-align: center;
 			margin: 0rem 0 3rem 0;
 		}
 
