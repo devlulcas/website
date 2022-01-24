@@ -1,7 +1,7 @@
 <!--JAVASCRIPT-->
 <script>
 	import CardProject from '$lib/CardProject.svelte';
-	import { projects } from '../javascript/projects';
+	import { projects } from '../data/projects';
 </script>
 
 <!--HEAD-->
