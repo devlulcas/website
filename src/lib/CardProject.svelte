@@ -36,7 +36,12 @@
 				</a>
 			</div>
 		</div>
-		<a class="more-info" href={project.urls.moreInfoUrl} title="More information">
+		<a
+			aria-label="more information"
+			class="more-info"
+			href={project.urls.moreInfoUrl}
+			title="More information"
+		>
 			<i class="fas fa-ellipsis-h" />
 		</a>
 	</section>
