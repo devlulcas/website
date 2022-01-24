@@ -23,7 +23,7 @@
 <main>
 	<div class="herobanner">
 		{#each icons as icon}
-			<div class="tile"><i class="fab fa-{icon}" /></div>
+			<div aria-label={icon} class="tile"><i class="fab fa-{icon}" /></div>
 		{/each}
 		<div class="tile"><span>kotlin</span></div>
 	</div>
