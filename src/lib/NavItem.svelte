@@ -9,7 +9,7 @@
 <!--HTML-->
 <li on:click>
 	{#if !external}
-		<a class:active={$page.path === href} xsveltekit:prefetch {href}>
+		<a class:active={$page.path === href} sveltekit:prefetch {href}>
 			<i class={faIcon} />
 			<slot />
 		</a>
