@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "clean": "trash build",
-    "deploy": "node ./gh-pages.js",
+    "deploy": "npm run build && node ./gh-pages.js",
     "dev": "svelte-kit dev",
     "build": "npm run clean && svelte-kit build",
     "preview": "svelte-kit preview",
