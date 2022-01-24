@@ -12,7 +12,7 @@ portfolio
 	.addPreview('portfolio.png', 'prints of my portfolio')
 	.addLiveUrl('https://devlulcas.github.io')
 	.addCodeUrl('https://github.com/devlulcas/devlulcas.github.io')
-	.addMoreInfoUrl('/about/portfolio')
+	.addMoreInfoUrl('portfolio')
 	.addTechs(['HTML', 'CSS', 'JS', 'SVELTE', 'SVELTEKIT', 'GHPAGES']);
 
 badgeGenerator
@@ -20,7 +20,7 @@ badgeGenerator
 	.addPreview('badgegenerator.png', 'prints of badge generator')
 	.addLiveUrl('https://devlulcas.github.io/badge-generator/')
 	.addCodeUrl('https://github.com/devlulcas/badge-generator')
-	.addMoreInfoUrl('/about/badge_generator')
+	.addMoreInfoUrl('badge_generator')
 	.addTechs(['HTML', 'CSS', 'JS']);
 
 mySecretDiary
@@ -28,7 +28,7 @@ mySecretDiary
 	.addPreview('mysecretdiary.png', 'my secret diary homepage')
 	.addLiveUrl('https://devlulcas.github.io/badge-generator/')
 	.addCodeUrl('https://github.com/devlulcas/diary-front')
-	.addMoreInfoUrl('/about/my_secret_diary')
+	.addMoreInfoUrl('my_secret_diary')
 	.addTechs(['HTML', 'CSS', 'JS', 'SVELTE', 'NODE', 'KNEX', 'POSTGRES']);
 
 myPersonalStartpage
@@ -37,7 +37,7 @@ myPersonalStartpage
 	.addPreviewDescription('my personal startpage  with a todo, weather and notes app')
 	.addLiveUrl('https://devlulcas.github.io/personal-startpage/')
 	.addCodeUrl('https://github.com/devlulcas/personal-startpage')
-	.addMoreInfoUrl('/about/personal_startpage')
+	.addMoreInfoUrl('personal_startpage')
 	.addTechs(['HTML', 'CSS', 'JS', 'WEATHER BIT API']);
 
 // Lista dos objetos de projeto

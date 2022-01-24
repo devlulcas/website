@@ -54,7 +54,7 @@ export class Project {
 	}
 
 	addMoreInfoUrl(url) {
-		this.urls.moreInfoUrl = url;
+		this.urls.moreInfoUrl = `/project/${url}`;
 		return this;
 	}
 
