@@ -1,19 +1,6 @@
 <!--JAVASCRIPT-->
 <script>
-	export let project = {
-		name: 'Project',
-		description: 'A good one',
-		previewImage: {
-			src: '/images/heroImage.jpg',
-			description: 'my cool project'
-		},
-		urls: {
-			liveUrl: '/notonline',
-			codeUrl: 'https://github.com/devlulcas',
-			moreInfoUrl: '/aboutthe'
-		},
-		techs: ['magic', 'love', 'code']
-	};
+	export let project;
 </script>
 
 <!--HEAD-->
@@ -63,8 +50,8 @@
 		border-radius: 2rem;
 		overflow: hidden;
 		background: var(--white);
-		outline: 0.2rem solid var(--black);
-		box-shadow: 0 0.8rem var(--black);
+		border: 0.2rem solid var(--black);
+		box-shadow: 0.5rem 0.8rem var(--black);
 		transition: transform 0.2s;
 	}
 
@@ -77,7 +64,7 @@
 		height: 50%;
 		overflow: hidden;
 		position: relative;
-		outline: 0.2rem solid var(--black);
+		border-bottom: 0.2rem solid var(--black);
 	}
 
 	img {
@@ -102,7 +89,7 @@
 	}
 
 	li {
-		outline: 0.1rem solid var(--black);
+		border: 0.1rem solid var(--black);
 		background: var(--white);
 		margin: 1rem;
 		flex-grow: 1;
@@ -166,7 +153,7 @@
 		height: 6rem;
 		border-radius: 50%;
 		background: var(--white);
-		outline: 0.2rem solid var(--black);
+		border: 0.2rem solid var(--black);
 		box-shadow: 0 0.5rem var(--black);
 		display: flex;
 		align-items: center;
