@@ -1,6 +1,7 @@
 <!--JAVASCRIPT-->
 <script>
-	import Techpins from "./Techpins.svelte";
+	import ButtonSpin from './ButtonSpin.svelte';
+	import Techpins from './Techpins.svelte';
 	export let project;
 </script>
 
@@ -13,7 +14,7 @@
 <div class="card">
 	<div class="image-container">
 		<img src={project.previewImage.src} alt={project.previewImage.alt} />
-		<Techpins techs={project.techs}/>
+		<Techpins techs={project.techs} />
 	</div>
 	<section>
 		<div class="about">
@@ -33,14 +34,7 @@
 				</a>
 			</div>
 		</div>
-		<a
-			aria-label="more information"
-			class="more-info"
-			href={project.urls.moreInfoUrl}
-			title="More information"
-		>
-			<i class="fas fa-ellipsis-h" />
-		</a>
+		<ButtonSpin href={project.urls.moreInfoUrl} label="More information" />
 	</section>
 </div>
 
@@ -118,34 +112,6 @@
 
 	a:hover i {
 		color: var(--dark-gray);
-	}
-	.more-info {
-		font-size: 5rem;
-		width: 6rem;
-		height: 6rem;
-		border-radius: 50%;
-		background: var(--white);
-		border: 0.2rem solid var(--black);
-		box-shadow: 0 0.5rem var(--black);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin-right: 0;
-		transition: transform 0.3s;
-	}
-
-	.more-info:hover {
-		transform: scale(1.1);
-	}
-
-	.more-info:hover i {
-		transform: rotate(360deg);
-		color: var(--black);
-	}
-
-	.more-info i {
-		margin-right: 0;
-		transition: transform 1s;
 	}
 
 	@media screen and (max-width: 75rem) {
