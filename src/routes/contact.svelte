@@ -33,7 +33,7 @@
 			<img src="/images/me.svg" alt="curly hair man" />
 			Let's talk!
 		</h1>
-		<form on:submit|preventDefault>
+		<form action="https://formsubmit.co/lucasalvesrego.contato@gmail.com" method="POST">
 			<TextInput
 				name="name"
 				placeholder="How do you want to be called?"
@@ -61,6 +61,10 @@
 				label="Leave a message"
 				icon="fa fa-code"
 			/>
+
+			<input type="hidden" name="_captcha" value="false">
+
+			<input type="hidden" name="_next" value="https://devlulcas.github.io/">
 
 			<SubmitButton />
 		</form>
@@ -102,7 +106,7 @@
 	}
 
 	h1 img {
-		margin-right: .5ch;
+		margin-right: 0.5ch;
 	}
 	form {
 		display: flex;
@@ -132,6 +136,10 @@
 
 		.hero-image {
 			display: block;
+			background: linear-gradient(#eb8b9a, transparent),
+				linear-gradient(90deg, var(--green-mate), transparent),
+				linear-gradient(-90deg, var(--green-mate), transparent);
+			background-blend-mode: screen;
 			background-image: url('/images/contactHeroImage.jpg');
 		}
 	}
