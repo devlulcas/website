@@ -32,7 +32,7 @@
 	a {
 		display: flex;
 		align-items: center;
-		font-size: 2rem;
+		font-size: 2vh;
 		font-weight: 600;
 		color: var(--black);
 		text-align: center;
