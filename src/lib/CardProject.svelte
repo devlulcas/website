@@ -1,5 +1,6 @@
 <!--JAVASCRIPT-->
 <script>
+	import Techpins from "./Techpins.svelte";
 	export let project;
 </script>
 
@@ -12,11 +13,7 @@
 <div class="card">
 	<div class="image-container">
 		<img src={project.previewImage.src} alt={project.previewImage.alt} />
-		<ul>
-			{#each project.techs as tech}
-				<li>{tech}</li>
-			{/each}
-		</ul>
+		<Techpins techs={project.techs}/>
 	</div>
 	<section>
 		<div class="about">
@@ -75,36 +72,6 @@
 	img {
 		position: absolute;
 		height: 100%;
-	}
-
-	.image-container:hover ul {
-		opacity: 1;
-	}
-
-	ul {
-		opacity: 0;
-		transition: opacity ease 0.5s;
-		width: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-		position: absolute;
-		z-index: 1;
-		bottom: 0;
-	}
-
-	li {
-		border: 0.1rem solid var(--black);
-		background: var(--white);
-		margin: 1rem;
-		flex-grow: 1;
-		text-align: center;
-		color: var(--black);
-		padding: 1rem;
-		font-size: 1.5rem;
-		border-radius: 2rem;
-		text-transform: uppercase;
-		font-weight: 600;
 	}
 
 	section {
@@ -185,10 +152,6 @@
 		img {
 			position: absolute;
 			width: 165%;
-		}
-
-		li {
-			font-size: 1rem;
 		}
 
 		.card {
