@@ -3,3 +3,5 @@
 </div>
 <hr>
 <h1 align="center"> ⭐ MY PORTFOLIO ⭐  </h1>
+
+> Hey! That was my first portfolio website. I decided to change some things here and there so I basicaly deleted everything and started again. You can see what I'm doing in the new one in the main branch. 
