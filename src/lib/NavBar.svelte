@@ -1,20 +1,34 @@
 <script lang="ts">
-	import Fa from 'svelte-fa/src/fa.svelte';
 	import {
 		faBrain,
 		faCode,
 		faFeather,
 		faEnvelope,
 		faHome
-	} from '@fortawesome/free-solid-svg-icons';
-	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+	} from "@fortawesome/free-solid-svg-icons";
+	import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-	import Switch from './Switch.svelte';
+	// My components
+	import Switch from "./Switch.svelte";
+	import NavItem from "./NavItem.svelte";
+
+	// Anchor and SVG
+	const menuItems = [
+		{ label: "Home", icon: faHome },
+		{ label: "Projects", icon: faCode },
+		{ label: "Skills", icon: faBrain },
+		{ label: "Contact", icon: faEnvelope },
+		{ label: "Blog", icon: faFeather },
+		{ label: "Github", icon: faGithub },
+		{ label: "Linkedin", icon: faLinkedin }
+	];
+
+	let mobileMode = true;
 </script>
 
-<header>
+<header class:collapsed={mobileMode}>
 	<div class="logo">
-		<button>
+		<button on:click={() => (mobileMode = !mobileMode)}>
 			<div>-</div>
 			<div>-</div>
 			<div>-</div>
@@ -23,60 +37,17 @@
 		<img src="/favicon.svg" alt="logo" title="Me" />
 	</div>
 
-	<nav>
+	<nav class:visible={mobileMode}>
 		<ul>
-			<li>
-				<a href="/">
-					<Fa icon={faHome} aria-label="home" />
-					Home
-				</a>
-			</li>
-
-			<li>
-				<a href="/">
-					<Fa icon={faCode} aria-label="projects" />
-					Projects
-				</a>
-			</li>
-
-			<li>
-				<a href="/">
-					<Fa icon={faBrain} aria-label="skills" />
-					Skills
-				</a>
-			</li>
-
-			<li>
-				<a href="/">
-					<Fa icon={faEnvelope} aria-label="contact" />
-					Contact
-				</a>
-			</li>
-
-			<li>
-				<a href="/">
-					<Fa icon={faFeather} aria-label="blog" />
-					Blog
-				</a>
-			</li>
-
-			<li>
-				<a href="/">
-					<Fa icon={faGithub} aria-label="github" />
-					Github
-				</a>
-			</li>
-
-			<li>
-				<a href="/">
-					<Fa icon={faLinkedin} aria-label="linkedin" />
-					Linkedin
-				</a>
-			</li>
+			{#each menuItems as item}
+				<li>
+					<NavItem label={item.label} icon={item.icon} />
+				</li>
+			{/each}
 		</ul>
 	</nav>
 
-	<div class="switchs">
+	<div class="switchs" class:visible={mobileMode}>
 		<Switch />
 		<Switch />
 	</div>
@@ -88,15 +59,15 @@
 	nav,
 	ul,
 	li,
-	a,
 	.switchs {
 		display: flex;
 	}
 
 	header {
+		--header-height: 3.5rem;
 		top: 0;
 		position: sticky;
-		height: 3.5rem;
+		height: var(--header-height);
 		padding: 0 1.5rem;
 		background: var(--primary);
 
@@ -107,6 +78,7 @@
 			outline: 1px solid green;
 			& button {
 				display: none;
+				z-index: 10;
 			}
 		}
 
@@ -135,31 +107,19 @@
 		justify-content: space-evenly;
 	}
 
-	a {
-		align-items: center;
-		text-decoration: none;
-		color: var(--on-primary);
-		font-weight: 1000;
-		font-size: clamp(1rem, 1.2rem, 1vw);
-		padding: 1rem;
-		gap: 0.5rem;
-		&:hover {
-			color: var(--special);
-		}
-	}
-
 	@media screen and (max-width: 100rem) {
 		header {
 			height: 100vh;
 			flex-direction: column;
 			align-items: center;
-			display: none;
+			transition: 0.3s;
 		}
 
 		header .logo {
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
+
 			& button {
 				display: block;
 				width: 4rem;
@@ -167,7 +127,10 @@
 		}
 
 		nav {
+			opacity: 1;
+			visibility: visible;
 			height: 100%;
+			transition: 0.3s;
 			& ul {
 				height: 100%;
 				flex-direction: column;
@@ -177,17 +140,18 @@
 				& li {
 					outline: 1px solid yellow;
 					justify-content: center;
-
-					& a {
-						outline: 1px solid violet;
-						color: var(--on-primary);
-						font-weight: 1000;
-						font-size: clamp(2rem, 4vh, 3rem);
-						padding: 1rem;
-						gap: 1rem;
-					}
 				}
 			}
+		}
+
+		.visible {
+			opacity: 0;
+			visibility: hidden;
+			height: 0;
+		}
+
+		.collapsed {
+			height: var(--header-height);
 		}
 	}
 </style>
