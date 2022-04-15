@@ -1,5 +1,5 @@
 * {
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Montserrat", sans-serif;
 }
 
 :root {
@@ -38,18 +38,20 @@
 	/* * EXTRA COLORS */
 	--special: #ff9692;
 	--brand: #1947e5;
+	--switch-light: #1947e5;
+	--switch-dark: var(--secondary);
 }
 
 html.light {
 	/* * PRIMARY COLORS */
 	--primary-h: 231;
 	--primary-s: 13%;
-	--primary-l: 11%;
+	--primary-l: 97%;
 
 	/* * ON PRIMARY COLORS */
 	--on-primary-h: 0;
 	--on-primary-s: 0%;
-	--on-primary-l: 100%;
+	--on-primary-l: 10%;
 
 	/* * SECONDARY COLORS */
 	--secondary-h: 43;
