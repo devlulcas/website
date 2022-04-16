@@ -6,12 +6,24 @@
 	export let icon: IconDefinition;
 	export let label: string;
 	export let href: string;
+
+	const hrefLocation = href.charAt(0);
+	const localLinks = ["#", "/"];
 </script>
 
-<a {href}>
-	<Fa {icon} aria-label={label} />
-	{label}
-</a>
+{#if localLinks.includes(hrefLocation)}
+	<!--Local links-->
+	<a sveltekit:prefetch {href}>
+		<Fa {icon} aria-label={label} />
+		{label}
+	</a>
+{:else}
+	<!--External links-->
+	<a href="http://{href}" target="_blank" rel="noopener noreferrer">
+		<Fa {icon} aria-label={label} />
+		{label}
+	</a>
+{/if}
 
 <style lang="postcss">
 	a {

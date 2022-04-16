@@ -16,10 +16,10 @@
 	import MenuButton from "$lib/MenuButton.svelte";
 
 	// Anchor and SVG
-	const home = new LinkItem("Home", faHome, "#start");
-	const projects = new LinkItem("Projects", faCode, "#projects");
-	const skills = new LinkItem("Skills", faBrain, "#skills");
-	const contact = new LinkItem("Contact", faEnvelope, "#contact");
+	const home = new LinkItem("Home", faHome, "/#start");
+	const projects = new LinkItem("Projects", faCode, "/#projects");
+	const skills = new LinkItem("Skills", faBrain, "/#skills");
+	const contact = new LinkItem("Contact", faEnvelope, "/#contact");
 	const blog = new LinkItem("Blog", faFeather, "/blog");
 	const github = new LinkItem("Github", faGithub, "github.com/devlulcas");
 	const linkedin = new LinkItem("Linkedin", faLinkedin, "linkedin.com/in/lucasalvesregodev/");
