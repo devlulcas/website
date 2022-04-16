@@ -129,6 +129,7 @@
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
+			margin-top: 0.5rem;
 		}
 
 		nav {
