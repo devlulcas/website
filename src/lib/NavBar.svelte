@@ -92,6 +92,7 @@
 
 			@media screen and (max-width: 100rem) {
 				width: 100%;
+				justify-content: center;
 			}
 		}
 	}
@@ -106,6 +107,7 @@
 		justify-content: space-evenly;
 	}
 
+	/* MOBILE */
 	@media screen and (max-width: 100rem) {
 		.visible {
 			opacity: 0;
@@ -132,13 +134,11 @@
 		nav {
 			opacity: 1;
 			visibility: visible;
-			height: 100%;
 			transition: 0.3s;
+			height: 88%;
 
 			& ul {
-				height: 100%;
 				flex-direction: column;
-
 				width: 100%;
 
 				& li {
