@@ -1,4 +1,5 @@
 <script lang="ts">
+	// Icons
 	import {
 		faBrain,
 		faCode,
@@ -9,39 +10,41 @@
 	import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 	// My components
-	import Switch from "./Switch.svelte";
-	import NavItem from "./NavItem.svelte";
+	import { LinkItem } from "$models/entities/LinkItem";
+	import Switch from "$lib/SwitchMode.svelte";
+	import NavItem from "$lib/NavItem.svelte";
+	import MenuButton from "$lib/MenuButton.svelte";
 
 	// Anchor and SVG
-	const menuItems = [
-		{ label: "Home", icon: faHome },
-		{ label: "Projects", icon: faCode },
-		{ label: "Skills", icon: faBrain },
-		{ label: "Contact", icon: faEnvelope },
-		{ label: "Blog", icon: faFeather },
-		{ label: "Github", icon: faGithub },
-		{ label: "Linkedin", icon: faLinkedin }
-	];
+	const home = new LinkItem("Home", faHome, "#start");
+	const projects = new LinkItem("Projects", faCode, "#projects");
+	const skills = new LinkItem("Skills", faBrain, "#skills");
+	const contact = new LinkItem("Contact", faEnvelope, "#contact");
+	const blog = new LinkItem("Blog", faFeather, "/blog");
+	const github = new LinkItem("Github", faGithub, "github.com/devlulcas");
+	const linkedin = new LinkItem("Linkedin", faLinkedin, "linkedin.com/in/lucasalvesregodev/");
 
+	const menuItems = [home, projects, skills, contact, blog, github, linkedin];
+
+	// Used for mobile menu toggle
 	let mobileMode = true;
+
+	function toggleMobileMode(event: Event) {
+		mobileMode = !mobileMode;
+	}
 </script>
 
 <header class:collapsed={mobileMode}>
-	<div class="logo">
-		<button on:click={() => (mobileMode = !mobileMode)}>
-			<div>-</div>
-			<div>-</div>
-			<div>-</div>
-		</button>
-
-		<img src="/favicon.svg" alt="logo" title="Me" />
+	<div class="basic">
+		<MenuButton on:click={toggleMobileMode} visible={mobileMode} />
+		<img class="logo" src="/favicon.svg" alt="logo" title="Me" />
 	</div>
 
 	<nav class:visible={mobileMode}>
 		<ul>
-			{#each menuItems as item}
+			{#each menuItems as { label, icon, href }}
 				<li>
-					<NavItem label={item.label} icon={item.icon} />
+					<NavItem {label} {icon} {href} />
 				</li>
 			{/each}
 		</ul>
@@ -49,13 +52,12 @@
 
 	<div class="switchs" class:visible={mobileMode}>
 		<Switch />
-		<Switch />
 	</div>
 </header>
 
 <style lang="postcss">
 	header,
-	.logo,
+	.basic,
 	nav,
 	ul,
 	li,
@@ -71,79 +73,40 @@
 		padding: 0 1.5rem;
 		background: var(--primary);
 
-		& .logo {
+		& .basic {
 			min-width: 2rem;
 			width: 10%;
 			align-items: center;
-			outline: 1px solid green;
-			& button {
-				display: none;
-				z-index: 10;
-			}
 		}
 
 		& nav {
 			width: 100%;
 			align-items: center;
 			justify-content: center;
-			outline: 1px solid red;
 		}
 
 		& .switchs {
 			width: 10%;
 			align-items: center;
 			justify-content: end;
-			outline: 1px solid green;
+
+			@media screen and (max-width: 100rem) {
+				width: 100%;
+			}
 		}
 	}
 
-	img {
+	header .logo {
 		height: 2.5rem;
 	}
 
-	ul {
+	header ul {
 		width: 50%;
 		height: 100%;
 		justify-content: space-evenly;
 	}
 
 	@media screen and (max-width: 100rem) {
-		header {
-			height: 100vh;
-			flex-direction: column;
-			align-items: center;
-			transition: 0.3s;
-		}
-
-		header .logo {
-			width: 100%;
-			display: flex;
-			justify-content: space-between;
-
-			& button {
-				display: block;
-				width: 4rem;
-			}
-		}
-
-		nav {
-			opacity: 1;
-			visibility: visible;
-			height: 100%;
-			transition: 0.3s;
-			& ul {
-				height: 100%;
-				flex-direction: column;
-				outline: 1px solid orange;
-				width: 100%;
-
-				& li {
-					outline: 1px solid yellow;
-					justify-content: center;
-				}
-			}
-		}
-
 		.visible {
 			opacity: 0;
 			visibility: hidden;
@@ -152,6 +115,36 @@
 
 		.collapsed {
 			height: var(--header-height);
+		}
+		header {
+			height: 100vh;
+			flex-direction: column;
+			align-items: center;
+			transition: 0.3s;
+		}
+
+		header .basic {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		nav {
+			opacity: 1;
+			visibility: visible;
+			height: 100%;
+			transition: 0.3s;
+
+			& ul {
+				height: 100%;
+				flex-direction: column;
+
+				width: 100%;
+
+				& li {
+					justify-content: center;
+				}
+			}
 		}
 	}
 </style>
