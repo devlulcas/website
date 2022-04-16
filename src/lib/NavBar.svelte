@@ -136,7 +136,7 @@
 			opacity: 1;
 			visibility: visible;
 			transition: 0.3s;
-			height: 88%;
+			height: 83%;
 
 			& ul {
 				flex-direction: column;
