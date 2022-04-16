@@ -5,9 +5,10 @@
 	// Props
 	export let icon: IconDefinition;
 	export let label: string;
+	export let href: string;
 </script>
 
-<a href="/">
+<a {href}>
 	<Fa {icon} aria-label={label} />
 	{label}
 </a>
@@ -29,9 +30,10 @@
 		}
 
 		@media screen and (max-width: 100rem) {
+			justify-content: center;
+			width: 100%;
 			gap: 1rem;
 			padding: 1rem;
-			outline: 1px solid violet;
 			font-weight: 1000;
 			color: var(--on-primary);
 			font-size: clamp(2rem, 4vh, 3rem);
