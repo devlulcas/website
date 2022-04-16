@@ -22,11 +22,13 @@
 
 <style lang="postcss">
 	.toggle {
+		--toggle-height: 2rem;
+		--toggle-width: calc(2 * var(--toggle-height));
 		display: block;
 		overflow: hidden;
 		position: relative;
-		width: 4.2rem;
-		height: 2.4rem;
+		width: var(--toggle-width);
+		height: var(--toggle-height);
 		border-radius: 4rem;
 
 		&:focus-within {
@@ -64,12 +66,14 @@
 
 		&::before,
 		&::after {
+			--pseudo-padding: 0.2rem;
+			--option-size: calc(var(--toggle-height) - 2 * var(--pseudo-padding));
 			content: "";
 			position: absolute;
-			top: 0.2rem;
-			left: 0.2rem;
-			width: 2rem;
-			height: 2rem;
+			top: var(--pseudo-padding);
+			left: var(--pseudo-padding);
+			width: var(--option-size);
+			height: var(--option-size);
 			border-radius: 50%;
 			transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 			background-position: center;
@@ -95,7 +99,7 @@
 		}
 
 		& + .knobs:after {
-			top: 0.2rem;
+			top: var(--pseudo-padding);
 		}
 
 		& ~ .layer {
