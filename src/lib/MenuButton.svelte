@@ -25,6 +25,9 @@
 	.menu__button {
 		width: 4rem;
 		overflow: hidden;
+		@media screen and (min-width: 70rem) {
+			display: none;
+		}
 	}
 
 	#menu_checkbox {

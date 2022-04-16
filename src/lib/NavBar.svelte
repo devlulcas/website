@@ -90,7 +90,7 @@
 			align-items: center;
 			justify-content: end;
 
-			@media screen and (max-width: 100rem) {
+			@media screen and (max-width: 70rem) {
 				width: 100%;
 				justify-content: center;
 			}
@@ -108,7 +108,7 @@
 	}
 
 	/* MOBILE */
-	@media screen and (max-width: 100rem) {
+	@media screen and (max-width: 70rem) {
 		.visible {
 			opacity: 0;
 			visibility: hidden;

@@ -41,7 +41,7 @@
 			color: var(--special);
 		}
 
-		@media screen and (max-width: 100rem) {
+		@media screen and (max-width: 70rem) {
 			justify-content: center;
 			width: 100%;
 			gap: 1rem;
