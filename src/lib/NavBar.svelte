@@ -66,6 +66,7 @@
 	}
 
 	header {
+		z-index: 50;
 		top: 0;
 		position: sticky;
 		height: var(--header-height);
