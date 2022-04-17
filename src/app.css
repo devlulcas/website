@@ -3,6 +3,12 @@
 }
 
 :root {
+	--header-height: 3.5rem;
+
+	/* * SCROLL */
+	scroll-behavior: smooth;
+	scroll-padding: var(--header-height) 0 0 0;
+
 	/* * PRIMARY COLORS */
 	--primary-h: 231;
 	--primary-s: 13%;
@@ -62,4 +68,11 @@ html.light {
 	--on-secondary-h: var(--primary-h);
 	--on-secondary-s: var(--primary-s);
 	--on-secondary-l: var(--primary-l);
+}
+
+.piece {
+	height: 100vh;
+	background-color: var(--primary);
+	color: var(--on-primary);
+	scroll-snap-stop: always;
 }
