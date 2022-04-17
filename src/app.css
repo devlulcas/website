@@ -54,15 +54,23 @@ html.light {
 	--primary-s: 13%;
 	--primary-l: 97%;
 
+	--primary: hsl(var(--primary-h) var(--primary-s) var(--primary-l));
+	--primary-dark: hsl(var(--primary-h) var(--primary-s) 60%);
+	--primary-light: hsl(var(--primary-h) var(--primary-s) 99%);
+
 	/* * ON PRIMARY COLORS */
 	--on-primary-h: 0;
 	--on-primary-s: 0%;
-	--on-primary-l: 10%;
+	--on-primary-l: 20%;
 
 	/* * SECONDARY COLORS */
 	--secondary-h: 43;
 	--secondary-s: 100%;
 	--secondary-l: 54%;
+
+	--secondary: hsl(var(--secondary-h) var(--secondary-s) var(--secondary-l));
+	--secondary-dark: hsl(var(--secondary-h) var(--secondary-s) 5%);
+	--secondary-light: hsl(var(--secondary-h) var(--secondary-s) 31%);
 
 	/* * ON SECONDARY COLORS */
 	--on-secondary-h: var(--primary-h);
@@ -71,7 +79,7 @@ html.light {
 }
 
 .piece {
-	height: 100vh;
+	height: calc(100vh - var(--header-height));
 	background-color: var(--primary);
 	color: var(--on-primary);
 	scroll-snap-stop: always;
