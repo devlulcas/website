@@ -66,12 +66,12 @@
 	}
 
 	header {
-		--header-height: 3.5rem;
 		top: 0;
 		position: sticky;
 		height: var(--header-height);
 		padding: 0 1.5rem;
 		background: var(--primary);
+		box-shadow: 0 0 1rem 0.1rem var(--primary-dark);
 
 		& .basic {
 			min-width: 2rem;
