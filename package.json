@@ -41,6 +41,7 @@
 	"dependencies": {
 		"@fortawesome/free-brands-svg-icons": "^6.1.1",
 		"@fortawesome/free-regular-svg-icons": "^6.1.1",
-		"@fortawesome/free-solid-svg-icons": "^6.1.1"
+		"@fortawesome/free-solid-svg-icons": "^6.1.1",
+		"svelte-seo": "^1.4.0"
 	}
 }
