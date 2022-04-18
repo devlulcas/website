@@ -1,3 +1,3 @@
-<section id="skills" class="piece">
-	<h1>Skills</h1>
+<section id="skills" class="piece piece--padding">
+	<h2 class="piece__title">SKILLS</h2>
 </section>

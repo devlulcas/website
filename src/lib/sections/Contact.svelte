@@ -1,3 +1,3 @@
-<section id="contact" class="piece">
-	<h1>Contact</h1>
+<section id="contact" class="piece piece--padding">
+	<h2 class="piece__title">CONTACT</h2>
 </section>
