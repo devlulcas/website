@@ -63,7 +63,7 @@
 	}
 
 	.content__abstract {
-		font-size: 1.2rem;
+		font-size: 2rem;
 		margin-bottom: 10%;
 
 		& strong {
@@ -71,8 +71,9 @@
 			font-size: 5rem;
 		}
 
-		@media screen and (min-width: 70rem) {
-			font-size: 2rem;
+		@media screen and (max-width: 70rem) {
+			font-size: 1.2rem;
+			margin-bottom: 5%;
 		}
 	}
 </style>
