@@ -84,3 +84,14 @@ html.light {
 	color: var(--on-primary);
 	scroll-snap-stop: always;
 }
+
+.piece--padding {
+	padding: 1rem;
+}
+
+.piece__title {
+	font-size: 3rem;
+	color: var(--secondary);
+	text-align: center;
+	font-weight: 900;
+}
