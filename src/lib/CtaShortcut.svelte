@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { faHeart } from "@fortawesome/free-solid-svg-icons";
+	import { faArrowRight, faHeart } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa/src/fa.svelte";
 </script>
 
@@ -15,7 +15,7 @@
 	<span> or maybe </span>
 
 	<span>
-		<a href="/#projects">see what I've done</a>
+		<a href="/#projects">see what I've done <Fa icon={faArrowRight} /> </a>
 	</span>
 </div>
 
@@ -28,6 +28,12 @@
 		font-size: 1.2rem;
 		gap: 1ch;
 		font-weight: bold;
+
+		@media screen and (max-width: 70rem) {
+			flex-direction: column;
+			font-size: 1rem;
+			margin-bottom: 1rem;
+		}
 	}
 
 	a {
@@ -45,6 +51,10 @@
 			background: var(--secondary);
 			position: absolute;
 			transition: all 0.4s ease-in-out;
+		}
+
+		@media screen and (max-width: 70rem) {
+			font-size: 1rem;
 		}
 	}
 
@@ -72,6 +82,10 @@
 
 			&:hover {
 				animation: shakeWhileMovingDown 0.5s infinite;
+			}
+
+			@media screen and (max-width: 70rem) {
+				border-radius: 0.8rem;
 			}
 		}
 	}
