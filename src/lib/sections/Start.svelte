@@ -63,7 +63,7 @@
 	}
 
 	.content__abstract {
-		font-size: 2rem;
+		font-size: min(3.5vh, 2vw);
 		margin-bottom: 10%;
 
 		& strong {
