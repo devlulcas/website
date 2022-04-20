@@ -9,8 +9,7 @@
 <style lang="postcss">
 	article {
 		border-radius: 1rem;
-		min-width: 8rem;
-		width: min(25vh, 25vw);
+		height: min(22vh, 25vw);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -19,7 +18,8 @@
 		border: 0.1rem solid var(--on-primary);
 
 		@media screen and (max-width: 70rem) {
-			flex: 0 0 20%;
+			height: max-content;
+			padding: 3vw;
 		}
 	}
 </style>

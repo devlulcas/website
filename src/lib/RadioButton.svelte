@@ -3,21 +3,17 @@
 	export let name: string;
 	export let checked = false;
 	export let value: any;
+	export let group: string;
 </script>
 
 <label>
-	<input type="radio" id={name} {name} {value} {checked} on:change />
+	<input bind:group type="radio" id={name} {name} {value} {checked} />
 	<p class="label">
 		{label}
 	</p>
 </label>
 
 <style lang="postcss">
-	div {
-		padding: 0.8rem 1.3rem;
-		width: fit-content;
-	}
-
 	input[type="radio"] {
 		display: none;
 		&:checked {
