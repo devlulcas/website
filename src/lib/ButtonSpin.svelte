@@ -6,41 +6,48 @@
 	export let label: string;
 </script>
 
-<a aria-label={label} class="more-info" {href} title={label}>
-	<Fa icon={faEllipsis} />
+<a
+	aria-label={label}
+	class="more-info"
+	{href}
+	title={label}
+	target="_blank"
+	rel="noopener noreferrer"
+>
+	<div class="icon">
+		<Fa class="a" icon={faEllipsis} />
+	</div>
 </a>
 
 <style lang="postcss">
 	a {
-		color: var(--black);
+		color: var(--primary);
 	}
 
 	.more-info {
-		font-size: 5rem;
-		width: 6rem;
-		height: 6rem;
-		border-radius: 50%;
-		background: var(--white);
-		border: 0.2rem solid var(--black);
-		box-shadow: 0 0.5rem var(--black);
+		height: 95%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		margin-right: 0;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+		font-size: 8vh;
+		background: var(--on-primary);
+		border: 0.2rem solid var(--primary);
+		box-shadow: 0 0.5rem var(--primary);
 		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
 	}
 
-	.more-info:hover {
-		transform: scale(1.1);
-	}
-
-	.more-info:hover svg {
-		transform: rotate(360deg);
-		color: var(--black);
-	}
-
-	.more-info svg {
-		margin-right: 0;
+	.icon {
+		display: flex;
 		transition: transform 1s;
+
+		&:hover {
+			transform: rotate(360deg);
+		}
 	}
 </style>
