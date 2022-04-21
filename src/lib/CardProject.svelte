@@ -1,137 +1,122 @@
 <script lang="ts">
-	import type { Project } from "$/models/entities/Project";
+	import type { ProjectInterface } from "$/models/interfaces/Project";
 
 	import ButtonSpin from "$lib/ButtonSpin.svelte";
 	import Techpins from "$lib/TechPins.svelte";
+	import { faGithub } from "@fortawesome/free-brands-svg-icons";
+	import { faCode, faGlobe } from "@fortawesome/free-solid-svg-icons";
+	import Fa from "svelte-fa/src/fa.svelte";
 
-	export let project: Project;
+	export let project: ProjectInterface;
+
+	const previewImage = {
+		image: `background-image: url(${project.previewImage.src});`,
+		alt: `image of ${project.previewImage.alt}`
+	};
 </script>
 
 <svelte:head>
 	<link rel="prefetch" as="image" href={project.previewImage.src} />
 </svelte:head>
 
-<div class="card">
-	<div class="image-container">
-		<img src={project.previewImage.src} alt={project.previewImage.alt} />
-		<Techpins techs={project.techs} />
-	</div>
-	<section>
+<article class="card">
+	<figure class="image-container" aria-label={previewImage.alt} style={previewImage.image} />
+
+	<section class="content">
+		<h3>{project.name}</h3>
+
 		<div class="about">
-			<h2>{project.name}</h2>
-			<div class="information-container">
-				<p>
-					<i class="fa fa-code" />
-					{project.description}
-				</p>
-				<a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-					<i class="fas fa-globe" />
+			<div class="about__information">
+				<a
+					class="url"
+					href={project.liveUrl}
+					title="Project website"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Fa icon={faGlobe} />
 					Live
 				</a>
-				<a href={project.codeUrl} target="_blank" rel="noopener noreferrer">
-					<i class="fab fa-github" />
+
+				<a
+					class="url"
+					href={project.codeUrl}
+					title="Project source code"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Fa icon={faGithub} />
 					Github
 				</a>
 			</div>
+
+			<ButtonSpin href={project.liveUrl} label="More information" />
 		</div>
-		<ButtonSpin href={project.liveUrl} label="More information" />
 	</section>
-</div>
+</article>
 
 <style lang="postcss">
 	.card {
-		width: 100%;
-		height: 100%;
+		height: 90%;
+		aspect-ratio: 1/1;
+		display: block;
 		border-radius: 2rem;
-		overflow: hidden;
-		background: var(--white);
-		border: 0.2rem solid var(--black);
-		box-shadow: 0.5rem 0.8rem var(--black);
+		background: var(--on-primary);
+
+		border: 0.2rem solid var(--primary-dark);
+		box-shadow: 0.4rem 0.4rem var(--primary-dark);
 		transition: transform 0.2s;
+		overflow: hidden;
+		color: var(--primary);
 
 		&:hover {
-			transform: scale(1.1);
+			transform: scale(1.03);
+		}
+
+		@media screen and (min-width: 70rem) {
+			height: 40vh;
 		}
 	}
 
 	.image-container {
-		width: 100%;
 		height: 50%;
-		overflow: hidden;
 		position: relative;
-		border-bottom: 0.2rem solid var(--black);
-		& img {
-			position: absolute;
-			height: 100%;
+		background-size: cover;
+		background-position: top;
+		transition: 1s all;
+
+		&:hover {
+			background-position: bottom;
+			animation: slide 2s;
 		}
 	}
 
-	section {
+	.content {
 		height: 50%;
-		padding: 1rem 2rem;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: center;
+		padding: 1rem;
 	}
-	h2 {
+	h3 {
 		text-transform: capitalize;
-		font-size: 3rem;
-		margin: 1rem 0;
+		font-size: 3.5vh;
+		font-weight: 700;
 	}
 
-	p {
-		margin-bottom: 1rem;
-	}
+	.about {
+		display: flex;
+		height: 65%;
+		font-size: min(2.5vh, 5vw);
 
-	p,
-	a,
-	i {
-		color: var(--black);
-	}
-
-	p,
-	a {
-		font-size: 1.5rem;
-		font-family: "Montserrat", sans-serif;
-	}
-	a,
-	i {
-		margin-right: 1rem;
-	}
-	i {
-		width: 1ch;
-	}
-	a:hover {
-		color: var(--dark-gray);
-	}
-	a:hover i {
-		color: var(--dark-gray);
-	}
-	@media screen and (max-width: 75rem) {
-		img {
-			position: absolute;
-			width: 165%;
-		}
-		.card {
-			height: 90%;
-		}
-		.card:hover {
-			transform: scale(1.01);
-		}
-		section {
-			justify-content: center;
-		}
-		.about {
+		& .about__information {
 			width: 100%;
 		}
-		h2 {
-			font-size: 2rem;
-			text-align: center;
-			margin: 0rem 0 3rem 0;
-		}
-		p {
-			margin-bottom: 2rem;
-		}
+	}
+
+	.url {
+		text-decoration: none;
+		color: var(--primary);
+		display: flex;
+		align-items: center;
+		height: 50%;
+		gap: 0.8ch;
 	}
 </style>
