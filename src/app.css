@@ -79,7 +79,7 @@ html.light {
 }
 
 .piece {
-	height: calc(100vh - var(--header-height));
+	min-height: calc(100vh - var(--header-height));
 	background-color: var(--primary);
 	color: var(--on-primary);
 	scroll-snap-stop: always;
