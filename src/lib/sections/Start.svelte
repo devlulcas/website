@@ -36,7 +36,7 @@
 	.banner,
 	.content {
 		width: 100%;
-		height: 100%;
+		min-height: 100%;
 	}
 
 	.banner {
@@ -50,16 +50,26 @@
 			width: auto;
 			transform: rotate(35deg) translate(-20%, 25%);
 		}
+
+		@media screen and (max-width: 70rem) {
+			min-height: 30vh;
+		}
 	}
 
 	.content {
 		background: var(--primary-light);
-		display: grid;
-		place-items: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media screen and (max-width: 70rem) {
+			align-items: start;
+			height: 70vh;
+		}
 	}
 
 	.content__container {
-		width: clamp(70%, 80%, 100%);
+		width: clamp(80%, 90%, 100%);
 	}
 
 	.content__abstract {
@@ -73,7 +83,11 @@
 
 		@media screen and (max-width: 70rem) {
 			font-size: 1.2rem;
-			margin-bottom: 5%;
+			margin-bottom: 3%;
+
+			& strong {
+				font-size: 3rem;
+			}
 		}
 	}
 </style>
