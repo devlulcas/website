@@ -52,6 +52,9 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+		@media screen and (max-width: 70rem) {
+			gap: 1rem;
+		}
 	}
 
 	.skills__options,
