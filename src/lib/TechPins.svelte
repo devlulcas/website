@@ -13,21 +13,12 @@
 <!--CSS-->
 <style lang="postcss">
 	ul {
-		opacity: 0;
-		transition: opacity ease 0.5s;
 		width: 100%;
 		height: 100%;
 		display: flex;
 		flex-wrap: wrap;
-		align-items: flex-end;
 		justify-content: space-around;
-		position: absolute;
-		z-index: 1;
 		bottom: 0;
-
-		&:hover {
-			opacity: 1;
-		}
 	}
 
 	li {
@@ -38,13 +29,14 @@
 		flex-grow: 1;
 		text-align: center;
 		color: var(--primary-dark);
-		padding: 1rem 2rem;
-		font-size: 1.5rem;
+		padding: 0.8rem 2rem;
+		font-size: 1.5vh;
 		border-radius: 2rem;
 		text-transform: uppercase;
 		font-weight: 600;
 
-		@media screen and (max-width: 75rem) {
+		@media screen and (max-width: 70rem) {
+			padding: 0.4rem 1rem;
 			font-size: 1rem;
 		}
 	}
