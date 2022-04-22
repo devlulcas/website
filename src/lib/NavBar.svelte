@@ -24,7 +24,7 @@
 	const github = new LinkItem("Github", faGithub, "github.com/devlulcas");
 	const linkedin = new LinkItem("Linkedin", faLinkedin, "linkedin.com/in/lucasalvesregodev/");
 
-	const menuItems = [home, projects, skills, contact, blog, github, linkedin];
+	const menuItems = [home, skills, projects, contact, blog, github, linkedin];
 
 	// Used for mobile menu toggle
 	let mobileMode = true;
