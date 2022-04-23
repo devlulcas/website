@@ -60,6 +60,7 @@
 		& p {
 			font-size: 2vh;
 			text-indent: 3ch;
+			font-weight: 700;
 		}
 
 		& .project__tech {
