@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CardProject from "$lib/CardProject.svelte";
+	import CardProject from "$/lib/ProjectCard.svelte";
 	import MainProject from "../MainProject.svelte";
 
 	const test = {

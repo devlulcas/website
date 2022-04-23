@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { ProjectInterface } from "$/models/interfaces/Project";
 
-	import CardProject from "$lib/CardProject.svelte";
+	import CardProject from "$/lib/ProjectCard.svelte";
 	import TechPins from "$lib/TechPins.svelte";
 
 	export let project: ProjectInterface;
