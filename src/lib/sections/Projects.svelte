@@ -26,7 +26,7 @@
 	};
 </script>
 
-<section id="projects" class="piece piece--padding projects">
+<section id="projects" class="piece projects">
 	<h2 class="piece__title">PROJECTS</h2>
 
 	<div class="project__container">
@@ -73,7 +73,6 @@
 		gap: 2rem;
 		align-items: center;
 		overflow-x: hidden;
-		padding: 0;
 
 		@media screen and (max-width: 70rem) {
 			gap: 1rem;
