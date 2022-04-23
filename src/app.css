@@ -42,7 +42,8 @@
 	--on-secondary: hsl(var(--on-secondary-h) var(--on-secondary-s) var(--on-secondary-l));
 
 	/* * EXTRA COLORS */
-	--special: #ff9692;
+	/* --special: #ff9692; */
+	--special: var(--secondary);
 	--brand: #1947e5;
 	--switch-light: #1947e5;
 	--switch-dark: var(--secondary);
@@ -94,4 +95,23 @@ html.light {
 	color: var(--secondary);
 	text-align: center;
 	font-weight: 900;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--primary-light);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--secondary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--on-primary);
 }
