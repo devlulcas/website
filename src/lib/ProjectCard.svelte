@@ -2,9 +2,8 @@
 	import type { ProjectInterface } from "$/models/interfaces/Project";
 
 	import ButtonSpin from "$lib/ButtonSpin.svelte";
-	import Techpins from "$lib/TechPins.svelte";
 	import { faGithub } from "@fortawesome/free-brands-svg-icons";
-	import { faCode, faGlobe } from "@fortawesome/free-solid-svg-icons";
+	import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa/src/fa.svelte";
 
 	export let project: ProjectInterface;
@@ -57,7 +56,7 @@
 
 <style lang="postcss">
 	.card {
-		height: 90%;
+		min-width: 90%;
 		aspect-ratio: 1/1;
 		display: block;
 		border-radius: 2rem;
@@ -74,7 +73,8 @@
 		}
 
 		@media screen and (min-width: 70rem) {
-			height: 40vh;
+			height: 100%;
+			min-width: 40vh;
 		}
 	}
 
