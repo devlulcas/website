@@ -57,6 +57,7 @@
 			border: none;
 			padding-left: 0.5rem;
 			padding: 0.6rem 0.5rem 0.6rem 1rem;
+			color: var(--primary);
 		}
 	}
 
