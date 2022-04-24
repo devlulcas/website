@@ -82,12 +82,12 @@
 		}
 
 		&::before {
-			background-image: url("https://cdn-icons-png.flaticon.com/512/230/230994.png");
+			background-image: url("/night.png");
 		}
 
 		&::after {
 			top: -3rem;
-			background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYZp0EnDbCF-BMzxsEjkyrwfXfNBLRQqvdRzAazJHycSdhg_ihXkUvY22F9uzWKCmlAiI&usqp=CAU");
+			background-image: url("/sunny.png");
 			right: 0.2rem;
 			left: auto;
 		}
