@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa/src/fa.svelte";
+
+	import { content } from "$stores/Translation";
 </script>
 
 <div class="button-container">
 	<button>
-		Send e-mail
+		{$content.contact.submitButton}
 		<Fa icon={faPaperPlane} />
 	</button>
 	<div class="divider" />

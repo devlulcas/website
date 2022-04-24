@@ -2,39 +2,40 @@
 	import Input from "$lib/Input.svelte";
 	import { faMailBulk, faMessage, faSignature } from "@fortawesome/free-solid-svg-icons";
 	import Submit from "$lib/Submit.svelte";
+	import { content } from "$stores/Translation";
 </script>
 
 <form action="" method="post">
 	<Input
 		icon={faSignature}
-		label="your name:"
+		label={$content.contact.fields.nameLabel}
 		type="text"
 		name="name"
-		placeholder="How do you want to be called?"
+		placeholder={$content.contact.fields.nameLabel}
 	/>
 
 	<Input
 		icon={faMailBulk}
-		label="your email:"
+		label={$content.contact.fields.mailLabel}
 		type="email"
 		name="email"
-		placeholder="What's your e-mail?"
+		placeholder={$content.contact.fields.mailLabel}
 	/>
 
 	<Input
 		icon={faMessage}
-		label="subject:"
+		label={$content.contact.fields.subjectLabel}
 		type="text"
 		name="subject"
-		placeholder="What's the subject?"
+		placeholder={$content.contact.fields.subjectLabel}
 	/>
 
 	<Input
 		icon={faMessage}
-		label="leave a message:"
+		label={$content.contact.fields.messageLabel}
 		type="area"
 		name="message"
-		placeholder="leave a message"
+		placeholder={$content.contact.fields.messageLabel}
 	/>
 
 	<Submit />

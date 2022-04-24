@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { content } from "$stores/Translation";
+
 	import { faGithubAlt, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 	import { faHeart, faMailBulk, faPhone } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa/src/fa.svelte";
@@ -43,7 +45,7 @@
 
 	<p>
 		<Fa icon={faHeart} />
-		made with love and sveltkit
+		{$content.footer.message}
 	</p>
 </footer>
 

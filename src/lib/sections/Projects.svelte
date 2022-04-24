@@ -2,6 +2,7 @@
 	import ProjectCard from "$lib/ProjectCard.svelte";
 	import MainProject from "$lib/MainProject.svelte";
 	import SideScroll from "$lib/SideScroll.svelte";
+	import { content } from "$stores/Translation";
 
 	const test = {
 		name: "test",
@@ -27,31 +28,25 @@
 </script>
 
 <section id="projects" class="piece projects">
-	<h2 class="piece__title">PROJECTS</h2>
+	<h2 class="piece__title">{$content.projects.title}</h2>
 
 	<div class="project__container">
 		<!-- Main projects -->
 		<MainProject id="first" project={test}>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet accusamus odit architecto quam
-			ullam. Placeat, molestiae, natus quia consectetur quod modi quaerat cumque voluptas dolores
-			molestias, assumenda eaque omnis nostrum et aut temporibus culpa dolorum maxime eos?
+			{$content.projects.main.first}
 		</MainProject>
 
 		<MainProject id="second" project={test}>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet accusamus odit architecto quam
-			ullam. Placeat, molestiae, natus quia consectetur quod modi quaerat cumque voluptas dolores
-			molestias, assumenda eaque omnis nostrum et aut temporibus culpa dolorum maxime eos?
+			{$content.projects.main.second}
 		</MainProject>
 
 		<MainProject id="third" project={test}>
-			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet accusamus odit architecto quam
-			ullam. Placeat, molestiae, natus quia consectetur quod modi quaerat cumque voluptas dolores
-			molestias, assumenda eaque omnis nostrum et aut temporibus culpa dolorum maxime eos?
+			{$content.projects.main.third}
 		</MainProject>
 		<!-- Main projects -->
 	</div>
 
-	<h3 class="piece__title piece__title--h3">OTHER PROJECTS</h3>
+	<h3 class="piece__title piece__title--h3">{$content.projects.other}</h3>
 	<SideScroll velocity={2}>
 		<ProjectCard project={test} />
 		<ProjectCard project={test} />

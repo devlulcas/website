@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { faArrowRight, faHeart } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa/src/fa.svelte";
+
+	import { content } from "$stores/Translation";
 </script>
 
 <!--HTML-->
@@ -8,14 +10,14 @@
 	<span class="button">
 		<a href="/#contact">
 			<Fa icon={faHeart} />
-			Contact me
+			{$content.cta.contact}
 		</a>
 	</span>
 
-	<span> or maybe </span>
+	<span> {$content.cta.connection} </span>
 
 	<span>
-		<a href="/#projects">see what I've done <Fa icon={faArrowRight} /> </a>
+		<a href="/#projects"> {$content.cta.projects} <Fa icon={faArrowRight} /> </a>
 	</span>
 </div>
 

@@ -1,10 +1,11 @@
 <script lang="ts">
-	import type { ProjectInterface } from "$/models/interfaces/Project";
-
 	import ButtonSpin from "$lib/ButtonSpin.svelte";
 	import { faGithub } from "@fortawesome/free-brands-svg-icons";
 	import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 	import Fa from "svelte-fa/src/fa.svelte";
+
+	import type { ProjectInterface } from "$models/interfaces/Project";
+	import { content } from "$stores/Translation";
 
 	export let project: ProjectInterface;
 
@@ -29,7 +30,7 @@
 				<a
 					class="url"
 					href={project.liveUrl}
-					title="Project website"
+					title={$content.projectCard.liveTitle}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -40,7 +41,7 @@
 				<a
 					class="url"
 					href={project.codeUrl}
-					title="Project source code"
+					title={$content.projectCard.codeTitle}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -49,7 +50,7 @@
 				</a>
 			</div>
 
-			<ButtonSpin href={project.liveUrl} label="More information" />
+			<ButtonSpin href={project.liveUrl} label={$content.projectCard.more} />
 		</div>
 	</section>
 </article>

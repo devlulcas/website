@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { content } from "$stores/Translation";
+
 	import CtaShortcut from "$lib/CtaShortcut.svelte";
 </script>
 
@@ -10,12 +12,8 @@
 	<section class="content">
 		<div class="content__container">
 			<p class="content__abstract">
-				<strong>Olá</strong>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque adipisci delectus quasi deleniti
-				atque velit, pariatur reprehenderit repellat placeat iusto? Sit numquam magnam placeat magni
-				voluptatem adipisci blanditiis veritatis praesentium harum obcaecati, at eos dicta voluptatum
-				dolore ab perferendis nulla fugit, soluta impedit. Porro qui deserunt ex quia sit commodi sed
-				earum magni tempore velit vitae unde temporibus, dolor quas a corporis totam architecto.
+				<strong>{$content.start.salutation}</strong>
+				{$content.start.presentation}
 			</p>
 
 			<CtaShortcut />

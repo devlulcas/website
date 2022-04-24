@@ -14,13 +14,14 @@
 	import Switch from "$lib/SwitchMode.svelte";
 	import NavItem from "$lib/NavItem.svelte";
 	import MenuButton from "$lib/MenuButton.svelte";
+	import { content } from "$stores/Translation";
 
 	// Anchor and SVG
-	const home = new LinkItem("Home", faHome, "/#start");
-	const projects = new LinkItem("Projects", faCode, "/#projects");
-	const skills = new LinkItem("Skills", faBrain, "/#skills");
-	const contact = new LinkItem("Contact", faEnvelope, "/#contact");
-	const blog = new LinkItem("Blog", faFeather, "/blog");
+	const home = new LinkItem($content.nav.home, faHome, "/#start");
+	const projects = new LinkItem($content.nav.projects, faCode, "/#projects");
+	const skills = new LinkItem($content.nav.skills, faBrain, "/#skills");
+	const contact = new LinkItem($content.nav.contact, faEnvelope, "/#contact");
+	const blog = new LinkItem($content.nav.blog, faFeather, "/blog");
 	const github = new LinkItem("Github", faGithub, "github.com/devlulcas");
 	const linkedin = new LinkItem("Linkedin", faLinkedin, "linkedin.com/in/lucasalvesregodev/");
 

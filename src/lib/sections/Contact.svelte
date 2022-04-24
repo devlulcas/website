@@ -1,14 +1,15 @@
 <script lang="ts">
 	import Footer from "$lib/Footer.svelte";
 	import Form from "$lib/Form.svelte";
+	import { content } from "$stores/Translation";
 </script>
 
 <section id="contact" class="piece contact">
-	<h2 class="piece__title">CONTACT</h2>
+	<h2 class="piece__title">{$content.contact.title}</h2>
 
 	<div class="contact">
 		<img width="75px" src="/me_transparent.png" alt="me" />
-		<h3>Let's talk!</h3>
+		<h3>{$content.contact.cta}</h3>
 		<Form />
 	</div>
 

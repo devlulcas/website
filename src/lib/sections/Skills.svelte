@@ -1,6 +1,7 @@
 <script>
-	import RadioButton from "../RadioButton.svelte";
-	import Skill from "../Skill.svelte";
+	import { content } from "$stores/Translation";
+	import RadioButton from "$lib/RadioButton.svelte";
+	import Skill from "$lib/Skill.svelte";
 
 	// Skills
 	let group = "all";
@@ -27,14 +28,34 @@
 </script>
 
 <section id="skills" class="piece piece--padding skills">
-	<h2 class="piece__title">SKILLS</h2>
+	<h2 class="piece__title">{$content.skills.title}</h2>
 
 	<div class="skills__options">
-		<RadioButton bind:group name="skills" value="all" label="See all" checked />
-		<RadioButton bind:group name="skills" value="langs" label="Programming languages" />
-		<RadioButton bind:group name="skills" value="design" label="Design" />
-		<RadioButton bind:group name="skills" value="libs" label="Frameworks and libraries" />
-		<RadioButton bind:group name="skills" value="idioms" label="Idioms" />
+		<RadioButton
+			bind:group
+			name="skills"
+			value="all"
+			label={$content.skills.categories.all}
+			checked
+		/>
+
+		<RadioButton bind:group name="skills" value="langs" label={$content.skills.categories.langs} />
+
+		<RadioButton
+			bind:group
+			name="skills"
+			value="design"
+			label={$content.skills.categories.design}
+		/>
+
+		<RadioButton bind:group name="skills" value="libs" label={$content.skills.categories.libs} />
+
+		<RadioButton
+			bind:group
+			name="skills"
+			value="idioms"
+			label={$content.skills.categories.idioms}
+		/>
 	</div>
 
 	<div class="skills__cards">
