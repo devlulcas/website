@@ -75,13 +75,14 @@
 			padding: 0.5rem 0.8rem;
 			color: var(--primary);
 			transition: transform 0.2s;
+			animation: shakeWhileMovingDown 0.5s infinite;
 
 			&::after {
 				display: none;
 			}
 
 			&:hover {
-				animation: shakeWhileMovingDown 0.5s infinite;
+				animation: jump 0.5s infinite;
 			}
 
 			@media screen and (max-width: 70rem) {
@@ -99,6 +100,20 @@
 		}
 		100% {
 			transform: rotateZ(0) scale(1.1);
+		}
+	}
+
+	@keyframes jump {
+		0% {
+			transform: translateY(10%);
+		}
+
+		50% {
+			transform: translateY(-5%);
+		}
+
+		100% {
+			transform: translateY(15%);
 		}
 	}
 </style>
