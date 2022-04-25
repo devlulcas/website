@@ -95,13 +95,13 @@
 
 	@keyframes shakeWhileMovingDown {
 		0% {
-			transform: rotateZ(0) scale(1.1);
+			transform: rotateZ(0);
 		}
 		50% {
-			transform: rotateZ(3deg) scale(1.1);
+			transform: rotateZ(3deg);
 		}
 		100% {
-			transform: rotateZ(0) scale(1.1);
+			transform: rotateZ(0);
 		}
 	}
 
