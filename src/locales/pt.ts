@@ -11,7 +11,7 @@ const nav = {
 const start = {
 	salutation: "Olá!",
 	presentation:
-		"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, quos animi dicta itaque illum voluptates ea, voluptate necessitatibus quis accusantium suscipit aliquid sequi exercitationem quod soluta laborum maxime. Eos dolorem dolorum neque voluptatibus sunt alias dicta, error quos architecto iusto minus a ullam porro reiciendis, rerum fugiat corporis, maxime asperiores amet. Dignissimos quia voluptatem laborum sit! Sunt minima pariatur excepturi!"
+		"Me chamo Lucas Alves Rego e sou um desenvolvedor web focado em criar software de qualidade para resolver problemas reais. Eu gosto de compartilhar conhecimento e sempre que possível faço isso no meu blog publicando sobre novas tecnologias e técnicas que estou aprendendo e como está sendo o processo. Trabalho tanto como desenvolvedor frontend, quanto como desenvolvedor backend. Além de programador eu também tenho um pé no mundo do design."
 };
 
 const cta = {

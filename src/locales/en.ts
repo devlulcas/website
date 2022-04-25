@@ -11,7 +11,7 @@ const nav = {
 const start = {
 	salutation: "Hi!",
 	presentation:
-		"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis, quos animi dicta itaque illum voluptates ea, voluptate necessitatibus quis accusantium suscipit aliquid sequi exercitationem quod soluta laborum maxime. Eos dolorem dolorum neque voluptatibus sunt alias dicta, error quos architecto iusto minus a ullam porro reiciendis, rerum fugiat corporis, maxime asperiores amet. Dignissimos quia voluptatem laborum sit! Sunt minima pariatur excepturi!"
+		"My name is Lucas Alves Rego and I'm a web developer focused on creating good quality software to solve real world problems. I love to share my knowledge and when It's possible I do it in my personal blog where I write about new technologies I'm learning and how is the experience/trajectory. I work as a backend developer and as a frontend developer as well. Besides being a programmer I have a little bit o knowledge in design too."
 };
 
 const cta = {
