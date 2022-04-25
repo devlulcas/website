@@ -11,10 +11,12 @@
 
 	<section class="content">
 		<div class="content__container">
-			<p class="content__abstract">
+			<div class="content__abstract">
 				<strong>{$content.start.salutation}</strong>
-				{$content.start.presentation}
-			</p>
+				<p>
+					{$content.start.presentation}
+				</p>
+			</div>
 
 			<CtaShortcut />
 		</div>
@@ -77,6 +79,10 @@
 		& strong {
 			display: block;
 			font-size: 5rem;
+		}
+
+		& p {
+			text-indent: 4ch;
 		}
 
 		@media screen and (max-width: 70rem) {
