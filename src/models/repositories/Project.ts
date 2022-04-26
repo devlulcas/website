@@ -49,17 +49,30 @@ class ProjectRepository {
 
 	private static isValid(project: any): boolean {
 		const node = project.node;
+		const name: string = node.name.toLowerCase();
 
-		// Ignora o firebird php pois foi descontinuado
-		const ignore = ["settings", "dotfiles", "configs", "firebird-php"];
+		// Ignora repositórios de configuração e / ou projetos descontinuados
+		const ignore = [
+			"settings",
+			"dotfiles",
+			"configs",
+			"firebird-php",
+			"lrl-airlines",
+			"solved-uri-algorithms",
+			"numeric-colors",
+			"rocketq",
+			"nlw-heat"
+		];
 
 		// Ignora anotações
-		if (node.name.startsWith("learning")) return false;
+		if (name.startsWith("learning")) return false;
+		if (name.startsWith("atividade")) return false;
+		if (name.startsWith("school")) return false;
 
 		// Ignora projetos vazios ou com apenas texto
 		if (!node.languages.nodes.length) return false;
 
-		if (ignore.includes(node.name)) return false;
+		if (ignore.includes(name)) return false;
 
 		return true;
 	}
