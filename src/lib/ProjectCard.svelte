@@ -85,6 +85,7 @@
 		background-size: cover;
 		background-position: top;
 		transition: 1s all;
+		outline: 2px solid var(--primary);
 
 		&:hover {
 			background-position: bottom;
@@ -119,5 +120,10 @@
 		align-items: center;
 		height: 50%;
 		gap: 0.8ch;
+		cursor: pointer;
+
+		&:hover {
+			color: var(--special);
+		}
 	}
 </style>
