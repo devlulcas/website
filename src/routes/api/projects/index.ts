@@ -11,7 +11,7 @@ export async function get({ params }): Promise<ResponseBody> {
 	{
 		viewer {
 	  		repositories(
-				first: 15
+				first: 30
 				orderBy: {field: CREATED_AT, direction: DESC}
 				privacy: PUBLIC
 	  		) {
