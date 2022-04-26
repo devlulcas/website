@@ -2,7 +2,6 @@
 	"name": "devlulcas.github.io",
 	"version": "0.0.1",
 	"scripts": {
-		"deploy:github": "svelte-kit build && touch ./build/.nojekyll && node ./gh-pages.mjs",
 		"dev": "env-cmd svelte-kit dev",
 		"build": "svelte-kit build",
 		"package": "svelte-kit package",
@@ -15,7 +14,6 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-static": "^1.0.0-next.29",
 		"@sveltejs/kit": "next",
 		"@types/react-fontawesome": "^1.6.5",
 		"@typescript-eslint/eslint-plugin": "^5.10.1",
@@ -25,7 +23,6 @@
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",
-		"gh-pages": "^3.2.3",
 		"postcss": "^8.4.5",
 		"postcss-load-config": "^3.1.1",
 		"postcss-nesting": "^10.1.3",
