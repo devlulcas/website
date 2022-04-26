@@ -9,9 +9,8 @@ class ProjectRepository {
 
 		const edges: any[] = json.data.viewer.repositories.edges;
 
-		const filteredProjects = edges.filter(
-			(repository) => !repository.node.name.startsWith("learning")
-		);
+		const filteredProjects = edges.filter(this.isValid);
+		console.log(filteredProjects);
 
 		const projects = filteredProjects.map((repository) => this.createProjectObject(repository));
 
@@ -46,6 +45,23 @@ class ProjectRepository {
 		};
 
 		return new Project(project);
+	}
+
+	private static isValid(project: any): boolean {
+		const node = project.node;
+
+		// Ignora o firebird php pois foi descontinuado
+		const ignore = ["settings", "dotfiles", "configs", "firebird-php"];
+
+		// Ignora anotações
+		if (node.name.startsWith("learning")) return false;
+
+		// Ignora projetos vazios ou com apenas texto
+		if (!node.languages.nodes.length) return false;
+
+		if (ignore.includes(node.name)) return false;
+
+		return true;
 	}
 }
 
