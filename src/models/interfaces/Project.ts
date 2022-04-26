@@ -7,7 +7,6 @@ interface ProjectInterface {
 	liveUrl: string;
 	codeUrl: string;
 	techs: string[];
-	moreImages: Image[];
 }
 
 export type { ProjectInterface };

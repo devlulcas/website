@@ -8,13 +8,16 @@ class Project implements ProjectInterface {
 	liveUrl: string;
 	codeUrl: string;
 	techs: string[];
-	moreImages: Image[];
 
 	constructor(projectData: any) {
 		this.name = projectData.name;
 		this.description = projectData.description;
-		this.previewImage.src = projectData.previewImage.src;
-		this.previewImage.alt = projectData.previewImage.alt;
+
+		this.previewImage = {
+			src: projectData.previewImage.src,
+			alt: projectData.previewImage.alt
+		};
+
 		this.liveUrl = projectData.liveUrl;
 		this.codeUrl = projectData.codeUrl;
 	}

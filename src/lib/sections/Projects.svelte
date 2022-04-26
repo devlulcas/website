@@ -1,8 +1,7 @@
 <script lang="ts">
-	import ProjectCard from "$lib/ProjectCard.svelte";
 	import MainProject from "$lib/MainProject.svelte";
-	import SideScroll from "$lib/SideScroll.svelte";
 	import { content } from "$stores/Translation";
+	import ProjectsList from "../ProjectsList.svelte";
 
 	const test = {
 		name: "test",
@@ -47,16 +46,7 @@
 	</div>
 
 	<h3 class="piece__title piece__title--h3">{$content.projects.other}</h3>
-	<SideScroll velocity={2}>
-		<ProjectCard project={test} />
-		<ProjectCard project={test} />
-		<ProjectCard project={test} />
-		<ProjectCard project={test} />
-		<ProjectCard project={test} />
-		<ProjectCard project={test} />
-		<ProjectCard project={test} />
-		<ProjectCard project={test} />
-	</SideScroll>
+	<ProjectsList />
 </section>
 
 <style lang="postcss">
