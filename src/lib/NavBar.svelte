@@ -21,7 +21,7 @@
 	const projects = new LinkItem($content.nav.projects, faCode, "/#projects");
 	const skills = new LinkItem($content.nav.skills, faBrain, "/#skills");
 	const contact = new LinkItem($content.nav.contact, faEnvelope, "/#contact");
-	const blog = new LinkItem($content.nav.blog, faFeather, "/blog");
+	const blog = new LinkItem($content.nav.blog, faFeather, "/#blog");
 	const github = new LinkItem("Github", faGithub, "github.com/devlulcas");
 	const linkedin = new LinkItem("Linkedin", faLinkedin, "linkedin.com/in/lucasalvesregodev/");
 
