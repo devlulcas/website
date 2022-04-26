@@ -22,6 +22,7 @@
 <style lang="postcss">
 	a {
 		color: var(--primary);
+		cursor: pointer;
 	}
 
 	.more-info {
