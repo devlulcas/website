@@ -27,7 +27,7 @@ class ProjectRepository {
 		let name = node.name as string;
 		name = name.replace("-", " ");
 
-		if (name.length > 18) {
+		if (name.length >= 18) {
 			name = name.slice(0, 14);
 			name = name + "...";
 		}
