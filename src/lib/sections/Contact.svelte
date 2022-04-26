@@ -2,13 +2,14 @@
 	import Footer from "$lib/Footer.svelte";
 	import Form from "$lib/Form.svelte";
 	import { content } from "$stores/Translation";
+	import TinyMe from "$lib/TinyMe.svelte";
 </script>
 
 <section id="contact" class="piece contact">
 	<h2 class="piece__title">{$content.contact.title}</h2>
 
 	<div class="contact">
-		<img width="75px" src="/me_transparent.png" alt="me" />
+		<TinyMe />
 		<h3>{$content.contact.cta}</h3>
 		<Form />
 	</div>
