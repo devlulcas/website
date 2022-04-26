@@ -8,6 +8,9 @@ const config = {
 	kit: {
 		// Config do vite para suportar path aliases
 		vite: {
+			ssr: {
+				noExternal: ["@fortawesome/*"]
+			},
 			resolve: {
 				alias: [
 					{
