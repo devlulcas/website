@@ -3,7 +3,9 @@ import { Project } from "$models/entities/Project";
 class ProjectRepository {
 	// Fetch local API that gets Github data
 	public static async getAllProjects() {
-		const response = await fetch("http://localhost:3000/api/projects");
+		const base = window.location.origin;
+
+		const response = await fetch(base + "/api/projects");
 
 		const json = await response.json();
 
