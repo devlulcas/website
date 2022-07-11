@@ -1,0 +1,14 @@
+{
+  "includes": [
+    "settings",
+    "dotfiles",
+    "configs",
+    "firebird-php",
+    "lrl-airlines",
+    "solved-uri-algorithms",
+    "numeric-colors",
+    "rocketq",
+    "nlw-heat"
+  ],
+  "starts": ["learning", "atividade", "school"]
+}
