@@ -4,8 +4,15 @@
 
 import { writable } from "svelte/store";
 import { browser } from "$app/env";
-import { content as translations } from "$/locales";
-import type { Lang } from "$/locales/Lang";
+import type { Lang } from "$types/Lang";
+import { en } from "$locales/en";
+import { pt } from "$locales/pt";
+
+// Traduções
+const translations = {
+	en,
+	pt
+};
 
 // Altera a propriedade lang do HTML (mesmo processo que ocorre na mudança de tema, mas com outra propriedade)
 const updateAria = (code: string) => browser && document.documentElement.setAttribute("lang", code);

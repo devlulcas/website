@@ -1,4 +1,4 @@
-import type { Translation } from "./Translation";
+import type { Translation } from "$types/Translation";
 
 const nav = {
 	home: "Home",
@@ -34,9 +34,12 @@ const skills = {
 const projects = {
 	title: "PROJECTS",
 	main: {
-		first: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet accusamus odit architecto quam ullam. Placeat, molestiae, natus quia consectetur quod modi quaerat cumque voluptas dolores molestias, assumenda eaque omnis nostrum et aut temporibus culpa dolorum maxime eos?",
-		second: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet accusamus odit architecto quam ullam. Placeat, molestiae, natus quia consectetur quod modi quaerat cumque voluptas dolores molestias, assumenda eaque omnis nostrum et aut temporibus culpa dolorum maxime eos?",
-		third: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet accusamus odit architecto quam ullam. Placeat, molestiae, natus quia consectetur quod modi quaerat cumque voluptas dolores molestias, assumenda eaque omnis nostrum et aut temporibus culpa dolorum maxime eos?"
+		first:
+			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet accusamus odit architecto quam ullam. Placeat, molestiae, natus quia consectetur quod modi quaerat cumque voluptas dolores molestias, assumenda eaque omnis nostrum et aut temporibus culpa dolorum maxime eos?",
+		second:
+			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet accusamus odit architecto quam ullam. Placeat, molestiae, natus quia consectetur quod modi quaerat cumque voluptas dolores molestias, assumenda eaque omnis nostrum et aut temporibus culpa dolorum maxime eos?",
+		third:
+			"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet accusamus odit architecto quam ullam. Placeat, molestiae, natus quia consectetur quod modi quaerat cumque voluptas dolores molestias, assumenda eaque omnis nostrum et aut temporibus culpa dolorum maxime eos?"
 	},
 	other: "Other projects"
 };
