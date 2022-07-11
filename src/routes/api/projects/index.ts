@@ -1,19 +1,19 @@
 import type { ResponseBody } from "@sveltejs/kit";
 import { GraphqlClient } from "$/graphql";
 
-export async function get({ params }): Promise<ResponseBody> {
-	const url = process.env.GITHUB_GRAPHQL_ENDPOINT;
-	const key = process.env.GITHUB_API_KEY;
+export async function get(): Promise<ResponseBody> {
+  const url = process.env.GITHUB_GRAPHQL_ENDPOINT;
+  const key = process.env.GITHUB_API_KEY;
 
-	const client = new GraphqlClient(url, `bearer ${key}`);
+  const client = new GraphqlClient(url, `bearer ${key}`);
 
-	const query = `
+  const query = `
 	{
 		viewer {
 	  		repositories(
-				first: 30
-				orderBy: {field: CREATED_AT, direction: DESC}
-				privacy: PUBLIC
+					first: 30
+					orderBy: {field: CREATED_AT, direction: DESC}
+					privacy: PUBLIC
 	  		) {
 				edges {
 		  			node {
@@ -33,11 +33,11 @@ export async function get({ params }): Promise<ResponseBody> {
 		}
 	}`;
 
-	const json = await client.runQuery(query);
+  const json = await client.runQuery(query);
 
-	return {
-		headers: "ContentType: application/json",
-		status: 202,
-		body: json
-	};
+  return {
+    headers: "ContentType: application/json",
+    status: 202,
+    body: json,
+  };
 }

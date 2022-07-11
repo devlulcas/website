@@ -1,95 +1,98 @@
+<!--TS-->
 <script lang="ts">
-	import type { ProjectInterface } from "$/models/interfaces/Project";
+  import type { ProjectInterface } from "$/models/interfaces/Project";
 
-	import CardProject from "$/lib/ProjectCard.svelte";
-	import TechPins from "$lib/TechPins.svelte";
+  import CardProject from "$/lib/ProjectCard.svelte";
+  import TechPins from "$lib/TechPins.svelte";
 
-	export let project: ProjectInterface;
-	export let id: string;
+  export let project: ProjectInterface;
+  export let id: string;
 </script>
 
+<!--HTML-->
 <section {id} class="project__special">
-	<div class="project__app">
-		<CardProject {project} />
-	</div>
+  <div class="project__app">
+    <CardProject {project} />
+  </div>
 
-	<div class="project__details">
-		<h2>{project.name}</h2>
+  <div class="project__details">
+    <h2>{project.name}</h2>
 
-		<p>
-			<slot />
-		</p>
+    <p>
+      <slot />
+    </p>
 
-		<div class="project__tech">
-			<TechPins techs={project.techs} />
-		</div>
-	</div>
+    <div class="project__tech">
+      <TechPins techs={project.techs} />
+    </div>
+  </div>
 </section>
 
+<!--CSS-->
 <style lang="postcss">
-	.project__special {
-		display: flex;
-		gap: 1.5rem;
-		align-items: center;
+  .project__special {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
 
-		@media screen and (max-width: 70rem) {
-			flex-direction: column;
-			gap: 1rem;
+    @media screen and (max-width: 70rem) {
+      flex-direction: column;
+      gap: 1rem;
 
-			& .project__app {
-				width: 100%;
-			}
-		}
-	}
+      & .project__app {
+        width: 100%;
+      }
+    }
+  }
 
-	.project__details {
-		width: 65%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+  .project__details {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-		& h2 {
-			width: 100%;
-			text-transform: uppercase;
-			color: var(--special);
-			font-weight: 800;
-			font-size: 3.5vh;
-		}
+    & h2 {
+      width: 100%;
+      text-transform: uppercase;
+      color: var(--special);
+      font-weight: 800;
+      font-size: 3.5vh;
+    }
 
-		& p {
-			font-size: 2vh;
-			text-indent: 3ch;
-			font-weight: 700;
-		}
+    & p {
+      font-size: 2vh;
+      text-indent: 3ch;
+      font-weight: 700;
+    }
 
-		& .project__tech {
-			width: 85%;
-		}
+    & .project__tech {
+      width: 85%;
+    }
 
-		@media screen and (max-width: 70rem) {
-			width: 100%;
+    @media screen and (max-width: 70rem) {
+      width: 100%;
 
-			& h2 {
-				display: none;
-			}
+      & h2 {
+        display: none;
+      }
 
-			& .project__tech {
-				width: 100%;
-			}
-		}
-	}
+      & .project__tech {
+        width: 100%;
+      }
+    }
+  }
 
-	@media screen and (min-width: 70rem) {
-		#second {
-			flex-direction: row-reverse;
+  @media screen and (min-width: 70rem) {
+    #second {
+      flex-direction: row-reverse;
 
-			& h2 {
-				text-align: end;
-			}
+      & h2 {
+        text-align: end;
+      }
 
-			& p {
-				text-align: end;
-			}
-		}
-	}
+      & p {
+        text-align: end;
+      }
+    }
+  }
 </style>
