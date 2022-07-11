@@ -1,13 +1,5 @@
-* {
-	font-family: "Montserrat", sans-serif;
-}
-
 :root {
 	--header-height: 3.5rem;
-
-	/* * SCROLL */
-	scroll-behavior: smooth;
-	scroll-padding: var(--header-height) 0 0 0;
 
 	/* * PRIMARY COLORS */
 	--primary-h: 231;
@@ -77,41 +69,4 @@ html.light {
 	--on-secondary-h: var(--primary-h);
 	--on-secondary-s: var(--primary-s);
 	--on-secondary-l: var(--primary-l);
-}
-
-.piece {
-	min-height: calc(100vh - var(--header-height));
-	background-color: var(--primary);
-	color: var(--on-primary);
-	scroll-snap-stop: always;
-}
-
-.piece--padding {
-	padding: 1rem;
-}
-
-.piece__title {
-	font-size: 3rem;
-	color: var(--secondary);
-	text-align: center;
-	font-weight: 900;
-}
-
-::-webkit-scrollbar {
-	width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-	background: var(--primary-light);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-	background: var(--secondary);
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-	background: var(--on-primary);
 }
