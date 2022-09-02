@@ -9,12 +9,12 @@
 	let group: Skills = 'all';
 
 	const skills = {
-		langs: ['Javascript', 'Typescript', 'PHP'],
+		langs: ['Javascript', 'Typescript', 'PHP', 'Dart'],
 		design: ['Figma'],
-		libs: ['Svelte', 'React'],
+		libs: ['Svelte', 'React', 'Prisma', 'SvelteKit', 'NextJS', 'Flutter', 'Express'],
 		idioms: ['English', 'Português'],
 		etc: ['Html', 'Css', 'Sql'],
-		tools: ['Git', 'Github']
+		tools: ['Git', 'GitHub']
 	};
 
 	type Skills = keyof typeof skills | 'all';
