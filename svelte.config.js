@@ -1,27 +1,15 @@
-import preprocess from "svelte-preprocess";
-import adapter from "@sveltejs/adapter-auto";
+import adapter from '@sveltejs/adapter-auto';
+import preprocess from 'svelte-preprocess';
 
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		// Config do adapter para construir um site estático
-		adapter: adapter({
-			pages: "build",
-			assets: "build",
-			fallback: null,
-			precompress: false
-		}),
-		// Prerender para renderizar o conteúdo em tempo de compilação
-		prerender: {
-			default: true
-		}
-	},
+	// Consult https://github.com/sveltejs/svelte-preprocess
+	// for more information about preprocessors
+	preprocess: preprocess(),
 
-	// Config de pré-processadores como Sass, Stylus ou PostCSS
-	preprocess: [
-		preprocess({
-			postcss: true
-		})
-	]
+	kit: {
+		adapter: adapter()
+	}
 };
 
 export default config;
