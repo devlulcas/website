@@ -1,0 +1,28 @@
+:root {
+	/* * SCROLL */
+	scroll-behavior: smooth;
+	scroll-padding: var(--header-height) 0 0 0;
+}
+
+* {
+	font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--primary-light);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--secondary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--on-primary);
+}
