@@ -1,8 +1,11 @@
 <script lang="ts">
-  import type { PageServerData } from './$types';
-  export let data: PageServerData;
+	import Section from '$lib/Section.svelte';
+	import Skills from '$lib/Skills.svelte';
+	import type { PageServerData } from './$types';
+	export let data: PageServerData;
 </script>
 
-<div>
-  {data.post}
-</div>
+<Skills />
+<Section title="projects">Ok</Section>
+<Section title="skills">Ok</Section>
+<Section title="contact">Ok</Section>
