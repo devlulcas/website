@@ -1,38 +1,17 @@
 <script lang="ts">
-	import RadioButton from '$lib/RadioButton.svelte';
-	import Skill from '$lib/Skill.svelte';
-	import Section from './Section.svelte';
-	import Title from './Title.svelte';
-
-	// Skills
+	import RadioButton from '$lib/components/RadioButton.svelte';
+	import Skill from '$lib/components/Skill.svelte';
+	import Section from '$lib/components/Section.svelte';
+	import Title from '$lib/components/Title.svelte';
+	import { all, skills, type Skills } from '$constants/skills';
 
 	let group: Skills = 'all';
-
-	const skills = {
-		langs: ['Javascript', 'Typescript', 'PHP', 'Dart'],
-		design: ['Figma'],
-		libs: ['Svelte', 'React', 'Prisma', 'SvelteKit', 'NextJS', 'Flutter', 'Express'],
-		idioms: ['English', 'Português'],
-		etc: ['Html', 'Css', 'Sql'],
-		tools: ['Git', 'GitHub']
-	};
-
-	type Skills = keyof typeof skills | 'all';
-
-	const all = [
-		...skills.langs,
-		...skills.design,
-		...skills.libs,
-		...skills.idioms,
-		...skills.tools,
-		...skills.etc
-	];
 
 	$: show = group === 'all' ? all : skills[group];
 </script>
 
 <Section>
-	<Title>skills</Title>
+	<Title id="skills">skills</Title>
 
 	<div class="options">
 		<RadioButton bind:group name="skills" value="all" label="all" checked />
@@ -48,7 +27,7 @@
 
 	<div class="cards">
 		{#each show as skill}
-			<Skill name={skill} />
+			<Skill name={skill.name} src={skill.image} />
 		{/each}
 	</div>
 </Section>
@@ -60,9 +39,6 @@
 		justify-content: center;
 		gap: 1rem;
 		flex-wrap: wrap;
-	}
-
-	.cards {
-		overflow-y: hidden;
+		overflow-y: visible;
 	}
 </style>
