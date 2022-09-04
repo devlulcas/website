@@ -1,5 +1,5 @@
 <script lang="ts">
-	import NavBar from '$lib/NavBar.svelte';
+	import NavBar from '$lib/components/NavBar.svelte';
 </script>
 
 <NavBar />
@@ -12,8 +12,7 @@
 	.body {
 		--section-size: calc(100vh - var(--header-height));
 		background: var(--primary-light);
-		height: 400vh;
 		display: grid;
-		grid-template-rows: repeat(5, var(--section-size));
+		grid-template-rows: repeat(4, var(--section-size));
 	}
 </style>
