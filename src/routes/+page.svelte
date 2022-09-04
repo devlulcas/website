@@ -3,6 +3,7 @@
 	import Skills from '$lib/sections/Skills.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import type { PageServerData } from './$types';
+	import Contact from '$lib/sections/Contact.svelte';
 
 	export let data: PageServerData;
 </script>
@@ -17,18 +18,4 @@
 
 <Skills />
 
-<Section>
-	<Title id="contact">contact</Title>
-
-	{data.post}
-
-	<footer>
-		<ul>
-			<li>
-				<a href="/">github</a>
-				<a href="/">linkedin</a>
-				<a href="/">blog</a>
-			</li>
-		</ul>
-	</footer>
-</Section>
+<Contact />
