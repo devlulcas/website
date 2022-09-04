@@ -1,16 +1,13 @@
 {
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"eslint.validate": [
-		"html",
-		"javascript",
-		"typescript"
-	],
-	"stylelint.validate": ["css", "less", "postcss"],
-	"stylelint.enable": true,
+	"eslint.validate": ["html", "javascript", "typescript"],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.stylelint": true,
 		"source.fixAll.eslint": true
 	},
 	"editor.formatOnSave": true,
-	"files.eol": "\n"
+	"files.eol": "\n",
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	}
 }
