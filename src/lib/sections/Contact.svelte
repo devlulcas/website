@@ -7,17 +7,20 @@
 
 <section class="section">
 	<div class="container">
-		<div class="cta">
+		<div class="main">
 			<div class="title">
 				<h2 id="contact">Get in contact</h2>
 				<TinyMe />
-				<img class="art" src={ascii} alt="" />
 			</div>
 
 			<h3>Lorem, ipsum dolor.</h3>
+
+			<Form />
 		</div>
 
-		<Form />
+		<div class="art">
+			<img src={ascii} alt="" />
+		</div>
 	</div>
 
 	<Footer />
@@ -30,8 +33,9 @@
 		height: 100%;
 	}
 
-	.cta {
+	.main {
 		position: relative;
+		padding: 0 1rem;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -49,16 +53,17 @@
 		font-size: 4rem;
 	}
 
-	.art {
-		position: absolute;
-		left: 50%;
-		transform: translate(-50%, 100%);
-	}
-
 	h3 {
 		font-weight: 600;
 		color: var(--special);
 		font-size: 2rem;
 		text-align: center;
+	}
+
+	.art {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

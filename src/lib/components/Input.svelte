@@ -8,18 +8,20 @@
 </script>
 
 <!--HTML-->
-<label for={name}>{label}</label>
+<div class="input">
+	<label for={name}>{label}</label>
 
-<div class="container">
-	<div class="icon">
-		<slot name="icon" />
+	<div class="container">
+		<div class="icon">
+			<slot name="icon" />
+		</div>
+
+		{#if type === 'area'}
+			<textarea class="field textarea" {placeholder} {name} id={name} {required} />
+		{:else}
+			<input {type} class="field" {placeholder} {name} id={name} {required} />
+		{/if}
 	</div>
-
-	{#if type === 'area'}
-		<textarea class="field textarea" {placeholder} {name} id={name} {required} />
-	{:else}
-		<input {type} class="field" {placeholder} {name} id={name} {required} />
-	{/if}
 </div>
 
 <!--CSS-->
@@ -27,6 +29,7 @@
 	label {
 		font-size: 1vw;
 		text-transform: capitalize;
+		padding-bottom: 1rem;
 	}
 
 	.container {
