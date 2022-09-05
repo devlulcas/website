@@ -14,7 +14,7 @@
 <style lang="scss">
 	div {
 		width: 5rem;
-		height: 5rem;
+		height: fit-content;
 
 		& svg {
 			fill: var(--on-primary);

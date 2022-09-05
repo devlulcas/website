@@ -68,6 +68,7 @@
 
 	ul {
 		display: flex;
+		flex-flow: row wrap;
 		gap: 1rem;
 	}
 

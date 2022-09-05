@@ -26,3 +26,21 @@
 ::-webkit-scrollbar-thumb:hover {
 	background: var(--on-primary);
 }
+
+.section {
+	background: var(--primary);
+	padding: 1rem;
+	color: var(--on-primary);
+	scroll-snap-stop: always;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+	overflow-x: hidden;
+}
+
+@media screen and (max-width: 70rem) {
+	.section {
+		gap: 1rem;
+	}
+}

@@ -32,10 +32,8 @@
 		display: flex;
 		gap: 1rem;
 		flex-direction: column;
-		width: 90%;
-
-		@media screen and (min-width: 70rem) {
-			width: 50%;
-		}
+		width: 100%;
+		height: 100%;
+		justify-content: center;
 	}
 </style>

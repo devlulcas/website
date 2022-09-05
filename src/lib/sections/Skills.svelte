@@ -1,7 +1,6 @@
 <script lang="ts">
 	import RadioButton from '$lib/components/RadioButton.svelte';
 	import Skill from '$lib/components/Skill.svelte';
-	import Section from '$lib/components/Section.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import { all, skills, type Skills } from '$constants/skills';
 
@@ -10,7 +9,7 @@
 	$: show = group === 'all' ? all : skills[group];
 </script>
 
-<Section>
+<div class="section">
 	<Title id="skills">skills</Title>
 
 	<div class="options">
@@ -30,7 +29,7 @@
 			<Skill name={skill.name} src={skill.image} />
 		{/each}
 	</div>
-</Section>
+</div>
 
 <style lang="scss">
 	.options,

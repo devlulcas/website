@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Section from '$lib/components/Section.svelte';
 	import Skills from '$lib/sections/Skills.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import type { PageServerData } from './$types';
@@ -12,9 +11,9 @@
 	<Title id="home">home</Title>
 </main>
 
-<Section>
+<div>
 	<Title id="projects">projects</Title>
-</Section>
+</div>
 
 <Skills />
 

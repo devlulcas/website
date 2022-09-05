@@ -1,33 +1,58 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer.svelte';
 	import Form from '$lib/components/Form.svelte';
-	import Section from '$lib/components/Section.svelte';
 	import TinyMe from '$lib/components/TinyMe.svelte';
-	import Title from '$lib/components/Title.svelte';
+	import ascii from '$lib/assets/ascii.png';
 </script>
 
-<Section>
-	<Title id="contact">Get in contact</Title>
+<section class="section">
+	<div class="container">
+		<div class="cta">
+			<div class="title">
+				<h2 id="contact">Get in contact</h2>
+				<TinyMe />
+				<img class="art" src={ascii} alt="" />
+			</div>
 
-	<div class="contact">
-		<TinyMe />
-
-		<h3>Lorem, ipsum dolor.</h3>
+			<h3>Lorem, ipsum dolor.</h3>
+		</div>
 
 		<Form />
 	</div>
 
 	<Footer />
-</Section>
+</section>
 
 <style lang="scss">
-	.contact {
+	.container {
 		display: flex;
-		justify-content: space-between;
-		flex-direction: column;
-		align-items: center;
 		width: 100%;
 		height: 100%;
+	}
+
+	.cta {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+	}
+
+	.title {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	h2 {
+		font-weight: 900;
+		font-size: 4rem;
+	}
+
+	.art {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 100%);
 	}
 
 	h3 {
