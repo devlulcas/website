@@ -1,9 +1,0 @@
-export { default as FaPaperPlane } from './FaPaperPlane.svelte';
-export { default as FaMessage } from './FaMessage.svelte';
-export { default as FaSignature } from './FaSignature.svelte';
-export { default as FaEnvelope } from './FaEnvelope.svelte';
-export { default as FaGithub } from './FaGithub.svelte';
-export { default as FaHeart } from './FaHeart.svelte';
-export { default as FaMailBulk } from './FaMailBulk.svelte';
-export { default as FaLinkedin } from './FaLinkedin.svelte';
-export { default as FaPhone } from './FaPhone.svelte';
