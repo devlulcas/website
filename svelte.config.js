@@ -12,6 +12,7 @@ const config = {
 		alias: {
 			'$assets/*': 'src/assets/*',
 			'$modules/*': 'src/modules/*',
+			'$layouts/*': 'src/layouts/*',
 			'$i18n/*': 'src/i18n/*',
 			'$utils/*': 'src/utils/*'
 		}

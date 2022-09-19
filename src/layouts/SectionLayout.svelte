@@ -1,15 +1,17 @@
 <!-- HTML -->
-<div>
+<section>
 	<slot />
-</div>
+</section>
 
 <!-- STYLES - SCSS -->
 <style lang="scss">
-	div {
+	section {
 		width: 100%;
+		height: calc(100vh - var(--header-height));
+		padding: 1rem;
 
 		@media screen and (min-width: 90rem) {
-			padding-block: 10rem;
+			padding: 1rem 4.5rem;
 		}
 	}
 </style>
