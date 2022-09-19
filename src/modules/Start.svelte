@@ -1,25 +1,12 @@
+<script>
+	import HeroContent from '$lib/HeroContent.svelte';
+	import HeroImage from '$lib/HeroImage.svelte';
+</script>
+
 <!-- HTML -->
 <main>
-	<div class="wrapper content">
-		<div class="presentation">
-			<h1>Olá! Lucas aqui :D</h1>
-			<p>
-				Me chamo Lucas Alves Rego, presente por aí como Devlulcas. Sou um desenvolvedor web, curioso
-				e um tagarela profissional.
-			</p>
-		</div>
-
-		<div class="cta">
-			<button>
-				<i>X</i>
-				Vamos conversar!
-			</button>
-			<a href="/">ou então veja mais do meu trabalho</a>
-		</div>
-	</div>
-	<div class="wrapper">
-		<div class="foreground" />
-	</div>
+	<HeroContent />
+	<HeroImage />
 </main>
 
 <!-- STYLES - SCSS -->
@@ -28,7 +15,18 @@
 		height: calc(100vh - var(--header-height));
 		position: relative;
 		overflow: hidden;
+		outline: 1px solid red;
 	}
+
+	/**
+	
+		.content {
+			outline: 1px solid red;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
 
 	.wrapper {
 		width: 100%;
@@ -125,4 +123,5 @@
 		right: calc(-75rem / 2);
 		top: 2%;
 	}
+*/
 </style>
