@@ -12,6 +12,7 @@
 		<PostPreview />
 		<PostPreview />
 		<PostPreview />
+		<PostPreview />
 	</div>
 </SectionLayout>
 
