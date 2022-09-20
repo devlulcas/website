@@ -3,15 +3,16 @@
 	import FeaturedPost from '$lib/FeaturedPost.svelte';
 	import SectionLayout from '$layouts/SectionLayout.svelte';
 	import PostPreview from '$lib/PostPreview.svelte';
+	import ProjectPreview from '$lib/ProjectPreview.svelte';
 </script>
 
 <!-- HTML -->
 <SectionLayout>
 	<div>
-		<FeaturedPost />
-		<PostPreview />
-		<PostPreview />
-		<PostPreview />
+		<ProjectPreview />
+		<ProjectPreview reverse />
+		<ProjectPreview />
+		<ProjectPreview reverse />
 	</div>
 </SectionLayout>
 
