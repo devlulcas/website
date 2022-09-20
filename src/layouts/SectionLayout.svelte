@@ -7,7 +7,7 @@
 <style lang="scss">
 	section {
 		width: 100%;
-		height: calc(100vh - var(--header-height));
+		min-height: calc(100vh - var(--header-height));
 		padding: 1rem;
 
 		@media screen and (min-width: 90rem) {
