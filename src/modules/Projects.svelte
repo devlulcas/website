@@ -2,17 +2,21 @@
 <script lang="ts">
 	import SectionLayout from '$layouts/SectionLayout.svelte';
 	import FeaturedProject from '$lib/FeaturedProject.svelte';
+	import Heading from '$lib/Heading.svelte';
 	import ProjectPreview from '$lib/ProjectPreview.svelte';
 </script>
 
 <!-- HTML -->
-<SectionLayout>
+<section>
 	<div>
+		<Heading>Projetos em destaque</Heading>
+
 		<FeaturedProject />
 		<FeaturedProject reverse />
 		<FeaturedProject />
 		<FeaturedProject reverse />
 
+		<Heading>Outros projetos</Heading>
 		<ul>
 			<li>
 				<ProjectPreview />
@@ -31,7 +35,7 @@
 			</li>
 		</ul>
 	</div>
-</SectionLayout>
+</section>
 
 <!-- STYLES - SCSS -->
 <style lang="scss">

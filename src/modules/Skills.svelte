@@ -1,8 +1,7 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
-	import SectionLayout from '$layouts/SectionLayout.svelte';
+	import Heading from '$lib/Heading.svelte';
 	import Skill from '$lib/Skill.svelte';
-	import Timelime from '$lib/Timelime.svelte';
 
 	const svgRepoBaseUrl = 'https://www.svgrepo.com/show';
 
@@ -72,6 +71,8 @@
 
 <!-- HTML -->
 <section>
+	<Heading>Tech stack</Heading>
+
 	<ul>
 		{#each skills as skill}
 			<li>
@@ -80,9 +81,7 @@
 		{/each}
 	</ul>
 
-	<Timelime />
-
-	<article>
+	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptatem vitae aspernatur
 		odit distinctio, dolore soluta cum sapiente ea aut consequatur tempora recusandae eligendi vel
 		sequi in. Vero, possimus fugiat. Possimus perferendis ipsa mollitia inventore quibusdam iusto
@@ -91,7 +90,7 @@
 		ex totam repellat nihil cupiditate nesciunt ducimus eveniet ut aliquam praesentium optio velit
 		animi sint ipsam at nisi. Et, dolores! Unde perferendis illo commodi animi non, pariatur quos
 		nemo, quo voluptatem doloribus ut voluptate ducimus. Quam rem vel pariatur unde?
-	</article>
+	</p>
 </section>
 
 <!-- STYLES - SCSS -->
@@ -100,5 +99,9 @@
 		display: flex;
 		gap: 1rem;
 		flex-wrap: wrap;
+	}
+
+	p {
+		font-size: 1.2rem;
 	}
 </style>
