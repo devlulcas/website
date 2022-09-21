@@ -1,5 +1,6 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
+	import Contact from '$modules/Contact.svelte';
 	import Posts from '$modules/Posts.svelte';
 	import Projects from '$modules/Projects.svelte';
 	import Skills from '$modules/Skills.svelte';
@@ -13,6 +14,7 @@
 	<Projects />
 	<Skills />
 </div>
+<Contact />
 
 <style lang="scss">
 	div {
