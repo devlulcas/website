@@ -1,18 +1,35 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
-	import FeaturedPost from '$lib/FeaturedPost.svelte';
 	import SectionLayout from '$layouts/SectionLayout.svelte';
-	import PostPreview from '$lib/PostPreview.svelte';
+	import FeaturedProject from '$lib/FeaturedProject.svelte';
 	import ProjectPreview from '$lib/ProjectPreview.svelte';
 </script>
 
 <!-- HTML -->
 <SectionLayout>
 	<div>
-		<ProjectPreview />
-		<ProjectPreview reverse />
-		<ProjectPreview />
-		<ProjectPreview reverse />
+		<FeaturedProject />
+		<FeaturedProject reverse />
+		<FeaturedProject />
+		<FeaturedProject reverse />
+
+		<ul>
+			<li>
+				<ProjectPreview />
+			</li>
+			<li>
+				<ProjectPreview />
+			</li>
+			<li>
+				<ProjectPreview />
+			</li>
+			<li>
+				<ProjectPreview />
+			</li>
+			<li>
+				<ProjectPreview />
+			</li>
+		</ul>
 	</div>
 </SectionLayout>
 
@@ -22,5 +39,13 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+	}
+
+	ul {
+		width: 100%;
+		overflow-x: scroll;
+		display: flex;
+		gap: 1rem;
+		padding: 1rem 0;
 	}
 </style>

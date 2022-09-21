@@ -14,6 +14,7 @@ const config = {
 			'$modules/*': 'src/modules/*',
 			'$layouts/*': 'src/layouts/*',
 			'$i18n/*': 'src/i18n/*',
+			'$types/*': 'src/types/*',
 			'$utils/*': 'src/utils/*'
 		}
 	}

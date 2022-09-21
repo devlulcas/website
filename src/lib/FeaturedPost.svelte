@@ -2,32 +2,24 @@
 <script lang="ts"></script>
 
 <!-- HTML -->
-<div class="container">
-	<article>
-		<div class="content">
-			<div class="upper">
-				<h2>Postagem em destaque</h2>
+<article>
+	<div class="content">
+		<div class="upper">
+			<h2>Postagem em destaque</h2>
 
-				<h3>Como commitar melhor usando conventional commits</h3>
+			<h3>Como commitar melhor usando conventional commits</h3>
 
-				<p>10 de Junho de 2022</p>
-			</div>
-
-			<a href="/">Leia mais -></a>
+			<p>10 de Junho de 2022</p>
 		</div>
 
-		<picture />
-	</article>
-</div>
+		<a href="/">Leia mais -></a>
+	</div>
+
+	<picture />
+</article>
 
 <!-- STYLES - SCSS -->
 <style lang="scss">
-	.container {
-		@media screen and (min-width: 90rem) {
-			padding: 0 20rem;
-		}
-	}
-
 	article {
 		width: 100%;
 		height: 25rem;
