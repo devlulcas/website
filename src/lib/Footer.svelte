@@ -32,12 +32,13 @@
 <!-- STYLES - SCSS -->
 <style lang="scss">
 	footer {
-		padding: 1rem;
+		padding: 1rem 0;
 	}
 
 	ul {
 		display: flex;
 		gap: 1rem;
+		flex-wrap: wrap;
 	}
 
 	li {
@@ -46,8 +47,10 @@
 		justify-content: center;
 		grid-template: 1rem;
 		backdrop-filter: blur(1rem);
-		border-radius: 0.5rem;
+		border-radius: 0.25rem;
 		padding: 0.5rem;
+		border: 0.2rem solid black;
+		box-shadow: 0.5rem 0.5rem 0 black;
 
 		&:hover {
 			transform: scale(1.1);
