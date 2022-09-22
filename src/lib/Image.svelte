@@ -12,5 +12,5 @@
 	{height}
 	decoding="async"
 	loading="lazy"
-	style={`aspect-ratio: auto ${width} / ${height};`}
+	style="aspect-ratio: auto {width} / {height};"
 />
