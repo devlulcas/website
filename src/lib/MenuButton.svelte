@@ -1,5 +1,8 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
+	import { circOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
+
 	export let active: boolean;
 </script>
 
@@ -49,8 +52,15 @@
 	}
 
 	input:checked + label {
-		& div {
-			background: #f00;
+		& .line {
+			background: #000;
+
+			@for $line from 1 through 3 {
+				&:nth-child(#{$line}) {
+					background: #f00;
+					transform: translateX(-20% + $line * 20%);
+				}
+			}
 		}
 	}
 </style>
