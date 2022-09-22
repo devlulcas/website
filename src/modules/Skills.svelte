@@ -71,7 +71,7 @@
 
 <!-- HTML -->
 <section>
-	<Heading>Tech stack</Heading>
+	<Heading id="skills">Tech stack</Heading>
 
 	<ul>
 		{#each skills as skill}
@@ -103,5 +103,7 @@
 
 	p {
 		font-size: 1.2rem;
+		margin-top: 1rem;
+		text-indent: 4ch;
 	}
 </style>

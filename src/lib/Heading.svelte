@@ -1,10 +1,11 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
+	export let id: string;
 </script>
 
 <!-- HTML -->
 
-<h2><slot /></h2>
+<h2 {id}><slot /></h2>
 
 <!-- STYLES - SCSS -->
 <style lang="scss">

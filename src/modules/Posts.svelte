@@ -10,7 +10,7 @@
 <section>
 	<div>
 		<FeaturedPost />
-		<Heading>Postagens recentes</Heading>
+		<Heading id="posts">Postagens recentes</Heading>
 		<PostPreview />
 		<PostPreview />
 		<PostPreview />

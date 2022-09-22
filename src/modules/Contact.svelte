@@ -7,13 +7,25 @@
 <!-- HTML -->
 <div class="container">
 	<form action="" method="post">
-		<Heading>Contato</Heading>
-		<input type="email" name="sender" id="" />
-		<input type="text" name="content" id="" />
+		<Heading id="contact">Contato</Heading>
 
-		<button>Enviar</button>
+		<div>
+			<label for="sender">Seu e-mail</label>
+			<input type="email" name="sender" id="sender" />
+		</div>
+
+		<div>
+			<label for="content">Mensagem</label>
+			<input type="text" name="content" id="content" />
+		</div>
+
+		<button>
+			Enviar
+			<i>#</i>
+		</button>
+
+		<Footer />
 	</form>
-	<Footer />
 </div>
 
 <!-- STYLES - SCSS -->
@@ -37,21 +49,28 @@
 		height: 100%;
 		backdrop-filter: blur(1rem);
 		padding: 2rem;
+		justify-content: center;
 
 		@media screen and (min-width: 90rem) {
 			width: 50%;
 			padding: 5rem;
-			justify-content: center;
 		}
+	}
+
+	label {
+		font-size: 1.4rem;
+		font-weight: 600;
 	}
 
 	input {
 		width: 100%;
-		padding: 0.5rem 1rem;
-		border: 0.2rem solid black;
+		margin-top: 0.5rem;
+		padding: 1rem;
 		background: #fff;
 		border-radius: 0.5rem;
 		color: black;
+		border: 0.2rem solid black;
+		box-shadow: 0.5rem 0.5rem 0 black;
 	}
 
 	button {
@@ -61,11 +80,13 @@
 		width: fit-content;
 		border-radius: 0.25rem;
 		padding: 1rem 3rem;
-		color: white;
+		color: black;
 		font-weight: 600;
 		box-shadow: rgb(0 0 0 / 4%) 0px 0px 24px;
 		font-size: 1.4rem;
-		background: linear-gradient(76.35deg, #041c6a 15.89%, #1947e5 89.75%);
+		background: white;
 		text-decoration: none;
+		border: 0.2rem solid black;
+		box-shadow: 0.5rem 0.5rem 0 black;
 	}
 </style>

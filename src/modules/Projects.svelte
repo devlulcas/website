@@ -9,14 +9,14 @@
 <!-- HTML -->
 <section>
 	<div>
-		<Heading>Projetos em destaque</Heading>
+		<Heading id="projects">Projetos em destaque</Heading>
 
 		<FeaturedProject />
 		<FeaturedProject reverse />
 		<FeaturedProject />
 		<FeaturedProject reverse />
 
-		<Heading>Outros projetos</Heading>
+		<Heading id="other-projects">Outros projetos</Heading>
 		<ul>
 			<li>
 				<ProjectPreview />
