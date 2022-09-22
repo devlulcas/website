@@ -10,7 +10,7 @@
 
 <nav transition:fly={{ duration: 300, y: 64, opacity: 0, easing: circOut }}>
 	{#each items as item}
-		<a href={item.href}>{item.label}</a>
+		<a sveltekit:prefetch href={item.href}>{item.label}</a>
 	{/each}
 </nav>
 
