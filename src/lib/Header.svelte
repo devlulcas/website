@@ -11,11 +11,11 @@
 	};
 
 	const links = [
-		{ label: 'Home', href: '#' },
-		{ label: 'Projects', href: '#' },
-		{ label: 'Blog', href: '#' },
-		{ label: 'Skills', href: '#' },
-		{ label: 'Contact', href: '#' }
+		{ label: 'Home', href: '/' },
+		{ label: 'Projects', href: '#projects' },
+		{ label: 'Blog', href: '/blog' },
+		{ label: 'Skills', href: '#skills' },
+		{ label: 'Contact', href: '#contact' }
 	];
 </script>
 
