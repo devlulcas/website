@@ -9,5 +9,7 @@
 	"files.eol": "\n",
 	"[svelte]": {
 		"editor.defaultFormatter": "svelte.svelte-vscode"
-	}
+	},
+	"cSpell.words": ["kotlin", "sveltejs"],
+	"cSpell.language": "en,pt-BR,lorem"
 }
