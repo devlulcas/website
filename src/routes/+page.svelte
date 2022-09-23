@@ -16,6 +16,7 @@
 </div>
 <Contact />
 
+<!-- STYLES - SCSS -->
 <style lang="scss">
 	div {
 		width: 100%;
