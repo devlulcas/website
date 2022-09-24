@@ -10,6 +10,6 @@
 	"[svelte]": {
 		"editor.defaultFormatter": "svelte.svelte-vscode"
 	},
-	"cSpell.words": ["kotlin", "sveltejs"],
+	"cSpell.words": ["kotlin", "pgsql", "rehype", "sveltejs", "vfile"],
 	"cSpell.language": "en,pt-BR,lorem"
 }
