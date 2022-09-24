@@ -15,7 +15,8 @@ const config = {
 			'$layouts/*': 'src/layouts/*',
 			'$i18n/*': 'src/i18n/*',
 			'$commonTypes/*': 'src/types/*',
-			'$utils/*': 'src/utils/*'
+			'$utils/*': 'src/utils/*',
+			'$/*': 'src/*'
 		}
 	}
 };
