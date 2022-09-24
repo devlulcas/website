@@ -26,64 +26,73 @@ import { readSync } from 'to-vfile';
 // Usado para converter o YAML existente nos arquivos markdown
 import yaml from 'js-yaml';
 
-// Suporte a linguagens de programação que me interessam
-import dart from 'highlight.js/lib/languages/dart';
-import dockerfile from 'highlight.js/lib/languages/dockerfile';
-import elixir from 'highlight.js/lib/languages/elixir';
-import kotlin from 'highlight.js/lib/languages/kotlin';
-import typescript from 'highlight.js/lib/languages/typescript';
-import javascript from 'highlight.js/lib/languages/javascript';
-import rust from 'highlight.js/lib/languages/rust';
-import go from 'highlight.js/lib/languages/go';
-import php from 'highlight.js/lib/languages/php';
-import html from 'highlight.js/lib/languages/html';
-import css from 'highlight.js/lib/languages/css';
-import scss from 'highlight.js/lib/languages/scss';
-import python from 'highlight.js/lib/languages/python';
-import pgsql from 'highlight.js/lib/languages/pgsql';
+// Adiciona IDs em títulos para melhor navegação e etc
+import rehypeSlug from 'rehype-slug';
 
-const languages = {
-	dart,
-	dockerfile,
-	elixir,
-	kotlin,
-	typescript,
-	javascript,
-	rust,
-	go,
-	php,
-	html,
-	css,
-	scss,
-	python,
-	pgsql
-};
+// Syntax highlight
+import { languages } from './languages';
 
 const parser = unified().use(remarkParse).use(remarkGfm).use(remarkFrontmatter, ['yaml']);
 
-const runner = unified().use(remarkRehype).use(rehypeHighlight, { languages }).use(rehypeStringify);
+const runner = unified()
+	.use(remarkRehype)
+	.use(rehypeSlug)
+	.use(rehypeHighlight, { languages })
+	.use(rehypeStringify);
 
-export async function parseMarkdownFile(filepath: string) {
+interface Metadata {
+	title: string;
+	thumbnail: string;
+	alt: string;
+	tags: string[];
+	date: string;
+	excerpt: string;
+}
+
+type Locale = 'pt' | 'en' | 'es';
+
+export async function parseMarkdownFile(filepath: string, locale: Locale = 'pt') {
 	const virtualFile = readSync(filepath);
-	const tree = parser.parse(virtualFile);
-	let metadata = null;
+	const ast = parser.parse(virtualFile);
 
-	if (tree.children.length > 0 && tree.children[0].type == 'yaml') {
-		metadata = yaml.load(tree.children[0].value) as { date: string };
-		tree.children = tree.children.slice(1, tree.children.length);
-		metadata.date = `${metadata.date}`;
+	let metadata: Metadata | null = null;
+
+	const yamlNode = ast.children[0].type === 'yaml' ? ast.children[0] : null;
+
+	// Interpreta metadados YAML
+	if (yamlNode) {
+		metadata = yaml.load(yamlNode.value) as Metadata;
+
+		// Remove os metadados da ast
+		ast.children = ast.children.slice(1, ast.children.length);
+
+		// Data transformada corretamente para o formato do Brasil
+		const date = new Date(metadata.date);
+
+		if (locale === 'pt') {
+			metadata.date = date.toLocaleDateString('pt-br');
+		}
+
+		if (locale === 'en') {
+			metadata.date = date.toLocaleDateString('en-us');
+		}
 	}
 
-	let content = runner.stringify(runner.runSync(tree));
+	// Transforma o AST em string
+	let content = runner.stringify(runner.runSync(ast));
 
+	// Metadados padrão
 	if (!metadata) {
 		metadata = {
 			title: 'Error!',
 			date: '?',
-			excerpt: 'Missing Frontmatter! Expected at least a title and a date!'
+			alt: 'not-found',
+			tags: ['not found', 'inexistent'],
+			thumbnail: '/favicon.png',
+			excerpt: 'Incorrect metadata'
 		};
 
-		content = 'Missing Frontmatter! Expected at least a title and a date!';
+		content = 'Missing Frontmatter! Incorrect or incomplete metadata!';
 	}
 
 	return { metadata, content };
