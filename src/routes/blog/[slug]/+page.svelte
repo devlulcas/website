@@ -1,8 +1,7 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
-	import Footer from '$/lib/Footer.svelte';
-	import PostContent from '$/lib/PostContent.svelte';
-	import PostFooter from '$/lib/PostFooter.svelte';
+	import PostContent from '$lib/PostContent.svelte';
+	import PostFooter from '$lib/PostFooter.svelte';
 	import '$assets/styles/highlight.css';
 	import type { PageData } from './$types';
 
