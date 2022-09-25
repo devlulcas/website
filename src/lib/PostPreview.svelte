@@ -1,26 +1,38 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
+	import type { PostMetadata } from '$commonTypes/post';
 	import Tag from './Tag.svelte';
+
+	export let metadata: PostMetadata;
 </script>
 
 <!-- HTML -->
-<article>
-	<picture />
+<a href={metadata.slug}>
+	<article>
+		<picture />
 
-	<div class="content">
-		<h3>Lorem, ipsum dolor.</h3>
-		<p>10 de Junho de 2022</p>
-		<ul>
-			<Tag>algo</Tag>
-			<Tag>algo</Tag>
-			<Tag>algo</Tag>
-			<Tag>algo</Tag>
-		</ul>
-	</div>
-</article>
+		<div class="content">
+			<h3>{metadata.title}</h3>
+
+			<p>{metadata.excerpt}</p>
+
+			<p>{metadata.date}</p>
+
+			<ul>
+				{#each metadata.tags as tag}
+					<Tag href={`/blog/tags/${tag}`}>{tag}</Tag>
+				{/each}
+			</ul>
+		</div>
+	</article>
+</a>
 
 <!-- STYLES - SCSS -->
 <style lang="scss">
+	a {
+		text-decoration: none;
+	}
+
 	article {
 		background: #ccc;
 		padding: 1rem;
@@ -34,6 +46,10 @@
 		aspect-ratio: 1 / 1;
 		background: #000;
 		border-radius: 0.5rem;
+
+		@media screen and (min-width: 90rem) {
+			height: 15rem;
+		}
 	}
 
 	.content {
@@ -45,11 +61,11 @@
 	}
 
 	h3 {
-		font-size: 1.4rem;
+		font-size: clamp(1.4rem, 2vw, 2rem);
 	}
 
 	p {
-		font-size: 1rem;
+		font-size: clamp(1rem, 1vw, 1.2rem);
 	}
 
 	ul {

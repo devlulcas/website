@@ -1,5 +1,9 @@
 <!-- TYPESCRIPT -->
-<script lang="ts"></script>
+<script lang="ts">
+	import type { PostMetadata } from '$commonTypes/post';
+
+	export let metadata: PostMetadata;
+</script>
 
 <!-- HTML -->
 <article>
@@ -7,12 +11,12 @@
 		<div class="upper">
 			<h2>Postagem em destaque</h2>
 
-			<h3>Como commitar melhor usando conventional commits</h3>
+			<h3>{metadata.title} - {metadata.excerpt}</h3>
 
-			<p>10 de Junho de 2022</p>
+			<p>{metadata.date}</p>
 		</div>
 
-		<a href="/">Leia mais -></a>
+		<a href={metadata.slug}>Leia mais -></a>
 	</div>
 
 	<picture />
