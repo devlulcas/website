@@ -16,9 +16,13 @@
 
 		<Heading id="posts">Postagens recentes</Heading>
 
-		{#each recentPosts as recentPost}
-			<PostPreview metadata={recentPost} />
-		{/each}
+		<ul>
+			{#each recentPosts as recentPost}
+				<li>
+					<PostPreview metadata={recentPost} />
+				</li>
+			{/each}
+		</ul>
 	</div>
 </section>
 
@@ -28,5 +32,16 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
+	}
+
+	ul {
+		display: flex;
+		gap: 2.5rem;
+		flex-direction: column;
+		margin-top: 2rem;
+
+		@media screen and (min-width: 90rem) {
+			flex-flow: row wrap;
+		}
 	}
 </style>
