@@ -1,9 +1,9 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
-	import FeaturedPost from '$/lib/FeaturedPost.svelte';
-	import Heading from '$/lib/Heading.svelte';
-	import PostPreview from '$/lib/PostPreview.svelte';
-	import Tag from '$/lib/Tag.svelte';
+	import FeaturedPost from '$lib/FeaturedPost.svelte';
+	import Heading from '$lib/Heading.svelte';
+	import PostPreview from '$lib/PostPreview.svelte';
+	import Tag from '$lib/Tag.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -15,9 +15,9 @@
 
 	<Heading id="tags">Tags</Heading>
 
-	<ul>
+	<ul class="tags">
 		{#each data.tags as tag}
-			<Tag href={tag}>
+			<Tag href={`/blog/tags/${tag}`}>
 				{tag}
 			</Tag>
 		{/each}
@@ -25,7 +25,7 @@
 
 	<Heading id="recent-posts">Postagens recentes</Heading>
 
-	<ul>
+	<ul class="posts">
 		{#each data.posts as post}
 			<li>
 				<PostPreview metadata={post} />
@@ -48,9 +48,19 @@
 		}
 	}
 
-	ul {
+	.tags {
 		display: flex;
 		gap: 1rem;
 		flex-flow: row wrap;
+	}
+
+	.posts {
+		display: flex;
+		gap: 2.5rem;
+		flex-direction: column;
+
+		@media screen and (min-width: 90rem) {
+			flex-flow: row wrap;
+		}
 	}
 </style>
