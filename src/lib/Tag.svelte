@@ -1,18 +1,22 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
+	export let href: string;
 </script>
 
 <!-- HTML -->
-
-<li><slot /></li>
+<li>
+	<a sveltekit:prefetch {href}><slot /></a>
+</li>
 
 <!-- STYLES - SCSS -->
 <style lang="scss">
-	li {
-		font-size: clamp(0.8rem, 3vw, 1rem);
+	a {
+		display: block;
+		font-size: clamp(0.9rem, 3vw, 1.1rem);
 		padding: 0.5vw 1vw;
 		background: #000;
 		color: #fff;
 		border-radius: 0.25rem;
+		text-decoration: none;
 	}
 </style>
