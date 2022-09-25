@@ -30,7 +30,11 @@ import yaml from 'js-yaml';
 import rehypeSlug from 'rehype-slug';
 
 // Syntax highlight
-import { languages } from './languages';
+import { languages } from './programing-languages';
+
+// Types
+import type { PostMetadata } from '$commonTypes/post';
+import type { Locale } from '$commonTypes/locale';
 
 const parser = unified().use(remarkParse).use(remarkGfm).use(remarkFrontmatter, ['yaml']);
 
@@ -40,28 +44,20 @@ const runner = unified()
 	.use(rehypeHighlight, { languages })
 	.use(rehypeStringify);
 
-interface Metadata {
-	title: string;
-	thumbnail: string;
-	alt: string;
-	tags: string[];
-	date: string;
-	excerpt: string;
-}
-
-type Locale = 'pt' | 'en' | 'es';
-
 export async function parseMarkdownFile(filepath: string, locale: Locale = 'pt') {
-	const virtualFile = readSync(filepath);
+	const virtualFile = readSync(`posts/${filepath}/index.md`);
+
 	const ast = parser.parse(virtualFile);
 
-	let metadata: Metadata | null = null;
+	let metadata: PostMetadata | null = null;
 
 	const yamlNode = ast.children[0].type === 'yaml' ? ast.children[0] : null;
 
 	// Interpreta metadados YAML
 	if (yamlNode) {
-		metadata = yaml.load(yamlNode.value) as Metadata;
+		metadata = yaml.load(yamlNode.value) as PostMetadata;
+
+		metadata.slug = `/blog/${filepath}`;
 
 		// Remove os metadados da ast
 		ast.children = ast.children.slice(1, ast.children.length);
@@ -69,12 +65,18 @@ export async function parseMarkdownFile(filepath: string, locale: Locale = 'pt')
 		// Data transformada corretamente para o formato do Brasil
 		const date = new Date(metadata.date);
 
+		const dateOptions: Intl.DateTimeFormatOptions = {
+			day: '2-digit',
+			month: 'long',
+			year: 'numeric'
+		};
+
 		if (locale === 'pt') {
-			metadata.date = date.toLocaleDateString('pt-br');
+			metadata.date = date.toLocaleDateString('pt-br', dateOptions);
 		}
 
 		if (locale === 'en') {
-			metadata.date = date.toLocaleDateString('en-us');
+			metadata.date = date.toLocaleDateString('en-us', dateOptions);
 		}
 	}
 
@@ -89,7 +91,9 @@ export async function parseMarkdownFile(filepath: string, locale: Locale = 'pt')
 			alt: 'not-found',
 			tags: ['not found', 'inexistent'],
 			thumbnail: '/favicon.png',
-			excerpt: 'Incorrect metadata'
+			excerpt: 'Incorrect metadata',
+			slug: '/',
+			featured: false
 		};
 
 		content = 'Missing Frontmatter! Incorrect or incomplete metadata!';
