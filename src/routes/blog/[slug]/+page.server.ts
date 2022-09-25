@@ -1,4 +1,4 @@
-import { parseMarkdownFile } from '$utils/parse';
+import { parseMarkdownFile } from '$utils/posts/markdown-parser';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 

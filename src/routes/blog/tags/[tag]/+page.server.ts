@@ -1,6 +1,6 @@
-import { getPostsMetadataByTag } from '$utils/post-previews';
+import { getPostsMetadataByTag } from '$utils/posts/post-metadata';
 import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from '../../../../../.svelte-kit/types/src/routes/blog/tags/$types';
+import type { PageServerLoad } from './$types';
 
 export async function load(context: PageServerLoad) {
 	const { tag } = context.params;
@@ -9,6 +9,7 @@ export async function load(context: PageServerLoad) {
 		const posts = await getPostsMetadataByTag(tag);
 
 		return {
+			slug: tag,
 			posts
 		};
 	} catch {
