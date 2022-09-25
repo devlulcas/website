@@ -1,20 +1,24 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
 	import FeaturedPost from '$lib/FeaturedPost.svelte';
-	import SectionLayout from '$layouts/SectionLayout.svelte';
 	import PostPreview from '$lib/PostPreview.svelte';
 	import Heading from '$lib/Heading.svelte';
+	import type { PostMetadata } from '$commonTypes/post';
+
+	export let recentPosts: PostMetadata[];
+	export let featured: PostMetadata;
 </script>
 
 <!-- HTML -->
 <section>
 	<div>
-		<FeaturedPost />
+		<FeaturedPost metadata={featured} />
+
 		<Heading id="posts">Postagens recentes</Heading>
-		<PostPreview />
-		<PostPreview />
-		<PostPreview />
-		<PostPreview />
+
+		{#each recentPosts as recentPost}
+			<PostPreview metadata={recentPost} />
+		{/each}
 	</div>
 </section>
 

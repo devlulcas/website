@@ -1,5 +1,8 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
+	import Footer from '$/lib/Footer.svelte';
+	import PostContent from '$/lib/PostContent.svelte';
+	import PostFooter from '$/lib/PostFooter.svelte';
 	import '$assets/styles/highlight.css';
 	import type { PageData } from './$types';
 
@@ -7,63 +10,23 @@
 </script>
 
 <!-- HTML -->
-<pre>
-	{JSON.stringify(data.body.metadata)}
-</pre>
 
-<div class="content">
-	{@html data.body.content}
+<div class="container">
+	<PostContent content={data.body.content} />
 </div>
+
+<PostFooter time={data.body.metadata.date} />
 
 <!-- STYLES - SCSS -->
 <style lang="scss">
-	.content :global {
-		h1 {
-			color: blue;
-		}
+	.container {
+		width: 100vw;
+		overflow: hidden;
+		padding: 0 1rem;
+		background: #babaca;
 
-		h2 {
-			color: aqua;
-		}
-
-		h3 {
-			color: aquamarine;
-		}
-
-		p {
-			color: darkorange;
-		}
-
-		strong {
-			color: beige;
-		}
-
-		em {
-			color: brown;
-		}
-
-		del {
-			color: coral;
-		}
-
-		blockquote p {
-			color: rgb(0, 189, 16);
-		}
-
-		a {
-			color: red;
-		}
-
-		img {
-			width: 100%;
-		}
-
-		table {
-			color: darkorchid;
-		}
-
-		li {
-			color: fuchsia;
+		@media screen and (min-width: 90rem) {
+			padding: 0rem 25rem;
 		}
 	}
 </style>

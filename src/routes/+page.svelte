@@ -5,12 +5,16 @@
 	import Projects from '$modules/Projects.svelte';
 	import Skills from '$modules/Skills.svelte';
 	import Start from '$modules/Start.svelte';
+
+	import type { PageData } from './$types';
+
+	export let data: PageData;
 </script>
 
 <!-- HTML -->
 <Start />
 <div>
-	<Posts />
+	<Posts featured={data.featuredPost} recentPosts={data.posts} />
 	<Projects />
 	<Skills />
 </div>
