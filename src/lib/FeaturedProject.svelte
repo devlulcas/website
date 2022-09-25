@@ -1,29 +1,33 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
+	import type { Project } from '$commonTypes/project';
 	import Tag from './Tag.svelte';
+
 	export let reverse: boolean = false;
+	export let project: Project;
+
+	const imageUrl = `https://raw.githubusercontent.com/devlulcas/${project.name}/main/.github/images/preview.png`;
+
+	const name = project.name.replaceAll('-', ' ');
 </script>
 
 <!-- HTML -->
 <article class:reversed-container={reverse}>
-	<picture />
+	<picture aria-label={name} title={name} style="background-image: url({imageUrl});" />
 
 	<div class="content">
 		<div class="text">
-			<h3 class:reversed-text={reverse}>Lorem, ipsum dolor.</h3>
+			<h3 class:reversed-text={reverse}>{name}</h3>
 
 			<p class:reversed-text={reverse}>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque officiis et ex veniam
-				repellendus aspernatur sit similique quo. Aliquam, voluptatibus. Porro voluptatum molestias
-				cum unde, excepturi reprehenderit!
+				{project.description}
 			</p>
 		</div>
 
 		<ul class:reversed-tags={reverse}>
-			<Tag>algo</Tag>
-			<Tag>algo</Tag>
-			<Tag>algo</Tag>
-			<Tag>algo</Tag>
+			{#each project.languages.nodes as language}
+				<Tag href={language.name}>{language.name}</Tag>
+			{/each}
 		</ul>
 	</div>
 </article>
@@ -37,9 +41,19 @@
 
 	picture {
 		height: clamp(15rem, 15vw, 25rem);
+		position: relative;
 		aspect-ratio: 1 / 1;
 		background: #000;
 		border-radius: 0.5rem;
+		background-size: cover;
+		background-position: top;
+		transition: 0.5s all;
+
+		&:hover {
+			height: clamp(35rem, 35vw, 45rem);
+			background-position: bottom;
+			transition: 1s all;
+		}
 	}
 
 	.content {
@@ -48,19 +62,21 @@
 		flex-direction: column;
 		gap: 1rem;
 		justify-content: space-between;
+		width: 100%;
 	}
 
 	h3 {
-		font-size: clamp(1.6rem, 3vw, 2rem);
+		font-size: clamp(1.6rem, 3vw, 2.75rem);
 		text-align: right;
 		font-weight: 600;
 		line-clamp: 5;
+		text-transform: uppercase;
 	}
 
 	p {
 		text-align: right;
 		margin-top: 1rem;
-		font-size: clamp(1rem, 2vw, 1.4rem);
+		font-size: clamp(1rem, 2vw, 1.6rem);
 		height: 6.5rem;
 		overflow-y: hidden;
 		position: relative;

@@ -15,7 +15,7 @@
 <Start />
 <div>
 	<Posts featured={data.featuredPost} recentPosts={data.posts} />
-	<Projects />
+	<Projects projects={data.allProjects} featuredProjects={data.pinnedProjects} />
 	<Skills />
 </div>
 <Contact />
