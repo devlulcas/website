@@ -7,7 +7,7 @@
 
 <!-- HTML -->
 <div class="container">
-	<Image src={image} alt={'tech'} height={25} width={25} />
+	<Image src={image} alt={'tech'} height={35} width={35} />
 	<p><slot /></p>
 </div>
 
@@ -24,5 +24,9 @@
 		background: #ccc;
 		color: #000;
 		border-radius: 0.25rem;
+	}
+
+	p {
+		font-size: 1.5rem;
 	}
 </style>
