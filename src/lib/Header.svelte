@@ -35,7 +35,7 @@
 	</div>
 
 	<div class="wrapper">
-		<div>EN</div>
+		<div>PT</div>
 	</div>
 </header>
 
