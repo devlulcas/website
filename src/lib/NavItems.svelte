@@ -22,7 +22,7 @@
 		flex-direction: column;
 		padding: 1rem;
 		border-radius: 0.5rem;
-		background: #ccc;
+		background: var(--primary);
 
 		@media screen and (min-width: 90rem) {
 			flex-direction: row;
@@ -36,6 +36,8 @@
 	a {
 		font-size: 1.4rem;
 		text-decoration: none;
+		color: var(--on-primary);
 		padding: 1rem;
+		font-weight: 600;
 	}
 </style>

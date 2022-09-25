@@ -69,6 +69,7 @@
 		font-size: clamp(1.6rem, 3vw, 2.75rem);
 		text-align: right;
 		font-weight: 600;
+		word-break: break-all;
 		line-clamp: 5;
 		text-transform: uppercase;
 	}

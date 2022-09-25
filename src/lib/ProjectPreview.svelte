@@ -28,7 +28,7 @@
 	h4 {
 		word-break: break-all;
 		text-transform: uppercase;
-		color: #fff;
+		color: hsl(0, 0%, 100%);
 		aspect-ratio: 1 / 1;
 		width: 15rem;
 		padding: 1rem;

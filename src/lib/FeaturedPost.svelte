@@ -28,7 +28,8 @@
 		width: 100%;
 		height: 25rem;
 		border-radius: 0.5rem;
-		background: #888888;
+		background: var(--surface);
+		color: var(--on-surface);
 		padding: 1rem;
 		display: flex;
 

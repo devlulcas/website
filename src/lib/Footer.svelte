@@ -42,6 +42,8 @@
 	}
 
 	li {
+		background-color: var(--background);
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -64,7 +66,7 @@
 	a {
 		padding: 0.5rem 1rem;
 		text-decoration: none;
-		color: #000;
+		color: var(--on-background);
 		font-weight: 600;
 	}
 </style>

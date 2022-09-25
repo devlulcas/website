@@ -7,7 +7,6 @@
 </script>
 
 <!-- HTML -->
-
 <div class="container">
 	<input
 		checked={active}
@@ -27,6 +26,8 @@
 <!-- STYLES - SCSS -->
 <style lang="scss">
 	label {
+		cursor: pointer;
+
 		@media screen and (min-width: 90rem) {
 			display: none;
 		}
@@ -35,9 +36,10 @@
 	.line {
 		width: 3rem;
 		height: 0.5rem;
-		background: #000;
+		background: var(--on-primary);
 		border-radius: 0.5rem;
 		margin-top: 0.5rem;
+		transition: all 0.25s;
 
 		&:first-child {
 			margin-top: 0;
@@ -53,11 +55,10 @@
 
 	input:checked + label {
 		& .line {
-			background: #000;
+			background: var(--on-primary);
 
 			@for $line from 1 through 3 {
 				&:nth-child(#{$line}) {
-					background: #f00;
 					transform: translateX(-20% + $line * 20%);
 				}
 			}

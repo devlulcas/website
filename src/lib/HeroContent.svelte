@@ -2,6 +2,7 @@
 <div class="container">
 	<section>
 		<h1>Olá! Lucas aqui :D</h1>
+
 		<p>
 			Me chamo Lucas Alves Rego, presente por aí como Devlulcas. Sou um desenvolvedor web, curioso e
 			um tagarela profissional.
@@ -37,12 +38,13 @@
 		font-weight: 700;
 		margin-bottom: 1.5rem;
 		font-size: clamp(34px, 6vw, 64px);
+		color: var(--on-background);
 	}
 
 	p {
 		font-size: 20px;
 		line-height: 1.5;
-		color: gray;
+		color: var(--on-background-dark);
 		margin-bottom: 3rem;
 		max-width: 36rem;
 	}
@@ -62,7 +64,7 @@
 		font-weight: 600;
 		box-shadow: rgb(0 0 0 / 4%) 0px 0px 24px;
 		font-size: 1.4rem;
-		background: linear-gradient(76.35deg, #041c6a 15.89%, #1947e5 89.75%);
+		background: linear-gradient(76.35deg, var(--secondary-dark) 15.89%, var(--secondary) 89.75%);
 		text-decoration: none;
 	}
 </style>

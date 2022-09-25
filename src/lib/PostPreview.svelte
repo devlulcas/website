@@ -30,11 +30,12 @@
 <!-- STYLES - SCSS -->
 <style lang="scss">
 	a {
+		color: var(--on-surface);
 		text-decoration: none;
 	}
 
 	article {
-		background: #ccc;
+		background: var(--surface);
 		padding: 1rem;
 		display: flex;
 		gap: 1rem;

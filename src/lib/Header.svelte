@@ -58,7 +58,8 @@
 		display: flex;
 		align-items: center;
 		padding: 1rem;
-		background: #ccc;
+		background-color: var(--primary);
+		color: var(--on-primary);
 	}
 
 	.wrapper {

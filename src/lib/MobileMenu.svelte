@@ -28,7 +28,7 @@
 		height: calc(100% - 5.75rem);
 		padding: 1rem;
 		z-index: 100;
-		background-color: rgba(#000, 0.5);
+		background-color: hsl(0 0% 0% / 25%);
 
 		@media screen and (min-width: 90rem) {
 			display: none;

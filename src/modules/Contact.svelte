@@ -79,7 +79,6 @@
 	}
 
 	button {
-		border: none;
 		display: flex;
 		gap: 1rem;
 		width: fit-content;
@@ -93,5 +92,6 @@
 		text-decoration: none;
 		border: 0.2rem solid black;
 		box-shadow: 0.5rem 0.5rem 0 black;
+		margin-bottom: 2rem;
 	}
 </style>

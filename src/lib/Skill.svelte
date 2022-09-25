@@ -7,7 +7,7 @@
 
 <!-- HTML -->
 <div class="container">
-	<Image src={image} alt={'tech'} height={35} width={35} />
+	<img src={image} alt={'tech'} height={35} width={35} />
 	<p><slot /></p>
 </div>
 
@@ -21,12 +21,19 @@
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
-		background: #ccc;
-		color: #000;
+		background: var(--surface);
+		color: var(--on-surface);
 		border-radius: 0.25rem;
 	}
 
+	img {
+		width: 2.5rem;
+		@media screen and (min-width: 90rem) {
+			width: 5rem;
+		}
+	}
+
 	p {
-		font-size: 1.5rem;
+		font-size: clamp(1.2rem, 1.5vw, 1.5rem);
 	}
 </style>

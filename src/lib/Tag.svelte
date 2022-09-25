@@ -14,8 +14,8 @@
 		display: block;
 		font-size: clamp(0.9rem, 3vw, 1.1rem);
 		padding: 0.5vw 1vw;
-		background: #000;
-		color: #fff;
+		background: var(--on-primary);
+		color: var(--primary);
 		border-radius: 0.25rem;
 		text-decoration: none;
 	}
