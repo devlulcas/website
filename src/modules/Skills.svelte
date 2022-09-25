@@ -96,6 +96,7 @@
 <!-- STYLES - SCSS -->
 <style lang="scss">
 	ul {
+		margin-top: 2rem;
 		display: flex;
 		gap: 1rem;
 		flex-wrap: wrap;
