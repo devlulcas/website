@@ -6,7 +6,7 @@
 
 <!-- HTML -->
 <div class="container">
-	<form action="" method="post">
+	<form method="POST" action="?/contact">
 		<Heading id="contact">Contato</Heading>
 
 		<div>
@@ -16,7 +16,7 @@
 
 		<div>
 			<label for="content">Mensagem</label>
-			<input type="text" name="content" id="content" />
+			<textarea name="content" id="content" rows="10" />
 		</div>
 
 		<button>
@@ -62,7 +62,8 @@
 		font-weight: 600;
 	}
 
-	input {
+	input,
+	textarea {
 		width: 100%;
 		margin-top: 0.5rem;
 		padding: 1rem;
@@ -71,6 +72,10 @@
 		color: black;
 		border: 0.2rem solid black;
 		box-shadow: 0.5rem 0.5rem 0 black;
+	}
+
+	textarea {
+		resize: none;
 	}
 
 	button {
