@@ -26,7 +26,7 @@
 <style lang="scss">
 	article {
 		width: 100%;
-		height: 25rem;
+		min-height: 25rem;
 		border-radius: 0.5rem;
 		background: var(--surface);
 		color: var(--on-surface);
@@ -60,7 +60,7 @@
 	}
 
 	h3 {
-		font-size: clamp(1.4rem, 4vw, 4rem);
+		font-size: clamp(1.4rem, 3vw, 3.5rem);
 		font-weight: 500;
 		word-wrap: break-word;
 	}
@@ -76,6 +76,7 @@
 
 	picture {
 		width: 50%;
+		min-height: 25rem;
 		height: 100%;
 		border-radius: 0.5rem;
 		background: #202020;
