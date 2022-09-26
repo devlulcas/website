@@ -11,54 +11,74 @@
 <!-- STYLES - SCSS -->
 <style lang="scss">
 	.content {
-		background: #000;
 		min-height: 100vh;
-		padding: 1rem;
-		display: flex;
 		flex-direction: column;
+		display: flex;
 		gap: 1rem;
-		font-size: 1.2rem;
+		word-wrap: break-word;
+		font-size: 1.4rem;
+		background: var(--primary);
+		border: 0.2rem solid var(--secondary);
+		border-top: none;
+		border-bottom: none;
+		padding: 0 5rem;
 	}
 
 	.content :global {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			color: hsl(155, 72%, 40%);
+			font-weight: 600;
+		}
+
 		h1 {
-			color: blue;
 			font-size: 2rem;
 		}
 
 		h2 {
 			font-size: 1.8rem;
-			color: aqua;
 		}
 
 		h3 {
 			font-size: 1.6rem;
-			color: aquamarine;
 		}
 
 		p {
 			text-indent: 2rem;
-			color: darkorange;
 		}
 
 		strong {
-			color: beige;
+			font-weight: 600;
 		}
 
 		em {
-			color: brown;
+			font-style: italic;
 		}
 
 		del {
-			color: coral;
+			text-decoration: line-through;
 		}
 
-		blockquote p {
-			color: rgb(0, 189, 16);
+		blockquote {
+			font-style: italic;
+			color: var(--blockquote);
+			margin-left: 2rem;
+			padding-left: 2rem;
+			border-left: var(--secondary-dark) 0.5rem solid;
+			quotes: none;
+
+			& p {
+				color: hsl(154, 72%, 31%);
+			}
 		}
 
 		a {
-			color: red;
+			color: hsl(154, 72%, 31%);
+			border-bottom: 0.1rem dotted hsl(154, 72%, 31%);
 		}
 
 		img {
@@ -66,12 +86,14 @@
 		}
 
 		table {
-			color: darkorchid;
-			border: 0.1rem solid #ccc;
-
+			color: hsl(154, 59%, 26%);
+			background: hsl(0, 0%, 94%);
+			border: 1rem solid hsl(0, 0%, 80%);
+			border-radius: 0.5rem;
+			overflow: hidden;
 			& td,
 			& th {
-				border: 0.1rem solid #ccc;
+				border: 0.1rem solid hsl(0, 0%, 80%);
 				padding: 0.5rem;
 			}
 
@@ -81,7 +103,8 @@
 		}
 
 		li {
-			color: fuchsia;
+			font-weight: 600;
+			color: hsl(154, 59%, 26%);
 		}
 
 		pre {
@@ -90,11 +113,19 @@
 
 			&::before {
 				content: '⬤ ⬤ ⬤';
-				color: red;
-				background: #ccc;
+				color: hsl(0, 0%, 60%);
+				background: hsl(0, 0%, 80%);
 				width: 100%;
 				display: block;
 				padding: 0.5rem;
+			}
+
+			& code {
+				padding: 1rem;
+				font-size: 1.4rem;
+				line-height: 1.6rem;
+				font-stretch: expanded;
+				font-family: 'Fira Code', monospace;
 			}
 		}
 	}

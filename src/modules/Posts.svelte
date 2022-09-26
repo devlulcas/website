@@ -17,7 +17,7 @@
 		<Heading id="posts">Postagens recentes</Heading>
 
 		<ul>
-			{#each recentPosts as recentPost}
+			{#each recentPosts.splice(0, 4) as recentPost}
 				<li>
 					<PostPreview metadata={recentPost} />
 				</li>
@@ -39,9 +39,5 @@
 		gap: 2.5rem;
 		flex-direction: column;
 		margin-top: 2rem;
-
-		@media screen and (min-width: 90rem) {
-			flex-flow: row wrap;
-		}
 	}
 </style>

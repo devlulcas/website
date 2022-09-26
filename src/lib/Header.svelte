@@ -58,8 +58,9 @@
 		display: flex;
 		align-items: center;
 		padding: 1rem;
-		background-color: var(--primary);
+		background-color: hsl(0 0% 90 / 25%);
 		color: var(--on-primary);
+		backdrop-filter: blur(1rem);
 	}
 
 	.wrapper {

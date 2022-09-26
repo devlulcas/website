@@ -31,10 +31,12 @@
 <!-- STYLES - SCSS -->
 <style lang="scss">
 	.container {
-		height: calc(100vh - var(--header-height));
-		background-image: url(https://i.pinimg.com/564x/ae/e7/3b/aee73b42b77dc16d0c3f513165218c3f.jpg);
-		background-position: center;
 		overflow: hidden;
+		height: calc(100vh - var(--header-height));
+		background: url(/capybara.png);
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: cover;
 
 		@media screen and (min-width: 90rem) {
 			display: flex;
