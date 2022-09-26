@@ -3,7 +3,7 @@ import { parseMarkdownFile } from './markdown-parser';
 import { sortPostsByDate } from './post-sort';
 
 export async function getPostsMetadata() {
-	const list = await fs.readdir('./posts');
+	const list = await fs.readdir(process.cwd() + '/posts');
 
 	const filesPromise = list.map((path) => {
 		return parseMarkdownFile(path);
