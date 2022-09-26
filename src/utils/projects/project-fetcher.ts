@@ -5,12 +5,11 @@ import type {
 
 import { GraphqlHelper } from '../graphql/helper';
 
-export async function getProjects() {
-	const url = process.env.GITHUB_GRAPHQL_ENDPOINT ?? 'https://api.github.com/graphql';
-	const key = process.env.GITHUB_API_KEY;
+const url = process.env.GITHUB_GRAPHQL_ENDPOINT ?? 'https://api.github.com/graphql';
+const key = process.env.GITHUB_API_KEY;
+const client = new GraphqlHelper(url, `bearer ${key}`);
 
-	const client = new GraphqlHelper(url, `bearer ${key}`);
-
+export async function getPinnedProjects() {
 	const queryPinnedProjects = `
 	{
 		viewer {
@@ -35,6 +34,24 @@ export async function getProjects() {
 		}
 	}`;
 
+	try {
+		const pinnedProjectsResult = await client.runQuery<PinnedProjectGraphQlReturn>(
+			queryPinnedProjects
+		);
+
+		console.log(pinnedProjectsResult);
+
+		const pinnedProjectsNodes = pinnedProjectsResult.data.viewer.pinnedItems.edges;
+
+		const pinnedProjects = pinnedProjectsNodes.map(({ node }) => node);
+
+		return pinnedProjects;
+	} catch (error) {
+		return [];
+	}
+}
+
+export async function getAllProjects() {
 	const queryAllProjects = `
 	{
 		viewer {
@@ -61,19 +78,17 @@ export async function getProjects() {
 		}
 	}`;
 
-	const allProjectsResult = await client.runQuery<ProjectGraphQlReturn>(queryAllProjects);
+	try {
+		const allProjectsResult = await client.runQuery<ProjectGraphQlReturn>(queryAllProjects);
 
-	const allProjectNodes = allProjectsResult.data.viewer.repositories.edges;
+		console.log(allProjectsResult);
 
-	const allProjects = allProjectNodes.map(({ node }) => node);
+		const allProjectNodes = allProjectsResult.data.viewer.repositories.edges;
 
-	const pinnedProjectsResult = await client.runQuery<PinnedProjectGraphQlReturn>(
-		queryPinnedProjects
-	);
+		const allProjects = allProjectNodes.map(({ node }) => node);
 
-	const pinnedProjectsNodes = pinnedProjectsResult.data.viewer.pinnedItems.edges;
-
-	const pinnedProjects = pinnedProjectsNodes.map(({ node }) => node);
-
-	return { allProjects, pinnedProjects };
+		return allProjects;
+	} catch (error) {
+		return [];
+	}
 }
