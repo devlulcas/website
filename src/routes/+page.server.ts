@@ -1,25 +1,22 @@
 import { getRecentPostsMetadata } from '$utils/posts/post-metadata';
-import { getProjects } from '$utils/projects/project-fetcher';
-import { error } from '@sveltejs/kit';
+import { getAllProjects, getPinnedProjects } from '$utils/projects/project-fetcher';
 import type { Actions } from './$types';
 
 export async function load() {
-	try {
-		const { allProjects, pinnedProjects } = await getProjects();
+	const allProjects = await getAllProjects();
 
-		const posts = await getRecentPostsMetadata();
+	const pinnedProjects = await getPinnedProjects();
 
-		const featuredPost = posts.find((post) => post.featured) ?? posts[0];
+	const posts = await getRecentPostsMetadata();
 
-		return {
-			pinnedProjects,
-			allProjects,
-			featuredPost,
-			posts
-		};
-	} catch {
-		throw error(404, 'Postagem não encontrada');
-	}
+	const featuredPost = posts.find((post) => post.featured) ?? posts[0];
+
+	return {
+		pinnedProjects,
+		allProjects,
+		featuredPost,
+		posts
+	};
 }
 
 export const actions: Actions = {
