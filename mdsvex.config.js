@@ -43,5 +43,9 @@ export const mdsvexConfig = {
 		dashes: 'oldschool'
 	},
 	remarkPlugins: [relativeImages],
-	rehypePlugins: [rehypeSlug, [rehypeHighlight, languages], [rehypeAutolink, { behavior: 'wrap' }]]
+	rehypePlugins: [
+		rehypeSlug,
+		[(rehypeHighlight, languages)],
+		[rehypeAutolink, { behavior: 'wrap' }]
+	]
 };
