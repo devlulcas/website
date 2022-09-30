@@ -50,8 +50,6 @@ function sortPostsByDate<T extends DatedObject>(metadata: T[], order: OrderBy = 
 // Transforma todos os arquivos em posts úteis
 function parsePosts() {
 	const posts = files.map(([path, file]) => {
-		console.log(file.metadata);
-
 		// Elemento HTML
 		const htmlContent = parse(file.default.render().html);
 
@@ -96,7 +94,7 @@ const files = Object.entries(import.meta.glob('/posts/**/*.md', { eager: true })
 	PreProcessedFile
 ][];
 
-// Todos os posts existentes
+// > Todos os posts existentes
 export const posts = parsePosts();
 
 export type Post = typeof posts[0];
