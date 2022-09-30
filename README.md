@@ -18,7 +18,7 @@
 I do a lot of frontend work with React JS + Typescript, but I also try to do cool things with Svelte too.
 In the backend I'm usually working with pure PHP and Firebird SQL.
 
-_In my free time I do some Kotlin things too_
+_In my free time I do some other things too. Sometimes I play with Go, Dart and Kotlin_
 
 ---
 
@@ -36,10 +36,14 @@ You can go to my website and contact me or:
 - I'm from Brazil
 - I'm a CSS enjoyer
 - My first programming language was Python
-- My first framework was Svelte
-- I like to do some things in Kotlin here and there
+- My first JS framework was Svelte
 - I like frogs 🐸 and Linux🐧
 
-## 🖌️ INSPIRATIONS AND CREDITS
+## 🖌️ TODO LIST
 
-- _The design was based on [ContraUI](https://vijayverma.co/)._
+- [ ] Work more on the color scheme
+- [ ] End the design
+- [ ] Write tests
+- [ ] 3D hero section
+- [ ] Make the form work as intended
+- [ ] Write something to hide projects
