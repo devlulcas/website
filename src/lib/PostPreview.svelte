@@ -7,7 +7,7 @@
 </script>
 
 <!-- HTML -->
-<a href={metadata.slug}>
+<a href={'/blog/' + metadata.slug}>
 	<article>
 		<picture />
 

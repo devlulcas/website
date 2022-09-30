@@ -16,7 +16,7 @@
 			<p>{metadata.date}</p>
 		</div>
 
-		<a href={metadata.slug}>Leia mais -></a>
+		<a href={'/blog/' + metadata.slug}>Leia mais -></a>
 	</div>
 
 	<picture />
