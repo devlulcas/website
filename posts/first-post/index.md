@@ -26,7 +26,7 @@ _Italic_
 
 [Cool link](https://github.com/devlulcas)
 
-![Cool image](/hamster.gif)
+![Cool image](./hamster.gif)
 
 | Tables   |      Are      |  Cool |
 | -------- | :-----------: | ----: |

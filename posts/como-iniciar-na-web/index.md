@@ -1,6 +1,6 @@
 ---
 title: Iniciando na programação web
-thumbnail: /js_logo_5.png
+thumbnail: ./js_logo_5.png
 alt: gatinho
 tags:
   - dev
@@ -18,7 +18,7 @@ console.log('Olá mãe!');
 
 Esse texto possui links de ajuda, conteúdo gratuito, dicas, resumos beeeeeem resumidos e minhas opiniões individuais.
 
-![javascript para crianças](/js_for_kids.webp)
+![javascript para crianças](./js_for_kids.webp)
 
 Eu comecei de forma meio torta no desenvolvimento no geral, mas se eu fosse estudar do zero hoje eu seguiria algo mais ou menos [assim](https://roadmap.sh/frontend) mas com algumas alterações.
 
@@ -28,7 +28,7 @@ O bom da web é que você pode começar com pouco, um PC que te permita abrir um
 
 Pensei também sobre cursos e lugares para aprender. Minha recomendação são esses aqui:
 
-- [Roadmap.sh](https://roadmap.sh/frontend)
+- [RoadMap.sh](https://roadmap.sh/frontend)
 
 Um rumo para estudar.
 
@@ -142,7 +142,7 @@ img {
 }
 ```
 
-![gatinho bonk](/first_site.png)
+![gatinho bonk](,/first_site.png)
 
 _E com Javascript a gente pode fazer as coisas acontecerem_:
 
@@ -226,7 +226,7 @@ Depois você pode ir se aperfeiçoando e pode tirar um tempo para aprender sobre
 - É possível escrever backend (aplicações de servidor, aplicações em tempo real, serviços em geral) com Javascript
 - É possível fazer maconha com maisena e Javascript
 
-![maisena e javascript](/maizena_e_javascript.jpg)
+![maisena e javascript](./maizena_e_javascript.jpg)
 
 > Aprenda sobre:
 

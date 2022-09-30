@@ -16,7 +16,7 @@ O React é uma biblioteca para facilitar a criação de interfaces gráficas na 
 
 O React também é bem popular no mercado, possuindo muitas vagas disponíveis e salários interessantes. Tudo isso torna o React um bom tópico de aprendizado, porém é necessário ter alguns conhecimentos base para começar no React com o pé direito. Nesta postagem falarei sobre esses conhecimentos e algumas coisas mais.
 
-![react bonk](/react_bonk.png)
+![react bonk](./react_bonk.png)
 
 ## A BASE
 
@@ -86,15 +86,15 @@ Com isso você já vai ser capaz de lidar com o Javascript, mexer no DOM, usar A
 
 - Um site de consulta de Pokémon's utilizando a PokeApi. O usuário digita o nome do Pokémon e um card é mostrado com suas informações.
 
-![pokémon](/pokedex_react.jpg)
+![pokémon](./pokedex_react.jpg)
 
 - Uma lista de tarefas onde podemos adicionar tarefas, remover tarefas e filtrar entre feitas e não feitas.
 
-![react todo list](/todo_react.webp)
+![react todo list](./todo_react.webp)
 
 - Um formulário de login com validações para senha e e-mail.
 
-![react login form](/form_react.webp)
+![react login form](./form_react.webp)
 
 Se você já sabe outras linguagem de programação isso provavelmente vai ser tranquilo. Se você já sabe um pouco de Javascript basta dar uma checada no que você não entende bem e seguir o baile.
 
@@ -202,7 +202,7 @@ Utilizamos o JSX pela praticidade. Mas você tem a total liberdade de escrever c
 
 ### HOOKS
 
-![react hooks](/capitao_gancho.webp)
+![react hooks](./capitao_gancho.webp)
 
 Um hook é uma função Javascript que só funciona dentro de um componente. Eles são
 assim pois dependem de coisas específicas que acontecem dentro das funções que retornam

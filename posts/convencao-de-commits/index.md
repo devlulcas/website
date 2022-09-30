@@ -12,7 +12,7 @@ excerpt: Como escrever bons commits para ter um versionamento mais inteligível
 
 # 📏 CONVENÇÃO DE COMMITS
 
-![git](/git.png)
+![git](./git.png)
 
 > As mensagens de commit devem seguir uma estrutura padronizada para melhorar a semântica do histórico do repositório.
 > Com mensagens mais claras e fáceis de reconhecer é mais rápido encontrar mudanças que possam ter afetado o funcionamento da aplicação.
