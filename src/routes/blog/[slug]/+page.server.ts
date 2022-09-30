@@ -5,7 +5,9 @@ import type { PageServerLoad } from './$types';
 export async function load(context: PageServerLoad) {
 	const { slug } = context.params;
 
-	const post = posts.find((post) => slug === post.slug);
+	const post = posts.find((post) => slug === post.slug?.trim());
+
+	console.log(post);
 
 	if (!post) {
 		throw error(404, 'Postagem não encontrada');

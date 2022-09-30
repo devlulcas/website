@@ -1,5 +1,5 @@
 import { posts } from '$/data/posts/posts';
-import { getAllProjects, getPinnedProjects } from '$utils/projects/project-fetcher';
+import { getAllProjects, getPinnedProjects } from '$/data/projects/project-fetcher';
 import type { Actions } from './$types';
 
 export async function load() {

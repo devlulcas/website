@@ -1,11 +1,9 @@
-import { getRecentPostsMetadata } from '$/data/posts/post-metadata';
+import { posts } from '$/data/posts/posts';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export async function load(context: PageServerLoad) {
 	try {
-		const posts = await getRecentPostsMetadata();
-
 		const tags = posts.flatMap((data) => data.tags);
 
 		const uniqueTags = Array.from(new Set(tags));
