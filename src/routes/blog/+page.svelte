@@ -63,4 +63,8 @@
 			flex-flow: row wrap;
 		}
 	}
+
+	li {
+		min-width: calc(50% - 1.25rem);
+	}
 </style>
