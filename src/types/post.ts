@@ -7,4 +7,5 @@ export interface PostMetadata {
 	excerpt: string;
 	slug: string;
 	featured?: boolean;
+	preview?: string;
 }

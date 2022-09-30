@@ -1,19 +1,17 @@
-import { parseMarkdownFile } from '$utils/posts/markdown-parser';
+import { posts } from '$/data/posts/posts';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export async function load(context: PageServerLoad) {
 	const { slug } = context.params;
 
-	try {
-		const { content, metadata } = await parseMarkdownFile(slug);
+	const post = posts.find((post) => slug === post.slug);
 
-		const body = { metadata, content };
-
-		return {
-			body
-		};
-	} catch {
+	if (!post) {
 		throw error(404, 'Postagem não encontrada');
 	}
+
+	return {
+		post
+	};
 }

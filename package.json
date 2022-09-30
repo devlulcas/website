@@ -16,7 +16,6 @@
 		"@playwright/test": "^1.25.0",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
-		"@types/js-yaml": "^4.0.5",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
 		"env-cmd": "^10.1.0",
@@ -36,15 +35,11 @@
 	"type": "module",
 	"dependencies": {
 		"highlight.js": "^11.6.0",
-		"js-yaml": "^4.1.0",
+		"mdsvex": "^0.10.6",
+		"mdsvex-relative-images": "^1.0.2",
+		"node-html-parser": "^6.1.1",
+		"rehype-autolink-headings": "^6.1.1",
 		"rehype-highlight": "^5.0.2",
-		"rehype-slug": "^5.0.1",
-		"rehype-stringify": "^9.0.3",
-		"remark-frontmatter": "^4.0.1",
-		"remark-gfm": "^3.0.1",
-		"remark-parse": "^10.0.1",
-		"remark-rehype": "^10.1.0",
-		"to-vfile": "^7.2.3",
-		"unified": "^10.1.2"
+		"rehype-slug": "^5.0.1"
 	}
 }

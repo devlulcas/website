@@ -2,7 +2,6 @@
 <script lang="ts">
 	import PostContent from '$lib/PostContent.svelte';
 	import PostFooter from '$lib/PostFooter.svelte';
-	import '$assets/styles/highlight.css';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -11,10 +10,12 @@
 <!-- HTML -->
 
 <div class="container">
-	<PostContent content={data.body.content} />
+	<PostContent>
+		<svelte:component this={data.component} />
+	</PostContent>
 </div>
 
-<PostFooter time={data.body.metadata.date} />
+<PostFooter time={data.post.date} />
 
 <!-- STYLES - SCSS -->
 <style lang="scss">

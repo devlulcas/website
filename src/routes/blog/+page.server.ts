@@ -1,4 +1,4 @@
-import { getRecentPostsMetadata } from '$utils/posts/post-metadata';
+import { getRecentPostsMetadata } from '$/data/posts/post-metadata';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 

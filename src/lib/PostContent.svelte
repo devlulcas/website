@@ -1,11 +1,6 @@
-<!-- TYPESCRIPT -->
-<script lang="ts">
-	export let content: string;
-</script>
-
 <!-- HTML -->
 <main class="content">
-	{@html content}
+	<slot />
 </main>
 
 <!-- STYLES - SCSS -->

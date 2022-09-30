@@ -1,4 +1,4 @@
-import { getRecentPostsMetadata } from '$utils/posts/post-metadata';
+import { posts } from '$/data/posts/posts';
 import { getAllProjects, getPinnedProjects } from '$utils/projects/project-fetcher';
 import type { Actions } from './$types';
 
@@ -6,8 +6,6 @@ export async function load() {
 	const allProjects = await getAllProjects();
 
 	const pinnedProjects = await getPinnedProjects();
-
-	const posts = await getRecentPostsMetadata();
 
 	const featuredPost = posts.find((post) => post.featured) ?? posts[0];
 

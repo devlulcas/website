@@ -1,3 +1,11 @@
+import rehypeAutolink from 'rehype-autolink-headings';
+
+import rehypeSlug from 'rehype-slug';
+
+import relativeImages from 'mdsvex-relative-images';
+
+import rehypeHighlight from 'rehype-highlight';
+
 // Suporte a linguagens de programação que me interessam
 import dart from 'highlight.js/lib/languages/dart';
 import dockerfile from 'highlight.js/lib/languages/dockerfile';
@@ -27,4 +35,13 @@ export const languages = {
 	scss,
 	python,
 	pgsql
+};
+
+export const mdsvexConfig = {
+	extensions: ['.svx', '.md'],
+	smartypants: {
+		dashes: 'oldschool'
+	},
+	remarkPlugins: [relativeImages],
+	rehypePlugins: [rehypeSlug, [rehypeHighlight, languages], [rehypeAutolink, { behavior: 'wrap' }]]
 };
