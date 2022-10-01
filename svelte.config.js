@@ -9,9 +9,6 @@ const config = {
 	preprocess: [mdsvex(mdsvexConfig), preprocess()],
 	kit: {
 		adapter: adapter(),
-		prerender: {
-			entries: ['/sitemap.xml']
-		},
 		alias: {
 			'$assets/*': 'src/assets/*',
 			'$modules/*': 'src/modules/*',
