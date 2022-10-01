@@ -1,14 +1,18 @@
-import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
 import { mdsvexConfig } from './mdsvex.config.js';
+import vercel from '@sveltejs/adapter-vercel';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	preprocess: [mdsvex(mdsvexConfig), preprocess()],
 	kit: {
-		adapter: adapter(),
+		adapter: vercel({
+			edge: false,
+			external: [],
+			split: false
+		}),
 		alias: {
 			'$assets/*': 'src/assets/*',
 			'$modules/*': 'src/modules/*',
