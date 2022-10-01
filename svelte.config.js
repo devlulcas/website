@@ -10,7 +10,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		prerender: {
-			entries: ['/sitemap.xml', '/rss.xml']
+			entries: ['/sitemap.xml']
 		},
 		alias: {
 			'$assets/*': 'src/assets/*',
