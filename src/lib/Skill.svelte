@@ -23,6 +23,7 @@
 		gap: 1rem;
 		background: var(--surface);
 		color: var(--on-surface);
+		box-shadow: var(--light-shadow);
 		border-radius: 0.25rem;
 	}
 

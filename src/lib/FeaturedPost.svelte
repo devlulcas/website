@@ -32,6 +32,7 @@
 		color: var(--on-surface);
 		padding: 1rem;
 		display: flex;
+		box-shadow: var(--light-shadow);
 
 		@media screen and (min-width: 90rem) {
 			height: 50rem;
@@ -71,6 +72,7 @@
 
 	a {
 		text-decoration: none;
+		color: var(--secondary-dark);
 		font-size: clamp(1.2rem, 1.2vw, 1.6rem);
 	}
 

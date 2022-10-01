@@ -33,7 +33,15 @@
 	.container {
 		overflow: hidden;
 		height: calc(100vh - var(--header-height));
-		background: url(/capybara.png);
+
+		background: linear-gradient(
+				10deg,
+				rgba(0, 230, 46, 1) 0%,
+				rgba(0, 230, 134, 1) 2%,
+				rgba(255, 255, 255, 0) 15%
+			),
+			url(/capybara.png);
+
 		background-position: bottom;
 		background-repeat: no-repeat;
 		background-size: cover;

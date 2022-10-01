@@ -21,6 +21,7 @@
 		border-radius: 0.5rem;
 		overflow: hidden;
 		position: relative;
+		box-shadow: var(--light-shadow);
 		background-size: cover;
 		background-position: top;
 	}

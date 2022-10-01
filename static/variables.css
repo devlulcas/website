@@ -10,7 +10,7 @@
 	--on-background-dark: hsl(0 0% 80);
 
 	/* * SURFACE COLORS */
-	--surface: hsl(0, 0%, 90%);
+	--surface: hsl(0, 0%, 95%);
 	--on-surface: hsl(0 0% 0);
 
 	/* * PRIMARY COLORS */
@@ -31,4 +31,6 @@
 	--on-secondary-dark: hsl(0, 0%, 100%);
 	--on-secondary: hsl(0, 0%, 100%);
 	--on-secondary-light: hsl(0, 0%, 10%);
+
+	--light-shadow: 0.1rem 0.1rem 0.2rem 0.1rem hsla(0, 0%, 50%, 0.75);
 }

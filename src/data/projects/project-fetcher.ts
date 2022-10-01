@@ -39,8 +39,6 @@ export async function getPinnedProjects() {
 			queryPinnedProjects
 		);
 
-		console.log(pinnedProjectsResult);
-
 		const pinnedProjectsNodes = pinnedProjectsResult.data.viewer.pinnedItems.edges;
 
 		const pinnedProjects = pinnedProjectsNodes.map(({ node }) => node);
@@ -80,8 +78,6 @@ export async function getAllProjects() {
 
 	try {
 		const allProjectsResult = await client.runQuery<ProjectGraphQlReturn>(queryAllProjects);
-
-		console.log(allProjectsResult);
 
 		const allProjectNodes = allProjectsResult.data.viewer.repositories.edges;
 
