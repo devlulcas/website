@@ -1,0 +1,35 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["html", "javascript", "typescript"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "files.eol": "\n",
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "cSpell.words": [
+    "commitar",
+    "Devs",
+    "doctag",
+    "frontmatter",
+    "hljs",
+    "hsla",
+    "kotlin",
+    "Maik",
+    "mdsvex",
+    "oldschool",
+    "pecl",
+    "pgsql",
+    "pokémon",
+    "projetinhos",
+    "rehype",
+    "Rocketseat",
+    "sveltejs",
+    "swoole",
+    "vfile"
+  ],
+  "cSpell.language": "en,pt-BR,lorem"
+}

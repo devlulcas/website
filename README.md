@@ -1,35 +1,52 @@
-# Welcome to [Astro](https://astro.build)
+<div align="center">
+  <img src="https://raw.githubusercontent.com/devlulcas/devlulcas.github.io/main/.github/images/logo.png" alt="logo"/>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+![TYPESCRIPT](https://img.shields.io/static/v1?label=TYPESCRIPT&labelColor=18191F&message=TS&color=18191F&logo=TYPESCRIPT&logoColor=FFBD12&style=flat-square)
+![ASTRO](https://img.shields.io/static/v1?label=ASTRO&labelColor=18191F&message=V1&color=18191F&logo=ASTRO&logoColor=FFBD12&style=flat-square)
+![POSTCSS](https://img.shields.io/static/v1?label=POST&labelColor=18191F&message=CSS&color=18191F&logo=POSTCSS&logoColor=FFBD12&style=flat-square)
+![GITHUB](https://img.shields.io/static/v1?label=GIT&labelColor=18191F&message=HUB&color=18191F&logo=GITHUB&logoColor=FFBD12&style=flat-square)
+![FIGMA](https://img.shields.io/static/v1?label=FIGMA&labelColor=18191F&message=+CONTRA&color=18191F&logo=figma&logoColor=FFBD12&style=flat-square)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+<h1>🧙‍♂️ HI! THATS MY PORTFOLIO 🧙‍♂️</h1>
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+</div>
 
+## 👋 WHAT I DO
 
-## 🚀 Project Structure
+**I'm a software developer focused in web development.**
 
-Inside of your Astro project, you'll see the following folders and files:
+I do a lot of frontend work with React JS + Typescript, but I also try to do cool things with Svelte too.
+In the backend I'm usually working with pure PHP and Firebird SQL.
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+_In my free time I do some other things too. Sometimes I play with Go, Dart and Kotlin_
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 📫 CONTACT
 
-Any static assets, like images, can be placed in the `public/` directory.
+You can go to my website and contact me or:
+
+- You can send me an e-mail: <a href="mailto:lucasalvesrego.contato@gmail.com" title="e-mail">lucasalvesrego.contato@gmail.com</a>
+- You can contact me in my linkedin: [lucasalvesregodev](https://www.linkedin.com/in/lucasalvesregodev/)
+
+---
+
+## 👾 SOME RANDOM (NOT SO RANDOM) THINGS ABOUT ME
+
+- I'm from Brazil
+- I'm a CSS enjoyer
+- My first programming language was Python
+- My first JS framework was Svelte
+- I like frogs 🐸 and Linux🐧
+
+## 🖌️ TODO LIST
+
+- [ ] Work more on the color scheme
+- [ ] End the design
+- [ ] Write tests
+- [ ] 3D hero section
+- [ ] Make the form work as intended
+- [ ] Write something to hide projects
 
 ## 🧞 Commands
 
@@ -43,7 +60,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying       |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
