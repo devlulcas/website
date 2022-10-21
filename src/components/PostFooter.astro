@@ -1,0 +1,132 @@
+---
+interface Props {
+  time: string;
+}
+
+const { time } = Astro.props;
+---
+
+<!-- HTML -->
+<footer>
+  <div class="container">
+    <div class="logo">
+      <img src="/favicon.png" alt="logo devlulcas" width="50px" height="50px" />
+    </div>
+
+    <div class="data">
+      <p>
+        <span class="about">Autor:</span>
+        Lucas Alves Rego
+      </p>
+
+      <p>
+        <span class="about">Sobre:</span>
+        In deserunt esse commodo consectetur sunt eu exercitation eiusmod quis ullamco
+        dolore qui labore sint. Minim magna ea ut nisi cillum. Ad sunt in proident
+        officia eu aute officia. Sit anim aliqua veniam aliqua anim sint ea excepteur
+        exercitation ad.
+      </p>
+
+      <nav class="contact">
+        <a href="https://github.com/devlulcas">
+          <p class="link">
+            <i>#</i>
+            github
+          </p>
+        </a>
+
+        <a href={"https://www.linkedin.com/in/lucasalvesregodev/"}>
+          <p class="link">
+            <i>#</i>
+            linkedin
+          </p>
+        </a>
+
+        <a href="https://devlulcas-github-io.vercel.app">
+          <p class="link">
+            <i>#</i>
+            portfólio
+          </p>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <p class="date">
+    Publicado em <time datetime={time}>{time}</time>
+  </p>
+</footer>
+
+<!-- STYLES - SCSS -->
+<style lang="scss">
+  footer {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 2rem 2rem 2rem;
+    border-top: 0.2rem solid salmon;
+  }
+
+  .container {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .date {
+    padding: 1rem;
+    text-align: center;
+
+    & time {
+      color: #0ff;
+      border: 0.1rem solid #0ff;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      margin-left: 0.5rem;
+      animation: neon-flicker 1s infinite alternate;
+    }
+  }
+
+  .about {
+    color: #0ff;
+  }
+
+  @keyframes neon-flicker {
+    0%,
+    10%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+      text-shadow: -0.02em -0.05em 10em #ffffff, -0.02em -0.05em 5em #ffffff,
+        0 0 0.3em #0ff, 0 0 1em #0ff, 0 0 1em #0ff, 0 0 3em #0ff, 0 0 2em #0ff;
+    }
+
+    20%,
+    24%,
+    55% {
+      text-shadow: none;
+    }
+  }
+
+  .contact {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .link {
+    cursor: pointer;
+    border-bottom: 0.2rem dotted #0ff;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+
+    &:hover {
+      border-color: #f00;
+    }
+  }
+</style>

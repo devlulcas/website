@@ -1,4 +1,7 @@
 ---
+import PostContent from "../../components/PostContent.astro";
+import Layout from "../../layouts/Layout.astro";
+
 export async function getStaticPaths() {
   const posts = await Astro.glob("../../../posts/**/*.md");
 
@@ -15,6 +18,8 @@ export async function getStaticPaths() {
 const { Content } = Astro.props.post;
 ---
 
-<article>
-  <Content />
-</article>
+<Layout title="title">
+  <PostContent>
+    <Content />
+  </PostContent>
+</Layout>

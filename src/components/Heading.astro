@@ -1,0 +1,20 @@
+---
+interface Props {
+  id: number;
+}
+
+const { id } = Astro.props;
+---
+
+<!-- HTML -->
+<h2 id={id.toString()}><slot /></h2>
+
+<!-- STYLES - SCSS -->
+<style lang="scss">
+  h2 {
+    margin-top: 1rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--background);
+    font-weight: 600;
+  }
+</style>

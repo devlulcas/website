@@ -1,0 +1,41 @@
+---
+interface Props {
+  image: string;
+}
+
+const { image } = Astro.props;
+---
+
+<!-- HTML -->
+<div class="container">
+  <img src={image} alt={"tech"} height={35} width={35} />
+  <p><slot /></p>
+</div>
+
+<!-- STYLES - SCSS -->
+<style lang="scss">
+  .container {
+    width: fit-content;
+    padding: 0.5rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: var(--surface);
+    color: var(--on-surface);
+    box-shadow: var(--light-shadow);
+    border-radius: 0.25rem;
+  }
+
+  img {
+    width: 2.5rem;
+    @media screen and (min-width: 90rem) {
+      width: 5rem;
+    }
+  }
+
+  p {
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+  }
+</style>
