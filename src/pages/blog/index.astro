@@ -1,0 +1,13 @@
+---
+import type { PostFrontmatter } from "../../types/markdown";
+
+const posts = await Astro.glob("../../../posts/**/*.md");
+
+const postsMetadata = posts.map((post) => {
+  return post.frontmatter as PostFrontmatter;
+});
+---
+
+<ul>
+  {postsMetadata.map((postMetadata) => <li>{JSON.stringify(postMetadata)}</li>)}
+</ul>
