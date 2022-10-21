@@ -19,7 +19,9 @@
 		<a href={'/blog/' + metadata.slug}>Leia mais -></a>
 	</div>
 
-	<picture />
+	<picture>
+		<img src={metadata.thumbnail} alt={metadata.title} />
+	</picture>
 </article>
 
 <!-- STYLES - SCSS -->

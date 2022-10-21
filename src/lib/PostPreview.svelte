@@ -9,7 +9,9 @@
 <!-- HTML -->
 <a href={'/blog/' + metadata.slug}>
 	<article>
-		<picture />
+		<picture>
+			<img src={metadata.thumbnail} alt={metadata.title} />
+		</picture>
 
 		<div class="content">
 			<h3>{metadata.title}</h3>
