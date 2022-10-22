@@ -1,0 +1,48 @@
+---
+import type { PostFrontmatter } from "../types/markdown";
+import FeaturedPost from "../components/FeaturedPost.astro";
+import Heading from "../components/Heading.astro";
+import PostPreview from "../components/PostPreview.astro";
+
+interface Props {
+  recentPosts: PostFrontmatter[];
+  featured: PostFrontmatter;
+}
+
+const { recentPosts, featured } = Astro.props;
+---
+
+<!-- HTML -->
+<section>
+  <div>
+    <FeaturedPost metadata={featured} />
+
+    <Heading id="posts">Postagens recentes</Heading>
+
+    <ul>
+      {
+        recentPosts.splice(0, 4).map((recentPost) => (
+          <li>
+            <PostPreview metadata={recentPost} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<!-- STYLES - SCSS -->
+<style lang="scss">
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  ul {
+    display: flex;
+    gap: 2.5rem;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+</style>

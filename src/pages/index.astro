@@ -1,20 +1,45 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import Contact from "../modules/Contact.svelte";
-import Posts from "../modules/Posts.svelte";
-import Projects from "../modules/Projects.svelte";
-import Skills from "../modules/Skills.svelte";
-import Start from "../modules/Start.svelte";
+import Contact from "../modules/Contact.astro";
+import Posts from "../modules/Posts.astro";
+import Projects from "../modules/Projects.astro";
+import Skills from "../modules/Skills.astro";
+import Start from "../modules/Start.astro";
 
-const data = {};
+import {
+  getAllProjects,
+  getPinnedProjects,
+} from "../data/projects/project-fetcher";
+
+import type { PostFrontmatter } from "../types/markdown";
+
+const posts = await Astro.glob("../../posts/**/*.md");
+
+const postsMetadata = posts.map((post) => {
+  return post.frontmatter as PostFrontmatter;
+});
+
+const allProjects = await getAllProjects();
+
+const pinnedProjects = await getPinnedProjects();
+
+const featuredPost = postsMetadata[0];
+
+const data = {
+  pinnedProjects,
+  allProjects,
+  featuredPost,
+  postsMetadata,
+};
 ---
 
 <!-- HTML -->
 <Layout title="Welcome to Astro.">
   <Start />
+
   <div>
-    <Posts featured={data.featuredPost} recentPosts={data.posts} />
+    <Posts featured={data.featuredPost} recentPosts={data.postsMetadata} />
     <Projects
       projects={data.allProjects}
       featuredProjects={data.pinnedProjects}

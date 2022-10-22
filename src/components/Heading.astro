@@ -1,13 +1,13 @@
 ---
 interface Props {
-  id: number;
+  id: string;
 }
 
 const { id } = Astro.props;
 ---
 
 <!-- HTML -->
-<h2 id={id.toString()}><slot /></h2>
+<h2 id={id}><slot /></h2>
 
 <!-- STYLES - SCSS -->
 <style lang="scss">

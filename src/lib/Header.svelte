@@ -1,6 +1,6 @@
 <!-- TYPESCRIPT -->
 <script lang="ts">
-  import MenuButton from "./MenuButton.svelte";
+  import MenuButton from "./MenuButton.astro";
   import MobileMenu from "./MobileMenu.svelte";
   import NavItems from "./NavItems.svelte";
 

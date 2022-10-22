@@ -1,9 +1,9 @@
 ---
-import type { PostMetadata } from "../types/post";
+import type { PostFrontmatter } from "../types/markdown";
 import Tag from "./Tag.astro";
 
 interface Props {
-  metadata: PostMetadata;
+  metadata: PostFrontmatter;
 }
 
 const { metadata } = Astro.props;
@@ -25,7 +25,7 @@ const { metadata } = Astro.props;
 
       <ul>
         {
-          metadata.tags.Map((tag) => (
+          metadata.tags.map((tag) => (
             <Tag href={`/blog/tags/${tag}`}>{tag}</Tag>
           ))
         }
