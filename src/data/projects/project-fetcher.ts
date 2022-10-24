@@ -1,16 +1,16 @@
 import type {
-	PinnedProjectGraphQlReturn,
-	ProjectGraphQlReturn
-} from '$commonTypes/project-graphql-return';
+  PinnedProjectGraphQlReturn,
+  ProjectGraphQlReturn,
+} from "../../types/project-graphql-return";
+import { GraphqlHelper } from "../graphql/helper";
 
-import { GraphqlHelper } from '../graphql/helper';
+const url = import.meta.env.GITHUB_GRAPHQL_ENDPOINT;
+const key = import.meta.env.GITHUB_API_KEY;
 
-const url = process.env.GITHUB_GRAPHQL_ENDPOINT ?? 'https://api.github.com/graphql';
-const key = process.env.GITHUB_API_KEY;
 const client = new GraphqlHelper(url, `bearer ${key}`);
 
 export async function getPinnedProjects() {
-	const queryPinnedProjects = `
+  const queryPinnedProjects = `
 	{
 		viewer {
 			pinnedItems(first: 4) {
@@ -34,23 +34,23 @@ export async function getPinnedProjects() {
 		}
 	}`;
 
-	try {
-		const pinnedProjectsResult = await client.runQuery<PinnedProjectGraphQlReturn>(
-			queryPinnedProjects
-		);
+  try {
+    const pinnedProjectsResult =
+      await client.runQuery<PinnedProjectGraphQlReturn>(queryPinnedProjects);
 
-		const pinnedProjectsNodes = pinnedProjectsResult.data.viewer.pinnedItems.edges;
+    const pinnedProjectsNodes =
+      pinnedProjectsResult.data.viewer.pinnedItems.edges;
 
-		const pinnedProjects = pinnedProjectsNodes.map(({ node }) => node);
+    const pinnedProjects = pinnedProjectsNodes.map(({ node }) => node);
 
-		return pinnedProjects;
-	} catch (error) {
-		return [];
-	}
+    return pinnedProjects;
+  } catch (error) {
+    return [];
+  }
 }
 
 export async function getAllProjects() {
-	const queryAllProjects = `
+  const queryAllProjects = `
 	{
 		viewer {
 	  		repositories(
@@ -76,15 +76,17 @@ export async function getAllProjects() {
 		}
 	}`;
 
-	try {
-		const allProjectsResult = await client.runQuery<ProjectGraphQlReturn>(queryAllProjects);
+  try {
+    const allProjectsResult = await client.runQuery<ProjectGraphQlReturn>(
+      queryAllProjects
+    );
 
-		const allProjectNodes = allProjectsResult.data.viewer.repositories.edges;
+    const allProjectNodes = allProjectsResult.data.viewer.repositories.edges;
 
-		const allProjects = allProjectNodes.map(({ node }) => node);
+    const allProjects = allProjectNodes.map(({ node }) => node);
 
-		return allProjects;
-	} catch (error) {
-		return [];
-	}
+    return allProjects;
+  } catch (error) {
+    return [];
+  }
 }
