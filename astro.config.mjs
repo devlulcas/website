@@ -8,9 +8,6 @@ import localImageResolver from "./local-image-resolver";
 export default defineConfig({
   vite: {
     plugins: localImageResolver,
-    ssr: {
-      external: ["svgo"],
-    },
   },
   integrations: [svelte()],
 });
