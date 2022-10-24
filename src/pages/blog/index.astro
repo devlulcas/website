@@ -1,4 +1,10 @@
 ---
+import FeaturedPost from "../../components/FeaturedPost.astro";
+import Heading from "../../components/Heading.astro";
+import PostList from "../../components/PostList.astro";
+import Socials from "../../components/Socials.astro";
+import Tag from "../../components/Tag.astro";
+import Layout from "../../layouts/Layout.astro";
 import type { PostFrontmatter } from "../../types/markdown";
 
 const posts = await Astro.glob("../../../posts/**/*.md");
@@ -6,8 +12,71 @@ const posts = await Astro.glob("../../../posts/**/*.md");
 const postsMetadata = posts.map((post) => {
   return post.frontmatter as PostFrontmatter;
 });
+
+const duplicatedTags = postsMetadata.flatMap((data) => data.tags);
+
+const tags = Array.from(new Set(duplicatedTags));
+
+const featuredPost = posts[0].frontmatter as PostFrontmatter;
+
+const data = {
+  tags,
+  featuredPost,
+  postsMetadata,
+};
 ---
 
-<ul>
-  {postsMetadata.map((postMetadata) => <li>{JSON.stringify(postMetadata)}</li>)}
-</ul>
+<!-- HTML -->
+<Layout title="Posts">
+  <div class="container">
+    <FeaturedPost metadata={data.featuredPost} />
+
+    <Heading id="tags">Tags</Heading>
+
+    <ul class="tags">
+      {data.tags.map((tag) => <Tag href={`/blog/tags/${tag}`}>{tag}</Tag>)}
+    </ul>
+
+    <Heading id="recent-posts">Postagens recentes</Heading>
+
+    <PostList posts={postsMetadata} />
+  </div>
+
+  <footer class="footer">
+    <Socials />
+  </footer>
+</Layout>
+
+<!-- STYLES - SCSS -->
+<style lang="scss">
+  .container {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+
+    @media screen and (min-width: 90rem) {
+      padding: 1rem 25rem;
+    }
+  }
+
+  .tags {
+    display: flex;
+    gap: 1rem;
+    flex-flow: row wrap;
+  }
+
+  .footer {
+    width: 100%;
+    padding: 2rem 1rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (min-width: 90rem) {
+      padding: 2rem 25rem;
+    }
+  }
+</style>

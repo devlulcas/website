@@ -15,22 +15,22 @@ const name = project.name.replaceAll("-", " ");
 ---
 
 <!-- HTML -->
-<article class:reversed-container={reverse}>
+<article class:list={[{ reversedContainer: reverse }]}>
   <picture
     aria-label={name}
     title={name}
-    style="background-image: url({imageUrl});"></picture>
+    style={`background-image: url(${imageUrl})`}></picture>
 
   <div class="content">
     <div class="text">
-      <h3 class:reversed-text={reverse}>{name}</h3>
+      <h3 class:list={[{ reversedText: reverse }]}>{name}</h3>
 
-      <p class:reversed-text={reverse}>
+      <p class:list={[{ reversedText: reverse }]}>
         {project.description}
       </p>
     </div>
 
-    <ul class:reversed-tags={reverse}>
+    <ul class:list={[{ reversedTags: reverse }]}>
       {
         project.languages.nodes.map((language) => (
           <Tag href={language.name}>{language.name}</Tag>
@@ -112,15 +112,15 @@ const name = project.name.replaceAll("-", " ");
     flex-wrap: wrap;
   }
 
-  .reversed-container {
+  .reversedContainer {
     flex-direction: row-reverse;
   }
 
-  .reversed-text {
+  .reversedText {
     text-align: left;
   }
 
-  .reversed-tags {
+  .reversedTags {
     justify-content: flex-start;
   }
 </style>

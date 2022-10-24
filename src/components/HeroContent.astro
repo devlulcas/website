@@ -1,3 +1,7 @@
+---
+import { Icon } from "astro-icon";
+---
+
 <!-- HTML -->
 <div class="container">
   <section>
@@ -11,8 +15,8 @@
 
   <div class="cta">
     <a href="/">
-      <i>X</i>
       Vamos conversar!
+      <Icon name="charm:coffee" />
     </a>
   </div>
 </div>
@@ -56,6 +60,7 @@
 
   a {
     display: flex;
+    align-items: center;
     gap: 1rem;
     width: fit-content;
     border-radius: 0.25rem;
@@ -70,5 +75,9 @@
       var(--secondary) 89.75%
     );
     text-decoration: none;
+  }
+
+  [astro-icon] {
+    height: 2rem;
   }
 </style>

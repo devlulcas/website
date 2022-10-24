@@ -2,7 +2,7 @@
 import type { PostFrontmatter } from "../types/markdown";
 import FeaturedPost from "../components/FeaturedPost.astro";
 import Heading from "../components/Heading.astro";
-import PostPreview from "../components/PostPreview.astro";
+import PostList from "../components/PostList.astro";
 
 interface Props {
   recentPosts: PostFrontmatter[];
@@ -19,15 +19,9 @@ const { recentPosts, featured } = Astro.props;
 
     <Heading id="posts">Postagens recentes</Heading>
 
-    <ul>
-      {
-        recentPosts.splice(0, 4).map((recentPost) => (
-          <li>
-            <PostPreview metadata={recentPost} />
-          </li>
-        ))
-      }
-    </ul>
+    <div class="posts">
+      <PostList posts={recentPosts.splice(0, 4)} />
+    </div>
   </div>
 </section>
 
@@ -39,10 +33,7 @@ const { recentPosts, featured } = Astro.props;
     gap: 1rem;
   }
 
-  ul {
-    display: flex;
-    gap: 2.5rem;
-    flex-direction: column;
+  .posts {
     margin-top: 2rem;
   }
 </style>

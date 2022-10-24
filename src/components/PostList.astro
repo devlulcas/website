@@ -1,0 +1,32 @@
+---
+import type { PostFrontmatter } from "../types/markdown";
+import PostPreview from "./PostPreview.astro";
+
+interface Props {
+  posts: PostFrontmatter[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul>
+  {
+    posts.map((post) => (
+      <li>
+        <PostPreview metadata={post} />
+      </li>
+    ))
+  }
+</ul>
+
+<style lang="scss">
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+
+    @media screen and (min-width: 90rem) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>

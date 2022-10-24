@@ -1,4 +1,6 @@
 ---
+import Socials from "./Socials.astro";
+
 interface Props {
   time: string;
 }
@@ -7,7 +9,7 @@ const { time } = Astro.props;
 ---
 
 <!-- HTML -->
-<footer>
+<footer class="footer">
   <div class="container">
     <div class="logo">
       <img src="/favicon.png" alt="logo devlulcas" width="50px" height="50px" />
@@ -27,28 +29,7 @@ const { time } = Astro.props;
         exercitation ad.
       </p>
 
-      <nav class="contact">
-        <a href="https://github.com/devlulcas">
-          <p class="link">
-            <i>#</i>
-            github
-          </p>
-        </a>
-
-        <a href={"https://www.linkedin.com/in/lucasalvesregodev/"}>
-          <p class="link">
-            <i>#</i>
-            linkedin
-          </p>
-        </a>
-
-        <a href="https://devlulcas-github-io.vercel.app">
-          <p class="link">
-            <i>#</i>
-            portfólio
-          </p>
-        </a>
-      </nav>
+      <Socials />
     </div>
   </div>
 
@@ -59,8 +40,8 @@ const { time } = Astro.props;
 
 <!-- STYLES - SCSS -->
 <style lang="scss">
-  footer {
-    font-size: 1.2rem;
+  .footer {
+    font-size: 1.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;

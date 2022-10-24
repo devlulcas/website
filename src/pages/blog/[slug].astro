@@ -1,6 +1,7 @@
 ---
-import PostContent from "../../components/PostContent.astro";
 import Layout from "../../layouts/Layout.astro";
+import PostContent from "../../layouts/PostContent.astro";
+import type { PostFrontmatter } from "../../types/markdown";
 
 export async function getStaticPaths() {
   const posts = await Astro.glob("../../../posts/**/*.md");
@@ -11,15 +12,17 @@ export async function getStaticPaths() {
     },
     props: {
       post,
+      metadata: post.frontmatter,
     },
   }));
 }
 
 const { Content } = Astro.props.post;
+const { date } = Astro.props.metadata as PostFrontmatter;
 ---
 
 <Layout title="title">
-  <PostContent>
+  <PostContent time={date}>
     <Content />
   </PostContent>
 </Layout>

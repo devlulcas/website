@@ -1,8 +1,9 @@
 ---
-import type { PostMetadata } from "../types/post";
+import type { PostFrontmatter } from "../types/markdown";
+import { Icon } from "astro-icon";
 
 interface Props {
-  metadata: PostMetadata;
+  metadata: PostFrontmatter;
 }
 
 const { metadata } = Astro.props;
@@ -19,7 +20,9 @@ const { metadata } = Astro.props;
       <p>{metadata.date}</p>
     </div>
 
-    <a href={"/blog/" + metadata.slug}>Leia mais -></a>
+    <a href={"/blog/" + metadata.slug}>
+      Leia mais <Icon name="charm:arrow-right" />
+    </a>
   </div>
 
   <picture>
@@ -78,7 +81,14 @@ const { metadata } = Astro.props;
   a {
     text-decoration: none;
     color: var(--secondary-dark);
-    font-size: clamp(1.2rem, 1.2vw, 1.6rem);
+    font-size: clamp(1.2rem, 1.25vw, 1.8rem);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  [astro-icon] {
+    height: 1.75rem;
   }
 
   picture {
