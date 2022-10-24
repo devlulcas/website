@@ -143,7 +143,7 @@ img {
 }
 ```
 
-![gatinho bonk](,/first_site.png)
+![gatinho bonk](./first_site.png)
 
 _E com Javascript a gente pode fazer as coisas acontecerem_:
 
