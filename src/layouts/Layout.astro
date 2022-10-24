@@ -1,12 +1,13 @@
 ---
+import Header from "../lib/Header.svelte";
+
 export interface Props {
   title: string;
 }
 
-import "../styles/variables.scss";
 import "../styles/reset.scss";
+import "../styles/variables.scss";
 import "../styles/global.scss";
-import "../styles/highlight.scss";
 
 const { title } = Astro.props;
 ---
@@ -16,7 +17,7 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,6 +29,7 @@ const { title } = Astro.props;
   </head>
 
   <body>
+    <Header client:load />
     <slot />
   </body>
 </html>

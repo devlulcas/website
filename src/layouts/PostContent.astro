@@ -1,0 +1,30 @@
+---
+import PostFooter from "../components/PostFooter.astro";
+import "../styles/post.scss";
+
+interface Props {
+  time: string;
+}
+
+const { time } = Astro.props;
+---
+
+<!-- HTML -->
+<main class="content">
+  <slot />
+</main>
+
+<PostFooter time={time} />
+
+<style lang="scss">
+  .content {
+    max-width: 100vw;
+    overflow-x: hidden;
+    padding: 0 1rem;
+    background: #babaca;
+
+    @media screen and (min-width: 90rem) {
+      padding: 0 30rem;
+    }
+  }
+</style>
