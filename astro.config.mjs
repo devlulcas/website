@@ -1,13 +1,13 @@
 import { defineConfig } from "astro/config";
 
-// https://astro.build/config
 import svelte from "@astrojs/svelte";
 import localImageResolver from "./local-image-resolver";
+import sitemap from "@astrojs/sitemap";
 
-// https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: localImageResolver,
   },
-  integrations: [svelte()],
+  site: "https://devlulcas-github-io.vercel.app/",
+  integrations: [svelte(), sitemap()],
 });

@@ -27,7 +27,15 @@ const data = {
 ---
 
 <!-- HTML -->
-<Layout title="Posts">
+<Layout
+  seo={{
+    title: "DevLulcas - Blog",
+    description: "Bem vindo ao meu blog cheio de postagens peculiares",
+    image:
+      "https://raw.githubusercontent.com/devlulcas/devlulcas.github.io/main/.github/images/logo.png",
+    url: "https://devlulcas-github-io.vercel.app/blog",
+  }}
+>
   <div class="container">
     <FeaturedPost metadata={data.featuredPost} />
 

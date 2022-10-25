@@ -1,23 +1,29 @@
 ---
+import { SEO } from "astro-seo";
 import Header from "../lib/Header.svelte";
-
-export interface Props {
-  title: string;
-}
-
 import "../styles/reset.scss";
 import "../styles/variables.scss";
 import "../styles/global.scss";
 
-const { title } = Astro.props;
+interface Seo {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+}
+
+export interface Props {
+  seo: Seo;
+}
+
+const { seo } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +31,34 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+    <SEO
+      openGraph={{
+        basic: {
+          title: seo.title,
+          type: "",
+          image: seo.image,
+          url: seo.url,
+        },
+        optional: {
+          description: seo.description,
+          locale: "pt_BR",
+        },
+      }}
+      title={seo.title}
+      description={seo.description}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.png" }],
+        meta: [
+          {
+            name: "twitter:image",
+            content: "https://avatars.githubusercontent.com/u/70298390?v=4",
+          },
+          { name: "twitter:title", content: seo.title },
+          { name: "twitter:description", content: seo.description },
+        ],
+      }}
+    />
   </head>
 
   <body>

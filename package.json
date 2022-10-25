@@ -11,8 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^1.0.0",
     "@astrojs/svelte": "^1.0.2",
     "astro": "^1.5.2",
+    "astro-seo": "^0.6.0",
     "change-case": "^4.1.2",
     "image-size": "^1.0.2",
     "svelte": "^3.52.0"

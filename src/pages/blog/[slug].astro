@@ -18,10 +18,18 @@ export async function getStaticPaths() {
 }
 
 const { Content } = Astro.props.post;
-const { date } = Astro.props.metadata as PostFrontmatter;
+const { date, title, excerpt, slug } = Astro.props.metadata as PostFrontmatter;
 ---
 
-<Layout title="title">
+<Layout
+  seo={{
+    title: `DevLulcas - ${title}`,
+    description: excerpt,
+    image:
+      "https://raw.githubusercontent.com/devlulcas/devlulcas.github.io/main/.github/images/logo.png",
+    url: `https://devlulcas-github-io.vercel.app/blog/${slug}`,
+  }}
+>
   <PostContent time={date}>
     <Content />
   </PostContent>
