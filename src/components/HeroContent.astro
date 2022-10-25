@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import CoffeeIcon from "./CoffeeIcon.astro";
 ---
 
 <!-- HTML -->
@@ -14,10 +14,7 @@ import { Icon } from "astro-icon";
   </section>
 
   <div class="cta">
-    <a href="/">
-      Vamos conversar!
-      <Icon name="charm:coffee" />
-    </a>
+    <a href="/"> Vamos conversar! <CoffeeIcon /></a>
   </div>
 </div>
 
@@ -75,9 +72,5 @@ import { Icon } from "astro-icon";
       var(--secondary) 89.75%
     );
     text-decoration: none;
-  }
-
-  [astro-icon] {
-    height: 2rem;
   }
 </style>

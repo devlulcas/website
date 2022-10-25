@@ -15,7 +15,7 @@
 </nav>
 
 <!-- STYLES - SCSS -->
-<style lang="scss">
+<style>
   nav {
     width: 100%;
     display: flex;
@@ -23,8 +23,10 @@
     padding: 1rem;
     border-radius: 0.5rem;
     background: var(--primary);
+  }
 
-    @media screen and (min-width: 90rem) {
+  @media screen and (min-width: 90rem) {
+    nav {
       flex-direction: row;
       justify-content: center;
       gap: 1rem;

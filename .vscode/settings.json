@@ -31,5 +31,11 @@
     "swoole",
     "vfile"
   ],
-  "cSpell.language": "en,pt-BR,lorem"
+  "cSpell.language": "en,pt-BR,lorem",
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  }
 }
