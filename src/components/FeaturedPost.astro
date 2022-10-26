@@ -77,11 +77,24 @@ const { metadata } = Astro.props;
 
   a {
     text-decoration: none;
-    color: var(--secondary-dark);
+    color: var(--secondary);
     font-size: clamp(1.2rem, 1.25vw, 1.8rem);
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 0.5rem;
+    font-weight: 600;
+    background: white;
+    width: fit-content;
+    padding: 1rem;
+    padding-left: 3rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    transform: translateX(-2.2rem);
+
+    @media screen and (min-width: 90rem) {
+      padding-left: 8.5rem;
+      transform: translateX(-8.7rem);
+    }
   }
 
   picture {
@@ -90,5 +103,24 @@ const { metadata } = Astro.props;
     height: 100%;
     border-radius: 0.5rem;
     background: #202020;
+    position: relative;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+    padding: 0;
+    border: none;
+    margin: auto;
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    object-fit: contain;
   }
 </style>
