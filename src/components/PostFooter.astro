@@ -1,6 +1,4 @@
 ---
-import Socials from "./Socials.astro";
-
 interface Props {
   time: string;
 }
@@ -29,7 +27,19 @@ const { time } = Astro.props;
         exercitation ad.
       </p>
 
-      <Socials />
+      <ul class="links">
+        <li class="link">
+          <a href="/">GitHub</a>
+        </li>
+
+        <li class="link">
+          <a href="/">LinkedIn</a>
+        </li>
+
+        <li class="link">
+          <a href="/blog">Blog</a>
+        </li>
+      </ul>
     </div>
   </div>
 
@@ -47,7 +57,8 @@ const { time } = Astro.props;
     align-items: center;
     gap: 2rem;
     padding: 4rem 2rem 2rem 2rem;
-    border-top: 0.2rem solid salmon;
+    background-color: var(--on-primary);
+    color: var(--background);
   }
 
   .container {
@@ -56,12 +67,13 @@ const { time } = Astro.props;
   }
 
   .date {
-    padding: 1rem;
+    padding: 1.2rem;
     text-align: center;
+    font-weight: 600;
 
     & time {
-      color: #0ff;
-      border: 0.1rem solid #0ff;
+      color: var(--secondary);
+      border: 0.1rem solid var(--secondary);
       padding: 0.5rem;
       border-radius: 0.25rem;
       margin-left: 0.5rem;
@@ -70,7 +82,8 @@ const { time } = Astro.props;
   }
 
   .about {
-    color: #0ff;
+    color: var(--secondary);
+    font-weight: 800;
   }
 
   @keyframes neon-flicker {
@@ -82,8 +95,10 @@ const { time } = Astro.props;
     54%,
     56%,
     100% {
-      text-shadow: -0.02em -0.05em 10em #ffffff, -0.02em -0.05em 5em #ffffff,
-        0 0 0.3em #0ff, 0 0 1em #0ff, 0 0 1em #0ff, 0 0 3em #0ff, 0 0 2em #0ff;
+      text-shadow: -0.02em -0.02em 5em var(--primary),
+        -0.02em -0.05em 5em var(--primary), 0 0 0.1em var(--secondary),
+        0 0 0.1em var(--secondary), 0 0 0.1em var(--secondary),
+        0 0 0.1em var(--secondary), 0 0 0.2em var(--secondary);
     }
 
     20%,
@@ -98,16 +113,23 @@ const { time } = Astro.props;
     gap: 2rem;
   }
 
+  .links {
+    display: flex;
+    gap: 1rem;
+  }
+
   .link {
     cursor: pointer;
-    border-bottom: 0.2rem dotted #0ff;
+    border-bottom: 0.2rem dotted var(--secondary);
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem 0;
     gap: 1rem;
 
-    &:hover {
-      border-color: #f00;
+    & a {
+      text-decoration: none;
+      color: var(--background);
+      font-weight: 600;
     }
   }
 </style>
