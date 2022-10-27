@@ -10,7 +10,7 @@ const { metadata } = Astro.props;
 ---
 
 <!-- HTML -->
-<article>
+<article data-interactable="true">
   <a aria-label={metadata.title} href={"/blog/" + metadata.slug}>
     <picture>
       <img src={"https://via.placeholder.com/150"} alt={metadata.title} />

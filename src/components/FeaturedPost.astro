@@ -24,7 +24,9 @@ const { metadata } = Astro.props;
       </p>
     </div>
 
-    <a href={"/blog/" + metadata.slug}>Leia mais <ArrowRightIcon /></a>
+    <a data-type="anchor" href={"/blog/" + metadata.slug}
+      >Leia mais <ArrowRightIcon />
+    </a>
   </div>
 
   <picture>
