@@ -20,7 +20,6 @@ const name = project.name.replaceAll("-", " ");
 <!-- STYLES - SCSS -->
 <style lang="scss">
   div {
-    background: #000;
     border-radius: 0.5rem;
     overflow: hidden;
     position: relative;
@@ -32,12 +31,18 @@ const name = project.name.replaceAll("-", " ");
   h4 {
     word-break: break-all;
     text-transform: uppercase;
-    color: hsl(0, 0%, 100%);
     aspect-ratio: 1 / 1;
     width: 15rem;
     padding: 1rem;
     font-size: 2rem;
     font-weight: 600;
-    background: hsla(0, 0%, 0%, 0.5);
+    background: var(--primary);
+    color: var(--on-primary);
+    opacity: 0.75;
+    transition: 200ms all ease;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 </style>

@@ -10,38 +10,37 @@ const { metadata } = Astro.props;
 ---
 
 <!-- HTML -->
-<a href={"/blog/" + metadata.slug}>
-  <article>
+<article>
+  <a aria-label={metadata.title} href={"/blog/" + metadata.slug}>
     <picture>
       <img src={"https://via.placeholder.com/150"} alt={metadata.title} />
     </picture>
+  </a>
+  <div class="content">
+    <a aria-label={metadata.title} href={"/blog/" + metadata.slug}>
+      <h3 class="title">{metadata.title}</h3>
+    </a>
 
-    <div class="content">
-      <h3>{metadata.title}</h3>
+    <a aria-label={metadata.title} href={"/blog/" + metadata.slug}>
+      <p class="excerpt">{metadata.excerpt}</p>
+    </a>
 
-      <p>{metadata.excerpt}</p>
+    <p class="date">
+      Publicado em:
+      <time class="datetime" datetime={metadata.date}>{metadata.date}</time>
+    </p>
 
-      <p>{metadata.date}</p>
-
-      <ul>
-        {
-          metadata.tags.map((tag) => (
-            <Tag href={`/blog/tags/${tag}`}>{tag}</Tag>
-          ))
-        }
-      </ul>
-    </div>
-  </article>
-</a>
+    <ul class="tags">
+      {metadata.tags.map((tag) => <Tag href={`/blog/tags/${tag}`}>{tag}</Tag>)}
+    </ul>
+  </div>
+</article>
 
 <!-- STYLES - SCSS -->
 <style lang="scss">
-  a {
-    color: var(--on-surface);
-    text-decoration: none;
-  }
-
   article {
+    font-size: clamp(1.2rem, 1vw, 1.5rem);
+    color: var(--on-surface);
     background: var(--surface);
     padding: 1rem;
     display: flex;
@@ -55,8 +54,9 @@ const { metadata } = Astro.props;
     align-items: center;
     height: 10rem;
     aspect-ratio: 1 / 1;
-    background: #000;
+    background: var(--on-surface);
     border-radius: 0.5rem;
+    overflow: hidden;
 
     @media screen and (min-width: 90rem) {
       height: 15rem;
@@ -72,6 +72,12 @@ const { metadata } = Astro.props;
     }
   }
 
+  a {
+    display: block;
+    text-decoration: none;
+    color: var(--on-surface);
+  }
+
   .content {
     padding: 0.5rem 0;
     display: flex;
@@ -80,15 +86,20 @@ const { metadata } = Astro.props;
     justify-content: space-between;
   }
 
-  h3 {
+  .title {
     font-size: clamp(1.4rem, 2vw, 2rem);
   }
 
-  p {
-    font-size: clamp(1rem, 1vw, 1.2rem);
+  .date {
+    padding-top: 1rem;
+    font-weight: 400;
   }
 
-  ul {
+  .datetime {
+    font-weight: 600;
+  }
+
+  .tags {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;

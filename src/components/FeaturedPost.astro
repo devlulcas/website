@@ -16,10 +16,15 @@ const { metadata } = Astro.props;
 
       <h3>{metadata.title} - {metadata.excerpt}</h3>
 
-      <p>{metadata.date}</p>
+      <p>
+        Publicado em:
+        <time datetime={metadata.date}>
+          {metadata.date}
+        </time>
+      </p>
     </div>
 
-    <a href={"/blog/" + metadata.slug}> Leia mais <ArrowRightIcon /></a>
+    <a href={"/blog/" + metadata.slug}>Leia mais <ArrowRightIcon /></a>
   </div>
 
   <picture>
@@ -33,8 +38,8 @@ const { metadata } = Astro.props;
     width: 100%;
     min-height: 25rem;
     border-radius: 0.5rem;
-    background: var(--surface);
-    color: var(--on-surface);
+    background-color: var(--background);
+    color: var(--on-background);
     padding: 1rem;
     display: flex;
     box-shadow: var(--light-shadow);
@@ -77,19 +82,24 @@ const { metadata } = Astro.props;
 
   a {
     text-decoration: none;
-    color: var(--secondary);
     font-size: clamp(1.2rem, 1.25vw, 1.8rem);
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 0.5rem;
     font-weight: 600;
-    background: white;
     width: fit-content;
     padding: 1rem;
     padding-left: 3rem;
     border-radius: 0 0.5rem 0.5rem 0;
     transform: translateX(-2.2rem);
+
+    color: var(--on-secondary);
+    background: linear-gradient(
+      76.35deg,
+      var(--secondary-dark) 15.89%,
+      var(--secondary-light) 89.75%
+    );
 
     @media screen and (min-width: 90rem) {
       padding-left: 8.5rem;
@@ -102,7 +112,7 @@ const { metadata } = Astro.props;
     min-height: 25rem;
     height: 100%;
     border-radius: 0.5rem;
-    background: #202020;
+    background-color: var(--on-surface);
     position: relative;
   }
 

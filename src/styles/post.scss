@@ -1,18 +1,4 @@
 .content {
-  min-height: 100vh;
-  flex-direction: column;
-  display: flex;
-  gap: 1rem;
-  word-wrap: break-word;
-  font-size: 1.4rem;
-  background: var(--primary);
-  border: 0.2rem solid var(--secondary);
-  border-top: none;
-  border-bottom: none;
-  padding: 0 5rem;
-}
-
-.content {
   font-size: 1.4rem;
 
   h1,
@@ -123,7 +109,7 @@
   }
 
   pre {
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     padding: 4rem 1rem 1rem 1rem;
     overflow: hidden;
     position: relative;
@@ -131,8 +117,8 @@
     &::before {
       content: "⬤ ⬤ ⬤";
       position: absolute;
-      color: hsl(0, 0%, 60%);
-      background: hsl(0, 0%, 80%);
+      color: var(--on-primary);
+      background: var(--primary);
       width: 100%;
       padding: 0.5rem;
       top: 0;
@@ -143,9 +129,9 @@
     }
 
     & code {
-      font-size: 1.4rem;
-      line-height: 1.6rem;
-      font-stretch: expanded;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-stretch: extra-expanded;
       font-family: "Fira Code", monospace;
     }
   }

@@ -51,7 +51,7 @@ const name = project.name.replaceAll("-", " ");
     height: clamp(15rem, 15vw, 25rem);
     position: relative;
     aspect-ratio: 1 / 1;
-    background: #000;
+    background-color: var(--on-background);
     border-radius: 0.5rem;
     background-size: cover;
     background-position: top;
@@ -99,7 +99,7 @@ const name = project.name.replaceAll("-", " ");
       left: 0;
       background-image: linear-gradient(
         0deg,
-        hsl(0 0% 100%) 5%,
+        var(--background) 5%,
         hsl(0 0% 100% / 0%) 25%
       );
     }

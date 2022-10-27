@@ -10,7 +10,7 @@ const { time } = Astro.props;
 <footer class="footer">
   <div class="container">
     <div class="logo">
-      <img src="/favicon.png" alt="logo devlulcas" width="50px" height="50px" />
+      <img src="/favicon.png" alt="logo" width="75" height="82" />
     </div>
 
     <div class="data">
@@ -57,8 +57,8 @@ const { time } = Astro.props;
     align-items: center;
     gap: 2rem;
     padding: 4rem 2rem 2rem 2rem;
-    background-color: var(--on-primary);
-    color: var(--background);
+    background-color: var(--primary);
+    color: var(--on-primary);
   }
 
   .container {
@@ -95,8 +95,8 @@ const { time } = Astro.props;
     54%,
     56%,
     100% {
-      text-shadow: -0.02em -0.02em 5em var(--primary),
-        -0.02em -0.05em 5em var(--primary), 0 0 0.1em var(--secondary),
+      text-shadow: -0.02em -0.02em 1em var(--on-primary),
+        -0.02em -0.05em 2em var(--on-primary), 0 0 0.1em var(--secondary),
         0 0 0.1em var(--secondary), 0 0 0.1em var(--secondary),
         0 0 0.1em var(--secondary), 0 0 0.2em var(--secondary);
     }
@@ -128,7 +128,7 @@ const { time } = Astro.props;
 
     & a {
       text-decoration: none;
-      color: var(--background);
+      color: var(--on-primary);
       font-weight: 600;
     }
   }

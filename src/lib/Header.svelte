@@ -29,11 +29,11 @@
     <img
       src="/favicon.png"
       alt="logo"
-      width={35}
+      width={32}
       height={35}
       decoding="async"
       loading="lazy"
-      style="aspect-ratio: auto {35} / {35};"
+      style="aspect-ratio: auto {32} / {35};"
     />
   </a>
 
@@ -51,7 +51,7 @@
 {/if}
 
 <!-- STYLES - SCSS -->
-<style lang="scss">
+<style>
   .placeholder {
     height: var(--header-height);
   }
@@ -66,7 +66,7 @@
     align-items: center;
     padding: 1rem;
     background-color: hsl(0 0% 90% / 25%);
-    color: var(--on-primary);
+    color: var(--primary);
     backdrop-filter: blur(1rem);
   }
 
@@ -74,30 +74,29 @@
     width: 100%;
     display: flex;
     align-items: center;
-
-    &:last-child {
-      justify-content: flex-end;
-    }
   }
 
-  .menu-button {
-    @media screen and (min-width: 90rem) {
-      display: none;
-    }
+  .wrapper:last-child {
+    justify-content: flex-end;
   }
 
   .logo {
     justify-content: center;
-
-    @media screen and (min-width: 90rem) {
-      justify-content: flex-start;
-    }
   }
 
   .nav {
     display: none;
+  }
+  @media screen and (min-width: 90rem) {
+    .menu-button {
+      display: none;
+    }
 
-    @media screen and (min-width: 90rem) {
+    .logo {
+      justify-content: flex-start;
+    }
+
+    .nav {
       display: flex;
     }
   }

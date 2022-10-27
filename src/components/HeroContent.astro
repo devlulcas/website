@@ -14,7 +14,7 @@ import CoffeeIcon from "./CoffeeIcon.astro";
   </section>
 
   <div class="cta">
-    <a href="/"> Vamos conversar! <CoffeeIcon /></a>
+    <a href="#contact"> Vamos conversar! <CoffeeIcon /></a>
   </div>
 </div>
 
@@ -45,7 +45,7 @@ import CoffeeIcon from "./CoffeeIcon.astro";
   p {
     font-size: 20px;
     line-height: 1.5;
-    color: var(--on-background-dark);
+    color: var(--on-background);
     margin-bottom: 3rem;
     max-width: 36rem;
   }
@@ -62,14 +62,14 @@ import CoffeeIcon from "./CoffeeIcon.astro";
     width: fit-content;
     border-radius: 0.25rem;
     padding: 1rem 3rem;
-    color: white;
+    color: var(--on-secondary);
     font-weight: 600;
     box-shadow: rgb(0 0 0 / 4%) 0px 0px 24px;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     background: linear-gradient(
       76.35deg,
       var(--secondary-dark) 15.89%,
-      var(--secondary) 89.75%
+      var(--secondary-light) 89.75%
     );
     text-decoration: none;
   }

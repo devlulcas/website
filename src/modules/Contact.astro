@@ -18,10 +18,7 @@ import Socials from "../components/Socials.astro";
       <textarea name="content" id="content" rows="10"></textarea>
     </div>
 
-    <button>
-      Enviar
-      <i>#</i>
-    </button>
+    <button>Enviar</button>
 
     <Socials />
   </form>
@@ -67,7 +64,7 @@ import Socials from "../components/Socials.astro";
   }
 
   label {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 600;
   }
 
@@ -76,11 +73,11 @@ import Socials from "../components/Socials.astro";
     width: 100%;
     margin-top: 0.5rem;
     padding: 1rem;
-    background: #fff;
+    background: var(--background);
     border-radius: 0.5rem;
-    color: black;
-    border: 0.2rem solid black;
-    box-shadow: 0.5rem 0.5rem 0 black;
+    color: var(--on-background);
+    border: 0.2rem solid var(--on-background);
+    box-shadow: 0.5rem 0.5rem 0 var(--on-background);
   }
 
   textarea {
@@ -93,14 +90,14 @@ import Socials from "../components/Socials.astro";
     width: fit-content;
     border-radius: 0.25rem;
     padding: 1rem 3rem;
-    color: black;
+    color: var(--on-background);
     font-weight: 600;
     box-shadow: rgb(0 0 0 / 4%) 0px 0px 24px;
     font-size: 1.4rem;
-    background: white;
+    background: var(--background);
     text-decoration: none;
-    border: 0.2rem solid black;
-    box-shadow: 0.5rem 0.5rem 0 black;
+    border: 0.2rem solid var(--on-background);
+    box-shadow: 0.5rem 0.5rem 0 var(--on-background);
     margin-bottom: 2rem;
   }
 </style>
