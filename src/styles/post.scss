@@ -7,7 +7,7 @@
   h4,
   h5,
   h6 {
-    color: hsl(155, 72%, 40%);
+    color: var(--primary);
     font-weight: 600;
     margin-block: 1rem;
     font-size: 2.6rem;
@@ -51,10 +51,14 @@
   }
 
   a {
+    $color: hsl(154, 72%, 31%);
     font-size: 1.6rem;
-    text-decoration: dashed;
-    color: hsl(154, 72%, 31%);
-    border-bottom: 0.1rem dotted hsl(154, 72%, 31%);
+    text-decoration: none;
+    color: $color;
+
+    &:hover {
+      color: lighten($color, 10%);
+    }
   }
 
   table {

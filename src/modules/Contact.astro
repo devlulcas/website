@@ -70,14 +70,14 @@ import Socials from "../components/Socials.astro";
 
   input,
   textarea {
-    width: 100%;
-    margin-top: 0.5rem;
-    padding: 1rem;
+    border: 0.2rem solid var(--primary);
     background: var(--background);
     border-radius: 0.5rem;
+    box-shadow: var(--shadow-medium);
     color: var(--on-background);
-    border: 0.2rem solid var(--on-background);
-    box-shadow: 0.5rem 0.5rem 0 var(--on-background);
+    margin-top: 0.5rem;
+    padding: 1rem;
+    width: 100%;
   }
 
   textarea {
@@ -85,19 +85,17 @@ import Socials from "../components/Socials.astro";
   }
 
   button {
-    display: flex;
-    gap: 1rem;
-    width: fit-content;
-    border-radius: 0.25rem;
-    padding: 1rem 3rem;
-    color: var(--on-background);
-    font-weight: 600;
-    box-shadow: rgb(0 0 0 / 4%) 0px 0px 24px;
-    font-size: 1.4rem;
     background: var(--background);
-    text-decoration: none;
+    border-radius: 0.25rem;
     border: 0.2rem solid var(--on-background);
-    box-shadow: 0.5rem 0.5rem 0 var(--on-background);
+    color: var(--on-background);
+    display: flex;
+    font-size: 1.4rem;
+    font-weight: 600;
+    gap: 1rem;
     margin-bottom: 2rem;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    width: fit-content;
   }
 </style>

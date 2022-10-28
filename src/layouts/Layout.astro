@@ -4,7 +4,6 @@ import Header from "../lib/Header.svelte";
 import "../styles/reset.scss";
 import "../styles/variables.scss";
 import "../styles/global.scss";
-import MouseFly from "../lib/MouseFly.svelte";
 
 interface Seo {
   title: string;
@@ -66,7 +65,6 @@ const { seo } = Astro.props;
   </head>
 
   <body>
-    <MouseFly client:load />
     <Header client:load />
     <slot />
   </body>
