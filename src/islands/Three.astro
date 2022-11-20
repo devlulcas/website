@@ -1,0 +1,114 @@
+<div data-js="renderer-parent"></div>
+
+<style>
+  div[data-js="renderer-parent"] {
+    height: 93.4vh;
+  }
+</style>
+
+<script>
+  import * as THREE from "three";
+  import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+  import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+  // Setup code
+
+  const rendererParent = document.querySelector<HTMLDivElement>(
+    '[data-js="renderer-parent"]'
+  );
+
+  const scene = new THREE.Scene();
+
+  const container = {
+    x: rendererParent?.clientWidth ?? window.innerWidth,
+    y: rendererParent?.clientHeight ?? window.innerHeight,
+  };
+
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    container.x / container.y,
+    0.1,
+    1000
+  );
+
+  const renderer = new THREE.WebGLRenderer();
+
+  renderer.setSize(container.x, container.y);
+
+  rendererParent?.appendChild(renderer.domElement);
+
+  // Cool code
+
+  // Ambient light
+  const light = new THREE.AmbientLight(0xf0f0f0, 1); // soft white light
+  scene.add(light);
+
+  // Dir light
+  const dirLight = new THREE.DirectionalLight(0xfde7bd, 1.0);
+  dirLight.position.set(2, 10, 1);
+  dirLight.target.position.set(0, 0, 0);
+  scene.add(dirLight);
+  scene.add(dirLight.target);
+
+  // Orbit controlls
+  const controls = new OrbitControls(camera, renderer.domElement);
+  camera.position.z = 5;
+  controls.update();
+
+  // Loading a Shiba model
+  const loader = new GLTFLoader();
+
+  loader.load("/shiba/scene.gltf", (shibaModel) => {
+    scene.add(shibaModel.scene);
+  });
+
+  // Floor
+  const groundTexture = new THREE.TextureLoader().load("/floor.png");
+  groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
+  groundTexture.repeat.set(10000, 10000);
+  groundTexture.anisotropy = 16;
+  groundTexture.encoding = THREE.sRGBEncoding;
+
+  var groundMaterial = new THREE.MeshStandardMaterial({ map: groundTexture });
+
+  var floor = new THREE.Mesh(
+    new THREE.PlaneGeometry(10000, 10000),
+    groundMaterial
+  );
+
+  floor.position.y = -1;
+  floor.rotation.x = -Math.PI / 2;
+  floor.receiveShadow = true;
+  scene.add(floor);
+
+  window.addEventListener("keydown", (event) => {
+    const keyCode = event.key;
+
+    console.log(keyCode);
+
+    switch (keyCode) {
+      case "ArrowUp":
+        floor.position.z += 0.1;
+        break;
+      case "ArrowDown":
+        floor.position.z -= 0.1;
+        break;
+      case "ArrowLeft":
+        floor.position.x += 0.1;
+        break;
+      case "ArrowRight":
+        floor.position.x -= 0.1;
+        break;
+    }
+  });
+
+  // Render Loop
+  const animate = () => {
+    requestAnimationFrame(animate);
+
+    controls.update();
+
+    renderer.render(scene, camera);
+  };
+
+  animate();
+</script>
