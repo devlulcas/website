@@ -3,6 +3,7 @@
   import MenuButton from "./MenuButton.svelte";
   import MobileMenu from "./MobileMenu.svelte";
   import NavItems from "./NavItems.svelte";
+  import SwitchVisualMode from "./SwitchVisualMode.svelte";
 
   let mobileMenuIsOpen = false;
   const toggleNavigationModal = () => {
@@ -42,7 +43,9 @@
   </div>
 
   <div class="wrapper">
-    <div>PT</div>
+    <div>
+      <SwitchVisualMode />
+    </div>
   </div>
 </header>
 
