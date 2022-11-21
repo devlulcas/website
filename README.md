@@ -45,7 +45,8 @@ You can go to my website and contact me or:
 - [ ] End the design
 - [ ] Write tests
 - [ ] 3D hero section
-- [ ] Make the form work as intended
+- [ ] Make the form work as intended (send e-mails)
+- [ ] Fill the gaps (add stuff, personality)
 - [ ] Write something to hide projects
 
 ## 🧞 Commands

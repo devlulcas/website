@@ -10,11 +10,9 @@ dt,
 dd,
 blockquote,
 figure,
-fieldset,
 legend,
 textarea,
 pre,
-iframe,
 hr,
 h1,
 h2,
@@ -44,18 +42,4 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-}
-
-iframe {
-  border: 0;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  padding: 0;
 }

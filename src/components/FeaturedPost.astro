@@ -10,6 +10,10 @@ const { metadata } = Astro.props;
 
 <!-- HTML -->
 <article>
+  <picture>
+    <img src={metadata.thumbnail} alt={metadata.title} />
+  </picture>
+
   <div class="content">
     <div class="upper">
       <h2>Postagem em destaque</h2>
@@ -26,10 +30,6 @@ const { metadata } = Astro.props;
 
     <a href={"/blog/" + metadata.slug}>Leia mais <ArrowRightIcon /></a>
   </div>
-
-  <picture>
-    <img src={metadata.thumbnail} alt={metadata.title} />
-  </picture>
 </article>
 
 <!-- STYLES - SCSS -->
@@ -40,15 +40,16 @@ const { metadata } = Astro.props;
     border-radius: 0.5rem;
     padding: 1rem;
     display: flex;
-    box-shadow: var(--shadow-smallest);
+    box-shadow: var(--shadow-elevation-medium);
     position: relative;
     overflow: hidden;
-    border: 0.1rem solid rgb(0 0 0 / 5%);
+    border: 0.1rem solid var(--surface);
     background: var(--surface);
+    flex-direction: column;
 
     &:hover {
       transition: box-shadow 0.2s ease;
-      box-shadow: var(--shadow-smallest);
+      box-shadow: var(--shadow-elevation-medium);
     }
 
     &::before {
@@ -66,8 +67,9 @@ const { metadata } = Astro.props;
       );
     }
 
-    @media screen and (min-width: 90rem) {
+    @media screen and (min-width: 30rem) {
       height: 50rem;
+      flex-direction: row-reverse;
     }
   }
 
@@ -76,7 +78,11 @@ const { metadata } = Astro.props;
     flex-direction: column;
     justify-content: space-between;
     padding: 1rem;
-    width: 50%;
+    width: 100%;
+
+    @media screen and (min-width: 30rem) {
+      width: 50%;
+    }
 
     @media screen and (min-width: 90rem) {
       padding: 5rem 7.5rem;
@@ -86,6 +92,7 @@ const { metadata } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   h2 {
@@ -150,12 +157,16 @@ const { metadata } = Astro.props;
   }
 
   picture {
-    width: 50%;
+    width: 100%;
     min-height: 25rem;
     height: 100%;
     border-radius: 0.5rem;
     background-color: var(--on-surface);
     position: relative;
+
+    @media screen and (min-width: 30rem) {
+      width: 50%;
+    }
   }
 
   img {

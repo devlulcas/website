@@ -26,8 +26,12 @@ const { time } = Astro.props;
     gap: 1rem;
     word-wrap: break-word;
 
-    @media screen and (min-width: 900px) {
-      padding: 3rem 20vw;
+    @media screen and (min-width: 40rem) and (max-width: 89rem) {
+      padding: 2rem 15vw;
+    }
+
+    @media screen and (min-width: 90rem) {
+      padding: 3rem 25vw;
     }
   }
 </style>

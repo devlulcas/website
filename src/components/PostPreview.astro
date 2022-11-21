@@ -40,17 +40,23 @@ const { metadata } = Astro.props;
 <style lang="scss">
   article {
     font-size: clamp(1.2rem, 1vw, 1.5rem);
-    color: var(--on-surface);
-    background: var(--surface);
+    color: var(--on-background);
+    background: var(--background);
+    border: 0.1rem solid var(--surface);
     padding: 1rem;
     display: flex;
     gap: 1rem;
     border-radius: 0.5rem;
-    box-shadow: var(--light-shadow);
+    box-shadow: var(--shadow-elevation-medium);
+    flex-direction: column;
 
     &:hover {
       transition: box-shadow 0.2s ease;
-      box-shadow: var(--shadow-);
+      box-shadow: var(--shadow-elevation-low);
+    }
+
+    @media (min-width: 30rem) {
+      flex-direction: row;
     }
   }
 
@@ -62,6 +68,10 @@ const { metadata } = Astro.props;
     background: var(--on-surface);
     border-radius: 0.5rem;
     overflow: hidden;
+
+    @media screen and (min-width: 30rem) and (max-width: 89rem) {
+      height: 15rem;
+    }
 
     @media screen and (min-width: 90rem) {
       height: 15rem;

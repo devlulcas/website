@@ -39,7 +39,7 @@ const { seo } = Astro.props;
       openGraph={{
         basic: {
           title: seo.title,
-          type: "",
+          type: "website",
           image: seo.image,
           url: seo.url,
         },
@@ -55,7 +55,7 @@ const { seo } = Astro.props;
         meta: [
           {
             name: "twitter:image",
-            content: "https://avatars.githubusercontent.com/u/70298390?v=4",
+            content: seo.image ?? "https://github.com/devlulcas.png",
           },
           { name: "twitter:title", content: seo.title },
           { name: "twitter:description", content: seo.description },
