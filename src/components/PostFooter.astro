@@ -43,14 +43,17 @@ const { time } = Astro.props;
 <!-- STYLES - SCSS -->
 <style lang="scss">
   .footer {
+    --background: #0c0d12;
+    --color: #fff;
+
     font-size: 1.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
     padding: 4rem 2rem 2rem 2rem;
-    background-color: var(--primary);
-    color: var(--on-primary);
+    background-color: var(--background);
+    color: var(--color);
   }
 
   .container {
@@ -120,7 +123,7 @@ const { time } = Astro.props;
 
     & a {
       text-decoration: none;
-      color: var(--on-primary);
+      color: var(--color);
       font-weight: 600;
     }
   }

@@ -72,6 +72,17 @@ const { metadata } = Astro.props;
       flex-direction: row-reverse;
     }
   }
+  html.dark article {
+    &::before {
+      mix-blend-mode: color-dodge;
+
+      background-image: radial-gradient(
+        circle at 1243.3px 23.5934px,
+        var(--secondary-light),
+        var(--background)
+      );
+    }
+  }
 
   .content {
     display: flex;

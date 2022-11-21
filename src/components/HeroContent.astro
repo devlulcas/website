@@ -60,6 +60,22 @@ import CoffeeIcon from "./CoffeeIcon.astro";
     }
   }
 
+  html.dark h1 {
+    background-image: radial-gradient(
+      circle at 1243.3px 23.5934px,
+      var(--secondary-dark),
+      var(--secondary-light)
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    &::before {
+      display: none;
+    }
+  }
+
   p {
     font-size: 20px;
     line-height: 1.5;

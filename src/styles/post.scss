@@ -40,12 +40,49 @@
     margin-block: 1rem;
   }
 
+  blockquote,
+  pre {
+    background-color: var(--bg);
+    border-radius: 0.5rem;
+    padding: 0.25rem 1rem;
+  }
+
   blockquote {
-    border-left: 0.3rem solid var(--primary);
     color: var(--primary);
-    font-style: italic;
     margin-block: 1rem;
     padding-inline: 1rem;
+    font-style: italic;
+    border-left: var(--secondary-dark) 0.2rem solid;
+    border-radius: 0;
+  }
+
+  pre {
+    border-radius: 0.5rem;
+    padding: 4rem 1rem 1rem 1rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-elevation-medium);
+
+    &::before {
+      content: "⬤ ⬤ ⬤";
+      position: absolute;
+      color: var(--on-primary);
+      background: var(--primary);
+      width: 100%;
+      padding: 0.5rem;
+      top: 0;
+      left: 0;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+    }
+
+    & code {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      font-stretch: extra-expanded;
+      font-family: "Fira Code", monospace;
+    }
   }
 
   ul,
@@ -64,20 +101,6 @@
 
   strong {
     font-weight: 600;
-  }
-
-  blockquote,
-  pre {
-    background-color: var(--bg);
-    border-radius: 0.5rem;
-    padding: 0.25rem 1rem;
-  }
-
-  blockquote {
-    font-style: italic;
-    color: var(--blockquote);
-    border-left: var(--secondary-dark) 0.2rem solid;
-    border-radius: 0;
   }
 
   p:has(a) {
@@ -144,32 +167,11 @@
       max-height: 50vh;
     }
   }
+}
 
-  pre {
-    border-radius: 0.5rem;
-    padding: 4rem 1rem 1rem 1rem;
-    overflow: hidden;
-    position: relative;
-
-    &::before {
-      content: "⬤ ⬤ ⬤";
-      position: absolute;
-      color: var(--on-primary);
-      background: var(--primary);
-      width: 100%;
-      padding: 0.5rem;
-      top: 0;
-      left: 0;
-      height: 3rem;
-      display: flex;
-      align-items: center;
-    }
-
-    & code {
-      font-size: 1.5rem;
-      line-height: 2rem;
-      font-stretch: extra-expanded;
-      font-family: "Fira Code", monospace;
-    }
+html.dark pre {
+  &::before {
+    color: var(--primary);
+    background: var(--on-primary);
   }
 }

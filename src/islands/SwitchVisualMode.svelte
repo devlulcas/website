@@ -9,6 +9,20 @@
   }
 </script>
 
+<svelte:window
+  on:load={() => {
+    if (isWindow) {
+      const selectedMode = localStorage.getItem("darkMode");
+
+      if (selectedMode) {
+        darkMode = selectedMode === "true";
+      } else {
+        darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      }
+    }
+  }}
+/>
+
 <!--HTML-->
 <label for="toggle__core" class="toggle">
   <input
@@ -59,7 +73,7 @@
 
   .layer {
     width: 100%;
-    background-color: var(--switch-dark);
+    background-color: var(--on-primary);
     transition: 0.3s ease all;
     z-index: 1;
   }
@@ -86,12 +100,12 @@
   }
 
   .knobs::before {
-    background-image: url("/floor.png");
+    background-image: url("/sunny.png");
   }
 
   .knobs::after {
     top: -3rem;
-    background-image: url("/favicon.png");
+    background-image: url("/night.png");
     right: 0.2rem;
     left: auto;
   }
@@ -105,6 +119,6 @@
   }
 
   .checkbox:checked ~ .layer {
-    background-color: var(--switch-dark);
+    background-color: var(--on-primary);
   }
 </style>
