@@ -5,27 +5,25 @@
   let darkMode = false;
 
   $: if (isWindow) {
-    document.documentElement.classList.toggle("dark", darkMode);
-  }
-</script>
+    const selectedMode = localStorage.getItem("darkMode");
 
-<svelte:window
-  on:load={() => {
-    if (isWindow) {
-      const selectedMode = localStorage.getItem("darkMode");
-
-      if (selectedMode) {
-        darkMode = selectedMode === "true";
-      } else {
-        darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      }
+    if (selectedMode !== null) {
+      darkMode = selectedMode === "true";
+      document.documentElement.classList.toggle("dark", darkMode);
     }
-  }}
-/>
+  }
+
+  const toggleDarkMode = () => {
+    darkMode = !darkMode;
+    document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("darkMode", darkMode ? "true" : "false");
+  };
+</script>
 
 <!--HTML-->
 <label for="toggle__core" class="toggle">
   <input
+    on:click={toggleDarkMode}
     bind:checked={darkMode}
     name="toggle__core"
     id="toggle__core"
