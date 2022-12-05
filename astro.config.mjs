@@ -11,4 +11,5 @@ export default defineConfig({
   },
   site: "https://devlulcas-github-io.vercel.app/",
   integrations: [svelte(), sitemap(), robotsTxt()],
+  output: "server",
 });

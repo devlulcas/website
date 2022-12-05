@@ -5,17 +5,22 @@ import Socials from "../components/Socials.astro";
 
 <!-- HTML -->
 <div class="container">
-  <form method="POST" action="?/contact">
+  <form method="POST" action="/forms.json">
     <Heading id="contact">Contato</Heading>
 
     <div>
-      <label for="sender">Seu e-mail</label>
-      <input type="email" name="sender" id="sender" />
+      <label for="email">Seu e-mail</label>
+      <input type="email" name="email" id="email" />
     </div>
 
     <div>
-      <label for="content">Mensagem</label>
-      <textarea name="content" id="content" rows="10"></textarea>
+      <label for="name">Seu nome</label>
+      <input type="text" name="name" id="name" />
+    </div>
+
+    <div>
+      <label for="message">Mensagem</label>
+      <textarea name="message" id="message" rows="10"></textarea>
     </div>
 
     <button>Enviar</button>
@@ -23,6 +28,27 @@ import Socials from "../components/Socials.astro";
     <Socials />
   </form>
 </div>
+
+<script>
+  const form = document.querySelector("form");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+
+    const response = await fetch(form?.action, {
+      method: form?.method,
+      body: formData,
+    });
+
+    if (response.ok) {
+      form?.reset();
+      alert("Mensagem enviada com sucesso!");
+    } else {
+      alert("Erro ao enviar mensagem.");
+    }
+  });
+</script>
 
 <!-- STYLES - SCSS -->
 <style lang="scss">
