@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/svelte": "^1.0.2",
+    "@astrojs/vercel": "^2.3.5",
     "astro": "^1.6.10",
     "change-case": "^4.1.2",
     "image-size": "^1.0.2",
