@@ -1,4 +1,3 @@
-<!-- TYPESCRIPT -->
 <script lang="ts">
   import { fly } from "svelte/transition";
   import { circOut } from "svelte/easing";
@@ -6,15 +5,12 @@
   export let items: { label: string; href: string }[];
 </script>
 
-<!-- HTML -->
-
 <nav transition:fly={{ duration: 300, y: 64, opacity: 0, easing: circOut }}>
   {#each items as item}
     <a href={item.href}>{item.label}</a>
   {/each}
 </nav>
 
-<!-- STYLES - SCSS -->
 <style>
   nav {
     width: 100%;

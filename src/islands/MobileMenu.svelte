@@ -10,7 +10,6 @@
 </script>
 
 <!-- HTML -->
-
 <div
   on:click={toggle}
   transition:fade={{ duration: 300, easing: circOut }}

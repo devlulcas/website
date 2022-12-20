@@ -1,4 +1,3 @@
-<!--TS-->
 <script lang="ts">
   const isWindow = typeof window !== "undefined";
 
@@ -20,7 +19,6 @@
   };
 </script>
 
-<!--HTML-->
 <label for="toggle__core" class="toggle">
   <input
     on:click={toggleDarkMode}
@@ -34,7 +32,6 @@
   <div class="layer" />
 </label>
 
-<!--CSS-->
 <style>
   .toggle {
     --toggle-height: 2rem;

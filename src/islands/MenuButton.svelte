@@ -1,9 +1,7 @@
-<!-- TYPESCRIPT -->
 <script lang="ts">
   export let active: boolean;
 </script>
 
-<!-- HTML -->
 <div class="container">
   <input
     checked={active}
@@ -20,7 +18,6 @@
   </label>
 </div>
 
-<!-- STYLES - SCSS -->
 <style lang="scss">
   label {
     cursor: pointer;

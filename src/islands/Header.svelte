@@ -1,4 +1,3 @@
-<!-- TYPESCRIPT -->
 <script lang="ts">
   import MenuButton from "./MenuButton.svelte";
   import MobileMenu from "./MobileMenu.svelte";
@@ -19,7 +18,6 @@
   ];
 </script>
 
-<!-- HTML -->
 <div class="placeholder" />
 <header>
   <div class="wrapper menu-button">
@@ -53,7 +51,6 @@
   <MobileMenu items={links} toggle={toggleNavigationModal} />
 {/if}
 
-<!-- STYLES - SCSS -->
 <style>
   .placeholder {
     height: var(--header-height);
