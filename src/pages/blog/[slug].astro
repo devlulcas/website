@@ -19,6 +19,7 @@ export async function getStaticPaths() {
 
 const { Content } = Astro.props.post;
 const { date, title, excerpt, slug } = Astro.props.metadata as PostFrontmatter;
+const permalink = `${Astro.site.href}${slug}`;
 ---
 
 <Layout
@@ -27,7 +28,7 @@ const { date, title, excerpt, slug } = Astro.props.metadata as PostFrontmatter;
     description: excerpt,
     image:
       "https://raw.githubusercontent.com/devlulcas/devlulcas.github.io/main/.github/images/logo.png",
-    url: `https://devlulcas-github-io.vercel.app/blog/${slug}`,
+    url: permalink,
   }}
 >
   <PostContent time={date}>
