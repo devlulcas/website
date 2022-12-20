@@ -1,11 +1,15 @@
 ---
 import Heading from "../components/Heading.astro";
 import Socials from "../components/Socials.astro";
+const permalink = Astro.site.href;
 ---
 
 <!-- HTML -->
 <div class="container">
-  <form method="POST" action="/forms.json">
+  <form
+    method="POST"
+    action="https://formsubmit.co/lucasalvesrego.contato@gmail.com"
+  >
     <Heading id="contact">Contato</Heading>
 
     <div>
@@ -22,6 +26,10 @@ import Socials from "../components/Socials.astro";
       <label for="message">Mensagem</label>
       <textarea name="message" id="message" rows="10"></textarea>
     </div>
+
+    <input type="hidden" name="_captcha" value="false" />
+
+    <input type="hidden" name="_next" value={permalink} />
 
     <button>Enviar</button>
 
