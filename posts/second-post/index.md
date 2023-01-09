@@ -1,0 +1,244 @@
+---
+slug: second-post
+title: Second post
+categories:
+  - dev
+  - wip
+  - svelte
+date: 07/01/2069
+updated: 14/01/2069
+excerpt: Just testing to see if it works
+---
+
+# 😀 Just testing to see if it works (H1)
+
+## 😀 Just testing to see if it works (H2)
+
+### 😀 Just testing to see if it works (H3)
+
+#### 😀 Just testing to see if it works (H4)
+
+##### 😀 Just testing to see if it works (H5)
+
+###### 😀 Just testing to see if it works (H6)
+
+**Strong**
+
+_Italic_
+
+~I don't know~
+
+> Et illo adipisci et dolores soluta aut accusantium velit qui dignissimos incidunt et amet pariatur. Rem enim veritatis et voluptatem reprehenderit et facere consequuntur ut magnam maiores. Et dolorem nesciunt ut nihil temporibus non libero aspernatur qui tempore ullam. Qui dolor natus et perferendis dolor ea aperiam voluptatem est recusandae illo non sunt quas.
+
+[Cool link](https://github.com/devlulcas)
+
+GIF
+
+![Cool gif](./random.gif)
+
+LARGE IMAGE
+
+![Cool image](./large-image.avif)
+
+SMALL IMAGE
+
+![Cool image](./small-image.png)
+
+| Tables   |      Are      |  Cool |
+| -------- | :-----------: | ----: |
+| col 1 is | left-aligned  | $1600 |
+| col 2 is |   centered    |   $12 |
+| col 3 is | right-aligned |    $1 |
+
+- JSON
+
+```json
+{
+	"firstName": "John",
+	"lastName": "Smith",
+	"age": 25
+}
+```
+
+- Markdown
+
+```md
+# Example
+
+> Something
+```
+
+- Elixir
+
+```elixir
+def sum(first, second) do
+  first + second
+end
+```
+
+- Python
+
+```py
+def sum(first, second):
+  return first + second
+```
+
+- Typescript
+
+```ts
+function sum(first: number, second: number) {
+	return first + second;
+}
+```
+
+- Javascript
+
+```js
+function sum(first, second) {
+	return first + second;
+}
+```
+
+- Rust
+
+```rs
+fn sum(first: i32, second: i32) -> i32 {
+  first + second
+}
+```
+
+- Dart
+
+```dart
+int sum(int first, int second){
+  return first + second
+}
+```
+
+- Kotlin
+
+```kotlin
+fun sum(Int first, Int second){
+  return first + second
+}
+```
+
+- Java
+
+```java
+int sum(int first, int second){
+  return first + second
+}
+```
+
+- C
+
+```c
+int sum(int first, int second){
+  return first + second
+}
+```
+
+- C++
+
+```cpp
+int sum(int first, int second){
+  return first + second
+}
+```
+
+- Go
+
+```go
+func sum(first, second int) int {
+  return first + second
+}
+```
+
+- PHP
+
+```php
+function sum($first, $second){
+  return $first + $second
+}
+```
+
+- Clojure
+
+```clj
+(defn sum [first second]
+  (+ first second))
+```
+
+- Lua
+
+```lua
+function sum(first, second)
+  return first + second
+end
+```
+
+- Svelte
+
+```svelte
+<script>
+	import { onMount } from 'svelte';
+
+	let count = 0;
+
+	onMount(() => {
+		setInterval(() => {
+			count += 1;
+		}, 1000);
+	});
+</script>
+
+<h1>{count}</h1>
+```
+
+- HTML
+
+```html
+<h1>Hello world</h1>
+```
+
+- CSS
+
+```css
+h1 {
+	color: red;
+}
+```
+
+- SCSS
+
+```scss
+h1 {
+	color: red;
+}
+```
+
+- JSX
+
+```jsx
+function App() {
+	return (
+		<div className="App">
+			<header className="App-header">
+				<img src={logo} className="App-logo" alt="logo" />
+				<p>
+					Edit <code>src/App.js</code> and save to reload.
+				</p>
+				<a
+					className="App-link"
+					href="https://reactjs.org"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Learn React
+				</a>
+			</header>
+		</div>
+	);
+}
+```
