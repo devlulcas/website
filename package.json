@@ -39,6 +39,7 @@
 	"dependencies": {
 		"@notionhq/client": "^2.2.3",
 		"firebase": "^9.15.0",
+		"firebase-admin": "^11.4.1",
 		"node-html-parser": "^6.1.4"
 	}
 }

@@ -21,7 +21,6 @@ const firebaseConfig = {
 	appId: FIREBASE_APP_ID,
 	measurementId: FIREBASE_MEASUREMENT_ID
 };
-console.log('firebaseConfig', firebaseConfig);
 
 const app = initializeApp(firebaseConfig);
 
