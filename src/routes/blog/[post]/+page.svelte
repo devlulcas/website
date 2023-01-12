@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { afterNavigate } from '$app/navigation';
-	import { website } from '../../../config/website';
+	import { website } from '$lib/config/website';
 	import type { PageData } from './$types';
 
 	export let data: PageData;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { website } from '../config/website';
+	import { website } from '$lib/config/website';
 	import type { PageServerData } from './$types';
 
 	export let data: PageServerData;
