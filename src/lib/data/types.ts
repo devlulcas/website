@@ -34,3 +34,112 @@ export type ProjectResponse<T extends 'pinnedItems' | 'repositories'> = T extend
 			};
 	  }
 	: never;
+
+export type QueryBookmarkDatabaseResponse = {
+	object: string;
+	results: BookmarkResponse[];
+	next_cursor: null;
+	has_more: boolean;
+	type: string;
+};
+
+type BookmarkResponse = {
+	object: string;
+	id: string;
+	created_time: string;
+	last_edited_time: string;
+	created_by: {
+		object: string;
+		id: string;
+	};
+	last_edited_by: {
+		object: string;
+		id: string;
+	};
+	cover: null;
+	icon: null;
+	parent: {
+		type: string;
+		database_id: string;
+	};
+	archived: boolean;
+	properties: {
+		URL: {
+			id: string;
+			type: string;
+			url: string;
+		};
+		About: {
+			id: string;
+			type: string;
+			rich_text: [
+				{
+					type: string;
+					text: {
+						content: string;
+						link: null;
+					};
+					annotations: {
+						bold: boolean;
+						italic: boolean;
+						strikethrough: boolean;
+						underline: boolean;
+						code: boolean;
+						color: string;
+					};
+					plain_text: string;
+					href: null;
+				}
+			];
+		};
+		Tags: {
+			id: string;
+			type: string;
+			multi_select: [
+				{
+					id: string;
+					name: string;
+					color: string;
+				}
+			];
+		};
+		Name: {
+			id: string;
+			type: string;
+			title: [
+				{
+					type: string;
+					text: {
+						content: string;
+						link: null;
+					};
+					annotations: {
+						bold: boolean;
+						italic: boolean;
+						strikethrough: boolean;
+						underline: boolean;
+						code: boolean;
+						color: string;
+					};
+					plain_text: string;
+					href: null;
+				}
+			];
+		};
+	};
+	url: string;
+};
+
+export type BaseBookmark = {
+	resourceId: string;
+	name: string;
+	url: string;
+	about: string;
+	tags: string[];
+	updatedAt: string;
+	createdAt: string;
+};
+
+export type Bookmark = BaseBookmark & {
+	id: string;
+};
