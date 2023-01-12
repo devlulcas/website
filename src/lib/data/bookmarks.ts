@@ -24,6 +24,7 @@ async function updateBookmarkInDatabase(db: Firestore, bookmark: Bookmark) {
 async function getBookmarksFromDatabase(db: Firestore) {
 	const bookmarksCol = collection(db, 'bookmarks');
 	const bookmarkSnapshot = await getDocs(bookmarksCol);
+
 	const bookmarkList = bookmarkSnapshot.docs.map((doc) => {
 		const data = doc.data() as Bookmark;
 
