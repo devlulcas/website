@@ -130,16 +130,10 @@ type BookmarkResponse = {
 	url: string;
 };
 
-export type BaseBookmark = {
+export type Bookmark = {
 	resourceId: string;
 	name: string;
 	url: string;
 	about: string;
 	tags: string[];
-	updatedAt: string;
-	createdAt: string;
-};
-
-export type Bookmark = BaseBookmark & {
-	id: string;
 };
