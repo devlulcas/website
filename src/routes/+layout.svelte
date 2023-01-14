@@ -1,5 +1,7 @@
 <script lang="ts">
+	import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte';
 	import { locale, locales, t } from '$lib/i18n';
+	import '$lib/assets/styles/global.css';
 </script>
 
 <nav>
@@ -14,5 +16,7 @@
 		<option {value}>{$t(`lang.${value}`)}</option>
 	{/each}
 </select>
+
+<ThemeSwitcher />
 
 <slot />
