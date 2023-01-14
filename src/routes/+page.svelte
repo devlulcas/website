@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { website } from '$lib/config/website';
 	import type { PageServerData } from './$types';
+	import { t, locale } from '$lib/i18n';
 
 	export let data: PageServerData;
 </script>
@@ -8,6 +9,10 @@
 <svelte:head>
 	<title>{website.title}</title>
 </svelte:head>
+
+<p>
+	{$t('common.start')}
+</p>
 
 {#each data.posts as post}
 	<a href={'/blog/' + post.slug}>
