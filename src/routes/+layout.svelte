@@ -8,6 +8,7 @@
 	<a href="/">Home</a>
 	<a href="/blog">Blog</a>
 	<a href="/bookmarks">Bookmarks</a>
+	<a href="/uses">Uses</a>
 </nav>
 
 <select bind:value={$locale}>
