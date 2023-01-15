@@ -18,5 +18,8 @@ export async function getBookmarks(): Promise<Bookmark[]> {
 		};
 	});
 
-	return bookmarks;
+	return bookmarks.map((bookmark) => ({
+		...bookmark,
+		searchTerms: `${bookmark.name} ${bookmark.about} ${bookmark.tags.join(' ')}`
+	}));
 }

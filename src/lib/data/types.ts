@@ -136,4 +136,5 @@ export type Bookmark = {
 	url: string;
 	about: string;
 	tags: string[];
+	searchTerms: string;
 };
