@@ -24,15 +24,6 @@
 <main>
 	<h1>Bookmarks</h1>
 
-	<pre>
-    <hr />
-    {$searchBookmarks.filtered}
-    <hr />
-    {$searchBookmarks.data}
-    <hr />
-
-  </pre>
-
 	<div>
 		<label for="search">Search</label>
 		<input type="text" bind:value={$searchBookmarks.query} placeholder="Search bookmarks" />
