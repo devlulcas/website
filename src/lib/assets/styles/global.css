@@ -30,7 +30,7 @@
 	}
 }
 
-:root:has(.dark) {
+html[data-theme='dark'] {
 	--background-hue: 0;
 	--background-saturation: 0%;
 	--background-lightness: 0%;
@@ -42,7 +42,7 @@
 	);
 }
 
-:root:has(.light) {
+html[data-theme='light'] {
 	--background-hue: 0;
 	--background-saturation: 0%;
 	--background-lightness: 99%;

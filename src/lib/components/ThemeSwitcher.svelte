@@ -1,36 +1,22 @@
 <script lang="ts">
-	const isWindow = typeof window !== 'undefined';
+	import { enhance, type SubmitFunction } from '$app/forms';
 
-	const isDarkMode = isWindow && window.matchMedia('(prefers-color-scheme: dark)').matches;
+	import { page } from '$app/stores';
 
-	const isDarkModeEnabled = isWindow && localStorage.getItem('dark-mode') === 'true';
+	// This is the function that will be called when the form is submitted
+	// and will prevent the default form submission behavior
+	// and instead change the theme on the client-side
+	// If the client is not able to change the theme, the form will be submitted
+	const submitTheme: SubmitFunction = ({ action }) => {
+		const theme = action.searchParams.get('theme');
 
-	let isDarkModeActive = isDarkModeEnabled || isDarkMode;
-
-	const toggleDarkMode = () => {
-		if (isWindow) {
-			localStorage.setItem('dark-mode', !isDarkModeActive ? 'true' : 'false');
+		if (theme) {
+			document.documentElement.setAttribute('data-theme', theme);
 		}
 	};
-
-	$: if (isWindow) {
-		if (isDarkModeActive) {
-			document.body.classList.remove('light');
-			document.body.classList.add('dark');
-		} else {
-			document.body.classList.remove('dark');
-			document.body.classList.add('light');
-		}
-	}
 </script>
 
-<div>
-	<label for="theme-switcher">{isDarkModeActive ? 'Dark' : 'Light'}</label>
-	<input
-		type="checkbox"
-		name="theme-switcher"
-		id="theme-switcher"
-		on:change={toggleDarkMode}
-		bind:checked={isDarkModeActive}
-	/>
-</div>
+<form method="POST" use:enhance={submitTheme}>
+	<button formaction="/?/setTheme&theme=light&redirectTo={$page.url.pathname}">Light</button>
+	<button formaction="/?/setTheme&theme=dark&redirectTo={$page.url.pathname}">Dark</button>
+</form>
