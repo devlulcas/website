@@ -10,6 +10,7 @@ specifiers:
   eslint: ^8.31.0
   eslint-config-prettier: ^8.6.0
   eslint-plugin-svelte3: ^4.0.0
+  fzf: ^0.5.1
   mdsvex: ^0.10.6
   mdsvex-relative-images: ^1.0.3
   node-html-parser: ^6.1.4
@@ -27,6 +28,7 @@ specifiers:
 
 dependencies:
   '@notionhq/client': 2.2.3
+  fzf: 0.5.1
   node-html-parser: 6.1.4
   sveltekit-i18n: 2.2.2_svelte@3.55.1
 
@@ -1166,6 +1168,10 @@ packages:
   /function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
+
+  /fzf/0.5.1:
+    resolution: {integrity: sha512-AJ9BBt/3K/IyCF+pQjdG194kVSS1hU/v/RnZgiCtYZzA0rj2OBVwwjBRUOclo9yJl2ovjtdw3C31/8/rnT0uug==}
+    dev: false
 
   /get-func-name/2.0.0:
     resolution: {integrity: sha512-Hm0ixYtaSZ/V7C8FJrtZIuBBI+iSgL+1Aq82zSu8VQNB4S3Gk8e7Qs3VwBDJAhmRZcFqkl3tQu36g/Foh5I5ig==}

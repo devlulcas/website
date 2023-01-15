@@ -38,6 +38,7 @@
 	"type": "module",
 	"dependencies": {
 		"@notionhq/client": "^2.2.3",
+		"fzf": "^0.5.1",
 		"node-html-parser": "^6.1.4",
 		"sveltekit-i18n": "^2.2.2"
 	}
