@@ -2,6 +2,7 @@
 	import { website } from '$lib/config/website';
 	import type { PageServerData } from './$types';
 	import { t, locale } from '$lib/i18n';
+	import ContactForm from '$lib/components/ContactForm.svelte';
 
 	export let data: PageServerData;
 </script>
@@ -80,3 +81,5 @@
 		</li>
 	{/each}
 </ul>
+
+<ContactForm />

@@ -22,6 +22,11 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			entries: ['*', '/sitemap.xml', '/rss.xml']
+		},
+		alias: {
+			'$handlers/*': 'src/handlers/*',
+			'$utils/*': 'src/utils/*',
+			'$/*': 'src/*'
 		}
 	}
 };

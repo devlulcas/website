@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { enhance, type SubmitFunction } from '$app/forms';
-
 	import { page } from '$app/stores';
 
 	// This is the function that will be called when the form is submitted

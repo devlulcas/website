@@ -1,7 +1,8 @@
 import { fetchPosts, getCategories } from '$lib/data/posts';
 import { fetchMoreProjects, fetchPinnedProjects } from '$lib/data/projects';
-import { redirect } from '@sveltejs/kit';
+import { themeHandler } from '$handlers/theme';
 import type { Actions, PageServerLoad } from './$types';
+import { langHandler } from '$handlers/lang';
 
 export const load: PageServerLoad = async () => {
 	const data = await fetchPosts({});
@@ -21,23 +22,6 @@ export const load: PageServerLoad = async () => {
 };
 
 export const actions: Actions = {
-	setTheme: async ({ url, cookies }) => {
-		const theme = url.searchParams.get('theme');
-		const redirectTo = url.searchParams.get('redirectTo') ?? '/';
-
-		if (theme) {
-			const fullYear = 60 * 60 * 24 * 365;
-
-			cookies.set('theme', theme, {
-				path: '/',
-				maxAge: fullYear
-			});
-		}
-
-		if (redirectTo && redirectTo.startsWith('/')) {
-			throw redirect(303, redirectTo);
-		}
-
-		throw redirect(303, '/');
-	}
+	setTheme: themeHandler,
+	setLang: langHandler
 };
