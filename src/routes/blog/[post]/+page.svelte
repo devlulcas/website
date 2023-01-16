@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CopyToClipboard from '$/lib/components/CopyToClipboard.svelte';
 	import { afterNavigate } from '$app/navigation';
 	import { website } from '$lib/config/website';
 	import type { PageData } from './$types';
@@ -39,6 +40,8 @@
 >
 	Voltar
 </svelte:element>
+
+<CopyToClipboard />
 
 <h1>
 	{data.post.title}

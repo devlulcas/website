@@ -28,7 +28,7 @@ export async function fetchPosts({ category = '' }) {
 
 			const html = parse(post.default.render().html);
 
-			const excerpt = post.metadata.excerpt
+			const excerpt = post.metadata?.excerpt
 				? parse(post.metadata.excerpt)
 				: html.querySelector('p');
 
@@ -41,7 +41,7 @@ export async function fetchPosts({ category = '' }) {
 
 			return {
 				...post.metadata,
-				categories: post.metadata.categories ?? [],
+				categories: post.metadata?.categories ?? [],
 				slug,
 				isIndexFile,
 				excerpt: {

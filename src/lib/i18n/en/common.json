@@ -1,3 +1,4 @@
 {
-	"start": "Hello, world!"
+	"start": "Hello, world!",
+	"copyToClipboard": "Copy to clipboard"
 }

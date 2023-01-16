@@ -56,7 +56,7 @@ SMALL IMAGE
 
 - JSON
 
-```json
+```json:example.json
 {
 	"firstName": "John",
 	"lastName": "Smith",

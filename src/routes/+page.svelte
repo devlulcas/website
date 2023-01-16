@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { website } from '$lib/config/website';
-	import type { PageServerData } from './$types';
-	import { t, locale } from '$lib/i18n';
 	import ContactForm from '$lib/components/ContactForm.svelte';
+	import { website } from '$lib/config/website';
+	import { t } from '$lib/i18n';
+	import type { PageServerData } from './$types';
 
 	export let data: PageServerData;
 </script>
