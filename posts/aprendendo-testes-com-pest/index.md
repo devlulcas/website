@@ -3,7 +3,7 @@ slug: testando-php-com-pest-2022
 title: Testando PHP com Pest
 thumbnail: /pest_logo.png
 alt: logo do pest
-tags:
+categories:
   - php
   - dev
   - testes
