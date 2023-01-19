@@ -1,9 +1,8 @@
 ---
 slug: iniciando-na-programacao-web-2022
 title: Iniciando na programação web
-thumbnail: ./js_logo_5.png
 alt: gatinho
-tags:
+categories:
   - dev
   - iniciante
   - javascript
@@ -14,7 +13,7 @@ excerpt: Um pontapé inicial no desenvolvimento web
 # Iniciando na programação web - Um pontapé inicial no desenvolvimento web
 
 ```js
-console.log("Olá mãe!");
+console.log('Olá mãe!');
 ```
 
 Esse texto possui links de ajuda, conteúdo gratuito, dicas, resumos beeeeeem resumidos e minhas opiniões individuais.
@@ -104,9 +103,9 @@ _Uma máquina não sabe dizer o que é um parágrafo e o que é um título entã
 
 ```html
 <section>
-  <h1>Titulo</h1>
-  <p>Meu lindo parágrafo</p>
-  <img src="./gatinho_fofo.png" alt="isso aqui é uma imagem" />
+	<h1>Titulo</h1>
+	<p>Meu lindo parágrafo</p>
+	<img src="./gatinho_fofo.png" alt="isso aqui é uma imagem" />
 </section>
 ```
 
@@ -114,32 +113,32 @@ _As coisas agora fazem sentido, mas 1998 ficou para trás então a gente pode de
 
 ```css
 body {
-  background-color: antiquewhite;
+	background-color: antiquewhite;
 }
 
 section {
-  width: fit-content;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: white;
-  box-shadow: 0.1rem 0.1rem 0.1rem hsla(0 0 0 / 50%);
+	width: fit-content;
+	padding: 1rem;
+	border-radius: 1rem;
+	background-color: white;
+	box-shadow: 0.1rem 0.1rem 0.1rem hsla(0 0 0 / 50%);
 }
 
 h1 {
-  font-family: "Poppins";
-  font-size: 3rem;
-  font-weight: 800;
-  color: black;
+	font-family: 'Poppins';
+	font-size: 3rem;
+	font-weight: 800;
+	color: black;
 }
 
 p {
-  font-weight: 500;
-  color: gray;
+	font-weight: 500;
+	color: gray;
 }
 
 img {
-  width: 5rem;
-  border-radius: 0.5rem;
+	width: 5rem;
+	border-radius: 0.5rem;
 }
 ```
 
@@ -148,8 +147,8 @@ img {
 _E com Javascript a gente pode fazer as coisas acontecerem_:
 
 ```js
-const gatinho = document.querySelector("img");
-gatinho.addEventListener("click", () => alert("Cliquei num gatinho"));
+const gatinho = document.querySelector('img');
+gatinho.addEventListener('click', () => alert('Cliquei num gatinho'));
 ```
 
 Nessa época aprendi também que **Javascript não é Java e não tem nada a ver com Java**. Javascript só tem esse nome por conta de uma estratégia de marketing, seu nome real é EcmaScript e sua versão depende do ano, estamos no ES2022.

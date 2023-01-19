@@ -3,7 +3,7 @@ slug: commit-conventions
 title: Convenções de commits
 thumbnail: /git.png
 alt: logo do git
-tags:
+categories:
   - git
   - dev
   - convenções
@@ -24,7 +24,7 @@ Abaixo podemos ver a estrutura de uma mensagem de commit no modelo que estabelec
 tipo(escopo): descrição
 ```
 
-❗ **tipo** = O tipo é como um rótulo para o tipo de alteração feita naquele commit.  
+❗ **tipo** = O tipo é como um rótulo para o tipo de alteração feita naquele commit.
 Os tipos são padronizados e são mostrados na seção de `Tipos padrões`.
 
 ❗ **escopo (opcional)** = Um complemento a informação de tipo.

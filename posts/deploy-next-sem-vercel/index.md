@@ -1,9 +1,8 @@
 ---
 slug: como-fazer-deploy-nextjs-sem-vercel-ou-docker
 title: Como fazer deploy de um projeto Next.js sem utilizar a Vercel
-thumbnail: /hamster.gif
 alt: hamster
-tags:
+categories:
   - dev
   - wip
   - nextjs
@@ -62,8 +61,8 @@ A flag `--frozen-lockfile` é usado para garantir que as dependências instalada
 ```js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  output: "standalone",
+	reactStrictMode: true,
+	output: 'standalone'
 };
 
 module.exports = nextConfig;

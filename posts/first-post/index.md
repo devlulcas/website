@@ -1,9 +1,7 @@
 ---
 slug: first-post
 title: First post
-thumbnail: /hamster.gif
-alt: hamster
-tags:
+categories:
   - dev
   - wip
   - svelte
@@ -39,9 +37,9 @@ _Italic_
 
 ```json
 {
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
+	"firstName": "John",
+	"lastName": "Smith",
+	"age": 25
 }
 ```
 
@@ -72,7 +70,7 @@ def sum(first, second):
 
 ```ts
 function sum(first: number, second: number) {
-  return first + second;
+	return first + second;
 }
 ```
 
@@ -80,7 +78,7 @@ function sum(first: number, second: number) {
 
 ```js
 function sum(first, second) {
-  return first + second;
+	return first + second;
 }
 ```
 
