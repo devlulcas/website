@@ -1,6 +1,6 @@
 import { visit } from 'unist-util-visit';
 
-export function rehypeSpecialBlockquote() {
+export function rehypeSpecialBlockquote(specialTypes) {
 	/**
 	 * @param {import('hast').Root} tree
 	 */
@@ -18,9 +18,7 @@ export function rehypeSpecialBlockquote() {
 
 				const content = node.children[contentIndex];
 
-				if (content) {
-					const specialTypes = ['note', 'warning', 'tip', 'danger'];
-
+				if (content && content?.children[0]?.type === 'text') {
 					const text = content.children[0].value;
 					const [type, ...rest] = text.split(':');
 
