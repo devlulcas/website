@@ -1,26 +1,21 @@
 ---
 slug: first-post
 title: First post
-categories:
+thumbnail: /hamster.gif
+alt: hamster
+tags:
   - dev
   - wip
   - svelte
 date: 01/01/2069
-updated: 07/01/2069
 excerpt: Just testing to see if it works
 ---
 
-# 😀 Just testing to see if it works (H1)
+# 😀 Just testing to see if it works
 
-## 😀 Just testing to see if it works (H2)
+## 😀 Just testing to see if it works
 
-### 😀 Just testing to see if it works (H3)
-
-#### 😀 Just testing to see if it works (H4)
-
-##### 😀 Just testing to see if it works (H5)
-
-###### 😀 Just testing to see if it works (H6)
+### 😀 Just testing to see if it works
 
 **Strong**
 
@@ -32,21 +27,7 @@ _Italic_
 
 [Cool link](https://github.com/devlulcas)
 
-GIF
-
-![Cool gif](./random.gif)
-
-LARGE IMAGE
-
-![Cool image](./large-image.avif)
-
-SMALL IMAGE
-
-![Cool image](./small-image.png)
-
-- EMBED YT
-
-[Anime](https://www.youtube.com/watch?v=CsR3KVgBzSM)
+![Cool image](./hamster.gif)
 
 | Tables   |      Are      |  Cool |
 | -------- | :-----------: | ----: |
@@ -56,11 +37,11 @@ SMALL IMAGE
 
 - JSON
 
-```json:example.json
+```json
 {
-	"firstName": "John",
-	"lastName": "Smith",
-	"age": 25
+  "firstName": "John",
+  "lastName": "Smith",
+  "age": 25
 }
 ```
 
@@ -91,7 +72,7 @@ def sum(first, second):
 
 ```ts
 function sum(first: number, second: number) {
-	return first + second;
+  return first + second;
 }
 ```
 
@@ -99,7 +80,7 @@ function sum(first: number, second: number) {
 
 ```js
 function sum(first, second) {
-	return first + second;
+  return first + second;
 }
 ```
 
@@ -124,125 +105,5 @@ int sum(int first, int second){
 ```kotlin
 fun sum(Int first, Int second){
   return first + second
-}
-```
-
-- Java
-
-```java
-int sum(int first, int second){
-  return first + second
-}
-```
-
-- C
-
-```c
-int sum(int first, int second){
-  return first + second
-}
-```
-
-- C++
-
-```cpp
-int sum(int first, int second){
-  return first + second
-}
-```
-
-- Go
-
-```go
-func sum(first, second int) int {
-  return first + second
-}
-```
-
-- PHP
-
-```php
-function sum($first, $second){
-  return $first + $second
-}
-```
-
-- Clojure
-
-```clj
-(defn sum [first second]
-  (+ first second))
-```
-
-- Lua
-
-```lua
-function sum(first, second)
-  return first + second
-end
-```
-
-- Svelte
-
-```svelte
-<script>
-	import { onMount } from 'svelte';
-
-	let count = 0;
-
-	onMount(() => {
-		setInterval(() => {
-			count += 1;
-		}, 1000);
-	});
-</script>
-
-<h1>{count}</h1>
-```
-
-- HTML
-
-```html
-<h1>Hello world</h1>
-```
-
-- CSS
-
-```css
-h1 {
-	color: red;
-}
-```
-
-- SCSS
-
-```scss
-h1 {
-	color: red;
-}
-```
-
-- JSX
-
-```jsx
-function App() {
-	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.js</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
-	);
 }
 ```
