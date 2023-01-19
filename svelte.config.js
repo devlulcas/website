@@ -44,7 +44,7 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		prerender: {
-			entries: ['*', '/sitemap.xml', '/rss.xml']
+			entries: ['*']
 		},
 		alias: {
 			'$handlers/*': 'src/handlers/*',
