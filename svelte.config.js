@@ -11,6 +11,18 @@ import { rehypeBetterImages } from './plugins/rehype-better-images.js';
 import { rehypeSpecialBlockquote } from './plugins/rehype-special-blockquotes.js';
 import { remarkVideo } from './plugins/remark-video.js';
 
+const specialTypes = [
+	'note',
+	'warning',
+	'tip',
+	'danger',
+	'important',
+	'caution',
+	'info',
+	'success',
+	'question'
+];
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', '.svx', '.md'],
@@ -18,14 +30,14 @@ const config = {
 		vitePreprocess(),
 		mdsvex({
 			extensions: ['.md'],
-			remarkPlugins: [relativeImages, remarkCodeTitles, remarkVideo],
+			remarkPlugins: [relativeImages, remarkCodeTitles, [remarkVideo, { width: 560, height: 315 }]],
 			rehypePlugins: [
 				rehypeCodeBlocks,
 				rehypeSlug,
 				rehypeAutolinkHeadings,
 				rehypeExternalUrl,
 				rehypeBetterImages,
-				rehypeSpecialBlockquote
+				[rehypeSpecialBlockquote, specialTypes]
 			]
 		})
 	],
