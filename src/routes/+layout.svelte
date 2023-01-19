@@ -2,6 +2,7 @@
 	import ThemeSwitcher from '$lib/components/ThemeSwitcher.svelte';
 	import LanguageSwitcher from '$/lib/components/LanguageSwitcher.svelte';
 	import '$lib/assets/styles/global.css';
+	import Analytics from '$/lib/components/Analytics.svelte';
 </script>
 
 <nav>
@@ -16,3 +17,5 @@
 <ThemeSwitcher />
 
 <slot />
+
+<Analytics />
