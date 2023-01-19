@@ -28,6 +28,7 @@ export function remarkVideo({ width = 560, height = 315 }) {
 			        frameborder="0"
 			        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 			        allowfullscreen
+              loading="lazy"
 			      ></iframe>
 			      <p>${videoTitle}</p>
 			    </div>
