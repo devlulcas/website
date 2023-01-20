@@ -12,7 +12,7 @@
 				{item.label}
 			</a>
 		{:else}
-			<a href={item.href}>{item.label}</a>
+			<a class="text-slate-800" href={item.href}>{item.label}</a>
 		{/if}
 	{/each}
 </nav>
@@ -35,13 +35,5 @@
 			padding: 0;
 			background: transparent;
 		}
-	}
-
-	a {
-		font-size: 1.5rem;
-		text-decoration: none;
-		padding: 1rem;
-		font-weight: 600;
-		color: var(--primary);
 	}
 </style>

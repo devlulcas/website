@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PostCategoryList from '$/lib/components/PostCategoryList.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { website } from '$lib/config/website';
 	import { t } from '$lib/i18n';
@@ -25,13 +26,7 @@
 
 <hr />
 
-<ul>
-	{#each data.categories as category}
-		<li>
-			<a href={'/blog/category/' + category}>{category}</a>
-		</li>
-	{/each}
-</ul>
+<PostCategoryList categories={data.categories} />
 
 <hr />
 

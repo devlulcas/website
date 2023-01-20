@@ -4,6 +4,7 @@
 	import MobileMenu from './MobileMenu.svelte';
 	import NavItems from './NavItems.svelte';
 	import ThemeSwitcher from './ThemeSwitcher.svelte';
+	import { t } from '$lib/i18n';
 
 	let mobileMenuIsOpen = false;
 	const toggleNavigationModal = () => {
@@ -11,21 +12,23 @@
 	};
 
 	const links = [
-		{ label: 'Home', href: '/' },
-		{ label: 'Projects', href: '/#projects' },
-		{ label: 'Blog', href: '/blog' },
-		{ label: 'Skills', href: '/#skills' },
-		{ label: 'Contact', href: '/#contact' }
+		{ label: $t('common.nav.home'), href: '/' },
+		{ label: $t('common.nav.blog'), href: '/blog' },
+		{ label: $t('common.nav.bookmarks'), href: '/bookmarks' },
+		{ label: $t('common.nav.projects'), href: '/#projects' },
+		{ label: $t('common.nav.skills'), href: '/#skills' },
+		{ label: $t('common.nav.contact'), href: '/#contact' }
 	];
 </script>
 
 <div class="placeholder" />
+
 <header>
-	<div class="wrapper menu-button">
+	<div class="menu-button">
 		<DrawerButton active={mobileMenuIsOpen} on:click={toggleNavigationModal} />
 	</div>
 
-	<a href="/" class="wrapper logo">
+	<a href="/" class="logo">
 		<img
 			src="/favicon.png"
 			alt="logo"
@@ -37,12 +40,12 @@
 		/>
 	</a>
 
-	<div class="wrapper nav">
+	<div class="nav">
 		<NavItems items={links} />
 	</div>
 
-	<div class="wrapper">
-		<div>
+	<div class="justify-end">
+		<div class="flex gap-2">
 			<ThemeSwitcher />
 			<LanguageSwitcher />
 		</div>
@@ -72,14 +75,10 @@
 		backdrop-filter: blur(1rem);
 	}
 
-	.wrapper {
+	header > * {
 		width: 100%;
 		display: flex;
 		align-items: center;
-	}
-
-	.wrapper:last-child {
-		justify-content: flex-end;
 	}
 
 	.logo {
@@ -89,6 +88,7 @@
 	.nav {
 		display: none;
 	}
+
 	@media screen and (min-width: 90rem) {
 		.menu-button {
 			display: none;

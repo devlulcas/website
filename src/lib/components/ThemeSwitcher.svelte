@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { enhance, type SubmitFunction } from '$app/forms';
 	import { page } from '$app/stores';
+	import Button from './Button.svelte';
 
 	// This is the function that will be called when the form is submitted
 	// and will prevent the default form submission behavior
@@ -16,6 +17,6 @@
 </script>
 
 <form method="POST" use:enhance={submitTheme}>
-	<button formaction="/?/setTheme&theme=light&redirectTo={$page.url.pathname}">Light</button>
-	<button formaction="/?/setTheme&theme=dark&redirectTo={$page.url.pathname}">Dark</button>
+	<Button formaction="/?/setTheme&theme=light&redirectTo={$page.url.pathname}">Light</Button>
+	<Button formaction="/?/setTheme&theme=dark&redirectTo={$page.url.pathname}">Dark</Button>
 </form>

@@ -1,4 +1,13 @@
 {
 	"start": "Hello, world!",
-	"copyToClipboard": "Copy to clipboard"
+	"copyToClipboard": "Copy to clipboard",
+	"nav": {
+		"home": "Home",
+		"about": "About",
+		"contact": "Contact",
+		"bookmarks": "Bookmarks",
+		"blog": "Blog",
+		"projects": "Projects",
+		"skills": "Skills"
+	}
 }

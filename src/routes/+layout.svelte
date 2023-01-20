@@ -4,8 +4,10 @@
 	import '$lib/assets/styles/global.css';
 </script>
 
-<Header />
+<div class="bg-white dark:bg-slate-900 min-h-screen">
+	<Header />
 
-<slot />
+	<slot />
+</div>
 
 <Analytics />
