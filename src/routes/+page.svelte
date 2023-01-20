@@ -2,9 +2,10 @@
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { website } from '$lib/config/website';
 	import { t } from '$lib/i18n';
-	import type { PageServerData } from './$types';
+	import type { ActionData, PageServerData } from './$types';
 
 	export let data: PageServerData;
+	export let form: ActionData;
 </script>
 
 <svelte:head>

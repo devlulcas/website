@@ -1,7 +1,12 @@
 <script lang="ts">
+	import { enhance, type SubmitFunction } from '$app/forms';
+
+	const submitContact: SubmitFunction = (form) => {
+		console.log(form);
+	};
 </script>
 
-<form action="?contact" method="post">
+<form action="/?/contact" method="POST" use:enhance={submitContact}>
 	<div>
 		<label for="name">Name</label>
 		<input type="text" name="name" id="name" />
