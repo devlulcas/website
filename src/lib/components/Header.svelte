@@ -22,7 +22,7 @@
 
 <div class="placeholder" />
 
-<header class="px-1 md:px-72">
+<header class="px-1 md:px-72 bg-opacity-20 bg-gray-100 dark:bg-gray-800">
 	<div class="menu-button">
 		<DrawerButton active={mobileMenuIsOpen} on:click={toggleNavigationModal} />
 	</div>
@@ -65,8 +65,6 @@
 		height: var(--header-height);
 		display: flex;
 		align-items: center;
-		background-color: hsl(0 0% 90% / 25%);
-		color: var(--primary);
 		backdrop-filter: blur(1rem);
 	}
 

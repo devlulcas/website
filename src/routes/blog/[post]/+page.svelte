@@ -47,4 +47,6 @@
 	{data.post.title}
 </h1>
 
-<svelte:component this={data.component} />
+<div class="content">
+	<svelte:component this={data.component} />
+</div>

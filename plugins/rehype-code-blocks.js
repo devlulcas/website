@@ -41,13 +41,25 @@ export function rehypeCodeBlocks() {
 				/**
 				 * @type {import('hast').Element}
 				 */
+				const headerBlock = {
+					type: 'element',
+					tagName: 'div',
+					properties: {
+						className: ['code-header-block']
+					},
+					children: [copyButton, codeTitle]
+				};
+
+				/**
+				 * @type {import('hast').Element}
+				 */
 				const newBlock = {
 					type: 'element',
 					tagName: 'div',
 					properties: {
 						className: ['code-wrapper']
 					},
-					children: [copyButton, codeTitle, node]
+					children: [headerBlock, node]
 				};
 
 				parent.children.splice(index, 1, newBlock);

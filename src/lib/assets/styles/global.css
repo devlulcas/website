@@ -5,3 +5,19 @@
 :root {
 	--header-height: 3rem;
 }
+
+::-webkit-scrollbar {
+	@apply h-2;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-gray-200;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-gray-400;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	@apply bg-gray-600;
+}

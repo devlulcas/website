@@ -12,9 +12,9 @@
 	/>
 
 	<label for="menu_checkbox">
-		<div class="line bg-gray-800" />
-		<div class="line bg-gray-800" />
-		<div class="line bg-gray-800" />
+		<div class="line bg-gray-500" />
+		<div class="line bg-gray-500" />
+		<div class="line bg-gray-500" />
 	</label>
 </div>
 
@@ -31,8 +31,8 @@
 
 	.line {
 		width: 2.5rem;
-		height: 0.5rem;
-		border-radius: 0.2rem;
+		height: 0.4rem;
+		border-radius: 0.1rem;
 		margin-top: 0.3rem;
 		transition: all 0.25s;
 	}

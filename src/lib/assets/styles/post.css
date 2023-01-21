@@ -1,0 +1,157 @@
+.content {
+	@apply text-gray-800 font-sans;
+
+	& > * {
+		@apply my-4;
+	}
+
+	& > *:first-child {
+		@apply mt-0;
+	}
+
+	& > *:last-child {
+		@apply mb-0;
+	}
+
+	::selection {
+		@apply bg-blue-500 text-white;
+	}
+
+	& h1,
+	& h2,
+	& h3,
+	& h4,
+	& h5,
+	& h6 {
+		@apply text-gray-800 font-bold;
+	}
+
+	& h1 {
+		@apply text-2xl md:text-3xl font-black;
+	}
+
+	& h2 {
+		@apply text-xl;
+	}
+
+	& h3 {
+		@apply text-xl;
+	}
+
+	& h4 {
+		@apply text-lg;
+	}
+
+	& h5 {
+		@apply text-sm;
+	}
+
+	& p {
+		@apply text-gray-800 break-words;
+	}
+
+	& blockquote,
+	& pre {
+		@apply text-gray-800;
+	}
+
+	& blockquote {
+		@apply text-lg font-bold italic text-gray-700 border-l-4 border-gray-700 pl-4 my-4;
+	}
+
+	& .code-wrapper {
+		@apply overflow-hidden my-4;
+
+		& .code-header-block {
+			@apply flex justify-evenly items-center bg-gray-200 p-2 rounded-t-md;
+
+			&::before {
+				content: '⬤ ⬤ ⬤';
+				@apply text-gray-800;
+				width: 100%;
+				display: flex;
+				align-items: center;
+			}
+
+			& .copy-code {
+				@apply text-gray-800 font-bold p-1 bg-gray-300 rounded-md cursor-pointer justify-self-end;
+			}
+
+			& .code-title {
+				@apply text-gray-800 font-bold;
+			}
+		}
+
+		& pre {
+			@apply bg-gray-100 rounded-b-md p-4 overflow-x-auto;
+
+			& code {
+				@apply text-gray-800 font-mono;
+			}
+		}
+	}
+
+	& em {
+		font-style: italic;
+	}
+
+	& del {
+		text-decoration: line-through;
+	}
+
+	& strong {
+		font-weight: 600;
+	}
+
+	& p:has(a) {
+		padding: 0;
+	}
+
+	& a {
+		@apply text-blue-500 underline hover:text-blue-600;
+	}
+
+	& table {
+		@apply overflow-hidden text-gray-800 border-collapse bg-white border border-gray-200;
+
+		& td,
+		& th {
+			@apply border border-gray-200 p-2;
+		}
+
+		& th {
+			@apply bg-gray-200;
+		}
+	}
+
+	& ul {
+		@apply p-0 flex flex-col gap-1;
+	}
+
+	& li {
+		@apply text-gray-800;
+	}
+
+	& p:has(img),
+	& p:has(iframe) {
+		text-indent: 0;
+		@apply flex-wrap flex justify-center items-center my-4 p-0;
+	}
+
+	& img,
+	& iframe {
+		padding: 0;
+		margin: 0;
+		max-width: 100%;
+		height: auto;
+
+		@media screen and (min-width: 768px) {
+			width: auto;
+			max-height: 50vh;
+		}
+	}
+
+	& iframe {
+		@apply my-4 aspect-video w-full;
+	}
+}
