@@ -12,9 +12,9 @@
 	/>
 
 	<label for="menu_checkbox">
-		<div class="line" />
-		<div class="line" />
-		<div class="line" />
+		<div class="line bg-gray-800" />
+		<div class="line bg-gray-800" />
+		<div class="line bg-gray-800" />
 	</label>
 </div>
 
@@ -30,11 +30,10 @@
 	}
 
 	.line {
-		width: 3rem;
+		width: 2.5rem;
 		height: 0.5rem;
-		background: var(--primary);
-		border-radius: 0.5rem;
-		margin-top: 0.5rem;
+		border-radius: 0.2rem;
+		margin-top: 0.3rem;
 		transition: all 0.25s;
 	}
 
@@ -50,14 +49,14 @@
 	}
 
 	input:checked + label .line:nth-child(1) {
-		transform: translateX(-20% + 1 * 20%);
+		transform: translateX(calc(-20% + 1 * 20%));
 	}
 
 	input:checked + label .line:nth-child(2) {
-		transform: translateX(-20% + 1 * 20%);
+		transform: translateX(calc(-20% + 2 * 20%));
 	}
 
 	input:checked + label .line:nth-child(3) {
-		transform: translateX(-20% + 1 * 20%);
+		transform: translateX(calc(-20% + 3 * 20%));
 	}
 </style>

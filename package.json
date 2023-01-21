@@ -46,6 +46,7 @@
 	"dependencies": {
 		"@notionhq/client": "^2.2.3",
 		"fzf": "^0.5.1",
+		"lucide-svelte": "^0.105.0",
 		"node-html-parser": "^6.1.4",
 		"sveltekit-i18n": "^2.2.2",
 		"unist-util-visit": "^4.1.1",

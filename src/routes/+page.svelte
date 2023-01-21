@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Divider from '$/lib/components/Divider.svelte';
 	import PostCategoryList from '$/lib/components/PostCategoryList.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { website } from '$lib/config/website';
@@ -13,9 +14,11 @@
 	<title>{website.title}</title>
 </svelte:head>
 
-<p>
-	{$t('common.start')}
-</p>
+<section class="full-bleed bg-gray-500 h-[85vh]">
+	<p>
+		{$t('common.start')}
+	</p>
+</section>
 
 {#each data.posts as post}
 	<a href={'/blog/' + post.slug}>
@@ -24,11 +27,11 @@
 	</a>
 {/each}
 
-<hr />
+<Divider />
 
 <PostCategoryList categories={data.categories} />
 
-<hr />
+<Divider />
 
 <ul>
 	{#each data.pinnedProjects as pinnedProject}

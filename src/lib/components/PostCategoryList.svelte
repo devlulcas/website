@@ -2,11 +2,11 @@
 	export let categories: string[] = [];
 </script>
 
-<ul class="flex gap-2 p-5">
+<ul class="flex gap-2 my-5 flex-wrap">
 	{#each categories as category}
-		<li>
+		<li class="flex-1 min-w-fit">
 			<a
-				class="py-2 px-3 bg-blue-50 rounded-sm flex items-center text-blue-500 hover:text-blue-700"
+				class="py-2 px-3 bg-gray-50 dark:bg-gray-800 rounded-sm flex items-center justify-center text-gray-500 hover:text-gray-700"
 				href={'/blog/category/' + category}
 			>
 				{category}

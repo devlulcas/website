@@ -1,10 +1,9 @@
 <script lang="ts">
 	import DrawerButton from './DrawerButton.svelte';
-	import LanguageSwitcher from './LanguageSwitcher.svelte';
 	import MobileMenu from './MobileMenu.svelte';
 	import NavItems from './NavItems.svelte';
-	import ThemeSwitcher from './ThemeSwitcher.svelte';
 	import { t } from '$lib/i18n';
+	import ConfigButton from './ConfigButton.svelte';
 
 	let mobileMenuIsOpen = false;
 	const toggleNavigationModal = () => {
@@ -23,7 +22,7 @@
 
 <div class="placeholder" />
 
-<header>
+<header class="px-1 md:px-72">
 	<div class="menu-button">
 		<DrawerButton active={mobileMenuIsOpen} on:click={toggleNavigationModal} />
 	</div>
@@ -45,10 +44,7 @@
 	</div>
 
 	<div class="justify-end">
-		<div class="flex gap-2">
-			<ThemeSwitcher />
-			<LanguageSwitcher />
-		</div>
+		<ConfigButton />
 	</div>
 </header>
 
@@ -69,7 +65,6 @@
 		height: var(--header-height);
 		display: flex;
 		align-items: center;
-		padding: 1rem;
 		background-color: hsl(0 0% 90% / 25%);
 		color: var(--primary);
 		backdrop-filter: blur(1rem);

@@ -16,7 +16,7 @@
 	};
 </script>
 
-<form method="POST" use:enhance={submitTheme}>
+<form method="POST" use:enhance={submitTheme} class="flex flex-col md:flex-row gap-1">
 	<Button formaction="/?/setTheme&theme=light&redirectTo={$page.url.pathname}">Light</Button>
 	<Button formaction="/?/setTheme&theme=dark&redirectTo={$page.url.pathname}">Dark</Button>
 </form>
