@@ -1,10 +1,14 @@
 <script lang="ts">
 	import Divider from '$/lib/components/Divider.svelte';
 	import PostCategoryList from '$/lib/components/PostCategoryList.svelte';
+	import PostPreview from '$/lib/components/PostPreview.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { website } from '$lib/config/website';
 	import { t } from '$lib/i18n';
 	import type { ActionData, PageServerData } from './$types';
+	import { Newspaper, TerminalSquare, Tag } from 'lucide-svelte';
+	import SectionTitle from '$/lib/components/SectionTitle.svelte';
+	import FeaturedPost from '$/lib/components/FeaturedPost.svelte';
 
 	export let data: PageServerData;
 	export let form: ActionData;
@@ -20,65 +24,76 @@
 	</p>
 </section>
 
-{#each data.posts as post}
-	<a href={'/blog/' + post.slug}>
-		<h2>{post.title}</h2>
-		<p>{post.excerpt.html}</p>
-	</a>
-{/each}
+<section class="max-w-3xl  py-8 space-y-8">
+	<SectionTitle as="h2" title="Postagens recentes" icon={Newspaper} />
+
+	<FeaturedPost post={data.featuredPost} />
+
+	{#each data.posts as post}
+		<PostPreview {post} />
+	{/each}
+</section>
+
+<section>
+	<SectionTitle as="h3" title="Categorias de postagens" icon={Tag} />
+	<PostCategoryList categories={data.categories} />
+</section>
 
 <Divider />
 
-<PostCategoryList categories={data.categories} />
+<section>
+	<SectionTitle as="h2" title="Meu projetos principais" icon={TerminalSquare} />
+	<ul>
+		{#each data.pinnedProjects as pinnedProject}
+			<li>
+				<article>
+					<h2>{pinnedProject.name}</h2>
+					<p>{pinnedProject.description}</p>
+
+					<ul>
+						{#each pinnedProject.languages.nodes as programmingLanguage}
+							<li>{programmingLanguage.name}</li>
+						{/each}
+					</ul>
+
+					<p>
+						<time datetime={pinnedProject.createdAt}>
+							{pinnedProject.createdAt}
+						</time>
+					</p>
+				</article>
+			</li>
+		{/each}
+	</ul>
+</section>
 
 <Divider />
 
-<ul>
-	{#each data.pinnedProjects as pinnedProject}
-		<li>
-			<article>
-				<h2>{pinnedProject.name}</h2>
-				<p>{pinnedProject.description}</p>
+<section>
+	<SectionTitle as="h2" title="Meu outros projetos" icon={TerminalSquare} />
 
-				<ul>
-					{#each pinnedProject.languages.nodes as programmingLanguage}
-						<li>{programmingLanguage.name}</li>
-					{/each}
-				</ul>
+	<ul>
+		{#each data.otherProjects as otherProject}
+			<li>
+				<article>
+					<h2>{otherProject.name}</h2>
+					<p>{otherProject.description}</p>
 
-				<p>
-					<time datetime={pinnedProject.createdAt}>
-						{pinnedProject.createdAt}
-					</time>
-				</p>
-			</article>
-		</li>
-	{/each}
-</ul>
+					<ul>
+						{#each otherProject.languages.nodes as programmingLanguage}
+							<li>{programmingLanguage.name}</li>
+						{/each}
+					</ul>
 
-<hr />
-
-<ul>
-	{#each data.otherProjects as otherProject}
-		<li>
-			<article>
-				<h2>{otherProject.name}</h2>
-				<p>{otherProject.description}</p>
-
-				<ul>
-					{#each otherProject.languages.nodes as programmingLanguage}
-						<li>{programmingLanguage.name}</li>
-					{/each}
-				</ul>
-
-				<p>
-					<time datetime={otherProject.createdAt}>
-						{otherProject.createdAt}
-					</time>
-				</p>
-			</article>
-		</li>
-	{/each}
-</ul>
+					<p>
+						<time datetime={otherProject.createdAt}>
+							{otherProject.createdAt}
+						</time>
+					</p>
+				</article>
+			</li>
+		{/each}
+	</ul>
+</section>
 
 <ContactForm />

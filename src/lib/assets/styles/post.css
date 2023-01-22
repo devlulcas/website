@@ -63,30 +63,27 @@
 		@apply overflow-hidden my-4;
 
 		& .code-header-block {
-			@apply flex justify-evenly items-center bg-gray-200 p-2 rounded-t-md;
+			@apply flex items-center bg-gray-200 p-1 rounded-md;
 
 			&::before {
 				content: '⬤ ⬤ ⬤';
-				@apply text-gray-800;
-				width: 100%;
-				display: flex;
-				align-items: center;
+				@apply flex items-center w-full text-gray-800 text-sm font-bold;
 			}
 
 			& .copy-code {
-				@apply text-gray-800 font-bold p-1 bg-gray-300 rounded-md cursor-pointer justify-self-end;
+				@apply w-full flex text-gray-800 font-bold p-1 rounded-md cursor-pointer justify-end text-xs;
 			}
 
 			& .code-title {
-				@apply text-gray-800 font-bold;
+				@apply text-gray-800 font-bold min-w-fit;
 			}
 		}
 
 		& pre {
-			@apply bg-gray-100 rounded-b-md p-4 overflow-x-auto;
+			@apply rounded-b-md overflow-x-auto;
 
 			& code {
-				@apply text-gray-800 font-mono;
+				@apply font-mono;
 			}
 		}
 	}
@@ -112,7 +109,7 @@
 	}
 
 	& table {
-		@apply overflow-hidden text-gray-800 border-collapse bg-white border border-gray-200;
+		@apply overflow-hidden text-gray-800 border-collapse bg-white border border-gray-200 w-full;
 
 		& td,
 		& th {

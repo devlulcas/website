@@ -1,10 +1,11 @@
 <script lang="ts">
 	import Bookmark from '$/lib/components/Bookmark.svelte';
+	import SectionTitle from '$/lib/components/SectionTitle.svelte';
 	import { website } from '$lib/config/website';
 	import { createSearchStore, searchHandler } from '$lib/stores/search';
+	import { Library, Search } from 'lucide-svelte';
 	import { onDestroy } from 'svelte';
 	import type { PageServerData } from './$types';
-	import { Library, Search } from 'lucide-svelte';
 
 	export let data: PageServerData;
 
@@ -24,10 +25,7 @@
 </svelte:head>
 
 <main>
-	<h1 class="mt-8 flex gap-1 items-center text-2xl font-bold text-gray-700">
-		<Library />
-		<span>BOOKMARKS</span>
-	</h1>
+	<SectionTitle class="mt-8" title="Bookmarks" icon={Library} />
 
 	<div
 		class="flex items-center gap-2 border-1 border-gray-300 bg-gray-100 text-gray-800 dark:text-gray-200 dark:bg-gray-800 py-1 px-2 rounded-sm focus:ring-2 ring-slate-600 my-6"
@@ -45,7 +43,7 @@
 		/>
 	</div>
 
-	<ul class="grid grid-cols-3 gap-3 grid-flow-row">
+	<ul class="grid grid-cols-2 md:grid-cols-3 gap-3 grid-flow-row">
 		{#each $searchBookmarks.filtered as bookmark}
 			<li>
 				<Bookmark {bookmark} />

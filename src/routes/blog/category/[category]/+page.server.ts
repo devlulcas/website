@@ -7,6 +7,7 @@ export const load: PageServerLoad = async ({ params }) => {
 	const data = await fetchPosts({ category });
 
 	return {
+		category,
 		posts: data.posts
 	};
 };

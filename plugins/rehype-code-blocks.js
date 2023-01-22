@@ -47,7 +47,7 @@ export function rehypeCodeBlocks() {
 					properties: {
 						className: ['code-header-block']
 					},
-					children: [copyButton, codeTitle]
+					children: [codeTitle, copyButton]
 				};
 
 				/**

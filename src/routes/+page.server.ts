@@ -14,8 +14,15 @@ export const load: PageServerLoad = async () => {
 		getCategories()
 	]);
 
+	const posts = data.posts.slice(0, 5);
+
+	const featuredPost = posts[0];
+
+	posts.shift();
+
 	return {
-		posts: data.posts.slice(0, 5),
+		featuredPost,
+		posts,
 		pinnedProjects,
 		otherProjects,
 		categories

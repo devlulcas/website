@@ -6,6 +6,10 @@
 	--header-height: 3rem;
 }
 
+body {
+	@apply bg-white dark:bg-slate-900 min-h-screen max-w-full;
+}
+
 ::-webkit-scrollbar {
 	@apply h-2;
 }

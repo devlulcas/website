@@ -1,4 +1,5 @@
 import { parse } from 'node-html-parser';
+import type { Post } from './types';
 
 interface Metadata {
 	slug: string;
@@ -10,13 +11,15 @@ interface Metadata {
 	excerpt?: string;
 }
 
+type FetchPostsResult = Promise<{ posts: Post[] }>;
+
 /**
  * Get all posts
  *
  * @param params List of params to filter posts by
  * @returns List of posts (metadata)
  */
-export async function fetchPosts({ category = '' }) {
+export async function fetchPosts({ category = '' }): FetchPostsResult {
 	const postFiles = import.meta.glob('/posts/**/*.md');
 
 	const posts = await Promise.all(
@@ -58,10 +61,11 @@ export async function fetchPosts({ category = '' }) {
 		sortedPosts = sortedPosts.filter((post) => post.categories?.includes(category));
 	}
 
-	sortedPosts = sortedPosts.map((post) => ({
+	const formattedPosts = sortedPosts.map((post) => ({
 		title: post.title,
-		slug: post.slug,
-		excerpt: post.excerpt,
+		slug: `${post.slug}`,
+		url: `/blog/${post.slug}`,
+		excerpt: post.excerpt?.html ?? post.excerpt?.rawText ?? '',
 		date: post.date,
 		tags: post.tags,
 		updated: post.updated,
@@ -70,7 +74,7 @@ export async function fetchPosts({ category = '' }) {
 	}));
 
 	return {
-		posts: sortedPosts
+		posts: formattedPosts
 	};
 }
 

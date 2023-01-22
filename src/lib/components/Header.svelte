@@ -22,7 +22,7 @@
 
 <div class="placeholder" />
 
-<header class="px-1 md:px-72 bg-opacity-20 bg-gray-100 dark:bg-gray-800">
+<header class="px-1 md:px-[20%] bg-opacity-20 bg-gray-100 dark:bg-gray-800">
 	<div class="menu-button">
 		<DrawerButton active={mobileMenuIsOpen} on:click={toggleNavigationModal} />
 	</div>

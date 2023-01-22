@@ -22,7 +22,7 @@ export function remarkCodeTitles() {
 		if (title) {
 			parent.children.splice(index, 0, {
 				type: 'html',
-				value: `<p class="code-title">${title}</p>`
+				value: `<p class="code-title">${title.replaceAll('_', ' ')}</p>`
 			});
 		}
 

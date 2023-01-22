@@ -138,3 +138,15 @@ export type Bookmark = {
 	tags: string[];
 	searchTerms: string;
 };
+
+export type Post = {
+	title: string;
+	slug: string;
+	url: string;
+	excerpt: string;
+	date: string;
+	tags: string[] | null | undefined;
+	updated: string | null | undefined;
+	isIndexFile: boolean;
+	categories: string[];
+};

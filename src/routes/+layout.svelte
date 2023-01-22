@@ -4,12 +4,10 @@
 	import '$lib/assets/styles/global.css';
 </script>
 
-<div class="bg-white dark:bg-slate-900 min-h-screen max-w-full">
-	<Header />
+<Header />
 
-	<div class="wrapper">
-		<slot />
-	</div>
+<div class="wrapper">
+	<slot />
 </div>
 
 <Analytics />
