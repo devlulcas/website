@@ -150,3 +150,13 @@ export type Post = {
 	isIndexFile: boolean;
 	categories: string[];
 };
+
+export type Project = {
+	createdAt: string;
+	name: string;
+	url: string;
+	picture: string;
+	description: string;
+	homepageUrl: string;
+	languages: string[];
+};

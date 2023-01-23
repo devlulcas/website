@@ -10,7 +10,7 @@
 
 <svelte:element
 	this={as}
-	class={`flex gap-2 py-4 uppercase items-center text-2xl font-black text-gray-700 ${className}`}
+	class={`flex gap-2 py-4 uppercase items-center text-2xl font-black text-gray-700 dark:text-gray-200 ${className}`}
 >
 	<svelte:component this={icon} />
 	<span>{title}</span>

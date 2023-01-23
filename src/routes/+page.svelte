@@ -1,14 +1,16 @@
 <script lang="ts">
 	import Divider from '$/lib/components/Divider.svelte';
+	import FeaturedPost from '$/lib/components/FeaturedPost.svelte';
+	import FeaturedProjectPreview from '$/lib/components/FeaturedProjectPreview.svelte';
 	import PostCategoryList from '$/lib/components/PostCategoryList.svelte';
 	import PostPreview from '$/lib/components/PostPreview.svelte';
+	import ProjectPreview from '$/lib/components/ProjectPreview.svelte';
+	import SectionTitle from '$/lib/components/SectionTitle.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { website } from '$lib/config/website';
 	import { t } from '$lib/i18n';
+	import { Newspaper, Tag, TerminalSquare } from 'lucide-svelte';
 	import type { ActionData, PageServerData } from './$types';
-	import { Newspaper, TerminalSquare, Tag } from 'lucide-svelte';
-	import SectionTitle from '$/lib/components/SectionTitle.svelte';
-	import FeaturedPost from '$/lib/components/FeaturedPost.svelte';
 
 	export let data: PageServerData;
 	export let form: ActionData;
@@ -42,26 +44,11 @@
 <Divider />
 
 <section>
-	<SectionTitle as="h2" title="Meu projetos principais" icon={TerminalSquare} />
-	<ul>
-		{#each data.pinnedProjects as pinnedProject}
+	<SectionTitle as="h2" title="Meus principais projetos" icon={TerminalSquare} />
+	<ul class="flex flex-col gap-4">
+		{#each data.pinnedProjects as pinnedProject, index}
 			<li>
-				<article>
-					<h2>{pinnedProject.name}</h2>
-					<p>{pinnedProject.description}</p>
-
-					<ul>
-						{#each pinnedProject.languages.nodes as programmingLanguage}
-							<li>{programmingLanguage.name}</li>
-						{/each}
-					</ul>
-
-					<p>
-						<time datetime={pinnedProject.createdAt}>
-							{pinnedProject.createdAt}
-						</time>
-					</p>
-				</article>
+				<FeaturedProjectPreview project={pinnedProject} />
 			</li>
 		{/each}
 	</ul>
@@ -69,31 +56,18 @@
 
 <Divider />
 
-<section>
-	<SectionTitle as="h2" title="Meu outros projetos" icon={TerminalSquare} />
+<SectionTitle as="h2" title="Meus outros projetos" icon={TerminalSquare} />
 
-	<ul>
-		{#each data.otherProjects as otherProject}
-			<li>
-				<article>
-					<h2>{otherProject.name}</h2>
-					<p>{otherProject.description}</p>
+<ul class="full-bleed py-4 grid grid-flow-col overflow-x-auto gap-4">
+	{#each data.otherProjects as otherProject}
+		<li>
+			<ProjectPreview project={otherProject} />
+		</li>
+	{/each}
+</ul>
 
-					<ul>
-						{#each otherProject.languages.nodes as programmingLanguage}
-							<li>{programmingLanguage.name}</li>
-						{/each}
-					</ul>
+<Divider />
 
-					<p>
-						<time datetime={otherProject.createdAt}>
-							{otherProject.createdAt}
-						</time>
-					</p>
-				</article>
-			</li>
-		{/each}
-	</ul>
-</section>
-
-<ContactForm />
+<div class="full-bleed">
+	<ContactForm />
+</div>

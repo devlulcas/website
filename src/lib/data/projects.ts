@@ -1,5 +1,5 @@
 import { GITHUB_TOKEN } from '$env/static/private';
-import type { ProjectResponse } from './types';
+import type { Project, ProjectResponse } from './types';
 
 const key = GITHUB_TOKEN;
 
@@ -23,11 +23,13 @@ function formatISOToLocaleString(str: string, locale: 'en' | 'pt' = 'en') {
 	return dateTimeFormat.format(date);
 }
 
+type FetchProjectResult = Promise<Project[]>;
+
 /**
  * Get pinned projects from github
  * @returns Pinned projects from github
  */
-export const fetchPinnedProjects = async () => {
+export const fetchPinnedProjects = async (): FetchProjectResult => {
 	const queryPinnedProjects = `
 	{
 		viewer {
@@ -65,7 +67,12 @@ export const fetchPinnedProjects = async () => {
 	const result = data as ProjectResponse<'pinnedItems'>;
 
 	return result.viewer.pinnedItems.edges.map((edge) => ({
-		...edge.node,
+		picture: `https://raw.githubusercontent.com/devlulcas/${edge.node.name}/main/.github/images/preview.png`,
+		description: edge.node.description || 'No description',
+		homepageUrl: edge.node.homepageUrl || edge.node.url,
+		languages: edge.node.languages.nodes.map((node) => node.name),
+		name: edge.node.name,
+		url: edge.node.url,
 		createdAt: formatISOToLocaleString(edge.node.createdAt)
 	}));
 };
@@ -74,7 +81,7 @@ export const fetchPinnedProjects = async () => {
  * Get all projects from github
  * @returns Projects from github
  */
-export const fetchMoreProjects = async () => {
+export const fetchMoreProjects = async (): FetchProjectResult => {
 	const queryAllProjects = `
 	{
 		viewer {
@@ -114,7 +121,12 @@ export const fetchMoreProjects = async () => {
 	const result = data as ProjectResponse<'repositories'>;
 
 	return result.viewer.repositories.edges.map((edge) => ({
-		...edge.node,
+		picture: `https://raw.githubusercontent.com/devlulcas/${edge.node.name}/main/.github/images/preview.png`,
+		description: edge.node.description || 'No description',
+		homepageUrl: edge.node.homepageUrl || edge.node.url,
+		languages: edge.node.languages.nodes.map((node) => node.name),
+		name: edge.node.name,
+		url: edge.node.url,
 		createdAt: formatISOToLocaleString(edge.node.createdAt)
 	}));
 };
