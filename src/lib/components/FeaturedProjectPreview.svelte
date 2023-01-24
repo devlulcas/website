@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { ArrowRight, CornerDownRight } from 'lucide-svelte';
 	import type { Project } from '../data/types';
+	import Tag from './Tag.svelte';
 
 	export let project: Project;
 
@@ -13,44 +15,41 @@
 	let moreLangs = project.languages.slice(3);
 </script>
 
-<article class="relative flex flex-col w-full h-80 bg-white rounded-lg shadow-lg overflow-hidden">
-	<picture aria-label={project.name} role="img" class="w-full h-64 object-cover rounded-t-lg">
+<article class="relative flex flex-col overflow-hidden w-full h-80 bg-white rounded-lg shadow-lg">
+	<picture aria-label={project.name} role="img" class="w-full h-full object-cover">
 		<img on:error={onError} src={project.picture} alt={project.name} />
 	</picture>
 
-	<section
-		class="
-      absolute bottom-0 w-full flex flex-col flex-grow p-6 bg-opacity-50 backdrop-blur-md bg-white dark:bg-black dark:bg-opacity-50 rounded-b-lg shadow-lg overflow-hidden"
+	<ul
+		class="absolute top-2 right-2 flex flex-wrap gap-2 items-center justify-start text-sm font-medium leading-tight text-gray-700"
 	>
-		<h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-100 leading-tight truncate">
+		{#each langs as lang}
+			<Tag>{lang}</Tag>
+		{/each}
+
+		{#if moreLangs.length > 0}
+			<Tag title={moreLangs.join(', ')}>...</Tag>
+		{/if}
+	</ul>
+
+	<section
+		class="absolute bottom-0 w-full h-1/2 flex flex-col flex-grow p-6 bg-opacity-75 backdrop-blur-md bg-white dark:bg-black dark:bg-opacity-50 overflow-hidden"
+	>
+		<h2 class="uppercase text-2xl font-black text-gray-800 dark:text-gray-100 leading-tight">
 			{project.name}
 		</h2>
 
-		<p class="text-gray-700 dark:text-gray-200 text-sm font-medium leading-tight truncate">
+		<p class="h-full text-gray-700 dark:text-gray-200 text-sm font-medium leading-tight">
 			{project.description}
 		</p>
 
 		<a
-			class="text-blue-500 dark:text-blue-100 text-sm font-medium leading-tight truncate"
+			class="self-end flex items-center gap-1 text-blue-500 dark:text-blue-100 text-sm font-medium leading-tight"
 			href={project.url}
 			target="_blank"
 			rel="noreferrer"
 		>
-			View project
+			View project <ArrowRight size={16} />
 		</a>
-
-		<ul
-			class="flex flex-wrap gap-2 items-center justify-start mt-4 text-sm font-medium leading-tight text-gray-700"
-		>
-			{#each langs as lang}
-				<li class="px-2 py-1 bg-gray-200 rounded-md text-gray-700">{lang}</li>
-			{/each}
-
-			{#if moreLangs.length > 0}
-				<li title={moreLangs.join(', ')} class="px-2 py-1 bg-gray-200 rounded-md text-gray-700">
-					...
-				</li>
-			{/if}
-		</ul>
 	</section>
 </article>
