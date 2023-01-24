@@ -58,7 +58,7 @@
 
 <SectionTitle as="h2" title="Meus outros projetos" icon={TerminalSquare} />
 
-<ul class="full-bleed py-4 grid grid-flow-col overflow-x-auto gap-4">
+<ul class="py-4 grid grid-flow-col overflow-x-auto gap-4">
 	{#each data.otherProjects as otherProject}
 		<li>
 			<ProjectPreview project={otherProject} />

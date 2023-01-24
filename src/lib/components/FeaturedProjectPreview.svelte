@@ -35,16 +35,18 @@
 	<section
 		class="absolute bottom-0 w-full h-1/2 flex flex-col flex-grow p-6 bg-opacity-75 backdrop-blur-md bg-white dark:bg-black dark:bg-opacity-50 overflow-hidden"
 	>
-		<h2 class="uppercase text-2xl font-black text-gray-800 dark:text-gray-100 leading-tight">
+		<h2 class="uppercase text-xl font-black text-gray-800 dark:text-gray-100 leading-tight">
 			{project.name}
 		</h2>
 
-		<p class="h-full text-gray-700 dark:text-gray-200 text-sm font-medium leading-tight">
+		<p
+			class="h-full text-gray-700 dark:text-gray-200 text-sm font-medium leading-[2ch] max-h-[6ch] overflow-hidden"
+		>
 			{project.description}
 		</p>
 
 		<a
-			class="self-end flex items-center gap-1 text-blue-500 dark:text-blue-100 text-sm font-medium leading-tight"
+			class="self-end flex items-center gap-1 text-brand-600 dark:text-brand-100 text-md font-medium leading-tight"
 			href={project.url}
 			target="_blank"
 			rel="noreferrer"

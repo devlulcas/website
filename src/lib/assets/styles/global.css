@@ -4,6 +4,10 @@
 
 :root {
 	--header-height: 3rem;
+
+	--brand: hsl(155, 100%, 45%);
+	--brand-light: hsl(132, 100%, 45%);
+	--brand-dark: hsl(155, 100%, 25%);
 }
 
 body {

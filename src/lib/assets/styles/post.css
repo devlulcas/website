@@ -14,7 +14,7 @@
 	}
 
 	::selection {
-		@apply bg-blue-500 text-white;
+		@apply bg-brand-600 text-white;
 	}
 
 	& h1,
@@ -105,7 +105,7 @@
 	}
 
 	& a {
-		@apply text-blue-500 underline hover:text-blue-600;
+		@apply text-brand-600 underline hover:text-brand-500;
 	}
 
 	& table {
