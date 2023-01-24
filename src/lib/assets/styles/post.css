@@ -63,7 +63,7 @@
 		@apply overflow-hidden my-4;
 
 		& .code-header-block {
-			@apply flex items-center bg-gray-200 p-1 rounded-md;
+			@apply flex items-center bg-gray-200 p-1 rounded-b-none rounded-t-md;
 
 			&::before {
 				content: '⬤ ⬤ ⬤';
@@ -80,7 +80,7 @@
 		}
 
 		& pre {
-			@apply rounded-b-md overflow-x-auto;
+			@apply m-0 rounded-t-none rounded-b-md overflow-x-auto;
 
 			& code {
 				@apply font-mono;
