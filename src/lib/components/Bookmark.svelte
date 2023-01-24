@@ -5,12 +5,12 @@
 </script>
 
 <a
-	class="max-w-sm max-h-full h-80 border-gray-300 border-2 rounded-md p-2 flex flex-col gap-2"
+	class="max-w-sm max-h-full h-80 bg-gray-50 rounded-md p-2 flex flex-col gap-2 shadow-md"
 	href={bookmark.url}
 >
 	<h2 class="text-lg font-semibold">{bookmark.name}</h2>
 
-	<p class="text-md h-full">{bookmark.about}</p>
+	<p class="text-sm text-gray-600 h-full">{bookmark.about}</p>
 
 	<ul class="flex gap-1 flex-wrap">
 		{#each bookmark.tags as tag}

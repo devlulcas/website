@@ -6,6 +6,7 @@
 	import PostPreview from '$/lib/components/PostPreview.svelte';
 	import ProjectPreview from '$/lib/components/ProjectPreview.svelte';
 	import SectionTitle from '$/lib/components/SectionTitle.svelte';
+	import WalkingPenguin from '$/lib/components/WalkingPenguin.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { website } from '$lib/config/website';
 	import { t } from '$lib/i18n';
@@ -68,6 +69,12 @@
 
 <Divider />
 
-<div class="full-bleed">
-	<ContactForm />
+<div class="full-bleed mt-5 flex flex-col md:flex-row h-[80vh]">
+	<div class="w-full h-full md:w-2/3">
+		<ContactForm />
+	</div>
+
+	<div class="w-full relative h-full">
+		<WalkingPenguin />
+	</div>
 </div>
