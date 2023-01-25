@@ -44,7 +44,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.closed {
 		display: none;
 	}

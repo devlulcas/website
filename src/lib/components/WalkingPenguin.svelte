@@ -1,4 +1,9 @@
+<script lang="ts">
+	import sprite from '$lib/assets/images/penguin-sprite.png';
+</script>
+
 <div
+	style="background-image: url({sprite})"
 	title="Arte criada por Kelvin Shadewing & Jordan Irwin (AntumDeluge); http://kyrodianlegends.com/"
 	class="penguin"
 />
@@ -22,7 +27,6 @@
 		width: 24px;
 		height: 26px;
 		image-rendering: pixelated;
-		background-image: url(images/penguin-sprite.png);
 		background-repeat: no-repeat;
 		animation: walk 500ms steps(3) infinite;
 	}
