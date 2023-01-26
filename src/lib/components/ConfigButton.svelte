@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { Wrench } from 'lucide-svelte';
 	import LanguageSwitcher from './LanguageSwitcher.svelte';
 	import ThemeSwitcher from './ThemeSwitcher.svelte';
-	import { Wrench } from 'lucide-svelte';
-	import { onMount } from 'svelte';
+
 	let hide = true;
+
 	let parent: HTMLElement | null = null;
 
 	function toggle() {
