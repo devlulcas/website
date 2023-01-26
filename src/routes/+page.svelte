@@ -2,6 +2,7 @@
 	import Divider from '$/lib/components/Divider.svelte';
 	import FeaturedPost from '$/lib/components/FeaturedPost.svelte';
 	import FeaturedProjectPreview from '$/lib/components/FeaturedProjectPreview.svelte';
+	import Hero from '$/lib/components/Hero.svelte';
 	import PostCategoryList from '$/lib/components/PostCategoryList.svelte';
 	import PostPreview from '$/lib/components/PostPreview.svelte';
 	import ProjectPreview from '$/lib/components/ProjectPreview.svelte';
@@ -9,7 +10,6 @@
 	import WalkingPenguin from '$/lib/components/WalkingPenguin.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { website } from '$lib/config/website';
-	import { t } from '$lib/i18n';
 	import { Newspaper, Tag, TerminalSquare } from 'lucide-svelte';
 	import type { ActionData, PageServerData } from './$types';
 
@@ -21,11 +21,7 @@
 	<title>{website.title}</title>
 </svelte:head>
 
-<section class="full-bleed bg-gray-500 h-[85vh]">
-	<p>
-		{$t('common.start')}
-	</p>
-</section>
+<Hero />
 
 <section class="max-w-3xl  py-8 space-y-8">
 	<SectionTitle as="h2" title="Postagens recentes" icon={Newspaper} />
