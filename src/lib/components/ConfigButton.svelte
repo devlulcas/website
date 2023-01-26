@@ -36,10 +36,7 @@
 		<Wrench size={18} />
 	</button>
 
-	<div
-		class:closed={hide}
-		class="z-50 right-0 absolute top-11 flex flex-col gap-1 p-1 dark:bg-gray-800 bg-gray-50 rounded-sm"
-	>
+	<div class:closed={hide} class:open={!hide}>
 		<ThemeSwitcher />
 		<LanguageSwitcher />
 	</div>
@@ -48,5 +45,9 @@
 <style lang="postcss">
 	.closed {
 		display: none;
+	}
+
+	.open {
+		@apply z-50 right-0 absolute top-11 flex flex-col gap-1 p-1 dark:bg-gray-800 bg-gray-50 rounded-sm;
 	}
 </style>
