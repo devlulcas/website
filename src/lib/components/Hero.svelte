@@ -10,13 +10,13 @@
 			Olá! Sou o Lucas
 		</h1>
 
-		<p class="text-lg lg:w-2/5 text-gray-800 dark:text-gray-100 my-3 backdrop-blur-sm">
+		<p class="text-lg mt-6 lg:w-2/5 text-gray-800 dark:text-gray-100 my-3 backdrop-blur-sm">
 			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed consectetur repudiandae
 			necessitatibus ducimus nobis culpa praesentium atque vel itaque, fugit nulla nihil at
 			temporibus sequi nemo dignissimos est placeat vitae.
 		</p>
 
-		<p class="text-md mt-6backdrop-blur-sm">
+		<p class="text-md mt-6 backdrop-blur-sm">
 			<a
 				class="text-white bg-gradient-to-l from-brand-700 to-brand-500 py-2 px-8 flex items-center rounded-sm w-fit gap-2"
 				href="#contact"

@@ -6,7 +6,7 @@
 	{#each categories as category}
 		<li class="flex-1 min-w-fit">
 			<a
-				class="py-2 px-3 bg-gray-50 dark:bg-gray-800 rounded-sm flex items-center justify-center text-gray-500 hover:text-gray-700"
+				class="py-2 px-3 bg-gray-50 dark:bg-gray-800 rounded-sm flex items-center justify-center text-gray-500 dark:text-gray-300 hover:text-gray-700"
 				href={'/blog/category/' + category}
 			>
 				{category}

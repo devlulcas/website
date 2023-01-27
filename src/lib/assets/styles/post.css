@@ -1,5 +1,5 @@
 .content {
-	@apply text-gray-800 font-sans;
+	@apply text-gray-800 dark:text-gray-100 font-sans;
 
 	& > * {
 		@apply my-4;
@@ -23,7 +23,7 @@
 	& h4,
 	& h5,
 	& h6 {
-		@apply text-gray-800 font-bold;
+		@apply text-gray-800 dark:text-gray-100 font-bold;
 	}
 
 	& h1 {
@@ -47,12 +47,12 @@
 	}
 
 	& p {
-		@apply text-gray-800 break-words;
+		@apply text-gray-800 dark:text-gray-100 break-words;
 	}
 
 	& blockquote,
 	& pre {
-		@apply text-gray-800;
+		@apply text-gray-800 dark:text-gray-100;
 	}
 
 	& blockquote {
@@ -67,15 +67,15 @@
 
 			&::before {
 				content: '⬤ ⬤ ⬤';
-				@apply flex items-center w-full text-gray-800 text-sm font-bold;
+				@apply flex items-center w-full text-gray-800 dark:text-gray-100 text-sm font-bold;
 			}
 
 			& .copy-code {
-				@apply w-full flex text-gray-800 font-bold p-1 rounded-md cursor-pointer justify-end text-xs;
+				@apply w-full flex text-gray-800 dark:text-gray-100 font-bold p-1 rounded-md cursor-pointer justify-end text-xs;
 			}
 
 			& .code-title {
-				@apply text-gray-800 font-bold min-w-fit;
+				@apply text-gray-800 dark:text-gray-100 font-bold min-w-fit;
 			}
 		}
 
@@ -109,7 +109,7 @@
 	}
 
 	& table {
-		@apply overflow-hidden text-gray-800 border-collapse bg-white border border-gray-200 w-full;
+		@apply overflow-hidden text-gray-800 dark:text-gray-100 border-collapse bg-white border border-gray-200 w-full;
 
 		& td,
 		& th {
@@ -126,7 +126,7 @@
 	}
 
 	& li {
-		@apply text-gray-800;
+		@apply text-gray-800 dark:text-gray-100;
 	}
 
 	& p:has(img),
