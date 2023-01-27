@@ -1,53 +1,80 @@
 <script lang="ts">
-	import { Wrench } from 'lucide-svelte';
-	import LanguageSwitcher from './LanguageSwitcher.svelte';
-	import ThemeSwitcher from './ThemeSwitcher.svelte';
+	import { enhance, type SubmitFunction } from '$app/forms';
+	import { page } from '$app/stores';
+	import '$lib/assets/styles/global.css';
+	import { locale } from '$lib/i18n';
+	import { Moon, Sun } from 'lucide-svelte';
+	import Button from './Button.svelte';
 
-	let hide = true;
+	// This is the function that will be called when the form is submitted
+	// and will prevent the default form submission behavior
+	// and instead change the language on the client-side
+	const submitLang: SubmitFunction = ({ action }) => {
+		$locale = action.searchParams.get('idiom') ?? 'en';
+	};
 
-	let parent: HTMLElement | null = null;
+	// This is the function that will be called when the form is submitted
+	// and will prevent the default form submission behavior
+	// and instead change the theme on the client-side
+	// If the client is not able to change the theme, the form will be submitted
+	const submitTheme: SubmitFunction = ({ action }) => {
+		const theme = action.searchParams.get('theme');
 
-	function toggle() {
-		hide = !hide;
-	}
-
-	function closeOnOutsideClick(event: MouseEvent) {
-		const el = event.target as HTMLElement;
-
-		console.log('el', parent, el);
-
-		if (!hide) {
-			const isChild = parent?.contains(el);
-
-			if (!isChild) {
-				hide = true;
-			}
+		if (theme) {
+			document.documentElement.setAttribute('data-theme', theme);
 		}
-	}
+	};
+
+	let whatTheme = 'light';
 </script>
 
-<svelte:window on:click={closeOnOutsideClick} />
+<div class="flex gap-1">
+	<form method="POST" use:enhance={submitTheme} class="flex gap-1">
+		<button
+			class:active={whatTheme === 'light'}
+			formaction="/?/setTheme&theme=light&redirectTo={$page.url.pathname}"
+		>
+			<Sun />
+		</button>
+		<button
+			class:active={whatTheme === 'dark'}
+			formaction="/?/setTheme&theme=dark&redirectTo={$page.url.pathname}"
+		>
+			<Moon />
+		</button>
+	</form>
 
-<div bind:this={parent} class="relative">
-	<button
-		on:click={toggle}
-		class="text-gray-500 hover:text-gray-600 p-1 rounded inline-flex items-center"
-	>
-		<Wrench size={18} />
-	</button>
+	<form method="POST" use:enhance={submitLang} class="flex gap-1">
+		<button
+			class:active-locale={$locale === 'en'}
+			formaction="/?/setLang&idiom=en&redirectTo={$page.url.pathname}"
+		>
+			🇺🇸
+		</button>
 
-	<div class:closed={hide} class:open={!hide}>
-		<ThemeSwitcher />
-		<LanguageSwitcher />
-	</div>
+		<button
+			class:active-locale={$locale === 'pt-BR'}
+			formaction="/?/setLang&idiom=pt-br&redirectTo={$page.url.pathname}"
+		>
+			🇧🇷
+		</button>
+	</form>
 </div>
 
 <style lang="postcss">
-	.closed {
-		display: none;
+	button {
+		@apply bg-transparent border-none cursor-pointer text-gray-500 px-2;
 	}
 
-	.open {
-		@apply z-50 right-0 absolute top-11 flex flex-col gap-1 p-1 dark:bg-gray-800 bg-gray-50 rounded-sm;
+	button:hover {
+		@apply text-gray-700;
+	}
+
+	.active {
+		@apply text-gray-700;
+	}
+
+	.active-locale {
+		@apply bg-gray-700;
 	}
 </style>

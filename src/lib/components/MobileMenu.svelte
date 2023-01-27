@@ -11,6 +11,7 @@
 
 <!-- HTML -->
 <div
+	class="z-40"
 	on:click={toggle}
 	transition:fade={{ duration: 300, easing: circOut }}
 	on:keydown={(event) => {
