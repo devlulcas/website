@@ -10,5 +10,12 @@
 		"projects": "Projetos",
 		"skills": "Habilidades"
 	},
-	"readMore": "Leia mais"
+	"readMore": "Leia mais",
+	"config": {
+		"darkMode": "Modo escuro",
+		"lightMode": "Modo claro"
+	},
+	"hero": {
+		"title": "Olá! Sou o Lucas"
+	}
 }

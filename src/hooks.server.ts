@@ -2,9 +2,9 @@ import type { Handle } from '@sveltejs/kit';
 
 // This hook is called on every request
 export const handle: Handle = async ({ event, resolve }) => {
-	const newLocale = event.url.searchParams.get('lang');
+	const newLocale = event.url.searchParams.get('locale');
 
-	const actualLocale = event.cookies.get('lang');
+	const actualLocale = event.cookies.get('locale');
 
 	let locale: string | null = null;
 
@@ -33,7 +33,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		transformPageChunk: ({ html }) => {
 			return html
 				.replace('data-theme=""', `data-theme="${theme}"`)
-				.replace('%lang%', locale || 'pt-br');
+				.replace('%lang%', locale || 'pt-BR');
 		}
 	});
 };

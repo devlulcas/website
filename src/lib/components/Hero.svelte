@@ -1,5 +1,6 @@
 <script>
 	import { Coffee } from 'lucide-svelte';
+	import { t } from '$lib/i18n';
 </script>
 
 <div class="relative full-bleed h-[90vh] ">
@@ -7,7 +8,7 @@
 		class="absolute inset-0 z-[1] px-[5%] md:px-[20%] h-full flex flex-col justify-center items-start"
 	>
 		<h1 class="font-black text-5xl md:text-6xl text-brand-600 backdrop-blur-sm">
-			Olá! Sou o Lucas
+			{$t('common.hero.title')}
 		</h1>
 
 		<p class="text-lg mt-6 lg:w-2/5 text-gray-800 dark:text-gray-100 my-3 backdrop-blur-sm">

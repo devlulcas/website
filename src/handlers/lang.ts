@@ -7,14 +7,12 @@ interface LangHandlerParams {
 
 export const langHandler = async ({ cookies, url }: LangHandlerParams) => {
 	const redirectTo = url.searchParams.get('redirectTo') ?? '/';
-	const lang = url.searchParams.get('idiom');
-
-	console.log('lang', lang);
+	const lang = url.searchParams.get('locale');
 
 	if (lang) {
 		const fullYear = 60 * 60 * 24 * 365;
 
-		cookies.set('lang', lang, {
+		cookies.set('locale', lang, {
 			path: '/',
 			maxAge: fullYear,
 			httpOnly: false
