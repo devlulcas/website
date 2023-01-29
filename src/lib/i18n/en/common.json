@@ -8,12 +8,14 @@
 		"bookmarks": "Bookmarks",
 		"blog": "Blog",
 		"projects": "Projects",
-		"skills": "Skills"
+		"skills": "Skills",
+		"uses": "Setup"
 	},
 	"readMore": "Read more",
 	"config": {
 		"darkMode": "Dark mode",
-		"lightMode": "Light mode"
+		"lightMode": "Light mode",
+		"config": "Config"
 	},
 	"hero": {
 		"title": "Hello! I'm Lucas"

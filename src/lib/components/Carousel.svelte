@@ -1,55 +1,31 @@
 <script lang="ts">
-	import type { Project } from '../data/types';
+	// @ts-nocheck
 	import ProjectPreview from './ProjectPreview.svelte';
+	import emblaCarouselSvelte, { type EmblaOptionsType } from 'embla-carousel-svelte';
+	import type { Project } from '../data/types';
 
 	export let projects: Project[];
 
-	let current = 0;
+	let emblaApi;
 
-	const handlePrevious = () => {
-		console.log('previous');
-		current = current - 1;
-	};
+	const emblaConfig = {
+		loop: false,
+		dragFree: true,
+		containScroll: 'keepSnaps',
+		speed: 10
+	} satisfies EmblaOptionsType;
 
-	const handleNext = () => {
-		console.log('next');
-		current = current + 1;
-	};
-
-	const handleSwipe = (e: TouchEvent) => {
-		const deltaX = e.detail;
-		if (deltaX > 0) {
-			handlePrevious();
-		} else {
-			handleNext();
-		}
+	const onInit = (event: any) => {
+		emblaApi = event.detail;
 	};
 </script>
 
-<section class="space-y-8">
-	<button disabled={current === 0} on:click={handlePrevious}> Previous </button>
-	<ul on:touchmove={handleSwipe} class="flex gap-4">
-		{#each projects as project, index}
-			<li
-				class:disappear={index < current || index > current + 2}
-				class:opacity-100={index >= current && index <= current + 2}
-				style="transition: opacity 0.5s ease-in-out 0s;"
-			>
+<div class="overflow-hidden" use:emblaCarouselSvelte={{ options: emblaConfig }} on:init={onInit}>
+	<ul class="flex gap-4">
+		{#each projects as project}
+			<li class="flex-none min-w-0 cursor-grab">
 				<ProjectPreview {project} />
 			</li>
 		{/each}
 	</ul>
-	<button disabled={current === projects.length - 1} on:click={handleNext}> Next </button>
-</section>
-
-<style>
-	.disappear {
-		opacity: 0;
-		visibility: hidden;
-		padding: 0;
-		margin: 0;
-		width: 0;
-		height: 0;
-		position: absolute;
-	}
-</style>
+</div>

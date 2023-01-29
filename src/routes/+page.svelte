@@ -1,12 +1,13 @@
 <script lang="ts">
+	import Carousel from '$/lib/components/Carousel.svelte';
 	import Divider from '$/lib/components/Divider.svelte';
 	import FeaturedPost from '$/lib/components/FeaturedPost.svelte';
 	import FeaturedProjectPreview from '$/lib/components/FeaturedProjectPreview.svelte';
 	import Hero from '$/lib/components/Hero.svelte';
 	import PostCategoryList from '$/lib/components/PostCategoryList.svelte';
 	import PostPreview from '$/lib/components/PostPreview.svelte';
-	import ProjectPreview from '$/lib/components/ProjectPreview.svelte';
 	import SectionTitle from '$/lib/components/SectionTitle.svelte';
+	import Skills from '$/lib/components/Skills.svelte';
 	import WalkingPenguin from '$/lib/components/WalkingPenguin.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { website } from '$lib/config/website';
@@ -41,7 +42,7 @@
 <Divider />
 
 <section>
-	<SectionTitle as="h2" title="Meus principais projetos" icon={TerminalSquare} />
+	<SectionTitle id="projects" as="h2" title="Meus principais projetos" icon={TerminalSquare} />
 	<ul class="flex flex-col gap-4">
 		{#each data.pinnedProjects as pinnedProject, index}
 			<li>
@@ -55,22 +56,21 @@
 
 <SectionTitle as="h2" title="Meus outros projetos" icon={TerminalSquare} />
 
-<ul class="py-4 grid grid-flow-col overflow-x-auto gap-4">
-	{#each data.otherProjects as otherProject}
-		<li>
-			<ProjectPreview project={otherProject} />
-		</li>
-	{/each}
-</ul>
+<Carousel projects={data.otherProjects} />
 
 <Divider />
 
-<div class="full-bleed mt-5 flex flex-col md:flex-row h-[80vh]">
-	<div class="w-full h-full md:w-2/3">
-		<ContactForm />
-	</div>
+<section>
+	<SectionTitle id="skills" as="h2" title="Habilidades" icon={TerminalSquare} />
+	<Skills />
+</section>
 
-	<div class="w-full relative h-full">
+<Divider />
+
+<div class="mt-2 flex flex-col w-full h-[80vh]">
+	<ContactForm />
+
+	<div class="w-full relative">
 		<WalkingPenguin />
 	</div>
 </div>

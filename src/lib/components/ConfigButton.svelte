@@ -4,6 +4,7 @@
 	import '$lib/assets/styles/global.css';
 	import { locale, t } from '$lib/i18n';
 	import { Moon, Sun } from 'lucide-svelte';
+	import { Settings2 } from 'lucide-svelte';
 
 	// This is the function that will be called when the form is submitted
 	// and will prevent the default form submission behavior
@@ -29,29 +30,18 @@
 
 <div class="relative flex items-center">
 	<button
+		aria-label={$t('common.config.config')}
+		title={$t('common.config.config')}
 		class="md:hidden"
 		on:click={() => {
 			open = !open;
 		}}
 	>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			class="h-6 w-6"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke="currentColor"
-		>
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M4 6h16M4 12h16M4 18h16"
-			/>
-		</svg>
+		<Settings2 />
 	</button>
 
 	<div
-		class="config absolute z-10 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-md p-2"
+		class="config absolute z-10 bg-white dark:bg-gray-800 bg-opacity-80 border border-gray-200 dark:border-gray-700 rounded-md shadow-md p-2"
 		class:hidden={open}
 	>
 		<form method="POST" use:enhance={submitTheme} class="flex gap-1">
@@ -71,7 +61,7 @@
 			</button>
 		</form>
 
-		<form method="POST" use:enhance={submitLang} class="flex gap-1">
+		<form method="POST" use:enhance={submitLang} class="flex gap-1 mt-2 md:mt-0">
 			<button
 				title="English"
 				class:active-locale={$locale === 'en'}

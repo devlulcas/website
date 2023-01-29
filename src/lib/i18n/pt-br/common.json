@@ -8,12 +8,14 @@
 		"bookmarks": "Favoritos",
 		"blog": "Blog",
 		"projects": "Projetos",
-		"skills": "Habilidades"
+		"skills": "Habilidades",
+		"uses": "Setup"
 	},
 	"readMore": "Leia mais",
 	"config": {
 		"darkMode": "Modo escuro",
-		"lightMode": "Modo claro"
+		"lightMode": "Modo claro",
+		"config": "Configurações"
 	},
 	"hero": {
 		"title": "Olá! Sou o Lucas"

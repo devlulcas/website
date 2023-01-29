@@ -5,10 +5,7 @@
 	export let project: Project;
 </script>
 
-<article
-	style="background-image: url('{project.picture}');"
-	class="p-2 rounded-lg shadow-lg bg-white w-80 h-80"
->
+<article class="p-2 rounded-lg shadow-lg bg-white w-80 h-80">
 	<div
 		class="flex flex-col h-full gap-4 p-2 rounded-lg shadow-lg bg-white bg-opacity-75 backdrop-filter backdrop-blur-sm"
 	>

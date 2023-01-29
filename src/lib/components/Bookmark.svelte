@@ -7,6 +7,8 @@
 <a
 	class="max-w-sm max-h-full h-80 bg-gray-50 rounded-md p-2 flex flex-col gap-2 shadow-md"
 	href={bookmark.url}
+	target="_blank"
+	rel="noopener noreferrer"
 >
 	<h2 class="text-lg font-semibold">{bookmark.name}</h2>
 

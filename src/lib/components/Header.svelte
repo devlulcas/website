@@ -16,7 +16,8 @@
 		{ label: $t('common.nav.bookmarks'), href: '/bookmarks' },
 		{ label: $t('common.nav.projects'), href: '/#projects' },
 		{ label: $t('common.nav.skills'), href: '/#skills' },
-		{ label: $t('common.nav.contact'), href: '/#contact' }
+		{ label: $t('common.nav.contact'), href: '/#contact' },
+		{ label: $t('common.nav.uses'), href: '/uses' }
 	];
 </script>
 

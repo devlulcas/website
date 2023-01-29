@@ -45,6 +45,7 @@
 	"type": "module",
 	"dependencies": {
 		"@notionhq/client": "^2.2.3",
+		"embla-carousel-svelte": "^7.0.9",
 		"fzf": "^0.5.1",
 		"lucide-svelte": "^0.105.0",
 		"node-html-parser": "^6.1.4",
