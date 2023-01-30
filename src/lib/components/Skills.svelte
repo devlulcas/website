@@ -14,7 +14,12 @@
 	import postgresql from '$lib/assets/images/skills/postgresql.svg';
 	import typescript from '$lib/assets/images/skills/typescript.svg';
 
-	const skills = [
+	type Skill = {
+		title: string;
+		icon: string;
+	};
+
+	const skills: Skill[] = [
 		{
 			title: 'Figma',
 			icon: figma
@@ -74,16 +79,15 @@
 	];
 </script>
 
-<ul class="flex gap-4 flex-wrap mb-4">
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-4">
 	{#each skills as skill}
-		<li
-			class="flex items-center min-w-fit gap-2 px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 shadow-sm"
-		>
-			<span class="text-md font-semibold text-gray-700 dark:text-gray-300">
+		<div class="flex items-center gap-3 p-1 md:p-2 bg-gray-100 rounded-sm">
+			<img src={skill.icon} alt={skill.title} class="w-6 h-6 md:w-8 md:h-8" />
+			<span
+				class="text-center md:text-left text-sm md:text-base font-semibold text-gray-800 truncate"
+			>
 				{skill.title}
 			</span>
-
-			<img class="w-8 h-8" width="32" height="32" src={skill.icon} alt={skill.title} />
-		</li>
+		</div>
 	{/each}
-</ul>
+</div>

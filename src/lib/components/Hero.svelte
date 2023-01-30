@@ -28,7 +28,7 @@
 		</p>
 	</article>
 
-	<div class="z-[-1] relative">
+	<div class="extra z-[-1] relative">
 		<div class="circle absolute -right-1/2 rounded-full w-5/6 aspect-square" />
 
 		<div class="tag">Lorem</div>
@@ -46,8 +46,34 @@
 </div>
 
 <style lang="postcss">
+	.extra {
+		animation: appear 1s ease-in-out;
+	}
+
+	@keyframes appear {
+		0% {
+			opacity: 0;
+			transform: scale(0.5) translateY(10rem);
+		}
+		100% {
+			opacity: 1;
+			transform: scale(1) translateY(0);
+		}
+	}
+
 	.circle {
 		background-image: linear-gradient(-45deg, var(--brand-light), var(--brand), var(--brand-light));
+
+		animation: circle 5s ease-in-out infinite;
+	}
+
+	@keyframes circle {
+		0% {
+			transform: rotate(0deg) translateX(0) translateY(0);
+		}
+		100% {
+			transform: rotate(360deg) translateX(0) translateY(0);
+		}
 	}
 
 	.tag {

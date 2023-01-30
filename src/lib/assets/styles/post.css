@@ -63,7 +63,7 @@
 		@apply overflow-hidden my-4;
 
 		& .code-header-block {
-			@apply flex items-center bg-gray-200 p-1 rounded-b-none rounded-t-md;
+			@apply flex items-center bg-gray-200 dark:bg-gray-600 p-1 rounded-b-none rounded-t-md;
 
 			&::before {
 				content: '⬤ ⬤ ⬤';
