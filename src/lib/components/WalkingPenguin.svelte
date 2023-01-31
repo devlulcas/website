@@ -21,8 +21,8 @@
 	/* 72w 26h sprite 24w */
 	.penguin {
 		position: absolute;
-		bottom: 45px;
-		right: 45px;
+		bottom: 10px;
+		right: 0;
 		transform: scale(2);
 		width: 24px;
 		height: 26px;

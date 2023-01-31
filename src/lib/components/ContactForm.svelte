@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { enhance, type SubmitFunction } from '$app/forms';
-	import { Mail } from 'lucide-svelte';
+	import { Mail, Send } from 'lucide-svelte';
 	import SectionTitle from './SectionTitle.svelte';
 
 	const submitContact: SubmitFunction = (form) => {
@@ -42,7 +42,10 @@
 	</div>
 
 	<button
-		class="mt-4 bg-brand-500 hover:bg-brand-700 text-white font-bold py-2 px-4 rounded"
-		type="submit">Send</button
+		class="mt-4 flex gap-2 items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded"
+		type="submit"
 	>
+		<span class="uppercase">Send</span>
+		<Send size={18} />
+	</button>
 </form>

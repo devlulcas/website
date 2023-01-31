@@ -58,14 +58,10 @@
 
 <Carousel projects={data.otherProjects} />
 
-<Divider />
-
 <section>
 	<SectionTitle id="skills" as="h2" title="Habilidades" icon={TerminalSquare} />
 	<Skills />
 </section>
-
-<Divider />
 
 <div class="mt-2 flex flex-col w-full h-[80vh]">
 	<ContactForm />
