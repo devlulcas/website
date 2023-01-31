@@ -46,12 +46,30 @@
 		</p>
 
 		<a
-			class="self-end flex items-center gap-1 text-brand-600 dark:text-brand-100 text-md font-medium leading-tight"
+			class="view self-end flex items-center gap-1 text-brand-600 dark:text-brand-200 text-md font-medium leading-tight"
 			href={project.url}
 			target="_blank"
 			rel="noreferrer"
 		>
-			View project <ArrowRight size={16} />
+			<span>View project</span>
+			<span class="arrow">
+				<ArrowRight size={16} />
+			</span>
 		</a>
 	</section>
 </article>
+
+<style lang="postcss">
+	.arrow {
+		transition: 200ms all ease-in-out;
+	}
+
+	.view {
+		&:hover {
+			& > .arrow {
+				transition: 200ms all ease-in-out;
+				transform: translateX(10px);
+			}
+		}
+	}
+</style>

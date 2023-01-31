@@ -8,7 +8,7 @@
 	<h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">
 		That website is built with the following technologies:
 	</h2>
-	<ul class="list-disc list-inside">
+	<ul class="list-disc list-inside text-gray-900 dark:text-gray-100">
 		<li>
 			<a href="https://svelte.dev/">Svelte</a>
 		</li>
@@ -33,7 +33,7 @@
 	<h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">
 		My daily driver is Endeavour OS with Gnome DE and ZSH.
 	</h2>
-	<ul class="list-disc list-inside">
+	<ul class="list-disc list-inside text-gray-900 dark:text-gray-100">
 		<li>
 			<a href="https://endeavouros.com/">Endeavour OS</a>
 		</li>
@@ -68,7 +68,7 @@
 	<h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">
 		My main development machine is a Samsung Notebook with the following specs:
 	</h2>
-	<ul class="list-disc list-inside">
+	<ul class="list-disc list-inside text-gray-900 dark:text-gray-100">
 		<li>Intel i3-7020U</li>
 
 		<li>16GB RAM 1666MHz</li>
