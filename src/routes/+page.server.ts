@@ -14,7 +14,19 @@ export const load: PageServerLoad = async () => {
 		getCategories()
 	]);
 
-	const posts = data.posts.slice(0, 5);
+	const filteredOtherProjects = otherProjects.filter((project) => {
+		const isPinnedProject = !pinnedProjects.some(
+			(pinnedProject) => pinnedProject.name === project.name
+		);
+
+		const isStudy = project.name.includes('learning');
+
+		const isSchoolProject = project.name === 'lrl-airlines' || project.name.includes('atividades');
+
+		return isPinnedProject && !isStudy && !isSchoolProject;
+	});
+
+	const posts = data.posts.slice(0, 3);
 
 	const featuredPost = posts[0];
 
@@ -24,7 +36,7 @@ export const load: PageServerLoad = async () => {
 		featuredPost,
 		posts,
 		pinnedProjects,
-		otherProjects,
+		otherProjects: filteredOtherProjects,
 		categories
 	};
 };
