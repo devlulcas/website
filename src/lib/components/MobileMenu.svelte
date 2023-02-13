@@ -11,7 +11,7 @@
 
 <!-- HTML -->
 <div
-	class="z-40"
+	class="fixed bottom-0 left-0 flex flex-col justify-end w-full p-4 bg-gray-900 bg-opacity-25 z-40 xl:hidden"
 	on:click={toggle}
 	transition:fade={{ duration: 300, easing: circOut }}
 	on:keydown={(event) => {
@@ -24,21 +24,6 @@
 <!-- STYLES - SCSS -->
 <style>
 	div {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		width: 100%;
 		height: calc(100% - var(--header-height));
-		padding: 1rem;
-		background-color: hsl(0 0% 0% / 25%);
-	}
-
-	@media screen and (min-width: 90rem) {
-		div {
-			display: none;
-		}
 	}
 </style>

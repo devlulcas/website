@@ -25,16 +25,16 @@
 		}
 	};
 
-	let open = false;
+	let closed = true;
 </script>
 
 <div class="relative flex items-center">
 	<button
 		aria-label={$t('common.config.config')}
 		title={$t('common.config.config')}
-		class="md:hidden"
+		class="xl:hidden"
 		on:click={() => {
-			open = !open;
+			closed = !closed;
 		}}
 	>
 		<Settings2 />
@@ -42,7 +42,7 @@
 
 	<div
 		class="config absolute z-10 bg-white dark:bg-gray-800 bg-opacity-80 border border-gray-200 dark:border-gray-700 rounded-md shadow-md p-2"
-		class:hidden={open}
+		class:hidden={closed}
 	>
 		<form method="POST" use:enhance={submitTheme} class="flex gap-1">
 			<button
@@ -57,7 +57,7 @@
 				class="bg-transparent border-none cursor-pointer px-2"
 				formaction="/?/setTheme&theme=dark&redirectTo={$page.url.pathname}"
 			>
-				<Moon size={18} class="text-gray-300 dark:text-gray-200" />
+				<Moon size={18} class="text-gray-400 dark:text-gray-200" />
 			</button>
 		</form>
 
@@ -98,6 +98,20 @@
 		top: calc(var(--header-height) + 2px);
 		right: 2px;
 
-		@apply md:relative md:bg-transparent md:border-none md:p-0 md:top-0 md:right-0 md:shadow-none md:z-0 md:flex md:gap-1 md:items-center md:justify-end;
+		/* Tailwind XL media query */
+		@media (min-width: 1280px) {
+			position: relative;
+			background-color: transparent;
+			border: none;
+			padding: 0;
+			top: 0;
+			right: 0;
+			box-shadow: none;
+			z-index: 0;
+			display: flex;
+			gap: 0.25rem;
+			align-items: center;
+			justify-content: flex-end;
+		}
 	}
 </style>

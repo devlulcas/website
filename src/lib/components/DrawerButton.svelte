@@ -11,7 +11,7 @@
 		aria-label="abre menu mobile"
 	/>
 
-	<label for="menu_checkbox">
+	<label class="block xl:hidden" for="menu_checkbox">
 		<div class="line bg-gray-500 rounded-md" />
 		<div class="line bg-gray-500 rounded-md" />
 		<div class="line bg-gray-500 rounded-md" />
@@ -21,12 +21,6 @@
 <style>
 	label {
 		cursor: pointer;
-	}
-
-	@media screen and (min-width: 90rem) {
-		label {
-			display: none;
-		}
 	}
 
 	.line {

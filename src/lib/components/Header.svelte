@@ -23,12 +23,12 @@
 
 <div class="placeholder" />
 
-<header class="px-1 md:px-[20%] bg-opacity-20 bg-gray-100 dark:bg-gray-800">
-	<div class="menu-button">
+<header class="px-1 md:px-[20%] bg-opacity-80 dark:bg-opacity-20 bg-gray-100 dark:bg-gray-800">
+	<div class="block xl:hidden">
 		<DrawerButton active={mobileMenuIsOpen} on:click={toggleNavigationModal} />
 	</div>
 
-	<a href="/" class="logo">
+	<a href="/" class="flex items-center justify-center xl:justify-start">
 		<img
 			src="/favicon.png"
 			alt="logo"
@@ -40,11 +40,11 @@
 		/>
 	</a>
 
-	<div class="nav">
+	<div class="hidden xl:flex">
 		<NavItems items={links} />
 	</div>
 
-	<div class="justify-end">
+	<div class="flex items-center justify-end">
 		<ConfigButton />
 	</div>
 </header>
@@ -71,29 +71,5 @@
 
 	header > * {
 		width: 100%;
-		display: flex;
-		align-items: center;
-	}
-
-	.logo {
-		justify-content: center;
-	}
-
-	.nav {
-		display: none;
-	}
-
-	@media screen and (min-width: 90rem) {
-		.menu-button {
-			display: none;
-		}
-
-		.logo {
-			justify-content: flex-start;
-		}
-
-		.nav {
-			display: flex;
-		}
 	}
 </style>
