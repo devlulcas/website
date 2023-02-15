@@ -44,7 +44,7 @@
 	<title>{website.title}</title>
 </svelte:head>
 
-<main>
+<main class="mb-12">
 	<SectionTitle class="mt-8" title="Bookmarks" icon={Library} />
 
 	<div

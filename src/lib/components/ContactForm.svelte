@@ -42,10 +42,10 @@
 	</div>
 
 	<button
-		class="mt-4 flex gap-2 items-center justify-center bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 rounded"
+		class="lc-cta mt-6 text-md w-full text-white py-2 px-8 flex items-center justify-center rounded-sm gap-2"
 		type="submit"
 	>
-		<span class="uppercase">Send</span>
+		<span class="font-bold">Enviar mensagem</span>
 		<Send size={18} />
 	</button>
 </form>

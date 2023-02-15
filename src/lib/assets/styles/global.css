@@ -8,6 +8,8 @@
 	--brand: hsl(155, 100%, 45%);
 	--brand-light: hsl(132, 100%, 45%);
 	--brand-dark: hsl(155, 100%, 25%);
+
+	scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -28,4 +30,32 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
 	@apply bg-gray-600;
+}
+
+.lc-cta {
+	overflow: hidden;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 300%;
+		height: 100%;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		transition: transform 500ms ease;
+		background: linear-gradient(
+			76.35deg,
+			var(--brand-dark) 5%,
+			var(--brand-light) 35%,
+			var(--brand-dark) 95%
+		);
+	}
+
+	&:hover {
+		&::before {
+			transform: translateX(-35%);
+		}
+	}
 }

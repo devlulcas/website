@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Analytics from '$/lib/components/Analytics.svelte';
+	import Footer from '$/lib/components/Footer.svelte';
 	import Header from '$/lib/components/Header.svelte';
 	import '$lib/assets/styles/global.css';
 </script>
@@ -9,6 +10,8 @@
 <div class="wrapper">
 	<slot />
 </div>
+
+<Footer />
 
 <Analytics />
 

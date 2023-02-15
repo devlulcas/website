@@ -1,5 +1,5 @@
 <script>
-	import { Coffee } from 'lucide-svelte';
+	import { Coffee, Github, Linkedin } from 'lucide-svelte';
 	import { t } from '$lib/i18n';
 </script>
 
@@ -11,15 +11,39 @@
 			{$t('common.hero.title')}
 		</h1>
 
-		<p class="text-lg mt-6 lg:w-2/5 text-gray-800 dark:text-gray-100 my-3 backdrop-blur-sm">
+		<p class="text-lg my-6 lg:w-2/5 text-gray-800 dark:text-gray-100 backdrop-blur-sm">
 			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed consectetur repudiandae
 			necessitatibus ducimus nobis culpa praesentium atque vel itaque, fugit nulla nihil at
 			temporibus sequi nemo dignissimos est placeat vitae.
 		</p>
 
+		<div class="flex gap-4 text-gray-700 dark:text-gray-300">
+			<a
+				class="flex items-center gap-2 font-bold"
+				title="Github"
+				href="http://github.com/devlulcas"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<Github size={20} />
+				<span>Github</span>
+			</a>
+
+			<a
+				class="flex items-center gap-2 font-bold"
+				title="Linkedin"
+				href="https://www.linkedin.com/in/lucasalvesregodev/"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<Linkedin size={20} />
+				<span>LinkedIn</span>
+			</a>
+		</div>
+
 		<p class="text-md mt-6 backdrop-blur-sm">
 			<a
-				class="text-white bg-gradient-to-l from-brand-700 to-brand-500 py-2 px-8 flex items-center rounded-sm w-fit gap-2"
+				class="lc-cta text-white py-2 px-8 flex items-center rounded-sm w-fit gap-2"
 				href="#contact"
 			>
 				<span class="font-bold">Vamos conversar</span>

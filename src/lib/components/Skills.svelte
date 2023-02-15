@@ -79,7 +79,14 @@
 	];
 </script>
 
-<div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-4">
+<p
+	class="text-center md:text-left text-sm md:text-base font-semibold text-gray-800 mb-2 dark:text-gray-200"
+>
+	I have experience with the following technologies and tools. I am always open to learning new
+	things.
+</p>
+
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-2">
 	{#each skills as skill}
 		<div class="flex items-center gap-3 p-1 md:p-2 bg-gray-100 rounded-sm">
 			<img src={skill.icon} alt={skill.title} class="w-6 h-6 md:w-8 md:h-8" />
@@ -91,3 +98,9 @@
 		</div>
 	{/each}
 </div>
+
+<p
+	class="text-center md:text-left text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200"
+>
+	I am learning the following technologies and tools.
+</p>

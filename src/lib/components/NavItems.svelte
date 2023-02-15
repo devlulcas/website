@@ -6,7 +6,7 @@
 </script>
 
 <nav
-	class="text-gray-600 dark:text-gray-100 bg-gray-50 dark:bg-gray-800 xl:bg-transparent flex flex-col gap-4 p-4 rounded-md xl:flex-row xl:justify-center w-full xl:gap-8 xl:p-0"
+	class="text-gray-600 dark:text-gray-100 bg-gray-50 dark:bg-gray-800 xl:bg-transparent xl:dark:bg-transparent flex flex-col gap-4 p-4 rounded-md xl:flex-row xl:justify-center w-full xl:gap-8 xl:p-0"
 	transition:fly={{ duration: 300, y: 64, opacity: 0, easing: circOut }}
 >
 	{#each items as item}
