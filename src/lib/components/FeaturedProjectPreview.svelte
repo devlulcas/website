@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { ArrowRight, CornerDownRight } from 'lucide-svelte';
+	import { ArrowRight } from 'lucide-svelte';
 	import type { Project } from '../data/types';
 	import Tag from './Tag.svelte';
+	import { t } from '$lib/i18n';
 
 	export let project: Project;
 
@@ -51,7 +52,9 @@
 			target="_blank"
 			rel="noreferrer"
 		>
-			<span>View project</span>
+			<span>
+				{$t('common.seeMore')}
+			</span>
 			<span class="arrow">
 				<ArrowRight size={16} />
 			</span>

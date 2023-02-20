@@ -11,6 +11,16 @@ const config: Config = {
 			locale: 'pt-br',
 			key: 'common',
 			loader: async () => (await import('./pt-br/common.json')).default
+		},
+		{
+			locale: 'en',
+			key: 'homepage',
+			loader: async () => (await import('./en/homepage.json')).default
+		},
+		{
+			locale: 'pt-br',
+			key: 'homepage',
+			loader: async () => (await import('./pt-br/homepage.json')).default
 		}
 	]
 };

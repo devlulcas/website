@@ -1,5 +1,4 @@
 {
-	"start": "Olá, mundo!",
 	"copyToClipboard": "Copiar para a área de transferência",
 	"nav": {
 		"home": "Início",
@@ -12,12 +11,11 @@
 		"uses": "Setup"
 	},
 	"readMore": "Leia mais",
+	"seeMore": "Veja mais",
+	"menu": "abre o menu",
 	"config": {
 		"darkMode": "Modo escuro",
 		"lightMode": "Modo claro",
 		"config": "Configurações"
-	},
-	"hero": {
-		"title": "Olá! Sou o Lucas"
 	}
 }

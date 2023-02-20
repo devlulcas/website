@@ -8,13 +8,11 @@
 		class="absolute inset-0 z-[1] px-[5%] md:px-[20%] h-full flex flex-col justify-center items-start"
 	>
 		<h1 class="font-black text-5xl md:text-6xl text-brand-600 backdrop-blur-sm">
-			{$t('common.hero.title')}
+			{$t('homepage.hero.title')}
 		</h1>
 
 		<p class="text-lg my-6 lg:w-2/5 text-gray-800 dark:text-gray-100 backdrop-blur-sm">
-			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed consectetur repudiandae
-			necessitatibus ducimus nobis culpa praesentium atque vel itaque, fugit nulla nihil at
-			temporibus sequi nemo dignissimos est placeat vitae.
+			{$t('homepage.hero.description')}
 		</p>
 
 		<div class="flex gap-4 text-gray-700 dark:text-gray-300">
@@ -52,7 +50,7 @@
 		</p>
 	</article>
 
-	<div class="extra z-[-1] relative">
+	<div class="z-[-1] relative">
 		<div class="circle absolute -right-1/2 rounded-full w-5/6 aspect-square" />
 
 		<div class="tag">Lorem</div>
@@ -70,21 +68,6 @@
 </div>
 
 <style lang="postcss">
-	.extra {
-		animation: appear 1s ease-in-out;
-	}
-
-	@keyframes appear {
-		0% {
-			opacity: 0;
-			transform: scale(0.5) translateY(10rem);
-		}
-		100% {
-			opacity: 1;
-			transform: scale(1) translateY(0);
-		}
-	}
-
 	.circle {
 		background-image: linear-gradient(-45deg, var(--brand-light), var(--brand), var(--brand-light));
 

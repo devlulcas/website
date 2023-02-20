@@ -13,6 +13,7 @@
 	import { website } from '$lib/config/website';
 	import { Newspaper, Tag, TerminalSquare } from 'lucide-svelte';
 	import type { ActionData, PageServerData } from './$types';
+	import { t } from '$lib/i18n';
 
 	export let data: PageServerData;
 	export let form: ActionData;
@@ -25,7 +26,7 @@
 <Hero />
 
 <section class="max-w-3xl  py-8 space-y-8">
-	<SectionTitle as="h2" title="Postagens recentes" icon={Newspaper} />
+	<SectionTitle as="h2" title={$t('homepage.titles.featuredPosts')} icon={Newspaper} />
 
 	<FeaturedPost post={data.featuredPost} />
 
@@ -35,14 +36,19 @@
 </section>
 
 <section>
-	<SectionTitle as="h3" title="Categorias de postagens" icon={Tag} />
+	<SectionTitle as="h3" title={$t('homepage.titles.postCategories')} icon={Tag} />
 	<PostCategoryList categories={data.categories} />
 </section>
 
 <Divider />
 
 <section>
-	<SectionTitle id="projects" as="h2" title="Meus principais projetos" icon={TerminalSquare} />
+	<SectionTitle
+		id="projects"
+		as="h2"
+		title={$t('homepage.titles.featuredProjects')}
+		icon={TerminalSquare}
+	/>
 	<ul class="flex flex-col gap-4">
 		{#each data.pinnedProjects as pinnedProject, index}
 			<li>
@@ -54,12 +60,12 @@
 
 <Divider />
 
-<SectionTitle as="h2" title="Meus outros projetos" icon={TerminalSquare} />
+<SectionTitle as="h2" title={$t('homepage.titles.otherProjects')} icon={TerminalSquare} />
 
 <Carousel projects={data.otherProjects} />
 
 <section>
-	<SectionTitle id="skills" as="h2" title="Habilidades" icon={TerminalSquare} />
+	<SectionTitle id="skills" as="h2" title={$t('homepage.titles.skills')} icon={TerminalSquare} />
 	<Skills />
 </section>
 

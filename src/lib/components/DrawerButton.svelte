@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { t } from '$lib/i18n';
+
 	export let active: boolean;
 </script>
 
@@ -8,7 +10,7 @@
 		on:click
 		type="checkbox"
 		id="menu_checkbox"
-		aria-label="abre menu mobile"
+		aria-label={$t('common.menu')}
 	/>
 
 	<label class="block xl:hidden" for="menu_checkbox">

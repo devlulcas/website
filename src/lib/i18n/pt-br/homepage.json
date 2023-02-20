@@ -1,0 +1,29 @@
+{
+	"hero": {
+		"title": "Olá! Sou o Lucas",
+		"description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed consectetur repudiandae necessitatibus ducimus nobis culpa praesentium atque vel itaque, fugit nulla nihil at temporibus sequi nemo dignissimos est placeat vitae."
+	},
+	"titles": {
+		"featuredPosts": "Postagens recentes",
+		"featuredProjects": "Meus principais projetos",
+		"postCategories": "Categorias de postagens",
+		"otherProjects": "Outros projetos",
+		"skills": "Habilidades",
+		"contact": "Entre em contato"
+	},
+	"contactForm": {
+		"name": "Nome",
+		"email": "E-mail",
+		"message": "Mensagem",
+		"submit": "Enviar mensagem"
+	},
+	"skills": {
+		"about": "I have experience with the following technologies and tools. I am always open to learning new things.",
+		"learning": "I am currently learning the following technologies and tools."
+	},
+	"footer": {
+		"poweredBy": "Feito com",
+		"codeForThisWebsite": "Código para este site",
+		"linkedIn": "Meu perfil no LinkedIn"
+	}
+}

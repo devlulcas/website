@@ -13,6 +13,7 @@
 	import node from '$lib/assets/images/skills/node.svg';
 	import postgresql from '$lib/assets/images/skills/postgresql.svg';
 	import typescript from '$lib/assets/images/skills/typescript.svg';
+	import { t } from '$lib/i18n';
 
 	type Skill = {
 		title: string;
@@ -82,8 +83,7 @@
 <p
 	class="text-center md:text-left text-sm md:text-base font-semibold text-gray-800 mb-2 dark:text-gray-200"
 >
-	I have experience with the following technologies and tools. I am always open to learning new
-	things.
+	{$t('homepage.skills.about')}
 </p>
 
 <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-2">
@@ -102,5 +102,5 @@
 <p
 	class="text-center md:text-left text-sm md:text-base font-semibold text-gray-800 dark:text-gray-200"
 >
-	I am learning the following technologies and tools.
+	{$t('homepage.skills.learning')}
 </p>

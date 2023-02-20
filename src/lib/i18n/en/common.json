@@ -1,5 +1,4 @@
 {
-	"start": "Hello, world!",
 	"copyToClipboard": "Copy to clipboard",
 	"nav": {
 		"home": "Home",
@@ -12,12 +11,11 @@
 		"uses": "Setup"
 	},
 	"readMore": "Read more",
+	"seeMore": "See more",
+	"menu": "open menu",
 	"config": {
 		"darkMode": "Dark mode",
 		"lightMode": "Light mode",
-		"config": "Config"
-	},
-	"hero": {
-		"title": "Hello! I'm Lucas"
+		"config": "Configuration"
 	}
 }
