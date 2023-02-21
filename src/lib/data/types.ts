@@ -149,6 +149,7 @@ export type Post = {
 	updated: string | null | undefined;
 	isIndexFile: boolean;
 	categories: string[];
+	ogImage: string;
 };
 
 export type Project = {

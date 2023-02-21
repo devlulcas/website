@@ -61,6 +61,21 @@ export async function fetchPosts({ category = '' }): FetchPostsResult {
 		sortedPosts = sortedPosts.filter((post) => post.categories?.includes(category));
 	}
 
+	const getOgImage = (title: string) => {
+    const params = new URLSearchParams({
+      theme: 'light',
+      md: '1',
+      fontSize: '100px',
+      images: 'https://assets.vercel.com/image/upload/front/assets/design/hyper-color-logo.svg'
+    });
+
+    const url = new URL(`https://og-image.vercel.app/${encodeURIComponent(title)}`);
+
+    url.search = params.toString();
+
+    return url.toString();
+  };
+
 	const formattedPosts = sortedPosts.map((post) => ({
 		title: post.title,
 		slug: `${post.slug}`,
@@ -70,7 +85,8 @@ export async function fetchPosts({ category = '' }): FetchPostsResult {
 		tags: post.tags,
 		updated: post.updated,
 		isIndexFile: post.isIndexFile,
-		categories: post.categories
+		categories: post.categories,
+		ogImage: getOgImage(post.title)
 	}));
 
 	return {
