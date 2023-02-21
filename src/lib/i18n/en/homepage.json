@@ -18,8 +18,7 @@
 		"submit": "Send message"
 	},
 	"skills": {
-		"about": "I have experience with the following technologies and tools. I am always open to learning new things.",
-		"learning": "I am currently learning the following technologies and tools."
+		"about": "I have experience with the following technologies and tools. I am always open to learning new things."
 	},
 	"footer": {
 		"poweredBy": "Made with",
