@@ -21,6 +21,26 @@ const config: Config = {
 			locale: 'pt-br',
 			key: 'homepage',
 			loader: async () => (await import('./pt-br/homepage.json')).default
+		},
+		{
+			locale: 'en',
+			key: 'posts',
+			loader: async () => (await import('./en/posts.json')).default
+		},
+		{
+			locale: 'pt-br',
+			key: 'posts',
+			loader: async () => (await import('./pt-br/posts.json')).default
+		},
+		{
+			locale: 'en',
+			key: 'bookmarks',
+			loader: async () => (await import('./en/bookmarks.json')).default
+		},
+		{
+			locale: 'pt-br',
+			key: 'bookmarks',
+			loader: async () => (await import('./pt-br/bookmarks.json')).default
 		}
 	]
 };

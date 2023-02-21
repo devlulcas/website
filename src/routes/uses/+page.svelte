@@ -1,8 +1,17 @@
 <script>
 	import Divider from '$/lib/components/Divider.svelte';
+	import Seo from '$/lib/components/SEO.svelte';
 </script>
 
-<main class="h-[84.2vh] pt-12">
+<Seo
+	seo={{
+		title: 'Uses',
+		description:
+			'This page contains a list of all the technologies I use to build this website and my daily driver.'
+	}}
+/>
+
+<main style="height: calc(100vh - var(--header-height) * 2.5);" class="pt-12">
 	<h1 class="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Uses</h1>
 
 	<article class="mb-4">

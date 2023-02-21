@@ -7,21 +7,19 @@
 	import PostCategoryList from '$/lib/components/PostCategoryList.svelte';
 	import PostPreview from '$/lib/components/PostPreview.svelte';
 	import SectionTitle from '$/lib/components/SectionTitle.svelte';
+	import Seo from '$/lib/components/SEO.svelte';
 	import Skills from '$/lib/components/Skills.svelte';
 	import WalkingPenguin from '$/lib/components/WalkingPenguin.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
-	import { website } from '$lib/config/website';
+	import { t } from '$lib/i18n';
 	import { Newspaper, Tag, TerminalSquare } from 'lucide-svelte';
 	import type { ActionData, PageServerData } from './$types';
-	import { t } from '$lib/i18n';
 
 	export let data: PageServerData;
 	export let form: ActionData;
 </script>
 
-<svelte:head>
-	<title>{website.title}</title>
-</svelte:head>
+<Seo />
 
 <Hero />
 

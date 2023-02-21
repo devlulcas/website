@@ -1,5 +1,7 @@
 <script lang="ts">
 	import SectionTitle from '$/lib/components/SectionTitle.svelte';
+	import Seo from '$/lib/components/SEO.svelte';
+	import { t } from '$/lib/i18n';
 	import { website } from '$lib/config/website';
 	import { createSearchStore, searchHandler } from '$lib/stores/search';
 	import { Library, Search } from 'lucide-svelte';
@@ -40,17 +42,21 @@
 	});
 </script>
 
-<svelte:head>
-	<title>{website.title}</title>
-</svelte:head>
+<Seo
+	seo={{
+		title: 'Bookmarks | ' + website.title,
+		description: "A collection of bookmarks I've collected over the years.",
+		url: `${website.url}/bookmarks`
+	}}
+/>
 
 <main class="mb-12">
-	<SectionTitle class="mt-8" title="Bookmarks" icon={Library} />
+	<SectionTitle class="mt-8" title={$t('bookmarks.title')} icon={Library} />
 
 	<div
 		class="flex items-center gap-2 border-1 border-gray-300 bg-gray-100 text-gray-800 dark:text-gray-200 dark:bg-gray-800 py-1 px-2 rounded-sm focus:ring-2 ring-slate-600 my-6"
 	>
-		<label class="sr-only" for="search">Search</label>
+		<label class="sr-only" for="search">{$t('bookmarks.searchLabel')}</label>
 		<Search size={18} />
 
 		<input
@@ -59,7 +65,7 @@
 			class="bg-transparent focus:outline-none w-full"
 			type="text"
 			bind:value={$searchBookmarks.query}
-			placeholder="Search bookmarks"
+			placeholder={$t('bookmarks.searchLabel')}
 		/>
 	</div>
 
