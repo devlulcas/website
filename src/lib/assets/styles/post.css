@@ -109,15 +109,15 @@
 	}
 
 	& table {
-		@apply overflow-hidden text-gray-800 dark:text-gray-100 border-collapse bg-white border border-gray-200 w-full;
+		@apply overflow-hidden text-gray-800 dark:text-gray-100 border-collapse bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-500 w-full;
 
 		& td,
 		& th {
-			@apply border border-gray-200 p-2;
+			@apply border border-gray-200 dark:border-gray-500 p-2;
 		}
 
 		& th {
-			@apply bg-gray-200;
+			@apply bg-gray-200 dark:bg-gray-600;
 		}
 	}
 
