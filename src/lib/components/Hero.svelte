@@ -1,6 +1,7 @@
 <script>
 	import { Coffee, Github, Linkedin } from 'lucide-svelte';
 	import { t } from '$lib/i18n';
+	import HeroFancyThing from './HeroFancyThing.svelte';
 </script>
 
 <div class="relative full-bleed h-[90vh] ">
@@ -50,63 +51,5 @@
 		</p>
 	</article>
 
-	<div class="z-[-1] relative">
-		<div class="circle absolute -right-1/2 rounded-full w-5/6 aspect-square" />
-
-		<div class="tag">Lorem</div>
-
-		<div class="tag">Lorem Ipsum</div>
-
-		<div class="tag">Dolor sit at amet</div>
-
-		<div class="tag">Lorem ipsum dolor sit amet consectetur adipisicing elit?</div>
-
-		<div class="tag">Lorem</div>
-
-		<div class="tag">Lorem ipsum</div>
-	</div>
+	<HeroFancyThing />
 </div>
-
-<style lang="postcss">
-	.circle {
-		background-image: linear-gradient(-45deg, var(--brand-light), var(--brand), var(--brand-light));
-
-		animation: circle 5s ease-in-out infinite;
-	}
-
-	@keyframes circle {
-		0% {
-			transform: rotate(0deg) translateX(0) translateY(0);
-		}
-		100% {
-			transform: rotate(360deg) translateX(0) translateY(0);
-		}
-	}
-
-	.tag {
-		@apply absolute py-2 px-6 border bg-white text-brand-700 shadow-2xl rounded-sm right-10;
-
-		&:first-child {
-			transform: rotate(-10deg) translateX(-10rem) translateY(-10rem);
-		}
-
-		&:nth-child(2) {
-			transform: rotate(-10deg) translateX(-10rem) translateY(10rem);
-		}
-
-		&:nth-child(3) {
-			transform: rotate(18deg) translateX(-10rem) translateY(10rem);
-		}
-
-		&:nth-child(4) {
-			transform: rotate(13deg) translateX(-15rem) translateY(30rem);
-		}
-		&:nth-child(5) {
-			transform: rotate(-2deg) translateX(-15rem) translateY(45rem);
-		}
-
-		&:nth-child(6) {
-			transform: rotate(5deg) translateX(-15rem) translateY(40rem);
-		}
-	}
-</style>
