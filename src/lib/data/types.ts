@@ -1,3 +1,5 @@
+import type * as Notion from './notion.types';
+
 export type ProgrammingLanguageNode = {
 	name: string;
 };
@@ -43,98 +45,22 @@ export type QueryBookmarkDatabaseResponse = {
 	type: string;
 };
 
-type BookmarkResponse = {
-	object: string;
-	id: string;
-	created_time: string;
-	last_edited_time: string;
-	created_by: {
-		object: string;
-		id: string;
-	};
-	last_edited_by: {
-		object: string;
-		id: string;
-	};
-	cover: null;
-	icon: null;
-	parent: {
-		type: string;
-		database_id: string;
-	};
-	archived: boolean;
-	properties: {
-		URL: {
-			id: string;
-			type: string;
-			url: string;
-		};
-		About: {
-			id: string;
-			type: string;
-			rich_text: [
-				{
-					type: string;
-					text: {
-						content: string;
-						link: null;
-					};
-					annotations: {
-						bold: boolean;
-						italic: boolean;
-						strikethrough: boolean;
-						underline: boolean;
-						code: boolean;
-						color: string;
-					};
-					plain_text: string;
-					href: null;
-				}
-			];
-		};
-		Tags: {
-			id: string;
-			type: string;
-			multi_select: [
-				{
-					id: string;
-					name: string;
-					color: string;
-				}
-			];
-		};
-		Name: {
-			id: string;
-			type: string;
-			title: [
-				{
-					type: string;
-					text: {
-						content: string;
-						link: null;
-					};
-					annotations: {
-						bold: boolean;
-						italic: boolean;
-						strikethrough: boolean;
-						underline: boolean;
-						code: boolean;
-						color: string;
-					};
-					plain_text: string;
-					href: null;
-				}
-			];
-		};
-	};
-	url: string;
-};
+export type BookmarkResponse = Notion.BoilerplateNode<{
+	URL: Notion.URLNode;
+	AboutEn: Notion.TextNode;
+	AboutPtBr: Notion.TextNode;
+	Tags: Notion.MultiSelectNode;
+	Name: Notion.TitleNode;
+}>;
 
 export type Bookmark = {
 	resourceId: string;
 	name: string;
 	url: string;
-	about: string;
+	about: {
+		en: string;
+		ptBr: string;
+	};
 	tags: string[];
 	searchTerms: string;
 };

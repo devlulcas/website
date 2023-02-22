@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SectionTitle from '$/lib/components/SectionTitle.svelte';
 	import Seo from '$/lib/components/SEO.svelte';
-	import { t } from '$/lib/i18n';
+	import { t, locale } from '$/lib/i18n';
 	import { website } from '$lib/config/website';
 	import { createSearchStore, searchHandler } from '$lib/stores/search';
 	import { Library, Search } from 'lucide-svelte';
@@ -84,7 +84,9 @@
 							</h3>
 
 							<p class="dark:text-gray-300 text-gray-700">
-								{bookmark.about}
+								{$locale === 'en'
+									? bookmark.about.en || bookmark.about.ptBr
+									: bookmark.about.ptBr || bookmark.about.en}
 							</p>
 
 							<ul class="flex gap-2 w-full flex-wrap-reverse mt-auto">
