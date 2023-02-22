@@ -9,7 +9,7 @@
 	<div
 		class="flex flex-col h-full gap-4 p-2 rounded-lg shadow-lg bg-white bg-opacity-75 backdrop-filter backdrop-blur-sm border-gray-100 border-[1px]"
 	>
-		<h3 class="text-2xl font-bold">{project.name}</h3>
+		<h3 class="text-2xl font-bold">{project.name.replaceAll('-', ' ')}</h3>
 
 		<p class="h-full text-gray-800">{project.description}</p>
 
