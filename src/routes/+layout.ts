@@ -10,5 +10,5 @@ export const load: LayoutLoad = async (context) => {
 
 	await loadTranslations(initLocale, pathname);
 
-	return {};
+	return { pathname };
 };

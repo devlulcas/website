@@ -11,7 +11,7 @@
 	}}
 />
 
-<main style="height: calc(100vh - var(--header-height) * 2.5);" class="pt-12">
+<main class="pt-12">
 	<h1 class="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">Uses</h1>
 
 	<article class="mb-4">

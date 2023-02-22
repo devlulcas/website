@@ -2,14 +2,23 @@
 	import Analytics from '$/lib/components/Analytics.svelte';
 	import Footer from '$/lib/components/Footer.svelte';
 	import Header from '$/lib/components/Header.svelte';
+	import PageProgress from '$/lib/components/PageProgress.svelte';
+	import PageTransition from '$/lib/components/PageTransition.svelte';
 	import '$lib/assets/styles/global.css';
+	import type { LayoutData } from './$types';
+
+	export let data: LayoutData;
 </script>
+
+<PageProgress />
 
 <Header />
 
-<div class="wrapper">
-	<slot />
-</div>
+<PageTransition pathname={data.pathname}>
+	<div style="min-height: calc(100vh - var(--header-height) * 2.5);" class="wrapper">
+		<slot />
+	</div>
+</PageTransition>
 
 <Footer />
 
