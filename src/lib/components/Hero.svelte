@@ -2,15 +2,14 @@
 	import { Coffee, Github, Linkedin } from 'lucide-svelte';
 	import { t } from '$lib/i18n';
 	import HeroFancyThing from './HeroFancyThing.svelte';
+	import ExplosiveTitle from './ExplosiveTitle.svelte';
 </script>
 
 <div class="relative full-bleed h-[90vh] ">
 	<article
 		class="absolute inset-0 z-[1] px-[5%] md:px-[20%] h-full flex flex-col justify-center items-start"
 	>
-		<h1 class="font-black text-5xl md:text-6xl text-brand-600 backdrop-blur-sm">
-			{$t('homepage.hero.title')}
-		</h1>
+		<ExplosiveTitle title={$t('homepage.hero.title')} />
 
 		<p class="text-lg my-6 lg:w-2/5 text-gray-800 dark:text-gray-100 backdrop-blur-sm">
 			{$t('homepage.hero.description')}
@@ -45,7 +44,7 @@
 				class="lc-cta text-white py-2 px-8 flex items-center rounded-sm w-fit gap-2"
 				href="#contact"
 			>
-				<span class="font-bold">Vamos conversar</span>
+				<span class="font-bold"> {$t('homepage.hero.cta')} </span>
 				<Coffee />
 			</a>
 		</p>

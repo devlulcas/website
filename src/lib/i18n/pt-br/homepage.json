@@ -1,7 +1,8 @@
 {
 	"hero": {
-		"title": "Olá! Sou o Lucas",
-		"description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed consectetur repudiandae necessitatibus ducimus nobis culpa praesentium atque vel itaque, fugit nulla nihil at temporibus sequi nemo dignissimos est placeat vitae."
+		"title": "Olá! Me chamo Lucas",
+		"description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed consectetur repudiandae necessitatibus ducimus nobis culpa praesentium atque vel itaque, fugit nulla nihil at temporibus sequi nemo dignissimos est placeat vitae.",
+		"cta": "Vamos conversar"
 	},
 	"titles": {
 		"featuredPosts": "Postagens recentes",

@@ -1,7 +1,8 @@
 {
 	"hero": {
 		"title": "Hello, I'm Lucas",
-		"description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed consectetur repudiandae necessitatibus ducimus nobis culpa praesentium atque vel itaque, fugit nulla nihil at temporibus sequi nemo dignissimos est placeat vitae."
+		"description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed consectetur repudiandae necessitatibus ducimus nobis culpa praesentium atque vel itaque, fugit nulla nihil at temporibus sequi nemo dignissimos est placeat vitae.",
+		"cta": "Let's talk"
 	},
 	"titles": {
 		"featuredPosts": "Recent posts",
