@@ -9,7 +9,14 @@
 <article
 	class="flex flex-col md:flex-row-reverse mb-4 bg-gray-100 dark:bg-gray-900 rounded shadow-lg border-2 border-gray-200 dark:border-gray-800"
 >
-	<picture class="bg-gray-200 dark:bg-gray-800 rounded h-56 md:h-auto md:w-1/2 md:aspect-square" />
+	<picture class="bg-gray-200 dark:bg-gray-800 rounded h-56 md:h-auto md:w-1/2 md:aspect-square">
+		<img
+			class="object-cover object-center w-full h-full rounded"
+			loading="lazy"
+			src={post.ogImage}
+			alt={post.title}
+		/>
+	</picture>
 
 	<div class="p-4 md:p-10 flex flex-col md:h-auto md:w-1/2">
 		<h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100">

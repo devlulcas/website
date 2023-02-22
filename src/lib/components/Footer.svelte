@@ -15,7 +15,7 @@
 			{$t('homepage.footer.poweredBy')}
 			<a
 				href="https://svelte.dev/"
-				class="font-bold text-brand-500"
+				class="font-bold text-brand-600"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -32,7 +32,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<Github class="text-brand-500 fill-brand-500" size={16} />
+			<Github class="text-brand-600 fill-brand-600" size={16} />
 			<span>Github</span>
 		</a>
 
@@ -43,7 +43,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<Linkedin class="text-brand-500 fill-brand-500" size={16} />
+			<Linkedin class="text-brand-600 fill-brand-600" size={16} />
 			<span>
 				{$t('homepage.footer.linkedIn')}
 			</span>
