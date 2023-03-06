@@ -1,20 +1,10 @@
 <script lang="ts">
-	import { enhance, type SubmitFunction } from '$app/forms';
 	import { Mail, Send } from 'lucide-svelte';
 	import SectionTitle from './SectionTitle.svelte';
 	import { t } from '$lib/i18n';
-
-	const submitContact: SubmitFunction = (form) => {
-		console.log(form);
-	};
 </script>
 
-<form
-	class="flex flex-col justify-center h-full w-full"
-	action="/?/contact"
-	method="POST"
-	use:enhance={submitContact}
->
+<form method="POST" action="?/contact" class="flex flex-col justify-center h-full w-full">
 	<SectionTitle id="contact" as="h2" title={$t('homepage.titles.contact')} icon={Mail} />
 
 	<div class="flex flex-col">
