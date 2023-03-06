@@ -21,15 +21,22 @@
 		<label class="text-md text-gray-700 dark:text-gray-200 font-bold" for="name">
 			{$t('homepage.contactForm.name')}
 		</label>
-		<input class="border border-gray-300 rounded-sm px-2 py-1" type="text" name="name" id="name" />
+
+		<input
+			class="border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-100 bg-gray-100 dark:bg-gray-800 rounded-sm px-2 py-1"
+			type="text"
+			name="name"
+			id="name"
+		/>
 	</div>
 
 	<div class="flex flex-col space-y-2 mt-4">
 		<label class="text-md text-gray-700 dark:text-gray-200 font-bold" for="email">
 			{$t('homepage.contactForm.email')}
 		</label>
+
 		<input
-			class="border border-gray-300 rounded-sm px-2 py-1"
+			class="border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-100 bg-gray-100 dark:bg-gray-800 rounded-sm px-2 py-1"
 			type="email"
 			name="email"
 			id="email"
@@ -40,8 +47,9 @@
 		<label class="text-md text-gray-700 dark:text-gray-200 font-bold" for="message">
 			{$t('homepage.contactForm.message')}
 		</label>
+
 		<textarea
-			class="resize-none border border-gray-300 rounded-sm px-2 py-1"
+			class="resize-none border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-gray-100 bg-gray-100 dark:bg-gray-800 rounded-sm px-2 py-1"
 			name="message"
 			id="message"
 			rows="5"

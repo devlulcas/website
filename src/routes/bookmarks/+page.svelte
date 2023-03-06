@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BookmarkCard from '$/lib/components/BookmarkCard.svelte';
 	import SectionTitle from '$/lib/components/SectionTitle.svelte';
 	import Seo from '$/lib/components/SEO.svelte';
 	import { t, locale } from '$/lib/i18n';
@@ -77,27 +78,7 @@
 		{#each $searchBookmarks.filtered as bookmark}
 			<li data-card class="card rounded-md">
 				<div class="card-content h-full">
-					<div class="card-info h-full">
-						<div class="card-info-title h-full flex flex-col">
-							<h3 class="text-xl font-bold dark:text-gray-100 text-gray-900">
-								{bookmark.name}
-							</h3>
-
-							<p class="dark:text-gray-300 text-gray-700">
-								{$locale === 'en'
-									? bookmark.about.en || bookmark.about.ptBr
-									: bookmark.about.ptBr || bookmark.about.en}
-							</p>
-
-							<ul class="flex gap-2 w-full flex-wrap-reverse mt-auto">
-								{#each bookmark.tags as tag}
-									<li class="px-2 py-1 bg-gray-50 text-sm rounded-md">
-										{tag}
-									</li>
-								{/each}
-							</ul>
-						</div>
-					</div>
+					<BookmarkCard {bookmark} />
 				</div>
 			</li>
 		{/each}

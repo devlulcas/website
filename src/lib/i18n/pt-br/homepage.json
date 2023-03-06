@@ -19,6 +19,8 @@
 		"submit": "Enviar mensagem"
 	},
 	"skills": {
+		"atWork": "No trabalho, eu uso",
+		"other": "Outras tecnologias",
 		"about": "Eu tenho experiência com as seguintes tecnologias e ferramentas. Além disso, estou sempre aprendendo novas coisas."
 	},
 	"footer": {
