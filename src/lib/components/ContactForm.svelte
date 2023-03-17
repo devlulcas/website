@@ -4,7 +4,11 @@
 	import { t } from '$lib/i18n';
 </script>
 
-<form method="POST" action="?/contact" class="flex flex-col justify-center h-full w-full">
+<form
+	action="https://formsubmit.co/lucasalvesrego.contato@gmail.com"
+	method="POST"
+	class="flex flex-col justify-center h-full w-full"
+>
 	<SectionTitle id="contact" as="h2" title={$t('homepage.titles.contact')} icon={Mail} />
 
 	<div class="flex flex-col">
@@ -45,6 +49,10 @@
 			rows="5"
 		/>
 	</div>
+
+	<input type="hidden" name="_captcha" value="false" />
+
+	<input type="hidden" name="_next" value="https://www.lucasrego.tech/" />
 
 	<button
 		class="lc-cta mt-6 text-md w-full text-white py-2 px-8 flex items-center justify-center rounded-sm gap-2"
