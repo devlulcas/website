@@ -13,7 +13,7 @@
 	<p class="text-gray-700 dark:text-gray-300">{post.excerpt}</p>
 
 	<p class="mt-4">
-		<a class="text-brand-600 hover:text-brand-500" href={post.url}>
+		<a class="text-sm uppercase text-brand-600 hover:text-brand-500" href={post.url}>
 			{$t('common.readMore')}
 		</a>
 	</p>

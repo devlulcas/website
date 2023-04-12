@@ -105,3 +105,33 @@ fun sum(Int first, Int second){
   return first + second
 }
 ```
+
+- Go
+
+```go
+func sum(first, second int) int {
+  return first + second
+}
+```
+
+---
+
+> note: lorem ipsum dolor at sit amet
+
+> warning: lorem ipsum dolor at sit amet
+
+> tip: lorem ipsum dolor at sit amet
+
+> danger: lorem ipsum dolor at sit amet
+
+> important: lorem ipsum dolor at sit amet
+
+> caution: lorem ipsum dolor at sit amet
+
+> info: lorem ipsum dolor at sit amet
+
+> success: lorem ipsum dolor at sit amet
+
+> question: lorem ipsum dolor at sit amet
+
+---

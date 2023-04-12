@@ -151,4 +151,76 @@
 	& iframe {
 		@apply my-4 aspect-video w-full;
 	}
+
+	& blockquote.note {
+		@apply bg-slate-50/75 py-2 px-4 rounded-md border-[1px] border-slate-100;
+
+		& p {
+			@apply text-slate-800 font-bold;
+		}
+	}
+
+	& blockquote.warning {
+		@apply bg-yellow-50/50 py-2 px-4 rounded-md border-[1px] border-yellow-300;
+
+		& p {
+			@apply text-yellow-500 font-bold;
+		}
+	}
+
+	& blockquote.tip {
+		@apply bg-indigo-50/50 py-2 px-4 rounded-md border-[1px] border-indigo-200;
+
+		& p {
+			@apply text-indigo-500 font-bold;
+		}
+	}
+
+	& blockquote.danger {
+		@apply bg-red-50/50 py-2 px-4 rounded-md border-2 border-red-200;
+
+		& p {
+			@apply text-red-500 font-bold;
+		}
+	}
+
+	& blockquote.important {
+		@apply bg-red-50/50 py-2 px-4 rounded-md border-2 border-red-200;
+
+		& p {
+			@apply text-red-500 font-bold;
+		}
+	}
+
+	& blockquote.caution {
+		@apply bg-orange-50/50 py-2 px-4 rounded-md border-2 border-orange-200;
+
+		& p {
+			@apply text-orange-500 font-bold;
+		}
+	}
+
+	& blockquote.info {
+		@apply bg-blue-50/50 py-2 px-4 rounded-md border-2 border-blue-200;
+
+		& p {
+			@apply text-blue-500 font-bold;
+		}
+	}
+
+	& blockquote.success {
+		@apply bg-green-50/50 py-2 px-4 rounded-md border-2 border-green-200;
+
+		& p {
+			@apply text-green-500 font-bold;
+		}
+	}
+
+	& blockquote.question {
+		@apply bg-violet-50/50 py-2 px-4 rounded-md border-2 border-violet-200;
+
+		& p {
+			@apply text-violet-500 font-bold;
+		}
+	}
 }
