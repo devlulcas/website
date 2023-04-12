@@ -15,7 +15,7 @@
 			{$t('homepage.footer.poweredBy')}
 			<a
 				href="https://svelte.dev/"
-				class="font-bold text-brand-600"
+				class="font-medium text-brand-600"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
@@ -26,7 +26,7 @@
 
 	<div class="flex flex-col justify-center">
 		<a
-			class="flex items-center gap-2 font-bold"
+			class="flex items-center gap-2 font-medium"
 			title="Github"
 			href="http://github.com/devlulcas"
 			target="_blank"
@@ -37,7 +37,7 @@
 		</a>
 
 		<a
-			class="flex items-center gap-2 font-bold"
+			class="flex items-center gap-2 font-medium"
 			title="Linkedin"
 			href="https://www.linkedin.com/in/lucasalvesregodev/"
 			target="_blank"
