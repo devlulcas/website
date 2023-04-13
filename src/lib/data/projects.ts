@@ -1,35 +1,12 @@
-import { GITHUB_TOKEN } from '$env/static/private';
-import type { Project, ProjectResponse } from './types';
-
-const key = GITHUB_TOKEN;
-
-const headers = {
-	Authorization: `bearer ${key}`,
-	'Content-Type': 'application/json',
-	Accept: 'application/json'
-};
-
-const url = 'https://api.github.com/graphql';
-
-function formatISOToLocaleString(str: string, locale: 'en' | 'pt' = 'en') {
-	const dateTimeFormat = new Intl.DateTimeFormat(locale, {
-		year: 'numeric',
-		month: 'long',
-		day: 'numeric'
-	});
-
-	const date = new Date(str);
-
-	return dateTimeFormat.format(date);
-}
-
-type FetchProjectResult = Promise<Project[]>;
+import { formatISOToLocaleString } from './helpers/formaters';
+import { graphqlFetch } from './helpers/graphql';
+import type { Project, ProjectResponse } from './types/types';
 
 /**
  * Get pinned projects from github
  * @returns Pinned projects from github
  */
-export const fetchPinnedProjects = async (): FetchProjectResult => {
+export async function fetchPinnedProjects(): Promise<Project[]> {
 	const queryPinnedProjects = `
 	{
 		viewer {
@@ -54,34 +31,29 @@ export const fetchPinnedProjects = async (): FetchProjectResult => {
 		}
 	}`;
 
-	const queryString = JSON.stringify({ query: queryPinnedProjects });
+	try {
+		const result = await graphqlFetch<ProjectResponse<'pinnedItems'>>(queryPinnedProjects);
 
-	const response = await fetch(url, {
-		method: 'POST',
-		headers: headers,
-		body: queryString
-	});
-
-	const { data } = await response.json();
-
-	const result = data as ProjectResponse<'pinnedItems'>;
-
-	return result.viewer.pinnedItems.edges.map((edge) => ({
-		picture: `https://raw.githubusercontent.com/devlulcas/${edge.node.name}/main/.github/images/preview.png`,
-		description: edge.node.description || 'No description',
-		homepageUrl: edge.node.homepageUrl || edge.node.url,
-		languages: edge.node.languages.nodes.map((node) => node.name),
-		name: edge.node.name,
-		url: edge.node.url,
-		createdAt: formatISOToLocaleString(edge.node.createdAt)
-	}));
-};
+		return result.viewer.pinnedItems.edges.map((edge) => ({
+			picture: `https://raw.githubusercontent.com/devlulcas/${edge.node.name}/main/.github/images/preview.png`,
+			description: edge.node.description || 'No description',
+			homepageUrl: edge.node.homepageUrl || edge.node.url,
+			languages: edge.node.languages.nodes.map((node) => node.name),
+			name: edge.node.name,
+			url: edge.node.url,
+			createdAt: formatISOToLocaleString(edge.node.createdAt)
+		}));
+	} catch (error) {
+		console.error(error);
+		return [];
+	}
+}
 
 /**
  * Get all projects from github
  * @returns Projects from github
  */
-export const fetchMoreProjects = async (): FetchProjectResult => {
+export async function fetchMoreProjects(): Promise<Project[]> {
 	const queryAllProjects = `
 	{
 		viewer {
@@ -108,25 +80,20 @@ export const fetchMoreProjects = async (): FetchProjectResult => {
 		}
 	}`;
 
-	const queryString = JSON.stringify({ query: queryAllProjects });
+	try {
+		const result = await graphqlFetch<ProjectResponse<'repositories'>>(queryAllProjects);
 
-	const response = await fetch(url, {
-		method: 'POST',
-		headers: headers,
-		body: queryString
-	});
-
-	const { data } = await response.json();
-
-	const result = data as ProjectResponse<'repositories'>;
-
-	return result.viewer.repositories.edges.map((edge) => ({
-		picture: `https://raw.githubusercontent.com/devlulcas/${edge.node.name}/main/.github/images/preview.png`,
-		description: edge.node.description || 'No description',
-		homepageUrl: edge.node.homepageUrl || edge.node.url,
-		languages: edge.node.languages.nodes.map((node) => node.name),
-		name: edge.node.name,
-		url: edge.node.url,
-		createdAt: formatISOToLocaleString(edge.node.createdAt)
-	}));
-};
+		return result.viewer.repositories.edges.map((edge) => ({
+			picture: `https://raw.githubusercontent.com/devlulcas/${edge.node.name}/main/.github/images/preview.png`,
+			description: edge.node.description || 'No description',
+			homepageUrl: edge.node.homepageUrl || edge.node.url,
+			languages: edge.node.languages.nodes.map((node) => node.name),
+			name: edge.node.name,
+			url: edge.node.url,
+			createdAt: formatISOToLocaleString(edge.node.createdAt)
+		}));
+	} catch (error) {
+		console.error(error);
+		return [];
+	}
+}

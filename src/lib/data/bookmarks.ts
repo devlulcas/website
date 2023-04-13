@@ -1,6 +1,10 @@
 import { bookmarksDatabase, notion } from '$lib/config/notion';
-import type { Bookmark, BookmarkResponse, QueryBookmarkDatabaseResponse } from './types';
+import type { Bookmark, BookmarkResponse, QueryBookmarkDatabaseResponse } from './types/types';
 
+/**
+ * Fetch all bookmarks from Notion
+ * @returns List of bookmarks
+ */
 export async function getBookmarks(): Promise<Bookmark[]> {
 	const notionQuery = await notion.databases.query({
 		database_id: bookmarksDatabase
@@ -28,6 +32,11 @@ export async function getBookmarks(): Promise<Bookmark[]> {
 	return bookmarks.filter(Boolean) as Bookmark[];
 }
 
+/**
+ * Generate search terms for a bookmark
+ * @param bookmark Bookmark to generate search terms
+ * @returns Search terms
+ */
 function generateSearchTerms(bookmark: BookmarkResponse) {
 	const searchTerms = [
 		bookmark.properties.Name.title[0].plain_text,

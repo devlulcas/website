@@ -1,15 +1,18 @@
 import { parse } from 'node-html-parser';
-import type { Post } from './types';
+import type { Post } from './types/types';
+import { z } from 'zod';
 
-interface Metadata {
-	slug: string;
-	title: string;
-	tags: string[] | null | undefined;
-	categories: string[] | null | undefined;
-	date: string;
-	updated: string | null | undefined;
-	excerpt?: string;
-}
+const metadataSchema = z.object({
+	slug: z.string(),
+	title: z.string(),
+	tags: z.array(z.string()).nullable().optional(),
+	categories: z.array(z.string()).nullable().optional(),
+	date: z.string(),
+	updated: z.string().nullable().optional(),
+	excerpt: z.string()
+});
+
+export type Metadata = z.infer<typeof metadataSchema>;
 
 type FetchPostsResult = Promise<{ posts: Post[] }>;
 
@@ -25,15 +28,15 @@ export async function fetchPosts({ category = '' }): FetchPostsResult {
 	const posts = await Promise.all(
 		Object.entries(postFiles).map(async ([filepath, resolver]) => {
 			const post = (await resolver()) as {
-				metadata: Metadata;
+				metadata: unknown;
 				default: { render: () => { html: string } };
 			};
 
+			const metadata = metadataSchema.parse(post.metadata);
+
 			const html = parse(post.default.render().html);
 
-			const excerpt = post.metadata?.excerpt
-				? parse(post.metadata.excerpt)
-				: html.querySelector('p');
+			const excerpt = metadata?.excerpt ? parse(metadata.excerpt) : html.querySelector('p');
 
 			const slug = filepath
 				.replace(/(\/index)?\.md/, '')
@@ -43,8 +46,8 @@ export async function fetchPosts({ category = '' }): FetchPostsResult {
 			const isIndexFile = filepath.endsWith('/index.md');
 
 			return {
-				...post.metadata,
-				categories: post.metadata?.categories ?? [],
+				...metadata,
+				categories: metadata.categories ?? [],
 				slug,
 				isIndexFile,
 				excerpt: {
@@ -55,26 +58,11 @@ export async function fetchPosts({ category = '' }): FetchPostsResult {
 		})
 	);
 
-	let sortedPosts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	let sortedPosts = posts.sort(sortPostByDate);
 
 	if (category) {
 		sortedPosts = sortedPosts.filter((post) => post.categories?.includes(category));
 	}
-
-	const getOgImage = (title: string) => {
-    const params = new URLSearchParams({
-      theme: 'light',
-      md: '1',
-      fontSize: '100px',
-      images: 'https://assets.vercel.com/image/upload/front/assets/design/hyper-color-logo.svg'
-    });
-
-    const url = new URL(`https://og-image.vercel.app/${encodeURIComponent(title)}`);
-
-    url.search = params.toString();
-
-    return url.toString();
-  };
 
 	const formattedPosts = sortedPosts.map((post) => ({
 		title: post.title,
@@ -100,4 +88,30 @@ export async function getCategories() {
 	const categories = data.posts.map((post) => post.categories).flat();
 
 	return [...new Set(categories)];
+}
+
+function getOgImage(title: string) {
+	const params = new URLSearchParams({
+		theme: 'light',
+		md: '1',
+		fontSize: '100px',
+		images: 'https://assets.vercel.com/image/upload/front/assets/design/hyper-color-logo.svg'
+	});
+
+	const url = new URL(`https://og-image.vercel.app/${encodeURIComponent(title)}`);
+
+	url.search = params.toString();
+
+	return url.toString();
+}
+
+type Dated = {
+	date: string;
+	updated?: string | null | undefined;
+};
+
+function sortPostByDate(a: Dated, b: Dated) {
+	const aDate = new Date(a.updated || a.date);
+	const bDate = new Date(b.updated || b.date);
+	return aDate.getTime() - bDate.getTime();
 }
