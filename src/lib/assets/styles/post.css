@@ -14,7 +14,7 @@
 	}
 
 	::selection {
-		@apply bg-brand-600 text-white;
+		@apply bg-slate-100 text-brand-800;
 	}
 
 	& h1,
@@ -47,7 +47,11 @@
 	}
 
 	& p {
-		@apply text-gray-800 dark:text-gray-100 break-words;
+		@apply text-gray-800 dark:text-gray-100 break-words text-base;
+
+		& code {
+			@apply bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-100 rounded-md px-2;
+		}
 	}
 
 	& blockquote,
@@ -152,75 +156,84 @@
 		@apply my-4 aspect-video w-full;
 	}
 
-	& blockquote.note {
-		@apply bg-slate-50/75 py-2 px-4 rounded-md border-[1px] border-slate-100;
+	& blockquote.note,
+	& blockquote.warning,
+	& blockquote.tip,
+	& blockquote.danger,
+	& blockquote.important,
+	& blockquote.caution,
+	& blockquote.info,
+	& blockquote.success,
+	& blockquote.question {
+		@apply py-2 px-4 rounded-md border-[1px] dark:bg-white/5;
 
 		& p {
-			@apply text-slate-800 font-bold;
+			@apply font-medium;
+		}
+	}
+
+	& blockquote.note {
+		@apply bg-slate-50 dark:bg-slate-800 border-slate-100 dark:border-slate-500;
+
+		& p {
+			@apply text-slate-800 dark:text-slate-200;
 		}
 	}
 
 	& blockquote.warning {
-		@apply bg-yellow-50/50 py-2 px-4 rounded-md border-[1px] border-yellow-300;
+		@apply bg-yellow-50 border-yellow-300 dark:border-yellow-200;
 
 		& p {
-			@apply text-yellow-500 font-bold;
+			@apply text-yellow-500 dark:text-yellow-50;
 		}
 	}
 
 	& blockquote.tip {
-		@apply bg-indigo-50/50 py-2 px-4 rounded-md border-[1px] border-indigo-200;
+		@apply bg-indigo-50 border-indigo-200;
 
 		& p {
-			@apply text-indigo-500 font-bold;
+			@apply text-indigo-500 dark:text-indigo-100;
 		}
 	}
 
-	& blockquote.danger {
-		@apply bg-red-50/50 py-2 px-4 rounded-md border-2 border-red-200;
-
-		& p {
-			@apply text-red-500 font-bold;
-		}
-	}
-
+	& blockquote.danger,
 	& blockquote.important {
-		@apply bg-red-50/50 py-2 px-4 rounded-md border-2 border-red-200;
+		@apply bg-red-50 border-red-200;
 
 		& p {
-			@apply text-red-500 font-bold;
+			@apply text-red-500 dark:text-red-200;
 		}
 	}
 
 	& blockquote.caution {
-		@apply bg-orange-50/50 py-2 px-4 rounded-md border-2 border-orange-200;
+		@apply bg-orange-50 border-orange-200;
 
 		& p {
-			@apply text-orange-500 font-bold;
+			@apply text-orange-500 dark:text-orange-300;
 		}
 	}
 
 	& blockquote.info {
-		@apply bg-blue-50/50 py-2 px-4 rounded-md border-2 border-blue-200;
+		@apply bg-blue-50 border-blue-200;
 
 		& p {
-			@apply text-blue-500 font-bold;
+			@apply text-blue-500 dark:text-blue-100;
 		}
 	}
 
 	& blockquote.success {
-		@apply bg-green-50/50 py-2 px-4 rounded-md border-2 border-green-200;
+		@apply bg-green-50 border-green-200;
 
 		& p {
-			@apply text-green-500 font-bold;
+			@apply text-green-500 dark:text-green-300;
 		}
 	}
 
 	& blockquote.question {
-		@apply bg-violet-50/50 py-2 px-4 rounded-md border-2 border-violet-200;
+		@apply bg-violet-50 border-violet-200;
 
 		& p {
-			@apply text-violet-500 font-bold;
+			@apply text-violet-500 dark:text-violet-300;
 		}
 	}
 }
