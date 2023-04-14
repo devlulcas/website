@@ -113,7 +113,7 @@ Para criar uma tabela no sqlite use `CREATE TABLE` seguido do nome da tabela e d
 ```sql
 CREATE TABLE user (
   id TEXT PRIMARY KEY,
-  name  TEXT,
+  first_name  TEXT,
   age INTEGER
 );
 ```
@@ -135,6 +135,16 @@ Além disso, você pode declarar algumas coisas como:
 - `DEFAULT` - o campo tem um valor padrão
 
 - `CHECK` - o campo tem uma condição para ser válido
+
+> info: A condição é evaluada e um valor numérico é retornado. Se o valor for 0, o valor é inválido. Essa checagem ocorre apenas durante operações de escrita.
+
+```sql
+CREATE TABLE user (
+  id TEXT PRIMARY KEY,
+  first_name  TEXT,
+  age INTEGER CHECK (age > 0)
+);
+```
 
 - `FOREIGN KEY` - o campo é uma chave estrangeira
 
@@ -158,9 +168,9 @@ Se fizermos um select na tabela, vamos ver que a coluna `id` tem o valor que ins
 SELECT * FROM user;
 ```
 
-| id            | name | age |
-| ------------- | ---- | --- |
-| random_uuid_1 | John | 20  |
+| id            | first_name | age |
+| ------------- | ---------- | --- |
+| random_uuid_1 | John       | 20  |
 
 ```sql
 SELECT rowid FROM user;
@@ -175,7 +185,7 @@ Você pode optar por não criar essa coluna com o comando `WITHOUT ROWID`:
 ```sql
 CREATE TABLE user_without_rowid (
   id TEXT PRIMARY KEY,
-  name  TEXT,
+  first_name  TEXT,
   age INTEGER
 ) WITHOUT ROWID;
 ```
