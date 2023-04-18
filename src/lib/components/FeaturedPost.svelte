@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { t } from '$lib/i18n';
 	import { ArrowRight } from 'lucide-svelte';
-	import type { Post } from '../data/types';
+	import type { FullPostMetadata } from '../data/posts/types';
 
-	export let post: Post;
+	export let post: FullPostMetadata;
 </script>
 
 <article
@@ -13,7 +13,7 @@
 		<img
 			class="object-cover object-center w-full h-full rounded"
 			loading="lazy"
-			src={post.ogImage}
+			src={post.thumbnail}
 			alt={post.title}
 		/>
 	</picture>

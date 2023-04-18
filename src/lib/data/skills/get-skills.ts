@@ -15,28 +15,9 @@ import firebird from '$lib/assets/images/skills/firebird.svg';
 import typescript from '$lib/assets/images/skills/typescript.svg';
 import go from '$lib/assets/images/skills/go.svg';
 import styled_components from '$lib/assets/images/skills/styled_components.svg';
+import type { Skill } from './types';
 
-export type SkillType =
-	| 'humanLanguage'
-	| 'programmingLanguage'
-	| 'framework'
-	| 'tool'
-	| 'css'
-	| 'learning'
-	| 'design'
-	| 'library'
-	| 'database'
-	| 'jsRuntime';
-
-export type Skill = {
-	title: string;
-	icon: string;
-	type: SkillType;
-};
-
-export type SkillsTypeTranslation = Record<SkillType, string>;
-
-export const skillsUsedAtWork: Skill[] = [
+const skillsUsedAtWork: Skill[] = [
 	{
 		title: 'PHP',
 		icon: php,
@@ -89,7 +70,7 @@ export const skillsUsedAtWork: Skill[] = [
 	}
 ];
 
-export const otherSkills: Skill[] = [
+const otherSkills: Skill[] = [
 	{
 		title: 'Kotlin',
 		icon: kotlin,
@@ -126,3 +107,5 @@ export const otherSkills: Skill[] = [
 		type: 'programmingLanguage'
 	}
 ];
+
+export { skillsUsedAtWork, otherSkills };

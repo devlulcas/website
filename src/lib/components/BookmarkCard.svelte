@@ -1,8 +1,18 @@
 <script lang="ts">
 	import { locale } from '$/lib/i18n';
-	import type { Bookmark } from '../data/types';
+	import type { Bookmark } from '../data/bookmarks';
 
 	export let bookmark: Bookmark;
+
+	let description: string;
+
+	$: {
+		if ($locale === 'en') {
+			description = bookmark.about.en || bookmark.about.ptBr;
+		} else {
+			description = bookmark.about.ptBr || bookmark.about.en;
+		}
+	}
 </script>
 
 <div class="card-info h-full">
@@ -12,9 +22,7 @@
 		</h3>
 
 		<p class="dark:text-gray-300 text-gray-700">
-			{$locale === 'en'
-				? bookmark.about.en || bookmark.about.ptBr
-				: bookmark.about.ptBr || bookmark.about.en}
+			{description}
 		</p>
 
 		<ul class="flex gap-2 w-full flex-wrap-reverse mt-auto">

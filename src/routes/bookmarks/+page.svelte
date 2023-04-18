@@ -1,8 +1,8 @@
 <script lang="ts">
 	import BookmarkCard from '$/lib/components/BookmarkCard.svelte';
-	import SectionTitle from '$/lib/components/SectionTitle.svelte';
 	import Seo from '$/lib/components/SEO.svelte';
-	import { t, locale } from '$/lib/i18n';
+	import SectionTitle from '$/lib/components/SectionTitle.svelte';
+	import { t } from '$/lib/i18n';
 	import { website } from '$lib/config/website';
 	import { createSearchStore, searchHandler } from '$lib/stores/search';
 	import { Library, Search } from 'lucide-svelte';
@@ -70,19 +70,25 @@
 		/>
 	</div>
 
-	<ul
+	<div
 		id="cards"
 		bind:this={cardContainerEl}
 		class="grid grid-cols-2 md:grid-cols-3 gap-3 grid-flow-row"
 	>
 		{#each $searchBookmarks.filtered as bookmark}
-			<li data-card class="card rounded-md">
+			<a
+				data-card
+				class="card rounded-md"
+				href={bookmark.url}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
 				<div class="card-content h-full">
 					<BookmarkCard {bookmark} />
 				</div>
-			</li>
+			</a>
 		{/each}
-	</ul>
+	</div>
 </main>
 
 <style lang="postcss">

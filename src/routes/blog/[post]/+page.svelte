@@ -1,10 +1,10 @@
 <script lang="ts">
 	import CopyToClipboard from '$/lib/components/CopyToClipboard.svelte';
+	import Seo from '$/lib/components/SEO.svelte';
 	import { afterNavigate } from '$app/navigation';
 	import { website } from '$lib/config/website';
-	import type { PageData } from './$types';
 	import { ArrowUpIcon } from 'lucide-svelte';
-	import Seo from '$/lib/components/SEO.svelte';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 
@@ -28,9 +28,11 @@
 <Seo
 	seo={{
 		title: data.post.title + ' | ' + website.title,
-		description: data.post?.excerpt,
-		url: `${website.url}/blog/${data.post.slug}`,
-		image: data.post.ogImage
+		description: data.post.excerpt,
+		url: `${website.url}${data.post.url}`,
+		twitter: data.post.seo.twitter.handle,
+		image: data.post.seo.openGraph,
+		type: 'article'
 	}}
 />
 

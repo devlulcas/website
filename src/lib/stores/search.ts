@@ -1,6 +1,7 @@
 import { Fzf } from 'fzf';
 import { writable } from 'svelte/store';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Result = Record<PropertyKey, any> & {
 	searchTerms: string;
 };

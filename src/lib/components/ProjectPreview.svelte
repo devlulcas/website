@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Project } from '../data/types';
+	import type { Project } from '../data/projects';
 	import Tag from './Tag.svelte';
 
 	export let project: Project;

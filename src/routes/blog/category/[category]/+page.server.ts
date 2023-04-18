@@ -1,13 +1,15 @@
-import { fetchPosts } from '$lib/data/posts';
+import { getPosts, getPostsByCategory } from '$/lib/data/posts';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
 	const { category } = params;
 
-	const data = await fetchPosts({ category });
+	const posts = await getPosts();
+
+	const postsByCategory = await getPostsByCategory(posts, category);
 
 	return {
 		category,
-		posts: data.posts
+		posts: postsByCategory
 	};
 };

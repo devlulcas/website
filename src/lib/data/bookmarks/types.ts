@@ -1,3 +1,31 @@
+export type QueryBookmarkDatabaseResponse = {
+	object: string;
+	results: BookmarkResponse[];
+	next_cursor: null;
+	has_more: boolean;
+	type: string;
+};
+
+export type BookmarkResponse = BoilerplateNode<{
+	URL: URLNode;
+	AboutEn: TextNode;
+	AboutPtBr: TextNode;
+	Tags: MultiSelectNode;
+	Name: TitleNode;
+}>;
+
+export type Bookmark = {
+	resourceId: string;
+	name: string;
+	url: string;
+	about: {
+		en: string;
+		ptBr: string;
+	};
+	tags: string[];
+	searchTerms: string;
+};
+
 type BoilerplateNode<T> = {
 	object: string;
 	id: string;
@@ -87,5 +115,3 @@ type TitleNode = {
 		}
 	];
 };
-
-export type { BoilerplateNode, TextNode, URLNode, MultiSelectNode, TitleNode };

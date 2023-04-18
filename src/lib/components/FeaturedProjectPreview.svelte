@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Code, Link } from 'lucide-svelte';
-	import type { Project } from '../data/types';
+	import type { Project } from '../data/projects';
 	import Tag from './Tag.svelte';
 
 	export let project: Project;
@@ -45,7 +45,7 @@
 			{project.description}
 		</p>
 
-		<div class="flex gap-2 text-brand-600 dark:text-brand-200 text-md font-bold ">
+		<div class="flex gap-4 text-brand-600 dark:text-brand-200 text-md font-bold">
 			<a class="flex items-center gap-2" href={project.url} target="_blank" rel="noreferrer">
 				<Code size={16} />
 				<span>Code</span>
@@ -58,7 +58,7 @@
 				rel="noreferrer"
 			>
 				<Link size={16} />
-				<span>Website </span>
+				<span>Website</span>
 			</a>
 		</div>
 	</section>

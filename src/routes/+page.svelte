@@ -6,24 +6,24 @@
 	import Hero from '$/lib/components/Hero.svelte';
 	import PostCategoryList from '$/lib/components/PostCategoryList.svelte';
 	import PostPreview from '$/lib/components/PostPreview.svelte';
-	import SectionTitle from '$/lib/components/SectionTitle.svelte';
 	import Seo from '$/lib/components/SEO.svelte';
+	import SectionTitle from '$/lib/components/SectionTitle.svelte';
 	import Skills from '$/lib/components/Skills.svelte';
 	import WalkingPenguin from '$/lib/components/WalkingPenguin.svelte';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { t } from '$lib/i18n';
 	import { Newspaper, Tag, TerminalSquare } from 'lucide-svelte';
-	import type { ActionData, PageServerData } from './$types';
+	import type { PageServerData } from './$types';
 
+	// This is the data that was fetched in the preload function
 	export let data: PageServerData;
-	export let form: ActionData;
 </script>
 
 <Seo />
 
 <Hero />
 
-<section class="max-w-3xl  py-8 space-y-8">
+<section class="max-w-3xl py-8 space-y-8">
 	<SectionTitle as="h2" title={$t('homepage.titles.featuredPosts')} icon={Newspaper} />
 
 	<FeaturedPost post={data.featuredPost} />

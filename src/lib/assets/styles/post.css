@@ -67,15 +67,35 @@
 		@apply overflow-hidden my-4;
 
 		& .code-header-block {
-			@apply flex items-center bg-gray-200 dark:bg-gray-600 p-1 rounded-b-none rounded-t-md;
+			@apply flex items-center bg-gray-200 dark:bg-gray-600 rounded-b-none rounded-t-md;
 
 			&::before {
 				content: '⬤ ⬤ ⬤';
-				@apply flex items-center w-full text-gray-800 dark:text-gray-100 text-sm font-bold;
+				@apply flex items-center w-full text-gray-800 dark:text-gray-100 text-sm font-bold p-2;
 			}
 
 			& .copy-code {
 				@apply w-full flex text-gray-800 dark:text-gray-100 font-bold p-1 rounded-md cursor-pointer justify-end text-xs;
+
+				& > div {
+					@apply transition-all duration-200 ease-in-out p-2 rounded-md;
+				}
+
+				&:hover > div {
+					@apply bg-gray-300 dark:bg-gray-700;
+				}
+
+				&:active > div {
+					@apply bg-gray-400 dark:bg-gray-600;
+				}
+
+				&:focus > div {
+					@apply bg-gray-200 dark:bg-gray-800 flex gap-2;
+
+					&::before {
+						content: '👌';
+					}
+				}
 			}
 
 			& .code-title {

@@ -1,6 +1,6 @@
 import { GITHUB_TOKEN } from '$env/static/private';
 
-export async function graphqlFetch<T>(query: string): Promise<T> {
+export async function githubGraphqlFetch<T>(query: string): Promise<T> {
 	const key = GITHUB_TOKEN;
 
 	const headers = {
@@ -11,7 +11,7 @@ export async function graphqlFetch<T>(query: string): Promise<T> {
 
 	const url = 'https://api.github.com/graphql';
 
-	const queryString = JSON.stringify({ query: query });
+	const queryString = JSON.stringify({ query });
 
 	const response = await fetch(url, {
 		method: 'POST',

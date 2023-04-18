@@ -1,15 +1,13 @@
-import { fetchPosts } from '$lib/data/posts';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
+import { getPosts } from '$/lib/data/posts';
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	const { post: slug } = params;
 
 	console.log('params', url);
 
-	const data = await fetchPosts({ category: '' });
-
-	const posts = data.posts;
+	const posts = await getPosts();
 
 	const post = posts.find((post) => slug.toLowerCase() === post.slug);
 

@@ -1,41 +1,26 @@
-import { fetchPosts, getCategories } from '$lib/data/posts';
-import { fetchMoreProjects, fetchPinnedProjects } from '$lib/data/projects';
+import { getCategories, getPosts, sortPostByDate } from '$/lib/data/posts';
+import { getProjects } from '$/lib/data/projects';
+import { langHandler } from '$handlers/lang';
 import { themeHandler } from '$handlers/theme';
 import type { Actions, PageServerLoad } from './$types';
-import { langHandler } from '$handlers/lang';
 
 export const load: PageServerLoad = async () => {
-	const data = await fetchPosts({});
+	const [posts, projects] = await Promise.all([getPosts(), getProjects()]);
 
-	const [pinnedProjects, otherProjects, categories] = await Promise.all([
-		fetchPinnedProjects(),
-		fetchMoreProjects(),
-		getCategories()
-	]);
+	// Get the first 3 posts
+	const recentPosts = sortPostByDate(posts).slice(0, 3);
 
-	const filteredOtherProjects = otherProjects.filter((project) => {
-		const isPinnedProject = !pinnedProjects.some(
-			(pinnedProject) => pinnedProject.name === project.name
-		);
+	// Get a featured post and remove it from the recent posts
+	const featuredPost = recentPosts.shift();
 
-		const isStudy = project.name.includes('learning');
-
-		const isSchoolProject = project.name === 'lrl-airlines' || project.name.includes('atividades');
-
-		return isPinnedProject && !isStudy && !isSchoolProject;
-	});
-
-	const posts = data.posts.slice(0, 3);
-
-	const featuredPost = posts[0];
-
-	posts.shift();
+	// Get the list of post categories
+	const categories = getCategories(posts);
 
 	return {
 		featuredPost,
 		posts,
-		pinnedProjects,
-		otherProjects: filteredOtherProjects,
+		pinnedProjects: projects.pinnedItems,
+		otherProjects: projects.repositories,
 		categories
 	};
 };

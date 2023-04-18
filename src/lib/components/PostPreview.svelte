@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { t } from '$lib/i18n';
-	import type { Post } from '../data/types';
+	import type { FullPostMetadata } from '../data/posts/types';
 
-	export let post: Post;
+	export let post: FullPostMetadata;
 </script>
 
 <article class="p-4 mb-4 bg-gray-50 dark:bg-gray-900 rounded shadow-lg">

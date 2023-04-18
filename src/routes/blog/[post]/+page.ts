@@ -1,3 +1,4 @@
+import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
 /**
@@ -5,14 +6,13 @@ import type { PageLoad } from './$types';
  * and pass on the data from +page.server.js
  */
 export const load: PageLoad = async ({ data }) => {
-	// load the markdown file based on slug
-	const slugPath = data.post.slug?.toLowerCase() ?? '';
+	const postPath = data.post.slug;
 
-	const component = data.post.isIndexFile
-		? // vite requires relative paths and explicit file extensions for dynamic imports
-		  // see https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
-		  await import(`./../../../../posts/${slugPath}/index.md`)
-		: await import(`./../../../../posts/${slugPath}.md`);
+	if (!postPath) {
+		throw error(404, 'Post not found');
+	}
+
+	const component = await import(`./../../../../posts/${postPath}/index.md`);
 
 	return {
 		post: data.post,
