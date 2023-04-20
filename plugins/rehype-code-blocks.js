@@ -5,15 +5,15 @@ import { visit } from 'unist-util-visit';
  */
 export function rehypeCodeBlocks() {
 	/**
-	 * @param {import('hast').Node} node
+	 * @param {import('rehype').Node} node
 	 * @param {number} index
-	 * @param {import('hast').Parent} parent
+	 * @param {import('rehype').Parent} parent
 	 */
 	const visitor = (node, index, parent) => {
 		if (node.type === 'raw') {
 			if (thatMonsterIsActuallyABlockOfCode(node)) {
 				/**
-				 * @type {import('hast').Element}
+				 * @type {import('rehype').Element}
 				 */
 				const codeTitle = {
 					type: 'raw',
@@ -21,7 +21,7 @@ export function rehypeCodeBlocks() {
 				};
 
 				/**
-				 * @type {import('hast').Element}
+				 * @type {import('rehype').Element}
 				 */
 				const copyButton = {
 					type: 'element',
@@ -39,7 +39,7 @@ export function rehypeCodeBlocks() {
 				};
 
 				/**
-				 * @type {import('hast').Element}
+				 * @type {import('rehype').Element}
 				 */
 				const headerBlock = {
 					type: 'element',
@@ -51,7 +51,7 @@ export function rehypeCodeBlocks() {
 				};
 
 				/**
-				 * @type {import('hast').Element}
+				 * @type {import('rehype').Element}
 				 */
 				const newBlock = {
 					type: 'element',
@@ -68,7 +68,7 @@ export function rehypeCodeBlocks() {
 	};
 
 	/**
-	 * @param {import('hast').Root} tree
+	 * @param {import('rehype').Root} tree
 	 */
 	return (tree) => visit(tree, visitor);
 }
@@ -76,7 +76,7 @@ export function rehypeCodeBlocks() {
 /**
  * Check if the node is a code block that needs to be wrapped (and isn't already wrapped or a metadata block)
  *
- * @param {import('hast').Node} node
+ * @param {import('rehype').Node} node
  * @returns {boolean}
  */
 function thatMonsterIsActuallyABlockOfCode(node) {
@@ -100,7 +100,7 @@ function thatMonsterIsActuallyABlockOfCode(node) {
  * Get the code title from the parent
  *
  * @param {number} index
- * @param {import('hast').Parent} parent
+ * @param {import('rehype').Parent} parent
  * @returns {string}
  */
 function getCodeTitle(index, parent) {

@@ -5,7 +5,7 @@ import { visit } from 'unist-util-visit';
  */
 export function rehypeExternalUrl() {
 	/**
-	 * @param {import('hast').Root} tree
+	 * @param {import('rehype').Root} tree
 	 */
 	return (tree) => {
 		visit(tree, 'element', (node) => {

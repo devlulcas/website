@@ -5,7 +5,7 @@ import { visit } from 'unist-util-visit';
  */
 export function rehypeBetterImages() {
 	/**
-	 * @param {import('hast').Root} tree
+	 * @param {import('rehype').Root} tree
 	 */
 	return function transformer(tree) {
 		visit(tree, 'element', (node) => {

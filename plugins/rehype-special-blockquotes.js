@@ -2,11 +2,11 @@ import { visit } from 'unist-util-visit';
 
 export function rehypeSpecialBlockquote(specialTypes) {
 	/**
-	 * @param {import('hast').Root} tree
+	 * @param {import('rehype').Root} tree
 	 */
 	return (tree) => {
 		/**
-		 * @param {import('hast').Element} node
+		 * @param {import('rehype').Element} node
 		 */
 		visit(tree, 'element', (node) => {
 			if (node.tagName === 'blockquote') {
