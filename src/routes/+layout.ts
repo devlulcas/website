@@ -4,7 +4,7 @@ import type { LayoutLoad } from './$types';
 export const load: LayoutLoad = async (context) => {
 	const { pathname } = context.url;
 
-	const defaultLocale = context.data.cookies.lang || 'en';
+	const defaultLocale = context.data.cookies.lang || 'pt-br';
 
 	const initLocale = locale.get() || defaultLocale;
 

@@ -6,7 +6,7 @@ export const load: PageServerLoad = async ({ params }) => {
 
 	const posts = await getPosts();
 
-	const postsByCategory = await getPostsByCategory(posts, category);
+	const postsByCategory = getPostsByCategory(posts, category);
 
 	return {
 		category,

@@ -15,7 +15,6 @@
 	import { Newspaper, Tag, TerminalSquare } from 'lucide-svelte';
 	import type { PageServerData } from './$types';
 
-	// This is the data that was fetched in the preload function
 	export let data: PageServerData;
 </script>
 
@@ -26,7 +25,9 @@
 <section class="max-w-3xl py-8 space-y-8">
 	<SectionTitle as="h2" title={$t('homepage.titles.featuredPosts')} icon={Newspaper} />
 
-	<FeaturedPost post={data.featuredPost} />
+	{#if data.featuredPost}
+		<FeaturedPost post={data.featuredPost} />
+	{/if}
 
 	{#each data.posts as post}
 		<PostPreview {post} />

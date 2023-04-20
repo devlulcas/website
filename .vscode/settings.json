@@ -9,9 +9,11 @@
 	"files.eol": "\n",
 	"cSpell.words": [
 		"commitar",
+		"Devlulcas",
 		"Devs",
 		"doctag",
 		"embla",
+		"fiaun",
 		"figma",
 		"firestore",
 		"Firestore",
@@ -25,16 +27,19 @@
 		"nprogress",
 		"oldschool",
 		"pecl",
+		"pestphp",
 		"pgsql",
 		"pokémon",
 		"postgresql",
 		"projetinhos",
 		"rehype",
 		"Rocketseat",
+		"strtolower",
 		"sveltejs",
 		"sveltekit",
 		"swoole",
-		"vfile"
+		"vfile",
+		"Virgolini"
 	],
 	"cSpell.language": "en,pt-BR,lorem",
 	"[svg]": {
