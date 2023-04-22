@@ -9,6 +9,8 @@
 	const submitLang: SubmitFunction = ({ action }) => {
 		$locale = action.searchParams.get('locale') ?? 'en';
 
+		document.documentElement.lang = $locale;
+
 		action.searchParams.append('doNotRedirect', 'true');
 	};
 
