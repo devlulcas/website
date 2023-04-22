@@ -6,7 +6,7 @@ export const handle: Handle = ({ event, resolve }) => {
 
 	return resolve(event, {
 		transformPageChunk: ({ html }) => {
-			html.replace('data-theme=""', `data-theme="${theme}"`);
+			html.replace('%theme%', `data-theme="${theme}"`);
 
 			html.replace('%lang%', lang);
 
