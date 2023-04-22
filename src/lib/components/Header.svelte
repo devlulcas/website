@@ -45,7 +45,7 @@
 		<NavItems items={links} />
 	</div>
 
-	<div class="flex items-center gap-2 justify-end">
+	<div class="flex items-center gap-2 justify-end mr-2">
 		<ThemeForm />
 		<LocaleForm />
 	</div>

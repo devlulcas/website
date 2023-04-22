@@ -22,7 +22,7 @@
 	};
 </script>
 
-<form use:enhance={submitLang} method="POST" class="flex gap-1 mt-2 md:mt-0">
+<form use:enhance={submitLang} method="POST">
 	{#if $locale === 'en'}
 		<input type="hidden" name="locale" value="pt-br" />
 	{:else}
