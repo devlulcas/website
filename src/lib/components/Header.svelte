@@ -3,14 +3,15 @@
 	import MobileMenu from './MobileMenu.svelte';
 	import NavItems from './NavItems.svelte';
 	import { t } from '$lib/i18n';
-	import ConfigButton from './ConfigButton.svelte';
+	import LocaleForm from './LocaleForm.svelte';
+	import ThemeForm from './ThemeForm.svelte';
 
 	let mobileMenuIsOpen = false;
 	const toggleNavigationModal = () => {
 		mobileMenuIsOpen = !mobileMenuIsOpen;
 	};
 
-	const links = [
+	$: links = [
 		{ label: $t('common.nav.home'), href: '/' },
 		{ label: $t('common.nav.blog'), href: '/blog' },
 		{ label: $t('common.nav.bookmarks'), href: '/bookmarks' },
@@ -44,8 +45,9 @@
 		<NavItems items={links} />
 	</div>
 
-	<div class="flex items-center justify-end">
-		<ConfigButton />
+	<div class="flex items-center gap-2 justify-end">
+		<ThemeForm />
+		<LocaleForm />
 	</div>
 </header>
 

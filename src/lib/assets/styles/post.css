@@ -1,5 +1,5 @@
 .content {
-	@apply text-gray-800 dark:text-gray-100 font-sans mb-12;
+	@apply text-gray-800 dark:text-gray-100 font-sans mt-8 mb-12;
 
 	& > * {
 		@apply my-4;

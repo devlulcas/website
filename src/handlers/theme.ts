@@ -8,6 +8,7 @@ interface ThemeHandlerParams {
 export const themeHandler = async ({ cookies, url }: ThemeHandlerParams) => {
 	const theme = url.searchParams.get('theme');
 	const redirectTo = url.searchParams.get('redirectTo') ?? '/';
+	const doNotRedirect = url.searchParams.get('doNotRedirect') === 'true';
 
 	if (theme) {
 		const fullYear = 60 * 60 * 24 * 365;
@@ -17,6 +18,8 @@ export const themeHandler = async ({ cookies, url }: ThemeHandlerParams) => {
 			maxAge: fullYear
 		});
 	}
+
+	if (doNotRedirect) return;
 
 	if (redirectTo && redirectTo.startsWith('/')) {
 		throw redirect(303, redirectTo);

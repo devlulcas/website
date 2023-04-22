@@ -1,23 +1,46 @@
-import type { Handle } from '@sveltejs/kit';
+import type { Handle, RequestEvent } from '@sveltejs/kit';
 
-export const handle: Handle = async ({ event, resolve }) => {
-	let theme: string | null = null;
+export const handle: Handle = ({ event, resolve }) => {
+	const theme = themeHookEventHandler(event);
+	const lang = i18nHookEventHandler(event);
 
+	return resolve(event, {
+		transformPageChunk: ({ html }) => {
+			html.replace('data-theme=""', `data-theme="${theme}"`);
+
+			html.replace('%lang%', lang);
+
+			return html;
+		}
+	});
+};
+
+// * Theme event handler, gets the data from the event and then return the user theme
+const themeHookEventHandler = (event: RequestEvent) => {
 	const newTheme = event.url.searchParams.get('theme');
 
 	const actualTheme = event.cookies.get('theme');
 
-	if (newTheme && newTheme !== actualTheme) {
-		theme = newTheme;
-	} else if (actualTheme) {
-		theme = actualTheme;
-	}
+	const defaultTheme = 'dark';
 
-	if (!theme) return await resolve(event);
+	const theme = newTheme || actualTheme || defaultTheme;
 
-	return await resolve(event, {
-		transformPageChunk: ({ html }) => {
-			return html.replace('data-theme=""', `data-theme="${theme}"`);
-		}
-	});
+	return theme === 'dark' ? 'dark' : 'light';
+};
+
+// * i18n event handler, gets the data from the event and then return the user language
+const i18nHookEventHandler = (event: RequestEvent) => {
+	const baseLang = event.request.headers.get('accept-language')?.split('-').at(0);
+
+	const browserLang = baseLang === 'pt' ? 'pt-br' : 'en';
+
+	const newLang = event.url.searchParams.get('lang');
+
+	const actualLang = event.cookies.get('lang');
+
+	const defaultLang = 'en';
+
+	const lang = newLang || actualLang || browserLang || defaultLang;
+
+	return lang === 'pt-br' ? 'pt-br' : 'en';
 };

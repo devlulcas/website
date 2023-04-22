@@ -66,7 +66,7 @@ export function sortPostByDate(posts: FullPostMetadata[]): FullPostMetadata[] {
 	return posts.sort((a, b) => {
 		const aDate = new Date(a.updated || a.date);
 		const bDate = new Date(b.updated || b.date);
-		return aDate.getTime() - bDate.getTime();
+		return bDate.getTime() - aDate.getTime();
 	});
 }
 
