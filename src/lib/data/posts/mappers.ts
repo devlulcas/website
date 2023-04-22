@@ -66,16 +66,9 @@ function getSeoFromRawPostMetadata(post: RawPostMetadata): PostSEO {
  * @returns an URL to the Open Graph image for the post
  */
 function getOgImage(title: string) {
-	const params = new URLSearchParams({
-		theme: 'light',
-		md: '1',
-		fontSize: '100px',
-		images: 'https://assets.vercel.com/image/upload/front/assets/design/hyper-color-logo.svg'
-	});
+	const url = new URL('https://www.lucasrego.tech/og');
 
-	const url = new URL(`https://og-image.vercel.app/${encodeURIComponent(title)}`);
-
-	url.search = params.toString();
+	url.searchParams.set('text', title);
 
 	return url.toString();
 }

@@ -45,10 +45,12 @@
 	"type": "module",
 	"dependencies": {
 		"@notionhq/client": "^2.2.4",
+		"@resvg/resvg-js": "^2.4.1",
 		"embla-carousel-svelte": "^7.1.0",
 		"fzf": "^0.5.1",
 		"lucide-svelte": "^0.105.0",
 		"nprogress": "^0.2.0",
+		"satori": "^0.4.14",
 		"sveltekit-i18n": "^2.2.2",
 		"unist-util-visit": "^4.1.2",
 		"zod": "^3.21.4"

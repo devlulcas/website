@@ -11,7 +11,7 @@
 	const defaultSEO: SEOProps = {
 		title: 'Devlulcas - Web Development',
 		description: 'Web Development Blog',
-		image: 'https://svelte.dev/svelte-logo-horizontal.svg',
+		image: 'https://www.lucasrego.tech/og.png',
 		url: 'https://www.lucasrego.tech/',
 		type: 'website',
 		twitter: '@devlulcas'
