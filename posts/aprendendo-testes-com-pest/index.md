@@ -1,14 +1,18 @@
 ---
-slug: testando-php-com-pest-2022
 title: Testando PHP com Pest
-thumbnail: /pest_logo.png
-alt: logo do pest
+tags:
+  - php
+  - testes
+  - pest
+  - phpunit
 categories:
   - php
   - dev
-  - testes
   - pest
+  - testing
 date: 02/03/2022
+updated: 02/03/2022
+lang: pt-br
 excerpt: Uma breve introdução ao framework de testes Pest do ecossistema PHP
 ---
 

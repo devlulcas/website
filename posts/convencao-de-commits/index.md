@@ -1,13 +1,16 @@
 ---
-slug: commit-conventions
 title: Convenções de commits
-thumbnail: /git.png
-alt: logo do git
+tags:
+  - git
+  - dev
+  - convenções
 categories:
   - git
   - dev
   - convenções
 date: 16/05/2022
+updated: 16/05/2022
+lang: pt-br
 excerpt: Como escrever bons commits para ter um versionamento mais inteligível
 ---
 

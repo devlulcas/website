@@ -1,11 +1,16 @@
 ---
-slug: first-post
-title: First post
+title: This is a title
+tags:
+  - dev
+  - wip
+  - demo
 categories:
   - dev
   - wip
-  - svelte
-date: 01/01/2069
+  - demo
+date: 22/04/2023
+updated: 22/04/2023
+lang: en
 excerpt: Just testing to see if it works
 ---
 
@@ -112,6 +117,13 @@ fun sum(Int first, Int second){
 func sum(first, second int) int {
   return first + second
 }
+```
+
+- Diff
+
+```diff
+- this is a diff
++ this is a diff
 ```
 
 ---

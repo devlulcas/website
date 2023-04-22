@@ -1,12 +1,21 @@
 ---
-slug: iniciando-na-programacao-web-2022
 title: Iniciando na programação web
-alt: gatinho
+tags:
+  - javascript
+  - iniciante
+  - web
+  - programação
+  - desenvolvimento
+  - web
+  - programação
+  - desenvolvimento
 categories:
   - dev
   - iniciante
   - javascript
 date: 27/07/2022
+updated: 27/07/2022
+lang: pt-br
 excerpt: Um pontapé inicial no desenvolvimento web
 ---
 

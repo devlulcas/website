@@ -1,12 +1,16 @@
 ---
-slug: um-pouco-de-sqlite
 title: Um pouco de SQLite
+tags:
+  - sqlite3
+  - notes
+  - database
 categories:
   - sqlite3
   - notes
   - wip
   - database
 date: 12/04/2023
+updated: 22/04/2023
 excerpt: Aprendendo um pouco sobre SQLite3
 ---
 

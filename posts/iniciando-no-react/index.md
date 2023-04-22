@@ -1,15 +1,19 @@
 ---
-slug: iniciando-no-react-js-2022
 title: Iniciando no React JS
+tags:
+  - dev
+  - react-js
+  - javascript
 categories:
   - dev
   - react-js
   - javascript
 date: 30/05/2022
+updated: 30/05/2022
 excerpt: Notas sobre meus pensamentos em aprender React em 2022
 ---
 
-# INICIANDO NO REACT JS
+# INICIANDO NO REACT JS EM 2022
 
 O React é uma biblioteca para facilitar a criação de interfaces gráficas na web. Com ele podemos escrever nosso código de UI em componentes de forma declarativa e focada.
 
