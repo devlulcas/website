@@ -9,6 +9,7 @@ categories:
   - notes
   - wip
   - database
+lang: pt-br
 date: 12/04/2023
 updated: 22/04/2023
 excerpt: Aprendendo um pouco sobre SQLite3
