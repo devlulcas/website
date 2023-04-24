@@ -18,9 +18,11 @@ export function rehypeSpecialBlockquote(specialTypes) {
 
 				const content = node.children[contentIndex];
 
-				if (content && content?.children[0]?.type === 'text') {
-					const text = content.children[0].value;
-					const [type, ...rest] = text.split(':');
+				const [firstChild, ...children] = content.children;
+
+				if (content && firstChild.type === 'text') {
+					const firstChildText = firstChild.value;
+					const [type, ...rest] = firstChildText.split(':');
 
 					if (!specialTypes.includes(type)) {
 						return;
@@ -43,7 +45,8 @@ export function rehypeSpecialBlockquote(specialTypes) {
 							{
 								type: 'text',
 								value: message
-							}
+							},
+							...children
 						]
 					});
 
