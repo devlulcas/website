@@ -12,7 +12,7 @@ categories:
   - vitest
   - postcss
   - error
-lang: en-us
+lang: en
 date: 31/05/2023
 updated: 31/05/2023
 excerpt: Vitest + PostCSS config failing to load config with "Invalid PostCSS Plugin" when using poscssrc.json file
@@ -106,54 +106,7 @@ The solution? Simple... just rename the file to `postcss.config.json` and it wil
 
 And that's it! Now Vitest will be able to load the config file without any issues.
 
-Or convert the JSON file to a JS file and export the config as a module:
-
-```js:postcss.config.js
-module.exports = {
-	plugins: [
-		require('postcss-flexbugs-fixes'),
-
-		require('postcss-preset-env')({
-			autoprefixer: {
-				flexbox: 'no-2009',
-				grid: 'autoplace'
-			},
-			stage: 3,
-			features: {
-				'nesting-rules': true,
-				'custom-properties': false
-			}
-		})
-	]
-};
-```
-
-You can load a `.mjs` file too:
-
-```mjs:postcss.config.mjs
-import postcssFlexbugsFixes from 'postcss-flexbugs-fixes';
-import postcssPresetEnv from 'postcss-preset-env';
-
-export default {
-	plugins: [
-		postcssFlexbugsFixes,
-
-		postcssPresetEnv({
-			autoprefixer: {
-				flexbox: 'no-2009',
-				grid: 'autoplace'
-			},
-			stage: 3,
-			features: {
-				'nesting-rules': true,
-				'custom-properties': false
-			}
-		})
-	]
-};
-```
-
-You can try a better way to use a `.json` config file with PostCSS:
+You can try a better way to use a `.json` config file with PostCSS too (instead of using those nested arrays to pass the options to the plugins):
 
 ```json:postcss.config.json
 {

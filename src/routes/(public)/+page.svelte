@@ -48,6 +48,7 @@
 		title={$t('homepage.titles.featuredProjects')}
 		icon={TerminalSquare}
 	/>
+
 	<ul class="flex flex-col gap-4">
 		{#each data.pinnedProjects as pinnedProject, index}
 			<li>

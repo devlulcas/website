@@ -15,7 +15,7 @@
 <Header />
 
 <PageTransition pathname={data.pathname}>
-	<div style="min-height: calc(100vh - var(--header-height) * 2.5);" class="wrapper">
+	<div class="wrapper min-h-[--screen]">
 		<slot />
 	</div>
 </PageTransition>

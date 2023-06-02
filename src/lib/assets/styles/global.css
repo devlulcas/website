@@ -4,12 +4,20 @@
 
 :root {
 	--header-height: 3rem;
+	--footer-height: 4rem;
+	--screen: calc(100vh - var(--header-height) - var(--footer-height));
 
 	--brand: hsl(155, 100%, 45%);
 	--brand-light: hsl(132, 100%, 45%);
 	--brand-dark: hsl(155, 100%, 25%);
 
 	scroll-padding-top: var(--header-height);
+
+	@media (min-width: 768px) {
+		--header-height: 3rem;
+		--footer-height: 3rem;
+		--screen: calc(100vh - var(--header-height) - var(--footer-height));
+	}
 }
 
 body {
