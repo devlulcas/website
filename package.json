@@ -48,6 +48,7 @@
 		"@resvg/resvg-js": "^2.4.1",
 		"embla-carousel-svelte": "^7.1.0",
 		"fzf": "^0.5.2",
+		"lucia-auth": "^1.7.1",
 		"lucide-svelte": "^0.105.0",
 		"nprogress": "^0.2.0",
 		"satori": "^0.4.14",

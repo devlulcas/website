@@ -17,6 +17,9 @@ dependencies:
   fzf:
     specifier: ^0.5.2
     version: 0.5.2
+  lucia-auth:
+    specifier: ^1.7.1
+    version: 1.7.1
   lucide-svelte:
     specifier: ^0.105.0
     version: 0.105.0(svelte@3.59.1)
@@ -1898,6 +1901,10 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
+
+  /lucia-auth@1.7.1:
+    resolution: {integrity: sha512-QXTWdcDpQfpA1c64LXo80Imfk8V8Hn5w+Rmv+DPbArSJc4nPYVxbBR4+XwTcnW7YQOeoo7yNLXMjYOQDW27eNg==}
+    dev: false
 
   /lucide-svelte@0.105.0(svelte@3.59.1):
     resolution: {integrity: sha512-0N7F4HL9ZyoD5tcCle76Pm7oQE1D/99RCev9RrG83bq+FZiaBuTwEB8k4SQW5hpjb8qXTaOhHR/0tRvMhvnZBA==}
