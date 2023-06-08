@@ -8,6 +8,9 @@ dependencies:
   '@lucia-auth/adapter-mysql':
     specifier: ^1.1.1
     version: 1.1.1(@planetscale/database@1.7.0)(lucia-auth@1.7.1)
+  '@lucia-auth/oauth':
+    specifier: ^1.1.1
+    version: 1.1.1(lucia-auth@1.7.1)
   '@notionhq/client':
     specifier: ^2.2.5
     version: 2.2.5
@@ -464,6 +467,14 @@ packages:
         optional: true
     dependencies:
       '@planetscale/database': 1.7.0
+      lucia-auth: 1.7.1
+    dev: false
+
+  /@lucia-auth/oauth@1.1.1(lucia-auth@1.7.1):
+    resolution: {integrity: sha512-GeUetiZlSSThb610CzNrUD+D/lo2gbtjscQhQoqKjJStW9qKmhk8qJjhnrrNdNlIJIND/9/Dv1X9FtStMootpA==}
+    peerDependencies:
+      lucia-auth: 1.x
+    dependencies:
       lucia-auth: 1.7.1
     dev: false
 

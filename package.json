@@ -51,6 +51,7 @@
 	"type": "module",
 	"dependencies": {
 		"@lucia-auth/adapter-mysql": "^1.1.1",
+		"@lucia-auth/oauth": "^1.1.1",
 		"@notionhq/client": "^2.2.5",
 		"@planetscale/database": "^1.7.0",
 		"@resvg/resvg-js": "^2.4.1",
