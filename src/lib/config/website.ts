@@ -8,5 +8,11 @@ export const website = {
 	socials: {
 		github: 'https://github.com/devlulcas',
 		linkedIn: 'https://www.linkedin.com/in/lucasalvesregodev'
+	},
+	auth: {
+		github: {
+			initUrl: 'http://172.18.0.1:5173/api/oauth/github/init',
+			callbackUrl: 'http://172.18.0.1:5173/api/oauth/github/callback'
+		}
 	}
 };
