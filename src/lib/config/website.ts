@@ -11,8 +11,8 @@ export const website = {
 	},
 	auth: {
 		github: {
-			initUrl: 'http://172.18.0.1:5173/api/oauth/github/init',
-			callbackUrl: 'http://172.18.0.1:5173/api/oauth/github/callback'
+			initUrl: 'https://www.lucasrego.tech/api/oauth/github/init',
+			callbackUrl: 'https://www.lucasrego.tech/api/oauth/github/callback'
 		}
 	}
 };
