@@ -1,8 +1,6 @@
 import { GITHUB_OAUTH_COOKIE_NAME, auth, githubAuth } from '$lib/server/auth';
 import { redirect } from '@sveltejs/kit';
-
 import type { RequestHandler } from './$types';
-import type { NewUser } from '$/lib/server/database/schema/user';
 
 export const GET: RequestHandler = async ({ cookies, url, locals }) => {
 	const code = url.searchParams.get('code');
@@ -20,22 +18,16 @@ export const GET: RequestHandler = async ({ cookies, url, locals }) => {
 		const getUser = async () => {
 			if (existingUser) return existingUser;
 
-			const user: NewUser = {
-				id: providerUser.id.toString(),
+			return createUser({
+				userId: providerUser.id.toString(),
 				role: 'USER',
 				banned: false,
 				email: providerUser.email,
-				avatarUrl: providerUser.avatar_url,
-				githubProfileUrl: providerUser.url,
 				username: providerUser.login
-			};
-
-			return createUser(user);
+			});
 		};
 
 		const user = await getUser();
-
-		console.log(user);
 
 		const session = await auth.createSession(user.id);
 

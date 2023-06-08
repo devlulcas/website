@@ -15,6 +15,20 @@
       "when": 1686204137000,
       "tag": "0001_grey_steel_serpent",
       "breakpoints": false
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1686264743337,
+      "tag": "0002_common_doorman",
+      "breakpoints": false
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1686264881523,
+      "tag": "0003_thick_brood",
+      "breakpoints": false
     }
   ]
 }
