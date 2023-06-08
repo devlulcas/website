@@ -12,9 +12,6 @@ export const auth = lucia({
 		id: user.id,
 		role: user.role,
 		banned: user.banned,
-		email: user.email,
-		avatarUrl: user.avatarUrl,
-		githubProfileUrl: user.githubProfileUrl,
-		username: user.username
+		email: user.email
 	})
 });
