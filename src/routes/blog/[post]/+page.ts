@@ -12,7 +12,7 @@ export const load: PageLoad = async ({ data }) => {
 		throw error(404, 'Post not found');
 	}
 
-	const component = await import(`./../../../../../posts/${postPath}/index.md`);
+	const component = await import(`./../../../../posts/${postPath}/index.md`);
 
 	return {
 		post: data.post,
