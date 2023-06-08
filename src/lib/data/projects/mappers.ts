@@ -1,4 +1,4 @@
-import { formatISOToLocaleString } from '$/lib/helpers/formaters';
+import { formatISOToLocaleString } from '$/lib/helpers/format-iso-to-locale-string';
 import type { Project, ProjectEdge } from './types';
 
 export function fromProjectEdgeToProjectEntity({ node }: ProjectEdge): Project {
