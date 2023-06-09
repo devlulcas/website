@@ -8,10 +8,13 @@ export const auth = lucia({
 	env: dev ? 'DEV' : 'PROD',
 	middleware: sveltekit(),
 	adapter: planetscale(connection),
-	transformDatabaseUser: (user) => ({
-		userId: user.id,
-		role: user.role,
-		banned: user.banned,
-		email: user.email
-	})
+	transformDatabaseUser: (userData) => {
+		return {
+			userId: userData.id,
+			email: userData.email,
+			role: userData.role,
+			username: userData.username,
+			banned: userData.banned
+		};
+	}
 });
