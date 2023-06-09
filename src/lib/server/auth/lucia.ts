@@ -9,7 +9,7 @@ export const auth = lucia({
 	middleware: sveltekit(),
 	adapter: planetscale(connection),
 	transformDatabaseUser: (user) => ({
-		id: user.id,
+		userId: user.id,
 		role: user.role,
 		banned: user.banned,
 		email: user.email

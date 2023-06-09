@@ -21,7 +21,6 @@ export const GET: RequestHandler = async ({ cookies, url, locals }) => {
 			if (existingUser) return existingUser;
 
 			const newUser = await createUser({
-				id: providerUser.id.toString(),
 				role: 'USER',
 				banned: false,
 				email: providerUser.email || providerUser.login,
@@ -31,7 +30,7 @@ export const GET: RequestHandler = async ({ cookies, url, locals }) => {
 			await db
 				.insert(profile)
 				.values({
-					userId: newUser.id,
+					userId: newUser.userId,
 					avatarUrl: providerUser.avatar_url,
 					githubProfileUrl: providerUser.html_url
 				})
