@@ -1,8 +1,10 @@
+import { PUBLIC_HOST } from "$env/static/public";
+
 export const website = {
 	title: 'Devlulcas',
 	description: 'Olá, eu sou o Devlulcas, um desenvolvedor de software que gosta de criar coisas.',
-	url: 'https://lucasrego.tech',
-	image: 'https://lucasrego.tech/image.png',
+	url: PUBLIC_HOST,
+	image: PUBLIC_HOST + '/image.png',
 	author: 'Devlulcas - Lucas Rego',
 	repository: 'https://github.com/devlulcas/website',
 	socials: {
@@ -11,8 +13,8 @@ export const website = {
 	},
 	auth: {
 		github: {
-			initUrl: 'https://www.lucasrego.tech/api/oauth/github/init',
-			callbackUrl: 'https://www.lucasrego.tech/api/oauth/github/callback'
+			initUrl: PUBLIC_HOST + '/api/oauth/github/init',
+			callbackUrl: PUBLIC_HOST + '/api/oauth/github/callback'
 		}
 	}
 };
