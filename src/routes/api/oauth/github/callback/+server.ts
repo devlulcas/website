@@ -24,7 +24,7 @@ export const GET: RequestHandler = async ({ cookies, url, locals }) => {
 				id: providerUser.id.toString(),
 				role: 'USER',
 				banned: false,
-				email: providerUser.email,
+				email: providerUser.email || providerUser.login,
 				username: providerUser.login
 			});
 
