@@ -7,7 +7,6 @@ import { profile } from '$/lib/server/database/schema/profile';
 export const GET: RequestHandler = async ({ cookies, url, locals }) => {
 	const code = url.searchParams.get('code');
 	const state = url.searchParams.get('state');
-
 	const storedState = cookies.get(GITHUB_OAUTH_COOKIE_NAME);
 
 	if (!code || !state || state !== storedState) {
@@ -42,7 +41,7 @@ export const GET: RequestHandler = async ({ cookies, url, locals }) => {
 
 		const user = await getUser();
 
-		const session = await auth.createSession(user.id);
+		const session = await auth.createSession(user.userId);
 
 		locals.auth.setSession(session);
 	} catch (error) {
