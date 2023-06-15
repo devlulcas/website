@@ -9,6 +9,7 @@ categories:
   - react-js
   - javascript
 date: 30/05/2022
+lang: pt-br
 updated: 30/05/2022
 excerpt: Notas sobre meus pensamentos em aprender React em 2022
 ---
