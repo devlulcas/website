@@ -5,12 +5,9 @@ tags:
   - wip
   - demo
 categories:
-  - dev
-  - wip
-  - demo
+  - none
 date: 22/04/2023
-updated: 22/04/2023
-lang: en
+draft: false
 excerpt: Just testing to see if it works
 ---
 
@@ -42,9 +39,9 @@ _Italic_
 
 ```json:this_block_have_a_title
 {
-	"firstName": "John",
-	"lastName": "Smith",
-	"age": 25
+ "firstName": "John",
+ "lastName": "Smith",
+ "age": 25
 }
 ```
 

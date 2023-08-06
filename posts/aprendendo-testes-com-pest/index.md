@@ -6,13 +6,9 @@ tags:
   - pest
   - phpunit
 categories:
-  - php
-  - dev
-  - pest
-  - testing
+  - none
 date: 02/03/2022
-updated: 02/03/2022
-lang: pt-br
+draft: false
 excerpt: Uma breve introdução ao framework de testes Pest do ecossistema PHP
 ---
 
@@ -23,7 +19,7 @@ excerpt: Uma breve introdução ao framework de testes Pest do ecossistema PHP
 É uma boa dar uma olhada na documentação:
 [Documentação do Pest](https://pestphp.com/)
 
-## Alguns sites, vídeos e repositórios úteis:
+## Alguns sites, vídeos e repositórios úteis
 
 - [Vídeo do Dias de Dev](https://www.youtube.com/watch?v=1oTRpTPEyX0&ab_channel=DiasdeDev)
 - [Os três tipos de testes unitários](https://www.youtube.com/watch?v=W40mpZP9xQQ&t=173s&ab_channel=ContinuousDelivery)
@@ -285,7 +281,7 @@ Os pontos do seu código onde duas partes de código se comunicam são as partes
 
 A melhor forma de separar onde esses detalhes de implementação vão ficar é pensando primeiro no que eles tem que fazer e não em como fazer. **Pense em quais são as informações essências que precisamos para realizar tal tarefa e o que precisa ser entendido para que esse código seja usado separadamente.**
 
-### Exemplo da função que desenha uma linha:
+### Exemplo da função que desenha uma linha
 
 **Vamos imaginar como faríamos uma função que desenha uma linha.**
 
@@ -318,12 +314,12 @@ O teste dessa categoria é o mais comum. Ele vai chamar um código, pegar o reto
 ```php
 // Função
 function somar($primeiroNumero, $segundoNumero) {
-	return $primeiroNumero + $segundoNumero);
+ return $primeiroNumero + $segundoNumero);
 }
 
 // Teste
 test("resultado da soma entre dois numero é valido", function(){
-	expect(somar(2, 2))->toBe(4);
+ expect(somar(2, 2))->toBe(4);
 });
 ```
 
@@ -336,9 +332,9 @@ test("resultado da soma entre dois numero é valido", function(){
 ```php
 // Teste
 test("adicionar um item a pilha muda a indicação do seu tamanho", function() {
-	$roupas = new Pilha();
-	$roupas->add("meias");
-	expect($roupas->size)->toBe(1);
+ $roupas = new Pilha();
+ $roupas->add("meias");
+ expect($roupas->size)->toBe(1);
 });
 ```
 
@@ -348,7 +344,7 @@ O exemplo de código acima mostra como seria o teste de uma mudança de estado, 
 
 > O expert em TDD John Jagger diz que a complexidade ciclamática em testes deve ser de um. Isso quer dizer que não deve haver loops ou condições no seu teste.
 
-#### 🥸 Interação com um componente externo, um outro trecho de código.
+#### 🥸 Interação com um componente externo, um outro trecho de código
 
 Esses são os testes que validam se o seu código interage com outro código da maneira que você esperava. A forma como testamos algo assim é inserindo informações que estão sobre o controle do nosso teste.
 

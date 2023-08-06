@@ -1,15 +1,17 @@
-import { getPosts, getPostsByCategory } from '$/lib/data/posts';
+import { fetchPosts, filterPostsByCategory } from '$/lib/server/posts';
+import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
-	const { category } = params;
+	const category = params.category;
 
-	const posts = await getPosts();
+	const posts = await fetchPosts();
 
-	const postsByCategory = getPostsByCategory(posts, category);
+	const filteredPosts = filterPostsByCategory(posts, category);
 
-	return {
-		category,
-		posts: postsByCategory
-	};
+	if (filteredPosts.length === 0) {
+		throw error(404, `Category "${category}" not found`);
+	}
+
+	return { posts: filteredPosts, category };
 };

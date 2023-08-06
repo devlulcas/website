@@ -5,13 +5,8 @@ tags:
   - notes
   - database
 categories:
-  - sqlite3
-  - notes
-  - wip
-  - database
-lang: pt-br
+  - none
 date: 12/04/2023
-updated: 22/04/2023
 excerpt: Aprendendo um pouco sobre SQLite3
 ---
 

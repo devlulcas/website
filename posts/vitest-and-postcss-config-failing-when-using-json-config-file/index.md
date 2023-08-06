@@ -1,5 +1,10 @@
 ---
 title: Vitest + PostCSS config failing when using poscssrc.json file
+excerpt: Vitest + PostCSS config failing to load config with "Invalid PostCSS Plugin" when using poscssrc.json file
+date: 31/05/2023
+draft: false
+categories:
+  - none
 tags:
   - test
   - vitest
@@ -7,15 +12,6 @@ tags:
   - error
   - poscssrc.json
   - invalid-postcss-plugin
-categories:
-  - test
-  - vitest
-  - postcss
-  - error
-lang: en
-date: 31/05/2023
-updated: 31/05/2023
-excerpt: Vitest + PostCSS config failing to load config with "Invalid PostCSS Plugin" when using poscssrc.json file
 ---
 
 # Solving Vitest + PostCSS config failing when using poscssrc.json file
@@ -43,23 +39,23 @@ This is the config file:
 
 ```json:postcssrc.json
 {
-	"plugins": [
-		"postcss-flexbugs-fixes",
-		[
-			"postcss-preset-env",
-			{
-				"autoprefixer": {
-					"flexbox": "no-2009",
-					"grid": true
-				},
-				"stage": 3,
-				"features": {
-					"nesting-rules": true,
-					"custom-properties": false
-				}
-			}
-		]
-	]
+ "plugins": [
+  "postcss-flexbugs-fixes",
+  [
+   "postcss-preset-env",
+   {
+    "autoprefixer": {
+     "flexbox": "no-2009",
+     "grid": true
+    },
+    "stage": 3,
+    "features": {
+     "nesting-rules": true,
+     "custom-properties": false
+    }
+   }
+  ]
+ ]
 }
 ```
 
@@ -67,33 +63,33 @@ This is the `package.json` file:
 
 ```json:package.json
 {
-	"name": "test-vitest-postcss",
-	"version": "0.1.0",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint",
-		"test": "vitest"
-	},
-	"dependencies": {
-		"@types/node": "20.2.5",
-		"@types/react": "18.2.7",
-		"@types/react-dom": "18.2.4",
-		"eslint": "8.41.0",
-		"eslint-config-next": "13.4.4",
-		"next": "13.4.4",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
-		"typescript": "5.0.4"
-	},
-	"devDependencies": {
-		"postcss": "^8.4.24",
-		"postcss-flexbugs-fixes": "^5.0.2",
-		"postcss-preset-env": "^8.4.1",
-		"vitest": "^0.31.3"
-	}
+ "name": "test-vitest-postcss",
+ "version": "0.1.0",
+ "private": true,
+ "scripts": {
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "test": "vitest"
+ },
+ "dependencies": {
+  "@types/node": "20.2.5",
+  "@types/react": "18.2.7",
+  "@types/react-dom": "18.2.4",
+  "eslint": "8.41.0",
+  "eslint-config-next": "13.4.4",
+  "next": "13.4.4",
+  "react": "18.2.0",
+  "react-dom": "18.2.0",
+  "typescript": "5.0.4"
+ },
+ "devDependencies": {
+  "postcss": "^8.4.24",
+  "postcss-flexbugs-fixes": "^5.0.2",
+  "postcss-preset-env": "^8.4.1",
+  "vitest": "^0.31.3"
+ }
 }
 ```
 

@@ -1,21 +1,22 @@
+import { fetchPosts, getPostRecommendations } from '$/lib/server/posts';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import { getPosts } from '$/lib/data/posts';
 
 export const load: PageServerLoad = async ({ params, url }) => {
 	const { post: slug } = params;
 
-	console.log('params', url);
+	const posts = await fetchPosts();
 
-	const posts = await getPosts();
+	const currentPostIndex = posts.findIndex((post) => slug.toLowerCase() === post.slug);
 
-	const post = posts.find((post) => slug.toLowerCase() === post.slug);
-
-	if (!post) {
+	if (currentPostIndex === -1) {
 		throw error(404, 'Post not found');
 	}
 
+	const currentPost = posts[currentPostIndex];
+
 	return {
-		post
+		post: currentPost,
+		recommendations: getPostRecommendations(posts, currentPostIndex)
 	};
 };

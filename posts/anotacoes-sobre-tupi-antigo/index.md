@@ -6,10 +6,9 @@ tags:
   - tupi-guarani
   - tupi-guarani antigo
 categories:
-  - anotações
+  - 4fun
 date: 22/04/2023
-updated: 22/04/2023
-lang: pt-br
+draft: false
 excerpt: Anotações sobre a língua tupi antigo. Breve devaneio sobre a lingua tupi.
 ---
 

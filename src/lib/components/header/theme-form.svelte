@@ -1,0 +1,34 @@
+<script lang="ts">
+	import { enhance } from '$app/forms';
+	import { page } from '$app/stores';
+	import type { SubmitFunction } from '@sveltejs/kit';
+	import { MoonIcon, SunIcon } from 'lucide-svelte';
+
+	const submitTheme: SubmitFunction = ({ action }) => {
+		const theme = action.searchParams.get('theme');
+
+		if (theme) {
+			document.documentElement.setAttribute('data-theme', theme);
+		}
+
+		action.searchParams.append('doNotRedirect', 'true');
+	};
+</script>
+
+<form use:enhance={submitTheme} method="POST" class="flex gap-1">
+	<button
+		title="Light Mode"
+		class="bg-transparent border-none cursor-pointer p-2 rounded hover:bg-white/5"
+		formaction="/?/setTheme&theme=light&redirectTo={$page.url.pathname}"
+	>
+		<SunIcon size={18} class="text-gray-900 dark:text-gray-500" />
+	</button>
+
+	<button
+		title="Dark Mode"
+		class="bg-transparent border-none cursor-pointer p-2 rounded hover:bg-white/5"
+		formaction="/?/setTheme&theme=dark&redirectTo={$page.url.pathname}"
+	>
+		<MoonIcon size={18} class="text-gray-400 dark:text-gray-200" />
+	</button>
+</form>

@@ -5,12 +5,9 @@ tags:
   - dev
   - convenções
 categories:
-  - git
-  - dev
-  - convenções
+  - none
 date: 16/05/2022
-updated: 16/05/2022
-lang: pt-br
+draft: false
 excerpt: Como escrever bons commits para ter um versionamento mais inteligível
 ---
 
@@ -72,7 +69,7 @@ git commit -m "docs(dev): instruções de como criar novas rotas"
 git commit -m "format: adiciona linha em branco ao fim do arquivo"
 ```
 
-## 🌳 Recomendações:
+## 🌳 Recomendações
 
 - **Procure commitar suas alterações de forma frequente.**
 
@@ -90,7 +87,7 @@ git commit -m "format: aplicando formatações do prettier"
 
 - **Quando commitar, procure sempre selecionar as alterações com o menor número de dependências (`uso de código externo ao daquele arquivo`) possíveis.**
 
-## 🐸 Tipos padrões:
+## 🐸 Tipos padrões
 
 ### **feat**
 
@@ -110,7 +107,7 @@ Você deve usar o **tipo** `fix` quando for corrigir algum bug ou erro no códig
 
 **Corresponde a uma _patch version_ (0.0.x) no versionamento semântico.**
 
-#### Escopos:
+#### Escopos
 
 - Quando a correção se tratar de um erro de ortografia use o escopo `(typo)`
 - Quando a correção se tratar de um erro de cálculo matemático use o escopo `(math)`
@@ -139,7 +136,7 @@ git commit -m "fix(ui): corrige imagens esticadas"
 Trata de mudanças no estilo do código e não do estilo da aplicação.
 Formatar código, remover espaços em branco, adicionar ou remover linhas em branco, etc.
 
-#### Escopos:
+#### Escopos
 
 - Quando a for feita automaticamente use o escopo `(auto)`
 
@@ -183,7 +180,7 @@ git commit -m "refactor: troca variáveis resumidas por palavras completas"
 
 Você deve usar esse **tipo** quando adicionar algo nas documentações da sua aplicação.
 
-#### Escopos:
+#### Escopos
 
 - Use o escopo `(dev)` quando a adição for na documentação de desenvolvimento.
 - Use o escopo `(user)` quando a adição for na documentação de usuários.
@@ -219,7 +216,7 @@ git commit -m "build: altera o caminho base do vite"
 
 Use esse **tipo** para indicar que sua mudança altera ou adiciona uma dependência.
 
-#### Escopos:
+#### Escopos
 
 - Quando a dependência estiver relacionada ao npm use o escopo `(npm)`
 - Quando a dependência estiver relacionada ao composer use o escopo `(composer)`

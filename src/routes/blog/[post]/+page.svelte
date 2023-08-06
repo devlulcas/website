@@ -1,62 +1,56 @@
 <script lang="ts">
-	import CopyToClipboard from '$/lib/components/CopyToClipboard.svelte';
-	import Seo from '$/lib/components/SEO.svelte';
+	import BlogPostLayout from '$/lib/components/blog-post/blog-post-layout.svelte';
+	import PostCard from '$/lib/components/post-card/post-card.svelte';
 	import { afterNavigate } from '$app/navigation';
-	import { website } from '$lib/config/website';
-	import { ArrowUpIcon } from 'lucide-svelte';
+	import { ArrowLeftIcon, ArrowUpIcon } from 'lucide-svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	// if we came from /posts, we will use history to go back to preserve
-	// posts pagination
-	let canGoBack = false;
+	let goBackTo = '/blog';
 
 	afterNavigate(({ from }) => {
-		if (from && from.url.pathname.startsWith('/blog')) {
-			canGoBack = true;
-		}
+		goBackTo = from?.url.pathname ?? '/blog';
 	});
-
-	function goBack() {
-		if (canGoBack) {
-			history.back();
-		}
-	}
 </script>
 
-<Seo
-	seo={{
-		title: data.post.title + ' | ' + website.title,
-		description: data.post.excerpt,
-		url: `${website.url}${data.post.url}`,
-		twitter: data.post.seo.twitter.handle,
-		image: data.post.seo.openGraph,
-		type: 'article'
-	}}
-/>
+<div class="bg-background text-foreground max-w-full lg:max-w-[100ch] px-4 pt-4 pb-8">
+	<img
+		src={data.metadata.cover}
+		alt={data.metadata.title}
+		class="w-full h-auto aspect-[1200/630] object-cover rounded-lg mb-4"
+	/>
 
-<CopyToClipboard />
+	<BlogPostLayout>
+		<svelte:component this={data.component} />
+	</BlogPostLayout>
 
-<svelte:element
-	this={canGoBack ? 'button' : 'a'}
-	class="fixed bottom-2 left-2 px-3 py-2 bg-opacity-50 backdrop-blur-sm bg-gray-900 dark:bg-gray-800 rounded-md text-white"
-	href={canGoBack ? undefined : '/blog'}
-	aria-label="Go back to posts"
-	on:click={goBack}
-	on:keydown={goBack}
->
-	Voltar
-</svelte:element>
-
-<div class="content">
-	<svelte:component this={data.component} />
+	<ul class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+		{#each data.recommendations as recommendation}
+			<li>
+				<PostCard post={recommendation} />
+			</li>
+		{/each}
+	</ul>
 </div>
 
-<button
-	class="fixed flex gap-2 items-center bottom-2 right-2 px-3 py-2 bg-opacity-50 backdrop-blur-sm bg-gray-900 dark:bg-gray-800 rounded-md text-white"
-	on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+<div
+	class="flex items-center justify-between gap-4 px-2 py-2 sticky bottom-0 z-30 w-full pointer-events-none"
 >
-	<span> Ir para o topo </span>
-	<ArrowUpIcon size={18} />
-</button>
+	<a
+		class="px-4 py-2 lc-cta text-brand-50 rounded-lg rounded-bl-sm flex items-center gap-2 pointer-events-auto"
+		aria-label="Go back to posts"
+		href={goBackTo}
+	>
+		<ArrowLeftIcon size={18} />
+		Voltar
+	</a>
+
+	<button
+		class="px-4 py-2 lc-cta text-brand-50 rounded-lg rounded-br-sm flex items-center gap-2 pointer-events-auto"
+		on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+	>
+		Ir para o topo
+		<ArrowUpIcon size={18} />
+	</button>
+</div>

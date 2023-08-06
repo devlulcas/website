@@ -4,14 +4,10 @@ tags:
   - databases
   - mongodb
 categories:
-  - mongodb
-  - notes
-  - wip
-  - database
+  - none
 date: 23/04/2023
-updated: 23/04/2023
-lang: pt-br
 excerpt: Aprendendo a usar o MongoDB com o Node.js
+draft: false
 ---
 
 # Iniciando com o MongoDB
@@ -73,7 +69,7 @@ Um objeto BSON pode ter no máximo 16 megabytes (MB). A maioria dos documentos n
 
 Para isso, o MongoDB tem um tipo de dado chamado `BinData`, que é um array de bytes. Você pode usar esse tipo de dado para guardar blobs grandes. Neste caso o Mongo não vai guardar todo o seu blob em um único documento, ele vai dividir em vários documentos menores de 255 Kilobytes (KB).
 
-> tip: Considere também a possibilidade de guardar o seu blob em um serviço de armazenamento de arquivos, como o [ Amazon S3](https://aws.amazon.com/pt/s3/), e guardar apenas o link para o arquivo no MongoDB.
+> tip: Considere também a possibilidade de guardar o seu blob em um serviço de armazenamento de arquivos, como o [Amazon S3](https://aws.amazon.com/pt/s3/), e guardar apenas o link para o arquivo no MongoDB.
 
 [👉 Você poder saber mais sobre isso clicando aqui 👈](https://www.mongodb.com/developer/products/mongodb/storing-large-objects-and-files/)
 

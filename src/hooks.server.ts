@@ -1,9 +1,8 @@
-import type { Handle, RequestEvent } from '@sveltejs/kit';
-import { auth } from '$lib/server/auth';
+import type { Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
 
 // * Theme event handler, gets the data from the event and then return the user theme
-const themeHookEventHandler: Handle = ({ event, resolve }) => {
+const themeHookHandle: Handle = ({ event, resolve }) => {
 	const newTheme = event.url.searchParams.get('theme');
 
 	const actualTheme = event.cookies.get('theme');
@@ -17,15 +16,14 @@ const themeHookEventHandler: Handle = ({ event, resolve }) => {
 	return resolve(event, {
 		transformPageChunk: ({ html }) => {
 			html = html.replace('data-theme', `data-theme="${theme}"`);
-
 			return html;
 		}
 	});
 };
 
 // * i18n event handler, gets the data from the event and then return the user language
-const i18nHookEventHandler: Handle = ({ event, resolve }) => {
-	const baseLang = event.request.headers.get('accept-language')?.split('-').at(0);
+const i18nHookHandle: Handle = ({ event, resolve }) => {
+	const baseLang = event.request.headers.get('accept-language')?.split('-').at(0)?.toLowerCase();
 
 	const browserLang = baseLang === 'pt' ? 'pt-br' : 'en';
 
@@ -42,16 +40,9 @@ const i18nHookEventHandler: Handle = ({ event, resolve }) => {
 	return resolve(event, {
 		transformPageChunk: ({ html }) => {
 			html = html.replace('lang', `lang="${lang}"`);
-
 			return html;
 		}
 	});
 };
 
-// * Auth event handler, gets the data from the event and then return the user auth
-export const authHandle: Handle = async ({ event, resolve }) => {
-	event.locals.auth = auth.handleRequest(event);
-	return await resolve(event);
-};
-
-export const handle: Handle = sequence(authHandle, themeHookEventHandler, i18nHookEventHandler);
+export const handle: Handle = sequence(themeHookHandle, i18nHookHandle);

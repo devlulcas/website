@@ -1,15 +1,8 @@
-import { getCategories, getPosts } from '$/lib/data/posts';
+import { fetchPosts } from '$/lib/server/posts';
+import type { PageServerLoad } from './$types';
 
-export async function load() {
-	const posts = await getPosts();
+export const load: PageServerLoad = async () => {
+	const posts = await fetchPosts();
 
-	const categories = getCategories(posts);
-
-	const featuredPost = posts.shift() || posts[0];
-
-	return {
-		categories,
-		featuredPost,
-		posts
-	};
-}
+	return { featuredPosts: posts.slice(0, 3), posts: posts.slice(3) };
+};

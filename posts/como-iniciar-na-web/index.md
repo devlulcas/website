@@ -10,12 +10,11 @@ tags:
   - programação
   - desenvolvimento
 categories:
-  - dev
-  - iniciante
-  - javascript
+  - none
+  - css
+  - 'javascript'
 date: 27/07/2022
-updated: 27/07/2022
-lang: pt-br
+draft: false
 excerpt: Um pontapé inicial no desenvolvimento web
 ---
 
@@ -94,7 +93,7 @@ Seres humanos não lembram de números com facilidade então a gente inventou um
 
 Desse jeito ao invés de acessar [142.251.129.206](142.251.129.206) (Joga no navegador) a gente acessa [https://google.com](https://google.com).
 
-#### Links:
+#### Links
 
 - [Como funciona a internet - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/Common_questions/How_does_the_Internet_work)
 
@@ -162,7 +161,7 @@ gatinho.addEventListener('click', () => alert('Cliquei num gatinho'));
 
 Nessa época aprendi também que **Javascript não é Java e não tem nada a ver com Java**. Javascript só tem esse nome por conta de uma estratégia de marketing, seu nome real é EcmaScript e sua versão depende do ano, estamos no ES2022.
 
-#### Links:
+#### Links
 
 - [Introdução à Web - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web)
 
@@ -174,7 +173,7 @@ Para que os dois lados se entendam eles usam tem que se comunicar com algumas re
 
 O mais comum na web é o HTTP.
 
-#### Links:
+#### Links
 
 - [Cliente e servidor - MDN](https://developer.mozilla.org/pt-BR/docs/Learn/Server-side/First_steps/Client-Server_overview)
 
@@ -184,7 +183,7 @@ O mais comum na web é o HTTP.
 
 > Resumo: Hypertext Transfer Protocol. É um protocolo que permite a obtenção de recursos como imagens, HTML, CSS, Javascript, texto e qualquer outra coisa na verdade.
 
-#### Links:
+#### Links
 
 - [Uma visão geral do HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview)
 - [Entenda o que é HTTP](https://rockcontent.com/br/blog/http/)
@@ -252,7 +251,7 @@ Depois você pode ir se aperfeiçoando e pode tirar um tempo para aprender sobre
 
 Crie projetos... muitos.
 
-#### Links:
+#### Links
 
 - [FreeCodeCamp](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/)
 

@@ -1,78 +1,65 @@
 <script lang="ts">
-	import Carousel from '$/lib/components/Carousel.svelte';
-	import Divider from '$/lib/components/Divider.svelte';
-	import FeaturedPost from '$/lib/components/FeaturedPost.svelte';
-	import FeaturedProjectPreview from '$/lib/components/FeaturedProjectPreview.svelte';
-	import Hero from '$/lib/components/Hero.svelte';
-	import PostCategoryList from '$/lib/components/PostCategoryList.svelte';
-	import PostPreview from '$/lib/components/PostPreview.svelte';
-	import Seo from '$/lib/components/SEO.svelte';
-	import SectionTitle from '$/lib/components/SectionTitle.svelte';
-	import Skills from '$/lib/components/Skills.svelte';
-	import WalkingPenguin from '$/lib/components/WalkingPenguin.svelte';
-	import ContactForm from '$lib/components/ContactForm.svelte';
-	import { t } from '$lib/i18n';
-	import { Newspaper, Tag, TerminalSquare } from 'lucide-svelte';
-	import type { PageServerData } from './$types';
+	import ContactForm from '$/lib/components/contact/contact-form.svelte';
+	import ContainerSection from '$/lib/components/container-section/default.svelte';
+	import SeeMoreLink from '$/lib/components/container-section/see-more-link.svelte';
+	import FeaturedPostCard from '$/lib/components/post-card/featured-post-card.svelte';
+	import PostCard from '$/lib/components/post-card/post-card.svelte';
+	import FeaturedProjectCard from '$/lib/components/project-card/featured-project-card.svelte';
+	import ProjectCard from '$/lib/components/project-card/project-card.svelte';
+	import { ArrowRight, FeatherIcon, GithubIcon } from 'lucide-svelte';
+	import type { PageData } from './$types';
 
-	export let data: PageServerData;
+	export let data: PageData;
 </script>
 
-<Seo />
+<main class="lc-grid px-4 lg:px-8 pb-8">
+	<ContainerSection id="posts" title="Blog posts">
+		<p class="text-lg text-muted-foreground mb-4">Some of my thoughts and experiences.</p>
 
-<Hero />
+		<FeaturedPostCard post={data.featuredPosts[0]} />
 
-<section class="max-w-3xl py-8 space-y-8">
-	<SectionTitle as="h2" title={$t('homepage.titles.featuredPosts')} icon={Newspaper} />
+		<div class="h-[1px] w-full bg-brand-500 dark:bg-brand-800 rounded-full my-4" />
 
-	{#if data.featuredPost}
-		<FeaturedPost post={data.featuredPost} />
-	{/if}
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			{#each data.featuredPosts as featuredPost}
+				<PostCard post={featuredPost} />
+			{/each}
+		</div>
 
-	{#each data.posts as post}
-		<PostPreview {post} />
-	{/each}
-</section>
+		<SeeMoreLink href="/blog">
+			<FeatherIcon slot="start-icon" name="arrow-right" size={18} />
+			See more posts
+			<ArrowRight slot="end-icon" name="arrow-right" size={18} />
+		</SeeMoreLink>
+	</ContainerSection>
 
-<section>
-	<SectionTitle as="h3" title={$t('homepage.titles.postCategories')} icon={Tag} />
-	<PostCategoryList categories={data.categories} />
-</section>
+	<ContainerSection id="featured-projects" title="Featured Projects">
+		<p class="text-lg text-muted-foreground">
+			These are some of my favorite projects that I've worked on.
+		</p>
 
-<Divider />
+		<div class="flex flex-col gap-6 mt-4">
+			{#each data.featuredProjects as project}
+				<FeaturedProjectCard {project} />
+			{/each}
+		</div>
+	</ContainerSection>
 
-<section>
-	<SectionTitle
-		id="projects"
-		as="h2"
-		title={$t('homepage.titles.featuredProjects')}
-		icon={TerminalSquare}
-	/>
+	<ContainerSection id="projects" title="Projects">
+		<div class="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+			{#each data.projects as project}
+				<ProjectCard {project} />
+			{/each}
+		</div>
 
-	<ul class="flex flex-col gap-4">
-		{#each data.pinnedProjects as pinnedProject, index}
-			<li>
-				<FeaturedProjectPreview project={pinnedProject} />
-			</li>
-		{/each}
-	</ul>
-</section>
+		<SeeMoreLink href="https://github.com/devlulcas/">
+			<GithubIcon slot="start-icon" name="arrow-right" size={18} />
+			See more projects
+			<ArrowRight slot="end-icon" name="arrow-right" size={18} />
+		</SeeMoreLink>
+	</ContainerSection>
 
-<Divider />
-
-<SectionTitle as="h2" title={$t('homepage.titles.otherProjects')} icon={TerminalSquare} />
-
-<Carousel projects={data.otherProjects} />
-
-<section>
-	<SectionTitle id="skills" as="h2" title={$t('homepage.titles.skills')} icon={TerminalSquare} />
-	<Skills />
-</section>
-
-<div class="mt-2 flex flex-col w-full h-[80vh]">
-	<ContactForm />
-
-	<div class="w-full relative">
-		<WalkingPenguin />
-	</div>
-</div>
+	<ContainerSection id="contact" title="Contact" class="flex flex-col h-[--safe-area-view-height]">
+		<ContactForm />
+	</ContainerSection>
+</main>

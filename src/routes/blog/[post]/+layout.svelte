@@ -1,6 +1,3 @@
-<script>
-	import '$lib/assets/styles/post.css';
-	import '$lib/assets/styles/code.css';
-</script>
-
-<slot />
+<main class="w-full flex items-center flex-col relative">
+	<slot />
+</main>

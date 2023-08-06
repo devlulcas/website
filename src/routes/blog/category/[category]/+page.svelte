@@ -1,26 +1,17 @@
 <script lang="ts">
-	import PostPreview from '$/lib/components/PostPreview.svelte';
-	import SectionTitle from '$/lib/components/SectionTitle.svelte';
-	import Seo from '$/lib/components/SEO.svelte';
-	import { website } from '$/lib/config/website';
-	import { Search } from 'lucide-svelte';
-	import type { PageServerData } from './$types';
+	import ContainerSection from '$/lib/components/container-section/default.svelte';
+	import PostCard from '$/lib/components/post-card/post-card.svelte';
+	import type { PageData } from './$types';
 
-	export let data: PageServerData;
+	export let data: PageData;
 </script>
 
-<Seo
-	seo={{
-		title: 'Posts categories | ' + website.title,
-		description: "Posts about web development, programming, and other topics I'm interested in.",
-		url: `${website.url}/blog/category/${data.category}`
-	}}
-/>
-
-<main>
-	<SectionTitle icon={Search} title={`Postagens em "${data.category}"`} />
-
-	{#each data.posts as post}
-		<PostPreview {post} />
-	{/each}
+<main class="lc-grid px-4 lg:px-8 pb-8 min-h-[--safe-area-view-height]">
+	<ContainerSection id="title" title="Results for {data.category}">
+		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			{#each data.posts as post}
+				<PostCard {post} class="mb-8 border rounded-md p-2" />
+			{/each}
+		</div>
+	</ContainerSection>
 </main>

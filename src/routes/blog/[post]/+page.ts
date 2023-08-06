@@ -15,7 +15,8 @@ export const load: PageLoad = async ({ data }) => {
 	const component = await import(`./../../../../posts/${postPath}/index.md`);
 
 	return {
-		post: data.post,
-		component: component.default
+		metadata: data.post,
+		component: component.default,
+		recommendations: data.recommendations
 	};
 };
