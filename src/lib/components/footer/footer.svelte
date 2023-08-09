@@ -1,44 +1,39 @@
 <script lang="ts">
-	import { GithubIcon, HeartHandshakeIcon, LinkedinIcon } from 'lucide-svelte';
+	import { t } from '$/lib/i18n';
+	import Socials from './socials.svelte';
 </script>
 
-<div class="h-[--footer-height] lc-cta border-t">
-	<footer
-		class="h-[98%] flex flex-col items-center justify-center gap-2 p-3 bg-card text-card-foreground"
-	>
-		<p class="flex gap-2 items-center flex-wrap">
-			Código disponível em
-			<a href="/" target="_blank" rel="noopener noreferrer"> github.com/devlulcas </a>
-			using
-			<a href="https://svelte.dev" target="_blank" rel="noopener noreferrer"> Svelte </a>
-			<HeartHandshakeIcon class="text-brand-700 dark:text-brand-500" />
-		</p>
+<footer
+	class="h-[--footer-height] flex flex-col items-center justify-center gap-2 p-3 text-brand-50 font-bold"
+>
+	<p class="flex gap-2 items-center flex-wrap">
+		<a href="/" target="_blank" rel="noopener noreferrer">
+			{$t('common.footer.codeAvailableOn')} github.com/devlulcas/website
+		</a>
+	</p>
 
-		<p class="flex items-center gap-2">
-			<a
-				class="flex items-center gap-2"
-				href="https://www.linkedin.com/in/lucasalvesregodev/"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<LinkedinIcon class="text-brand-700 dark:text-brand-500" />
-				Lucas Alves Rego
-			</a>
+	<Socials />
+</footer>
 
-			<span> &nbsp;|&nbsp; </span>
+<style lang="postcss">
+	footer {
+		position: relative;
+		background-size: 100% 100%;
+		background: linear-gradient(
+			76.35deg,
+			var(--brand-dark) 5%,
+			var(--brand-light) 35%,
+			var(--brand-dark) 95%
+		);
+		animation: background ease 2s infinite;
+	}
 
-			<a
-				class="flex items-center gap-2"
-				href="https://www.github.com/devlulcas"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<GithubIcon class="text-brand-700 dark:text-brand-500" />
-
-				github.com/devlulcas
-			</a>
-		</p>
-	</footer>
-
-	<div class="w-full h-2" />
-</div>
+	@keyframes background {
+		from {
+			background-position: 0% 0%;
+		}
+		to {
+			background-position: 100% 100%;
+		}
+	}
+</style>
