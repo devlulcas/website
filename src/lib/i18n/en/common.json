@@ -1,0 +1,16 @@
+{
+	"header": {
+		"home": "Home",
+		"about": "About",
+		"contact": "Contact",
+		"blog": "Blog",
+		"themes": {
+			"light": "Light Theme",
+			"dark": "Dark Theme"
+		},
+		"languages": "Languages"
+	},
+	"footer": {
+		"codeAvailableOn": "Code available on"
+	}
+}

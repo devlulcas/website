@@ -9,9 +9,13 @@ export type NavigationLink = {
 
 export const navigationLinks = derived(page, ($page) => {
 	return [
-		{ label: 'Home', href: '/', isActive: $page.url.pathname === '/' },
-		{ label: 'About', href: '/about', isActive: $page.url.pathname === '/about' },
-		{ label: 'Contact', href: '/#contact', isActive: $page.url.pathname === '/contact' },
-		{ label: 'Blog', href: '/blog', isActive: $page.url.pathname === '/blog' }
+		{ label: 'common.header.home', href: '/', isActive: $page.url.pathname === '/' },
+		{ label: 'common.header.about', href: '/about', isActive: $page.url.pathname === '/about' },
+		{
+			label: 'common.header.contact',
+			href: '/#contact',
+			isActive: $page.url.pathname === '/contact'
+		},
+		{ label: 'common.header.blog', href: '/blog', isActive: $page.url.pathname === '/blog' }
 	];
 });

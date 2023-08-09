@@ -4,13 +4,8 @@ import { sequence } from '@sveltejs/kit/hooks';
 // * Theme event handler, gets the data from the event and then return the user theme
 const themeHookHandle: Handle = ({ event, resolve }) => {
 	const newTheme = event.url.searchParams.get('theme');
-
-	const actualTheme = event.cookies.get('theme');
-
-	const defaultTheme = 'dark';
-
-	const selectedTheme = newTheme || actualTheme || defaultTheme;
-
+	const currentTheme = event.cookies.get('theme');
+	const selectedTheme = newTheme || currentTheme || 'dark';
 	const theme = selectedTheme === 'dark' ? 'dark' : 'light';
 
 	return resolve(event, {
@@ -23,19 +18,27 @@ const themeHookHandle: Handle = ({ event, resolve }) => {
 
 // * i18n event handler, gets the data from the event and then return the user language
 const i18nHookHandle: Handle = ({ event, resolve }) => {
-	const baseLang = event.request.headers.get('accept-language')?.split('-').at(0)?.toLowerCase();
+	const acceptLanguageHeader = event.request.headers.get('accept-language');
 
-	const browserLang = baseLang === 'pt' ? 'pt-br' : 'en';
+	// Get the default language from the browser
+	const defaultLanguage = acceptLanguageHeader?.split(',')[0].split('-')[0];
+	const newLanguageSetting = event.url.searchParams.get('lang');
+	const currentLanguageSetting = event.cookies.get('lang');
 
-	const newLang = event.url.searchParams.get('lang');
+	// ! Debug
+	console.table({
+		defaultLanguage,
+		newLanguageSetting,
+		currentLanguageSetting
+	});
 
-	const actualLang = event.cookies.get('lang');
+	// Pick language by priority
+	const selectedLang = newLanguageSetting || currentLanguageSetting || defaultLanguage || 'en';
 
-	const defaultLang = 'en';
+	const lang = selectedLang === 'pt' ? 'pt' : 'en';
 
-	const selectedLang = newLang || actualLang || browserLang || defaultLang;
-
-	const lang = selectedLang === 'pt-br' ? 'pt-br' : 'en';
+	// Set in the cookie the language
+	event.cookies.set('lang', lang);
 
 	return resolve(event, {
 		transformPageChunk: ({ html }) => {

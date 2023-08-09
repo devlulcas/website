@@ -1,9 +1,10 @@
 <script lang="ts">
+	import unitedStatesOfAmericaSvg from '$/lib/assets/images/flags/en.svg';
+	import brazilSvg from '$/lib/assets/images/flags/pt-br.svg';
 	import { t } from '$/lib/i18n';
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 	import type { SubmitFunction } from '@sveltejs/kit';
-	import { MoonIcon, SunIcon } from 'lucide-svelte';
 
 	const submitTheme: SubmitFunction = ({ action }) => {
 		const theme = action.searchParams.get('theme');
@@ -16,20 +17,25 @@
 	};
 </script>
 
-<form use:enhance={submitTheme} method="POST" class="flex gap-1">
+<form
+	title={$t('common.header.languages')}
+	use:enhance={submitTheme}
+	method="POST"
+	class="flex gap-1"
+>
 	<button
-		title={$t('common.header.themes.light')}
+		title="English"
 		class="bg-transparent border-none cursor-pointer p-2 rounded hover:bg-white/5"
-		formaction="/?/setTheme&theme=light&redirectTo={$page.url.pathname}"
+		formaction="/?/setLocale&lang=en&redirectTo={$page.url.pathname}"
 	>
-		<SunIcon size={18} class="text-gray-900 dark:text-gray-500" />
+		<img src={unitedStatesOfAmericaSvg} alt="USA Flag" class="w-4 h-4" />
 	</button>
 
 	<button
-		title={$t('common.header.themes.dark')}
+		title="Português brasileiro"
 		class="bg-transparent border-none cursor-pointer p-2 rounded hover:bg-white/5"
-		formaction="/?/setTheme&theme=dark&redirectTo={$page.url.pathname}"
+		formaction="/?/setLocale&lang=pt&redirectTo={$page.url.pathname}"
 	>
-		<MoonIcon size={18} class="text-gray-400 dark:text-gray-200" />
+		<img src={brazilSvg} alt="Brazil flag" class="w-4 h-4" />
 	</button>
 </form>

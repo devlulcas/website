@@ -1,0 +1,49 @@
+{
+	"about": {
+		"title": "About",
+		"description": "I'm a web developer from Brazil. I love to create things for the web and experiment with new technologies.",
+		"callToAction": {
+			"contact": "Contact me",
+			"or": "or",
+			"seeMore": "See more about me"
+		}
+	},
+	"blog": {
+		"title": "Blog posts",
+		"description": "Some of my thoughts, ideas and experiences.",
+		"seeMore": "See more blog posts"
+	},
+	"featuredProjects": {
+		"title": "Featured projects",
+		"description": "These are some of my favorite projects that I've worked on."
+	},
+	"projects": {
+		"title": "Projects",
+		"description": "I have worked on many projects over the years. Here are some of them.",
+		"seeMore": "See more projects and experiments"
+	},
+	"contact": {
+		"description": "You can contact me by email or on social media.",
+		"title": "Contact",
+		"form": {
+			"name": {
+				"label": "Name",
+				"placeholder": "Your name"
+			},
+			"email": {
+				"label": "Email",
+				"placeholder": "email@example.com"
+			},
+			"message": {
+				"label": "Message",
+				"placeholder": "Say something..."
+			},
+			"submit": {
+				"idle": "Send",
+				"submitting": "Sending...",
+				"success": "Sent!",
+				"failure": "Oops! Something went wrong. Please try again."
+			}
+		}
+	}
+}
