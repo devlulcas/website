@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/devlulcas/devlulcas.github.io/main/.github/images/logo.png" alt="logo"/>
+  <img src="/static/images/og-image.webp" alt="logo"/>
 </div>
 
 ## 👋 WHAT I DO
@@ -30,12 +30,6 @@ You can go to my website and contact me or:
 - My first programming language was Python
 - My first JS framework was Svelte
 - I like frogs 🐸 and Linux🐧
-
-## 🖌️ TODO LIST
-
-- [ ] Add my bookmarks page
-- [ ] Fill the gaps (add stuff, personality)
-- [ ] Do I need something like supabase?
 
 ## 🧞 Commands
 
