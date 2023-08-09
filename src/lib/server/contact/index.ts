@@ -1,4 +1,4 @@
-import { MY_OWN_EMAIL, NODE_ENV, RESEND_API_KEY } from '$env/static/private';
+import { MY_OWN_EMAIL, RESEND_API_KEY } from '$env/static/private';
 import { Resend } from 'resend';
 import { z } from 'zod';
 
@@ -20,11 +20,6 @@ type EmailNotificationResult = {
 export async function sendEmailNotification(
 	notification: EmailNotification
 ): Promise<EmailNotificationResult> {
-	if (NODE_ENV === 'development') {
-		console.log('Email notification', notification);
-		return { success: true };
-	}
-
 	try {
 		await resend.sendEmail({
 			from: notification.from,

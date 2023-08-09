@@ -25,13 +25,6 @@ const i18nHookHandle: Handle = ({ event, resolve }) => {
 	const newLanguageSetting = event.url.searchParams.get('lang');
 	const currentLanguageSetting = event.cookies.get('lang');
 
-	// ! Debug
-	console.table({
-		defaultLanguage,
-		newLanguageSetting,
-		currentLanguageSetting
-	});
-
 	// Pick language by priority
 	const selectedLang = newLanguageSetting || currentLanguageSetting || defaultLanguage || 'en';
 

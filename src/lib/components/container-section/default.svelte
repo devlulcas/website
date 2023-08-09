@@ -2,7 +2,7 @@
 	type $$Props = { title: string; id: string; class?: string } | { class?: string };
 
 	export let title = '';
-	
+
 	export let id = '';
 
 	let className = '';
