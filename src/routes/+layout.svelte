@@ -1,27 +1,23 @@
 <script lang="ts">
 	import Footer from '$/lib/components/footer/footer.svelte';
 	import Header from '$/lib/components/header/header.svelte';
+	import NavigationProgressBar from '$/lib/components/navigation-progress-bar/navigation-progress-bar.svelte';
 	import DefaultPageTransition from '$/lib/components/page-transition/default-page-transition.svelte';
-	import { navigating } from '$app/stores';
+	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
 	import '$lib/assets/styles/global.css';
-	import '$lib/assets/styles/nprogress.css';
-	import NProgress from 'nprogress';
+	import '$lib/assets/styles/helpers.css';
 	import type { LayoutData } from './$types';
 
-	NProgress.configure({
-		minimum: 0.16
-	});
-
-	$: {
-		if ($navigating) {
-			NProgress.start();
-		} else NProgress.done();
-	}
 	export let data: LayoutData;
 </script>
 
+<NavigationProgressBar />
+
+<SeoHead />
+
+<Header />
+
 <DefaultPageTransition pathname={data.pathname}>
-	<Header />
 	<slot />
 	<Footer />
 </DefaultPageTransition>
