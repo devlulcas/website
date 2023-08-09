@@ -3,15 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+	/* Theme independent variables */
 	:root {
+		/* Height variables */
 		--footer-height: 8rem;
 		--header-height: 4rem;
-		--safe-area-view-height: calc(100dvh - var(--header-height) - var(--footer-height));
+		--view-height: calc(100dvh - var(--header-height) - var(--footer-height));
+
+		/* Smooth stuff */
 		scroll-padding-top: var(--header-height);
+		scroll-behavior: smooth;
+
+		/* I don't like horizontal scrolling */
 		max-width: 100vw;
 		overflow-x: hidden;
 
+		/* Brand colors - I like green */
 		--brand: hsl(155, 100%, 45%);
+		--brand-light: hsl(132, 100%, 45%);
+		--brand-dark: hsl(155, 100%, 25%);
+
 		--brand-50: #e5ffeb;
 		--brand-100: #c7ffd2;
 		--brand-200: #8fffa5;
@@ -23,7 +34,10 @@
 		--brand-800: #005c12;
 		--brand-900: #002e09;
 		--brand-950: #001a04;
+	}
 
+	/* Default theme colors */
+	:root {
 		--background: 0 0% 100%;
 		--foreground: 240 10% 3.9%;
 
@@ -44,9 +58,11 @@
 
 		--accent: 240 4.8% 95.9%;
 		--accent-foreground: 240 5.9% 10%;
+
+		--scrollbar: 0 0% 48%;
 	}
 
-	.dark,
+	/* Dark theme colors */
 	[data-theme='dark'] {
 		--background: 240 10% 3.9%;
 		--foreground: 0 0% 98%;
@@ -68,66 +84,35 @@
 
 		--accent: 240 3.7% 15.9%;
 		--accent-foreground: 0 0% 98%;
+
+		--scrollbar: 0 0% 98%;
 	}
 
+	/* Default styling */
 	* {
-		@apply border-border;
+		border-color: hsl(var(--border));
 	}
 
 	body {
-		@apply bg-background text-foreground;
-	}
-}
-
-.lc-grid {
-	display: grid;
-	grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-
-.lc-cta {
-	--brand: hsl(155, 100%, 45%);
-	--brand-light: hsl(132, 100%, 45%);
-	--brand-dark: hsl(155, 100%, 25%);
-
-	overflow: hidden;
-	position: relative;
-
-	&::before {
-		content: '';
-		position: absolute;
-		width: 300%;
-		height: 100%;
-		z-index: -1;
-		top: 0;
-		left: 0;
-		transition: transform 500ms ease;
-		background: linear-gradient(
-			76.35deg,
-			var(--brand-dark) 5%,
-			var(--brand-light) 35%,
-			var(--brand-dark) 95%
-		);
+		background-color: hsl(var(--background));
+		color: hsl(var(--foreground));
 	}
 
-	&:hover {
-		&::before {
-			transform: translateX(-35%);
+	/* Custom Scrollbar */
+
+	::-webkit-scrollbar {
+		width: 0.8rem;
+	}
+
+	::-webkit-scrollbar-track {
+		background: hsl(var(--scrollbar) / 25%);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: hsl(var(--scrollbar) / 45%);
+
+		&:hover {
+			background: hsl(var(--scrollbar) / 85%);
 		}
 	}
-}
-
-::-webkit-scrollbar {
-	@apply h-2;
-}
-
-::-webkit-scrollbar-track {
-	@apply bg-neutral-200;
-}
-
-::-webkit-scrollbar-thumb {
-	@apply bg-neutral-400;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	@apply bg-neutral-600;
 }
