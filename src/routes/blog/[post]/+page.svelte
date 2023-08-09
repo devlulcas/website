@@ -38,7 +38,7 @@
 	class="flex items-center justify-between gap-4 px-2 py-2 sticky bottom-0 z-30 w-full pointer-events-none"
 >
 	<a
-		class="px-4 py-2 lc-cta text-brand-50 rounded-lg rounded-bl-sm flex items-center gap-2 pointer-events-auto"
+		class="px-4 py-2 lc-gradient text-brand-50 rounded-lg rounded-bl-sm flex items-center gap-2 pointer-events-auto"
 		aria-label="Go back to posts"
 		href={goBackTo}
 	>
@@ -47,7 +47,7 @@
 	</a>
 
 	<button
-		class="px-4 py-2 lc-cta text-brand-50 rounded-lg rounded-br-sm flex items-center gap-2 pointer-events-auto"
+		class="px-4 py-2 lc-gradient text-brand-50 rounded-lg rounded-br-sm flex items-center gap-2 pointer-events-auto"
 		on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 	>
 		Ir para o topo

@@ -1,11 +1,12 @@
 <script lang="ts">
+	import errorGif from '$/lib/assets/images/error.gif';
 	import { page } from '$app/stores';
 </script>
 
 <main
-	class="min-h-[--safe-area-view-height] flex flex-col items-center justify-center w-full px-4 py-8 gap-12"
+	class="min-h-[--view-height] flex flex-col items-center justify-center w-full px-4 py-8 gap-12"
 >
-	<img loading="lazy" src="/error.gif" alt={$page.status.toString()} />
+	<img loading="lazy" src={errorGif} alt={$page.status.toString()} />
 
 	<h2 class="text-4xl font-bold text-center text-gray-800 dark:text-gray-100">
 		{$page.status} - {$page.error?.message}

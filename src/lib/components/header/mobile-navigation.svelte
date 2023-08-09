@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { t } from '$/lib/i18n';
 	import { fade, fly } from 'svelte/transition';
 	import { clickOutside } from './click-outside';
 	import { focusTrap } from './focus-trap';
@@ -11,7 +12,7 @@
 	};
 
 	const getDelay = (index: number) => {
-		return Math.abs(index - $navigationLinks.length) * 75;
+		return Math.abs(index - $navigationLinks.length) * 75 + 100;
 	};
 </script>
 
@@ -33,11 +34,11 @@
 			{#each $navigationLinks as link, index}
 				<a
 					on:click={closeModal}
-					in:fly={{ y: 100, duration: 350, delay: getDelay(index) + 100 }}
+					in:fly={{ y: 100, duration: 350, delay: getDelay(index) }}
 					href={link.href}
 					class="flex items-center bg-background text-foreground px-4 p-2 h-12 border rounded-xl text-sm font-medium"
 				>
-					{link.label}
+					{$t(link.label)}
 				</a>
 			{/each}
 		</nav>

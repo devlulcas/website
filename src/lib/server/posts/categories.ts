@@ -1,4 +1,4 @@
-import { AVAILABLE_POST_CATEGORIES } from '$/lib/assets/config';
+import { availablePostCategories } from '$/lib/assets/config';
 import type { PostMetadata } from './fetch-posts';
 import type { RawPostSchema } from './raw-post-schema';
 
@@ -24,5 +24,5 @@ export function filterPostsByCategory(posts: PostMetadata[], category: string): 
 }
 
 export function isValidCategory(category: string) {
-	return AVAILABLE_POST_CATEGORIES.includes(category.toLowerCase());
+	return availablePostCategories.includes(category.toLowerCase());
 }

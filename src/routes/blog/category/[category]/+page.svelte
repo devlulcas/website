@@ -6,7 +6,7 @@
 	export let data: PageData;
 </script>
 
-<main class="lc-grid px-4 lg:px-8 pb-8 min-h-[--safe-area-view-height]">
+<main class="lc-grid px-4 lg:px-8 pb-8 min-h-[--view-height]">
 	<ContainerSection id="title" title="Results for {data.category}">
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 			{#each data.posts as post}

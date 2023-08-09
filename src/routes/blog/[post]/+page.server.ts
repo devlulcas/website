@@ -2,7 +2,7 @@ import { fetchPosts, getPostRecommendations } from '$/lib/server/posts';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params, url }) => {
+export const load: PageServerLoad = async ({ params }) => {
 	const { post: slug } = params;
 
 	const posts = await fetchPosts();

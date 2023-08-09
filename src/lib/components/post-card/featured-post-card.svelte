@@ -17,7 +17,7 @@
 			alt={post.title}
 		/>
 
-		<div class="col-span-3 lg:col-span-1 p-[2px] lc-cta rounded-lg">
+		<div class="col-span-3 lg:col-span-1 p-[2px] lc-gradient rounded-lg">
 			<section class="bg-background rounded-md h-full shadow-lg p-3 border flex flex-col">
 				<PostData {post} showDescription />
 			</section>

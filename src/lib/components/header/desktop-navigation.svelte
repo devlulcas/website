@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { t } from '$/lib/i18n';
 	import { navigationLinks } from './header.store';
 
 	let indicadorElement: HTMLSpanElement;
@@ -38,7 +39,7 @@
 			class:lc-active={link.isActive}
 			class="hidden relative lg:block px-3 py-2 rounded-xl text-sm font-medium"
 		>
-			{link.label}
+			{$t(link.label)}
 		</a>
 	{/each}
 
