@@ -43,6 +43,7 @@
 	"dependencies": {
 		"@notionhq/client": "^2.2.9",
 		"franc-min": "^6.1.0",
+		"fzf": "^0.5.2",
 		"lucide-svelte": "^0.263.0",
 		"nprogress": "^0.2.0",
 		"reading-time-estimator": "^1.9.0",
