@@ -19,7 +19,7 @@
 
 		<FeaturedPostCard post={data.featuredPost} />
 
-		<div class="h-[1px] w-full bg-brand-500 dark:bg-brand-800 rounded-full my-4" />
+		<div class="h-[1px] lc-line w-full bg-brand-500 dark:bg-brand-800 rounded-full my-4" />
 
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 			{#each data.recentPosts as recentPost}
@@ -60,11 +60,7 @@
 		</SeeMoreLink>
 	</ContainerSection>
 
-	<ContainerSection
-		id="contact"
-		title={$t('home.contact.title')}
-		class="flex flex-col h-[--view-height]"
-	>
+	<ContainerSection id="contact" title={$t('home.contact.title')} class="flex flex-col mb-8 h-[--view-height]">
 		<ContactForm />
 	</ContainerSection>
 </main>

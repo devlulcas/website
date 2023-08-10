@@ -18,11 +18,7 @@
 				class="p-2 bg-background w-full outline-none"
 			/>
 
-			<button
-				title="Search"
-				type="submit"
-				class="p-2 bg-background focus:bg-transparent outline-none"
-			>
+			<button title="Search" type="submit" class="p-2 bg-background focus:bg-transparent outline-none">
 				<SearchIcon class="w-6 h-6" />
 			</button>
 		</div>

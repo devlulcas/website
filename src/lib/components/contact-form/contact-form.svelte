@@ -25,12 +25,7 @@
 </script>
 
 <div class="flex flex-col lg:flex-row h-full gap-4">
-	<form
-		class="flex flex-col gap-4 flex-1"
-		method="POST"
-		action="/?/sendMessage"
-		use:enhance={contactEnhance}
-	>
+	<form class="flex flex-col gap-4 flex-1" method="POST" action="/?/sendMessage" use:enhance={contactEnhance}>
 		<div>
 			<label class="mb-2 text-muted-foreground flex flex-col w-full" for="name">
 				{$t('home.contact.form.name.label')}
@@ -72,14 +67,7 @@
 			/>
 		</div>
 
-		<input
-			type="text"
-			name="avocado"
-			class="hidden"
-			aria-hidden="true"
-			tabindex="-1"
-			autocomplete="off"
-		/>
+		<input type="text" name="avocado" class="hidden" aria-hidden="true" tabindex="-1" autocomplete="off" />
 
 		{#if formState === 'submitting'}
 			<img
@@ -108,21 +96,19 @@
 		{/if}
 
 		<button
-			class="h-12 lc-gradient mt-auto w-full text-white rounded-lg p-2 font-bold hover:bg-brand-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-white disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-brand-400 disabled:hover:bg-brand-400"
+			class="lc-gradient mt-auto h-12 w-full text-white rounded-lg p-2 font-bold focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-white disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-brand-400 disabled:hover:bg-brand-400"
 			type="submit"
 			disabled={formState === 'submitting'}
 		>
-			{formState === 'submitting'
-				? $t('home.contact.form.submit.submitting')
-				: $t('home.contact.form.submit.idle')}
+			{formState === 'submitting' ? $t('home.contact.form.submit.submitting') : $t('home.contact.form.submit.idle')}
 		</button>
 	</form>
 
-	<div class="rounded-lg flex flex-col justify-center items-center flex-1 lc-gradient">
+	<div class="rounded-lg flex flex-col justify-center items-center flex-1">
 		<img
 			alt="a simple, hand-drawn illustration of myself writing the bits for 'hi!' with a pencil"
 			src={customContactDrawingSvg}
-			class="rounded-lg w-auto h-64 lg:w-10/12 lg:h-auto"
+			class="rounded-lg w-auto h-64 lg:w-10/12 lg:h-auto mix-blend-difference"
 		/>
 	</div>
 </div>

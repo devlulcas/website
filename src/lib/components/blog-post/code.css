@@ -17,8 +17,7 @@ code[class*='language-'] {
 	color: #c9d1d9;
 	font-size: 1rem;
 	text-shadow: none;
-	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-		'Courier New', monospace;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;

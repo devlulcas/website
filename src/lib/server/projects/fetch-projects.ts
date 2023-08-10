@@ -23,8 +23,7 @@ type GithubProjectsResponse = {
 	};
 };
 
-type GithubProjectNode =
-	GithubProjectsResponse['data']['viewer']['repositories']['edges'][0]['node'];
+type GithubProjectNode = GithubProjectsResponse['data']['viewer']['repositories']['edges'][0]['node'];
 
 /**
  * Returns an array of images to be used in the project orderer by priority

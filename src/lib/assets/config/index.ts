@@ -18,8 +18,7 @@ import typescript from '$/lib/assets/images/skills/typescript.svg';
 export const website = {
 	title: 'Lucas Rego',
 	author: 'Lucas Alves Rego - @devlulcas',
-	description:
-		'I like to build things. Full-stack developer and curious about everything related to technology.',
+	description: 'I like to build things. Full-stack developer and curious about everything related to technology.',
 	url: 'https://lucasrego.tech',
 	image: 'https://lucasrego.tech/images/og-image.webp',
 	lang: 'en',

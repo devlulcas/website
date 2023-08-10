@@ -3,9 +3,7 @@
 	import Socials from './socials.svelte';
 </script>
 
-<footer
-	class="h-[--footer-height] flex flex-col items-center justify-center gap-2 p-3 text-brand-50 font-bold"
->
+<footer class="h-[--footer-height] flex flex-col items-center justify-center gap-2 p-3 text-brand-50 font-bold">
 	<p class="flex gap-2 items-center flex-wrap">
 		<a href="/" target="_blank" rel="noopener noreferrer">
 			{$t('common.footer.codeAvailableOn')} github.com/devlulcas/website
@@ -18,14 +16,19 @@
 <style lang="postcss">
 	footer {
 		position: relative;
-		background-size: 100% 100%;
-		background: linear-gradient(
-			76.35deg,
-			var(--brand-dark) 5%,
-			var(--brand-light) 35%,
-			var(--brand-dark) 95%
-		);
-		animation: background ease 2s infinite;
+		z-index: 1;
+		background: #000;
+
+		&::before {
+			z-index: -1;
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(75deg, var(--brand-dark) 5%, var(--brand-light) 35%, var(--brand-dark) 95%);
+			animation: background ease 4s infinite;
+			background-size: 400% 400%;
+			opacity: 0.25;
+		}
 	}
 
 	@keyframes background {

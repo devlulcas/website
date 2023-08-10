@@ -17,12 +17,7 @@
 	};
 </script>
 
-<form
-	title={$t('common.header.languages')}
-	use:enhance={submitTheme}
-	method="POST"
-	class="flex gap-1"
->
+<form title={$t('common.header.languages')} use:enhance={submitTheme} method="POST" class="flex gap-1">
 	<button
 		title="English"
 		class="bg-transparent border-none cursor-pointer p-2 rounded hover:bg-white/5"

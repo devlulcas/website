@@ -17,9 +17,7 @@ type EmailNotificationResult = {
 	error?: string;
 };
 
-export async function sendEmailNotification(
-	notification: EmailNotification
-): Promise<EmailNotificationResult> {
+export async function sendEmailNotification(notification: EmailNotification): Promise<EmailNotificationResult> {
 	try {
 		await resend.sendEmail({
 			from: notification.from,

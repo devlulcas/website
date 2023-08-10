@@ -1,6 +1,6 @@
 /* Make clicks pass-through */
 #nprogress {
-	--bar-color: var(--brand);
+	--bar-color: linear-gradient(90deg, var(--brand-400), var(--brand) 50%, var(--brand-800));
 	pointer-events: none;
 }
 

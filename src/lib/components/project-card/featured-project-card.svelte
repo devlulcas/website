@@ -14,11 +14,7 @@
 				class="w-12 relative transition-all duration-300 ease-in-out rounded-xl overflow-hidden border shadow-lg"
 				class:w-full={expandedImageIndex === index}
 			>
-				<img
-					class="absolute inset-0 w-full h-full object-cover object-center"
-					src={image}
-					alt={project.name}
-				/>
+				<img class="absolute inset-0 w-full h-full object-cover object-center" src={image} alt={project.name} />
 			</button>
 		{/each}
 	</div>

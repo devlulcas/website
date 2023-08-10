@@ -16,6 +16,11 @@ export const navigationLinks = derived(page, ($page) => {
 			href: '/#contact',
 			isActive: $page.url.pathname === '/contact'
 		},
-		{ label: 'common.header.blog', href: '/blog', isActive: $page.url.pathname === '/blog' }
+		{ label: 'common.header.blog', href: '/blog', isActive: $page.url.pathname === '/blog' },
+		{
+			label: 'common.header.bookmarks',
+			href: '/bookmarks',
+			isActive: $page.url.pathname === '/bookmarks'
+		}
 	];
 });

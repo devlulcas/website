@@ -8,8 +8,7 @@ type FocusTrapOptions = {
  * @param options If returnFocus is true, focus will be returned to the element that had focus when the trap was activated.
  */
 export function focusTrap(node: HTMLElement, options: FocusTrapOptions = {}) {
-	const focusableElements =
-		'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])';
+	const focusableElements = 'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])';
 
 	let firstFocusableElement: HTMLElement | null;
 	let lastFocusableElement: HTMLElement | null;

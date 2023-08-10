@@ -40,11 +40,6 @@
 	</a>
 
 	<div class="bg-card h-36 text-card-foreground p-3 flex flex-col">
-		<ProjectData
-			name={project.name}
-			description={project.description}
-			url={project.url}
-			code={project.code}
-		/>
+		<ProjectData name={project.name} description={project.description} url={project.url} code={project.code} />
 	</div>
 </article>

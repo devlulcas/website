@@ -20,59 +20,57 @@ export type PostMetadata = Required<
 export async function fetchPosts(): Promise<PostMetadata[]> {
 	const postFiles = import.meta.glob('/posts/**/*.md');
 
-	const postMetadataPromises: Promise<PostMetadata>[] = Object.entries(postFiles).map(
-		async ([filepath, resolver]) => {
-			const resolverData = await resolver();
+	const postMetadataPromises: Promise<PostMetadata>[] = Object.entries(postFiles).map(async ([filepath, resolver]) => {
+		const resolverData = await resolver();
 
-			const resolverDataSchema = z.object({
-				metadata: z.unknown(),
-				default: z.object({
-					render: z.function().returns(
-						z.object({
-							html: z.string()
-						})
-					)
-				})
-			});
+		const resolverDataSchema = z.object({
+			metadata: z.unknown(),
+			default: z.object({
+				render: z.function().returns(
+					z.object({
+						html: z.string()
+					})
+				)
+			})
+		});
 
-			const parsedData = resolverDataSchema.parse(resolverData);
+		const parsedData = resolverDataSchema.parse(resolverData);
 
-			const metadata = rawPostSchema.safeParse(parsedData.metadata);
+		const metadata = rawPostSchema.safeParse(parsedData.metadata);
 
-			if (metadata.success === false) {
-				const errorList = JSON.stringify(metadata.error.issues, null, 2);
-				const errorMessage = `Invalid metadata in ${filepath}: ${errorList}`;
-				throw new Error(errorMessage);
-			}
-
-			const slug =
-				filepath
-					.replace(/(\/index)?\.md/, '')
-					.split('/')
-					.pop() ?? filepath;
-
-			const language = detectLanguage(metadata.data.title + ' ' + metadata.data.excerpt);
-
-			const expectedReadingTime = readingTime(parsedData.default.render().html, 300, language.code);
-
-			const cover = metadata.data.cover ? metadata.data.cover : website.url;
-
-			const data: PostMetadata = {
-				cover,
-				language,
-				slug,
-				readingTime: expectedReadingTime.minutes,
-				categories: metadata.data.categories,
-				date: metadata.data.date,
-				draft: metadata.data.draft,
-				excerpt: metadata.data.excerpt,
-				tags: metadata.data.tags,
-				title: metadata.data.title
-			};
-
-			return data;
+		if (metadata.success === false) {
+			const errorList = JSON.stringify(metadata.error.issues, null, 2);
+			const errorMessage = `Invalid metadata in ${filepath}: ${errorList}`;
+			throw new Error(errorMessage);
 		}
-	);
+
+		const slug =
+			filepath
+				.replace(/(\/index)?\.md/, '')
+				.split('/')
+				.pop() ?? filepath;
+
+		const language = detectLanguage(metadata.data.title + ' ' + metadata.data.excerpt);
+
+		const expectedReadingTime = readingTime(parsedData.default.render().html, 300, language.code);
+
+		const cover = metadata.data.cover ? metadata.data.cover : website.url;
+
+		const data: PostMetadata = {
+			cover,
+			language,
+			slug,
+			readingTime: expectedReadingTime.minutes,
+			categories: metadata.data.categories,
+			date: metadata.data.date,
+			draft: metadata.data.draft,
+			excerpt: metadata.data.excerpt,
+			tags: metadata.data.tags,
+			title: metadata.data.title
+		};
+
+		return data;
+	});
 
 	const postsMetadata = await Promise.all(postMetadataPromises);
 
