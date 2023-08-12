@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BookmarkCard from '$/lib/components/bookmark-card/bookmark-card.svelte';
 	import ContainerSection from '$/lib/components/container-section/default.svelte';
+	import { t } from '$/lib/i18n';
 	import { createSearchStore, searchHandler } from '$lib/stores/generic-search';
 	import { onDestroy } from 'svelte';
 	import { scale } from 'svelte/transition';
@@ -34,9 +35,10 @@
 </script>
 
 <main class="lc-grid px-4 lg:px-8 pb-8">
-	<ContainerSection id="bookmarks" title="Bookmarks">
+	<ContainerSection id="bookmarks" title={$t('bookmarks.title')}>
 		<p class="text-lg text-muted-foreground mb-4">
-			{data.bookmarks.length} bookmarks
+			{data.bookmarks.length}
+			{$t('bookmarks.title')}
 		</p>
 
 		<div class="w-full p-[2px] rounded-lg lc-gradient focus-within:ring-2 ring-brand-500">
@@ -50,6 +52,12 @@
 				bind:value={$searchBookmarks.query}
 			/>
 		</div>
+
+		{#if $searchBookmarks.filtered.length === 0}
+			<p class="text-lg text-muted-foreground mt-4">
+				{$t('bookmarks.noResults')}
+			</p>
+		{/if}
 
 		<div
 			bind:this={cardContainerElement}
