@@ -25,7 +25,7 @@ export const ogHandler = async ({ text }: OgHandlerParams) => {
 					alignItems: 'center',
 					backgroundColor: '#000',
 					color: '#fff',
-					fontSize: '96px',
+					fontSize: '36px',
 					fontWeight: '900',
 					textTransform: 'uppercase'
 				},
@@ -36,8 +36,8 @@ export const ogHandler = async ({ text }: OgHandlerParams) => {
 							src: logo,
 							style: {
 								margin: '0 20px',
-								width: '291px',
-								height: '319px'
+								width: '191px',
+								height: '219px'
 							}
 						}
 					},
@@ -46,6 +46,7 @@ export const ogHandler = async ({ text }: OgHandlerParams) => {
 						props: {
 							style: {
 								width: '600px',
+								fontSize: '36px',
 								wordBreak: 'break-word'
 							},
 							children: text

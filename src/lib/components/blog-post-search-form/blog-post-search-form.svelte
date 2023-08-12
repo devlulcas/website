@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { t } from '$/lib/i18n';
 	import { SearchIcon } from 'lucide-svelte';
 
 	let className = '';
@@ -6,7 +7,7 @@
 </script>
 
 <form class="w-full flex gap-2 flex-col {className}" action="/blog/search" method="GET">
-	<label class="sr-only" for="search-blog-post">Search blog post</label>
+	<label class="sr-only" for="search-blog-post">{$t('blog.search')}</label>
 
 	<div class="w-full p-[2px] overflow-hidden rounded-lg lc-gradient">
 		<div class="flex items-center rounded-md focus-within:outline overflow-hidden">
@@ -14,7 +15,7 @@
 				type="search"
 				id="search-blog-post"
 				name="search"
-				placeholder="Search blog post"
+				placeholder={$t('blog.search')}
 				class="p-2 bg-background w-full outline-none"
 			/>
 

@@ -23,6 +23,11 @@ const config: Config = {
 			loader: async () => (await import('./en/bookmarks.json')).default
 		},
 		{
+			locale: 'en',
+			key: 'blog',
+			loader: async () => (await import('./en/blog.json')).default
+		},
+		{
 			locale: 'pt',
 			key: 'common',
 			loader: async () => (await import('./pt/common.json')).default
@@ -41,6 +46,11 @@ const config: Config = {
 			locale: 'pt',
 			key: 'bookmarks',
 			loader: async () => (await import('./pt/bookmarks.json')).default
+		},
+		{
+			locale: 'pt',
+			key: 'blog',
+			loader: async () => (await import('./pt/blog.json')).default
 		}
 	]
 };

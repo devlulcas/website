@@ -4,6 +4,7 @@
 	import ContainerSection from '$/lib/components/container-section/default.svelte';
 	import FeaturedPostCard from '$/lib/components/post-card/featured-post-card.svelte';
 	import PostCard from '$/lib/components/post-card/post-card.svelte';
+	import { t } from '$/lib/i18n';
 	import customBlogDrawingSvg from '$lib/assets/images/blog.svg';
 	import type { PageData } from './$types';
 
@@ -22,10 +23,10 @@
 			</div>
 
 			<section class="w-full flex flex-col justify-center">
-				<h1 class="text-lg text-muted-foreground">Hi! This is my blog.</h1>
+				<h1 class="text-lg text-muted-foreground">{$t('blog.presentation')}</h1>
 
 				<p class="text-xl mt-4">
-					Welcome to my blog! I'm a software developer and I like to write about my experiences.
+					{$t('blog.welcome')}
 				</p>
 
 				<ul class="flex flex-wrap gap-3 mt-6">
@@ -47,7 +48,7 @@
 	</ContainerSection>
 
 	{#if data.featuredPost}
-		<ContainerSection id="featured" title="Featured post">
+		<ContainerSection id="featured" title={$t('blog.featuredTitle')}>
 			<FeaturedPostCard post={data.featuredPost} />
 		</ContainerSection>
 	{/if}
