@@ -42,12 +42,14 @@
 	"type": "module",
 	"dependencies": {
 		"@notionhq/client": "^2.2.9",
+		"@resvg/resvg-js": "^2.4.1",
 		"franc-min": "^6.1.0",
 		"fzf": "^0.5.2",
 		"lucide-svelte": "^0.263.0",
 		"nprogress": "^0.2.0",
 		"reading-time-estimator": "^1.9.0",
 		"resend": "^0.17.2",
+		"satori": "^0.10.3",
 		"sveltekit-i18n": "^2.4.2",
 		"zod": "^3.21.4",
 		"zod-form-data": "^2.0.1"
