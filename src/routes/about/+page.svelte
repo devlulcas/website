@@ -5,7 +5,7 @@
 </script>
 
 <div class="lc-grid min-h-[--view-height]">
-	<main class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 mt-12 px-2">
+	<main class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 mt-12 px-4">
 		<div class="flex flex-col lg:flex-row gap-4">
 			<div>
 				<h1 class="text-4xl font-bold">
