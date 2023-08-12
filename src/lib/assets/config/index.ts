@@ -29,7 +29,8 @@ export const website = {
 	social: {
 		github: 'https://github.com/devlulcas',
 		linkedIn: 'https://www.linkedin.com/in/lucasalvesrego/',
-		twitter: 'https://twitter.com/devlulcas'
+		twitter: 'https://twitter.com/devlulcas',
+		email: 'lucasalvesrego.contato@gmail.com'
 	}
 };
 
