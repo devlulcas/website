@@ -17,7 +17,6 @@
 	footer {
 		position: relative;
 		z-index: 1;
-		background: #000;
 
 		&::before {
 			z-index: -1;
@@ -27,7 +26,15 @@
 			background: linear-gradient(75deg, var(--brand-dark) 5%, var(--brand-light) 35%, var(--brand-dark) 95%);
 			animation: background ease 4s infinite;
 			background-size: 400% 400%;
-			opacity: 0.25;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-size: 1em 1em;
+			background-image: linear-gradient(hsl(var(--background) / 10%) 0.1em, transparent 0.1em),
+				linear-gradient(90deg, hsl(var(--background) / 10%) 0.1em, transparent 0.1em);
 		}
 	}
 
