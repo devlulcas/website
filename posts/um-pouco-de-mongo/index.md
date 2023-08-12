@@ -5,7 +5,7 @@ tags:
   - mongodb
 categories:
   - none
-date: 23/04/2023
+date: 04/23/2023
 excerpt: Aprendendo a usar o MongoDB com o Node.js
 draft: false
 ---

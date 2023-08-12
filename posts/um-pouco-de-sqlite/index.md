@@ -6,7 +6,7 @@ tags:
   - database
 categories:
   - none
-date: 12/04/2023
+date: 04/12/2023
 excerpt: Aprendendo um pouco sobre SQLite3
 ---
 

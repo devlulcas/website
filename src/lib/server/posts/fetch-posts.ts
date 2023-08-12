@@ -57,11 +57,19 @@ export async function fetchPosts(): Promise<PostMetadata[]> {
 			const baseUrl = 'https://lucasrego.tech/api/og';
 			const titleEncoded = encodeURIComponent(title);
 			const languageCode = language.code;
-			const cover = `${baseUrl}?title=${titleEncoded}&language=${languageCode}`;
+			const cover = `${baseUrl}?text=${titleEncoded}&language=${languageCode}`;
 			return cover;
 		};
 
 		const cover = generateCover(metadata.data.title);
+
+		const getDate = () => {
+			try {
+				return new Date(metadata.data.date).toISOString();
+			} catch (error) {
+				return new Date().toISOString();
+			}
+		};
 
 		const data: PostMetadata = {
 			cover,
@@ -69,7 +77,7 @@ export async function fetchPosts(): Promise<PostMetadata[]> {
 			slug,
 			readingTime: expectedReadingTime.minutes,
 			categories: metadata.data.categories,
-			date: metadata.data.date,
+			date: getDate(),
 			draft: metadata.data.draft,
 			excerpt: metadata.data.excerpt,
 			tags: metadata.data.tags,

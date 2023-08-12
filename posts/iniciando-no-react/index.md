@@ -6,7 +6,7 @@ tags:
   - javascript
 categories:
   - none
-date: 30/05/2022
+date: 05/30/2022
 draft: false
 excerpt: Notas sobre meus pensamentos em aprender React em 2022
 ---

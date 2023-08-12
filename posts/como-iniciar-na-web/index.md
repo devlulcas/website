@@ -13,7 +13,7 @@ categories:
   - none
   - css
   - 'javascript'
-date: 27/07/2022
+date: 07/27/2022
 draft: false
 excerpt: Um pontapé inicial no desenvolvimento web
 ---

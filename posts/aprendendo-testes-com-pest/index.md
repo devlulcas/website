@@ -7,7 +7,7 @@ tags:
   - phpunit
 categories:
   - none
-date: 02/03/2022
+date: 03/02/2022
 draft: false
 excerpt: Uma breve introdução ao framework de testes Pest do ecossistema PHP
 ---

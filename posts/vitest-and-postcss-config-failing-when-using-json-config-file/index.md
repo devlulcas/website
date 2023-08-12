@@ -1,7 +1,7 @@
 ---
 title: Vitest + PostCSS config failing when using poscssrc.json file
 excerpt: Vitest + PostCSS config failing to load config with "Invalid PostCSS Plugin" when using poscssrc.json file
-date: 31/05/2023
+date: 05/31/2023
 draft: false
 categories:
   - none

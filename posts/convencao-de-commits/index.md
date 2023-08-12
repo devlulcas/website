@@ -6,7 +6,7 @@ tags:
   - convenções
 categories:
   - none
-date: 16/05/2022
+date: 05/16/2022
 draft: false
 excerpt: Como escrever bons commits para ter um versionamento mais inteligível
 ---
