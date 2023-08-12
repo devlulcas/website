@@ -1,10 +1,13 @@
 <script lang="ts">
+	import { website } from '$/lib/assets/config';
 	import { t } from '$/lib/i18n';
 	import { enhance } from '$app/forms';
 	import customContactDrawingSvg from '$lib/assets/images/contact.svg';
 	import sadRaccoonSvg from '$lib/assets/images/failure.svg';
 	import loadingRaccoonGif from '$lib/assets/images/loading.gif';
 	import type { SubmitFunction } from '@sveltejs/kit';
+	import { GithubIcon, LinkedinIcon, MailIcon, TwitterIcon } from 'lucide-svelte';
+	import SocialMediaLink from './social-media-link.svelte';
 
 	let formState: 'idle' | 'submitting' | 'success' | 'failure' = 'idle';
 
@@ -24,7 +27,7 @@
 	};
 </script>
 
-<div class="flex flex-col lg:flex-row h-full gap-4">
+<div class="flex flex-col lg:flex-row gap-4 min-h-[--view-height]">
 	<form class="flex flex-col gap-4 flex-1" method="POST" action="/?/sendMessage" use:enhance={contactEnhance}>
 		<div>
 			<label class="mb-2 text-muted-foreground flex flex-col w-full" for="name">
@@ -96,12 +99,19 @@
 		{/if}
 
 		<button
-			class="lc-gradient mt-auto h-12 w-full text-white rounded-lg p-2 font-bold focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-white disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-brand-400 disabled:hover:bg-brand-400"
+			class="lc-gradient h-12 w-full text-white rounded-lg p-2 font-bold focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-white disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-brand-400 disabled:hover:bg-brand-400"
 			type="submit"
 			disabled={formState === 'submitting'}
 		>
 			{formState === 'submitting' ? $t('home.contact.form.submit.submitting') : $t('home.contact.form.submit.idle')}
 		</button>
+
+		<nav class="flex justify-evenly mt-12">
+			<SocialMediaLink href={website.social.github} title="/"><GithubIcon /></SocialMediaLink>
+			<SocialMediaLink href={website.social.linkedIn} title="/"><LinkedinIcon /></SocialMediaLink>
+			<SocialMediaLink href={website.social.twitter} title="/"><TwitterIcon /></SocialMediaLink>
+			<SocialMediaLink href={website.social.email} title="/"><MailIcon /></SocialMediaLink>
+		</nav>
 	</form>
 
 	<div class="rounded-lg flex flex-col justify-center items-center flex-1">

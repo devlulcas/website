@@ -66,7 +66,7 @@
 		</SeeMoreLink>
 	</ContainerSection>
 
-	<ContainerSection id="contact" title={$t('home.contact.title')} class="flex flex-col mb-8 h-[--view-height]">
+	<ContainerSection id="contact" title={$t('home.contact.title')} class="flex flex-col mb-8 min-h-[--view-height]">
 		<ContactForm />
 	</ContainerSection>
 </main>
