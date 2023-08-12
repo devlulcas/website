@@ -23,7 +23,7 @@ export const ogHandler = async ({ text }: OgHandlerParams) => {
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
-					backgroundColor: '#18181b',
+					backgroundColor: '#000',
 					color: '#fff',
 					fontSize: '96px',
 					fontWeight: '900',
@@ -36,8 +36,8 @@ export const ogHandler = async ({ text }: OgHandlerParams) => {
 							src: logo,
 							style: {
 								margin: '0 20px',
-								width: '301px',
-								height: '329px'
+								width: '291px',
+								height: '319px'
 							}
 						}
 					},

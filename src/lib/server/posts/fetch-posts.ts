@@ -1,4 +1,3 @@
-import { website } from '$/lib/assets/config';
 import { readingTime } from 'reading-time-estimator';
 import { z } from 'zod';
 import { detectLanguage, type Language } from './language-detection';
@@ -54,7 +53,15 @@ export async function fetchPosts(): Promise<PostMetadata[]> {
 
 		const expectedReadingTime = readingTime(parsedData.default.render().html, 300, language.code);
 
-		const cover = metadata.data.cover ? metadata.data.cover : website.url;
+		const generateCover = (title: string) => {
+			const baseUrl = 'https://lucasrego.tech/api/og';
+			const titleEncoded = encodeURIComponent(title);
+			const languageCode = language.code;
+			const cover = `${baseUrl}?title=${titleEncoded}&language=${languageCode}`;
+			return cover;
+		};
+
+		const cover = generateCover(metadata.data.title);
 
 		const data: PostMetadata = {
 			cover,
