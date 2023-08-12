@@ -1,5 +1,6 @@
 <script lang="ts">
 	import imageNotFound from '$/lib/assets/images/no-image-project.webp';
+	import { t } from '$/lib/i18n';
 	import type { Project } from '$/lib/server/projects';
 	import { ArrowRightIcon } from 'lucide-svelte';
 	import ProjectData from './project-data.svelte';
@@ -22,7 +23,7 @@
 		</div>
 
 		<span
-			title="Ver projeto"
+			title={$t('common.projects.visit')}
 			class="absolute top-2 right-2 w-8 aspect-square bg-background text-foreground z-10 rounded-md flex justify-center items-center border"
 		>
 			<ArrowRightIcon size={18} class="tranform -rotate-45" />

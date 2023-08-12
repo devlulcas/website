@@ -13,5 +13,14 @@
 	},
 	"footer": {
 		"codeAvailableOn": "Código disponível em"
+	},
+	"projects": {
+		"seeMore": "Ver mais",
+		"seeCode": "Ver código fonte",
+		"visit": "Visitar"
+	},
+	"posts": {
+		"seeMore": "Ler mais",
+		"timeToRead": "minutos de leitura"
 	}
 }

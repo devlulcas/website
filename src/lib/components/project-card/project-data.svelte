@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { t } from '$/lib/i18n';
 	import { ArrowRightIcon, GithubIcon } from 'lucide-svelte';
 
 	export let name: string;
@@ -35,10 +36,12 @@
 
 <footer class="flex justify-between items-center mt-auto">
 	<a href={code} target="_blank" class="flex items-center gap-1">
-		<GithubIcon size={18} /> Ver código fonte
+		<GithubIcon size={18} />
+		{$t('common.projects.seeCode')}
 	</a>
 
 	<a href={url ?? code} target="_blank" class="flex items-center gap-1">
-		Ver mais <ArrowRightIcon size={18} />
+		{$t('common.projects.seeMore')}
+		<ArrowRightIcon size={18} />
 	</a>
 </footer>
