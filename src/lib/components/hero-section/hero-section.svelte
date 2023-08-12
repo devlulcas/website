@@ -3,7 +3,7 @@
 	import { ArrowRightIcon, Code2Icon, CoffeeIcon, GithubIcon, LinkedinIcon } from 'lucide-svelte';
 </script>
 
-<div class="lc-hero relative col-span-12 col-start-1 h-[--view-height]">
+<div class="overflow-hidden relative col-span-12 col-start-1 h-[--view-height]">
 	<article class="px-[5%] lg:px-[20%] h-full flex flex-col justify-center items-start">
 		<h1 class="text-5xl md:text-6xl font-black">
 			{$t('home.about.title')}
@@ -59,12 +59,6 @@
 </div>
 
 <style lang="postcss">
-	.lc-hero {
-		/* background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em),
-			linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em);
-		background-size: 1em 1em; */
-	}
-
 	.lc-circle {
 		z-index: -1;
 		width: 40rem;
@@ -88,7 +82,7 @@
 			width: 100%;
 			top: 0%;
 			right: 50%;
-			transform: translate(50%, -85%);
+			transform: translate(50%, -65%);
 		}
 	}
 
@@ -131,7 +125,7 @@
 			align-items: flex-end;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%, -50%);
+			transform: translate(-50%, -35%);
 		}
 	}
 </style>
