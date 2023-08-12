@@ -1,22 +1,16 @@
 <script lang="ts">
+	import { website } from '$/lib/assets/config';
 	import { GithubIcon, LinkedinIcon } from 'lucide-svelte';
 </script>
 
-<p class="flex items-center gap-2">
-	<a
-		class="flex items-center gap-2"
-		href="https://www.linkedin.com/in/lucasalvesregodev/"
-		target="_blank"
-		rel="noopener noreferrer"
-	>
-		<LinkedinIcon class="bg-brand-700 h-8 w-8 p-1 rounded-md text-brand-400 dark:text-brand-500" />
+<p class="flex flex-col gap-2 w-full">
+	<a class="flex items-center gap-2" href={website.social.linkedIn} target="_blank" rel="noopener noreferrer">
+		<LinkedinIcon />
 		Lucas Alves Rego
 	</a>
 
-	<span> &nbsp;|&nbsp; </span>
-
-	<a class="flex items-center gap-2" href="https://www.github.com/devlulcas" target="_blank" rel="noopener noreferrer">
-		<GithubIcon class="bg-brand-700 h-8 w-8 p-1 rounded-md text-brand-400 dark:text-brand-500" />
+	<a class="flex items-center gap-2" href={website.social.github} target="_blank" rel="noopener noreferrer">
+		<GithubIcon />
 
 		github.com/devlulcas
 	</a>
