@@ -1,75 +1,64 @@
 <script lang="ts">
-	import { skills, website } from '$/lib/assets/config';
-	import SkillCard from '$/lib/components/skill-card/skill-card.svelte';
-	import customAboutMeDrawingSvg from '$lib/assets/images/me.svg';
+	import meSvg from '$/lib/assets/images/me.svg';
+	import SkillCarousel from '$/lib/components/skill-carousel/skill-carousel.svelte';
+	import { t } from '$/lib/i18n';
 </script>
 
 <div class="lc-grid min-h-[--view-height]">
-	<main class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 mt-12">
-		<div>
-			<img
-				class="w-64 h-64 mb-4 mx-auto"
-				src={customAboutMeDrawingSvg}
-				alt="a simple, hand-drawn illustration of myself in a cartoonish minimalist style (curly hair, smiley face)"
-			/>
+	<main class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 mt-12 px-2">
+		<div class="flex flex-col lg:flex-row gap-4">
+			<div>
+				<h1 class="text-4xl font-bold">
+					{$t('about.title')}
+				</h1>
 
-			<h1 class="text-4xl font-bold mb-4">Hello! I'm Lucas</h1>
+				<p class="mb-8 text-muted-foreground">
+					{$t('about.subtitle')}
+				</p>
 
-			<p>
-				I'm a software developer, currently working at
-				<a
-					class="text-brand-500 hover:underline"
-					href="https://dantasbikes.com.br/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Dantas Bikes
-				</a>
-				as a Frontend Developer, helping to build the future of the company.
-				<br />
-				I'm constantly learning new things, and I'm always looking for new challenges.
-			</p>
+				<p>
+					{$t('about.work.start')}
+					<a
+						class="text-brand-500 hover:text-brand-600"
+						href="http://dantasbikes.com.br"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Dantas Bikes
+					</a>
+					{$t('about.work.end')}
+				</p>
 
-			<hr class="my-4" />
+				<article>
+					<h2 class="mb-2 mt-4 text-xl">
+						{$t('about.personal.title')}
+					</h2>
 
-			<p>
-				You can find me on
-				<a
-					class="text-brand-500 hover:underline"
-					href={website.social.linkedIn}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					LinkedIn
-				</a>,
-				<a
-					class="text-brand-500 hover:underline"
-					href={website.social.github}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					GitHub
-				</a>
-				and
-				<a
-					class="text-brand-500 hover:underline"
-					href={website.social.twitter}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					X (Twitter)
-				</a>. Feel free to reach out and say hi!
-			</p>
+					{$t('about.personal.description')}
+				</article>
 
-			<hr class="my-4" />
+				<article>
+					<h2 class="mb-2 mt-4 text-xl">
+						{$t('about.skills.title')}
+					</h2>
 
-			<p>I'm pretty proficient with the following technologies:</p>
+					{$t('about.skills.description')}
+				</article>
+			</div>
 
-			<div class="pt-2 pb-12 flex gap-2 flex-grow flex-wrap justify-stretch">
-				{#each skills as skill}
-					<SkillCard {skill} />
-				{/each}
+			<div class="w-full lg:h-[500px] flex items-center justify-center">
+				<img src={meSvg} alt="Me" />
 			</div>
 		</div>
+
+		<SkillCarousel class="my-8" />
+
+		<p class="mb-12">
+			{$t('about.contact.start')}
+			<a class="text-brand-500 hover:text-brand-600" href="/#contact" target="_blank" rel="noopener noreferrer">
+				#contact
+			</a>
+			{$t('about.contact.end')}
+		</p>
 	</main>
 </div>

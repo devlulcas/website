@@ -1,0 +1,21 @@
+{
+	"title": "Sou Lucas Alves Rego",
+	"subtitle": "Web Developer",
+	"work": {
+		"start": "I'm currently working at",
+		"start": "Atualmente trabalho na",
+		"end": "como Web Developer. Fazendo coisas legais com React, NextJS, PHP e outras coisas interessantes."
+	},
+	"contact": {
+		"start": "Você pode entrar em contato comigo pelo",
+		"end": "ou pelas minhas redes sociais."
+	},
+	"skills": {
+		"title": "Habilidades",
+		"description": "Sou um desenvolvedor web com 2 anos de experiência. Já trabalhei com várias tecnologias, mas atualmente trabalho com React e NextJS como desenvolvedor frontend. Também tenho experiência com NodeJS, PHP, FirebirdSQL, PostgreSQL, Docker, AWS, entre outras."
+	},
+	"personal": {
+		"title": "Pessoal",
+		"description": "Sou um brasileiro de 21 anos. Sou uma pessoa muito curiosa, gosto de aprender coisas novas e estou sempre procurando novos desafios. Também sou uma pessoa muito calma, gosto de ouvir as pessoas e estou sempre tentando ajudar os outros."
+	}
+}
