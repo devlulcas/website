@@ -1,11 +1,11 @@
 {
 	"about": {
-		"title": "About",
+		"title": "Hi, I'm Lucas",
 		"description": "I'm a web developer from Brazil. I love to create things for the web and experiment with new technologies.",
 		"callToAction": {
 			"contact": "Contact me",
 			"or": "or",
-			"seeMore": "See more about me"
+			"seeMore": "learn more about me"
 		}
 	},
 	"blog": {

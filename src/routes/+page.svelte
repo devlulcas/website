@@ -6,14 +6,20 @@
 	import PostCard from '$/lib/components/post-card/post-card.svelte';
 	import FeaturedProjectCard from '$/lib/components/project-card/featured-project-card.svelte';
 	import ProjectCard from '$/lib/components/project-card/project-card.svelte';
+	import SkillCarousel from '$/lib/components/skill-carousel/skill-carousel.svelte';
 	import { t } from '$/lib/i18n';
 	import { ArrowRight, FeatherIcon, GithubIcon } from 'lucide-svelte';
+	import HeroSection from '../lib/components/hero-section/hero-section.svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 </script>
 
 <main class="lc-grid px-4 lg:px-8 pb-8 gap-y-10">
+	<HeroSection />
+
+	<SkillCarousel class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3" />
+
 	<ContainerSection id="posts" title={$t('home.blog.title')}>
 		<p class="text-lg text-muted-foreground mb-4">{$t('home.blog.description')}</p>
 
