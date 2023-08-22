@@ -30,9 +30,6 @@ const i18nHookHandle: Handle = ({ event, resolve }) => {
 
 	const lang = selectedLang === 'pt' ? 'pt' : 'en';
 
-	// Set in the cookie the language
-	event.cookies.set('lang', lang);
-
 	return resolve(event, {
 		transformPageChunk: ({ html }) => {
 			html = html.replace('lang', `lang="${lang}"`);
