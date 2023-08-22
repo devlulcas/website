@@ -29,7 +29,7 @@
 	}
 </script>
 
-<div class="flex items-center gap-2 relative">
+<div class="flex items-center relative">
 	{#each $navigationLinks as link}
 		<a
 			on:mouseover={changeIndicatorPositionOnLinkHover}
