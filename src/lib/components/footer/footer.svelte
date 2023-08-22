@@ -3,12 +3,14 @@
 	import Socials from './socials.svelte';
 </script>
 
-<footer class="h-[--footer-height] flex flex-col justify-center gap-2 p-3 font-bold">
-	<a href="/" target="_blank" rel="noopener noreferrer">
-		{$t('common.footer.codeAvailableOn')} devlulcas/website
-	</a>
+<footer class="h-[--footer-height] p-3 flex items-center justify-center">
+	<div class="flex flex-col justify-center gap-2 font-bold">
+		<a href="/" target="_blank" rel="noopener noreferrer">
+			{$t('common.footer.codeAvailableOn')} devlulcas/website
+		</a>
 
-	<Socials />
+		<Socials />
+	</div>
 
 	<span class="lc-block" />
 </footer>
@@ -16,7 +18,7 @@
 <style lang="postcss">
 	footer {
 		position: relative;
-		z-index: 1;
+		z-index: 10;
 		background-image: linear-gradient(
 			45deg,
 			hsl(var(--foreground) / 5%),
@@ -28,14 +30,15 @@
 			content: '';
 			position: absolute;
 			inset: 0;
-			height: 4px;
+			z-index: -2;
+			height: 100%;
 			background: linear-gradient(75deg, var(--brand-dark) 5%, var(--brand-light) 35%, var(--brand-dark) 95%);
 			animation: background ease 4s infinite;
 			background-size: 400% 400%;
 		}
 
 		&::after {
-			z-index: -2;
+			z-index: -1;
 			content: '';
 			position: absolute;
 			inset: 0;
