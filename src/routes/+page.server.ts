@@ -60,8 +60,6 @@ export const actions: Actions = {
 	// Change the users theme based on the url and save that state in a cookie
 	setTheme: async ({ cookies, url }) => {
 		const theme = url.searchParams.get('theme');
-		const redirectTo = url.searchParams.get('redirectTo') ?? '/';
-		const doNotRedirect = url.searchParams.get('doNotRedirect') === 'true';
 
 		if (theme) {
 			const fullYear = 60 * 60 * 24 * 365;
@@ -72,30 +70,29 @@ export const actions: Actions = {
 			});
 		}
 
-		if (doNotRedirect) return;
-
-		if (redirectTo && redirectTo.startsWith('/')) {
-			throw redirect(303, redirectTo);
-		}
-
-		throw redirect(303, '/');
+		redirectTo(url);
 	},
 	// Change the users language based on the url and save that state in a cookie
 	setLocale: async ({ cookies, url }) => {
 		const currentLanguageSetting = url.searchParams.get('lang');
-		const redirectTo = url.searchParams.get('redirectTo') ?? '/';
-		const doNotRedirect = url.searchParams.get('doNotRedirect') === 'true';
 
 		if (currentLanguageSetting) {
 			cookies.set('lang', currentLanguageSetting);
 		}
 
-		if (doNotRedirect) return;
-
-		if (redirectTo && redirectTo.startsWith('/')) {
-			throw redirect(303, redirectTo);
-		}
-
-		throw redirect(303, '/');
+		redirectTo(url);
 	}
 };
+
+function redirectTo(url: URL) {
+	const redirectTo = url.searchParams.get('redirectTo') ?? '/';
+	const doNotRedirect = url.searchParams.get('doNotRedirect') === 'true';
+
+	if (doNotRedirect) return;
+
+	if (redirectTo && redirectTo.startsWith('/')) {
+		throw redirect(303, redirectTo);
+	}
+
+	throw redirect(303, '/');
+}
