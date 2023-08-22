@@ -7,14 +7,19 @@
 </script>
 
 <article class="w-full flex gap-2 lg:h-72 flex-col lg:flex-row lg:even:flex-row-reverse">
-	<div class="flex gap-2 w-full lg:w-4/6 min-h-[200px]">
+	<div class="flex gap-2 w-full lg:w-4/6 select-none min-h-[200px]">
 		{#each project.images as image, index}
 			<button
 				on:click={() => (expandedImageIndex = index)}
 				class="w-12 relative transition-all duration-300 ease-in-out rounded-xl overflow-hidden border shadow-lg"
 				class:w-full={expandedImageIndex === index}
 			>
-				<img class="absolute inset-0 w-full h-full object-cover object-center" src={image} alt={project.name} />
+				<img
+					draggable={false}
+					class="absolute inset-0 w-full h-full object-cover object-center"
+					src={image}
+					alt={project.name}
+				/>
 			</button>
 		{/each}
 	</div>
