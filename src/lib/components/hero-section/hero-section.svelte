@@ -38,7 +38,10 @@
 		</div>
 
 		<p class="text-md mt-6 backdrop-blur-sm">
-			<a class="lc-gradient text-white py-2 px-8 flex items-center rounded-sm w-fit gap-2" href="#contact">
+			<a
+				class="lc-line overflow-clip lc-gradient text-white py-2 px-8 flex items-center rounded-sm w-fit gap-2"
+				href="#contact"
+			>
 				<span class="font-bold"> {$t('home.about.callToAction.contact')} </span>
 				<CoffeeIcon />
 			</a>
@@ -61,13 +64,13 @@
 <style lang="postcss">
 	.lc-circle {
 		z-index: -1;
-		width: 40rem;
+		width: 35rem;
 		aspect-ratio: 1;
 		border-radius: 50%;
 		position: absolute;
 		top: 50%;
 		right: 0;
-		transform: translateY(-50%);
+		transform: translate(-45%, -50%);
 
 		&::before {
 			content: '';
