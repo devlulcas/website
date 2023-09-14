@@ -5,7 +5,6 @@ import { z } from 'zod';
 const resend = new Resend(RESEND_API_KEY);
 
 export const emailNotificationSchema = z.object({
-	from: z.string().email(),
 	subject: z.string(),
 	content: z.string()
 });
@@ -20,8 +19,8 @@ type EmailNotificationResult = {
 export async function sendEmailNotification(notification: EmailNotification): Promise<EmailNotificationResult> {
 	try {
 		await resend.sendEmail({
-			from: notification.from,
-			to: MY_OWN_EMAIL,
+			from: 'onboarding@resend.dev',
+			to: [MY_OWN_EMAIL],
 			subject: notification.content,
 			html: notification.content
 		});

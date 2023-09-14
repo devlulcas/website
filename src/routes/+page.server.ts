@@ -46,8 +46,7 @@ export const actions: Actions = {
 
 		const result = await sendEmailNotification({
 			content: formDataResult.data.message,
-			from: formDataResult.data.email,
-			subject: `New message from ${formDataResult.data.name} on your website`
+			subject: `New message from ${formDataResult.data.name} on your website (${formDataResult.data.email})`
 		});
 
 		if (result.success === false) {
