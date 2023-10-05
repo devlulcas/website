@@ -25,18 +25,28 @@ type GithubProjectsResponse = {
 
 type GithubProjectNode = GithubProjectsResponse['data']['viewer']['repositories']['edges'][0]['node'];
 
-/**
- * Returns an array of images to be used in the project orderer by priority
- *
- * @param project Project node from Github API
- * @returns Array of images to be used in the project orderer by priority
- */
-function getProjectImage(project: GithubProjectNode): string {
-	const githubImage = `https://raw.githubusercontent.com/devlulcas/${project.name}/main/.github/images/preview.webp`;
+async function getProjectImage(project: GithubProjectNode): Promise<string> {
+	const getImageUrl = async () => {
+		const exts = ['png', 'webp', 'jpg', 'jpeg', 'gif'];
 
-	const openGraphImage = `${project.homepageUrl}/images/og.png`;
+		for (const ext of exts) {
+			let githubImage = `https://raw.githubusercontent.com/devlulcas/${project.name}/main/.github/images/preview.${ext}`;
 
-	return project.homepageUrl ? openGraphImage : githubImage;
+			const pingImageResponse = await fetch(githubImage, {
+				method: 'HEAD'
+			})
+
+			if (pingImageResponse.ok) {
+				return githubImage;
+			}
+		}
+
+		return null;
+	}
+
+	const githubImage = await getImageUrl();
+
+	return  githubImage ?? "/images/no-image-project.webp"
 }
 
 export type Project = {
@@ -97,13 +107,17 @@ export async function fetchProjects(): Promise<Project[]> {
 		throw new Error('Invalid response from Github API');
 	}
 
-	return json.data.viewer.repositories.edges.map((edge) => ({
+	const projectImages = await Promise.all(
+		json.data.viewer.repositories.edges.map((edge) => getProjectImage(edge.node))
+	);
+
+	return json.data.viewer.repositories.edges.map((edge, index) => ({
 		name: edge.node.name,
 		description: edge.node.description ?? '',
 		code: edge.node.url,
 		url: edge.node.homepageUrl,
 		createdAt: edge.node.createdAt,
 		languages: edge.node.languages?.nodes ?? [],
-		image: getProjectImage(edge.node)
+		image: projectImages[index]
 	}));
 }

@@ -1,13 +1,10 @@
 <script lang="ts">
-	import imageNotFound from '$/lib/assets/images/no-image-project.webp';
 	import { t } from '$/lib/i18n';
 	import type { Project } from '$/lib/server/projects';
 	import { ArrowRightIcon } from 'lucide-svelte';
 	import ProjectData from './project-data.svelte';
 
 	export let project: Project;
-
-	let image: HTMLImageElement;
 
 	const languages = project.languages ?? [];
 </script>
@@ -30,13 +27,7 @@
 		</span>
 
 		<div class="h-52 w-full">
-			<img
-				bind:this={image}
-				on:error={() => (image.src = imageNotFound)}
-				class="absolute inset-0 w-full h-full object-cover object-center"
-				src={project.image}
-				alt={project.name}
-			/>
+			<img class="absolute inset-0 w-full h-full object-cover object-center" src={project.image} alt={project.name} />
 		</div>
 	</a>
 
