@@ -1,6 +1,7 @@
 <script>
 	import { t } from '$/lib/i18n';
 	import { ArrowRightIcon, Code2Icon, CoffeeIcon, GithubIcon, LinkedinIcon } from 'lucide-svelte';
+	import Eye from './eye.svelte';
 </script>
 
 <div class="overflow-hidden relative col-span-12 col-start-1 h-[--view-height]">
@@ -54,7 +55,9 @@
 		</p>
 	</article>
 
-	<div class="lc-circle">
+	<div aria-hidden="true" class="lc-circle">
+		<Eye />
+
 		<div class="lc-image">
 			<Code2Icon size={68} />
 		</div>
