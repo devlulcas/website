@@ -15,31 +15,31 @@
 		"test:unit": "vitest"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.38.0",
+		"@playwright/test": "^1.38.1",
 		"@sveltejs/adapter-auto": "^2.1.0",
-		"@sveltejs/kit": "^1.25.0",
+		"@sveltejs/kit": "^1.25.1",
 		"@tailwindcss/typography": "^0.5.10",
-		"@types/nprogress": "^0.2.0",
+		"@types/nprogress": "^0.2.1",
 		"@typescript-eslint/eslint-plugin": "^5.62.0",
 		"@typescript-eslint/parser": "^5.62.0",
-		"autoprefixer": "^10.4.15",
-		"eslint": "^8.49.0",
+		"autoprefixer": "^10.4.16",
+		"eslint": "^8.50.0",
 		"eslint-config-prettier": "^8.10.0",
-		"eslint-plugin-svelte": "^2.33.1",
+		"eslint-plugin-svelte": "^2.34.0",
 		"mdsvex": "^0.11.0",
 		"mdsvex-relative-images": "^1.0.3",
-		"postcss": "^8.4.29",
+		"postcss": "^8.4.31",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
 		"rehype-autolink-headings": "^6.1.1",
 		"rehype-slug": "^5.1.0",
-		"svelte": "^4.2.0",
-		"svelte-check": "^3.5.1",
+		"svelte": "^4.2.1",
+		"svelte-check": "^3.5.2",
 		"tailwindcss": "^3.3.3",
 		"tslib": "^2.6.2",
 		"typescript": "^5.2.2",
-		"vite": "^4.4.9",
-		"vitest": "^0.32.4"
+		"vite": "^4.4.10",
+		"vitest": "^0.34.6"
 	},
 	"type": "module",
 	"dependencies": {
@@ -52,10 +52,10 @@
 		"lucide-svelte": "^0.263.0",
 		"nprogress": "^0.2.0",
 		"reading-time-estimator": "^1.9.0",
-		"resend": "^1.0.0",
-		"satori": "^0.10.4",
+		"resend": "^1.1.0",
+		"satori": "^0.10.8",
 		"sveltekit-i18n": "^2.4.2",
-		"zod": "^3.22.2",
-		"zod-form-data": "^2.0.1"
+		"zod": "^3.22.4",
+		"zod-form-data": "^2.0.2"
 	}
 }
