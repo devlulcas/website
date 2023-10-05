@@ -1,30 +1,41 @@
 <script lang="ts">
+	import { website } from '$/lib/assets/config';
 	import { t } from '$/lib/i18n';
-	import Socials from './socials.svelte';
+	import { GithubIcon, LinkedinIcon } from 'lucide-svelte';
 </script>
 
-<footer class="h-[--footer-height] p-3 flex items-center justify-center">
-	<div class="flex flex-col justify-center gap-2 font-bold">
-		<a href="/" target="_blank" rel="noopener noreferrer">
+<footer class="h-[--footer-height] p-3 flex items-center">
+	<div class="flex flex-col sm:flex-row gap-6 font-bold w-full">
+		<a href="/" target="_blank" rel="noopener noreferrer" class="mr-auto">
 			{$t('common.footer.codeAvailableOn')} devlulcas/website
 		</a>
 
-		<Socials />
-	</div>
+		<a
+			class="flex items-center gap-2 whitespace-nowrap"
+			href={website.social.linkedIn}
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<LinkedinIcon />
+			Lucas Alves Rego
+		</a>
 
-	<span class="lc-block" />
+		<a
+			class="flex items-center gap-2 whitespace-nowrap"
+			href={website.social.github}
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<GithubIcon />
+			github.com/devlulcas
+		</a>
+	</div>
 </footer>
 
 <style lang="postcss">
 	footer {
 		position: relative;
 		z-index: 10;
-		background-image: linear-gradient(
-			45deg,
-			hsl(var(--foreground) / 5%),
-			hsl(var(--foreground) / 20%),
-			hsl(var(--foreground) / 2%)
-		);
 
 		&::before {
 			content: '';
@@ -46,10 +57,6 @@
 			background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em),
 				linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em);
 		}
-
-		&:hover .lc-block {
-			opacity: 1;
-		}
 	}
 
 	@keyframes background {
@@ -59,17 +66,5 @@
 		to {
 			background-position: 100% 100%;
 		}
-	}
-
-	.lc-block {
-		opacity: 0;
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		background-size: 400% 400%;
-		backdrop-filter: blur(3px);
-		left: -5rem;
-		transition: opacity 0.5s ease-in-out;
 	}
 </style>

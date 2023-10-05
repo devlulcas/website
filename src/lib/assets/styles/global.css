@@ -6,9 +6,14 @@
 	/* Theme independent variables */
 	:root {
 		/* Height variables */
-		--footer-height: 8rem;
+		--footer-height: 12rem;
 		--header-height: 4rem;
 		--view-height: calc(100dvh - var(--header-height) - var(--footer-height));
+
+		@media (min-width: 768px) {
+			--footer-height: 4rem;
+			--view-height: calc(100dvh - var(--header-height) - var(--footer-height));
+		}
 
 		/* Smooth stuff */
 		scroll-padding-top: var(--header-height);
@@ -99,7 +104,6 @@
 	}
 
 	/* Custom Scrollbar */
-
 	::-webkit-scrollbar {
 		width: 0.8rem;
 	}
