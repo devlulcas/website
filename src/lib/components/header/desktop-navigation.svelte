@@ -53,7 +53,7 @@
 		transform: translateX(-50%);
 		bottom: 0;
 		left: 50%;
-		width: 100%;
+		width: 90%;
 		height: 0.25rem;
 		background-color: var(--brand-600);
 		border-radius: 0.25rem;
