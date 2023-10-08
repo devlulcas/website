@@ -4,13 +4,15 @@
 	import Eye from './eye.svelte';
 </script>
 
-<div class="overflow-hidden relative col-span-12 col-start-1 h-[--view-height]">
-	<article class="px-[5%] lg:px-[20%] h-full flex flex-col justify-center items-start">
+<div
+	class="overflow-hidden flex flex-col lg:flex-row col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 h-[--view-height]"
+>
+	<article class="h-full w-full flex flex-col justify-center items-start">
 		<h1 class="text-5xl md:text-6xl font-black">
 			{$t('home.about.title')}
 		</h1>
 
-		<p class="text-lg my-6 lg:w-2/5">
+		<p class="text-lg my-6 lg:w-3/5" style="text-wrap: balance;">
 			{$t('home.about.description')}
 		</p>
 
@@ -55,11 +57,13 @@
 		</p>
 	</article>
 
-	<div aria-hidden="true" class="lc-circle">
-		<Eye />
+	<div class="w-full relative flex items-center justify-center">
+		<div aria-hidden="true" class="lc-circle">
+			<Eye />
 
-		<div class="lc-image">
-			<Code2Icon size={68} />
+			<div class="lc-image">
+				<Code2Icon size={68} />
+			</div>
 		</div>
 	</div>
 </div>
@@ -67,13 +71,10 @@
 <style lang="postcss">
 	.lc-circle {
 		z-index: -1;
-		width: 35rem;
+		width: clamp(20rem, 50vw, 35rem);
 		aspect-ratio: 1;
 		border-radius: 50%;
-		position: absolute;
-		top: 50%;
-		right: 0;
-		transform: translate(-45%, -50%);
+		position: relative;
 
 		&::before {
 			content: '';
@@ -82,13 +83,6 @@
 			inset: 0;
 			background-image: linear-gradient(-45deg, var(--brand-light), var(--brand), var(--brand-light));
 			animation: spin 20s linear infinite;
-		}
-
-		@media (max-width: 1024px) {
-			width: 100%;
-			top: 0%;
-			right: 50%;
-			transform: translate(50%, -65%);
 		}
 	}
 
@@ -125,13 +119,6 @@
 			background-size: 1em 1em;
 			background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em),
 				linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em);
-		}
-
-		@media (max-width: 1024px) {
-			align-items: flex-end;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -35%);
 		}
 	}
 </style>

@@ -1,75 +1,67 @@
 <script lang="ts">
-	let cursorX = 0;
-	let cursorY = 0;
+	import { onMount } from 'svelte';
 
-	let iris: HTMLElement;
-	let pupil: HTMLElement;
+	function getAngle(cx: number, cy: number, ex: number, ey: number) {
+		const dy = ey - cy;
+		const dx = ex - cx;
 
-	$: {
-		if (iris && pupil) {
-			const irisRect = iris.getBoundingClientRect();
-			const pupilRect = pupil.getBoundingClientRect();
+		const rad = Math.atan2(dy, dx);
 
-			const irisCenterX = irisRect.left + irisRect.width / 2;
-			const irisCenterY = irisRect.top + irisRect.height / 2;
-
-			const angle = Math.atan2(cursorY - irisCenterY, cursorX - irisCenterX);
-
-			const pupilX = Math.cos(angle) * (irisRect.width / 2 - pupilRect.width / 2);
-			const pupilY = Math.sin(angle) * (irisRect.height / 2 - pupilRect.height / 2);
-
-			pupil.style.transform = `translate(${pupilX}px, ${pupilY}px)`;
-		}
+		return (rad * 180) / Math.PI;
 	}
+
+	let eyeEl: HTMLDivElement;
+
+	let eyeAnchorX = 0;
+	let eyeAnchorY = 0;
+
+	onMount(() => {
+		const rect = eyeEl.getBoundingClientRect();
+		eyeAnchorX = rect.left + rect.width / 2;
+		eyeAnchorY = rect.top + rect.height / 2;
+	});
+
+	let x = 0;
+	let y = 0;
+
+	$: angle = getAngle(x, y, eyeAnchorX, eyeAnchorY);
 </script>
 
-<svelte:window
+<svelte:document
 	on:mousemove={({ clientX, clientY }) => {
-		cursorX = clientX;
-		cursorY = clientY;
+		x = clientX;
+		y = clientY;
 	}}
 />
 
-<div class="eye">
-	<div bind:this={iris} class="iris">
-		<div bind:this={pupil} class="pupil" />
+<div aria-hidden="true" bind:this={eyeEl} class="eye">
+	<div aria-hidden="true" style="transform: rotate({angle}deg)" class="iris">
+		<div aria-hidden="true" class="bg-black w-6 h-6 rounded-full" />
 	</div>
 </div>
 
 <style lang="postcss">
 	.eye {
-		background: white;
-		width: 8rem;
-		height: 8rem;
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%) rotate(45deg);
-		overflow: hidden;
-		border-radius: 100% 0;
+		width: 160px;
+		height: 160px;
+		transform: translate(-50%, -50%);
+		background: #fff;
+		border-radius: 50% 0 50% 0;
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		animation: blinkEye 5s ease-in-out infinite;
+		justify-content: center;
 	}
 
 	.iris {
-		background: white;
-		width: 4rem;
-		height: 4rem;
-		position: relative;
-		border-radius: 100%;
-	}
-
-	.pupil {
-		background: black;
+		width: 90px;
+		height: 90px;
+		background: #fff;
 		border-radius: 50%;
-		width: 1.5rem;
-		height: 1.5rem;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		transition: transform 0.1s ease-out;
+		display: flex;
+		align-items: center;
+		transition: background 0.1s ease-in-out;
 	}
 </style>
