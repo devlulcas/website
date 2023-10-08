@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="flex flex-col lg:flex-row py-5 gap-5 col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 h-[--view-height]"
+	class="flex flex-col lg:flex-row py-5 gap-5 col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 min-h-[--view-height]"
 >
 	<article class="h-full w-full flex flex-col justify-center items-start">
 		<h1 class="text-5xl md:text-6xl font-black">
