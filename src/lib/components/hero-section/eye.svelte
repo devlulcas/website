@@ -45,14 +45,19 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		width: 160px;
-		height: 160px;
+		width: 115px;
+		height: 115px;
 		transform: translate(-50%, -50%);
 		background: #fff;
 		border-radius: 50% 0 50% 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		@media (min-width: 768px) {
+			width: 160px;
+			height: 160px;
+		}
 	}
 
 	.iris {

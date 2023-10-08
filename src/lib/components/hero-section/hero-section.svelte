@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="overflow-hidden flex flex-col lg:flex-row col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 h-[--view-height]"
+	class="flex flex-col lg:flex-row py-5 gap-5 col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 h-[--view-height]"
 >
 	<article class="h-full w-full flex flex-col justify-center items-start">
 		<h1 class="text-5xl md:text-6xl font-black">
@@ -57,7 +57,7 @@
 		</p>
 	</article>
 
-	<div class="w-full relative flex items-center justify-center">
+	<div class="w-full relative flex items-center justify-end lg:justify-center">
 		<div aria-hidden="true" class="lc-circle">
 			<Eye />
 
@@ -71,7 +71,7 @@
 <style lang="postcss">
 	.lc-circle {
 		z-index: -1;
-		width: clamp(20rem, 50vw, 35rem);
+		width: clamp(18rem, 40vw, 35rem);
 		aspect-ratio: 1;
 		border-radius: 50%;
 		position: relative;
@@ -82,7 +82,7 @@
 			position: absolute;
 			inset: 0;
 			background-image: linear-gradient(-45deg, var(--brand-light), var(--brand), var(--brand-light));
-			animation: spin 20s linear infinite;
+			animation: spin 15s linear infinite;
 		}
 	}
 
@@ -98,11 +98,11 @@
 	.lc-image {
 		position: absolute;
 		top: 50%;
-		left: -20%;
+		left: -27.5%;
 		transform: translate(0%, -50%);
-		height: 15rem;
+		height: clamp(10rem, 20vw, 15rem);
 		aspect-ratio: 1;
-		padding: 2rem;
+		padding: clamp(0.5rem, 1vw, 1rem);
 		background-image: linear-gradient(45deg, #ffffff0f, #f0f0f05c, #dededefc);
 		border-radius: 50%;
 		backdrop-filter: blur(1rem);

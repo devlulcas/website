@@ -16,7 +16,7 @@
 		class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3 border md:rounded-2xl h-full flex items-center justify-between gap-2 p-1 bg-card/75 dark:bg-card/75 backdrop-blur-md text-card-foreground"
 	>
 		<a href="/">
-			<img class="h-12 w-12 rounded-xl" src={icon} alt="Lucas Alves Rego" />
+			<img class="h-12 w-12 rounded lg:rounded-xl" src={icon} alt="Lucas Alves Rego" />
 		</a>
 
 		<div class="flex items-center gap-2">
