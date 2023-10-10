@@ -45,6 +45,7 @@
 	"dependencies": {
 		"@notionhq/client": "^2.2.13",
 		"@resvg/resvg-js": "^2.4.1",
+		"@vercel/analytics": "^1.1.0",
 		"embla-carousel-autoplay": "8.0.0-rc14",
 		"embla-carousel-svelte": "8.0.0-rc14",
 		"franc-min": "^6.1.0",
