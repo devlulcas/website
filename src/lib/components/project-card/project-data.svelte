@@ -5,7 +5,7 @@
 	export let name: string;
 	export let description: string;
 	export let url: string | undefined;
-	export let code: string;
+	export let code: string | null;
 	export let tags: string[] = [];
 	export let details: string = '';
 </script>
@@ -35,10 +35,12 @@
 {/if}
 
 <footer class="flex justify-between items-center mt-auto">
-	<a href={code} target="_blank" class="flex items-center gap-1">
-		<GithubIcon size={18} />
-		{$t('common.projects.seeCode')}
-	</a>
+	{#if code}
+		<a href={code} target="_blank" class="flex items-center gap-1">
+			<GithubIcon size={18} />
+			{$t('common.projects.seeCode')}
+		</a>
+	{/if}
 
 	<a href={url ?? code} target="_blank" class="flex items-center gap-1">
 		{$t('common.projects.seeMore')}
