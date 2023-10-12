@@ -1,4 +1,5 @@
 import { GITHUB_API_KEY, HOW_MANY_PROJECTS_TO_SHOW } from '$env/static/private';
+import { HIDE_LIST } from './hide-list';
 
 type GithubProjectsResponse = {
 	data: {
@@ -34,7 +35,7 @@ async function getProjectImage(project: GithubProjectNode): Promise<string> {
 
 			const pingImageResponse = await fetch(githubImage, {
 				method: 'HEAD'
-			})
+			});
 
 			if (pingImageResponse.ok) {
 				return githubImage;
@@ -42,11 +43,11 @@ async function getProjectImage(project: GithubProjectNode): Promise<string> {
 		}
 
 		return null;
-	}
+	};
 
 	const githubImage = await getImageUrl();
 
-	return  githubImage ?? "/images/no-image-project.webp"
+	return githubImage ?? '/images/no-image-project.webp';
 }
 
 export type Project = {
@@ -63,11 +64,15 @@ export type Project = {
  * Fetches all the projects metadata. Currently it only fetches the projects from Github
  */
 export async function fetchProjects(): Promise<Project[]> {
+	const projectsToShow = Number(HOW_MANY_PROJECTS_TO_SHOW) || 6;
+
+	const extraProjects = HIDE_LIST.length;
+
 	const QUERY_GH_PROJECTS = `
 	{
 		viewer {
 			repositories(
-				first: ${HOW_MANY_PROJECTS_TO_SHOW ?? 6}
+				first: ${projectsToShow + extraProjects}
 				orderBy: {field: STARGAZERS, direction: DESC}
 				privacy: PUBLIC
 				affiliations: OWNER
@@ -107,11 +112,15 @@ export async function fetchProjects(): Promise<Project[]> {
 		throw new Error('Invalid response from Github API');
 	}
 
-	const projectImages = await Promise.all(
-		json.data.viewer.repositories.edges.map((edge) => getProjectImage(edge.node))
+	const validRepositories = json.data.viewer.repositories.edges.filter(
+		(edge) => HIDE_LIST.indexOf(edge.node.name) === -1
 	);
 
-	return json.data.viewer.repositories.edges.map((edge, index) => ({
+	const clippedRepositories = validRepositories.slice(0, projectsToShow);
+
+	const projectImages = await Promise.all(clippedRepositories.map((edge) => getProjectImage(edge.node)));
+
+	return clippedRepositories.map((edge, index) => ({
 		name: edge.node.name,
 		description: edge.node.description ?? '',
 		code: edge.node.url,
