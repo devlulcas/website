@@ -11,6 +11,10 @@
 	import { ArrowRight, FeatherIcon, GithubIcon } from 'lucide-svelte';
 	import HeroSection from '../lib/components/hero-section/hero-section.svelte';
 	import type { PageData } from './$types';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+
+	inject({ mode: dev ? 'development' : 'production' });
 
 	export let data: PageData;
 </script>
