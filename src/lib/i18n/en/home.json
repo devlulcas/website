@@ -15,10 +15,10 @@
 	},
 	"featuredProjects": {
 		"title": "Featured projects",
-		"description": "These are some of my favorite projects that I've worked on."
+		"description": "These are some of my favorite projects that I've worked on. Including public comercial projects and personal projects."
 	},
 	"projects": {
-		"title": "Projects",
+		"title": "Open Source Projects",
 		"description": "I have worked on many projects over the years. Here are some of them.",
 		"seeMore": "See more projects and experiments"
 	},
