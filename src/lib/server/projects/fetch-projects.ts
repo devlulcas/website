@@ -28,17 +28,23 @@ type GithubProjectNode = GithubProjectsResponse['data']['viewer']['repositories'
 
 async function getProjectImage(project: GithubProjectNode): Promise<string> {
 	const getImageUrl = async () => {
-		const exts = ['png', 'webp', 'jpg', 'jpeg', 'gif'];
+		const githubImages = ['png', 'webp', 'jpg', 'jpeg', 'gif'].map(
+			(ext) => `https://raw.githubusercontent.com/devlulcas/${project.name}/main/.github/images/preview.${ext}`
+		);
 
-		for (const ext of exts) {
-			let githubImage = `https://raw.githubusercontent.com/devlulcas/${project.name}/main/.github/images/preview.${ext}`;
+		const ogs = ['og.png', 'og.webp'].map((src) => (project.homepageUrl ? `${project.homepageUrl}/${src}` : null));
 
-			const pingImageResponse = await fetch(githubImage, {
+		const possibleImages = [...githubImages, ...ogs.filter(Boolean)] as string[];
+
+		for (const img of possibleImages) {
+			let projectImage = img;
+
+			const pingImageResponse = await fetch(projectImage, {
 				method: 'HEAD'
 			});
 
 			if (pingImageResponse.ok) {
-				return githubImage;
+				return projectImage;
 			}
 		}
 
