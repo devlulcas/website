@@ -9,12 +9,27 @@ export type FeaturedProject = {
 		pt: string;
 	};
 	url: string;
-	code: string;
+	code: string | null;
 	tags: string[];
 	images: string[];
 };
 
 const featuredProjects: FeaturedProject[] = [
+	{
+		name: 'Dantas Bikes',
+		description: {
+			en: 'E-commerce website for a bike shop',
+			pt: 'Site de e-commerce para uma loja de bicicletas'
+		},
+		details: {
+			en: 'This is an e-commerce website for selling bikes and bike accessories. It has a custom CMS for managing the products and orders. It also accepts multiple payment methods, such as 2 credit cards + PIX.',
+			pt: 'Este é um site de e-commerce para vender bicicletas e acessórios de bicicleta. Ele tem um CMS customizado para gerenciar os produtos e pedidos. Ele também aceita múltiplos métodos de pagamento, como 2 cartões de crédito + PIX.'
+		},
+		url: 'https://dantasbikes.com.br',
+		code: null,
+		tags: ['e-commerce', 'professional'],
+		images: ['/images/external/db-home.webp', '/images/external/db-payment.webp', '/images/external/db-product.webp']
+	},
 	{
 		name: 'Just a pretty website',
 		description: {
@@ -28,11 +43,7 @@ const featuredProjects: FeaturedProject[] = [
 		url: 'https://just-a-pretty-website.vercel.app/',
 		code: 'https://github.com/devlulcas/just-a-pretty-website',
 		tags: ['generative-art', 'astro'],
-		images: [
-			'https://just-a-pretty-website.vercel.app/images/og.png',
-			'https://just-a-pretty-website.vercel.app/images/og.png',
-			'https://just-a-pretty-website.vercel.app/images/og.png'
-		]
+		images: ['https://just-a-pretty-website.vercel.app/images/og.png']
 	}
 ];
 
