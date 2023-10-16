@@ -15,12 +15,6 @@
 </script>
 
 <div class="bg-background text-foreground max-w-full lg:max-w-[100ch] px-4 pt-4 pb-8">
-	<img
-		src={data.metadata.cover}
-		alt={data.metadata.title}
-		class="w-full h-auto aspect-[1200/630] object-cover rounded-lg mb-4"
-	/>
-
 	<BlogPostLayout>
 		<svelte:component this={data.component} />
 	</BlogPostLayout>
