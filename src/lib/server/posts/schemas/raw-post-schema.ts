@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { isValidCategory } from './categories';
+import { isValidCategory } from '../lib/categories';
 
 export const rawPostSchema = z.object({
 	title: z.string({ required_error: 'Title is required.' }),

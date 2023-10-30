@@ -1,5 +1,6 @@
 import { GITHUB_API_KEY, HOW_MANY_PROJECTS_TO_SHOW } from '$env/static/private';
-import { HIDE_LIST } from './hide-list';
+import { HIDE_LIST } from '../data/hide-list';
+import type { Project } from '../types';
 
 type GithubProjectsResponse = {
 	data: {
@@ -26,50 +27,10 @@ type GithubProjectsResponse = {
 
 type GithubProjectNode = GithubProjectsResponse['data']['viewer']['repositories']['edges'][0]['node'];
 
-async function getProjectImage(project: GithubProjectNode): Promise<string> {
-	const getImageUrl = async () => {
-		const githubImages = ['png', 'webp', 'jpg', 'jpeg', 'gif'].map(
-			(ext) => `https://raw.githubusercontent.com/devlulcas/${project.name}/main/.github/images/preview.${ext}`
-		);
-
-		const ogs = ['og.png', 'og.webp'].map((src) => (project.homepageUrl ? `${project.homepageUrl}/${src}` : null));
-
-		const possibleImages = [...githubImages, ...ogs.filter(Boolean)] as string[];
-
-		for (const img of possibleImages) {
-			let projectImage = img;
-
-			const pingImageResponse = await fetch(projectImage, {
-				method: 'HEAD'
-			});
-
-			if (pingImageResponse.ok) {
-				return projectImage;
-			}
-		}
-
-		return null;
-	};
-
-	const githubImage = await getImageUrl();
-
-	return githubImage ?? '/images/no-image-project.webp';
-}
-
-export type Project = {
-	name: string;
-	description: string;
-	code: string;
-	url?: string;
-	createdAt: string;
-	languages?: { name: string }[];
-	image: string;
-};
-
 /**
  * Fetches all the projects metadata. Currently it only fetches the projects from Github
  */
-export async function fetchProjects(): Promise<Project[]> {
+export async function getProjects(): Promise<Project[]> {
 	const projectsToShow = Number(HOW_MANY_PROJECTS_TO_SHOW) || 6;
 
 	const extraProjects = HIDE_LIST.length;
@@ -136,3 +97,34 @@ export async function fetchProjects(): Promise<Project[]> {
 		image: projectImages[index]
 	}));
 }
+
+async function getProjectImage(project: GithubProjectNode): Promise<string> {
+	const getImageUrl = async () => {
+		const githubImages = ['png', 'webp', 'jpg', 'jpeg', 'gif'].map(
+			(ext) => `https://raw.githubusercontent.com/devlulcas/${project.name}/main/.github/images/preview.${ext}`
+		);
+
+		const ogs = ['og.png', 'og.webp'].map((src) => (project.homepageUrl ? `${project.homepageUrl}/${src}` : null));
+
+		const possibleImages = [...githubImages, ...ogs.filter(Boolean)] as string[];
+
+		for (const img of possibleImages) {
+			let projectImage = img;
+
+			const pingImageResponse = await fetch(projectImage, {
+				method: 'HEAD'
+			});
+
+			if (pingImageResponse.ok) {
+				return projectImage;
+			}
+		}
+
+		return null;
+	};
+
+	const githubImage = await getImageUrl();
+
+	return githubImage ?? '/images/no-image-project.webp';
+}
+

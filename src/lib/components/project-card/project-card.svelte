@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { t } from '$/lib/i18n';
-	import type { Project } from '$/lib/server/projects';
 	import { ArrowRightIcon } from 'lucide-svelte';
 	import ProjectData from './project-data.svelte';
+	import type { Project } from '$/lib/server/projects/types';
 
 	export let project: Project;
 

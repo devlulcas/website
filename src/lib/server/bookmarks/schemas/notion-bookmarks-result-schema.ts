@@ -41,6 +41,4 @@ export const notionBookmarksResultSchema = z.object({
 	)
 });
 
-export type NotionBookmarksResult = z.infer<typeof notionBookmarksResultSchema>;
-
-export type NotionBookmarkResult = NotionBookmarksResult['results'][0];
+export type NotionBookmarksResultSchema = z.infer<typeof notionBookmarksResultSchema>;

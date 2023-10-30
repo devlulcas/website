@@ -1,41 +1,13 @@
 import { NOTION_BOOKMARKS_DATABASE_ID, NOTION_KEY } from '$env/static/private';
 import { Client } from '@notionhq/client';
-import { notionBookmarksResultSchema, type NotionBookmarkResult } from './types';
-
-/**
- * Generate search terms for a bookmark
- *
- * @param bookmark Bookmark to generate search terms
- * @returns Search terms
- */
-function generateSearchTerms(bookmark: NotionBookmarkResult): string {
-	const searchTerms = [
-		bookmark.properties.Name.title[0].plain_text,
-		bookmark.properties.Tags.multi_select.map((tag) => tag.name),
-		bookmark.properties.AboutEn.rich_text[0].plain_text,
-		bookmark.properties.AboutPtBr.rich_text[0].plain_text
-	];
-
-	return searchTerms.flat().join(' ').toLowerCase();
-}
-
-export type Bookmark = {
-	resourceId: string;
-	name: string;
-	url: string;
-	about: {
-		en: string;
-		ptBr: string;
-	};
-	tags: string[];
-	searchTerms: string;
-};
+import type { Bookmark, NotionBookmarkResult } from '../types';
+import { notionBookmarksResultSchema } from '../schemas/notion-bookmarks-result-schema';
 
 /**
  * Fetch all bookmarks from Notion
- * @returns List of bookmarks
+ * @returns An array of bookmarks
  */
-export async function fetchBookmarks(): Promise<Bookmark[]> {
+export async function getBookmarks(): Promise<Bookmark[]> {
 	const notion = new Client({ auth: NOTION_KEY });
 
 	const notionQuery = await notion.databases.query({
@@ -67,4 +39,21 @@ export async function fetchBookmarks(): Promise<Bookmark[]> {
 	});
 
 	return bookmarks.filter(Boolean) as Bookmark[];
+}
+
+/**
+ * Generate search terms for a bookmark
+ *
+ * @param bookmark Bookmark to generate search terms
+ * @returns Search terms
+ */
+function generateSearchTerms(bookmark: NotionBookmarkResult): string {
+	const searchTerms = [
+		bookmark.properties.Name.title[0].plain_text,
+		bookmark.properties.Tags.multi_select.map((tag) => tag.name),
+		bookmark.properties.AboutEn.rich_text[0].plain_text,
+		bookmark.properties.AboutPtBr.rich_text[0].plain_text
+	];
+
+	return searchTerms.flat().join(' ').toLowerCase();
 }

@@ -1,6 +1,6 @@
 import { availablePostCategories } from '$/lib/assets/config';
-import type { PostMetadata } from './fetch-posts';
-import type { RawPostSchema } from './raw-post-schema';
+import type { RawPostSchema } from '../schemas/raw-post-schema';
+import type { PostMetadata } from '../types';
 
 /**
  * Sum up the posts metadata to get every unique category

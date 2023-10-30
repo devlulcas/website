@@ -1,22 +1,15 @@
 import { readingTime } from 'reading-time-estimator';
 import { z } from 'zod';
-import { detectLanguage, type Language } from './language-detection';
-import { rawPostSchema, type RawPostSchema } from './raw-post-schema';
-
-export type PostMetadata = Required<
-	RawPostSchema & {
-		slug: string;
-		language: Language;
-		readingTime: number;
-	}
->;
+import { rawPostSchema } from '../schemas/raw-post-schema';
+import type { PostMetadata } from '../types';
+import { detectLanguage } from '../lib/detect-language';
 
 /**
  * Fetches all the posts metadata. It also adds the slug and the SEO metadata
  *
  * @returns all the posts metadata
  */
-export async function fetchPosts(): Promise<PostMetadata[]> {
+export async function getPosts(): Promise<PostMetadata[]> {
 	const postFiles = import.meta.glob('/posts/**/*.md');
 
 	const postMetadataPromises: Promise<PostMetadata>[] = Object.entries(postFiles).map(async ([filepath, resolver]) => {

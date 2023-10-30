@@ -1,22 +1,15 @@
 import { MY_OWN_EMAIL, RESEND_API_KEY } from '$env/static/private';
 import { Resend } from 'resend';
-import { z } from 'zod';
+import type { EmailNotificationSchema } from '../schemas/email-notification-schema';
 
 const resend = new Resend(RESEND_API_KEY);
-
-export const emailNotificationSchema = z.object({
-	subject: z.string(),
-	content: z.string()
-});
-
-type EmailNotification = z.infer<typeof emailNotificationSchema>;
 
 type EmailNotificationResult = {
 	success: boolean;
 	error?: string;
 };
 
-export async function sendEmailNotification(notification: EmailNotification): Promise<EmailNotificationResult> {
+export async function sendEmailNotification(notification: EmailNotificationSchema): Promise<EmailNotificationResult> {
 	try {
 		await resend.sendEmail({
 			from: 'onboarding@resend.dev',

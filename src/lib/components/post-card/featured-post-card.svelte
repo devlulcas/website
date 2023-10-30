@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PostMetadata } from '$/lib/server/posts';
+	import type { PostMetadata } from '$/lib/server/posts/types';
 	import PostData from './post-data.svelte';
 
 	export let post: PostMetadata;

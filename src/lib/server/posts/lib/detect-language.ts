@@ -1,6 +1,5 @@
 import { franc } from 'franc-min';
-
-export type Language = { niceName: 'Português'; code: 'pt-br' } | { niceName: 'English'; code: 'en' };
+import type { Language } from '../types';
 
 export function detectLanguage(text: string): Language {
 	const lang = franc(text, {

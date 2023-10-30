@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { locale, t } from '$/lib/i18n';
-	import type { PostMetadata } from '$/lib/server/posts';
+	import type { PostMetadata } from '$/lib/server/posts/types';
 	import { ArrowRightIcon, DotIcon, HashIcon } from 'lucide-svelte';
 
 	export let post: PostMetadata;

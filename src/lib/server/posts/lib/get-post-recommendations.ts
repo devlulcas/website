@@ -1,4 +1,4 @@
-import type { PostMetadata } from './fetch-posts';
+import type { PostMetadata } from "../types";
 
 export function getPostRecommendations(posts: PostMetadata[], currentPostIndex: number) {
 	const recommendations: PostMetadata[] = [];

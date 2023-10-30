@@ -1,21 +1,22 @@
-import { sendEmailNotification } from '$/lib/server/contact';
-import { fetchPosts } from '$/lib/server/posts';
-import { fetchFeaturedProjects, fetchProjects } from '$/lib/server/projects';
 import { fail, redirect } from '@sveltejs/kit';
 import { z } from 'zod';
 import { zfd } from 'zod-form-data';
 import type { Actions, PageServerLoad } from './$types';
+import { getPosts } from '$/lib/server/posts/services/get-posts';
+import { getFeaturedProjects } from '$/lib/server/projects/services/get-feature-projects';
+import { getProjects } from '$/lib/server/projects/services/get-projects';
+import { sendEmailNotification } from '$/lib/server/contact/services/send-email-notification';
 
 export const load: PageServerLoad = async () => {
-	const posts = await fetchPosts();
+	const posts = await getPosts();
 
 	const featuredPost = posts[0];
 
 	const recentPosts = posts.splice(1, 3);
 
-	const featuredProjects = fetchFeaturedProjects();
+	const featuredProjects = getFeaturedProjects();
 
-	const projects = await fetchProjects();
+	const projects = await getProjects();
 
 	return { featuredProjects, projects, recentPosts, featuredPost };
 };

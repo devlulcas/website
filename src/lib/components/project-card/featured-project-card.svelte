@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { FeaturedProject } from '$/lib/server/projects';
+	import type { FeaturedProject } from '$/lib/server/projects/types';
 	import ProjectData from './project-data.svelte';
 
 	export let project: FeaturedProject;

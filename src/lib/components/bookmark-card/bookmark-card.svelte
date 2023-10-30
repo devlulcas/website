@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { locale } from '$/lib/i18n';
-	import type { Bookmark } from '$/lib/server/bookmarks';
+	import type { Bookmark } from '$/lib/server/bookmarks/types';
 
 	export let bookmark: Bookmark;
 
