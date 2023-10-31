@@ -1,6 +1,6 @@
 import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
 import { createServerClient } from '@supabase/ssr';
-import type { Handle } from '@sveltejs/kit';
+import { error, redirect, type Handle } from '@sveltejs/kit';
 import { sequence } from '@sveltejs/kit/hooks';
 
 // * Theme event handler, gets the data from the event and then return the user theme
@@ -41,7 +41,7 @@ const i18nHookHandle: Handle = ({ event, resolve }) => {
 };
 
 // * Supabase event handler, gets the data from the event and then return the user session
-const authHandle: Handle = async ({ event, resolve }) => {
+const supabaseHandle: Handle = async ({ event, resolve }) => {
 	event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
 		cookies: {
 			get: (key) => event.cookies.get(key),
@@ -75,4 +75,24 @@ const authHandle: Handle = async ({ event, resolve }) => {
 	});
 };
 
-export const handle: Handle = sequence(themeHookHandle, authHandle, i18nHookHandle);
+export const authHandle: Handle = async ({ event, resolve }) => {
+  if (event.url.pathname.startsWith('/dashboard')) {
+    const session = await event.locals.getSession()
+
+		if (!session) {
+      throw redirect(303, '/')
+    }
+  }
+
+  if (event.url.pathname.startsWith('/dashboard') && event.request.method === 'POST') {
+    const session = await event.locals.getSession()
+    if (!session) {
+      throw error(303, '/')
+    }
+  }
+
+  return resolve(event)
+}
+
+
+export const handle: Handle = sequence(themeHookHandle, supabaseHandle, authHandle, i18nHookHandle);

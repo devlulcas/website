@@ -45,6 +45,7 @@
 	"dependencies": {
 		"@notionhq/client": "^2.2.13",
 		"@resvg/resvg-js": "^2.6.0",
+		"@supabase/auth-helpers-sveltekit": "^0.10.5",
 		"@supabase/ssr": "^0.0.5",
 		"@supabase/supabase-js": "^2.38.4",
 		"@vercel/analytics": "^1.1.1",
