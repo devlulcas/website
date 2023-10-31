@@ -45,11 +45,11 @@
 	"dependencies": {
 		"@notionhq/client": "^2.2.13",
 		"@resvg/resvg-js": "^2.6.0",
+		"@supabase/ssr": "^0.0.5",
+		"@supabase/supabase-js": "^2.38.4",
 		"@vercel/analytics": "^1.1.1",
 		"embla-carousel-autoplay": "8.0.0-rc14",
 		"embla-carousel-svelte": "8.0.0-rc14",
-		"firebase": "^10.5.2",
-		"firebase-admin": "^11.11.0",
 		"franc-min": "^6.1.0",
 		"fzf": "^0.5.2",
 		"lucide-svelte": "^0.284.0",
