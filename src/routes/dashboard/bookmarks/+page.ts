@@ -1,16 +1,16 @@
-import { redirect } from '@sveltejs/kit'
+import { redirect } from '@sveltejs/kit';
 
 export const load = async ({ parent }) => {
-  const { supabase, session } = await parent()
-  
-  if (!session) {
-    throw redirect(303, '/')
-  }
+	const { supabase, session } = await parent();
 
-  const { data: bookmarks } = await supabase.from('bookmarks').select('*')
+	if (!session) {
+		throw redirect(303, '/');
+	}
 
-  return {
-    user: session.user,
-    bookmarks,
-  }
-}
+	const { data: bookmarks } = await supabase.from('bookmarks').select('*');
+
+	return {
+		user: session.user,
+		bookmarks
+	};
+};

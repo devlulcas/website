@@ -1,5 +1,7 @@
+import { intlArrayToString } from '$/lib/utils/intl-array-to-string.js';
 import { AuthApiError } from '@supabase/supabase-js';
 import { fail, redirect } from '@sveltejs/kit';
+import { z } from 'zod';
 import { zfd } from 'zod-form-data';
 
 export const actions = {
@@ -7,15 +9,15 @@ export const actions = {
 		const formData = await request.formData();
 
 		const formSchema = zfd.formData({
-			email: zfd.text(),
-			password: zfd.text()
+			email: zfd.text(z.string().email()),
+			password: zfd.text(z.string().min(8))
 		});
 
 		const parsedFormData = formSchema.safeParse(formData);
 
 		if (!parsedFormData.success) {
-			console.log(parsedFormData.error)
-			return fail(400, { message: 'Invalid form data.', success: false, email: '' });
+			const errorMessage = intlArrayToString(parsedFormData.error.issues.map((issue) => issue.message));
+			return fail(400, { message: errorMessage, success: false, email: '' });
 		}
 
 		const { error } = await supabase.auth.signInWithPassword({
@@ -30,6 +32,7 @@ export const actions = {
 					values: { email: parsedFormData.data.email }
 				});
 			}
+
 			return fail(500, {
 				error: 'Server error. Try again later.',
 				values: { email: parsedFormData.data.email }
