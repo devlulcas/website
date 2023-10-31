@@ -25,12 +25,11 @@ export const actions = {
 			return fail(400, { message: 'Invalid form data.', success: false });
 		}
 
-		const { error: createBookmarkError, data: newBookmark } = await supabase.from('bookmarks').insert({
+		const { error: createBookmarkError, data: newBookmark } = await supabase.from('bookmark').insert({
 			url: parsedFormData.data.url,
 			pt_br_description: parsedFormData.data.ptBrDescription,
 			en_description: parsedFormData.data.enDescription,
 			title: parsedFormData.data.title,
-			user_id: session.user.id
 		});
 
 		if (createBookmarkError) {

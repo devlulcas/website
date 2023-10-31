@@ -7,7 +7,7 @@ export const load = async ({ parent }) => {
 		throw redirect(303, '/');
 	}
 
-	const { data: bookmarks } = await supabase.from('bookmarks').select('*');
+	const { data: bookmarks } = await supabase.from('bookmark').select('*');
 
 	return {
 		user: session.user,
