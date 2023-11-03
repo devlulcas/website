@@ -53,6 +53,7 @@
 		"@vercel/analytics": "^1.1.1",
 		"class-variance-authority": "^0.7.0",
 		"drizzle-orm": "^0.28.6",
+		"drizzle-zod": "^0.5.1",
 		"embla-carousel-autoplay": "8.0.0-rc14",
 		"embla-carousel-svelte": "8.0.0-rc14",
 		"franc-min": "^6.1.0",

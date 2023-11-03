@@ -75,24 +75,24 @@ const supabaseHandle: Handle = async ({ event, resolve }) => {
 	});
 };
 
+// * Auth event handler, protect the dashboard routes
 export const authHandle: Handle = async ({ event, resolve }) => {
-  if (event.url.pathname.startsWith('/dashboard')) {
-    const session = await event.locals.getSession()
+	if (event.url.pathname.startsWith('/dashboard')) {
+		const session = await event.locals.getSession();
 
 		if (!session) {
-      throw redirect(303, '/')
-    }
-  }
+			throw redirect(303, '/');
+		}
+	}
 
-  if (event.url.pathname.startsWith('/dashboard') && event.request.method === 'POST') {
-    const session = await event.locals.getSession()
-    if (!session) {
-      throw error(303, '/')
-    }
-  }
+	if (event.url.pathname.startsWith('/dashboard') && event.request.method === 'POST') {
+		const session = await event.locals.getSession();
+		if (!session) {
+			throw error(303, '/');
+		}
+	}
 
-  return resolve(event)
-}
-
+	return resolve(event);
+};
 
 export const handle: Handle = sequence(themeHookHandle, supabaseHandle, authHandle, i18nHookHandle);
