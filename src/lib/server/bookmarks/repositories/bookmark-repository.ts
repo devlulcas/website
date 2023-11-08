@@ -1,5 +1,6 @@
+import { eq } from 'drizzle-orm';
 import type { DrizzleDatabase } from '../../database/db';
-import { bookmarkTable, bookmarkToTagTable, type BookmarkInsertSchema } from '../../database/schema';
+import { bookmarkTable, bookmarkTagTable, bookmarkToTagTable, type BookmarkInsertSchema } from '../../database/schema';
 
 export async function upsertBookmark(db: DrizzleDatabase, bookmarkData: BookmarkInsertSchema & { tags: number[] }) {
 	try {
@@ -35,9 +36,25 @@ export async function upsertBookmark(db: DrizzleDatabase, bookmarkData: Bookmark
 	}
 }
 
-export function selectBookmarks(db: DrizzleDatabase) {
+export async function selectBookmarks(db: DrizzleDatabase) {
 	try {
-		const result = db.select().from(bookmarkTable);
+		const query = db
+		.select({
+			id: bookmarkTable.id,
+			name: bookmarkTable.name,
+			ptBrDescription: bookmarkTable.ptBrDescription,
+			enUsDescription: bookmarkTable.enUsDescription,
+			url: bookmarkTable.url,
+			createdAt: bookmarkTable.createdAt,
+			updatedAt: bookmarkTable.updatedAt,
+			tagName: bookmarkTagTable.name
+		})
+		.from(bookmarkTable)
+		.leftJoin(bookmarkToTagTable, eq(bookmarkTable.id, bookmarkToTagTable.bookmarkId))
+		.leftJoin(bookmarkTagTable, eq(bookmarkToTagTable.tagId, bookmarkTagTable.id));
+
+		const result = await query.execute();
+
 		return result;
 	} catch (error) {
 		console.error('selectBookmarks', error);

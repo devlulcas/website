@@ -5,7 +5,7 @@
 	export let form;
 </script>
 
-<form class="min-h-[--view-height] grid gap-2 place-items-center" method="post" action="?/signIn" use:enhance>
+<form class="min-h-[--view-height] gap-2 flex items-center flex-col justify-center" method="post" action="?/signIn" use:enhance>
 	{#if form}
 		{#if form.success}
 			<strong class="px-2 py-1 bg-green-500 border max-w-[300px] rounded shadow-lg text-green-50">
@@ -13,7 +13,7 @@
 			</strong>
 		{:else}
 			<strong class="px-2 py-1 bg-destructive border max-w-[300px] rounded shadow-lg text-destructive-foreground">
-				{form.message}
+				{form.error}
 			</strong>
 		{/if}
 	{/if}

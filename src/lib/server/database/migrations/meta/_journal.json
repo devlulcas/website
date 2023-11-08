@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1699468511729,
+      "tag": "0000_mixed_red_shift",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1699472869395,
+      "tag": "0001_loud_hammerhead",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1699473182633,
+      "tag": "0002_unique_mandrill",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1699473274482,
+      "tag": "0003_shiny_warlock",
+      "breakpoints": true
+    }
+  ]
+}
