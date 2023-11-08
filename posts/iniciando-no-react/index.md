@@ -134,7 +134,7 @@ Também é comum ver coisas como `JSX` (XML + JS, aquele HTML no meio do código
 ```js
 // Note que o nome da função começa com letra maiúscula
 function MeuComponente() {
-	return <h1>Oi mãe!</h1>;
+  return <h1>Oi mãe!</h1>;
 }
 
 export { MeuComponente };
@@ -146,11 +146,11 @@ export { MeuComponente };
 import { MeuComponente } from './MeuComponente.js';
 
 function App() {
-	return (
-		<div>
-			<MeuComponente />
-		</div>
-	);
+  return (
+    <div>
+      <MeuComponente />
+    </div>
+  );
 }
 
 // Resulta em <div> <h1> Olá mãe </h1> </div>
@@ -168,10 +168,10 @@ import ReactDOM from 'react-dom';
 import App from './App.js';
 
 ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
-	document.getElementById('root')
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
 ```
 
@@ -187,7 +187,7 @@ O JSX não é compreendido pelo navegador, então compiladores irão transformar
 
 ```js
 function Gatinho() {
-	return <h1>Miau</h1>;
+  return <h1>Miau</h1>;
 }
 ```
 
@@ -195,7 +195,7 @@ Se transforma em:
 
 ```js
 function Gatinho() {
-	return React.createElement('h1', null, 'Miau');
+  return React.createElement('h1', null, 'Miau');
 }
 ```
 
@@ -215,9 +215,9 @@ Podemos utilizar ganchos (Hooks) para adicionar funcionalidades aos nossos compo
 
 ```js
 function Olá() {
-	const [estado, setEstado] = useState('Olá mundo!');
-	// Quando clicamos no botão o seu conteúdo muda de "Olá mundo!" para "Olá mãe!"
-	return <button onClick={() => setEstado('Olá mãe!')}>{estado}</button>;
+  const [estado, setEstado] = useState('Olá mundo!');
+  // Quando clicamos no botão o seu conteúdo muda de "Olá mundo!" para "Olá mãe!"
+  return <button onClick={() => setEstado('Olá mãe!')}>{estado}</button>;
 }
 ```
 
@@ -237,8 +237,8 @@ titulo.textContent = `Contagem: ${contador}`;
 
 // Adiciona o evento de clique que altera o título
 botão.addEventListener('click', () => {
-	contador++;
-	titulo.textContent = `Contagem: ${contador}`;
+  contador++;
+  titulo.textContent = `Contagem: ${contador}`;
 });
 
 // Ignorando a adição dos elementos ao DOM

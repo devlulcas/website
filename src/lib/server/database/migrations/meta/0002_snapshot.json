@@ -108,9 +108,7 @@
         "bookmark_tag_name_unique": {
           "name": "bookmark_tag_name_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "name"
-          ]
+          "columns": ["name"]
         }
       }
     },
@@ -137,12 +135,8 @@
           "name": "bookmark_to_tag_bookmark_id_bookmark_id_fk",
           "tableFrom": "bookmark_to_tag",
           "tableTo": "bookmark",
-          "columnsFrom": [
-            "bookmark_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["bookmark_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -150,12 +144,8 @@
           "name": "bookmark_to_tag_tag_id_bookmark_tag_id_fk",
           "tableFrom": "bookmark_to_tag",
           "tableTo": "bookmark_tag",
-          "columnsFrom": [
-            "tag_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["tag_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -163,10 +153,7 @@
       "compositePrimaryKeys": {
         "bookmark_to_tag_bookmark_id_tag_id": {
           "name": "bookmark_to_tag_bookmark_id_tag_id",
-          "columns": [
-            "bookmark_id",
-            "tag_id"
-          ]
+          "columns": ["bookmark_id", "tag_id"]
         }
       },
       "uniqueConstraints": {}
@@ -275,9 +262,7 @@
         "microblog_tag_name_unique": {
           "name": "microblog_tag_name_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "name"
-          ]
+          "columns": ["name"]
         }
       }
     },
@@ -304,12 +289,8 @@
           "name": "microblog_to_tag_microblog_id_microblog_id_fk",
           "tableFrom": "microblog_to_tag",
           "tableTo": "microblog",
-          "columnsFrom": [
-            "microblog_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["microblog_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -317,12 +298,8 @@
           "name": "microblog_to_tag_tag_id_microblog_tag_id_fk",
           "tableFrom": "microblog_to_tag",
           "tableTo": "microblog_tag",
-          "columnsFrom": [
-            "tag_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["tag_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -330,10 +307,7 @@
       "compositePrimaryKeys": {
         "microblog_to_tag_microblog_id_tag_id": {
           "name": "microblog_to_tag_microblog_id_tag_id",
-          "columns": [
-            "microblog_id",
-            "tag_id"
-          ]
+          "columns": ["microblog_id", "tag_id"]
         }
       },
       "uniqueConstraints": {}

@@ -1,26 +1,26 @@
 {
-	"header": {
-		"home": "Inicio",
-		"about": "Sobre",
-		"bookmarks": "Favoritos",
-		"contact": "Contato",
-		"blog": "Blog",
-		"themes": {
-			"light": "Tema Claro",
-			"dark": "Tema Escuro"
-		},
-		"languages": "Idiomas"
-	},
-	"footer": {
-		"codeAvailableOn": "Código disponível em"
-	},
-	"projects": {
-		"seeMore": "Ver mais",
-		"seeCode": "Ver código fonte",
-		"visit": "Visitar"
-	},
-	"posts": {
-		"seeMore": "Ler mais",
-		"timeToRead": "minutos de leitura"
-	}
+  "header": {
+    "home": "Inicio",
+    "about": "Sobre",
+    "bookmarks": "Favoritos",
+    "contact": "Contato",
+    "blog": "Blog",
+    "themes": {
+      "light": "Tema Claro",
+      "dark": "Tema Escuro"
+    },
+    "languages": "Idiomas"
+  },
+  "footer": {
+    "codeAvailableOn": "Código disponível em"
+  },
+  "projects": {
+    "seeMore": "Ver mais",
+    "seeCode": "Ver código fonte",
+    "visit": "Visitar"
+  },
+  "posts": {
+    "seeMore": "Ler mais",
+    "timeToRead": "minutos de leitura"
+  }
 }

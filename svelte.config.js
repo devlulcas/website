@@ -7,24 +7,24 @@ import rehypeSlug from 'rehype-slug';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.svx', '.md'],
-	preprocess: [
-		vitePreprocess(),
-		mdsvex({
-			extensions: ['.md', '.svx', '.mdx'],
-			remarkPlugins: [relativeImages],
-			rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]]
-		})
-	],
-	kit: {
-		adapter: adapter(),
-		prerender: {
-			entries: ['*']
-		},
-		alias: {
-			'$/*': 'src/*'
-		}
-	}
+  extensions: ['.svelte', '.svx', '.md'],
+  preprocess: [
+    vitePreprocess(),
+    mdsvex({
+      extensions: ['.md', '.svx', '.mdx'],
+      remarkPlugins: [relativeImages],
+      rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
+    }),
+  ],
+  kit: {
+    adapter: adapter(),
+    prerender: {
+      entries: ['*'],
+    },
+    alias: {
+      '$/*': 'src/*',
+    },
+  },
 };
 
 export default config;

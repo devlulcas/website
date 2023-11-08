@@ -1,49 +1,49 @@
 {
-	"about": {
-		"title": "Olá! Eu sou o Lucas",
-		"description": "Sou um desenvolvedor web brasileiro. Eu adoro criar coisas para a web e experimentar com novas tecnologias.",
-		"callToAction": {
-			"contact": "Vamos conversar",
-			"or": "ou",
-			"seeMore": "saiba mais sobre mim"
-		}
-	},
-	"blog": {
-		"title": "Posts do blog",
-		"description": "Alguns dos meus pensamentos, ideias e experiências.",
-		"seeMore": "Veja mais postagens"
-	},
-	"featuredProjects": {
-		"title": "Projetos em destaque",
-		"description": "Estes são alguns dos meus projetos favoritos em que trabalhei. Incluindo projetos comerciais públicos e projetos pessoais."
-	},
-	"projects": {
-		"title": "Projetos de código aberto",
-		"description": "Trabalhei em muitos projetos ao longo dos anos. Aqui estão alguns deles.",
-		"seeMore": "Veja mais projetos e experimentos"
-	},
-	"contact": {
-		"description": "Você pode entrar em contato comigo por e-mail ou nas redes sociais.",
-		"title": "Contato",
-		"form": {
-			"name": {
-				"label": "Nome",
-				"placeholder": "Seu nome"
-			},
-			"email": {
-				"label": "Email",
-				"placeholder": "email@exemplo.com"
-			},
-			"message": {
-				"label": "Mensagem",
-				"placeholder": "Diga algo..."
-			},
-			"submit": {
-				"idle": "Enviar",
-				"submitting": "Enviando...",
-				"success": "Enviado!",
-				"failure": "Oops! Algo deu errado. Por favor, tente novamente."
-			}
-		}
-	}
+  "about": {
+    "title": "Olá! Eu sou o Lucas",
+    "description": "Sou um desenvolvedor web brasileiro. Eu adoro criar coisas para a web e experimentar com novas tecnologias.",
+    "callToAction": {
+      "contact": "Vamos conversar",
+      "or": "ou",
+      "seeMore": "saiba mais sobre mim"
+    }
+  },
+  "blog": {
+    "title": "Posts do blog",
+    "description": "Alguns dos meus pensamentos, ideias e experiências.",
+    "seeMore": "Veja mais postagens"
+  },
+  "featuredProjects": {
+    "title": "Projetos em destaque",
+    "description": "Estes são alguns dos meus projetos favoritos em que trabalhei. Incluindo projetos comerciais públicos e projetos pessoais."
+  },
+  "projects": {
+    "title": "Projetos de código aberto",
+    "description": "Trabalhei em muitos projetos ao longo dos anos. Aqui estão alguns deles.",
+    "seeMore": "Veja mais projetos e experimentos"
+  },
+  "contact": {
+    "description": "Você pode entrar em contato comigo por e-mail ou nas redes sociais.",
+    "title": "Contato",
+    "form": {
+      "name": {
+        "label": "Nome",
+        "placeholder": "Seu nome"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "email@exemplo.com"
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Diga algo..."
+      },
+      "submit": {
+        "idle": "Enviar",
+        "submitting": "Enviando...",
+        "success": "Enviado!",
+        "failure": "Oops! Algo deu errado. Por favor, tente novamente."
+      }
+    }
+  }
 }

@@ -111,9 +111,9 @@ _Uma máquina não sabe dizer o que é um parágrafo e o que é um título entã
 
 ```html
 <section>
-	<h1>Titulo</h1>
-	<p>Meu lindo parágrafo</p>
-	<img src="./gatinho_fofo.png" alt="isso aqui é uma imagem" />
+  <h1>Titulo</h1>
+  <p>Meu lindo parágrafo</p>
+  <img src="./gatinho_fofo.png" alt="isso aqui é uma imagem" />
 </section>
 ```
 
@@ -121,32 +121,32 @@ _As coisas agora fazem sentido, mas 1998 ficou para trás então a gente pode de
 
 ```css
 body {
-	background-color: antiquewhite;
+  background-color: antiquewhite;
 }
 
 section {
-	width: fit-content;
-	padding: 1rem;
-	border-radius: 1rem;
-	background-color: white;
-	box-shadow: 0.1rem 0.1rem 0.1rem hsla(0 0 0 / 50%);
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0.1rem 0.1rem 0.1rem hsla(0 0 0 / 50%);
 }
 
 h1 {
-	font-family: 'Poppins';
-	font-size: 3rem;
-	font-weight: 800;
-	color: black;
+  font-family: 'Poppins';
+  font-size: 3rem;
+  font-weight: 800;
+  color: black;
 }
 
 p {
-	font-weight: 500;
-	color: gray;
+  font-weight: 500;
+  color: gray;
 }
 
 img {
-	width: 5rem;
-	border-radius: 0.5rem;
+  width: 5rem;
+  border-radius: 0.5rem;
 }
 ```
 

@@ -3,47 +3,47 @@
 @tailwind utilities;
 
 @layer base {
-	/* Theme independent variables */
-	:root {
-		/* Height variables */
-		--footer-height: 12rem;
-		--header-height: 4rem;
-		--view-height: calc(100dvh - var(--header-height) - var(--footer-height));
+  /* Theme independent variables */
+  :root {
+    /* Height variables */
+    --footer-height: 12rem;
+    --header-height: 4rem;
+    --view-height: calc(100dvh - var(--header-height) - var(--footer-height));
 
-		@media (min-width: 768px) {
-			--footer-height: 4rem;
-			--view-height: calc(100dvh - var(--header-height) - var(--footer-height));
-		}
+    @media (min-width: 768px) {
+      --footer-height: 4rem;
+      --view-height: calc(100dvh - var(--header-height) - var(--footer-height));
+    }
 
-		/* Smooth stuff */
-		scroll-padding-top: var(--header-height);
-		scroll-behavior: smooth;
+    /* Smooth stuff */
+    scroll-padding-top: var(--header-height);
+    scroll-behavior: smooth;
 
-		/* I don't like horizontal scrolling */
-		max-width: 100vw;
-		overflow-x: hidden;
+    /* I don't like horizontal scrolling */
+    max-width: 100vw;
+    overflow-x: hidden;
 
-		/* Brand colors - I like green */
-		--brand: hsl(155, 100%, 45%);
-		--brand-light: hsl(132, 100%, 45%);
-		--brand-dark: hsl(155, 100%, 25%);
+    /* Brand colors - I like green */
+    --brand: hsl(155, 100%, 45%);
+    --brand-light: hsl(132, 100%, 45%);
+    --brand-dark: hsl(155, 100%, 25%);
 
-		--brand-50: #e5ffeb;
-		--brand-100: #c7ffd2;
-		--brand-200: #8fffa5;
-		--brand-300: #57ff78;
-		--brand-400: #1fff4b;
-		--brand-500: #00e62e;
-		--brand-600: #00b825;
-		--brand-700: #008a1c;
-		--brand-800: #005c12;
-		--brand-900: #002e09;
-		--brand-950: #001a04;
-	}
+    --brand-50: #e5ffeb;
+    --brand-100: #c7ffd2;
+    --brand-200: #8fffa5;
+    --brand-300: #57ff78;
+    --brand-400: #1fff4b;
+    --brand-500: #00e62e;
+    --brand-600: #00b825;
+    --brand-700: #008a1c;
+    --brand-800: #005c12;
+    --brand-900: #002e09;
+    --brand-950: #001a04;
+  }
 
-	/* Default theme colors */
-	:root {
-	  --background: 0 0% 100%;
+  /* Default theme colors */
+  :root {
+    --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -64,12 +64,12 @@
     --ring: 240 5.9% 10%;
     --radius: 0.3rem;
 
-		--scrollbar: 0 0% 48%;
-	}
+    --scrollbar: 0 0% 48%;
+  }
 
-	/* Dark theme colors */
-	[data-theme='dark'] {
-	  --background: 240 10% 3.9%;
+  /* Dark theme colors */
+  [data-theme='dark'] {
+    --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -89,11 +89,11 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
 
-		--scrollbar: 0 0% 98%;
-	}
+    --scrollbar: 0 0% 98%;
+  }
 
-	/* Default styling */
-	* {
+  /* Default styling */
+  * {
     @apply border-border;
   }
 
@@ -101,20 +101,20 @@
     @apply bg-background text-foreground;
   }
 
-	/* Custom Scrollbar */
-	::-webkit-scrollbar {
-		width: 0.8rem;
-	}
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 0.8rem;
+  }
 
-	::-webkit-scrollbar-track {
-		background: hsl(var(--scrollbar) / 25%);
-	}
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--scrollbar) / 25%);
+  }
 
-	::-webkit-scrollbar-thumb {
-		background: hsl(var(--scrollbar) / 45%);
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--scrollbar) / 45%);
 
-		&:hover {
-			background: hsl(var(--scrollbar) / 85%);
-		}
-	}
+    &:hover {
+      background: hsl(var(--scrollbar) / 85%);
+    }
+  }
 }

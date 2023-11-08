@@ -3,13 +3,13 @@ import { selectBookmarks } from '../repositories/bookmark-repository';
 import type { Bookmark } from '../types';
 
 export async function getBookmarks(): Promise<Bookmark[]> {
-	const bookmarks = await selectBookmarks(db);
+  const bookmarks = await selectBookmarks(db);
 
   if (!bookmarks) {
     return [];
   }
 
-	const refinedBookmarks: Bookmark[] = [];
+  const refinedBookmarks: Bookmark[] = [];
 
   for (const bookmark of bookmarks) {
     const exists = refinedBookmarks.find((refinedBookmark) => refinedBookmark.resourceId === bookmark.id.toString());
@@ -27,10 +27,10 @@ export async function getBookmarks(): Promise<Bookmark[]> {
       searchTerms: [bookmark.name].toString(),
       about: {
         en: bookmark.enUsDescription,
-        ptBr: bookmark.ptBrDescription
-      }
-    })
+        ptBr: bookmark.ptBrDescription,
+      },
+    });
   }
 
-	return refinedBookmarks;
+  return refinedBookmarks;
 }

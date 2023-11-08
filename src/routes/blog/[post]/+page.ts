@@ -6,17 +6,17 @@ import type { PageLoad } from './$types';
  * and pass on the data from +page.server.js
  */
 export const load: PageLoad = async ({ data }) => {
-	const postPath = data.post.slug;
+  const postPath = data.post.slug;
 
-	if (!postPath) {
-		throw error(404, 'Post not found');
-	}
+  if (!postPath) {
+    throw error(404, 'Post not found');
+  }
 
-	const component = await import(`./../../../../posts/${postPath}/index.md`);
+  const component = await import(`./../../../../posts/${postPath}/index.md`);
 
-	return {
-		metadata: data.post,
-		component: component.default,
-		recommendations: data.recommendations
-	};
+  return {
+    metadata: data.post,
+    component: component.default,
+    recommendations: data.recommendations,
+  };
 };

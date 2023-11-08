@@ -108,9 +108,7 @@
         "bookmark_tag_name_unique": {
           "name": "bookmark_tag_name_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "name"
-          ]
+          "columns": ["name"]
         }
       }
     },
@@ -137,12 +135,8 @@
           "name": "bookmark_to_tag_bookmark_id_bookmark_id_fk",
           "tableFrom": "bookmark_to_tag",
           "tableTo": "bookmark",
-          "columnsFrom": [
-            "bookmark_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["bookmark_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -150,12 +144,8 @@
           "name": "bookmark_to_tag_tag_id_bookmark_tag_id_fk",
           "tableFrom": "bookmark_to_tag",
           "tableTo": "bookmark_tag",
-          "columnsFrom": [
-            "tag_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["tag_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -163,10 +153,7 @@
       "compositePrimaryKeys": {
         "bookmark_to_tag_bookmark_id_tag_id": {
           "name": "bookmark_to_tag_bookmark_id_tag_id",
-          "columns": [
-            "bookmark_id",
-            "tag_id"
-          ]
+          "columns": ["bookmark_id", "tag_id"]
         }
       },
       "uniqueConstraints": {}

@@ -9,8 +9,8 @@ import type { PostMetadata } from '../types';
  * @returns the list of categories from the posts metadata
  */
 export function extractCategories(posts: Pick<RawPostSchema, 'categories'>[]): string[] {
-	const categories = posts.map((post) => post.categories).flat();
-	return [...new Set(categories)];
+  const categories = posts.map((post) => post.categories).flat();
+  return [...new Set(categories)];
 }
 
 /**
@@ -20,9 +20,9 @@ export function extractCategories(posts: Pick<RawPostSchema, 'categories'>[]): s
  * @param category the category to filter
  */
 export function filterPostsByCategory(posts: PostMetadata[], category: string): PostMetadata[] {
-	return posts.filter((post) => post.categories.includes(category));
+  return posts.filter((post) => post.categories.includes(category));
 }
 
 export function isValidCategory(category: string) {
-	return availablePostCategories.includes(category.toLowerCase());
+  return availablePostCategories.includes(category.toLowerCase());
 }

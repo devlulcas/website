@@ -65,7 +65,7 @@ Existem algumas outras regras na documentação original, mas essas são as que 
 
 ### 📝 Tipos
 
-Os tipos principais são `feat` e `fix`. Eles são usados para indicar que você adicionou um novo recurso ou corrigiu um bug, respectivamente. 
+Os tipos principais são `feat` e `fix`. Eles são usados para indicar que você adicionou um novo recurso ou corrigiu um bug, respectivamente.
 
 **Exemplos de mensagens de commit:**
 
@@ -91,7 +91,8 @@ Nessa mensagem temos um commit do tipo `feat` sem escopo. A mensagem indica que 
 
 Além dos tipos principais, existem outros tipos que podem ser usados para indicar outros tipos de alterações. Muitas pessoas usam a [convenção do Angular](https://github.com/angular/angular/blob/main/CONTRIBUTING.md#commit), que define alguns tipos adicionais.
 
-Os tipos definidos na convenção do angular são: 
+Os tipos definidos na convenção do angular são:
+
 - build: Trata de mudanças no processo de build ou dependências externas.
 - ci: Mudanças relacionadas a configuração de CI.
 - docs: Mudanças que afetam apenas a documentação.
@@ -108,6 +109,7 @@ Na versão que utilizo, eu adicionei alguns tipos adicionais que são usados com
 + - build: Trata de mudanças no processo de build.
 + - deps: Trata de mudanças nas dependências externas.
 ```
+
 Separamos o tipo `build` em dois tipos diferentes. O tipo `build` agora é usado apenas para mudanças no processo de build, como alterações no webpack, por exemplo. O tipo `deps` é usado para mudanças nas dependências externas, como atualização de versão do react ou PHP.
 
 ```diff
@@ -179,5 +181,3 @@ Essa mudança não se torna significativa por ter muitas linhas de código, mas 
 - **Quando fizer um commit, procure sempre selecionar as alterações com o menor número de dependências (`uso de código externo ao daquele arquivo`) possíveis.**
 
 Isso vai facilitar na hora de fazer o merge, pois você vai ter menos conflitos para resolver.
-
-
