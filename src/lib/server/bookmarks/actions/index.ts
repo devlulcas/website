@@ -27,7 +27,7 @@ export const createOrUpdateBookmark: Action = async ({ request }) => {
   const formData = await request.formData();
 
   const upsertBookmarkSchema = bookmarkInsertSchema.extend({
-    tags: zfd.repeatableOfType(zfd.numeric()),
+    tags: zfd.repeatableOfType(zfd.text()),
   });
 
   const formDataResult = zfd.formData(upsertBookmarkSchema).safeParse(formData);
@@ -36,7 +36,10 @@ export const createOrUpdateBookmark: Action = async ({ request }) => {
     return fail(400, { message: 'Invalid form data', success: false });
   }
 
-  const newBookmarkId = await upsertBookmark(db, formDataResult.data);
+  const newBookmarkId = await upsertBookmark(db, {
+    ...formDataResult.data,
+    tags: formDataResult.data.tags.map((tag) => parseInt(tag)),
+  });
 
   if (!newBookmarkId) {
     return fail(500, { message: 'Error creating/updating bookmark', success: false });

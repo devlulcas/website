@@ -12,19 +12,25 @@ export async function upsertBookmark(db: DrizzleDatabase, bookmarkData: Bookmark
           .returning({ insertedId: bookmarkTable.id })
           .onConflictDoUpdate({
             target: [bookmarkTable.updatedAt, bookmarkTable.name],
-            set: { updatedAt: new Date(), name: bookmarkData.name },
+            set: {
+              updatedAt: new Date(),
+              name: bookmarkData.name,
+              ptBrDescription: bookmarkData.ptBrDescription,
+              enUsDescription: bookmarkData.enUsDescription,
+              url: bookmarkData.url,
+            },
           });
 
         const newBookmarkId = result[0].insertedId.toString();
 
-        const relationCreatedSuccessfully = await relateTagsToBookmark(
-          tx,
-          newBookmarkId,
-          bookmarkData.tags.flatMap((tag) => tag.toString()),
-        );
+        const tagsIds = bookmarkData.tags.map((tagId) => tagId.toString());
 
-        // Bubble up error if relation creation failed
-        if (!relationCreatedSuccessfully) throw new Error('Error creating bookmark relation with tags');
+        tagsIds.forEach(async (tagId) => {
+          await tx
+            .insert(bookmarkToTagTable)
+            .values({ bookmarkId: parseInt(newBookmarkId), tagId: parseInt(tagId) })
+            .execute();
+        });
       } catch (error) {
         tx.rollback();
         throw error;
@@ -58,30 +64,6 @@ export async function selectBookmarks(db: DrizzleDatabase) {
     return result;
   } catch (error) {
     console.error('selectBookmarks', error);
-    return null;
-  }
-}
-
-export async function relateTagsToBookmark(db: DrizzleDatabase, bookmarkId: string, tagIds: string[]) {
-  try {
-    await db.transaction(async (tx) => {
-      const queries = tagIds.map((tagId) => {
-        return tx
-          .insert(bookmarkToTagTable)
-          .values({ bookmarkId: parseInt(bookmarkId), tagId: parseInt(tagId) })
-          .execute();
-      });
-
-      await Promise.all(queries).catch((error) => {
-        console.error('relateTagsToBookmark', error);
-        tx.rollback();
-        throw error;
-      });
-    });
-
-    return true;
-  } catch (error) {
-    console.error('relateTagsToBookmark', error);
     return null;
   }
 }

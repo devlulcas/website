@@ -1,5 +1,6 @@
 import { db } from '../../database/db';
 import { selectBookmarks } from '../repositories/bookmark-repository';
+import { selectBookmarkTags } from '../repositories/bookmark-tag-repository';
 import type { Bookmark } from '../types';
 
 export async function getBookmarks(): Promise<Bookmark[]> {
@@ -33,4 +34,14 @@ export async function getBookmarks(): Promise<Bookmark[]> {
   }
 
   return refinedBookmarks;
+}
+
+export async function getBookmarkTags(): Promise<{ id: string; name: string }[]> {
+  const tags = await selectBookmarkTags(db);
+  
+  if (!tags) {
+    return [];
+  }
+
+  return tags.map((tag) => ({ id: tag.id.toString(), name: tag.name }));
 }
