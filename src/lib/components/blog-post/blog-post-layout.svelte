@@ -1,8 +1,10 @@
 <script lang="ts">
-	import './code.css';
-	import './posts.css';
+  import './code.css';
+  import './posts.css';
+
+  export let as: 'article' | 'section' = 'article';
 </script>
 
-<article class="prose prose-zinc lg:prose-lg dark:prose-invert max-w-none lc-post">
-	<slot />
-</article>
+<svelte:element this={as} class="lc-post prose prose-zinc max-w-none dark:prose-invert lg:prose-lg">
+  <slot />
+</svelte:element>

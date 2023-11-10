@@ -11,16 +11,16 @@ export const createOrUpdateBookmarkTag: Action = async ({ request }) => {
   const formDataResult = zfd.formData(bookmarkTagInsertSchema).safeParse(formData);
 
   if (!formDataResult.success) {
-    return fail(400, { message: 'Invalid form data', success: false });
+    return fail(400, { bookmarkTags: { message: 'Invalid form data', success: false } });
   }
 
   const newTagId = await upsertBookmarkTag(db, formDataResult.data);
 
   if (!newTagId) {
-    return fail(500, { message: 'Error creating/updating tag', success: false });
+    return fail(500, { bookmarkTags: { message: 'Error creating/updating tag', success: false } });
   }
 
-  return { message: `Bookmark tag with ID ${newTagId} was created/updated`, success: true };
+  return { bookmarkTags: { message: `Bookmark tag with ID ${newTagId} was created/updated`, success: true } };
 };
 
 export const createOrUpdateBookmark: Action = async ({ request }) => {

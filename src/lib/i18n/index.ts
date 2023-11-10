@@ -28,6 +28,11 @@ const config: Config = {
       loader: async () => (await import('./en/blog.json')).default,
     },
     {
+      locale: 'en',
+      key: 'microblog',
+      loader: async () => (await import('./en/microblog.json')).default,
+    },
+    {
       locale: 'pt',
       key: 'common',
       loader: async () => (await import('./pt/common.json')).default,
@@ -51,6 +56,11 @@ const config: Config = {
       locale: 'pt',
       key: 'blog',
       loader: async () => (await import('./pt/blog.json')).default,
+    },
+    {
+      locale: 'pt',
+      key: 'microblog',
+      loader: async () => (await import('./pt/microblog.json')).default,
     },
   ],
 };

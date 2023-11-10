@@ -7,7 +7,7 @@
   export let data;
 </script>
 
-<form action="?/createBookmark" method="post" class="flex flex-col gap-3">
+<form action="?/createBookmark" method="post" class="flex flex-col gap-6">
   <h2 class="mb-4 flex items-center gap-2 text-2xl font-bold text-foreground">
     <BookmarkPlusIcon />
     Add Bookmark
@@ -71,12 +71,12 @@
         <td class="px-6 py-4">
           {bookmark.name}
         </td>
-        <td class="px-6 py-4 w-full">
+        <td class="w-full px-6 py-4">
           {bookmark.url}
         </td>
         <td class="px-6 py-4">
           <a
-            class="flex items-center gap-2 h-10 w-fit rounded bg-secondary p-2 text-secondary-foreground"
+            class="flex h-10 w-fit items-center gap-2 rounded bg-secondary p-2 text-secondary-foreground"
             href="/dashboard/bookmakrs/{bookmark.resourceId}"
           >
             <FileEditIcon size={18} /> Editar

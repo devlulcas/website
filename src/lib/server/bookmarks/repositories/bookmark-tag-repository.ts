@@ -9,7 +9,7 @@ export async function upsertBookmarkTag(db: DrizzleDatabase, bookmarkTagData: Bo
       .values(bookmarkTagData)
       .returning({ insertedId: bookmarkTagTable.id })
       .onConflictDoUpdate({
-        target: [bookmarkTagTable.updatedAt, bookmarkTagTable.name],
+        target: [bookmarkTagTable.name],
         set: { updatedAt: new Date(), name: bookmarkTagData.name },
       });
 
