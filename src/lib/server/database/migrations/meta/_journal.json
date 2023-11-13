@@ -29,6 +29,13 @@
       "when": 1699473274482,
       "tag": "0003_shiny_warlock",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1699896694472,
+      "tag": "0004_narrow_bug",
+      "breakpoints": true
     }
   ]
 }

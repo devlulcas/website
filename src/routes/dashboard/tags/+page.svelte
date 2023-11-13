@@ -60,48 +60,41 @@
 <section class="grid w-full grid-cols-1 divide-y rounded border lg:grid-cols-2 lg:divide-x lg:divide-y-0">
   <article class="p-4">
     <h3 class="mb-4 text-xl">Bookmarks Tags</h3>
-    <table class="overflow-hidden rounded border">
-      <thead class="bg-secondary text-secondary-foreground">
-        <tr>
-          <th scope="col" class="w-full px-6 py-4 text-left"> Id </th>
-          <th scope="col" class="w-full px-6 py-4 text-left"> Name </th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each data.bookmarkTags as tag}
-          <tr class="border-b">
-            <td class="w-full px-6 py-4">
-              {tag.id}
-            </td>
-            <td class="w-full px-6 py-4">
-              {tag.name}
-            </td>
-          </tr>
-        {/each}
-      </tbody>
-    </table>
+
+    <ul class="flex flex-wrap gap-3">
+      {#each data.bookmarkTags as tag}
+        <li class="relative flex-1 rounded border bg-secondary px-2 py-1 text-secondary-foreground">
+          <span class="line-clamp-1">
+            {tag.name}
+          </span>
+
+          <span
+            class="absolute -right-3 -top-3 flex h-5 w-5 items-center justify-center rounded bg-brand-950 text-xs text-brand-500"
+          >
+            {tag.id}
+          </span>
+        </li>
+      {/each}
+    </ul>
   </article>
+
   <article class="p-4">
     <h3 class="mb-4 text-xl">Microblog Tags</h3>
-    <table class="overflow-hidden rounded border">
-      <thead class="bg-secondary text-secondary-foreground">
-        <tr>
-          <th scope="col" class="w-full px-6 py-4 text-left"> Id </th>
-          <th scope="col" class="w-full px-6 py-4 text-left"> Name </th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each data.microblogTags as tag}
-          <tr class="border-b">
-            <td class="w-full px-6 py-4">
-              {tag.id}
-            </td>
-            <td class="w-full px-6 py-4">
-              {tag.name}
-            </td>
-          </tr>
-        {/each}
-      </tbody>
-    </table>
+
+    <ul class="flex flex-wrap gap-3">
+      {#each data.microblogTags as tag}
+        <li class="relative flex-1 rounded border bg-secondary px-2 py-1 text-secondary-foreground">
+          <span class="line-clamp-1">
+            {tag.name}
+          </span>
+
+          <span
+            class="absolute -right-3 -top-3 flex h-5 w-5 items-center justify-center rounded bg-brand-950 text-xs text-brand-500"
+          >
+            {tag.id}
+          </span>
+        </li>
+      {/each}
+    </ul>
   </article>
 </section>

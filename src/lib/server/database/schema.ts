@@ -116,8 +116,8 @@ export type ProjectSelectSchema = z.infer<typeof projectSelectSchema>;
 
 export const bookmarkTable = pgTable('bookmark', {
   id: serial('id').primaryKey(),
-  name: varchar('name').notNull(),
-  url: text('url').notNull(),
+  name: varchar('name').notNull().unique(),
+  url: text('url').notNull().unique(),
   ptBrDescription: text('description_pt_br').notNull(),
   enUsDescription: text('description_en_us').notNull(),
   createdAt: timestamp('created_at').notNull().defaultNow(),

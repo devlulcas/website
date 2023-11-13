@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '$/lib/components/button/button.svelte';
   import { inputFieldClassNames } from '$/lib/components/input/styles.js';
-  import { BookmarkPlusIcon, FileEditIcon } from 'lucide-svelte';
+  import { ArrowRight, BookmarkPlusIcon, FileEditIcon } from 'lucide-svelte';
 
   export let form;
   export let data;
@@ -57,32 +57,43 @@
   {/if}
 </form>
 
-<table class="mt-8 w-full rounded border">
-  <thead class="bg-secondary text-secondary-foreground">
-    <tr>
-      <th scope="col" class="px-6 py-4 text-left"> Name </th>
-      <th scope="col" class="px-6 py-4 text-left"> URL </th>
-      <th scope="col" class="px-6 py-4 text-left"> Edit </th>
-    </tr>
-  </thead>
-  <tbody>
-    {#each data.bookmarks as bookmark}
-      <tr class="border-b">
-        <td class="px-6 py-4">
-          {bookmark.name}
-        </td>
-        <td class="w-full px-6 py-4">
-          {bookmark.url}
-        </td>
-        <td class="px-6 py-4">
-          <a
-            class="flex h-10 w-fit items-center gap-2 rounded bg-secondary p-2 text-secondary-foreground"
-            href="/dashboard/bookmakrs/{bookmark.resourceId}"
-          >
-            <FileEditIcon size={18} /> Editar
+<ul class="mt-8 w-full divide-y rounded border">
+  {#each data.bookmarks as bookmark}
+    <li class="flex flex-col gap-2 p-4">
+      <div class="flex w-full justify-between">
+        <h3 class="flex items-center gap-2 font-semibold text-brand-300">
+          <a href={`/dashboard/bookmarks/${bookmark.resourceId}`} class="text-sm text-brand-300 hover:text-brand-500">
+            <FileEditIcon size={16} />
+            <span class="sr-only">Edit</span>
           </a>
-        </td>
-      </tr>
-    {/each}
-  </tbody>
-</table>
+          <span>{bookmark.name}</span>
+        </h3>
+
+        <div class="flex flex-wrap-reverse">
+          {#each bookmark.tags as tag}
+            <span class="rounded border bg-secondary px-2 py-1 text-xs text-secondary-foreground">
+              {tag}
+            </span>
+          {/each}
+        </div>
+      </div>
+      <hr />
+      <p class="line-clamp-2">
+        {bookmark.about.en}
+      </p>
+      <hr />
+      <p class="line-clamp-2">
+        {bookmark.about.ptBr}
+      </p>
+
+      <a
+        class="ml-auto flex items-center gap-2 text-sm text-brand-300"
+        href={bookmark.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Go to website <ArrowRight size={16} />
+      </a>
+    </li>
+  {/each}
+</ul>

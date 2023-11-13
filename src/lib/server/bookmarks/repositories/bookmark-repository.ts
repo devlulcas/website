@@ -4,38 +4,33 @@ import { bookmarkTable, bookmarkTagTable, bookmarkToTagTable, type BookmarkInser
 
 export async function upsertBookmark(db: DrizzleDatabase, bookmarkData: BookmarkInsertSchema & { tags: number[] }) {
   try {
-    db.transaction(async (tx) => {
-      try {
-        const result = await tx
-          .insert(bookmarkTable)
-          .values(bookmarkData)
-          .returning({ insertedId: bookmarkTable.id })
-          .onConflictDoUpdate({
-            target: [bookmarkTable.updatedAt, bookmarkTable.name],
-            set: {
-              updatedAt: new Date(),
-              name: bookmarkData.name,
-              ptBrDescription: bookmarkData.ptBrDescription,
-              enUsDescription: bookmarkData.enUsDescription,
-              url: bookmarkData.url,
-            },
-          });
+    const result = await db
+      .insert(bookmarkTable)
+      .values(bookmarkData)
+      .returning({ insertedId: bookmarkTable.id })
+      .onConflictDoUpdate({
+        target: [bookmarkTable.name],
+        set: {
+          updatedAt: new Date(),
+          name: bookmarkData.name,
+          ptBrDescription: bookmarkData.ptBrDescription,
+          enUsDescription: bookmarkData.enUsDescription,
+          url: bookmarkData.url,
+        },
+      });
 
-        const newBookmarkId = result[0].insertedId.toString();
+    const newBookmarkId = result[0].insertedId.toString();
 
-        const tagsIds = bookmarkData.tags.map((tagId) => tagId.toString());
+    const tagsIds = bookmarkData.tags.map((tagId) => tagId.toString());
 
-        tagsIds.forEach(async (tagId) => {
-          await tx
-            .insert(bookmarkToTagTable)
-            .values({ bookmarkId: parseInt(newBookmarkId), tagId: parseInt(tagId) })
-            .execute();
-        });
-      } catch (error) {
-        tx.rollback();
-        throw error;
-      }
+    tagsIds.forEach(async (tagId) => {
+      await db
+        .insert(bookmarkToTagTable)
+        .values({ bookmarkId: parseInt(newBookmarkId), tagId: parseInt(tagId) })
+        .execute();
     });
+
+    return newBookmarkId;
   } catch (error) {
     console.error('upsertBookmark', error);
     return null;

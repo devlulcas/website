@@ -25,8 +25,8 @@
 
   <div class="flex flex-wrap gap-2">
     {#each data.tags as tag}
-      <label class="flex gap-2 rounded border px-2 py-1" for="tags">
-        <input type="checkbox" value={tag.id} name="tags" id="tags" class="accent-brand-500" />
+      <label class="flex gap-2 rounded border px-2 py-1" for="tags-{tag.id}">
+        <input type="checkbox" value={tag.id} name="tags" id="tags-{tag.id}" class="accent-brand-500" />
         {tag.name}
       </label>
     {/each}

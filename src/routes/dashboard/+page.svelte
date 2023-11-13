@@ -55,7 +55,7 @@
     </a>
   </li>
   <li>
-    <a href="/dashboard/microblogs" class="block rounded border bg-secondary p-2 text-secondary-foreground">
+    <a href="/dashboard/microblog" class="block rounded border bg-secondary p-2 text-secondary-foreground">
       <h3 class="flex items-center gap-2 text-xl font-bold">
         <BrainIcon />Microblog
       </h3>
