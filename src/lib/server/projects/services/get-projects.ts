@@ -71,8 +71,8 @@ export async function getProjects(): Promise<Project[]> {
 
   const json = await response.json();
 
-  const isGithubProjectsResponse = (response: any): response is GithubProjectsResponse => {
-    return Array.isArray(response?.data?.viewer?.repositories?.edges);
+  const isGithubProjectsResponse = (response: unknown): response is GithubProjectsResponse => {
+    return response !== null && typeof response === 'object' && 'data' in response;
   };
 
   if (!isGithubProjectsResponse(json)) {
@@ -109,7 +109,7 @@ async function getProjectImage(project: GithubProjectNode): Promise<string> {
     const possibleImages = [...githubImages, ...ogs.filter(Boolean)] as string[];
 
     for (const img of possibleImages) {
-      let projectImage = img;
+      const projectImage = img;
 
       const pingImageResponse = await fetch(projectImage, {
         method: 'HEAD',

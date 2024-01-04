@@ -22,10 +22,5 @@ export const navigationLinks = derived(page, ($page) => {
       href: '/bookmarks',
       isActive: $page.url.pathname === '/bookmarks',
     },
-    {
-      label: 'common.header.microblog',
-      href: '/microblog',
-      isActive: $page.url.pathname === '/microblog',
-    },
   ];
 });

@@ -1,4 +1,3 @@
-import { createContact } from '$/lib/server/contact/actions';
 import { getPosts } from '$/lib/server/posts/services/get-posts';
 import { getFeaturedProjects } from '$/lib/server/projects/services/get-feature-projects';
 import { getProjects } from '$/lib/server/projects/services/get-projects';
@@ -21,7 +20,9 @@ export const load: PageServerLoad = async () => {
 
 export const actions: Actions = {
   // Send a message from the contact form
-  sendMessage: createContact,
+  sendMessage: async ({ request }) => {
+    console.log('body', await request.formData());
+  },
   // Change the users theme based on the url and save that state in a cookie
   setTheme: async ({ cookies, url }) => {
     const theme = url.searchParams.get('theme');

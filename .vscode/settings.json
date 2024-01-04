@@ -4,9 +4,8 @@
     "ilike",
     "Linkedin",
     "lucasalvesregodev",
-    "nprogress"
+    "mdsvex",
+    "nprogress",
+    "rehype"
   ],
-  "files.exclude": {
-    "supabase/functions/": true
-  }
 }

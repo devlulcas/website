@@ -7,8 +7,6 @@
 	function changeIndicatorPositionOnLinkHover(event: MouseEvent | FocusEvent) {
 		const target = event.target as HTMLAnchorElement;
 
-		console.log(target.offsetLeft, target.offsetWidth);
-
 		indicadorElement.style.opacity = '1';
 		indicadorElement.style.visibility = 'visible';
 

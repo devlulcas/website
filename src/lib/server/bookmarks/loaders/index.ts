@@ -1,47 +1,65 @@
-import { db } from '../../database/db';
-import { selectBookmarks } from '../repositories/bookmark-repository';
-import { selectBookmarkTags } from '../repositories/bookmark-tag-repository';
-import type { Bookmark } from '../types';
+import { PRIVATE_NOTION_API_KEY, PRIVATE_NOTION_DATABASE_ID, PRIVATE_NOTION_VERSION } from '$env/static/private';
+import type { Bookmark, NotionBookmarkDatabase } from '../types';
+
+function getNotionHeaders() {
+  const headers = new Headers();
+
+  headers.set('Authorization', 'Bearer ' + PRIVATE_NOTION_API_KEY);
+  headers.set('Notion-Version', PRIVATE_NOTION_VERSION);
+  headers.set('Content-Type', 'application/json');
+
+  return headers;
+}
+
+function isNotionBookmarkDatabase(json: unknown): json is NotionBookmarkDatabase {
+  return json !== null && typeof json === 'object' && 'results' in json;
+}
 
 export async function getBookmarks(): Promise<Bookmark[]> {
-  const bookmarks = await selectBookmarks(db);
+  const response = await fetch('https://api.notion.com/v1/databases/' + PRIVATE_NOTION_DATABASE_ID + '/query', {
+    method: 'POST',
+    headers: getNotionHeaders(),
+  });
 
-  if (!bookmarks) {
+  if (response.ok === false) {
+    console.error('Notion API error', await response.json());
     return [];
   }
 
-  const refinedBookmarks: Bookmark[] = [];
+  const json = await response.json();
 
-  for (const bookmark of bookmarks) {
-    const exists = refinedBookmarks.find((refinedBookmark) => refinedBookmark.resourceId === bookmark.id.toString());
+  if (!isNotionBookmarkDatabase(json)) {
+    console.error('Notion API error', json);
+    return [];
+  }
 
-    if (exists && bookmark.tagName) {
-      exists.tags.push(bookmark.tagName);
+  const bookmarks: Bookmark[] = [];
+
+  for (const result of json.results) {
+    if (!result.properties.name.title.length) {
       continue;
     }
 
-    refinedBookmarks.push({
-      resourceId: bookmark.id.toString(),
-      name: bookmark.name,
-      url: bookmark.url,
-      tags: bookmark.tagName ? [bookmark.tagName] : [],
-      searchTerms: [bookmark.name].toString(),
+    const resourceId = result.id;
+    const name = result.properties.name.title[0].plain_text;
+    const url = result.properties.url.url;
+    const aboutInEnglish = result.properties.about_en.rich_text[0].plain_text;
+    const aboutInPortuguese = result.properties.about_pt_br.rich_text[0].plain_text;
+    const tags = result.properties.tags.multi_select.map((tag) => tag.name);
+    const searchTerms = [name, aboutInEnglish, aboutInPortuguese, ...tags].join(' ').toLowerCase();
+
+    bookmarks.push({
+      resourceId,
+      name,
+      url,
+      tags,
+      searchTerms,
       about: {
-        en: bookmark.enUsDescription,
-        ptBr: bookmark.ptBrDescription,
+        en: aboutInEnglish,
+        ptBr: aboutInPortuguese,
       },
     });
   }
 
-  return refinedBookmarks;
-}
-
-export async function getBookmarkTags(): Promise<{ id: string; name: string }[]> {
-  const tags = await selectBookmarkTags(db);
-  
-  if (!tags) {
-    return [];
-  }
-
-  return tags.map((tag) => ({ id: tag.id.toString(), name: tag.name }));
+  return bookmarks;
 }
