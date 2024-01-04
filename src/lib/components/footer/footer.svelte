@@ -43,9 +43,7 @@
 			inset: 0;
 			z-index: -2;
 			height: 100%;
-			background: linear-gradient(75deg, var(--brand-dark) 5%, var(--brand-light) 35%, var(--brand-dark) 95%);
-			animation: background ease 4s infinite;
-			background-size: 400% 400%;
+			background: linear-gradient(75deg, var(--brand-dark) 25%, var(--brand-light) 50%, var(--brand-dark) 75%);
 		}
 
 		&::after {
@@ -56,15 +54,6 @@
 			background-size: 1em 1em;
 			background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em),
 				linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em);
-		}
-	}
-
-	@keyframes background {
-		from {
-			background-position: 0% 0%;
-		}
-		to {
-			background-position: 100% 100%;
 		}
 	}
 </style>

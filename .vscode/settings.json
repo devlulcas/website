@@ -1,5 +1,11 @@
 {
-  "cSpell.words": ["ilike", "lucasalvesregodev", "nprogress"],
+  "cSpell.words": [
+    "devlulcas",
+    "ilike",
+    "Linkedin",
+    "lucasalvesregodev",
+    "nprogress"
+  ],
   "files.exclude": {
     "supabase/functions/": true
   }
