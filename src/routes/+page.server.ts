@@ -1,7 +1,8 @@
 import { getPosts } from '$/lib/server/posts/services/get-posts';
 import { getFeaturedProjects } from '$/lib/server/projects/services/get-feature-projects';
 import { getProjects } from '$/lib/server/projects/services/get-projects';
-import { redirect } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
+import { sql } from "@vercel/postgres";
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
@@ -21,7 +22,25 @@ export const load: PageServerLoad = async () => {
 export const actions: Actions = {
   // Send a message from the contact form
   sendMessage: async ({ request }) => {
-    console.log('body', await request.formData());
+    const formData = await request.formData();
+    const formValueName = formData.get('name')
+    const formValueEmail = formData.get('email');
+    const formValueMessage = formData.get('message');
+
+    if (!formValueName || !formValueEmail || !formValueMessage) {
+      throw error(400, 'Missing form data');
+    }
+
+    const name = formValueName.toString();
+    const email = formValueEmail.toString();
+    const message = formValueMessage.toString();
+
+    try {
+      await sql`INSERT INTO messages (name, email, message) VALUES (${name}, ${email}, ${message})`;
+    } catch (err) {
+      console.error(err);
+      throw error(500, 'Failed to send message');
+    }
   },
   // Change the users theme based on the url and save that state in a cookie
   setTheme: async ({ cookies, url }) => {
