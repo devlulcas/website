@@ -23,7 +23,7 @@
 		in:fade={{ duration: 100 }}
 		out:fade={{ duration: 100, delay: 200 }}
 		use:focusTrap={{ returnFocus: !open }}
-		class="fixed p-2 w-full h-full inset-0 backdrop-blur-md bg-gray-950/50 z-50 flex items-end justify-center"
+		class="fixed p-2 w-full h-[100dvh] inset-0 backdrop-blur-md bg-gray-950/50 z-50 flex items-end justify-center"
 	>
 		<nav
 			in:fly={{ y: 100, duration: 250, delay: 200 }}
