@@ -19,7 +19,7 @@
   export let data: PageData;
 </script>
 
-<main class="lc-grid gap-y-10 px-4 pb-8 lg:px-8">
+<main class="lc-grid gap-y-10 px-4 pb-8 lg:px-8 overflow-x-hidden w-screen">
   <HeroSection />
 
   <SkillCarousel class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3" />
@@ -58,15 +58,9 @@
 
   <ContainerSection id="projects" title={$t('home.projects.title')}>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-      {#await data.projects}
-        <p class="text-lg text-muted-foreground">{$t('home.projects.loading')}</p>
-      {:then projects}
-        {#each projects as project}
-          <ProjectCard {project} />
-        {/each}
-      {:catch error}
-				<p class="text-lg text-muted-foreground">{error.message}</p>
-			{/await}
+      {#each data.projects as project}
+        <ProjectCard {project} />
+      {/each}
     </div>
 
     <SeeMoreLink href="https://github.com/devlulcas/">

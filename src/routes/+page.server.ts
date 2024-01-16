@@ -13,7 +13,7 @@ export const load: PageServerLoad = async () => {
 
   const featuredProjects = getFeaturedProjects();
 
-  const projects = getProjects();
+  const projects = await getProjects().catch(() => []);
 
   return { featuredProjects, projects, recentPosts, featuredPost };
 };
