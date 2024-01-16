@@ -7,15 +7,15 @@ export function detectLanguage(text: string): Language {
     only: ['eng', 'por'],
   });
 
-  if (lang === 'pot') {
+  if (lang.includes("en")) {
     return {
-      niceName: 'Português',
-      code: 'pt-br',
+      niceName: 'English',
+      code: 'en',
     };
   }
-
+  
   return {
-    niceName: 'English',
-    code: 'en',
+    niceName: 'Português',
+    code: 'pt-br',
   };
 }

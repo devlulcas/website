@@ -1,8 +1,8 @@
 import { readingTime } from 'reading-time-estimator';
 import { z } from 'zod';
+import { detectLanguage } from '../lib/detect-language';
 import { rawPostSchema } from '../schemas/raw-post-schema';
 import type { PostMetadata } from '../types';
-import { detectLanguage } from '../lib/detect-language';
 
 /**
  * Fetches all the posts metadata. It also adds the slug and the SEO metadata

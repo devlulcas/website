@@ -15,6 +15,8 @@
 	<article class="flex flex-col gap-2">
 		<img class="w-full rounded-lg object-cover object-center" src={post.cover} alt={post.title} />
 
-		<PostData {post} />
+		<div class="flex flex-col gap-2 p-2 pt-0">
+			<PostData {post} />
+		</div>
 	</article>
 </a>
