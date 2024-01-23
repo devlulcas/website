@@ -1,48 +1,32 @@
 <script lang="ts">
-	import BlogPostLayout from '$/lib/components/blog-post/blog-post-layout.svelte';
-	import PostCard from '$/lib/components/post-card/post-card.svelte';
-	import { afterNavigate } from '$app/navigation';
-	import { ArrowLeftIcon, ArrowUpIcon } from 'lucide-svelte';
-	import type { PageData } from './$types';
+  import BlogPostLayout from '$/lib/components/blog-post/blog-post-layout.svelte';
+  import PostCard from '$/lib/components/post-card/post-card.svelte';
+  import { ArrowUpIcon } from 'lucide-svelte';
+  import type { PageData } from './$types';
 
-	export let data: PageData;
-
-	let goBackTo = '/blog';
-
-	afterNavigate(({ from }) => {
-		goBackTo = from?.url.pathname ?? '/blog';
-	});
+  export let data: PageData;
 </script>
 
-<div class="bg-background text-foreground max-w-full lg:max-w-[100ch] px-4 pt-4 pb-8">
-	<BlogPostLayout>
-		<svelte:component this={data.component} />
-	</BlogPostLayout>
+<div class="max-w-full bg-background px-4 pb-8 pt-4 text-foreground lg:max-w-[100ch]">
+  <BlogPostLayout>
+    <svelte:component this={data.component} />
+  </BlogPostLayout>
 
-	<ul class="not-prose grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-		{#each data.recommendations as recommendation}
-			<li>
-				<PostCard post={recommendation} />
-			</li>
-		{/each}
-	</ul>
+  <ul class="not-prose mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+    {#each data.recommendations as recommendation}
+      <li>
+        <PostCard post={recommendation} />
+      </li>
+    {/each}
+  </ul>
 </div>
 
-<div class="flex items-center justify-between gap-4 px-2 py-2 sticky bottom-0 z-30 w-full pointer-events-none">
-	<a
-		class="px-4 py-2 lc-gradient opacity-25 hover:opacity-100 transition-opacity text-brand-50 rounded-lg rounded-bl-sm flex items-center gap-2 pointer-events-auto"
-		aria-label="Go back to posts"
-		href={goBackTo}
-	>
-		<ArrowLeftIcon size={18} />
-		Voltar
-	</a>
-
-	<button
-		class="px-4 py-2 lc-gradient opacity-25 hover:opacity-100 transition-opacity text-brand-50 rounded-lg rounded-br-sm flex items-center gap-2 pointer-events-auto"
-		on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-	>
-		Ir para o topo
-		<ArrowUpIcon size={18} />
-	</button>
+<div class="pointer-events-none sticky bottom-0 z-30 flex w-full items-center justify-end gap-4 px-2 py-2">
+  <button
+    class="lc-gradient lc-line group pointer-events-auto flex h-10 w-10 items-center justify-center gap-2 rounded-lg rounded-br-sm text-brand-50 opacity-25 transition-opacity hover:opacity-100 lg:w-fit lg:px-4"
+    on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+  >
+    <span class="sr-only text-brand-50 group-hover:text-brand-900 lg:not-sr-only"> Ir para o topo </span>
+    <ArrowUpIcon size={18} class="flex-shrink-0" />
+  </button>
 </div>
