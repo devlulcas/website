@@ -2,7 +2,7 @@ import { getPosts } from '$/lib/server/posts/services/get-posts';
 import { getFeaturedProjects } from '$/lib/server/projects/services/get-feature-projects';
 import { getProjects } from '$/lib/server/projects/services/get-projects';
 import { error, redirect } from '@sveltejs/kit';
-import { sql } from "@vercel/postgres";
+import { sql } from '@vercel/postgres';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
@@ -14,16 +14,16 @@ export const load: PageServerLoad = async () => {
 
   const featuredProjects = getFeaturedProjects();
 
-  const projects = await getProjects().catch(() => []);
+  const projects = getProjects();
 
-  return { featuredProjects, projects, recentPosts, featuredPost };
+  return { featuredProjects, recentPosts, featuredPost, lazy: { projects } };
 };
 
 export const actions: Actions = {
   // Send a message from the contact form
   sendMessage: async ({ request }) => {
     const formData = await request.formData();
-    const formValueName = formData.get('name')
+    const formValueName = formData.get('name');
     const formValueEmail = formData.get('email');
     const formValueMessage = formData.get('message');
 
