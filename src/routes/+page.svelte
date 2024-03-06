@@ -10,7 +10,7 @@
   import { t } from '$/lib/i18n';
   import { dev } from '$app/environment';
   import { inject } from '@vercel/analytics';
-  import { ArrowRight, FeatherIcon, GithubIcon } from 'lucide-svelte';
+  import { ArrowRight, FeatherIcon, GithubIcon, Loader2Icon } from 'lucide-svelte';
   import HeroSection from '../lib/components/hero-section/hero-section.svelte';
   import type { PageData } from './$types';
 
@@ -19,7 +19,7 @@
   export let data: PageData;
 </script>
 
-<main class="lc-grid gap-y-10 px-4 pb-8 lg:px-8 overflow-x-hidden w-screen">
+<main class="lc-grid w-screen gap-y-10 overflow-x-hidden px-4 pb-8 lg:px-8">
   <HeroSection />
 
   <SkillCarousel class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3" />
@@ -57,12 +57,27 @@
   </ContainerSection>
 
   <ContainerSection id="projects" title={$t('home.projects.title')}>
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-      {#each data.projects as project}
-        <ProjectCard {project} />
-      {/each}
-    </div>
-
+    {#await data.lazy.projects}
+      <div
+        class="flex h-96 w-full animate-pulse items-center justify-center rounded border border-brand-500 bg-foreground/10 text-brand-500"
+      >
+        <Loader2Icon size={32} class="animate-spin" />
+      </div>
+    {:then projects}
+      {#if projects.length > 0}
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {#each projects as project}
+            <ProjectCard {project} />
+          {/each}
+        </div>
+      {:else}
+        <p
+          class="flex h-96 w-full items-center justify-center rounded border-brand-500 bg-foreground/10 text-brand-500"
+        >
+          {$t('home.projects.noProjects')}
+        </p>
+      {/if}
+    {/await}
     <SeeMoreLink href="https://github.com/devlulcas/">
       <GithubIcon slot="start-icon" name="arrow-right" size={18} />
       {$t('home.projects.seeMore')}

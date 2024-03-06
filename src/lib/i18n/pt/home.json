@@ -20,6 +20,7 @@
   "projects": {
     "title": "Projetos de código aberto",
     "description": "Trabalhei em muitos projetos ao longo dos anos. Aqui estão alguns deles.",
+    "noProjects": "Nenhum projeto encontrado.",
     "seeMore": "Veja mais projetos e experimentos"
   },
   "contact": {

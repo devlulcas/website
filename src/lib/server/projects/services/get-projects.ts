@@ -63,39 +63,44 @@ export async function getProjects(): Promise<Project[]> {
 	}
   `;
 
-  const response = await fetch('https://api.github.com/graphql', {
-    method: 'POST',
-    headers: { Authorization: `bearer ${GITHUB_API_KEY}` },
-    body: JSON.stringify({ query: QUERY_GH_PROJECTS }),
-  });
+  try {
+    const response = await fetch('https://api.github.com/graphql', {
+      method: 'POST',
+      headers: { Authorization: `bearer ${GITHUB_API_KEY}` },
+      body: JSON.stringify({ query: QUERY_GH_PROJECTS }),
+    });
 
-  const json = await response.json();
+    const json = await response.json();
 
-  const isGithubProjectsResponse = (response: unknown): response is GithubProjectsResponse => {
-    return response !== null && typeof response === 'object' && 'data' in response;
-  };
+    const isGithubProjectsResponse = (response: unknown): response is GithubProjectsResponse => {
+      return response !== null && typeof response === 'object' && 'data' in response;
+    };
 
-  if (!isGithubProjectsResponse(json)) {
-    throw new Error('Invalid response from Github API');
+    if (!isGithubProjectsResponse(json)) {
+      throw new Error('Invalid response from Github API');
+    }
+
+    const validRepositories = json.data.viewer.repositories.edges.filter(
+      (edge) => HIDE_LIST.indexOf(edge.node.name) === -1,
+    );
+
+    const clippedRepositories = validRepositories.slice(0, projectsToShow);
+
+    const projectImages = await Promise.all(clippedRepositories.map((edge) => getProjectImage(edge.node)));
+
+    return clippedRepositories.map((edge, index) => ({
+      name: edge.node.name,
+      description: edge.node.description ?? '',
+      code: edge.node.url,
+      url: edge.node.homepageUrl,
+      createdAt: edge.node.createdAt,
+      languages: edge.node.languages?.nodes ?? [],
+      image: projectImages[index],
+    }));
+  } catch (error) {
+    console.error('Failed to fetch projects', error);
+    return [];
   }
-
-  const validRepositories = json.data.viewer.repositories.edges.filter(
-    (edge) => HIDE_LIST.indexOf(edge.node.name) === -1,
-  );
-
-  const clippedRepositories = validRepositories.slice(0, projectsToShow);
-
-  const projectImages = await Promise.all(clippedRepositories.map((edge) => getProjectImage(edge.node)));
-
-  return clippedRepositories.map((edge, index) => ({
-    name: edge.node.name,
-    description: edge.node.description ?? '',
-    code: edge.node.url,
-    url: edge.node.homepageUrl,
-    createdAt: edge.node.createdAt,
-    languages: edge.node.languages?.nodes ?? [],
-    image: projectImages[index],
-  }));
 }
 
 async function getProjectImage(project: GithubProjectNode): Promise<string> {
