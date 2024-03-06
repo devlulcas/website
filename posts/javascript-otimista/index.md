@@ -12,7 +12,7 @@ excerpt: Lide com a realidade, nem toda promessa é cumprida. Trate os erros e e
 
 # Javascript Otimista - Tratamento de Erros e Exceções
 
-![Um gato atacando um guaxinim onde o gato simboliza o Javascript e o guaxinim o desenvolvedor](./cat-vs-raccoon.jpg)
+![Um gato atacando um guaxinim onde o gato simboliza o Javascript e o guaxinim o desenvolvedor](./cat-vs-raccoon.jpeg)
 > Sim, essa imagem foi gerada por IA pois o autor é falido e não sabe desenhar nem no paint.
 
 Desenvolvedores Javascript (Typescript também) costumam ser muito otimistas. Não necessáriamente na vida, mas no código eles são. Eles acreditam nas funções com uma fé sobrehumana. Eu estou falando especificamente sobre como muitos lidam com promessas, sim as tais promises que a gente usa todos os dias infinitas vezes.
