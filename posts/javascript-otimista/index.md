@@ -118,7 +118,7 @@ O que fizemos acima foi programar de forma mais defensiva. O código acima tem m
 
 Talvez você possa simplesmente confiar na API que você está consultando e remover algumas checagens, mas isso é uma decisão que você tem que tomar. Aí já é contigo meu colega de ofício.
 
-![bandeira do espirito santo com o will smith no lugar do "confia" em "trabalha e confia"](./es.webp)
+![bandeira do espirito santo com o will smith no lugar do confia em trabalha e confia](./es.webp)
 
 > No código acima nós nunca passamos o erro adiante, dependendo do caso essa é a decisão ideal como eu disse antes. Se você está tentando pedir sua janta num aplicativo, todo brocado de fome, você não vai querer que o aplicativo pare de funcionar porque a busca de comentários não está funcionando. É melhor não mostrar os comentários e mostrar uma mensagem de erro ou simplesmente não mostrar os comentários.
 
