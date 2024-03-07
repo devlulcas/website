@@ -206,7 +206,7 @@ Isso é bom o suficiente? Não. Isso é uma solução paliativa. O JSDoc não é
 
 Isso acontece porque no Javascript/Typescript você pode lançar qualquer coisa como exceção. Você pode lançar um número, uma string, um objeto, o que vier na sua cabeça. Isso é até usado por frameworks famosos como o [SvelteKit](https://kit.svelte.dev/docs) para [lançar um redirect](https://kit.svelte.dev/docs/load#redirects) usando `throw` e encerrar a execução do código daquele ponto em diante enquanto o próprio framework trata essa _"exceção"_ e faz o redirect.
 
-![screenshot da documentação do sveltekit que ressalta que o redirect() não deve ser usado dentro de um bloco try{} catch](./sveltekit-docs-on-redirect.png)
+![screenshot da documentação do sveltekit](./sveltekit-docs-on-redirect.png)
 
 Por isso que nós geralmente temos que encher os blocos `catch` de `if (error instanceof SomeErrorClass) { ... }` para saber que tipo de erro estamos tratando. Existe até uma proposta no TC39 chamada [ECMAScript Catch Guards](https://github.com/wmsbill/proposal-catch-guards) que visa resolver esse problema.
 
