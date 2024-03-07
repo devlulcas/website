@@ -87,27 +87,25 @@ function logError(error) {
 import { logError } from './logger.js';
 
 async function getSomeData() {
-  async function getSomeData() {
-    try {
-      const response = await fetch('/some-data');
+  try {
+    const response = await fetch('/some-data');
 
-      if (!response.ok || response.status !== 200) {
-        logError(new Error('Request failed'));
-        return [];
-      }
-
-      const data = await response.json();
-
-      if (!Array.isArray(data)) {
-        logError(new Error('Invalid response'));
-        return [];
-      }
-
-      return data;
-    } catch (error) {
-      logError(error instanceof Error ? error : new Error(`Unknown error: ${String(error)}`));
+    if (!response.ok || response.status !== 200) {
+      logError(new Error('Request failed'));
       return [];
     }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      logError(new Error('Invalid response'));
+      return [];
+    }
+
+    return data;
+  } catch (error) {
+    logError(error instanceof Error ? error : new Error(`Unknown error: ${String(error)}`));
+    return [];
   }
 }
 ```
@@ -230,19 +228,24 @@ Existe um jeito de minimizar esse problema. Você pode passar o erro adiante com
 type Result<T, E> = { type: "ok"; value: T } | { type: "error"; error: E };
 
 async function getSomeData(): Promise<Result<unknown[], Error>> {
-  const response = await fetch("/some-data");
+  try {
+    const response = await fetch("/some-data");
 
-  if (!response.ok || response.status !== 200) {
-    return { type: "error", error: new Error("Request failed") };
+    if (!response.ok || response.status !== 200) {
+      return { type: "error", error: new Error("Request failed") };
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data)) {
+      return { type: "error", error: new Error("Invalid response") };
+    }
+
+    return { type: "ok", value: data };
+  } catch (error) {
+    const asError =  error instanceof Error ? error : new Error(`Unknown error: ${String(error)}`);
+    return { type: "error", error: asError };
   }
-
-  const data = await response.json();
-
-  if (!Array.isArray(data)) {
-    return { type: "error", error: new Error("Invalid response") };
-  }
-
-  return { type: "ok", value: data };
 }
 ```
 
