@@ -1,3 +1,3 @@
-<main class="w-full flex items-center flex-col relative">
-	<slot />
+<main class="relative flex w-full flex-col items-center">
+  <slot />
 </main>

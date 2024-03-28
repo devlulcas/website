@@ -1,27 +1,27 @@
 <script lang="ts">
-	import { t } from '$/lib/i18n';
-	import { SearchIcon } from 'lucide-svelte';
+  import { t } from '$/lib/i18n';
+  import { SearchIcon } from 'lucide-svelte';
 
-	let className = '';
-	export { className as class };
+  let className = '';
+  export { className as class };
 </script>
 
-<form class="w-full flex gap-2 flex-col {className}" action="/blog/search" method="GET">
-	<label class="sr-only" for="search-blog-post">{$t('blog.search')}</label>
+<form class="flex w-full flex-col gap-2 {className}" action="/blog/search" method="GET">
+  <label class="sr-only" for="search-blog-post">{$t('blog.search')}</label>
 
-	<div class="w-full p-[2px] overflow-hidden rounded-lg lc-gradient">
-		<div class="flex items-center rounded-md focus-within:outline overflow-hidden">
-			<input
-				type="search"
-				id="search-blog-post"
-				name="search"
-				placeholder={$t('blog.search')}
-				class="p-2 bg-background w-full outline-none"
-			/>
+  <div class="lc-gradient w-full overflow-hidden rounded-lg p-[2px]">
+    <div class="flex items-center overflow-hidden rounded-md focus-within:outline">
+      <input
+        type="search"
+        id="search-blog-post"
+        name="search"
+        placeholder={$t('blog.search')}
+        class="w-full bg-background p-2 outline-none"
+      />
 
-			<button title="Search" type="submit" class="p-2 bg-background focus:bg-transparent outline-none">
-				<SearchIcon class="w-6 h-6" />
-			</button>
-		</div>
-	</div>
+      <button title="Search" type="submit" class="bg-background p-2 outline-none focus:bg-transparent">
+        <SearchIcon class="h-6 w-6" />
+      </button>
+    </div>
+  </div>
 </form>

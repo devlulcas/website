@@ -7,13 +7,13 @@ export function detectLanguage(text: string): Language {
     only: ['eng', 'por'],
   });
 
-  if (lang.includes("en")) {
+  if (lang.includes('en')) {
     return {
       niceName: 'English',
       code: 'en',
     };
   }
-  
+
   return {
     niceName: 'Português',
     code: 'pt-br',

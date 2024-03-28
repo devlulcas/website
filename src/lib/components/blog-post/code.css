@@ -8,20 +8,17 @@
  */
 
 :root {
-  --base-color:  hsl(230, 8%, 24%);
+  --base-color: hsl(230, 8%, 24%);
   --punctuation-color: c9d1d9;
   --base-background: hsl(230, 1%, 98%);
-  --select-background:  hsl(230, 1%, 90%);
+  --select-background: hsl(230, 1%, 90%);
   --comment-color: #8b949e;
   --values-color: hsl(5, 74%, 59%);
-  --operator-color:  hsl(230, 100%, 66%);
+  --operator-color: hsl(230, 100%, 66%);
   --function-color: hsl(344, 84%, 43%);
- 
 }
 
 [data-theme='dark'] {
-
-
   --base-color: #c9d1d9;
   --punctuation-color: c9d1d9;
   --base-background: #0d1117;
@@ -78,7 +75,7 @@ pre[class*='language-'] {
 :not(pre) > code[class*='language-'] {
   padding: 0.1em 0.3em;
   border-radius: 0.3em;
-  color:  var(--base-color);
+  color: var(--base-color);
 }
 
 /* Line highlighting */
@@ -118,7 +115,7 @@ pre[class*='language-'] > code[class*='language-'] {
 }
 
 .token.punctuation {
-  color:  var(--punctuation-color);
+  color: var(--punctuation-color);
 }
 
 .token.property,

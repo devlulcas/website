@@ -1,37 +1,37 @@
 <script lang="ts">
-	import type { FeaturedProject } from '$/lib/server/projects/types';
-	import ProjectData from './project-data.svelte';
+  import type { FeaturedProject } from '$/lib/server/projects/types';
+  import ProjectData from './project-data.svelte';
 
-	export let project: FeaturedProject;
-	let expandedImageIndex = 0;
+  export let project: FeaturedProject;
+  let expandedImageIndex = 0;
 </script>
 
-<article class="w-full flex gap-2 lg:h-72 flex-col lg:flex-row lg:even:flex-row-reverse">
-	<div class="flex gap-2 w-full lg:w-4/6 select-none min-h-[200px]">
-		{#each project.images as image, index}
-			<button
-				on:click={() => (expandedImageIndex = index)}
-				class="w-12 relative transition-all duration-300 ease-in-out rounded-xl overflow-hidden border shadow-lg"
-				class:w-full={expandedImageIndex === index}
-			>
-				<img
-					draggable={false}
-					class="absolute inset-0 w-full h-full object-cover object-center"
-					src={image}
-					alt={project.name}
-				/>
-			</button>
-		{/each}
-	</div>
+<article class="flex w-full flex-col gap-2 lg:h-72 lg:flex-row lg:even:flex-row-reverse">
+  <div class="flex min-h-[200px] w-full select-none gap-2 lg:w-4/6">
+    {#each project.images as image, index}
+      <button
+        on:click={() => (expandedImageIndex = index)}
+        class="relative w-12 overflow-hidden rounded-xl border shadow-lg transition-all duration-300 ease-in-out"
+        class:w-full={expandedImageIndex === index}
+      >
+        <img
+          draggable={false}
+          class="absolute inset-0 h-full w-full object-cover object-center"
+          src={image}
+          alt={project.name}
+        />
+      </button>
+    {/each}
+  </div>
 
-	<div class="bg-card text-card-foreground p-3 lg:w-2/6 flex flex-col border rounded-xl">
-		<ProjectData
-			name={project.name}
-			description={project.description.en}
-			url={project.url}
-			code={project.code}
-			tags={project.tags}
-			details={project.details.en}
-		/>
-	</div>
+  <div class="flex flex-col rounded-xl border bg-card p-3 text-card-foreground lg:w-2/6">
+    <ProjectData
+      name={project.name}
+      description={project.description.en}
+      url={project.url}
+      code={project.code}
+      tags={project.tags}
+      details={project.details.en}
+    />
+  </div>
 </article>
