@@ -11,7 +11,7 @@ export const load: PageServerLoad = async ({ params }) => {
   const currentPostIndex = posts.findIndex((post) => slug.toLowerCase() === post.slug);
 
   if (currentPostIndex === -1) {
-    throw error(404, 'Post not found');
+    error(404, 'Post not found');
   }
 
   const currentPost = posts[currentPostIndex];

@@ -68,11 +68,9 @@ export const actions: Actions = {
     const theme = url.searchParams.get('theme');
 
     if (theme) {
-      const fullYear = 60 * 60 * 24 * 365;
-
       cookies.set('theme', theme, {
         path: '/',
-        maxAge: fullYear,
+        maxAge: 60 * 60 * 24 * 365,
       });
     }
 
@@ -83,7 +81,10 @@ export const actions: Actions = {
     const currentLanguageSetting = url.searchParams.get('lang');
 
     if (currentLanguageSetting) {
-      cookies.set('lang', currentLanguageSetting);
+      cookies.set('lang', currentLanguageSetting, {
+        path: '/',
+        maxAge: 60 * 60 * 24 * 365,
+      });
     }
 
     redirectTo(url);
@@ -97,8 +98,8 @@ function redirectTo(url: URL) {
   if (doNotRedirect) return;
 
   if (redirectTo && redirectTo.startsWith('/')) {
-    throw redirect(303, redirectTo);
+    redirect(303, redirectTo);
   }
 
-  throw redirect(303, '/');
+  redirect(303, '/');
 }

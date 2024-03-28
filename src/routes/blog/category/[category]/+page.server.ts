@@ -11,7 +11,7 @@ export const load: PageServerLoad = async ({ params }) => {
   const filteredPosts = filterPostsByCategory(posts, category);
 
   if (filteredPosts.length === 0) {
-    throw error(404, `Category "${category}" not found`);
+    error(404, `Category "${category}" not found`);
   }
 
   return { posts: filteredPosts, category };
