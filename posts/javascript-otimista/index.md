@@ -210,7 +210,7 @@ Por isso que nós geralmente temos que encher os blocos `catch` de `if (error in
 
 > A proposta esta em estágio 0 então melhor não contar com ela.
 
-### "... e muitos menos algo que enforce que você precisa tratar essa exceção."
+### "... e muitos menos algo que force você a tratar essa exceção."
 
 Talvez você já tenha ouvido falar de linguagens como o Java que te obriga a tratar uma exceção ou lançar ela adiante e deixar isso claro na assinatura da função ou linguagens como Go que retornam o erro como um valor e você tem que ficar checando a cada ponto que dá erro. Isso é uma feature da linguagem. O Javascript/Typescript não tem isso. Você pode lançar uma exceção e não tratar ela.
 
