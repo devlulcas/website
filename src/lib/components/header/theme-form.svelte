@@ -16,20 +16,20 @@
   };
 </script>
 
-<form use:enhance={submitTheme} method="POST" class="flex gap-1">
+<form use:enhance={submitTheme} method="POST" class="flex h-full min-w-fit gap-1">
   <button
     title={$t('common.header.themes.light')}
-    class="cursor-pointer rounded border-none bg-transparent p-2 hover:bg-white/5"
+    class="group flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border-none bg-transparent p-2 hover:bg-white/5"
     formaction="/?/setTheme&theme=light&redirectTo={$page.url.pathname}"
   >
-    <SunIcon size={18} class="text-gray-900 dark:text-gray-500" />
+    <SunIcon size={18} class="fill-current text-gray-900 group-hover:animate-spin dark:fill-none dark:text-gray-500" />
   </button>
 
   <button
     title={$t('common.header.themes.dark')}
-    class="cursor-pointer rounded border-none bg-transparent p-2 hover:bg-white/5"
+    class="group flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border-none bg-transparent p-2 hover:bg-white/5"
     formaction="/?/setTheme&theme=dark&redirectTo={$page.url.pathname}"
   >
-    <MoonIcon size={18} class="text-gray-400 dark:text-gray-200" />
+    <MoonIcon size={18} class="text-gray-400 group-hover:animate-spin dark:fill-current dark:text-gray-200" />
   </button>
 </form>

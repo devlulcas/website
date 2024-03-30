@@ -17,10 +17,10 @@
   };
 </script>
 
-<form title={$t('common.header.languages')} use:enhance={submitTheme} method="POST" class="flex gap-1">
+<form title={$t('common.header.languages')} use:enhance={submitTheme} method="POST" class="flex h-full w-fit gap-1">
   <button
     title="English"
-    class="cursor-pointer rounded border-none bg-transparent p-2 hover:bg-white/5"
+    class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border-none bg-transparent p-2 hover:bg-white/5"
     formaction="/?/setLocale&lang=en&redirectTo={$page.url.pathname}"
   >
     <img src={unitedStatesOfAmericaSvg} alt="USA Flag" class="h-4 w-4" />
@@ -28,7 +28,7 @@
 
   <button
     title="Português brasileiro"
-    class="cursor-pointer rounded border-none bg-transparent p-2 hover:bg-white/5"
+    class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border-none bg-transparent p-2 hover:bg-white/5"
     formaction="/?/setLocale&lang=pt&redirectTo={$page.url.pathname}"
   >
     <img src={brazilSvg} alt="Brazil flag" class="h-4 w-4" />

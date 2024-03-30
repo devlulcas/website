@@ -4,7 +4,7 @@
   import { GithubIcon, LinkedinIcon } from 'lucide-svelte';
 </script>
 
-<footer class="flex h-[--footer-height] items-center p-3">
+<footer class="flex h-[--footer-height] items-center p-3 text-white print:hidden">
   <div class="flex w-full flex-col gap-6 font-bold sm:flex-row">
     <a href="/" target="_blank" rel="noopener noreferrer" class="mr-auto">
       {$t('common.footer.codeAvailableOn')} devlulcas/website
