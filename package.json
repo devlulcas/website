@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.2.0",
-    "@sveltejs/kit": "^2.5.4",
+    "@sveltejs/kit": "^2.5.5",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@tailwindcss/typography": "^0.5.12",
     "@types/nprogress": "^0.2.3",
@@ -40,7 +40,7 @@
     "tslib": "^2.6.2",
     "tsx": "^4.7.1",
     "typescript": "^5.4.3",
-    "vite": "^5.2.6",
+    "vite": "^5.2.7",
     "vitest": "^1.4.0"
   },
   "type": "module",
