@@ -1,0 +1,18 @@
+{
+  "name": "Lucas Alves Rego",
+  "email": "lucasalvesrego.contato@gmail.com",
+  "website": "www.lucasrego.tech",
+  "github": "github.com/devlulcas",
+  "linkedin": "www.linkedin.com/in/lucasalvesregodev",
+  "aboutMe": "I am a full-stack web developer with experience working on the development of an e-commerce platform integrated with the company's legacy systems, in addition to maintaining and creating internal and external applications, with a main focus on building high-performance and resilient front-ends.",
+  "experience": {
+    "title": "Experiência"
+  },
+  "skills": {
+    "languages": "English (C1)",
+    "programmingLanguages": "I mainly work with Typescript. Also confident with PHP and have notions of Go and Kotlin.",
+    "frameworks": "I mainly work with React and NextJS. NestJS for backend in NodeJS. For tests I use Vitest, React Testing Library, Jest and E2E with Playwright.",
+    "versionControl": "Git and GitHub"
+  },
+  "education": "Federal Institute of Education, Science and Technology of Bahia (IFBA - Informatics). I also work on many projects in my free time."
+}

@@ -52,6 +52,16 @@ const config: Config = {
       key: 'blog',
       loader: async () => (await import('./pt/blog.json')).default,
     },
+    {
+      locale: 'pt',
+      key: 'cv',
+      loader: async () => (await import('./pt/cv.json')).default,
+    },
+    {
+      locale: 'en',
+      key: 'cv',
+      loader: async () => (await import('./en/cv.json')).default,
+    },
   ],
 };
 

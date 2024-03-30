@@ -22,5 +22,10 @@ export const navigationLinks = derived(page, ($page) => {
       href: '/bookmarks',
       isActive: $page.url.pathname === '/bookmarks',
     },
+    {
+      label: 'common.header.cv',
+      href: '/cv',
+      isActive: $page.url.pathname === '/cv',
+    },
   ];
 });

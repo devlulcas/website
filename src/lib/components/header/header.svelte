@@ -10,10 +10,10 @@
 </script>
 
 <header
-  class="lc-grid sticky top-0 z-50 flex h-[--header-height] items-center justify-center gap-2 bg-gradient-to-b from-background/75 to-transparent md:p-1"
+  class="lc-grid sticky top-0 z-50 flex h-[--header-height] items-center justify-center gap-2 bg-gradient-to-b from-background/75 to-transparent md:p-1 print:h-0"
 >
   <nav
-    class="col-span-12 col-start-1 flex h-full items-center justify-between gap-2 border bg-card/75 p-1 text-card-foreground backdrop-blur-md dark:bg-card/75 md:rounded-2xl lg:col-span-8 lg:col-start-3"
+    class="col-span-12 col-start-1 flex h-full items-center justify-between gap-2 border bg-card/75 p-1 text-card-foreground backdrop-blur-md dark:bg-card/75 md:rounded-2xl lg:col-span-8 lg:col-start-3 print:hidden"
   >
     <a href="/">
       <img class="h-12 w-12 rounded lg:rounded-xl" src={icon} alt="Lucas Alves Rego" />
