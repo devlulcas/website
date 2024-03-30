@@ -1,4 +1,5 @@
 import { getPosts } from '$/lib/server/posts/services/get-posts';
+import { getDemoProjects } from '$/lib/server/projects/services/get-demo-projects';
 import { getFeaturedProjects } from '$/lib/server/projects/services/get-feature-projects';
 import { getProjects } from '$/lib/server/projects/services/get-projects';
 import { fail, redirect } from '@sveltejs/kit';
@@ -16,7 +17,9 @@ export const load: PageServerLoad = async () => {
 
   const projects = getProjects();
 
-  return { featuredProjects, recentPosts, featuredPost, lazy: { projects } };
+  const demos = getDemoProjects();
+
+  return { featuredProjects, recentPosts, featuredPost, lazy: { projects, demos } };
 };
 
 export const actions: Actions = {

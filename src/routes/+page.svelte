@@ -24,6 +24,18 @@
 
   <SkillCarousel class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3" />
 
+  <ContainerSection id="featured-projects" title={$t('home.featuredProjects.title')}>
+    <p class="text-lg text-muted-foreground">
+      {$t('home.featuredProjects.description')}
+    </p>
+
+    <div class="mt-4 flex flex-col gap-6">
+      {#each data.featuredProjects as project}
+        <FeaturedProjectCard {project} />
+      {/each}
+    </div>
+  </ContainerSection>
+
   <ContainerSection id="posts" title={$t('home.blog.title')}>
     <p class="mb-4 text-lg text-muted-foreground">{$t('home.blog.description')}</p>
 
@@ -42,18 +54,6 @@
       {$t('home.blog.seeMore')}
       <ArrowRight slot="end-icon" name="arrow-right" size={18} />
     </SeeMoreLink>
-  </ContainerSection>
-
-  <ContainerSection id="featured-projects" title={$t('home.featuredProjects.title')}>
-    <p class="text-lg text-muted-foreground">
-      {$t('home.featuredProjects.description')}
-    </p>
-
-    <div class="mt-4 flex flex-col gap-6">
-      {#each data.featuredProjects as project}
-        <FeaturedProjectCard {project} />
-      {/each}
-    </div>
   </ContainerSection>
 
   <ContainerSection id="projects" title={$t('home.projects.title')}>
@@ -78,11 +78,36 @@
         </p>
       {/if}
     {/await}
+
     <SeeMoreLink href="https://github.com/devlulcas/">
       <GithubIcon slot="start-icon" name="arrow-right" size={18} />
       {$t('home.projects.seeMore')}
       <ArrowRight slot="end-icon" name="arrow-right" size={18} />
     </SeeMoreLink>
+  </ContainerSection>
+
+  <ContainerSection id="demo-projects" title={'Demos'}>
+    {#await data.lazy.demos}
+      <div
+        class="flex h-96 w-full animate-pulse items-center justify-center rounded border border-brand-500 bg-foreground/10 text-brand-500"
+      >
+        <Loader2Icon size={32} class="animate-spin" />
+      </div>
+    {:then demos}
+      {#if demos.length > 0}
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {#each demos as project}
+            <ProjectCard {project} />
+          {/each}
+        </div>
+      {:else}
+        <p
+          class="flex h-96 w-full items-center justify-center rounded border-brand-500 bg-foreground/10 text-brand-500"
+        >
+          {$t('home.projects.noProjects')}
+        </p>
+      {/if}
+    {/await}
   </ContainerSection>
 
   <ContainerSection id="contact" title={$t('home.contact.title')} class="mb-8 flex min-h-[--view-height] flex-col">
