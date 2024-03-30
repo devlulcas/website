@@ -207,7 +207,7 @@ export const experiences: {
         {
           name: 'Sports events platform',
           description:
-            'Development of an online sports events platform, focused on selling tickets for local events. We are using NextJS 14, TipTap, Tanstack Query, Zustand, Typescript, React, Pagar.me, Vitest and RTL for the frontend.',
+            'Development of an online sports events platform, focused on selling tickets for local events. We are using NextJS 14, TipTap, Tanstack Query, Zustand, Typescript, React, Vitest and RTL for the frontend.',
           stack: [
             'NextJS',
             'TipTap',

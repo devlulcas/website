@@ -7,7 +7,7 @@
   :root {
     /* Height variables */
     --footer-height: 12rem;
-    --header-height: 4rem;
+    --header-height: 3.25rem;
     --view-height: calc(100dvh - var(--header-height) - var(--footer-height));
 
     @media (min-width: 768px) {
@@ -116,5 +116,16 @@
     &:hover {
       background: hsl(var(--scrollbar) / 85%);
     }
+  }
+}
+
+:root * {
+  @media print {
+    --footer-height: 0;
+    --header-height: 0;
+    --view-height: 100vh;
+    font-size: 11pt;
+    color: black !important;
+    border-color: black !important;
   }
 }
