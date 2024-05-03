@@ -10,7 +10,11 @@ export type FeaturedProject = {
   };
   url: string;
   code: string | null;
-  tags: string[];
+  tags: {
+    both: string[];
+    en: string[];
+    pt: string[];
+  };
   images: string[];
 };
 

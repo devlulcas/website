@@ -1,12 +1,16 @@
 <script lang="ts">
+  import { locale } from '$/lib/i18n';
   import type { FeaturedProject } from '$/lib/server/projects/types';
   import ProjectData from './project-data.svelte';
 
   export let project: FeaturedProject;
+
+  $: inEnglish = $locale === 'en';
+
   let expandedImageIndex = 0;
 </script>
 
-<article class="flex w-full flex-col gap-2 lg:h-72 lg:flex-row lg:even:flex-row-reverse">
+<article class="flex w-full flex-col gap-2 lg:h-80 lg:flex-row lg:even:flex-row-reverse">
   <div class="flex min-h-[200px] w-full select-none gap-2 lg:w-4/6">
     {#each project.images as image, index}
       <button
@@ -27,11 +31,11 @@
   <div class="flex flex-col rounded-xl border bg-card p-3 text-card-foreground lg:w-2/6">
     <ProjectData
       name={project.name}
-      description={project.description.en}
       url={project.url}
       code={project.code}
-      tags={project.tags}
-      details={project.details.en}
+      description={inEnglish ? project.description.en : project.description.pt}
+      details={inEnglish ? project.details.en : project.details.pt}
+      tags={[...project.tags.both, ...(inEnglish ? project.tags.en : project.tags.pt)]}
     />
   </div>
 </article>

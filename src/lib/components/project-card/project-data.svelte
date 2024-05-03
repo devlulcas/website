@@ -19,15 +19,15 @@
 </p>
 
 {#if details.length > 0}
-  <blockquote class="mt-1 line-clamp-4 border-l-2 pl-2 text-sm italic text-muted-foreground">
+  <blockquote class="mt-1 line-clamp-5 border-l-2 pl-2 text-sm italic text-muted-foreground">
     {details}
   </blockquote>
 {/if}
 
 {#if tags.length > 0}
-  <div class="mb-3 mt-2 flex flex-wrap gap-1">
+  <div class="mb-3 mt-auto flex flex-wrap gap-0.5">
     {#each tags as tag}
-      <span class="mt-1 rounded-md bg-accent px-2 py-1 text-xs text-accent-foreground">
+      <span class="rounded-md bg-accent px-2 py-0.5 text-xs text-accent-foreground">
         {tag}
       </span>
     {/each}
