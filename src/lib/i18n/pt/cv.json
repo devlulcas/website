@@ -14,5 +14,15 @@
     "frameworks": "Trabalho principalmente com React e NextJS. NestJS para backend em NodeJS. Para testes eu uso Vitest, React Testing Library, Jest e E2E com Playwright.",
     "versionControl": "Git and GitHub"
   },
-  "education": "Instituto Federal de Educação, Ciência e Tecnologia da Bahia (IFBA - Informática). Eu também trabalho em muitos projetos no meu tempo livre."
+  "education": {
+    "title": "Educação",
+    "list": {
+      "first": {
+        "institution": "Instituto Federal de Educação, Ciência e Tecnologia da Bahia (IFBA - Informática)",
+        "degree": "Técnico em Informática",
+        "period": "2018 - 2022/23"
+      }
+    },
+    "extra": "Eu também trabalho em muitos projetos no meu tempo livre."
+  }
 }
