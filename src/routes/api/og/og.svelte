@@ -1,21 +1,32 @@
 <script lang="ts">
-  import { website } from '$/lib/assets/config';
-
   export let text: string;
   export let thumb: string;
   export let tags: string[];
+
+  $: tagsInPacks = tags.reduce((acc, tag, i) => {
+    if (i % 3 === 0) {
+      acc.push([tag]);
+    } else {
+      acc[acc.length - 1].push(tag);
+    }
+    return acc;
+  }, [] as string[][]);
 </script>
 
 <div class="container">
   <div class="card">
-    <img src={website.url + thumb} alt={text} height="589" width="800" />
+    <img src={thumb} alt={text} height="589" width="800" />
     <div class="content">
       <p>{text}</p>
 
       {#if tags}
-        <div>
-          {#each tags as tag}
-            <span>{tag}</span>
+        <div class="tags">
+          {#each tagsInPacks as tagsPack}
+            <div>
+              {#each tagsPack as tag}
+                <span>{tag}</span>
+              {/each}
+            </div>
           {/each}
         </div>
       {/if}
@@ -50,6 +61,11 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
+  }
+
+  .tags {
+    width: 300px;
+    flex-direction: column;
   }
 
   img {
