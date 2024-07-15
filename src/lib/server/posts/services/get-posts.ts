@@ -1,8 +1,10 @@
-import { readingTime } from "reading-time-estimator";
-import { z } from "zod";
-import { detectLanguage } from "../lib/detect-language";
-import { rawPostSchema } from "../schemas/raw-post-schema";
-import type { PostMetadata } from "../types";
+import { website } from '$/lib/assets/config';
+import { parse as parseHtml } from 'node-html-parser';
+import { readingTime } from 'reading-time-estimator';
+import { z } from 'zod';
+import { detectLanguage } from '../lib/detect-language';
+import { rawPostSchema, type RawPostSchema } from '../schemas/raw-post-schema';
+import type { PostMetadata } from '../types';
 
 /**
  * Fetches all the posts metadata. It also adds the slug and the SEO metadata
@@ -10,10 +12,10 @@ import type { PostMetadata } from "../types";
  * @returns all the posts metadata
  */
 export async function getPosts(): Promise<PostMetadata[]> {
-  const postFiles = import.meta.glob("/posts/**/*.md");
+  const postFiles = import.meta.glob('/posts/**/*.md');
 
   const postMetadataPromises: Promise<PostMetadata>[] = Object.entries(
-    postFiles,
+    postFiles
   ).map(async ([filepath, resolver]) => {
     const resolverData = await resolver();
 
@@ -23,7 +25,7 @@ export async function getPosts(): Promise<PostMetadata[]> {
         render: z.function().returns(
           z.object({
             html: z.string(),
-          }),
+          })
         ),
       }),
     });
@@ -40,29 +42,36 @@ export async function getPosts(): Promise<PostMetadata[]> {
 
     const slug =
       filepath
-        .replace(/(\/index)?\.md/, "")
-        .split("/")
+        .replace(/(\/index)?\.md/, '')
+        .split('/')
         .pop() ?? filepath;
 
     const language = detectLanguage(
-      metadata.data.title + " " + metadata.data.excerpt,
+      metadata.data.title + ' ' + metadata.data.excerpt
     );
 
-    const expectedReadingTime = readingTime(
-      parsedData.default.render().html,
-      300,
-      language.code,
-    );
+    const renderedHtml = parsedData.default.render().html;
 
-    const generateCover = (title: string) => {
-      const baseUrl = "https://lucasrego.tech/api/og";
-      const titleEncoded = encodeURIComponent(title);
-      const languageCode = language.code;
-      const cover = `${baseUrl}?text=${titleEncoded}&language=${languageCode}`;
-      return cover;
+    const expectedReadingTime = readingTime(renderedHtml, 300, language.code);
+
+    let thumb = parseHtml(renderedHtml)
+      .querySelector('img')
+      ?.getAttribute('src');
+
+    thumb ||= '/images/og-image.webp';
+
+    thumb = new URL(thumb, website.url).toString();
+
+    const generateCover = (post: RawPostSchema, thumb: string) => {
+      const cover = new URL('/api/og', website.url);
+      cover.searchParams.append('text', post.title);
+      cover.searchParams.append('thumb', thumb);
+      post.tags.forEach((tag) => cover.searchParams.append('tag', tag));
+
+      return cover.toString();
     };
 
-    const cover = generateCover(metadata.data.title);
+    const cover = generateCover(metadata.data, thumb);
 
     const getDate = () => {
       try {

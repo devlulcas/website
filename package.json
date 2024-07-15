@@ -54,6 +54,7 @@
     "franc-min": "^6.2.0",
     "fzf": "^0.5.2",
     "lucide-svelte": "^0.408.0",
+    "node-html-parser": "^6.1.13",
     "nprogress": "^0.2.0",
     "reading-time-estimator": "^1.11.0",
     "sveltekit-i18n": "^2.4.2",

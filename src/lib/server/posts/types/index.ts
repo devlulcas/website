@@ -1,4 +1,4 @@
-import type { RawPostSchema } from "../schemas/raw-post-schema";
+import type { RawPostSchema } from '../schemas/raw-post-schema';
 
 export type PostMetadata = Required<
   RawPostSchema & {
@@ -9,5 +9,5 @@ export type PostMetadata = Required<
 >;
 
 export type Language =
-  | { niceName: "Português"; code: "pt-br" }
-  | { niceName: "English"; code: "en" };
+  | { niceName: 'Português'; code: 'pt-br' }
+  | { niceName: 'English'; code: 'en' };
