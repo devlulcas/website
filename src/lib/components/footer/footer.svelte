@@ -1,6 +1,5 @@
 <script lang="ts">
   import { website } from '$/lib/assets/config';
-  import { t } from '$/lib/i18n';
   import { GithubIcon, LinkedinIcon } from 'lucide-svelte';
 </script>
 
