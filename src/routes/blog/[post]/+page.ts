@@ -1,5 +1,5 @@
-import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
+import { error } from "@sveltejs/kit";
+import type { PageLoad } from "./$types";
 
 /**
  * Dynamically loads the svelte component for the post (only possible in +page.js)
@@ -9,7 +9,7 @@ export const load: PageLoad = async ({ data }) => {
   const postPath = data.post.slug;
 
   if (!postPath) {
-    error(404, 'Post not found');
+    error(404, "Post not found");
   }
 
   const component = await import(`./../../../../posts/${postPath}/index.md`);

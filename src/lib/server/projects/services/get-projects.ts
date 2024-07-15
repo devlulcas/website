@@ -1,7 +1,7 @@
-import { GITHUB_API_KEY, HOW_MANY_PROJECTS_TO_SHOW } from '$env/static/private';
-import { HIDE_LIST } from '../data/hide-list';
-import type { Project } from '../types';
-import { getProjectImage } from './get-project-image';
+import { GITHUB_API_KEY, HOW_MANY_PROJECTS_TO_SHOW } from "$env/static/private";
+import { HIDE_LIST } from "../data/hide-list";
+import type { Project } from "../types";
+import { getProjectImage } from "./get-project-image";
 
 type GithubProjectsResponse = {
   data: {
@@ -57,20 +57,24 @@ export async function getProjects(): Promise<Project[]> {
 `;
 
   try {
-    const response = await fetch('https://api.github.com/graphql', {
-      method: 'POST',
+    const response = await fetch("https://api.github.com/graphql", {
+      method: "POST",
       headers: { Authorization: `bearer ${GITHUB_API_KEY}` },
       body: JSON.stringify({ query: QUERY_GH_PROJECTS }),
     });
 
     const json = await response.json();
 
-    const isGithubProjectsResponse = (response: unknown): response is GithubProjectsResponse => {
-      return response !== null && typeof response === 'object' && 'data' in response;
+    const isGithubProjectsResponse = (
+      response: unknown,
+    ): response is GithubProjectsResponse => {
+      return (
+        response !== null && typeof response === "object" && "data" in response
+      );
     };
 
     if (!isGithubProjectsResponse(json)) {
-      throw new Error('Invalid response from Github API');
+      throw new Error("Invalid response from Github API");
     }
 
     const repositories = json.data.search.repositories;
@@ -79,19 +83,21 @@ export async function getProjects(): Promise<Project[]> {
       .filter((edge) => !HIDE_LIST.includes(edge.repository.name))
       .slice(0, projectsToShow);
 
-    const projectImages = await Promise.all(filteredRepositories.map((edge) => getProjectImage(edge.repository)));
+    const projectImages = await Promise.all(
+      filteredRepositories.map((edge) => getProjectImage(edge.repository)),
+    );
 
     return filteredRepositories.map((edge, index) => ({
       name: edge.repository.name,
-      description: edge.repository.description ?? '',
+      description: edge.repository.description ?? "",
       code: edge.repository.url,
-      url: edge.repository.homepageUrl ?? '/',
+      url: edge.repository.homepageUrl ?? "/",
       createdAt: edge.repository.createdAt,
       languages: edge.repository.languages?.nodes ?? [],
       image: projectImages[index],
     }));
   } catch (error) {
-    console.error('Failed to fetch projects', error);
+    console.error("Failed to fetch projects", error);
     return [];
   }
 }

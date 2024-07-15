@@ -1,6 +1,9 @@
-import type { PostMetadata } from '../types';
+import type { PostMetadata } from "../types";
 
-export function getPostRecommendations(posts: PostMetadata[], currentPostIndex: number) {
+export function getPostRecommendations(
+  posts: PostMetadata[],
+  currentPostIndex: number,
+) {
   const recommendations: PostMetadata[] = [];
 
   const previousPost = posts[currentPostIndex - 1];

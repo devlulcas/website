@@ -1,8 +1,8 @@
-import { readingTime } from 'reading-time-estimator';
-import { z } from 'zod';
-import { detectLanguage } from '../lib/detect-language';
-import { rawPostSchema } from '../schemas/raw-post-schema';
-import type { PostMetadata } from '../types';
+import { readingTime } from "reading-time-estimator";
+import { z } from "zod";
+import { detectLanguage } from "../lib/detect-language";
+import { rawPostSchema } from "../schemas/raw-post-schema";
+import type { PostMetadata } from "../types";
 
 /**
  * Fetches all the posts metadata. It also adds the slug and the SEO metadata
@@ -10,9 +10,11 @@ import type { PostMetadata } from '../types';
  * @returns all the posts metadata
  */
 export async function getPosts(): Promise<PostMetadata[]> {
-  const postFiles = import.meta.glob('/posts/**/*.md');
+  const postFiles = import.meta.glob("/posts/**/*.md");
 
-  const postMetadataPromises: Promise<PostMetadata>[] = Object.entries(postFiles).map(async ([filepath, resolver]) => {
+  const postMetadataPromises: Promise<PostMetadata>[] = Object.entries(
+    postFiles,
+  ).map(async ([filepath, resolver]) => {
     const resolverData = await resolver();
 
     const resolverDataSchema = z.object({
@@ -38,16 +40,22 @@ export async function getPosts(): Promise<PostMetadata[]> {
 
     const slug =
       filepath
-        .replace(/(\/index)?\.md/, '')
-        .split('/')
+        .replace(/(\/index)?\.md/, "")
+        .split("/")
         .pop() ?? filepath;
 
-    const language = detectLanguage(metadata.data.title + ' ' + metadata.data.excerpt);
+    const language = detectLanguage(
+      metadata.data.title + " " + metadata.data.excerpt,
+    );
 
-    const expectedReadingTime = readingTime(parsedData.default.render().html, 300, language.code);
+    const expectedReadingTime = readingTime(
+      parsedData.default.render().html,
+      300,
+      language.code,
+    );
 
     const generateCover = (title: string) => {
-      const baseUrl = 'https://lucasrego.tech/api/og';
+      const baseUrl = "https://lucasrego.tech/api/og";
       const titleEncoded = encodeURIComponent(title);
       const languageCode = language.code;
       const cover = `${baseUrl}?text=${titleEncoded}&language=${languageCode}`;

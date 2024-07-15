@@ -1,5 +1,5 @@
-import { Fzf } from 'fzf';
-import { writable } from 'svelte/store';
+import { Fzf } from "fzf";
+import { writable } from "svelte/store";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Result = Record<PropertyKey, any> & {
@@ -22,14 +22,14 @@ export const createSearchStore = <T extends Result>(data: T[]) => {
     selector: (v) => {
       return v.searchTerms;
     },
-    casing: 'case-insensitive',
+    casing: "case-insensitive",
     sort: true,
   });
 
   const { subscribe, set, update } = writable<SearchStoreModel<T>>({
     data,
     filtered: data,
-    query: '',
+    query: "",
     loadedFuzzyFinder: fzf,
   });
 
@@ -41,8 +41,12 @@ export const createSearchStore = <T extends Result>(data: T[]) => {
 };
 
 // Uses the Fzf library to filter the data based on the query
-export const searchHandler = <T extends Result>(searchStore: SearchStoreModel<T>) => {
-  const searchTerm = searchStore.query.toLowerCase() || '';
+export const searchHandler = <T extends Result>(
+  searchStore: SearchStoreModel<T>,
+) => {
+  const searchTerm = searchStore.query.toLowerCase() || "";
 
-  searchStore.filtered = searchStore.loadedFuzzyFinder.find(searchTerm).map((found) => found.item);
+  searchStore.filtered = searchStore.loadedFuzzyFinder
+    .find(searchTerm)
+    .map((found) => found.item);
 };

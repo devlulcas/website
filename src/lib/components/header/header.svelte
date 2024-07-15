@@ -16,7 +16,11 @@
     class="col-span-12 col-start-1 flex h-full items-center justify-between gap-2 border bg-card/75 p-1 text-card-foreground backdrop-blur-md dark:bg-card/75 md:rounded-2xl lg:col-span-8 lg:col-start-3 print:hidden"
   >
     <a href="/">
-      <img class="h-10 w-10 rounded lg:rounded-xl" src={icon} alt="Lucas Alves Rego" />
+      <img
+        class="h-10 w-10 rounded lg:rounded-xl"
+        src={icon}
+        alt="Lucas Alves Rego"
+      />
     </a>
 
     <div class="flex h-full min-w-fit items-center gap-1">

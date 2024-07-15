@@ -14,11 +14,6 @@ const config: Config = {
     },
     {
       locale: 'en',
-      key: 'about',
-      loader: async () => (await import('./en/about.json')).default,
-    },
-    {
-      locale: 'en',
       key: 'bookmarks',
       loader: async () => (await import('./en/bookmarks.json')).default,
     },
@@ -36,11 +31,6 @@ const config: Config = {
       locale: 'pt',
       key: 'home',
       loader: async () => (await import('./pt/home.json')).default,
-    },
-    {
-      locale: 'pt',
-      key: 'about',
-      loader: async () => (await import('./pt/about.json')).default,
     },
     {
       locale: 'pt',
@@ -65,4 +55,6 @@ const config: Config = {
   ],
 };
 
-export const { t, locale, locales, loading, loadTranslations } = new i18n(config);
+export const { t, locale, locales, loading, loadTranslations } = new i18n(
+  config
+);

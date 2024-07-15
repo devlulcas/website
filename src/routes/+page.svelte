@@ -10,7 +10,12 @@
   import { t } from '$/lib/i18n';
   import { dev } from '$app/environment';
   import { inject } from '@vercel/analytics';
-  import { ArrowRight, FeatherIcon, GithubIcon, Loader2Icon } from 'lucide-svelte';
+  import {
+    ArrowRight,
+    FeatherIcon,
+    GithubIcon,
+    Loader2Icon,
+  } from 'lucide-svelte';
   import HeroSection from '../lib/components/hero-section/hero-section.svelte';
   import type { PageData } from './$types';
 
@@ -24,7 +29,10 @@
 
   <SkillCarousel class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3" />
 
-  <ContainerSection id="featured-projects" title={$t('home.featuredProjects.title')}>
+  <ContainerSection
+    id="featured-projects"
+    title={$t('home.featuredProjects.title')}
+  >
     <p class="text-lg text-muted-foreground">
       {$t('home.featuredProjects.description')}
     </p>
@@ -37,11 +45,16 @@
   </ContainerSection>
 
   <ContainerSection id="posts" title={$t('home.blog.title')}>
-    <p class="mb-4 text-lg text-muted-foreground">{$t('home.blog.description')}</p>
+    <p class="mb-4 text-lg text-muted-foreground">
+      {$t('home.blog.description')}
+    </p>
 
     <FeaturedPostCard post={data.featuredPost} />
 
-    <div aria-hidden="true" class="lc-line my-4 h-[1px] w-full rounded-full bg-brand-500 dark:bg-brand-800" />
+    <div
+      aria-hidden="true"
+      class="lc-line my-4 h-[1px] w-full rounded-full bg-brand-500 dark:bg-brand-800"
+    />
 
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {#each data.recentPosts as recentPost}
@@ -110,7 +123,11 @@
     {/await}
   </ContainerSection>
 
-  <ContainerSection id="contact" title={$t('home.contact.title')} class="mb-8 flex min-h-[--view-height] flex-col">
+  <ContainerSection
+    id="contact"
+    title={$t('home.contact.title')}
+    class="mb-8 flex flex-col"
+  >
     <ContactForm />
   </ContainerSection>
 </main>

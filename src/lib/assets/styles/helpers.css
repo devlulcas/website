@@ -8,7 +8,7 @@
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 300%;
     height: 100%;
@@ -16,7 +16,12 @@
     top: 0;
     left: 0;
     transition: transform 500ms ease;
-    background: linear-gradient(76.35deg, var(--brand-dark) 5%, var(--brand-light) 35%, var(--brand-dark) 95%);
+    background: linear-gradient(
+      76.35deg,
+      var(--brand-dark) 5%,
+      var(--brand-light) 35%,
+      var(--brand-dark) 95%
+    );
   }
 
   &:hover {
@@ -31,13 +36,18 @@
   overflow-x: hidden;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 50px;
     top: 0;
     left: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--brand-400) 50%, transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--brand-400) 50%,
+      transparent
+    );
     animation: travel ease 5s infinite;
   }
 

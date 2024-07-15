@@ -40,7 +40,7 @@ Muitas vezes você nem precisa criar um tipo, pois o Typescript já consegue inf
 
 ```ts
 const x = 10; // O tipo de x é number
-const y = '10'; // O tipo de y é string
+const y = "10"; // O tipo de y é string
 const z = true; // O tipo de z é boolean
 ```
 
@@ -68,7 +68,7 @@ type Pessoa = {
 };
 
 const pessoa: Pessoa = {
-  nome: 'João',
+  nome: "João",
   idade: 30,
   vivo: true,
 };

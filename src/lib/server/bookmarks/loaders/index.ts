@@ -1,35 +1,46 @@
-import { PRIVATE_NOTION_API_KEY, PRIVATE_NOTION_DATABASE_ID, PRIVATE_NOTION_VERSION } from '$env/static/private';
-import type { Bookmark, NotionBookmarkDatabase } from '../types';
+import {
+  PRIVATE_NOTION_API_KEY,
+  PRIVATE_NOTION_DATABASE_ID,
+  PRIVATE_NOTION_VERSION,
+} from "$env/static/private";
+import type { Bookmark, NotionBookmarkDatabase } from "../types";
 
 function getNotionHeaders() {
   const headers = new Headers();
 
-  headers.set('Authorization', 'Bearer ' + PRIVATE_NOTION_API_KEY);
-  headers.set('Notion-Version', PRIVATE_NOTION_VERSION);
-  headers.set('Content-Type', 'application/json');
+  headers.set("Authorization", "Bearer " + PRIVATE_NOTION_API_KEY);
+  headers.set("Notion-Version", PRIVATE_NOTION_VERSION);
+  headers.set("Content-Type", "application/json");
 
   return headers;
 }
 
-function isNotionBookmarkDatabase(json: unknown): json is NotionBookmarkDatabase {
-  return json !== null && typeof json === 'object' && 'results' in json;
+function isNotionBookmarkDatabase(
+  json: unknown,
+): json is NotionBookmarkDatabase {
+  return json !== null && typeof json === "object" && "results" in json;
 }
 
 export async function getBookmarks(): Promise<Bookmark[]> {
-  const response = await fetch('https://api.notion.com/v1/databases/' + PRIVATE_NOTION_DATABASE_ID + '/query', {
-    method: 'POST',
-    headers: getNotionHeaders(),
-  });
+  const response = await fetch(
+    "https://api.notion.com/v1/databases/" +
+      PRIVATE_NOTION_DATABASE_ID +
+      "/query",
+    {
+      method: "POST",
+      headers: getNotionHeaders(),
+    },
+  );
 
   if (response.ok === false) {
-    console.error('Notion API error', await response.json());
+    console.error("Notion API error", await response.json());
     return [];
   }
 
   const json = await response.json();
 
   if (!isNotionBookmarkDatabase(json)) {
-    console.error('Notion API error', json);
+    console.error("Notion API error", json);
     return [];
   }
 
@@ -44,9 +55,12 @@ export async function getBookmarks(): Promise<Bookmark[]> {
     const name = result.properties.name.title[0].plain_text;
     const url = result.properties.url.url;
     const aboutInEnglish = result.properties.about_en.rich_text[0].plain_text;
-    const aboutInPortuguese = result.properties.about_pt_br.rich_text[0].plain_text;
+    const aboutInPortuguese =
+      result.properties.about_pt_br.rich_text[0].plain_text;
     const tags = result.properties.tags.multi_select.map((tag) => tag.name);
-    const searchTerms = [name, aboutInEnglish, aboutInPortuguese, ...tags].join(' ').toLowerCase();
+    const searchTerms = [name, aboutInEnglish, aboutInPortuguese, ...tags]
+      .join(" ")
+      .toLowerCase();
 
     bookmarks.push({
       resourceId,

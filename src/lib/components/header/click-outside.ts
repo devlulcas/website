@@ -2,7 +2,10 @@ type ClickOutsideOptions = {
   onOutsideClick?: (event: MouseEvent) => void;
 };
 
-export function clickOutside(node: HTMLElement, options: ClickOutsideOptions = {}) {
+export function clickOutside(
+  node: HTMLElement,
+  options: ClickOutsideOptions = {},
+) {
   const handleClick = (event: MouseEvent) => {
     const target = event.target as HTMLElement;
     if (node && !node.contains(target) && !event.defaultPrevented) {
@@ -10,11 +13,11 @@ export function clickOutside(node: HTMLElement, options: ClickOutsideOptions = {
     }
   };
 
-  document.addEventListener('click', handleClick, true);
+  document.addEventListener("click", handleClick, true);
 
   return {
     destroy() {
-      document.removeEventListener('click', handleClick, true);
+      document.removeEventListener("click", handleClick, true);
     },
   };
 }

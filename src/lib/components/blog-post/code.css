@@ -18,7 +18,7 @@
   --function-color: hsl(344, 84%, 43%);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --base-color: #c9d1d9;
   --punctuation-color: c9d1d9;
   --base-background: #0d1117;
@@ -30,16 +30,17 @@
 }
 
 /* General */
-pre[class*='language-'] {
+pre[class*="language-"] {
   border-radius: 0.5rem;
 }
 
-pre[class*='language-'],
-code[class*='language-'] {
+pre[class*="language-"],
+code[class*="language-"] {
   color: var(--base-color);
   font-size: 1rem;
   text-shadow: none;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -50,29 +51,29 @@ code[class*='language-'] {
   hyphens: none;
 }
 
-pre[class*='language-']::selection,
-code[class*='language-']::selection,
-pre[class*='language-']::mozselection,
-code[class*='language-']::mozselection {
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection,
+pre[class*="language-"]::mozselection,
+code[class*="language-"]::mozselection {
   text-shadow: none;
   background: var(--select-background);
 }
 
 @media print {
-  pre[class*='language-'],
-  code[class*='language-'] {
+  pre[class*="language-"],
+  code[class*="language-"] {
     text-shadow: none;
   }
 }
 
-pre[class*='language-'] {
+pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
   background: var(--base-background);
 }
 
-:not(pre) > code[class*='language-'] {
+:not(pre) > code[class*="language-"] {
   padding: 0.1em 0.3em;
   border-radius: 0.3em;
   color: var(--base-color);
@@ -83,7 +84,7 @@ pre[data-line] {
   position: relative;
 }
 
-pre[class*='language-'] > code[class*='language-'] {
+pre[class*="language-"] > code[class*="language-"] {
   position: relative;
   z-index: 1;
 }

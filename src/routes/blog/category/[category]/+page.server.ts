@@ -1,7 +1,7 @@
-import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
-import { getPosts } from '$/lib/server/posts/services/get-posts';
-import { filterPostsByCategory } from '$/lib/server/posts/lib/categories';
+import { error } from "@sveltejs/kit";
+import type { PageServerLoad } from "./$types";
+import { getPosts } from "$/lib/server/posts/services/get-posts";
+import { filterPostsByCategory } from "$/lib/server/posts/lib/categories";
 
 export const load: PageServerLoad = async ({ params }) => {
   const category = params.category;

@@ -91,7 +91,7 @@ Coleções são agrupamentos de documentos. Elas são análogas às tabelas em b
 Você pode criar uma coleção usando o método `createCollection`:
 
 ```js
-db.createCollection('users');
+db.createCollection("users");
 ```
 
 > info: Se você tentar inserir um documento em uma coleção que não existe, o MongoDB vai criar a coleção automaticamente.
@@ -111,7 +111,8 @@ db.updateMany(
   // Update
   {
     $set: {
-      password: 'que valor você colocaria para algo sensível assim eu num sei... talvez null?',
+      password:
+        "que valor você colocaria para algo sensível assim eu num sei... talvez null?",
     },
   },
 );
