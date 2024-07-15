@@ -8,7 +8,6 @@ import type { PostMetadata } from '../types';
 
 /**
  * Fetches all the posts metadata. It also adds the slug and the SEO metadata
- *
  * @returns all the posts metadata
  */
 export async function getPosts(): Promise<PostMetadata[]> {
