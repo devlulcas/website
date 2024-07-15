@@ -17,9 +17,11 @@ export const GET: RequestHandler = async ({ url }) => {
 
   const text = searchParams.get('text') || website.title;
   const thumb = searchParams.get('thumb') || null;
-  const tags = searchParams.getAll('tag') ?? null;
+  const tags = searchParams.getAll('tag') ?? [];
   const isMain = searchParams.get('main') === 'true';
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const result = SvelteOG.render({
     text,
     thumb,
