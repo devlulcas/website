@@ -1,9 +1,8 @@
 <script lang="ts">
   import ContainerSection from '$/lib/components/container-section/default.svelte';
   import PostCard from '$/lib/components/post-card/post-card.svelte';
-  import type { PageData } from './$types';
 
-  export let data: PageData;
+  export let data;
 </script>
 
 <main class="lc-grid min-h-[--view-height] px-4 pb-8 lg:px-8">
