@@ -1,5 +1,5 @@
 ---
-title: Iniciando na programação web
+title: Iniciando no frontend web
 tags:
   - javascript
   - iniciante
@@ -12,16 +12,16 @@ tags:
 categories:
   - none
   - css
-  - "javascript"
+  - 'javascript'
 date: 07/27/2022
 draft: false
-excerpt: Um pontapé inicial no desenvolvimento web
+excerpt: Um pontapé inicial no desenvolvimento frontend web
 ---
 
-# Iniciando na programação web - Um pontapé inicial no desenvolvimento web
+# Um pontapé inicial no desenvolvimento frontend web
 
 ```js
-console.log("Olá mãe!");
+console.log('Olá mãe!');
 ```
 
 Esse texto possui links de ajuda, conteúdo gratuito, dicas, resumos beeeeeem resumidos e minhas opiniões individuais.
@@ -133,7 +133,7 @@ section {
 }
 
 h1 {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-size: 3rem;
   font-weight: 800;
   color: black;
@@ -155,8 +155,8 @@ img {
 _E com Javascript a gente pode fazer as coisas acontecerem_:
 
 ```js
-const gatinho = document.querySelector("img");
-gatinho.addEventListener("click", () => alert("Cliquei num gatinho"));
+const gatinho = document.querySelector('img');
+gatinho.addEventListener('click', () => alert('Cliquei num gatinho'));
 ```
 
 Nessa época aprendi também que **Javascript não é Java e não tem nada a ver com Java**. Javascript só tem esse nome por conta de uma estratégia de marketing, seu nome real é EcmaScript e sua versão depende do ano, estamos no ES2022.
