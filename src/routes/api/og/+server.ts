@@ -1,11 +1,11 @@
-import { website } from "$/lib/assets/config";
-import type { RequestHandler } from "./$types";
-import satori from "satori";
-import { Resvg } from "@resvg/resvg-js";
-import inter from "$lib/assets/fonts/inter-bold.ttf";
-import { read } from "$app/server";
-import SvelteOG from "./og.svelte";
-import { html as toReactNode } from "satori-html";
+import { website } from '$/lib/assets/config';
+import { read } from '$app/server';
+import inter from '$lib/assets/fonts/inter-bold.ttf';
+import { Resvg } from '@resvg/resvg-js';
+import satori from 'satori';
+import { html as toReactNode } from 'satori-html';
+import type { RequestHandler } from './$types';
+import SvelteOG from './og.svelte';
 
 const fontData = read(inter).arrayBuffer();
 
@@ -15,10 +15,10 @@ const width = 1200;
 export const GET: RequestHandler = async ({ url }) => {
   const searchParams = url.searchParams;
 
-  const text = searchParams.get("text") || website.title;
-  const thumb = searchParams.get("thumb") || null;
-  const tags = searchParams.getAll("tag") ?? [];
-  const isMain = searchParams.get("main") === "true";
+  const text = searchParams.get('text') || website.title;
+  const thumb = searchParams.get('thumb') || null;
+  const tags = searchParams.getAll('tag') ?? [];
+  const isMain = searchParams.get('main') === 'true';
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
@@ -30,15 +30,15 @@ export const GET: RequestHandler = async ({ url }) => {
   });
 
   const element = toReactNode(
-    `${result.html}<style>${result.css.code}</style>`,
+    `${result.html}<style>${result.css.code}</style>`
   );
 
   const svg = await satori(element, {
     fonts: [
       {
-        name: "Inter",
+        name: 'Inter',
         data: await fontData,
-        style: "normal",
+        style: 'normal',
       },
     ],
     height,
@@ -47,7 +47,7 @@ export const GET: RequestHandler = async ({ url }) => {
 
   const resvg = new Resvg(svg, {
     fitTo: {
-      mode: "width",
+      mode: 'width',
       value: width,
     },
   });
@@ -56,8 +56,8 @@ export const GET: RequestHandler = async ({ url }) => {
 
   return new Response(image.asPng(), {
     headers: {
-      "content-type": "image/png",
-      "cache-control": "public, max-age=86400",
+      'content-type': 'image/png',
+      // "cache-control": "public, max-age=86400",
     },
   });
 };

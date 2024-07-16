@@ -15,7 +15,7 @@
 
 <div class="container">
   <div class="card">
-    <img src={thumb} alt={text} height="589" width="800" />
+    <img src={thumb} alt={text} width="800" />
     <div class="content">
       <p>{text}</p>
 
@@ -42,19 +42,17 @@
   .container {
     justify-content: center;
     align-items: center;
-    background-color: #0a0a0a;
     height: 630px;
     width: 1200px;
-    padding: 20px;
+    background-color: transparent;
   }
 
   .card {
     background-color: #171717;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px #0a0a0a;
     width: 100%;
     height: 100%;
     border: 1px solid #262626;
+    border-radius: 10px;
   }
 
   .content {
@@ -69,14 +67,17 @@
   }
 
   img {
-    border-radius: 5px 0 0 5px;
+    background-color: #262626;
+    height: 100%;
+    object-fit: cover;
   }
 
   p {
     display: flex;
     justify-content: center;
-    font-size: 25px;
+    font-size: 35px;
     width: 300px;
+    margin: 5px;
     color: #fafafa;
   }
 
@@ -84,8 +85,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px;
     padding: 5px 10px;
+    margin: 5px;
     border-radius: 5px;
     background-color: #262626;
     color: #fafafa;
