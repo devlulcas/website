@@ -20,6 +20,8 @@ excerpt: Um pontapé inicial no desenvolvimento frontend web
 
 # Um pontapé inicial no desenvolvimento frontend web
 
+![thumb](./web.jpg)
+
 ```js
 console.log('Olá mãe!');
 ```

@@ -53,6 +53,7 @@
     height: 100%;
     border: 1px solid #262626;
     border-radius: 10px;
+    overflow: hidden; 
   }
 
   .content {

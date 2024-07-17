@@ -12,9 +12,9 @@ draft: false
 excerpt: Uma breve introdução ao framework de testes Pest do ecossistema PHP
 ---
 
-![PHP](https://img.shields.io/static/v1?label=PHP&labelColor=3142FF&message=%20puro&color=838CF4&logo=php&logoColor=FFFFFF&style=for-the-badge) ![php unit](https://img.shields.io/static/v1?label=PHP&labelColor=057E62&message=unit&color=4CFF98&logo=php&logoColor=FFFFFF&style=for-the-badge) ![pest](https://img.shields.io/static/v1?label=PHP&labelColor=7A18B1&message=%20pest&color=E44CFF&logo=php&logoColor=FFFFFF&style=for-the-badge)
-
 ## 🧪 UNIT TESTS - TESTES UNITÁRIOS
+
+![thumb](./thumb.png)
 
 É uma boa dar uma olhada na documentação:
 [Documentação do Pest](https://pestphp.com/)
