@@ -22,7 +22,7 @@ Ele não vai te pedir uma senha, não vai te pedir um usuário, não vai te pedi
 
 Ele é muito usado em aplicações mobile, por exemplo, por ser leve e não precisar de um servidor. Também é muito usado em aplicações desktop e em aplicações web, muitas vezes como um banco de dados temporário / adicional para armazenar dados que não precisam de um banco de dados mais robusto.
 
-![SQLite](./sqlite.png)
+![SQLite](./thumb.jpg)
 
 ## INSTALAÇÃO
 
@@ -437,3 +437,5 @@ Agora o banco de dados atual é substituído pelo `backup.db`.
 
 - [SQLite Documentation](https://www.sqlite.org/docs.html)
 - [SQLite Tutorial](https://www.sqlitetutorial.net/)
+
+![SQLite](./sqlite.png)

@@ -13,10 +13,12 @@ excerpt: Como escrever bons commits para ter um versionamento mais inteligível
 
 # 📏 CONVENÇÃO DE COMMITS
 
-![captura de tela do histórico de commits do repositório angular/angular no github](./example.png)
+![thumb](./thumb.png)
 
 Quando usamos o git para versionar nossos projetos, é comum que façamos commits para salvar as alterações feitas no código.
 Em cada commit é possível adicionar uma mensagem que descreve as alterações feitas naquele commit. Hoje nós vamos aprender como escrever uma boa mensagem de commit seguindo uma convenção.
+
+![captura de tela do histórico de commits do repositório angular/angular no github](./example.png)
 
 ## 🤔 Por que usar uma convenção?
 
