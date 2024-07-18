@@ -11,7 +11,7 @@ excerpt: Um pouco sobre APIs, REST, HTTP, URLs, métodos HTTP, cabeçalhos HTTP,
 
 ## Conceitos básicos
 
-![expectation failed](./expectation-failed.png)
+![thumb](./thumb.png)
 
 ### Arquitetura cliente-servidor
 
