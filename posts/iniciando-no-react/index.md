@@ -13,6 +13,8 @@ excerpt: Notas sobre meus pensamentos em aprender React em 2022
 
 # INICIANDO NO REACT JS EM 2022
 
+![thumb](./thumb.png)
+
 O React é uma biblioteca para facilitar a criação de interfaces gráficas na web. Com ele podemos escrever nosso código de UI em componentes de forma declarativa e focada.
 
 O React também é bem popular no mercado, possuindo muitas vagas disponíveis e salários interessantes. Tudo isso torna o React um bom tópico de aprendizado, porém é necessário ter alguns conhecimentos base para começar no React com o pé direito. Nesta postagem falarei sobre esses conhecimentos e algumas coisas mais.
