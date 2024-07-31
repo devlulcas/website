@@ -44,27 +44,6 @@ export const website = {
   },
 };
 
-export const availablePostCategories = [
-  "css",
-  "javascript",
-  "typescript",
-  "react",
-  "svelte",
-  "node",
-  "web",
-  "dev",
-  "testing",
-  "git",
-  "github",
-  "database",
-  "api",
-  "graphql",
-  "next js",
-  "sveltekit",
-  "none",
-  "4fun",
-];
-
 export type Skill = {
   name: string;
   image: string;
