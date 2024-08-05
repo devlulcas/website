@@ -75,6 +75,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.39)
+      devlulcas-md:
+        specifier: ^1.1.1
+        version: 1.1.1
       eslint:
         specifier: ^9.7.0
         version: 9.7.0
@@ -930,6 +933,9 @@ packages:
 
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
+
+  devlulcas-md@1.1.1:
+    resolution: {integrity: sha512-vepv10KT4G3BuohIhYNcZhBqBohc1lI7xvdoPtSm15qrH0qwGs6zvScU55hzN0FYs3667Y9ckQC7u4win8ZpCg==}
 
   didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
@@ -2884,6 +2890,10 @@ snapshots:
   devlop@1.1.0:
     dependencies:
       dequal: 2.0.3
+
+  devlulcas-md@1.1.1:
+    dependencies:
+      unist-util-visit: 5.0.0
 
   didyoumean@1.2.2: {}
 

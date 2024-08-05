@@ -82,7 +82,9 @@ Por exemplo, uma URL como `https://api.example.com/users` pode ser usada para ac
 
 > tip: Em APIs, muitas vez chamamos uma URL de endpoint.
 
+
 > tip: Em APIs, é comum ter partes da URL que são variáveis, como `https://api.example.com/users/{id}`. Essas variáveis são chamadas de parâmetros de caminho ou path parameters.
+
 
 > tip: Parâmetros de consulta são usados para filtrar, ordenar ou paginar os resultados. Eles são adicionados à URL após o caractere `?` e separados por `&`. Por exemplo, `https://api.example.com/users?sort=asc&page=1`. Geralmente chamamos esses parâmetros de query parameters.
 

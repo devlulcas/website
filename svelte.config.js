@@ -5,11 +5,24 @@ import { mdsvex } from "mdsvex";
 import relativeImages from "mdsvex-relative-images";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
+import * as dvl from "devlulcas-md";
+
+const blockQuoteTypes = [
+  { prefix: "tip", className: "tip" },
+  { prefix: "warning", className: "warning" },
+  { prefix: "danger", className: "danger" },
+  { prefix: "info", className: "info" },
+  { prefix: "success", className: "success" },
+  { prefix: "note", className: "note" },
+  { prefix: "important", className: "important" },
+  { prefix: "caution", className: "caution" },
+  { prefix: "error", className: "error" },
+]
 
 /** @type {import('mdsvex').MdsvexOptions} */
 export const mdsvexOptions = {
   extensions: [".md", ".svx", ".mdx"],
-  remarkPlugins: [relativeImages],
+  remarkPlugins: [relativeImages, dvl.remarkBetterImages, [dvl.remarkCustomBlockquotes, { types: blockQuoteTypes }], dvl.remarkExternalUrl],
   rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]],
 };
 

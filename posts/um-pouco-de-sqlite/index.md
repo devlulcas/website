@@ -214,7 +214,7 @@ Se executarmos o mesmo select, não vamos ver a coluna `rowid`:
 SELECT rowid FROM user_without_rowid;
 ```
 
-> danger: Error: no such column: rowid
+> error: Error: no such column: rowid
 
 Isso pode ser útil em casos onde você não precisa de uma chave primária, quando você tem uma chave primária composta ou quando você tem uma chave primária personalizada.
 

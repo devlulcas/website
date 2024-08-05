@@ -39,6 +39,35 @@
     font-style: italic;
   }
 
+  & blockquote.tip {
+    --tip: hsl(212, 75%, 50%);
+    border: 2px solid var(--tip);
+    border-radius: 10px;
+    border-left: 0.25rem solid var(--tip);
+  }
+
+  & blockquote.warning {
+    --warning: hsl(40, 75%, 50%);
+    border: 2px solid var(--warning);
+    border-radius: 10px;
+    border-left: 0.25rem solid var(--warning);
+  }
+
+  & blockquote.note {
+    --note: hsl(240, 75%, 50%);
+    border: 2px solid var(--note);
+    border-radius: 10px;
+    border-left: 0.25rem solid var(--note);
+  }
+
+  & blockquote.error {
+    --error: hsl(0, 75%, 50%);
+    border: 2px solid var(--error);
+    border-radius: 10px;
+    border-left: 0.25rem solid var(--error);
+  }
+
+
   & ul {
     list-style: disc;
     padding-left: 1rem;
