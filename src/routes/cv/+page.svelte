@@ -39,18 +39,25 @@
     >
       <LinkedinIcon class="h-5 w-5 print:hidden" />
       <span class="block print:hidden">LinkedIn</span>
-      <span class="hidden print:block print:underline">{$t('cv.linkedin')}</span>
+      <span class="hidden print:block print:underline">{$t('cv.linkedin')}</span
+      >
     </a>
   </nav>
 
   <section class="mt-4 print:mt-2">
-    <h2 class="border-l-[3px] border-brand-700 pl-4 text-2xl font-bold dark:border-brand-500">
+    <h2
+      class="border-l-[3px] border-brand-700 pl-4 text-2xl font-bold dark:border-brand-500"
+    >
       {$t('cv.experience.title')}
     </h2>
-    <ul class="ml-[1px] mt-2 border-l border-brand-600 pl-4 dark:border-brand-400 print:border-black">
+    <ul
+      class="ml-[1px] mt-2 border-l border-brand-600 pl-4 dark:border-brand-400 print:border-black"
+    >
       {#each translatedExperiences as { company, period, projects }}
         <li class="mt-2 print:mt-0">
-          <h3 class="text-lg font-bold text-brand-600 dark:text-brand-500">{company}</h3>
+          <h3 class="text-lg font-bold text-brand-600 dark:text-brand-500">
+            {company}
+          </h3>
           <p class="text-sm text-brand-600">{period}</p>
 
           <ul class="mt-2 flex flex-col gap-4 divide-y print:divide-y-0">
@@ -58,7 +65,9 @@
               <li class="relative py-4 print:py-0">
                 <h4 class="text-base font-bold">{name}</h4>
 
-                <p class="my-1 mb-4 text-primary/75 print:mb-2">{description}</p>
+                <p class="my-1 mb-4 text-primary/75 print:mb-2">
+                  {description}
+                </p>
 
                 <ul class="flex flex-wrap gap-2">
                   <li>Tecnologias usadas:</li>
@@ -80,17 +89,17 @@
   </section>
 
   <section class="mt-4 print:mt-2">
-    <h2 class="border-l-[3px] border-brand-700 pl-4 text-2xl font-bold dark:border-brand-500">
+    <h2
+      class="border-l-[3px] border-brand-700 pl-4 text-2xl font-bold dark:border-brand-500"
+    >
       {$t('cv.education.title')}
     </h2>
 
-    <ul class="ml-[1px] mt-2 border-l border-brand-600 pl-4 dark:border-brand-400 print:border-black">
+    <ul
+      class="ml-[1px] mt-2 border-l border-brand-600 pl-4 dark:border-brand-400 print:border-black"
+    >
       <li class="mt-2 print:mt-1">
-        <h3 class="text-lg font-bold text-brand-600 dark:text-brand-500">
-          {$t('cv.education.list.first.institution')}
-        </h3>
-        <p class="text-sm text-brand-600">{$t('cv.education.list.first.period')}</p>
-        <p class="mt-2 text-primary/75 print:mt-1">{$t('cv.education.list.first.degree')}</p>
+        <p class="mt-2 text-primary/75 print:mt-1">{$t('cv.education')}</p>
       </li>
     </ul>
   </section>
