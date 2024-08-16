@@ -89,12 +89,6 @@
   </section>
 
   <section class="mt-4 print:mt-2">
-    <h2
-      class="border-l-[3px] border-brand-700 pl-4 text-2xl font-bold dark:border-brand-500"
-    >
-      {$t('cv.education.title')}
-    </h2>
-
     <ul
       class="ml-[1px] mt-2 border-l border-brand-600 pl-4 dark:border-brand-400 print:border-black"
     >
