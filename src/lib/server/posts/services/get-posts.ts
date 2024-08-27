@@ -11,7 +11,7 @@ import type { PostMetadata } from '../types';
  * @returns all the posts metadata
  */
 export async function getPosts(): Promise<PostMetadata[]> {
-  const postFiles = import.meta.glob('/posts/**/*.md');
+  const postFiles = import.meta.glob('/content/posts/**/*.md');
 
   const postMetadataPromises: Promise<PostMetadata>[] = Object.entries(
     postFiles
