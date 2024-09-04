@@ -6,4 +6,5 @@ export type Nugget = {
   slug: string;
   readingTime: number;
   content: string;
+  image: string;
 };

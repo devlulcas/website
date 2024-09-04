@@ -63,9 +63,5 @@ export async function getNuggets(): Promise<Nugget[]> {
 
   const postsMetadata = await Promise.all(metadataPromises);
 
-  console.log('>>>>>>>>>>>>> postsMetadata');
-  console.log(postsMetadata);
-  console.log('<<<<<<<<<<<<< postsMetadata');
-
   return postsMetadata;
 }

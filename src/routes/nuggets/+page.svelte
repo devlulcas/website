@@ -21,16 +21,12 @@
           />
         </div>
 
-        <div class="flex w-full">
-          <div class="border rounded-lg rounded-tr-none p-6 w-full">
-            <NuggetContainer>
-              {@html nugget.content}
-            </NuggetContainer>
-          </div>
-
-          <div class="w-10 relative flex flex-col justify-start items-center">
+        <div class="flex flex-col md:flex-row-reverse w-full">
+          <div
+            class="md:w-10 relative flex flex-col justify-start md:items-center"
+          >
             <div
-              class="w-fit absolute top-0 left-full rotate-90 origin-top-left h-10"
+              class="w-fit md:absolute top-0 left-full md:rotate-90 origin-top-left h-10"
             >
               <p
                 class="font-serif translate-y-[1x] italic text-nowrap h-10 w-fit flex items-center justify-center px-3 rounded-t-lg border border-b-2 border-b-background"
@@ -42,6 +38,13 @@
                 {nugget.year}
               </p>
             </div>
+          </div>
+          <div
+            class="border rounded-lg rounded-tl-none md:rounded-tr-none md:rounded-tl-lg p-6 w-full"
+          >
+            <NuggetContainer>
+              {@html nugget.content}
+            </NuggetContainer>
           </div>
         </div>
       </article>
