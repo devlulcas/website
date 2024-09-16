@@ -11,7 +11,7 @@
   export let data: PageData;
 </script>
 
-<main class="lc-grid px-4 pb-8 lg:px-8">
+<main id="main-content" class="lc-grid px-4 pb-8 lg:px-8">
   <ContainerSection>
     <div class="flex flex-col gap-1 lg:flex-row-reverse lg:py-12">
       <div class="w-full overflow-hidden">

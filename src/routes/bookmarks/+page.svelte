@@ -34,14 +34,16 @@
   }
 </script>
 
-<main class="lc-grid px-4 pb-8 lg:px-8">
+<main id="main-content" class="lc-grid px-4 pb-8 lg:px-8">
   <ContainerSection id="bookmarks" title={$t('bookmarks.title')}>
     <p class="mb-4 text-lg text-muted-foreground">
       {data.bookmarks.length}
       {$t('bookmarks.title')}
     </p>
 
-    <div class="lc-gradient w-full rounded-lg p-[2px] ring-brand-500 focus-within:ring-2">
+    <div
+      class="lc-gradient w-full rounded-lg p-[2px] ring-brand-500 focus-within:ring-2"
+    >
       <label class="sr-only" for="search-bookmark">Search bookmark</label>
       <input
         placeholder="Search bookmark"

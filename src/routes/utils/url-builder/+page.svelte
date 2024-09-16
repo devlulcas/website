@@ -76,7 +76,7 @@
   $: url = `${initialUrl}${searchParamsString ? `?${searchParamsString}` : ''}`;
 </script>
 
-<div class="min-h-[--view-height] py-8">
+<div id="main-content" class="min-h-[--view-height] py-8">
   <div class="flex flex-col container">
     <h1 class="text-4xl font-bold text-primary mb-4">URL Builder</h1>
 

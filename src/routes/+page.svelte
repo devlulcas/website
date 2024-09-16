@@ -24,7 +24,10 @@
   export let data: PageData;
 </script>
 
-<main class="lc-grid w-screen gap-y-10 overflow-x-hidden px-4 pb-8 lg:px-8">
+<main
+  id="main-content"
+  class="lc-grid w-screen gap-y-10 overflow-x-hidden px-4 pb-8 lg:px-8"
+>
   <HeroSection />
 
   <SkillCarousel class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3" />

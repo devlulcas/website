@@ -5,7 +5,7 @@
   export let data;
 </script>
 
-<main class="lc-grid min-h-[--view-height] px-4 pb-8 lg:px-8">
+<main id="main-content" class="lc-grid min-h-[--view-height] px-4 pb-8 lg:px-8">
   <ContainerSection id="title" title="Results for {data.category}">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {#each data.posts as post}

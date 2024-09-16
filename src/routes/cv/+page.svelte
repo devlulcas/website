@@ -6,6 +6,7 @@
 </script>
 
 <main
+  id="main-content"
   class="container min-h-[--view-height] w-screen gap-y-10 overflow-x-hidden py-8 lg:px-20 print:mx-0 print:max-w-full"
 >
   <h1 class="text-left text-4xl font-bold print:text-2xl">
