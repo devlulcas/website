@@ -22,13 +22,13 @@ Hoje em dia tree shaking é um dos pontos mais importantes, já que usamos muita
 
 Dá uma olhada no que tem na documentação do ESBUILD sobre tree shaking e code splitting para entender melhor com os gráficos deles sobre como tudo isso funciona:
 
-https://github.com/evanw/esbuild/blob/main/docs/architecture.md#tree-shaking
-https://github.com/evanw/esbuild/blob/main/docs/architecture.md#code-splitting
+[https://github.com/evanw/esbuild/blob/main/docs/architecture.md#tree-shaking](https://github.com/evanw/esbuild/blob/main/docs/architecture.md#tree-shaking)
+[https://github.com/evanw/esbuild/blob/main/docs/architecture.md#code-splitting](https://github.com/evanw/esbuild/blob/main/docs/architecture.md#code-splitting)
 
 Aqui você encontra um texto do Vite sobre usar bundlers hoje em dia:
-https://vitejs.dev/guide/why.html#why-bundle-for-production
+[https://vitejs.dev/guide/why.html#why-bundle-for-production](https://vitejs.dev/guide/why.html#why-bundle-for-production)
 
 E aqui um texto sobre bundlers no geral e prós e contras de cada:
-https://snipcart.com/blog/javascript-module-bundler
+[https://snipcart.com/blog/javascript-module-bundler](https://snipcart.com/blog/javascript-module-bundler)
 
-![vite](vite.png)
+![vite](./vite.png)

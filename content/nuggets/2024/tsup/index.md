@@ -20,14 +20,14 @@ Com essa configuração o TSUP vai pegar o arquivo `src/index.ts` e gerar dois a
 Ele vai resolver as dependências do seu código e gerar um arquivo só com o que você precisa, sem nada a mais.
 
 Eu usei ele nessa demo do fastify rodando na vercel:
-https://github.com/devlulcas/fastify-typescript-vercel-demo/blob/main/tsup.config.ts
+[fastify-typescript-vercel-demo](https://github.com/devlulcas/fastify-typescript-vercel-demo/blob/main/tsup.config.ts)
 
 Nesse mini projeto de websockets que não funciona como deveria:
-https://github.com/devlulcas/tiny-chat/blob/main/apps/server/tsup.config.ts
+[tiny-chat](https://github.com/devlulcas/tiny-chat/blob/main/apps/server/tsup.config.ts)
 
 Nessa biblioteca para adicionar coisas a mais no markdown do meu blogzinho:
-https://github.com/devlulcas/dvl-md/blob/main/tsup.config.ts
+[dvl-md](https://github.com/devlulcas/dvl-md/blob/main/tsup.config.ts)
 
 TSUP é show para libs e códigos backend TypeScript, mas para projetos frontend eu ainda prefiro o Vite com o esbuild.
 
-![TSUP](cat.gif)
+![TSUP](./cat.gif)
