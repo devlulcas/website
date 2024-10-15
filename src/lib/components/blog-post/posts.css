@@ -13,15 +13,6 @@
     text-transform: uppercase;
   }
 
-  & p {
-    &:hover {
-      background: hsl(var(--foreground) / 10%);
-      border-radius: 0.5rem;
-      padding: 0.25rem;
-      margin: 0.25rem 0;
-    }
-  }
-
   & p:has(> img) {
     text-align: center;
     margin-block: 1rem;
