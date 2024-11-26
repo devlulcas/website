@@ -22,7 +22,7 @@ export const website = {
   description:
     'I like to build things. Full-stack developer and curious about everything related to technology.',
   url: PUBLIC_HOST,
-  image: 'https://lucasrego.tech/images/og-image.webp',
+  image: 'https://lucasalvesrego.com/images/og-image.webp',
   lang: 'en',
   keywords: [
     'portfolio',
@@ -35,7 +35,7 @@ export const website = {
     'typescript',
   ],
   post: {
-    cover: 'https://lucasrego.tech/images/og-image.webp',
+    cover: 'https://lucasalvesrego.com/images/og-image.webp',
   },
   social: {
     github: 'https://github.com/devlulcas',

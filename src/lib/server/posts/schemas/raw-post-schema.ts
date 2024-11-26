@@ -8,7 +8,7 @@ export const rawPostSchema = z.object({
     .max(280, { message: 'Excerpt must be at most 280 characters long.' }),
   date: z.string({ required_error: 'Date is required.' }),
   draft: z.boolean().default(true),
-  cover: z.string().default('https://www.lucasrego.tech/og.png'),
+  cover: z.string().default('https://www.lucasalvesrego.com/og.png'),
   tags: z.array(z.string()).default([]),
   categories: z
     .array(z.string())

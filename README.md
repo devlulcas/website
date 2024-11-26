@@ -10,7 +10,7 @@ I do a lot of frontend work with Typescript, React JS and NextJS, and I also try
 
 In the backend I'm usually working with pure PHP or NodeJS with Typescript. _In my free time I do some other things too. Sometimes I play with Go and Elixir_
 
-> This is my personal website, you can see it live [here](https://lucasrego.tech). It's a work in progress, so it's not finished yet.
+> This is my personal website, you can see it live [here](https://lucasalvesrego.com). It's a work in progress, so it's not finished yet.
 
 ---
 

@@ -2,7 +2,7 @@
   import Button from '$/lib/components/button/button.svelte';
   import { TrashIcon } from 'lucide-svelte';
 
-  let initialUrl = 'https://lucasrego.tech';
+  let initialUrl = 'https://lucasalvesrego.com';
 
   type SearchParam = [string, string | string[]];
 
