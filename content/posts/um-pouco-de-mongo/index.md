@@ -37,14 +37,14 @@ Um exemplo de documento seria:
 
 ```json
 {
-  "_id": "algum_id",
-  "name": "João",
-  "age": 20,
-  "hobbies": ["truco", "jardinagem"],
-  "address": {
-    "street": "Logo ali",
-    "number": 123
-  }
+	"_id": "algum_id",
+	"name": "João",
+	"age": 20,
+	"hobbies": ["truco", "jardinagem"],
+	"address": {
+		"street": "Logo ali",
+		"number": 123
+	}
 }
 ```
 
@@ -91,7 +91,7 @@ Coleções são agrupamentos de documentos. Elas são análogas às tabelas em b
 Você pode criar uma coleção usando o método `createCollection`:
 
 ```js
-db.createCollection("users");
+db.createCollection('users');
 ```
 
 > info: Se você tentar inserir um documento em uma coleção que não existe, o MongoDB vai criar a coleção automaticamente.
@@ -106,15 +106,14 @@ Você vai ter que atualizar todos os documentos da coleção para adicionar o ca
 
 ```js
 db.updateMany(
-  // Query (vazio para aplicar a todas as coleções)
-  {},
-  // Update
-  {
-    $set: {
-      password:
-        "que valor você colocaria para algo sensível assim eu num sei... talvez null?",
-    },
-  },
+	// Query (vazio para aplicar a todas as coleções)
+	{},
+	// Update
+	{
+		$set: {
+			password: 'que valor você colocaria para algo sensível assim eu num sei... talvez null?'
+		}
+	}
 );
 ```
 

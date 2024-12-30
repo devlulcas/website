@@ -6,13 +6,13 @@ CSS custom properties, ou variáveis CSS, são uma maneira de definir valores qu
 
 ```css
 :root {
-  --cor-primaria: #007bff; /* azul */
-  --cor-secundaria: #6c757d; /* cinza */
+	--cor-primaria: #007bff; /* azul */
+	--cor-secundaria: #6c757d; /* cinza */
 }
 
 :root.vampiresco {
-  --cor-primaria: #ff0000; /* vermelho */
-  --cor-secundaria: #000000; /* preto */
+	--cor-primaria: #ff0000; /* vermelho */
+	--cor-secundaria: #000000; /* preto */
 }
 ```
 
@@ -21,21 +21,19 @@ Dá para trocar o tema de um site com um botão e um pouco de CSS:
 ```html
 <!doctype html>
 <html>
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <button onclick="document.documentElement.classList.toggle('vampiresco')">
-      Mudar tema
-    </button>
-  </body>
+	<head>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<button onclick="document.documentElement.classList.toggle('vampiresco')">Mudar tema</button>
+	</body>
 </html>
 ```
 
 ```css
 body {
-  background-color: var(--cor-secundaria);
-  color: var(--cor-primaria);
+	background-color: var(--cor-secundaria);
+	color: var(--cor-primaria);
 }
 ```
 

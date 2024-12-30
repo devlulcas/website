@@ -40,7 +40,7 @@ Muitas vezes você nem precisa criar um tipo, pois o Typescript já consegue inf
 
 ```ts
 const x = 10; // O tipo de x é number
-const y = "10"; // O tipo de y é string
+const y = '10'; // O tipo de y é string
 const z = true; // O tipo de z é boolean
 ```
 
@@ -52,7 +52,7 @@ const x: number = 10;
 
 // function <nome-da-função>(<parâmetro>: <tipo-do-parâmetro>): <tipo-do-retorno> { <corpo-da-função> }
 function soma(a: number, b: number): number {
-  return a + b;
+	return a + b;
 }
 ```
 
@@ -62,15 +62,15 @@ A sintaxe para definir tipos é bem simples. Você pode definir um tipo com a pa
 
 ```ts
 type Pessoa = {
-  nome: string;
-  idade: number;
-  vivo: boolean;
+	nome: string;
+	idade: number;
+	vivo: boolean;
 };
 
 const pessoa: Pessoa = {
-  nome: "João",
-  idade: 30,
-  vivo: true,
+	nome: 'João',
+	idade: 30,
+	vivo: true
 };
 ```
 

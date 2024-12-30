@@ -1,18 +1,20 @@
 <script lang="ts">
-  export let title = '';
+	type Props = {
+		title?: string;
+		id?: string;
+		class?: string;
+		children?: import('svelte').Snippet;
+	};
 
-  export let id = '';
-
-  let className = '';
-  export { className as class };
+	let { title = '', id = '', class: className = '', children }: Props = $props();
 </script>
 
 <section class="col-span-12 col-start-1 mt-12 lg:col-span-8 lg:col-start-3 {className}">
-  {#if title && id}
-    <a href="#{id}">
-      <h2 {id} class="mb-4 text-4xl font-bold text-foreground">{title}</h2>
-    </a>
-  {/if}
+	{#if title && id}
+		<a href="#{id}">
+			<h2 {id} class="mb-4 text-4xl font-bold text-foreground">{title}</h2>
+		</a>
+	{/if}
 
-  <slot />
+	{@render children?.()}
 </section>

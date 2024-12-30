@@ -22,13 +22,13 @@ Aqui está um exemplo de como um desenvolvedor Javascript otimista faz a busca d
 
 ```javascript
 async function getSomeData() {
-  const response = await fetch('/some-data');
+	const response = await fetch('/some-data');
 
-  if (!response.ok) {
-    return [];
-  }
+	if (!response.ok) {
+		return [];
+	}
 
-  return response.json();
+	return response.json();
 }
 ```
 
@@ -45,23 +45,23 @@ Aqui está uma versão mais realista do código acima:
 
 ```javascript
 async function getSomeData() {
-  try {
-    const response = await fetch('/some-data');
+	try {
+		const response = await fetch('/some-data');
 
-    if (!response.ok || response.status !== 200) {
-      return [];
-    }
+		if (!response.ok || response.status !== 200) {
+			return [];
+		}
 
-    const data = await response.json();
+		const data = await response.json();
 
-    if (!Array.isArray(data)) {
-      return [];
-    }
+		if (!Array.isArray(data)) {
+			return [];
+		}
 
-    return data;
-  } catch (error) {
-    return [];
-  }
+		return data;
+	} catch (error) {
+		return [];
+	}
 }
 ```
 
@@ -80,37 +80,33 @@ Vamos alterar o código acima mantendo a mesma lógica, mas sem usar o `try, cat
 ```javascript
 // logger.js
 function logError(error) {
-  console.error(error);
+	console.error(error);
 }
 
 // api.js
 import { logError } from './logger.js';
 
 async function getSomeData() {
-  try {
-    const response = await fetch('/some-data');
+	try {
+		const response = await fetch('/some-data');
 
-    if (!response.ok || response.status !== 200) {
-      logError(new Error('Request failed'));
-      return [];
-    }
+		if (!response.ok || response.status !== 200) {
+			logError(new Error('Request failed'));
+			return [];
+		}
 
-    const data = await response.json();
+		const data = await response.json();
 
-    if (!Array.isArray(data)) {
-      logError(new Error('Invalid response'));
-      return [];
-    }
+		if (!Array.isArray(data)) {
+			logError(new Error('Invalid response'));
+			return [];
+		}
 
-    return data;
-  } catch (error) {
-    logError(
-      error instanceof Error
-        ? error
-        : new Error(`Unknown error: ${String(error)}`)
-    );
-    return [];
-  }
+		return data;
+	} catch (error) {
+		logError(error instanceof Error ? error : new Error(`Unknown error: ${String(error)}`));
+		return [];
+	}
 }
 ```
 
@@ -130,19 +126,19 @@ Se você deseja passar o erro adiante o Javascript/Typescript te disponibiliza o
 
 ```javascript
 async function getSomeData() {
-  const response = await fetch('/some-data');
+	const response = await fetch('/some-data');
 
-  if (!response.ok || response.status !== 200) {
-    throw new Error('Request failed');
-  }
+	if (!response.ok || response.status !== 200) {
+		throw new Error('Request failed');
+	}
 
-  const data = await response.json();
+	const data = await response.json();
 
-  if (!Array.isArray(data)) {
-    throw new Error('Invalid response');
-  }
+	if (!Array.isArray(data)) {
+		throw new Error('Invalid response');
+	}
 
-  return data;
+	return data;
 }
 ```
 
@@ -155,10 +151,10 @@ import { getSomeData } from './api.js';
 import { logError } from './logger.js';
 
 try {
-  const data = await getSomeData();
-  console.log(data);
+	const data = await getSomeData();
+	console.log(data);
 } catch (error) {
-  logError(error);
+	logError(error);
 }
 ```
 
@@ -186,19 +182,19 @@ Uma solução para esse problema é usar o JSDoc para documentar que uma funçã
  * @returns {Promise<Array>}
  */
 async function getSomeData() {
-  const response = await fetch('/some-data');
+	const response = await fetch('/some-data');
 
-  if (!response.ok || response.status !== 200) {
-    throw new Error('Request failed');
-  }
+	if (!response.ok || response.status !== 200) {
+		throw new Error('Request failed');
+	}
 
-  const data = await response.json();
+	const data = await response.json();
 
-  if (!Array.isArray(data)) {
-    throw new Error('Invalid response');
-  }
+	if (!Array.isArray(data)) {
+		throw new Error('Invalid response');
+	}
 
-  return data;
+	return data;
 }
 ```
 
@@ -259,9 +255,9 @@ Agora quem chama a função `getSomeData` é obrigado a tratar o erro para obter
 const result = await getSomeData();
 
 if (result.type === 'ok') {
-  console.log(result.value);
+	console.log(result.value);
 } else {
-  logError(result.error);
+	logError(result.error);
 }
 ```
 

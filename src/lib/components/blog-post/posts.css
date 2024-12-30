@@ -1,79 +1,71 @@
 .lc-post {
-  margin: 1.5rem 0;
+	margin: 1.5rem 0;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+		font-weight: 900;
+		text-transform: uppercase;
+	}
 
-  & p:has(> img) {
-    text-align: center;
-    margin-block: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #e6e6e60f;
-    background: transparent;
-    padding: 0.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
+	& p:has(> img) {
+		width: 100%;
+	}
 
-  & img {
-    border-radius: 0.25rem;
-    max-height: 75vh;
-  }
+	& img {
+		margin-block: 1rem;
+		border-radius: 0.25rem;
+		width: 100%;
+		max-height: 75vh;
+	}
 
-  & blockquote {
-    border-left: 0.25rem solid var(--brand-900);
-    padding-left: 1rem;
-    margin-left: 0;
-    font-style: italic;
-  }
+	& blockquote {
+		border-left: 0.25rem solid var(--brand-900);
+		padding-left: 1rem;
+		margin-left: 0;
+		font-style: italic;
+	}
 
-  & blockquote.tip {
-    --tip: hsl(212, 75%, 50%);
-    border: 2px solid var(--tip);
-    border-radius: 10px;
-    border-left: 0.25rem solid var(--tip);
-  }
+	& blockquote.tip {
+		--tip: hsl(212, 75%, 50%);
+		border: 2px solid var(--tip);
+		border-radius: 10px;
+		border-left: 0.25rem solid var(--tip);
+	}
 
-  & blockquote.warning {
-    --warning: hsl(40, 75%, 50%);
-    border: 2px solid var(--warning);
-    border-radius: 10px;
-    border-left: 0.25rem solid var(--warning);
-  }
+	& blockquote.warning {
+		--warning: hsl(40, 75%, 50%);
+		border: 2px solid var(--warning);
+		border-radius: 10px;
+		border-left: 0.25rem solid var(--warning);
+	}
 
-  & blockquote.note {
-    --note: hsl(240, 75%, 50%);
-    border: 2px solid var(--note);
-    border-radius: 10px;
-    border-left: 0.25rem solid var(--note);
-  }
+	& blockquote.note {
+		--note: hsl(240, 75%, 50%);
+		border: 2px solid var(--note);
+		border-radius: 10px;
+		border-left: 0.25rem solid var(--note);
+	}
 
-  & blockquote.error {
-    --error: hsl(0, 75%, 50%);
-    border: 2px solid var(--error);
-    border-radius: 10px;
-    border-left: 0.25rem solid var(--error);
-  }
+	& blockquote.error {
+		--error: hsl(0, 75%, 50%);
+		border: 2px solid var(--error);
+		border-radius: 10px;
+		border-left: 0.25rem solid var(--error);
+	}
 
-  & ul {
-    list-style: disc;
-    padding-left: 1rem;
-  }
+	& ul {
+		list-style: disc;
+		padding-left: 1rem;
+	}
 
-  & ol {
-    list-style: decimal;
-    padding-left: 1rem;
-  }
+	& ol {
+		list-style: decimal;
+		padding-left: 1rem;
+	}
 }

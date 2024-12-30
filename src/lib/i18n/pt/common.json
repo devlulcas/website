@@ -1,27 +1,28 @@
 {
-  "skipToContent": "Pular para o conteúdo",
-  "header": {
-    "home": "Inicio",
-    "about": "Sobre",
-    "bookmarks": "Favoritos",
-    "contact": "Contato",
-    "blog": "Blog",
-    "microblog": "Jardim",
-    "nuggets": "Nuggets",
-    "cv": "Currículo",
-    "themes": {
-      "light": "Tema Claro",
-      "dark": "Tema Escuro"
-    },
-    "languages": "Idiomas"
-  },
-  "projects": {
-    "seeMore": "Ver mais",
-    "seeCode": "Ver código fonte",
-    "visit": "Visitar"
-  },
-  "posts": {
-    "seeMore": "Ler mais",
-    "timeToRead": "minutos de leitura"
-  }
+	"skipToContent": "Pular para o conteúdo",
+	"header": {
+		"home": "Inicio",
+		"about": "Sobre",
+		"bookmarks": "Favoritos",
+		"contact": "Contato",
+		"blog": "Blog",
+		"microblog": "Jardim",
+		"nuggets": "Nuggets",
+		"cv": "Currículo",
+		"themes": {
+			"light": "Tema Claro",
+			"dark": "Tema Escuro"
+		},
+		"languages": "Idiomas"
+	},
+	"projects": {
+		"seeMore": "Ver mais",
+		"seeCode": "Ver código fonte",
+		"visit": "Visitar"
+	},
+	"posts": {
+		"seeMore": "Ler mais",
+		"timeToRead": "minutos de leitura"
+	},
+	"goBackHome": "Voltar para o início"
 }

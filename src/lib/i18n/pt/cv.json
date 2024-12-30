@@ -1,18 +1,18 @@
 {
-  "name": "Lucas Alves Rego",
-  "email": "lucasalvesrego.contato@gmail.com",
-  "website": "www.lucasalvesrego.com",
-  "github": "github.com/devlulcas",
-  "linkedin": "www.linkedin.com/in/lucasalvesregodev",
-  "aboutMe": "Sou um desenvolvedor web full-stack com experiência trabalhando no desenvolvimento de uma plataforma de e-commerce integrada aos sistemas legados da empresa, além de manter e criar aplicações internas e externas, com foco principal na construção de front-ends de alto desempenho e resistentes.",
-  "experience": {
-    "title": "Experiências"
-  },
-  "skills": {
-    "languages": "Inglês (C1)",
-    "programmingLanguages": "Trabalho principalmente com Typescript. Também sou confiante com PHP e tenho noções de Go e Kotlin.",
-    "frameworks": "Trabalho principalmente com React e NextJS. NestJS para backend em NodeJS. Para testes eu uso Vitest, React Testing Library, Jest e E2E com Playwright.",
-    "versionControl": "Git and GitHub"
-  },
-  "education": "Instituto Federal de Educação, Ciência e Tecnologia da Bahia (IFBA - Informática)"
+	"name": "Lucas Alves Rego",
+	"email": "lucasalvesrego.contato@gmail.com",
+	"website": "www.lucasalvesrego.com",
+	"github": "github.com/devlulcas",
+	"linkedin": "www.linkedin.com/in/lucasalvesregodev",
+	"aboutMe": "Sou um desenvolvedor web full-stack com experiência trabalhando no desenvolvimento de uma plataforma de e-commerce integrada aos sistemas legados da empresa, além de manter e criar aplicações internas e externas, com foco principal na construção de front-ends de alto desempenho e resistentes.",
+	"experience": {
+		"title": "Experiências"
+	},
+	"skills": {
+		"languages": "Inglês (C1)",
+		"programmingLanguages": "Trabalho principalmente com Typescript. Também sou confiante com PHP e tenho noções de Go e Kotlin.",
+		"frameworks": "Trabalho principalmente com React e NextJS. NestJS para backend em NodeJS. Para testes eu uso Vitest, React Testing Library, Jest e E2E com Playwright.",
+		"versionControl": "Git and GitHub"
+	},
+	"education": "Instituto Federal de Educação, Ciência e Tecnologia da Bahia (IFBA - Informática)"
 }

@@ -9,9 +9,9 @@ O TSUP é uma abstração em cima do esbuild, que é um bundler que tem um tempo
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entryPoints: ['src/index.ts'],
-  format: ['cjs', 'esm'],
-  outDir: 'dist',
+	entryPoints: ['src/index.ts'],
+	format: ['cjs', 'esm'],
+	outDir: 'dist'
 });
 ```
 

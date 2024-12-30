@@ -8,7 +8,7 @@ Para adicionar um desses no seu site você precisa de pouca coisa. Primeiro, adi
 <a href="#main-content" class="skip-to-content">Skip to content</a>
 
 <main id="main-content">
-  <!-- Conteúdo principal da página -->
+	<!-- Conteúdo principal da página -->
 </main>
 ```
 
@@ -16,15 +16,15 @@ Agora você precisa de um pouco de CSS para esconder o link até que ele seja fo
 
 ```css
 .skip-to-content {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  padding: 10px;
-  z-index: 1000;
+	position: absolute;
+	top: -40px;
+	left: 0;
+	padding: 10px;
+	z-index: 1000;
 }
 
 .skip-to-content:focus {
-  top: 0;
+	top: 0;
 }
 ```
 

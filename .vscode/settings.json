@@ -1,14 +1,14 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "cSpell.words": [
-    "devlulcas",
-    "hehe",
-    "ilike",
-    "Linkedin",
-    "lucasalvesregodev",
-    "mdsvex",
-    "nextjs",
-    "rehype"
-  ]
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"cSpell.words": [
+		"devlulcas",
+		"hehe",
+		"ilike",
+		"Linkedin",
+		"lucasalvesregodev",
+		"mdsvex",
+		"nextjs",
+		"rehype"
+	]
 }

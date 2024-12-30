@@ -1,29 +1,41 @@
 <script lang="ts">
-  import { website } from '$/lib/assets/config';
+	import { website } from '$/lib/assets/config/website';
 
-  export let title = website.title;
-  export let description = website.description;
-  export let keywords = website.keywords;
-  export let image = website.image;
+	type Props = {
+		title?: string;
+		description?: string;
+		keywords?: string[];
+		image?: string;
+		url?: string;
+	};
+
+	let props: Props = $props();
+
+	const metadata = {
+		title: props.title !== website.title ? `${props.title} | ${website.title}` : website.title,
+		description: props.description || website.description,
+		keywords: (props.keywords || website.keywords).join(', '),
+		image: props.image || website.image,
+		url: props.url || website.url
+	};
 </script>
 
 <svelte:head>
-  <title>{title !== website.title ? `${title} | ${website.title}` : website.title}</title>
-  <meta name="description" content={description} />
-  <meta name="keywords" content={keywords.join(', ')} />
-  <meta name="author" content={website.author} />
-  <meta name="robots" content="index, follow" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>{metadata.title}</title>
+	<meta name="description" content={metadata.description} />
+	<meta name="keywords" content={metadata.keywords} />
+	<meta name="author" content={website.author} />
+	<meta name="robots" content="index, follow" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={website.url} />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={website.description} />
-  <meta property="og:image" content={image} />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content={metadata.url} />
+	<meta property="og:title" content={metadata.title} />
+	<meta property="og:description" content={metadata.description} />
+	<meta property="og:image" content={metadata.image} />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content={website.url} />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={image} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:url" content={metadata.url} />
+	<meta name="twitter:title" content={metadata.title} />
+	<meta name="twitter:description" content={metadata.description} />
+	<meta name="twitter:image" content={metadata.image} />
 </svelte:head>
