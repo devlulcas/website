@@ -3,6 +3,7 @@ import {
 	PRIVATE_NOTION_DATABASE_ID,
 	PRIVATE_NOTION_VERSION
 } from '$env/static/private';
+import { firestore } from '../../database/lib/firebase';
 import type { Bookmark, NotionBookmarkDatabase } from '../types';
 
 function getNotionHeaders() {
@@ -19,7 +20,7 @@ function isNotionBookmarkDatabase(json: unknown): json is NotionBookmarkDatabase
 	return json !== null && typeof json === 'object' && 'results' in json;
 }
 
-export async function getBookmarks(): Promise<Bookmark[]> {
+async function getBookmarksFromNotion(): Promise<Bookmark[]> {
 	try {
 		const url = `https://api.notion.com/v1/databases/${PRIVATE_NOTION_DATABASE_ID}/query`;
 
@@ -57,6 +58,8 @@ export async function getBookmarks(): Promise<Bookmark[]> {
 				.join(' ')
 				.toLowerCase();
 
+			const now = new Date();
+
 			bookmarks.push({
 				resourceId,
 				name,
@@ -66,7 +69,8 @@ export async function getBookmarks(): Promise<Bookmark[]> {
 				about: {
 					en: aboutInEnglish,
 					ptBr: aboutInPortuguese
-				}
+				},
+				updatedAt: now.toISOString()
 			});
 		}
 
@@ -75,4 +79,44 @@ export async function getBookmarks(): Promise<Bookmark[]> {
 		console.error(error);
 		return [];
 	}
+}
+
+async function getBookmarksFromFirestore(): Promise<Bookmark[]> {
+	const bookmarks = await firestore.collection('bookmarks').get();
+
+	const data = bookmarks.docs.map((doc) => doc.data() as Bookmark);
+
+	return data
+}
+
+async function replaceFirestoreBookmarks(bookmarks: Bookmark[]) {
+	const batch = firestore.batch();
+
+	for (const bookmark of bookmarks) {
+		batch.set(firestore.collection('bookmarks').doc(bookmark.resourceId), bookmark);
+	}
+
+	await batch.commit();
+
+	return bookmarks
+}
+
+export async function getBookmarks(): Promise<Bookmark[]> {
+	const firestoreBookmarks = await getBookmarksFromFirestore();
+	const now = new Date();
+	const timeout = 24 * 60 * 60 * 1000; // 1 day
+
+	const isCached = firestoreBookmarks.every((bookmark) => {
+		return now.getTime() - new Date(bookmark.updatedAt).getTime() < timeout
+	});
+
+	if (isCached) {
+		return firestoreBookmarks;
+	}
+
+	const notionBookmarks = await getBookmarksFromNotion();
+
+	const bookmarks = await replaceFirestoreBookmarks(notionBookmarks);
+
+	return bookmarks
 }

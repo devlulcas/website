@@ -4,7 +4,7 @@
 	"website": "www.lucasalvesrego.com",
 	"github": "github.com/devlulcas",
 	"linkedin": "www.linkedin.com/in/lucasalvesregodev",
-	"aboutMe": "Sou um desenvolvedor web full-stack com experiência trabalhando no desenvolvimento de uma plataforma de e-commerce integrada aos sistemas legados da empresa, além de manter e criar aplicações internas e externas, com foco principal na construção de front-ends de alto desempenho e resistentes.",
+	"aboutMe": "Desenvolvedor fullstack com experiência no desenvolvimento de aplicações web como e-commerce e sistemas de gerenciamento de conteúdo e planejamento de recursos empresariais. Estou acostumado a trabalhar em equipes ágeis, trabalhando com ferramentas modernas encima de tecnologia legado. Tenho trabalhado desenvolvendo aplicações, refatorando arquiteturas e auxiliando minha equipe usando tecnologias como Typescript, PHP, React, NextJS, NestJS e bancos de dados como Postgres, Firebird e MeiliSearch Search Engine.",
 	"experience": {
 		"title": "Experiências"
 	},
@@ -14,5 +14,9 @@
 		"frameworks": "Trabalho principalmente com React e NextJS. NestJS para backend em NodeJS. Para testes eu uso Vitest, React Testing Library, Jest e E2E com Playwright.",
 		"versionControl": "Git and GitHub"
 	},
-	"education": "Instituto Federal de Educação, Ciência e Tecnologia da Bahia (IFBA - Informática)"
+	"education": {
+		"title": "Formação",
+		"education": "Instituto Federal de Educação, Ciência e Tecnologia da Bahia (IFBA - Informática)",
+		"courses": "Fundamentals of Backend Engineering (Hussein Nasser), Fundamentals of Network Engineering (Hussein Nasser), Estrutura de dados e algoritmos + LeetCode (Augusto Miranda Galego), Elixir e Phoenix do zero (Rafael Camarda), Introduction to NGINX (Hussein Nasser)"
+	}
 }

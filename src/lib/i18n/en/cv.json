@@ -14,5 +14,9 @@
 		"frameworks": "I mainly work with React and NextJS. NestJS for backend in NodeJS. For tests I use Vitest, React Testing Library, Jest and E2E with Playwright.",
 		"versionControl": "Git and GitHub"
 	},
-	"education": "Federal Institute of Education, Science and Technology of Bahia (IFBA - Informatics). I also work on many projects in my free time."
+	"education": {
+		"title": "Formação",
+		"education": "Instituto Federal de Educação, Ciência e Tecnologia da Bahia (IFBA - Informática)",
+		"courses": "Fundamentals of Backend Engineering (Hussein Nasser), Fundamentals of Network Engineering (Hussein Nasser), Estrutura de dados e algoritmos + LeetCode (Augusto Miranda Galego), Elixir e Phoenix do zero (Rafael Camarda), Introduction to NGINX (Hussein Nasser)"
+	}
 }

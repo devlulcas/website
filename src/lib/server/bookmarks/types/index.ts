@@ -8,6 +8,7 @@ export type Bookmark = {
 	};
 	tags: string[];
 	searchTerms: string;
+	updatedAt: string;
 };
 
 export type NotionBookmarkDatabase = {

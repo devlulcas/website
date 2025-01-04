@@ -1,3 +1,4 @@
+import { postMessage } from '$/lib/server/contact/services/post-message';
 import { getPosts } from '$/lib/server/posts/services/get-posts';
 import { getDemoProjects } from '$/lib/server/projects/services/get-demo-projects';
 import { getFeaturedProjects } from '$/lib/server/projects/services/get-feature-projects';
@@ -48,9 +49,9 @@ export const actions: Actions = {
 		const email = formValueEmail.toString();
 		const message = formValueMessage.toString();
 
-		try {
-			console.log(`[${name} | ${email}] sent you an e-mail - ${message}`);
+		const success = await postMessage({ name, email, message });
 
+		if (success) {
 			return {
 				type: 'success',
 				message: {
@@ -58,9 +59,7 @@ export const actions: Actions = {
 					en: 'Message sent successfully!'
 				}
 			};
-		} catch (error) {
-			console.error(error);
-
+		} else {
 			return fail(500, {
 				type: 'failure',
 				message: {

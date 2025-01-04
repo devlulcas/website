@@ -51,6 +51,8 @@
 		"clsx": "^2.1.1",
 		"embla-carousel-autoplay": "^8.5.1",
 		"embla-carousel-svelte": "^8.5.1",
+		"firebase": "^11.1.0",
+		"firebase-admin": "^13.0.2",
 		"franc-min": "^6.2.0",
 		"fuse.js": "^7.0.0",
 		"node-html-parser": "^7.0.1",
