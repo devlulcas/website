@@ -23,7 +23,9 @@
 	<nav class="my-5 flex flex-wrap gap-3">
 		<a
 			class="flex w-fit items-center justify-center gap-2 overflow-hidden rounded-md border bg-primary-foreground px-4 py-2 text-primary"
-			href={$t('cv.website')}
+			href={'https://' + $t('cv.website')}
+			target="_blank"
+			rel="noopener noreferrer"
 		>
 			<Fa icon={faEarthAmericas} class="h-5 w-5" />
 			<span class="block">Website</span>
@@ -31,7 +33,9 @@
 		</a>
 		<a
 			class="flex w-fit items-center justify-center gap-2 overflow-hidden rounded-md border bg-primary-foreground px-4 py-2 text-primary"
-			href={$t('cv.github')}
+			href={'https://' + $t('cv.github')}
+			target="_blank"
+			rel="noopener noreferrer"
 		>
 			<Fa icon={faGithub} class="h-5 w-5" />
 			<span class="block">GitHub</span>
@@ -39,7 +43,9 @@
 		</a>
 		<a
 			class="flex w-fit items-center justify-center gap-2 overflow-hidden rounded-md border bg-primary-foreground px-4 py-2 text-primary"
-			href={$t('cv.linkedin')}
+			href={'https://' + $t('cv.linkedin')}
+			target="_blank"
+			rel="noopener noreferrer"
 		>
 			<Fa icon={faLinkedin} class="h-5 w-5" />
 			<span class="block">LinkedIn</span>
