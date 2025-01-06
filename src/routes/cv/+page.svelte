@@ -59,7 +59,7 @@
 
 						{#if warning}
 							<p
-								class="ml-1 flex h-5 w-fit items-center gap-1 rounded-full border border-yellow-200 bg-yellow-50 px-2 text-sm font-normal text-yellow-500"
+								class="ml-1 flex h-5 w-fit items-center gap-1 rounded-full border border-yellow-200 bg-yellow-50 px-2 text-sm font-normal lowercase text-yellow-500 dark:border-yellow-800 dark:bg-yellow-500/20 dark:text-yellow-300"
 							>
 								<Fa icon={faWarning} class="size-3" />
 								{warning}
@@ -105,7 +105,7 @@
 			<li class="mt-2">
 				<p class="mt-2 text-primary/75">{$t('cv.education.education')}</p>
 			</li>
-			<li class="mt-2 flex flex-wrap gap-2">
+			<!-- <li class="mt-2 flex flex-wrap gap-2">
 				{#each $t('cv.education.courses').split(', ') as it}
 					<p
 						class="relative text-sm after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-full after:rounded after:bg-brand-600"
@@ -113,7 +113,7 @@
 						{it}
 					</p>
 				{/each}
-			</li>
+			</li> -->
 		</ul>
 	</section>
 </main>
