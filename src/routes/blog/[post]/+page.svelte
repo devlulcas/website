@@ -38,12 +38,10 @@
 	class="pointer-events-none sticky bottom-0 z-30 flex w-full items-center justify-end gap-4 px-2 py-2"
 >
 	<button
-		class="lc-gradient lc-line group pointer-events-auto flex h-10 w-10 items-center justify-center gap-2 rounded-lg rounded-br-sm text-brand-50 opacity-25 transition-opacity hover:opacity-100 lg:w-fit lg:px-4"
+		class="lc-gradient lc-line group pointer-events-auto flex h-10 items-center justify-center gap-2 rounded-xl rounded-br-sm text-brand-50 opacity-25 transition-opacity hover:opacity-100 lg:w-fit lg:px-4"
 		onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 	>
-		<span class="sr-only text-brand-50 group-hover:text-brand-900 lg:not-sr-only">
-			Ir para o topo
-		</span>
+		<span class="sr-only font-semibold lg:not-sr-only"> Ir para o topo </span>
 		<Fa icon={faArrowUp} class="flex-shrink-0" />
 	</button>
 </div>

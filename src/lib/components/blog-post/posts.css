@@ -25,7 +25,7 @@
 	}
 
 	& blockquote {
-		border-left: 0.25rem solid var(--brand-900);
+		@apply border-l-[0.25rem] border-brand-600;
 		padding-left: 1rem;
 		margin-left: 0;
 		font-style: italic;
@@ -33,30 +33,22 @@
 
 	& blockquote.tip {
 		--tip: hsl(212, 75%, 50%);
-		border: 2px solid var(--tip);
-		border-radius: 10px;
-		border-left: 0.25rem solid var(--tip);
+		border-color: var(--tip);
 	}
 
 	& blockquote.warning {
 		--warning: hsl(40, 75%, 50%);
-		border: 2px solid var(--warning);
-		border-radius: 10px;
-		border-left: 0.25rem solid var(--warning);
+		border-color: var(--warning);
 	}
 
 	& blockquote.note {
 		--note: hsl(240, 75%, 50%);
-		border: 2px solid var(--note);
-		border-radius: 10px;
-		border-left: 0.25rem solid var(--note);
+		border-color: var(--note);
 	}
 
 	& blockquote.error {
 		--error: hsl(0, 75%, 50%);
-		border: 2px solid var(--error);
-		border-radius: 10px;
-		border-left: 0.25rem solid var(--error);
+		border-color: var(--error);
 	}
 
 	& ul {
@@ -68,11 +60,27 @@
 		list-style: decimal;
 		padding-left: 1rem;
 	}
+
+	& p > code {
+		@apply rounded bg-slate-100 px-1 pt-0.5 font-mono leading-none text-slate-950 dark:bg-slate-800 dark:text-slate-50;
+	}
 }
 
 /* Read: https://piccalil.li/blog/why-im-excited-about-text-box-trim-as-a-designer/ */
 @supports (text-box: cap alphabetic) {
 	.lc-post :is(h2, h3, h4, p, ul, ol, li, blockquote, figure) {
 		text-box: cap alphabetic;
+	}
+}
+
+@media (hover) {
+	.lc-post {
+		& > * {
+			transition: opacity 0.3s ease-in-out;
+		}
+
+		&:hover > *:not(:hover) {
+			opacity: 0.25;
+		}
 	}
 }
