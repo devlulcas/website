@@ -72,7 +72,7 @@ const CitiesApp = () => {
 
 Se quiser apenas um getter ou só o setter você pode usar os hooks dedicados `useAtomValue` para leitura e `useSetAtom` para escrita!
 
-No [[NextJS]] você vai importar o `Provider` do Jotai e usar no seu `layout.tsx` principal puxando ele de um componente com `'use client'` no topo.
+No NextJS você vai importar o `Provider` do Jotai e usar no seu `layout.tsx` principal puxando ele de um componente com `'use client'` no topo.
 
 ```tsx
 // ./app/providers.tsx
