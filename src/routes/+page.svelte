@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { website } from '$/lib/assets/config/website';
 	import ContactForm from '$/lib/components/contact-form/contact-form.svelte';
 	import ContainerSection from '$/lib/components/container-section/default.svelte';
 	import SeeMoreLink from '$/lib/components/container-section/see-more-link.svelte';
@@ -6,19 +7,22 @@
 	import PostCard from '$/lib/components/post-card/post-card.svelte';
 	import FeaturedProjectCard from '$/lib/components/project-card/featured-project-card.svelte';
 	import ProjectCard from '$/lib/components/project-card/project-card.svelte';
+	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
 	import SkillCarousel from '$/lib/components/skill-carousel/skill-carousel.svelte';
 	import { t } from '$/lib/i18n';
+	import { faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
 	import { Fa } from 'svelte-fa';
 	import HeroSection from '../lib/components/hero-section/hero-section.svelte';
 	import type { PageData } from './$types';
 
-	import { faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
-	interface Props {
+	type Props = {
 		data: PageData;
-	}
+	};
 
 	let { data }: Props = $props();
 </script>
+
+<SeoHead title={website.title} description={website.description} image={website.image} />
 
 <main
 	id="main-content"

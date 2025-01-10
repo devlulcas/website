@@ -1,5 +1,5 @@
 ---
-title: Javascript Otimista e o tratamento de Erros e Exceções
+title: Tratamento de Erros e Exceções no Javascript/TS
 tags:
   - dev
   - typescript
@@ -10,15 +10,15 @@ draft: false
 excerpt: Lide com a realidade, nem toda promessa é cumprida. Trate os erros e exceções do seu código.
 ---
 
-# Javascript Otimista e o tratamento de Erros e Exceções
+# Tratamento de Erros e Exceções no Javascript/TS
 
 ![Um gato atacando um guaxinim onde o gato simboliza o Javascript e o guaxinim o desenvolvedor](./thumb.png)
 
 > Sim, essa imagem foi gerada por IA pois o autor é falido e não sabe desenhar.
 
-Desenvolvedores Javascript (Typescript também) costumam ser muito otimistas. Não necessáriamente na vida, mas com código são. Eles acreditam nas funções com uma fé sobrehumana. Eu estou falando especialmente sobre como muitos lidam com funções que retornam promessas, sim as tais promises que a gente usa todos os dias infinitas vezes.
+Desenvolvedores Javascript (Typescript também) costumam ser muito otimistas. Não necessáriamente na vida, mas com código são. Muitos acreditam nas sucesso das funções com uma fé sobrehumana, especialmente funções que retornam promisses.
 
-Aqui está um exemplo de como um desenvolvedor Javascript otimista faz a busca de dados em uma API:
+Aqui está um exemplo de como um desenvolvedor JS otimista faz uma chamada `fetch`:
 
 ```javascript
 async function getSomeData() {
@@ -32,14 +32,13 @@ async function getSomeData() {
 }
 ```
 
-Talvez você já tenha reparado no problema gritante que existe nesse código. Ele é otimista demais, acredita que nada pode dar errado e portanto não trata absolutamente nenhum erro (além de um erro de rede).
+Esse código é otimista demais, considera que nada pode dar errado e portanto não trata absolutamente nenhum erro.
 
 Vamos pensar no que pode dar errado nesse código:
 
-- A requisição pode falhar por um erro de rede
-- A requisição pode retornar algo como um 404 ou 500 e isso não é um erro de rede então não vai cair no !response.ok, mas pode não ser o que você espera
+- A requisição pode falhar por um erro de rede e lançar uma exceção
 - O payload da resposta pode não ser um JSON válido e o `response.json()` vai lançar uma exceção
-- O payload pode ser um JSON válido, mas não ser um array e isso não é o que você espera
+- O payload pode ser um JSON válido, mas não ter o tipo esperado
 
 Aqui está uma versão mais realista do código acima:
 
@@ -48,7 +47,7 @@ async function getSomeData() {
 	try {
 		const response = await fetch('/some-data');
 
-		if (!response.ok || response.status !== 200) {
+		if (!response.ok) {
 			return [];
 		}
 
@@ -65,22 +64,25 @@ async function getSomeData() {
 }
 ```
 
-Agora sim, o código trata os possíveis casos de erro e não vai quebrar a aplicação. Ele ainda é otimista, mas agora é um otimista realista.
+Agora sim, o código trata alguns possíveis casos de erro e não vai quebrar a aplicação.
 
-Um dos principais problemas do código acima é que ele faz o uso de um anti-pattern conhecido como `try, catch e cala boca`. O `try, catch e cala boca` é um bloco de código que tenta fazer alguma coisa e se der erro, ele simplesmente silencia erro e continua a execução do código.
+Ainda temos alguns problemas:
 
-O `try, catch e cala boca` é um anti-pattern porque ele esconde erros. Se algo der errado, o código vai continuar a execução como se nada tivesse acontecido e pior ainda, sem que ninguém saiba que algo deu errado. Você prefere uma mensagem de erro ou um comportamento misterioso?
+- Fazemos o uso de um anti-pattern conhecido como `try, catch e cala boca`, um bloco de código que ao se deparar com um problema silencia o erro e continua a execução do código.
+- Validamos apenas se o retorno realmente foi um array, mas a validação parou por aí
+
+Se algo der errado, o código vai continuar a execução como se nada tivesse acontecido e sem que ninguém seja informado que algo deu errado.
 
 ![gato chinês fazendo careta](./cat.jpg)
 
 Vamos alterar o código acima mantendo a mesma lógica, mas sem usar o `try, catch e cala boca`:
 
-> No nosso código você já deve ter percebido que estamos sempre retornando um array vazio quando algo dá errado. Isso é uma decisão de design. Em alguns casos, retornar um valor padrão é o quevocê quer fazer. Em outros casos, pode ser melhor lançar uma exceção. Isso depende do contexto. O importante é que o código trate os casos de erro.
+> No nosso código você já deve ter percebido que estamos sempre retornando um array vazio quando algo dá errado. Isso é uma decisão de design. Em alguns casos, retornar um valor padrão é uma boa ideia. Em outros casos, pode ser melhor lançar uma nova exceção ou retornar um valor de erro. Isso depende do contexto. O importante é que o código trate os casos de erro.
 
 ```javascript
 // logger.js
 function logError(error) {
-	console.error(error);
+	console.error(error); // Substitua isso por uma ferramenta de log real, como sentry ou semelhante
 }
 
 // api.js
@@ -90,7 +92,7 @@ async function getSomeData() {
 	try {
 		const response = await fetch('/some-data');
 
-		if (!response.ok || response.status !== 200) {
+		if (!response.ok) {
 			logError(new Error('Request failed'));
 			return [];
 		}
@@ -110,25 +112,23 @@ async function getSomeData() {
 }
 ```
 
-Agora o código retorna um array vazio quando acontece algo errado e não esconde os erros. Se der ruim, o código vai enviar a mensagem de erro para o logger e continuar a execução. O logger é responsável por mostrar a mensagem de erro para o usuário ou salvar em um arquivo de log, por exemplo.
+O código retorna um array vazio quando algo dá errado e registra os erros no logger.
 
-O que fizemos acima foi programar de forma mais defensiva. O código acima tem mais linhas de código do que o código original, mas ele é mais seguro. Ele também é mais lento, afinal quanto menos código é executado, mais rápido é a execução (geralmente) e estamos executando mais código.
+Optamos por uma abordagem mais defensiva. Apesar de ter mais linhas que o original, o código é mais seguro. Sei que executar mais instruções geralmente reduz a velocidade, mas isso não é um problema tão grande no nosso caso e um programa que rode sem interrupções como um _crash_ é mais agradável de usar do que um que fracassa na velocidade da luz.
 
-Talvez você possa simplesmente confiar na API que você está consultando e remover algumas checagens, mas isso é uma decisão que você tem que tomar. Aí já é contigo meu colega de ofício.
+Talvez você possa confiar na API que você está consultando e remover algumas checagens, mas isso é uma decisão sua que varia de projeto em projeto.
 
 ![bandeira do espirito santo com o will smith no lugar do confia em trabalha e confia](./es.jpg)
 
-> No código acima nós nunca passamos o erro adiante, dependendo do caso essa é a decisão ideal como eu disse antes. Se você está tentando pedir sua janta num aplicativo, todo brocado de fome, você não vai querer que o aplicativo pare de funcionar porque a busca de comentários não está funcionando. É melhor não mostrar os comentários e mostrar uma mensagem de erro ou simplesmente não mostrar os comentários.
+Em alguns outros casos talvez você queira passar o erro adiante, encerrar a execução do código ou mostrar uma mensagem de erro para o usuário.
 
-Em alguns outros casos você não quer esse comportamento, talvez você queira passar o erro adiante, encerrar a execução do código ou mostrar uma mensagem de erro para o usuário. Isso também `depende®` do que você está fazendo.
-
-Se você deseja passar o erro adiante o Javascript/Typescript te disponibiliza o nosso não tão quero amigo `throw`. O `throw` é uma palavra reservada que você pode usar para lançar uma exceção. Quando você lança uma exceção, o código para de executar e o erro é passado adiante.
+Se esse é o seu desejo, Você pode usar a palavra reservada `throw` para lançar uma exceção. Quando você lança uma exceção, o código para de executar e o erro é passado adiante.
 
 ```javascript
 async function getSomeData() {
 	const response = await fetch('/some-data');
 
-	if (!response.ok || response.status !== 200) {
+	if (!response.ok) {
 		throw new Error('Request failed');
 	}
 
@@ -142,36 +142,18 @@ async function getSomeData() {
 }
 ```
 
-Essa é uma política meio `dobra e passa pro próximo`. Se algo der errado, lançamos uma exceção e para a execução da função atual. Se nada der errado, retornamos os dados. O código que chama a função `getSomeData` é responsável por tratar a exceção.
+Essa é uma política meio `dobro e passo pro próximo`. O código que chama a função `getSomeData` é responsável por tratar a exceção.
 
 ![dobra e passa pro próximo](./double-it.png)
 
-```javascript
-import { getSomeData } from './api.js';
-import { logError } from './logger.js';
-
-try {
-	const data = await getSomeData();
-	console.log(data);
-} catch (error) {
-	logError(error);
-}
-```
-
-O código acima tem um problema que na verdade está nas veias do Javascript: **Nem o Javascript, nem o Typescript tem mecanismos na linguagem que te avisam que uma função pode lançar uma exceção, nem que tipo de exceção ela pode lançar e muitos menos algo que force você a tratar essa exceção.**
-
-Agora vamos ao momento de reflexão.
-
-### "Nem o Javascript, nem o Typescript tem mecanismos na linguagem que te avisem que uma função pode lançar uma exceção..."
-
-Isso é verdade. Nem mesmo usando Typescript você consegue saber se uma função pode lançar uma exceção. Isso é triste porque você não sabe se precisa tratar uma exceção ou não. Você tem que ler a documentação da função ou o código fonte dela para saber se ela pode lançar uma exceção.
+Nem o Javascript, nem o Typescript tem mecanismos na linguagem que te permitam restringir que tipo de exceção você pode lançar então é sempre uma boa ideia checar o tipo do que você recebeu no bloco `catch`.
 
 Isso pode te levar a:
 
 - Tratar exceções que nunca vão acontecer
 - Não tratar exceções que podem acontecer
 
-Uma solução para esse problema é usar o JSDoc para documentar que uma função pode lançar uma exceção. O JSDoc é um formato de comentário que você pode usar para documentar funções, variáveis, etc. O Typescript inclusive é capaz de usar o JSDoc para inferir tipos de variáveis e funções.
+Uma solução para esse problema é usar comentários JSDoc. O JSDoc é um formato de comentário que você pode usar para documentar funções, variáveis, etc. O Typescript é capaz de usar o JSDoc para inferir tipos de variáveis e funções em codebases Javascript.
 
 ```javascript
 /**
@@ -184,7 +166,7 @@ Uma solução para esse problema é usar o JSDoc para documentar que uma funçã
 async function getSomeData() {
 	const response = await fetch('/some-data');
 
-	if (!response.ok || response.status !== 200) {
+	if (!response.ok) {
 		throw new Error('Request failed');
 	}
 
@@ -198,80 +180,105 @@ async function getSomeData() {
 }
 ```
 
-Isso é bom o suficiente? Não. Isso é uma solução paliativa. O JSDoc não é uma ferramenta que te avisa que você precisa tratar uma exceção ela só deixa aí pra quem quiser ver que a função pode lançar uma exceção. Se você não ler o pau vai comer e fim.
+Isso é bom o suficiente? Não. Isso é uma solução paliativa. O JSDoc não é uma ferramenta que te avisa que você precisa tratar uma exceção ela só deixa aí pra quem quiser ver que a função pode lançar uma exceção. Se você não ler o pau vai comer e é isso aí.
 
-### "... nem que tipo de exceção ela pode lançar..."
-
-Isso acontece porque no Javascript/Typescript você pode lançar qualquer coisa como exceção. Você pode lançar um número, uma string, um objeto, o que vier na sua cabeça. Isso é até usado por frameworks famosos como o [SvelteKit](https://kit.svelte.dev/docs) para [lançar um redirect](https://kit.svelte.dev/docs/load#redirects) usando `throw` e encerrar a execução do código daquele ponto em diante enquanto o próprio framework trata essa _"exceção"_ e faz o redirect.
+Como comentei antes, no Javascript/Typescript você pode lançar qualquer coisa como exceção. Você pode lançar um número, uma string, um objeto, o que vier na sua cabeça. Isso é até usado por frameworks famosos como o [SvelteKit](https://kit.svelte.dev/docs) para [lançar um redirect](https://kit.svelte.dev/docs/load#redirects) usando `throw` e encerrar a execução do código daquele ponto em diante enquanto o próprio framework trata essa _"exceção"_ e faz o redirecionamento.
 
 ![screenshot da documentação do sveltekit](./sveltekit-docs-on-redirect.png)
 
-Por isso que nós geralmente temos que encher os blocos `catch` de `if (error instanceof SomeErrorClass) { ... }` para saber que tipo de erro estamos tratando. Existe até uma proposta no TC39 chamada [ECMAScript Catch Guards](https://github.com/wmsbill/proposal-catch-guards) que visa resolver esse problema.
+Por isso que nós geralmente temos que encher os blocos `catch` de `if (error instanceof SomeErrorClass) { ... }` para saber que tipo de erro estamos tratando. Existe até uma proposta no TC39 chamada [ECMAScript Catch Guards](https://github.com/wmsbill/proposal-catch-guards) que visa resolver esse problema mas não acredito que vai rolar tão cedo.
 
 > A proposta esta em estágio 0 então melhor não contar com ela.
 
-### "... e muitos menos algo que force você a tratar essa exceção."
-
-Talvez você já tenha ouvido falar de linguagens como o Java que te obriga a tratar uma exceção ou lançar ela adiante e deixar isso claro na assinatura da função ou linguagens como Go que retornam o erro como um valor e você tem que ficar checando a cada ponto que dá erro. Isso é uma feature da linguagem. O Javascript/Typescript não tem isso. Você pode lançar uma exceção e não tratar ela.
+Linguagens como o Java que te obrigam a tratar as exceções ou lançar elas adiante, deixando claro na assinatura da função. Go te faz tratar o erro como um valor e você tem que ficar checando a cada ponto que dá erro. Isso é uma feature da linguagem. O Javascript/Typescript não tem isso. Você pode lançar uma exceção e não tratar ela.
 
 Alguns até diriam que isso é um feature do JS/TS, afinal dá para ir bem rápido se você ignorar todos os sinais de transito e não parar nos sinais vermelhos.
 
 ![carro correndo em alta velocidade e ignorando o sinal vermelho](./truck.webp)
 
-Talvez exista alguma forma de fazer com que o seu linter pegue funções que lançam exceções e te avise que você precisa tratar elas, mas eu não conheço nenhuma forma de fazer isso.
-
-Você sempre pode esquecer de tratar uma exceção e isso pode quebrar a aplicação.
-
-Existe um jeito de minimizar esse problema. Você pode passar o erro adiante como um `Result` ou `Either` e forçar quem chama a função a tratar o erro para obter o valor. Essa é uma feature comum de linguagens de programação funcionais e não existe por padrão no Javascript/Typescript, mas você pode implementar isso.
+Existe um jeito de mudar isso, mas a partir de agora os exemplos serão apenas em Typescript. Podemos passar o erro adiante como um `Result`, `Either` ou `Optional` e forçar quem chama a função a tratar o erro para obter o valor. Essa é uma feature comum de linguagens de programação funcionais e não existe por padrão no Javascript/Typescript, mas você pode implementar isso.
 
 ```javascript
-type Result<T, E> = { type: "ok"; value: T } | { type: "error"; error: E };
+type Ok<T> = {
+	readonly status: 'ok';
+	readonly value: T;
+};
 
-async function getSomeData(): Promise<Result<unknown[], Error>> {
-  try {
-    const response = await fetch("/some-data");
+type Fail = {
+	readonly status: 'fail';
+	readonly message: string;
+};
 
-    if (!response.ok || response.status !== 200) {
-      return { type: "error", error: new Error("Request failed") };
-    }
+type Result<T> = Ok<T> | Fail;
 
-    const data = await response.json();
+function ok<T>(value: T): Ok<T> {
+	return { status: 'ok', value };
+}
 
-    if (!Array.isArray(data)) {
-      return { type: "error", error: new Error("Invalid response") };
-    }
+function fail(message: string): Fail {
+	return { status: 'fail', message };
+}
 
-    return { type: "ok", value: data };
-  } catch (error) {
-    const asError =  error instanceof Error ? error : new Error(`Unknown error: ${String(error)}`);
-    return { type: "error", error: asError };
-  }
+export function isFail<T>(result: Result<T>): result is Fail {
+	return result.status === 'fail';
+}
+
+export function isOk<T>(result: Result<T>): result is Ok {
+	return result.status === 'ok';
+}
+
+export async function wrapAsync<T>(promise: Promise<T>): Promise<Result<T>> {
+	try {
+		const value = await promise;
+		return ok(value);
+	} catch (error) {
+		const message = error instanceof Error ? error.message : String(error);
+		return fail(message);
+	}
+}
+
+export function wrapSync<T>(fn: () => T): Result<T> {
+	try {
+		const value = fn();
+		return ok(value);
+	} catch (error) {
+		const message = error instanceof Error ? error.message : String(error);
+		return fail(message);
+	}
 }
 ```
 
-Agora quem chama a função `getSomeData` é obrigado a tratar o erro para obter o valor.
+O código refatorado seria mais ou menos assim:
 
-```javascript
-const result = await getSomeData();
+```ts
+async function getSomeData(): Result<unknown[]> {
+	const resResult = await wrapAsync(fetch('/some-data'));
 
-if (result.type === 'ok') {
-	console.log(result.value);
-} else {
-	logError(result.error);
+	if (isFail(resResult)) return resResult;
+
+	if (!resResult.value.ok) return fail('Request failed');
+
+	const dataResult = await wrapAsync(response.json());
+
+	if (isFail(dataResult)) return dataResult;
+
+	if (!Array.isArray(dataResult.value)) return fail('Invalid response');
+
+	return dataResult;
 }
 ```
 
-Isso ainda não resolve o problema completamente porque ainda é possível que você esqueça de tratar algum erro e ao invés de retornar um `Result` a função simplesmente quebre e é isso aí.
+Agora quem chama a função `getSomeData` é obrigado a tratar o erro para obter o valor, assim como fomos obrigados a tratar os retornos de `wrapAsync`.
 
-## Conclusão
+Essa prática pode ser reforçada pelo seu linter caso esteja trabalhando em um projeto com mais pessoas.
 
-O tratamento de erros e exceções é um assunto complexo e que pode ser difícil de entender. O Javascript/Typescript não te ajuda muito nesse sentido. Você tem que tomar cuidado e ficar mais consciente do que você está fazendo.
+## Mais algumas coisas...
 
-- Não, colocar todo o seu código dentro de um só `try, catch` não é uma boa ideia.
 - Se você está lidando com `promises`, fique atento, promessas podem ser rejeitadas e você tem que tratar isso.
+- Trate exceções globais, é importante.
 - Se você está usando algo como `React` dê uma olhada no conceito de [`Error Boundaries`](https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary) para lidar com erros de renderização.
 - Se você está usando `Node.js`, dê uma olhada nos eventos como [`uncaughtException` e `unhandledRejection`](https://nodejs.org/api/process.html#warning-using-uncaughtexception-correctly) para lidar com erros não tratados.
-- Explore soluções como [`Result` e `Either`](https://blog.rockthejvm.com/functional-error-handling-in-kotlin-part-2/).
+- Explore soluções como [`Result` e `Either`](https://blog.rockthejvm.com/functional-error-handling-in-kotlin-part-2/) para ter uma experiência mais clara.
 - Documente suas funções com [JSDoc para deixar claro que uma função pode lançar uma exceção](https://jsdoc.app/tags-throws).
 - Reporte erros para o usuário de forma clara e objetiva.
 - Reporte erros para o seu logger para que você possa investigar o que deu errado. Monitorar erros é importante.

@@ -77,5 +77,6 @@
 		transition: all 0.3s ease-in-out;
 		opacity: 0;
 		visibility: hidden;
+		pointer-events: none;
 	}
 </style>

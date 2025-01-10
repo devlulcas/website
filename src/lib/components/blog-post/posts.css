@@ -69,3 +69,10 @@
 		padding-left: 1rem;
 	}
 }
+
+/* Read: https://piccalil.li/blog/why-im-excited-about-text-box-trim-as-a-designer/ */
+@supports (text-box: cap alphabetic) {
+	.lc-post :is(h2, h3, h4, p, ul, ol, li, blockquote, figure) {
+		text-box: cap alphabetic;
+	}
+}
