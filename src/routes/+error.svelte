@@ -1,8 +1,11 @@
 <script lang="ts">
 	import errorGif from '$/lib/assets/images/error.gif';
+	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
 	import { t } from '$/lib/i18n';
 	import { page } from '$app/stores';
 </script>
+
+<SeoHead />
 
 <main
 	class="flex min-h-[--view-height] w-full flex-col items-center justify-center gap-12 px-4 py-8"

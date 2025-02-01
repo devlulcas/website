@@ -1,5 +1,6 @@
 ---
 title: Markdown - O básico para anotações e documentações!
+ogTitle: Markdown básico
 tags:
   - dev
 categories:

@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="/static/og-image.webp" alt="logo"/>
+  <img src="/static/images/og-image.webp" alt="logo"/>
 </div>
 
 ## 👋 WHAT I DO

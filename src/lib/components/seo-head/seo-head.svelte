@@ -16,7 +16,8 @@
 		description: props.description || website.description,
 		keywords: (props.keywords || website.keywords).join(', '),
 		image: props.image || website.image,
-		url: props.url || website.url
+		url: props.url || website.url,
+		siteName: website.siteName
 	};
 </script>
 
@@ -32,6 +33,7 @@
 	<meta property="og:title" content={metadata.title} />
 	<meta property="og:description" content={metadata.description} />
 	<meta property="og:image" content={metadata.image} />
+	<meta property="og:site_name" content={metadata.siteName} />
 
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:url" content={metadata.url} />

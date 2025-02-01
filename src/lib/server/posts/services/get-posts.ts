@@ -55,12 +55,13 @@ export async function getPosts(): Promise<PostMetadata[]> {
 
 			thumb = new URL(thumb, website.url).toString();
 
+
 			const generateCover = (post: RawPostSchema, thumb: string) => {
+				const ogTitle = post.ogTitle ?? post.title
 				const cover = new URL('/api/og', website.url);
-				cover.searchParams.append('text', post.title);
+				cover.searchParams.append('text', ogTitle);
 				cover.searchParams.append('thumb', thumb);
 				post.tags.forEach((tag) => cover.searchParams.append('tag', tag));
-
 				return cover.toString();
 			};
 
@@ -85,7 +86,8 @@ export async function getPosts(): Promise<PostMetadata[]> {
 				draft: metadata.data.draft,
 				excerpt: metadata.data.excerpt,
 				tags: metadata.data.tags,
-				title: metadata.data.title
+				title: metadata.data.title,
+				ogTitle: metadata.data.ogTitle ?? metadata.data.title
 			};
 
 			return data;

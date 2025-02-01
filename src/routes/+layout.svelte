@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Footer from '$/lib/components/footer/footer.svelte';
 	import Header from '$/lib/components/header/header.svelte';
-	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
 	import { t } from '$/lib/i18n';
 	import type { Snippet } from 'svelte';
 	import '../app.css';
@@ -13,8 +12,6 @@
 
 	let { children }: Props = $props();
 </script>
-
-<SeoHead title="Devlulcas" />
 
 <a
 	href="#main-content"

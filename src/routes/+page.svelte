@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { website } from '$/lib/assets/config/website';
 	import ContactForm from '$/lib/components/contact-form/contact-form.svelte';
 	import ContainerSection from '$/lib/components/container-section/default.svelte';
 	import SeeMoreLink from '$/lib/components/container-section/see-more-link.svelte';
@@ -22,7 +21,7 @@
 	let { data }: Props = $props();
 </script>
 
-<SeoHead title={website.title} description={website.description} image={website.image} />
+<SeoHead />
 
 <main
 	id="main-content"

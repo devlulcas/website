@@ -2,6 +2,7 @@ import { PUBLIC_HOST } from '$env/static/public';
 
 export const website = {
 	title: 'Lucas Alves Rego',
+	siteName: 'Blog e portfólio do Devlulcas',
 	author: 'Lucas Alves Rego - @devlulcas',
 	description:
 		'I like to build things. Full-stack developer and curious about everything related to technology.',

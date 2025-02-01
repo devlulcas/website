@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { experiences } from '$/lib/assets/config/experiences';
+	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
 	import { locale, t } from '$/lib/i18n';
 	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 	import { faEarthAmericas, faWarning } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +8,8 @@
 
 	let translatedExperiences = $derived(experiences[$locale === 'en' ? 'en' : 'ptBr']);
 </script>
+
+<SeoHead title="Curriculum vitae" />
 
 <main
 	id="main-content"

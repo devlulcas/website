@@ -4,6 +4,7 @@ import { isValidCategory } from '../lib/categories';
 
 export const rawPostSchema = z.object({
 	title: z.string({ required_error: 'Title is required.' }),
+	ogTitle: z.string().optional(),
 	excerpt: z.string().max(280, { message: 'Excerpt must be at most 280 characters long.' }),
 	date: z.string({ required_error: 'Date is required.' }),
 	draft: z.boolean().default(true),

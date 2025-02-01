@@ -4,6 +4,7 @@
 	import ContainerSection from '$/lib/components/container-section/default.svelte';
 	import FeaturedPostCard from '$/lib/components/post-card/featured-post-card.svelte';
 	import PostCard from '$/lib/components/post-card/post-card.svelte';
+	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
 	import { t } from '$/lib/i18n';
 	import customBlogDrawingSvg from '$lib/assets/images/blog.svg';
 	import type { PageData } from './$types';
@@ -14,6 +15,8 @@
 
 	let { data }: Props = $props();
 </script>
+
+<SeoHead title="Blog" />
 
 <main id="main-content" class="lc-grid min-h-[--view-height] px-4 pb-8 lg:px-8">
 	<ContainerSection>

@@ -5,6 +5,7 @@
 	import { scale } from 'svelte/transition';
 	// import { createSearchStore } from '$lib/stores/generic-search';
 	import BookmarkCard from '$/lib/components/bookmark-card/bookmark-card.svelte';
+	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
 	import type { PageServerData } from './$types';
 
 	type Props = {
@@ -33,6 +34,8 @@
 		}
 	}
 </script>
+
+<SeoHead title="Bookmarks" />
 
 <main id="main-content" class="lc-grid min-h-[--view-height] px-4 pb-8 lg:px-8">
 	<ContainerSection id="bookmarks" title={$t('bookmarks.title')}>
