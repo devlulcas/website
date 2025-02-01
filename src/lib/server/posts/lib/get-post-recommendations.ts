@@ -16,6 +16,18 @@ export function getPostRecommendations(posts: PostMetadata[], currentPostIndex: 
 
 	const hasOneRecommendation = recommendations.length === 1;
 
+	if (currentPostIndex === 0) {
+		recommendations[0] = posts[currentPostIndex + 1]
+		recommendations[1] = posts[currentPostIndex + 2]
+		return recommendations
+	}
+
+	if (currentPostIndex === posts.length - 1) {
+		recommendations[0] = posts[currentPostIndex - 1]
+		recommendations[1] = posts[currentPostIndex - 2]
+		return recommendations
+	}
+
 	if (hasOneRecommendation && currentPostIndex > 0) {
 		recommendations.unshift(posts[currentPostIndex - 1]);
 	}
