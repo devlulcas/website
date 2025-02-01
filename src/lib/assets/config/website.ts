@@ -23,6 +23,7 @@ export const availablePostCategories = [
 	'css',
 	'javascript',
 	'typescript',
+	'docs',
 	'react',
 	'svelte',
 	'node',
