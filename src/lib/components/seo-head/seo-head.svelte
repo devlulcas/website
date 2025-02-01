@@ -12,7 +12,10 @@
 	let props: Props = $props();
 
 	const metadata = {
-		title: props.title !== website.title ? `${props.title} | ${website.title}` : website.title,
+		title:
+			props.title && props.title !== website.title
+				? `${props.title} | ${website.title}`
+				: website.title,
 		description: props.description || website.description,
 		keywords: (props.keywords || website.keywords).join(', '),
 		image: props.image || website.image,
