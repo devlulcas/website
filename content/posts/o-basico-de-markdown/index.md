@@ -16,7 +16,7 @@ excerpt: Markdown é um dos markups mais populares que existe e você já sabe 5
 
 Markdown é uma linguagem de marcação criada por John Gruber e Aaron Swarts (Descanse em paz) com o objetivo de possibilitar a escrita de HTML válido com uma sintaxe mais simples.
 
-Markdown é tão simples que você já deve ter usado sem saber em chats de aplicativos como whatsapp e discord.
+Markdown é tão simples que você já deve ter usado sem saber em chats de aplicativos como whatsapp e discord sem se tocar que aquilo se quer tinha um nome.
 
 ## Para que serve aprender isso?
 
@@ -154,3 +154,5 @@ Você pode continuar aprendendo e pesquisar mais sobre:
 - Links de referência no markdown
 
 Enfim. Boa sorte!
+
+> OBS: O markdown tem vários sabores, nem tudo que é suportado em uma plataforma será suportado em outra. O whatsapp, por exemplo, não suporta tabelas e tem notação diferente para itálico, negrito e rasura adaptada para o celular (usando somente um `*`, `_` e `~`)
