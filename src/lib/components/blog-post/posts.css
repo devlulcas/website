@@ -64,6 +64,10 @@
 	& p > code {
 		@apply rounded bg-slate-100 px-1 pt-0.5 font-mono leading-none text-slate-950 dark:bg-slate-800 dark:text-slate-50;
 	}
+
+	& p > a {
+		@apply text-brand-700 underline underline-offset-8 dark:text-brand-500;
+	}
 }
 
 /* Read: https://piccalil.li/blog/why-im-excited-about-text-box-trim-as-a-designer/ */
