@@ -68,6 +68,10 @@
 	& p > a {
 		@apply text-brand-700 underline underline-offset-8 dark:text-brand-500;
 	}
+
+	& li code {
+		word-break: break-all;
+	}
 }
 
 /* Read: https://piccalil.li/blog/why-im-excited-about-text-box-trim-as-a-designer/ */
