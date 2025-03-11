@@ -5,6 +5,8 @@ tags:
   - typescript
 categories:
   - typescript
+  - javascript
+  - functional programming
 date: 03/06/2024
 draft: false
 excerpt: Lide com a realidade, nem toda promessa é cumprida. Trate os erros e exceções do seu código.

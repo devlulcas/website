@@ -1,4 +1,3 @@
-import { availablePostCategories } from '$/lib/assets/config/website';
 import type { RawPostSchema } from '../schemas/raw-post-schema';
 import type { PostMetadata } from '../types';
 
@@ -33,8 +32,4 @@ export function filterPostsByCategory(posts: PostMetadata[], category: string): 
 	return posts.filter((post) =>
 		post.categories.map((cat) => cat.toLowerCase()).includes(lowerCaseCategory)
 	);
-}
-
-export function isValidCategory(category: string) {
-	return availablePostCategories.includes(category.toLowerCase());
 }

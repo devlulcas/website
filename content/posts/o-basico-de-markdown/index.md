@@ -5,6 +5,8 @@ tags:
   - dev
 categories:
   - docs
+  - markdown
+  - basics
 date: 01/31/2025
 draft: false
 excerpt: Markdown é um dos markups mais populares que existe e você já sabe 50% dele!

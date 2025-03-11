@@ -5,7 +5,8 @@ tags:
   - dev
   - convenções
 categories:
-  - none
+  - basics
+  - git
 date: 09/10/2023
 draft: false
 excerpt: Como escrever bons commits para ter um versionamento mais inteligível

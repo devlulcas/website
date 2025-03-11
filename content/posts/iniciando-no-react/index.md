@@ -5,7 +5,9 @@ tags:
   - react-js
   - javascript
 categories:
-  - none
+  - javascript
+  - react-js
+  - basics
 date: 05/30/2022
 draft: false
 excerpt: Notas sobre meus pensamentos em aprender React em 2022

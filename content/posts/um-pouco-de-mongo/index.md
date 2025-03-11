@@ -4,7 +4,8 @@ tags:
   - databases
   - mongodb
 categories:
-  - none
+  - databases
+  - nosql
 date: 04/23/2023
 excerpt: Aprendendo a usar o MongoDB com o Node.js
 draft: false

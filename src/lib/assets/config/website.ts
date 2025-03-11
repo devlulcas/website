@@ -19,25 +19,3 @@ export const website = {
 		email: 'lucasalvesrego.contato@gmail.com'
 	}
 } as const;
-
-export const availablePostCategories = [
-	'css',
-	'javascript',
-	'typescript',
-	'docs',
-	'react',
-	'svelte',
-	'node',
-	'web',
-	'dev',
-	'testing',
-	'git',
-	'github',
-	'database',
-	'api',
-	'graphql',
-	'next js',
-	'sveltekit',
-	'none',
-	'4fun'
-];

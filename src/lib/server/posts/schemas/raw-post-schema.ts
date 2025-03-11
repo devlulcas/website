@@ -1,6 +1,5 @@
 import { PUBLIC_HOST } from '$env/static/public';
 import { z } from 'zod';
-import { isValidCategory } from '../lib/categories';
 
 export const rawPostSchema = z.object({
 	title: z.string({ required_error: 'Title is required.' }),
@@ -13,9 +12,6 @@ export const rawPostSchema = z.object({
 	categories: z
 		.array(z.string())
 		.default([])
-		.refine((categories) => categories.every(isValidCategory), {
-			message: 'Invalid category.'
-		})
 });
 
 export type RawPostSchema = z.infer<typeof rawPostSchema>;

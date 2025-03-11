@@ -7,6 +7,8 @@ tags:
   - state management
 categories:
   - typescript
+  - react-js
+  - state-management
 date: 01/09/2025
 draft: false
 excerpt: Gerenciando estado global de forma fácil e atômica, bloquinho por bloquinho.

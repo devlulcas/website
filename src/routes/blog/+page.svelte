@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { availablePostCategories } from '$/lib/assets/config/website';
 	import BlogPostSearchForm from '$/lib/components/blog-post-search-form/blog-post-search-form.svelte';
 	import ContainerSection from '$/lib/components/container-section/default.svelte';
 	import FeaturedPostCard from '$/lib/components/post-card/featured-post-card.svelte';
@@ -37,7 +36,7 @@
 				</p>
 
 				<ul class="mt-6 flex flex-wrap gap-3">
-					{#each availablePostCategories as category}
+					{#each data.categories ?? [] as category}
 						<li>
 							<a
 								href={`/blog/category/${category}`}

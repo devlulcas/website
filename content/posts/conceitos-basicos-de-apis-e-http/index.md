@@ -3,7 +3,7 @@ title: Conceitos básicos de APIs e HTTP
 tags:
   - web
 categories:
-  - none
+  - basics
 date: 07/16/2024
 draft: false
 excerpt: Um pouco sobre APIs, REST, HTTP, URLs, métodos HTTP, cabeçalhos HTTP, corpo da requisição e resposta, e status HTTP.

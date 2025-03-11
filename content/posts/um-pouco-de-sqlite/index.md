@@ -6,7 +6,8 @@ tags:
   - notes
   - database
 categories:
-  - none
+  - databases
+  - sql
 date: 04/12/2023
 excerpt: Resumo leve sobre o SQLite3
 ---

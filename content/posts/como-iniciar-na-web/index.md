@@ -10,7 +10,7 @@ tags:
   - programação
   - desenvolvimento
 categories:
-  - none
+  - basics
   - css
   - 'javascript'
 date: 07/27/2022
