@@ -20,7 +20,7 @@ excerpt: Gleam é uma linguagem de programação funcional estática para a BEAM
 
 # Gleam
 
-![gleam](./gleam.webp)
+![gleam](./thumb.png)
 
 Funcional, compacta, type safe, compilada, roda tanto na BEAM quanto em ambiente JS.
 
