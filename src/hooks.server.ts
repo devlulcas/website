@@ -24,11 +24,15 @@ const i18nHookHandle: Handle = ({ event, resolve }) => {
 	const defaultLanguage = acceptLanguageHeader?.split(',')[0].split('-')[0];
 	const newLanguageSetting = event.url.searchParams.get('lang');
 	const currentLanguageSetting = event.cookies.get('lang');
-
 	// Pick language by priority
 	const selectedLang = newLanguageSetting || currentLanguageSetting || defaultLanguage || 'en';
-
 	const lang = selectedLang === 'pt' ? 'pt' : 'en';
+
+	// Set the cookie for the selected language
+	event.cookies.set('lang', lang, {
+		path: '/',
+		maxAge: 60 * 60 * 24 * 365
+	});
 
 	return resolve(event, {
 		transformPageChunk: ({ html }) => {

@@ -1,9 +1,9 @@
 <script lang="ts">
 	import unitedStatesOfAmericaSvg from '$/lib/assets/images/flags/en.svg';
 	import brazilSvg from '$/lib/assets/images/flags/pt-br.svg';
-	import { t } from '$/lib/i18n';
+	import { locale, t } from '$/lib/i18n';
 	import { enhance } from '$app/forms';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import type { SubmitFunction } from '@sveltejs/kit';
 
 	const submitTheme: SubmitFunction = ({ action }) => {
@@ -26,16 +26,24 @@
 	<button
 		title="English"
 		class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border-none bg-transparent p-2 hover:bg-white/5"
-		formaction="/?/setLocale&lang=en&redirectTo={$page.url.pathname}"
+		formaction="/?/setLocale&lang=en&redirectTo={page.url.pathname}"
 	>
-		<img src={unitedStatesOfAmericaSvg} alt="USA Flag" class="h-4 w-4" />
+		<img
+			src={unitedStatesOfAmericaSvg}
+			alt="USA Flag"
+			class="h-5 w-5 rounded-full {$locale === 'en' ? 'border-2 border-brand-600 p-[1px]' : ''}"
+		/>
 	</button>
 
 	<button
 		title="Português brasileiro"
 		class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border-none bg-transparent p-2 hover:bg-white/5"
-		formaction="/?/setLocale&lang=pt&redirectTo={$page.url.pathname}"
+		formaction="/?/setLocale&lang=pt&redirectTo={page.url.pathname}"
 	>
-		<img src={brazilSvg} alt="Brazil flag" class="h-4 w-4" />
+		<img
+			src={brazilSvg}
+			alt="Brazil flag"
+			class="h-5 w-5 rounded-full {$locale === 'pt' ? 'border-2 border-brand-600 p-[1px]' : ''}"
+		/>
 	</button>
 </form>
