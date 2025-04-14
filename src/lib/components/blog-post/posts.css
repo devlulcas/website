@@ -7,8 +7,8 @@
 	h4,
 	h5,
 	h6 {
-		margin-top: 1.5rem;
-		margin-bottom: 0.5rem;
+		margin-top: 2.5rem;
+		margin-bottom: 1.75rem;
 		font-weight: 900;
 		text-transform: uppercase;
 	}
@@ -25,7 +25,8 @@
 	}
 
 	& blockquote {
-		@apply border-l-[0.25rem] border-brand-600;
+		border-left: 0.25rem solid;
+		border-color: var(--brand-600);
 		padding-left: 1rem;
 		margin-left: 0;
 		font-style: italic;
@@ -72,23 +73,15 @@
 	& li code {
 		word-break: break-all;
 	}
+
+	& pre {
+		overflow: auto;
+	}
 }
 
 /* Read: https://piccalil.li/blog/why-im-excited-about-text-box-trim-as-a-designer/ */
 @supports (text-box: cap alphabetic) {
 	.lc-post :is(h2, h3, h4, p, ul, ol, li, blockquote, figure) {
 		text-box: cap alphabetic;
-	}
-}
-
-@media (hover) {
-	.lc-post {
-		& > * {
-			transition: opacity 0.3s ease-in-out;
-		}
-
-		&:hover > *:not(:hover) {
-			opacity: 0.25;
-		}
 	}
 }

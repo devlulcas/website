@@ -51,7 +51,7 @@ mkdir tests/Unit
 
 > No pest é necessário colocarmos um sufixo no nome dos nossos arquivos de testes. O sufixo será aquele definido no arquivo phpunit.xml. Por padrão o sufixo é Test.php.
 
-```
+```text
 |tests
    |
    ---|Unit

@@ -43,7 +43,7 @@ Eu sigo uma convenção baseada na Conventional Commits, porém com algumas alte
 
 ### 📝 Formato
 
-```
+```text
 <tipo>[escopo opcional]: <descrição>
 
 [corpo opcional]

@@ -1,11 +1,11 @@
-import { website } from '$/lib/assets/config/website';
 import { parse as parseHtml } from 'node-html-parser';
 import { readingTime } from 'reading-time-estimator';
 import type { Component } from 'svelte';
 import { render } from 'svelte/server';
 import { z } from 'zod';
+import { generateOgURL } from '../../../utils/og';
 import { detectLanguage } from '../lib/detect-language';
-import { rawPostSchema, type RawPostSchema } from '../schemas/raw-post-schema';
+import { rawPostSchema } from '../schemas/raw-post-schema';
 import type { PostMetadata } from '../types';
 
 /**
@@ -49,23 +49,9 @@ export async function getPosts(): Promise<PostMetadata[]> {
 
 			const expectedReadingTime = readingTime(renderedHtml, 300, language.code);
 
-			let thumb = parseHtml(renderedHtml).querySelector('img')?.getAttribute('src');
+			const thumb = parseHtml(renderedHtml).querySelector('img')?.getAttribute('src');
 
-			thumb ||= '/images/og-image.webp';
-
-			thumb = new URL(thumb, website.url).toString();
-
-
-			const generateCover = (post: RawPostSchema, thumb: string) => {
-				const ogTitle = post.ogTitle ?? post.title
-				const cover = new URL('/api/og', website.url);
-				cover.searchParams.append('text', ogTitle);
-				cover.searchParams.append('thumb', thumb);
-				post.tags.forEach((tag) => cover.searchParams.append('tag', tag));
-				return cover.toString();
-			};
-
-			const cover = generateCover(metadata.data, thumb);
+			const cover = generateOgURL(metadata.data, language, thumb);
 
 			const getDate = () => {
 				try {

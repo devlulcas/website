@@ -214,7 +214,7 @@ fn multiply(a: Int, b: Int) -> Int {
 
 Funções são valores, ou seja, podem ser passadas para outras funções como argumento. Para anotar o tipo de um argumento que recebe uma função é só usar a palavra chave `fn` e ao invés de nomes, usar os tipos dos parâmetros dela: `
 
-```fn
+```gleam
 fn twice(argument: Int, passed_function: fn(Int) -> Int) -> Int {
   passed_function(passed_function(argument))
 }

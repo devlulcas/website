@@ -1,4 +1,4 @@
-import { website } from '$/lib/assets/config/website';
+import { extractOgParams } from '$/lib/utils/og';
 import { read } from '$app/server';
 import inter from '$lib/assets/fonts/inter-bold.ttf';
 import { Resvg } from '@resvg/resvg-js';
@@ -14,24 +14,11 @@ const height = 630;
 const width = 1200;
 
 export const GET: RequestHandler = async ({ url }) => {
-	const searchParams = url.searchParams;
-
-	const text = searchParams.get('text') || website.title;
-	const thumb = searchParams.get('thumb') || website.image;
-	const tags = searchParams.getAll('tag') ?? [];
+	const props = extractOgParams(url.searchParams);
 
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
-	const result = render(SvelteOG, {
-		props: {
-			text,
-			thumb,
-			tags,
-		}
-	});
-
-	console.log(result.head);
-
+	const result = render(SvelteOG, { props });
 
 	const element = toReactNode(`${result.html}`);
 

@@ -59,6 +59,7 @@
 		"reading-time-estimator": "^1.11.0",
 		"satori": "^0.12.0",
 		"satori-html": "^0.3.2",
+		"shiki": "^3.2.2",
 		"svelte-fa": "^4.0.3",
 		"sveltekit-i18n": "^2.4.2",
 		"tailwind-merge": "^2.6.0",

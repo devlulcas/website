@@ -6,10 +6,10 @@
 
 	type Props = {
 		post: PostMetadata;
-		showDescription?: boolean;
+		featured?: boolean;
 	};
 
-	let { post, showDescription = false }: Props = $props();
+	let { post, featured = false }: Props = $props();
 
 	let i18nReleaseDate = $derived(
 		new Date(post.date).toLocaleDateString($locale === 'pt' ? 'pt-BR' : 'en-US', {
@@ -32,11 +32,14 @@
 	</time>
 </p>
 
-<h3 class="mb-2 line-clamp-2 h-[2lh] text-2xl font-bold" title={post.title}>
+<h3
+	class="mb-2 line-clamp-2 {featured ? 'mt-3 text-6xl font-black' : 'h-[2lh] text-2xl font-bold'}"
+	title={post.title}
+>
 	{post.title}
 </h3>
 
-{#if showDescription}
+{#if featured}
 	<p class="text-md mt-2 line-clamp-3 h-[3lh] text-muted-foreground">
 		{post.excerpt}
 	</p>

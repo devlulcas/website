@@ -1,6 +1,36 @@
 import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { mdsvex } from 'mdsvex';
+import { escapeSvelte, mdsvex } from 'mdsvex';
+import { createHighlighter } from 'shiki';
+
+const theme = 'github-dark';
+const highlighter = await createHighlighter({
+	themes: [theme],
+	langs: [
+		'javascript',
+		'typescript',
+		'html',
+		'css',
+		'json',
+		'bash',
+		'php',
+		'elixir',
+		'go',
+		'rust',
+		'gleam',
+		'kotlin',
+		'lua',
+		'svelte',
+		'markdown',
+		'tsx',
+		'jsx',
+		'http',
+		'mermaid',
+		'sql',
+		'text',
+		'diff'
+	]
+});
 
 import * as dvl from 'devlulcas-md';
 import relativeImages from 'mdsvex-relative-images';
@@ -22,6 +52,12 @@ const blockQuoteTypes = [
 /** @type {import('mdsvex').MdsvexOptions} */
 export const mdsvexOptions = {
 	extensions: ['.md', '.svx', '.mdx'],
+	highlight: {
+		highlighter: async (code, lang = 'text') => {
+			const html = escapeSvelte(highlighter.codeToHtml(code, { lang, theme }));
+			return `{@html \`${html}\` }`;
+		}
+	},
 	remarkPlugins: [
 		relativeImages,
 		dvl.remarkBetterImages,

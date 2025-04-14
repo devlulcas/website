@@ -30,8 +30,6 @@
 				formState = result.type;
 				formElement.reset();
 
-				console.log(result.data);
-
 				const resultDataIsFormResult = (data: unknown): data is FormResult => {
 					return typeof data === 'object' && data !== null && 'type' in data && 'message' in data;
 				};
