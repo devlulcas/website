@@ -6,16 +6,16 @@ import { z } from 'zod';
 import { generateOgURL } from '../../../utils/og';
 import { detectLanguage } from '../lib/detect-language';
 import { rawPostSchema } from '../schemas/raw-post-schema';
-import type { PostMetadata } from '../types';
+import type { PostBloatedMetadata, PostMetadata } from '../types';
 
 /**
  * Fetches all the posts metadata. It also adds the slug and the SEO metadata
  * @returns all the posts metadata
  */
-export async function getPosts(): Promise<PostMetadata[]> {
+async function getPosts(): Promise<PostBloatedMetadata[]> {
 	const postFiles = import.meta.glob('/content/posts/**/*.md');
 
-	const postMetadataPromises: Promise<PostMetadata>[] = Object.entries(postFiles).map(
+	const postMetadataPromises: Promise<PostBloatedMetadata>[] = Object.entries(postFiles).map(
 		async ([filepath, resolver]) => {
 			const resolverData = await resolver();
 
@@ -62,8 +62,10 @@ export async function getPosts(): Promise<PostMetadata[]> {
 				}
 			};
 
-			const data: PostMetadata = {
+			const data: PostBloatedMetadata = {
 				cover,
+				filepath,
+				renderedHtml,
 				language,
 				slug,
 				readingTime: expectedReadingTime.minutes,
@@ -90,3 +92,12 @@ export async function getPosts(): Promise<PostMetadata[]> {
 		return bDate.getTime() - aDate.getTime();
 	});
 }
+
+export const GLOBAL_POSTS: PostBloatedMetadata[] = await getPosts();
+export const GLOBAL_POSTS_SLIM: PostMetadata[] = GLOBAL_POSTS.map((post) => {
+	return {
+		...post,
+		renderedHtml: undefined,
+		filepath: undefined,
+	}
+});

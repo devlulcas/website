@@ -1,5 +1,5 @@
 import { postMessage } from '$/lib/server/contact/services/post-message';
-import { getPosts } from '$/lib/server/posts/services/get-posts';
+import { GLOBAL_POSTS_SLIM } from '$/lib/server/posts/services/get-posts';
 import { getDemoProjects } from '$/lib/server/projects/services/get-demo-projects';
 import { getFeaturedProjects } from '$/lib/server/projects/services/get-feature-projects';
 import { getProjects } from '$/lib/server/projects/services/get-projects';
@@ -7,11 +7,9 @@ import { fail, redirect } from '@sveltejs/kit';
 import type { Actions, PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-	const posts = await getPosts();
+	const featuredPost = GLOBAL_POSTS_SLIM[0];
 
-	const featuredPost = posts[0];
-
-	const recentPosts = posts.splice(1, 3);
+	const recentPosts = GLOBAL_POSTS_SLIM.splice(1, 3);
 
 	const featuredProjects = getFeaturedProjects();
 

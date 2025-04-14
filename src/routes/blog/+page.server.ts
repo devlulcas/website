@@ -1,17 +1,15 @@
 import { extractCategories } from '$/lib/server/posts/lib/categories';
-import { getPosts } from '$/lib/server/posts/services/get-posts';
+import { GLOBAL_POSTS_SLIM } from '$/lib/server/posts/services/get-posts';
 import Fuse from 'fuse.js';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ url }) => {
 	const search = url.searchParams.get('search');
 
-	const posts = await getPosts();
-
-	const featuredPost = posts.shift();
+	const featuredPost = GLOBAL_POSTS_SLIM.shift();
 
 	if (search) {
-		const fuse = new Fuse(posts, {
+		const fuse = new Fuse(GLOBAL_POSTS_SLIM, {
 			keys: ['title', { name: 'tags', weight: 0.5 }, { name: 'excerpt', weight: 0.5 }]
 		});
 
@@ -20,7 +18,7 @@ export const load: PageServerLoad = async ({ url }) => {
 		return { posts: filteredPosts, featuredPost: null, search };
 	}
 
-	const categories = extractCategories(posts);
+	const categories = extractCategories(GLOBAL_POSTS_SLIM);
 
-	return { posts, featuredPost, search, categories };
+	return { posts: GLOBAL_POSTS_SLIM, featuredPost, search, categories };
 };

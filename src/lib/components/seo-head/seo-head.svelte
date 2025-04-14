@@ -43,4 +43,9 @@
 	<meta name="twitter:title" content={metadata.title} />
 	<meta name="twitter:description" content={metadata.description} />
 	<meta name="twitter:image" content={metadata.image} />
+
+	<!-- sitemap.xml and rss.xml -->
+	<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
+	<link rel="alternate" type="application/rss+xml" title="Atom" href="/atom.xml" />
 </svelte:head>
