@@ -11,7 +11,7 @@
 
 <div
 	style="--code-font-size: 0.8rem"
-	class="prose-sm dark:prose-invert prose-h1:text-lg prose-a:no-underline"
+	class="prose-sm dark:prose-invert prose-h1:text-lg prose-a:no-underline prose-pre:overflow-x-auto"
 >
 	{@render children?.()}
 </div>
