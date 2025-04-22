@@ -19,12 +19,26 @@ export const experiences = {
 		{
 			company: 'Venturix',
 			period: '01/2025 - Atual',
-			projects: []
+			projects: [
+				{
+					name: 'Informação privada no momento',
+					description: 'Nenhuma descrição',
+					stack: [
+						'NextJS',
+						'Tanstack Query',
+						'Typescript',
+						'React',
+						'React Hook Forms',
+						'MUI',
+						'Storybook',
+					]
+				}
+			]
 		},
 		{
 			company: 'Bloop',
 			period: '11/2024 - 01/2025',
-			warning: 'Transferido para a Venturix',
+			warning: 'Freelance',
 			projects: [
 				{
 					name: 'Sistema de venda e gerenciamento de info-produtos',
@@ -125,12 +139,26 @@ export const experiences = {
 		{
 			company: 'Venturix',
 			period: '2025/01 - Current',
-			projects: []
+			projects: [
+				{
+					name: 'Private information currently',
+					description: 'No description',
+					stack: [
+						'NextJS',
+						'Tanstack Query',
+						'Typescript',
+						'React',
+						'React Hook Forms',
+						'MUI',
+						'Storybook',
+					]
+				}
+			]
 		},
 		{
 			company: 'Bloop',
 			period: '2024/11 - 2025/01',
-			warning: 'Transferred to Venturix',
+			warning: 'Freelance',
 			projects: [
 				{
 					name: 'System of sales and management of info-products',
