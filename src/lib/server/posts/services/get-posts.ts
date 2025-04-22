@@ -93,11 +93,11 @@ async function getPosts(): Promise<PostBloatedMetadata[]> {
 	});
 }
 
-export const GLOBAL_POSTS: PostBloatedMetadata[] = await getPosts();
-export const GLOBAL_POSTS_SLIM: PostMetadata[] = GLOBAL_POSTS.map((post) => {
+export const GLOBAL_POSTS: Readonly<PostBloatedMetadata[]> = Object.freeze(await getPosts());
+export const GLOBAL_POSTS_SLIM: Readonly<PostMetadata[]> = Object.freeze(GLOBAL_POSTS.map((post) => {
 	return {
 		...post,
 		renderedHtml: undefined,
-		filepath: undefined,
-	}
-});
+		filepath: undefined
+	};
+}));

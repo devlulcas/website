@@ -9,7 +9,7 @@ import type { Actions, PageServerLoad } from './$types';
 export const load: PageServerLoad = async () => {
 	const featuredPost = GLOBAL_POSTS_SLIM[0];
 
-	const recentPosts = GLOBAL_POSTS_SLIM.splice(1, 3);
+	const recentPosts = GLOBAL_POSTS_SLIM.slice(1, 4);
 
 	const featuredProjects = getFeaturedProjects();
 

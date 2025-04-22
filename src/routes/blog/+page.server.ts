@@ -6,7 +6,7 @@ import type { PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ url }) => {
 	const search = url.searchParams.get('search');
 
-	const featuredPost = GLOBAL_POSTS_SLIM.shift();
+	const [featuredPost, ...otherPosts] = GLOBAL_POSTS_SLIM;
 
 	if (search) {
 		const fuse = new Fuse(GLOBAL_POSTS_SLIM, {
@@ -20,5 +20,5 @@ export const load: PageServerLoad = async ({ url }) => {
 
 	const categories = extractCategories(GLOBAL_POSTS_SLIM);
 
-	return { posts: GLOBAL_POSTS_SLIM, featuredPost, search, categories };
+	return { posts: otherPosts, featuredPost, search, categories };
 };
