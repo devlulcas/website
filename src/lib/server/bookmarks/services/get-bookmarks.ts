@@ -1,44 +1,14 @@
-import {
-	PRIVATE_NOTION_API_KEY,
-	PRIVATE_NOTION_DATABASE_ID,
-	PRIVATE_NOTION_VERSION
-} from '$env/static/private';
+import { PRIVATE_NOTION_DATABASE_ID } from '$env/static/private';
 import { firestore } from '../../database/lib/firebase';
+import { fetchFromNotion } from '../../notion/lib/fetch-from-notion';
 import type { Bookmark } from '../types/bookmark';
 import type { NotionBookmarkDatabase } from '../types/notion-bookmark-database';
 
-function getNotionHeaders() {
-	const headers = new Headers();
-
-	headers.set('Authorization', 'Bearer ' + PRIVATE_NOTION_API_KEY);
-	headers.set('Notion-Version', PRIVATE_NOTION_VERSION);
-	headers.set('Content-Type', 'application/json');
-
-	return headers;
-}
-
-function isNotionBookmarkDatabase(json: unknown): json is NotionBookmarkDatabase {
-	return json !== null && typeof json === 'object' && 'results' in json;
-}
-
 async function getBookmarksFromNotion(): Promise<Bookmark[]> {
 	try {
-		const url = `https://api.notion.com/v1/databases/${PRIVATE_NOTION_DATABASE_ID}/query`;
+		const json = await fetchFromNotion<NotionBookmarkDatabase>(PRIVATE_NOTION_DATABASE_ID);
 
-		const response = await fetch(url, {
-			method: 'POST',
-			headers: getNotionHeaders()
-		});
-
-		if (!response.ok) {
-			console.error('Notion API error', await response.json());
-			return [];
-		}
-
-		const json = await response.json();
-
-		if (!isNotionBookmarkDatabase(json)) {
-			console.error('Notion API error', json);
+		if (!json) {
 			return [];
 		}
 
