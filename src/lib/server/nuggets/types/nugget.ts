@@ -1,4 +1,4 @@
-import type { Language } from '../../posts/types';
+import type { Language } from '../../posts/types/language';
 
 export type Nugget = {
 	year: string;

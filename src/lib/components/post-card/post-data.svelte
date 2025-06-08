@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { locale, t } from '$/lib/i18n';
-	import type { PostMetadata } from '$/lib/server/posts/types';
+	import type { PostMetadata } from '$/lib/server/posts/types/post-metadata';
 	import { faArrowRight, faCircle, faHashtag } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 

@@ -1,28 +1,23 @@
-import { firestore } from "../../database/lib/firebase";
+import { firestore } from '../../database/lib/firebase';
+import type { Message } from '../types/message';
 
-type PostMessageData = {
-  name: string;
-  email: string;
-  message: string;
-};
+export async function postMessage(data: Message) {
+	const now = new Date();
+	try {
+		const docRef = firestore.collection('contacts').doc();
+		await docRef.set({
+			name: data.name,
+			email: data.email,
+			message: data.message,
+			isSpam: false,
+			createdAt: now.toISOString(),
+			viewedAt: ''
+		});
 
-export async function postMessage(data: PostMessageData) {
-  const now = new Date();
-  try {
-    const docRef = firestore.collection('contacts').doc();
-    await docRef.set({
-      name: data.name,
-      email: data.email,
-      message: data.message,
-      isSpam: false,
-      createdAt: now.toISOString(),
-      viewedAt: '',
-    });
-
-    console.log('Contact message sent successfully!', docRef.id);
-    return true
-  } catch (error) {
-    console.error(error);
-    return false
-  }
+		console.log('Contact message sent successfully!', docRef.id);
+		return true;
+	} catch (error) {
+		console.error(error);
+		return false;
+	}
 }

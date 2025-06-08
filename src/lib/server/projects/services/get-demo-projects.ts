@@ -1,5 +1,5 @@
 import { GITHUB_API_KEY } from '$env/static/private';
-import type { Project } from '../types';
+import type { Project } from '../types/project';
 import { getProjectImage } from './get-project-image';
 
 type GithubDemoProjectsResponse = {

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { t } from '$/lib/i18n';
-	import type { Project } from '$/lib/server/projects/types';
+	import type { Project } from '$/lib/server/projects/types/project';
 	import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import ProjectData from './project-data.svelte';

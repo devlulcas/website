@@ -1,4 +1,4 @@
-import type { FeaturedProject } from '../types';
+import type { FeaturedProject } from '../types/featured-project';
 
 /**
  * Fetches all the featured projects (temporarily hardcoded)

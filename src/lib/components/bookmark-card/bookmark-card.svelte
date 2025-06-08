@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { locale } from '$/lib/i18n';
-	import type { Bookmark } from '$/lib/server/bookmarks/types';
+	import type { Bookmark } from '$/lib/server/bookmarks/types/bookmark';
 
 	type Props = {
 		bookmark: Bookmark;

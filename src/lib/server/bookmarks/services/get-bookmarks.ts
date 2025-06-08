@@ -4,7 +4,8 @@ import {
 	PRIVATE_NOTION_VERSION
 } from '$env/static/private';
 import { firestore } from '../../database/lib/firebase';
-import type { Bookmark, NotionBookmarkDatabase } from '../types';
+import type { Bookmark } from '../types/bookmark';
+import type { NotionBookmarkDatabase } from '../types/notion-bookmark-database';
 
 function getNotionHeaders() {
 	const headers = new Headers();
@@ -29,7 +30,7 @@ async function getBookmarksFromNotion(): Promise<Bookmark[]> {
 			headers: getNotionHeaders()
 		});
 
-		if (response.ok === false) {
+		if (!response.ok) {
 			console.error('Notion API error', await response.json());
 			return [];
 		}
@@ -86,7 +87,7 @@ async function getBookmarksFromFirestore(): Promise<Bookmark[]> {
 
 	const data = bookmarks.docs.map((doc) => doc.data() as Bookmark);
 
-	return data
+	return data;
 }
 
 async function replaceFirestoreBookmarks(bookmarks: Bookmark[]) {
@@ -98,16 +99,16 @@ async function replaceFirestoreBookmarks(bookmarks: Bookmark[]) {
 
 	await batch.commit();
 
-	return bookmarks
+	return bookmarks;
 }
 
 export async function getBookmarks(): Promise<Bookmark[]> {
 	const firestoreBookmarks = await getBookmarksFromFirestore();
 	const now = new Date();
-	const timeout = 24 * 60 * 60 * 1000; // 1 day
+	const timeout = 24 * 60 * 60 * 1000 * 7; // 7 days
 
 	const isCached = firestoreBookmarks.every((bookmark) => {
-		return now.getTime() - new Date(bookmark.updatedAt).getTime() < timeout
+		return now.getTime() - new Date(bookmark.updatedAt).getTime() < timeout;
 	});
 
 	if (isCached) {
@@ -118,5 +119,5 @@ export async function getBookmarks(): Promise<Bookmark[]> {
 
 	const bookmarks = await replaceFirestoreBookmarks(notionBookmarks);
 
-	return bookmarks
+	return bookmarks;
 }

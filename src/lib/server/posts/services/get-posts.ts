@@ -6,7 +6,8 @@ import { z } from 'zod';
 import { generateOgURL } from '../../../utils/og';
 import { detectLanguage } from '../lib/detect-language';
 import { rawPostSchema } from '../schemas/raw-post-schema';
-import type { PostBloatedMetadata, PostMetadata } from '../types';
+import type { PostBloatedMetadata } from '../types/post-bloated-metadata';
+import type { PostMetadata } from '../types/post-metadata';
 
 /**
  * Fetches all the posts metadata. It also adds the slug and the SEO metadata
@@ -94,10 +95,12 @@ async function getPosts(): Promise<PostBloatedMetadata[]> {
 }
 
 export const GLOBAL_POSTS: Readonly<PostBloatedMetadata[]> = Object.freeze(await getPosts());
-export const GLOBAL_POSTS_SLIM: Readonly<PostMetadata[]> = Object.freeze(GLOBAL_POSTS.map((post) => {
-	return {
-		...post,
-		renderedHtml: undefined,
-		filepath: undefined
-	};
-}));
+export const GLOBAL_POSTS_SLIM: Readonly<PostMetadata[]> = Object.freeze(
+	GLOBAL_POSTS.map((post) => {
+		return {
+			...post,
+			renderedHtml: undefined,
+			filepath: undefined
+		};
+	})
+);

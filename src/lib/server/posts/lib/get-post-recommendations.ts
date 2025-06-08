@@ -1,4 +1,4 @@
-import type { PostMetadata } from '../types';
+import type { PostMetadata } from '../types/post-metadata';
 
 export function getPostRecommendations(posts: Readonly<PostMetadata[]>, currentPostIndex: number) {
 	const recommendations: PostMetadata[] = [];
@@ -17,15 +17,15 @@ export function getPostRecommendations(posts: Readonly<PostMetadata[]>, currentP
 	const hasOneRecommendation = recommendations.length === 1;
 
 	if (currentPostIndex === 0) {
-		recommendations[0] = posts[currentPostIndex + 1]
-		recommendations[1] = posts[currentPostIndex + 2]
-		return recommendations
+		recommendations[0] = posts[currentPostIndex + 1];
+		recommendations[1] = posts[currentPostIndex + 2];
+		return recommendations;
 	}
 
 	if (currentPostIndex === posts.length - 1) {
-		recommendations[0] = posts[currentPostIndex - 1]
-		recommendations[1] = posts[currentPostIndex - 2]
-		return recommendations
+		recommendations[0] = posts[currentPostIndex - 1];
+		recommendations[1] = posts[currentPostIndex - 2];
+		return recommendations;
 	}
 
 	if (hasOneRecommendation && currentPostIndex > 0) {

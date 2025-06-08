@@ -1,5 +1,5 @@
 import { franc } from 'franc-min';
-import type { Language } from '../types';
+import type { Language } from '../types/language';
 
 export function detectLanguage(text: string): Language {
 	const lang = franc(text, {

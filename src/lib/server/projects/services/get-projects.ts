@@ -2,7 +2,7 @@ import { GITHUB_API_KEY } from '$env/static/private';
 import { PUBLIC_HOW_MANY_PROJECTS_TO_SHOW } from '$env/static/public';
 
 import { HIDE_LIST } from '../data/hide-list';
-import type { Project } from '../types';
+import type { Project } from '../types/project';
 import { getProjectImage } from './get-project-image';
 
 type GithubProjectsResponse = {

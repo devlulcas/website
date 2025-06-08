@@ -9,9 +9,5 @@ export const rawPostSchema = z.object({
 	draft: z.boolean().default(true),
 	cover: z.string().default(`${PUBLIC_HOST}/og.png`),
 	tags: z.array(z.string()).default([]),
-	categories: z
-		.array(z.string())
-		.default([])
+	categories: z.array(z.string()).default([])
 });
-
-export type RawPostSchema = z.infer<typeof rawPostSchema>;

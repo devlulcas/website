@@ -5,7 +5,7 @@ import type { Component } from 'svelte';
 import { render } from 'svelte/server';
 import { z } from 'zod';
 import { detectLanguage } from '../../posts/lib/detect-language';
-import type { Nugget } from '../types';
+import type { Nugget } from '../types/nugget';
 
 export async function getNuggets(): Promise<Nugget[]> {
 	const nuggetFiles = import.meta.glob('/content/nuggets/**/**/*.md');
@@ -28,13 +28,15 @@ export async function getNuggets(): Promise<Nugget[]> {
 
 		const defaultFunction = parsedData.default as Component;
 		const rendered = render(defaultFunction);
-		const language = detectLanguage(rendered.html);
+		let content = rendered.body;
 
-		const expectedReadingTime = readingTime(rendered.html, 300, language.code);
+		const language = detectLanguage(content);
 
-		const firstImage = parseHtml(rendered.html).querySelector('img');
+		const expectedReadingTime = readingTime(content, 300, language.code);
 
-		rendered.html = firstImage ? rendered.html.replace(firstImage.toString(), '') : rendered.html;
+		const firstImage = parseHtml(content).querySelector('img');
+
+		content = firstImage ? content.replace(firstImage.toString(), '') : content;
 
 		const imageSrc = firstImage?.attributes.src ?? website.image;
 
@@ -45,7 +47,7 @@ export async function getNuggets(): Promise<Nugget[]> {
 			language,
 			slug,
 			readingTime: expectedReadingTime.minutes,
-			content: rendered.html,
+			content,
 			image
 		};
 	});

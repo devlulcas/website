@@ -1,16 +1,3 @@
-export type Bookmark = {
-	resourceId: string;
-	name: string;
-	url: string;
-	about: {
-		en: string;
-		ptBr: string;
-	};
-	tags: string[];
-	searchTerms: string;
-	updatedAt: string;
-};
-
 export type NotionBookmarkDatabase = {
 	results: {
 		id: string;

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { locale } from '$/lib/i18n';
-	import type { FeaturedProject } from '$/lib/server/projects/types';
+	import type { FeaturedProject } from '$/lib/server/projects/types/featured-project';
 	import ProjectData from './project-data.svelte';
 
 	type Props = {

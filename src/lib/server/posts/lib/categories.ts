@@ -1,5 +1,5 @@
-import type { RawPostSchema } from '../schemas/raw-post-schema';
-import type { PostMetadata } from '../types';
+import type { RawPost } from '../types/raw-post';
+import type { PostMetadata } from '../types/post-metadata';
 
 /**
  * Sum up the posts metadata to get every unique category
@@ -7,7 +7,7 @@ import type { PostMetadata } from '../types';
  * @param posts the posts metadata
  * @returns the list of categories from the posts metadata
  */
-export function extractCategories(posts: Readonly<Pick<RawPostSchema, 'categories'>[]>): string[] {
+export function extractCategories(posts: Readonly<Pick<RawPost, 'categories'>[]>): string[] {
 	const categories = posts.map((post) => post.categories).flat();
 	return [...new Set(categories)];
 }
@@ -18,7 +18,10 @@ export function extractCategories(posts: Readonly<Pick<RawPostSchema, 'categorie
  * @param posts the posts metadata
  * @param category the category to filter
  */
-export function filterPostsByCategory(posts: Readonly<PostMetadata[]>, category: string): PostMetadata[] {
+export function filterPostsByCategory(
+	posts: Readonly<PostMetadata[]>,
+	category: string
+): PostMetadata[] {
 	const lowerCaseCategory = category.toLowerCase();
 
 	const lowerCaseCategories = posts
