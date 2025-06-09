@@ -35,6 +35,11 @@ export const navigationLinks = derived(page, ($page) => {
 			isActive: $page.url.pathname === '/nuggets'
 		},
 		{
+			label: 'common.header.recommendations',
+			href: '/recommendations',
+			isActive: $page.url.pathname === '/recommendations'
+		},
+		{
 			label: 'common.header.cv',
 			href: '/cv',
 			isActive: $page.url.pathname === '/cv'
