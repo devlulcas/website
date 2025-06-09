@@ -51,6 +51,16 @@ const config: Config = {
 			locale: 'en',
 			key: 'cv',
 			loader: async () => (await import('./en/cv.json')).default
+		},
+		{
+			locale: 'en',
+			key: 'recommendations',
+			loader: async () => (await import('./en/recommendations.json')).default
+		},
+		{
+			locale: 'pt',
+			key: 'recommendations',
+			loader: async () => (await import('./pt/recommendations.json')).default
 		}
 	]
 };
