@@ -32,7 +32,7 @@
 	<SkillCarousel class="col-span-12 col-start-1 lg:col-span-8 lg:col-start-3" />
 
 	<ContainerSection id="featured-projects" title={$t('home.featuredProjects.title')}>
-		<p class="text-lg text-muted-foreground">
+		<p class="text-muted-foreground text-lg">
 			{$t('home.featuredProjects.description')}
 		</p>
 
@@ -44,7 +44,7 @@
 	</ContainerSection>
 
 	<ContainerSection id="posts" title={$t('home.blog.title')}>
-		<p class="mb-4 text-lg text-muted-foreground">
+		<p class="text-muted-foreground mb-4 text-lg">
 			{$t('home.blog.description')}
 		</p>
 
@@ -52,7 +52,7 @@
 
 		<div
 			aria-hidden="true"
-			class="lc-line my-4 h-[1px] w-full rounded-full bg-brand-500 dark:bg-brand-800"
+			class="lc-line bg-brand-500 dark:bg-brand-800 my-4 h-[1px] w-full rounded-full"
 		></div>
 
 		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -75,9 +75,9 @@
 	<ContainerSection id="projects" title={$t('home.projects.title')}>
 		{#await data.lazy.projects}
 			<div
-				class="flex h-96 w-full animate-pulse items-center justify-center rounded border border-brand-500 bg-foreground/10 text-brand-500"
+				class="border-brand-500 bg-foreground/10 text-brand-500 flex h-96 w-full animate-pulse items-center justify-center rounded border"
 			>
-				<IconSvgSpinners3DotsBounce  />
+				<IconSvgSpinners3DotsBounce />
 			</div>
 		{:then projects}
 			{#if projects.length > 0}
@@ -88,7 +88,7 @@
 				</div>
 			{:else}
 				<p
-					class="flex h-96 w-full items-center justify-center rounded border-brand-500 bg-foreground/10 text-brand-500"
+					class="border-brand-500 bg-foreground/10 text-brand-500 flex h-96 w-full items-center justify-center rounded"
 				>
 					{$t('home.projects.noProjects')}
 				</p>
@@ -109,7 +109,7 @@
 	<ContainerSection id="demo-projects" title={'Demos'}>
 		{#await data.lazy.demos}
 			<div
-				class="flex h-96 w-full animate-pulse items-center justify-center rounded border border-brand-500 bg-foreground/10 text-brand-500"
+				class="border-brand-500 bg-foreground/10 text-brand-500 flex h-96 w-full animate-pulse items-center justify-center rounded border"
 			>
 				<Fa icon={faSpinner} class="animate-spin" />
 			</div>
@@ -122,7 +122,7 @@
 				</div>
 			{:else}
 				<p
-					class="flex h-96 w-full items-center justify-center rounded border-brand-500 bg-foreground/10 text-brand-500"
+					class="border-brand-500 bg-foreground/10 text-brand-500 flex h-96 w-full items-center justify-center rounded"
 				>
 					{$t('home.projects.noProjects')}
 				</p>

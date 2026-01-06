@@ -10,10 +10,10 @@
 </script>
 
 <header
-	class="sticky top-0 z-50 flex h-[--header-height] items-center justify-center gap-2 bg-gradient-to-b from-background/75 to-transparent md:container md:pt-1 print:h-0"
+	class="from-background/75 sticky top-0 z-50 flex h-[--header-height] items-center justify-center gap-2 bg-gradient-to-b to-transparent md:container md:pt-1 print:h-0"
 >
 	<nav
-		class="flex h-full w-full items-center justify-between gap-2 border bg-card/75 p-1 text-card-foreground backdrop-blur-md dark:bg-card/75 md:rounded-2xl print:hidden"
+		class="bg-card/75 text-card-foreground dark:bg-card/75 flex h-full w-full items-center justify-between gap-2 border p-1 backdrop-blur-md md:rounded-2xl print:hidden"
 	>
 		<a href="/">
 			<img class="h-10 w-10 rounded lg:rounded-xl" src={icon} alt="Lucas Alves Rego" />
@@ -28,9 +28,9 @@
 				title="Menu"
 				aria-label="Menu"
 				onclick={() => (open = !open)}
-				class="flex h-10 w-10 items-center justify-center rounded-lg border bg-background/90 text-foreground backdrop-blur-md md:rounded-xl lg:hidden"
+				class="bg-background/90 text-foreground flex h-10 w-10 items-center justify-center rounded-lg border backdrop-blur-md md:rounded-xl lg:hidden"
 			>
-				<IconDeviconSvelte/>
+				<IconDeviconSvelte />
 			</button>
 		</div>
 	</nav>

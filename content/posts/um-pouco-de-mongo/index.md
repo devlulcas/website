@@ -121,14 +121,12 @@ db.updateMany(
 ## TODO
 
 - Query API
-
   - [ ] CRUD operations
   - [ ] Aggregation pipeline
   - [ ] Combinar dados de coleções diferentes
   - [ ] Full text search
 
 - Data modeling
-
   - [ ] Modelagem de dados
   - [ ] Modelagem de relacionamentos
   - [ ] Referências

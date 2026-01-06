@@ -50,15 +50,11 @@
 			class="h-64 w-auto rounded-lg mix-blend-difference md:h-96"
 		/>
 		<nav class="mt-12 flex justify-center gap-2">
-			<SocialMediaLink href={website.social.github} title="/"
-				><IconUimGithubAlt/></SocialMediaLink
-			>
+			<SocialMediaLink href={website.social.github} title="/"><IconUimGithubAlt /></SocialMediaLink>
 			<SocialMediaLink href={website.social.linkedIn} title="/"
-				><IconUimLinkedinAlt/></SocialMediaLink
+				><IconUimLinkedinAlt /></SocialMediaLink
 			>
-			<SocialMediaLink href={website.social.email} title="/"
-				><IconDuoMessage2/></SocialMediaLink
-			>
+			<SocialMediaLink href={website.social.email} title="/"><IconDuoMessage2 /></SocialMediaLink>
 		</nav>
 	</div>
 
@@ -69,13 +65,13 @@
 		use:enhance={contactEnhance}
 	>
 		<div>
-			<label class="mb-2 flex w-full flex-col text-muted-foreground" for="name">
+			<label class="text-muted-foreground mb-2 flex w-full flex-col" for="name">
 				{$t('home.contact.form.name.label')}
 			</label>
 			<input
 				required
 				placeholder={$t('home.contact.form.name.placeholder')}
-				class="w-full rounded-lg border bg-background p-2 text-foreground"
+				class="bg-background text-foreground w-full rounded-lg border p-2"
 				type="text"
 				id="name"
 				name="name"
@@ -83,13 +79,13 @@
 		</div>
 
 		<div>
-			<label class="mb-2 flex w-full flex-col text-muted-foreground" for="email">
+			<label class="text-muted-foreground mb-2 flex w-full flex-col" for="email">
 				{$t('home.contact.form.email.label')}
 			</label>
 			<input
 				required
 				placeholder={$t('home.contact.form.email.placeholder')}
-				class="w-full rounded-lg border bg-background p-2 text-foreground"
+				class="bg-background text-foreground w-full rounded-lg border p-2"
 				type="email"
 				id="email"
 				name="email"
@@ -97,38 +93,38 @@
 		</div>
 
 		<div>
-			<label class="mb-2 flex w-full flex-col text-muted-foreground" for="message">
+			<label class="text-muted-foreground mb-2 flex w-full flex-col" for="message">
 				{$t('home.contact.form.message.label')}
 			</label>
 			<textarea
 				placeholder={$t('home.contact.form.message.placeholder')}
 				required
-				class="h-32 w-full rounded-lg border bg-background p-2 text-foreground"
+				class="bg-background text-foreground h-32 w-full rounded-lg border p-2"
 				id="message"
 				name="message"
 			></textarea>
 		</div>
 
 		{#if formState === 'submitting'}
-			<p class="mt-1 text-sm italic text-muted-foreground">
+			<p class="text-muted-foreground mt-1 text-sm italic">
 				{$t('home.contact.form.submit.submitting')}
 			</p>
 		{/if}
 
 		{#if formState === 'success'}
-			<p class="mt-1 text-sm italic text-green-500">
+			<p class="mt-1 text-sm text-green-500 italic">
 				{formResultMessage ? formResultMessage : $t('home.contact.form.submit.success')}
 			</p>
 		{/if}
 
 		{#if formState === 'failure'}
-			<p class="mt-1 text-sm italic text-red-500">
+			<p class="mt-1 text-sm text-red-500 italic">
 				{formResultMessage ? formResultMessage : $t('home.contact.form.submit.failure')}
 			</p>
 		{/if}
 
 		<button
-			class="lc-gradient z-10 mt-auto h-12 w-full rounded-lg p-2 font-bold text-white focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-2 focus:ring-offset-white disabled:cursor-not-allowed disabled:bg-brand-400 disabled:opacity-50 disabled:hover:bg-brand-400"
+			class="lc-gradient focus:ring-brand-400 disabled:bg-brand-400 disabled:hover:bg-brand-400 z-10 mt-auto h-12 w-full rounded-lg p-2 font-bold text-white focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
 			type="submit"
 			disabled={formState === 'submitting'}
 		>

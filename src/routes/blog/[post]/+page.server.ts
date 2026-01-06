@@ -6,9 +6,7 @@ import type { PageServerLoad } from './$types';
 export const load: PageServerLoad = async ({ params }) => {
 	const { post: slug } = params;
 
-
-	const currentPostIndex = GLOBAL_POSTS_SLIM
-		.findIndex((post) => slug.toLowerCase() === post.slug);
+	const currentPostIndex = GLOBAL_POSTS_SLIM.findIndex((post) => slug.toLowerCase() === post.slug);
 
 	if (currentPostIndex === -1) {
 		error(404, 'Post not found');

@@ -14,16 +14,16 @@
 	href={blog.url}
 	target="_blank"
 	rel="noopener noreferrer"
-	class="group relative block overflow-hidden rounded-lg bg-card p-4 transition-all duration-300 hover:shadow-lg"
+	class="group bg-card relative block overflow-hidden rounded-lg p-4 transition-all duration-300 hover:shadow-lg"
 	onmouseenter={() => (isHovered = true)}
 	onmouseleave={() => (isHovered = false)}
 >
 	<div class="relative aspect-video w-full overflow-hidden rounded-lg">
 		{#if !blog.metadata?.image || imageState === 'error'}
-			<div class="flex h-full w-full items-center justify-center bg-muted">
+			<div class="bg-muted flex h-full w-full items-center justify-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-12 w-12 text-muted-foreground"
+					class="text-muted-foreground h-12 w-12"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke="currentColor"
@@ -53,20 +53,20 @@
 		</h3>
 
 		{#if blog.metadata?.description}
-			<p class="line-clamp-2 text-sm text-muted-foreground">
+			<p class="text-muted-foreground line-clamp-2 text-sm">
 				{blog.metadata.description}
 			</p>
 		{/if}
 
 		{#if blog.metadata?.siteName}
-			<p class="text-xs text-muted-foreground">{blog.metadata.siteName}</p>
+			<p class="text-muted-foreground text-xs">{blog.metadata.siteName}</p>
 		{/if}
 
 		{#if blog.tags.length > 0}
 			<div class="flex flex-wrap gap-2 pt-2">
 				{#each blog.tags as tag}
 					<span
-						class="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary"
+						class="bg-primary/10 text-primary inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium"
 					>
 						{tag}
 					</span>
@@ -76,6 +76,6 @@
 	</div>
 
 	<div
-		class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+		class="from-background/80 absolute inset-0 bg-gradient-to-t to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 	></div>
 </a>

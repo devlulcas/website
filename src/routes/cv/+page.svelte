@@ -26,7 +26,7 @@
 
 	<nav class="my-5 flex flex-wrap gap-3">
 		<a
-			class="flex w-fit items-center justify-center gap-2 overflow-hidden rounded-md border bg-primary-foreground px-4 py-2 text-primary"
+			class="bg-primary-foreground text-primary flex w-fit items-center justify-center gap-2 overflow-hidden rounded-md border px-4 py-2"
 			href={'https://' + $t('cv.website')}
 			target="_blank"
 			rel="noopener noreferrer"
@@ -36,7 +36,7 @@
 			<span class="hidden">{$t('cv.website')}</span>
 		</a>
 		<a
-			class="flex w-fit items-center justify-center gap-2 overflow-hidden rounded-md border bg-primary-foreground px-4 py-2 text-primary"
+			class="bg-primary-foreground text-primary flex w-fit items-center justify-center gap-2 overflow-hidden rounded-md border px-4 py-2"
 			href={'https://' + $t('cv.github')}
 			target="_blank"
 			rel="noopener noreferrer"
@@ -46,7 +46,7 @@
 			<span class="hidden">{$t('cv.github')}</span>
 		</a>
 		<a
-			class="flex w-fit items-center justify-center gap-2 overflow-hidden rounded-md border bg-primary-foreground px-4 py-2 text-primary"
+			class="bg-primary-foreground text-primary flex w-fit items-center justify-center gap-2 overflow-hidden rounded-md border px-4 py-2"
 			href={'https://' + $t('cv.linkedin')}
 			target="_blank"
 			rel="noopener noreferrer"
@@ -58,32 +58,32 @@
 	</nav>
 
 	<section class="mt-4">
-		<h2 class="border-l-[3px] border-brand-700 pl-4 text-2xl font-bold dark:border-brand-500">
+		<h2 class="border-brand-700 dark:border-brand-500 border-l-[3px] pl-4 text-2xl font-bold">
 			{$t('cv.experience.title')}
 		</h2>
-		<ul class="ml-[1px] mt-2 border-l border-brand-600 pl-4 dark:border-brand-400">
+		<ul class="border-brand-600 dark:border-brand-400 mt-2 ml-[1px] border-l pl-4">
 			{#each translatedExperiences as { company, period, projects, warning }}
 				<li class="mt-2">
-					<h3 class="flex h-8 items-center text-lg font-bold text-brand-600 dark:text-brand-500">
+					<h3 class="text-brand-600 dark:text-brand-500 flex h-8 items-center text-lg font-bold">
 						{company}
 
 						{#if warning}
 							<p
-								class="ml-1 flex h-5 w-fit items-center gap-1 rounded-full border border-yellow-200 bg-yellow-50 px-2 text-sm font-normal lowercase text-yellow-500 dark:border-yellow-800 dark:bg-yellow-500/20 dark:text-yellow-300"
+								class="ml-1 flex h-5 w-fit items-center gap-1 rounded-full border border-yellow-200 bg-yellow-50 px-2 text-sm font-normal text-yellow-500 lowercase dark:border-yellow-800 dark:bg-yellow-500/20 dark:text-yellow-300"
 							>
 								<IconUimExclamationTriangle class="size-3" />
 								{warning}
 							</p>
 						{/if}
 					</h3>
-					<p class="text-sm text-brand-600">{period}</p>
+					<p class="text-brand-600 text-sm">{period}</p>
 
 					<ul class="mt-2 flex flex-col gap-4 divide-y">
 						{#each projects as { description, name, stack }}
 							<li class="relative py-4">
 								<h4 class="text-base font-bold">{name}</h4>
 
-								<p class="my-1 mb-4 text-primary/75">
+								<p class="text-primary/75 my-1 mb-4">
 									{description}
 								</p>
 
@@ -92,7 +92,7 @@
 
 									{#each stack as tech}
 										<li
-											class="flex h-5 items-center whitespace-nowrap text-nowrap rounded-full bg-muted px-3 text-xs leading-none text-muted-foreground"
+											class="bg-muted text-muted-foreground flex h-5 items-center rounded-full px-3 text-xs leading-none text-nowrap whitespace-nowrap"
 										>
 											{tech}
 										</li>
@@ -107,13 +107,13 @@
 	</section>
 
 	<section class="mt-4">
-		<h2 class="border-l-[3px] border-brand-700 pl-4 text-2xl font-bold dark:border-brand-500">
+		<h2 class="border-brand-700 dark:border-brand-500 border-l-[3px] pl-4 text-2xl font-bold">
 			{$t('cv.education.title')}
 		</h2>
 
-		<ul class="ml-[1px] mt-2 border-l border-brand-600 pl-4 dark:border-brand-400">
+		<ul class="border-brand-600 dark:border-brand-400 mt-2 ml-[1px] border-l pl-4">
 			<li class="mt-2">
-				<p class="mt-2 text-primary/75">{$t('cv.education.education')}</p>
+				<p class="text-primary/75 mt-2">{$t('cv.education.education')}</p>
 			</li>
 			<!-- <li class="mt-2 flex flex-wrap gap-2">
 				{#each $t('cv.education.courses').split(', ') as it}

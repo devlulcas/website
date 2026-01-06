@@ -34,7 +34,7 @@ const i18nHookHandle: Handle = ({ event, resolve }) => {
 		const currentLanguageSetting = event.cookies.get('lang');
 		// Pick language by priority
 		const selectedLang = newLanguageSetting || currentLanguageSetting || defaultLanguage || 'en';
-		lang = selectedLang === 'pt' ? 'pt' : 'en'
+		lang = selectedLang === 'pt' ? 'pt' : 'en';
 	} catch (error) {
 		console.error('Error parsing language:', error);
 	}

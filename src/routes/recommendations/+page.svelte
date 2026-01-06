@@ -20,16 +20,16 @@
 
 <main id="main-content" class="lc-grid min-h-[--view-height] px-4 pb-8 lg:px-8">
 	<ContainerSection id="blogs" title={$t('recommendations.blogs.title')}>
-		<p class="mb-4 text-lg text-muted-foreground">
+		<p class="text-muted-foreground mb-4 text-lg">
 			{data.blogs.length}
 			{$t('recommendations.blogs.title')}
 		</p>
 
-		<div class="lc-gradient w-full rounded-lg p-[2px] ring-brand-500 focus-within:ring-2">
+		<div class="lc-gradient ring-brand-500 w-full rounded-lg p-[2px] focus-within:ring-2">
 			<label class="sr-only" for="search-blog">Search blog</label>
 			<input
 				placeholder="Search blog"
-				class="flex w-full items-center rounded-md bg-background p-2 outline-none"
+				class="bg-background flex w-full items-center rounded-md p-2 outline-none"
 				id="search-blog"
 				name="search"
 				type="text"
@@ -38,12 +38,12 @@
 		</div>
 
 		{#if searchStore.filtered.length === 0}
-			<p class="mt-4 text-lg text-muted-foreground">
+			<p class="text-muted-foreground mt-4 text-lg">
 				{$t('recommendations.blogs.noResults')}
 			</p>
 		{/if}
 
-			<div class="lc-card-grid min-h-[--view-height]">
+		<div class="lc-card-grid min-h-[--view-height]">
 			{#each searchStore.filtered as blog}
 				<BlogCard {blog} />
 			{/each}

@@ -7,44 +7,44 @@ import path from 'node:path';
 export const prerender = true;
 
 export async function GET() {
-  const categories = extractCategories(GLOBAL_POSTS_SLIM);
+	const categories = extractCategories(GLOBAL_POSTS_SLIM);
 
-  // read everything in the src/routes folder, then only considers the ones with a +page.svelte file
-  const routes = fs
-    .readdirSync(path.join('src', 'routes'), { recursive: true })
-    .filter((file) => typeof file === 'string' && file.endsWith('+page.svelte'))
-    .map((file) => {
-      if (typeof file !== 'string') {
-        throw new Error('File is not a string');
-      }
+	// read everything in the src/routes folder, then only considers the ones with a +page.svelte file
+	const routes = fs
+		.readdirSync(path.join('src', 'routes'), { recursive: true })
+		.filter((file) => typeof file === 'string' && file.endsWith('+page.svelte'))
+		.map((file) => {
+			if (typeof file !== 'string') {
+				throw new Error('File is not a string');
+			}
 
-      const pathname = file.replace(/\/\+page\.svelte|\+page\.svelte/, '');
+			const pathname = file.replace(/\/\+page\.svelte|\+page\.svelte/, '');
 
-      const route = website.url + '/' + pathname;
+			const route = website.url + '/' + pathname;
 
-      if (route.includes('[post]')) {
-        return GLOBAL_POSTS_SLIM.map(({ slug, date }) => ({
-          url: route.replace('[post]', slug),
-          date: new Date(date).toISOString()
-        }));
-      }
+			if (route.includes('[post]')) {
+				return GLOBAL_POSTS_SLIM.map(({ slug, date }) => ({
+					url: route.replace('[post]', slug),
+					date: new Date(date).toISOString()
+				}));
+			}
 
-      if (route.includes('[category]')) {
-        return categories.map((slug) => ({
-          url: route.replace('[category]', slug),
-          date: new Date().toISOString()
-        }));
-      }
+			if (route.includes('[category]')) {
+				return categories.map((slug) => ({
+					url: route.replace('[category]', slug),
+					date: new Date().toISOString()
+				}));
+			}
 
-      return {
-        url: route,
-        date: new Date().toISOString()
-      };
-    })
-    .flat();
+			return {
+				url: route,
+				date: new Date().toISOString()
+			};
+		})
+		.flat();
 
-  const urls = routes.map((route) => {
-    return `
+	const urls = routes.map((route) => {
+		return `
     <url>
       <loc>${route.url}</loc>
       <lastmod>${route.date}</lastmod>
@@ -52,10 +52,10 @@ export async function GET() {
       <priority>0.5</priority>
     </url>
   `;
-  });
+	});
 
-  return new Response(
-    `
+	return new Response(
+		`
 		<?xml version="1.0" encoding="UTF-8" ?>
 		<urlset
 			xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
@@ -73,10 +73,10 @@ export async function GET() {
       </url>
       ${urls.join('')}
 		</urlset>`.trim(),
-    {
-      headers: {
-        'Content-Type': 'application/xml'
-      }
-    }
-  );
+		{
+			headers: {
+				'Content-Type': 'application/xml'
+			}
+		}
+	);
 }

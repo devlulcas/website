@@ -11,14 +11,14 @@
 <a
 	href={skill.url}
 	title={skill.name}
-	class="bg-dark/10 relative flex aspect-square w-20 cursor-pointer select-none items-center justify-center rounded dark:border dark:bg-white/10 lg:w-28"
+	class="bg-dark/10 relative flex aspect-square w-20 cursor-pointer items-center justify-center rounded select-none lg:w-28 dark:border dark:bg-white/10"
 >
 	<div
 		class="absolute inset-0 z-10 flex h-full w-full flex-col items-center justify-center backdrop-blur-md"
 	>
 		<img src={skill.image} alt={skill.name} class="aspect-square w-1/2" />
 
-		<p class="mt-1.5 w-full rotate-3 text-center text-xs text-muted-foreground">
+		<p class="text-muted-foreground mt-1.5 w-full rotate-3 text-center text-xs">
 			{skill.name}
 		</p>
 	</div>

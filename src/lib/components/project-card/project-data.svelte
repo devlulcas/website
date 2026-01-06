@@ -38,28 +38,28 @@
 	{name}
 </h3>
 
-<p class="mt-1 line-clamp-2 text-sm text-muted-foreground">
+<p class="text-muted-foreground mt-1 line-clamp-2 text-sm">
 	{description}
 </p>
 
 {#if details && details.length > 0}
-	<blockquote class="mt-1 line-clamp-5 border-l-2 pl-2 text-sm italic text-muted-foreground">
+	<blockquote class="text-muted-foreground mt-1 line-clamp-5 border-l-2 pl-2 text-sm italic">
 		{details}
 	</blockquote>
 {/if}
 
 {#if tags.length > 0}
-	<div class="mb-3 mt-auto flex flex-wrap gap-1 pt-2">
+	<div class="mt-auto mb-3 flex flex-wrap gap-1 pt-2">
 		{#each tags as tag}
 			{@const Icon = renderIcon(tag)}
 			<span class="flex items-center text-xs">
 				<span
-					class="flex size-5 items-center justify-center rounded-l bg-muted text-muted-foreground"
+					class="bg-muted text-muted-foreground flex size-5 items-center justify-center rounded-l"
 				>
 					<Icon class="size-2.5" />
 				</span>
 				<span
-					class="flex h-5 items-center justify-center rounded-r bg-muted pr-1 lowercase leading-none text-muted-foreground"
+					class="bg-muted text-muted-foreground flex h-5 items-center justify-center rounded-r pr-1 leading-none lowercase"
 				>
 					{tag}
 				</span>

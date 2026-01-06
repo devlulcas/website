@@ -12,7 +12,7 @@
 </script>
 
 <div class="flex h-full flex-col">
-	<h3 class="mb-2 text-xl font-bold text-card-foreground">
+	<h3 class="text-card-foreground mb-2 text-xl font-bold">
 		{bookmark.name}
 	</h3>
 

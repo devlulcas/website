@@ -31,7 +31,7 @@
 		<img
 			src={unitedStatesOfAmericaSvg}
 			alt="USA Flag"
-			class="h-5 w-5 rounded-full {$locale === 'en' ? 'border-2 border-brand-600 p-[1px]' : ''}"
+			class="h-5 w-5 rounded-full {$locale === 'en' ? 'border-brand-600 border-2 p-[1px]' : ''}"
 		/>
 	</button>
 
@@ -43,7 +43,7 @@
 		<img
 			src={brazilSvg}
 			alt="Brazil flag"
-			class="h-5 w-5 rounded-full {$locale === 'pt' ? 'border-2 border-brand-600 p-[1px]' : ''}"
+			class="h-5 w-5 rounded-full {$locale === 'pt' ? 'border-brand-600 border-2 p-[1px]' : ''}"
 		/>
 	</button>
 </form>

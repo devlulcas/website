@@ -15,7 +15,7 @@
 
 <a
 	href="#main-content"
-	class="sr-only left-1 top-1 bg-brand-600 text-white focus:not-sr-only focus:fixed focus:p-3"
+	class="bg-brand-600 sr-only top-1 left-1 text-white focus:not-sr-only focus:fixed focus:p-3"
 >
 	{$t('common.skipToContent')}
 </a>

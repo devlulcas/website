@@ -41,7 +41,7 @@
 </h3>
 
 {#if featured}
-	<p class="text-md mt-2 line-clamp-3 h-[3lh] text-muted-foreground">
+	<p class="text-md text-muted-foreground mt-2 line-clamp-3 h-[3lh]">
 		{post.excerpt}
 	</p>
 {/if}
@@ -50,7 +50,7 @@
 	<IconFaHashtag class="text-muted-foreground group-hover:text-brand-600" />
 
 	{#each post.categories as category}
-		<a href="/blog/categories/{category}" class="text-sm text-muted-foreground hover:underline">
+		<a href="/blog/categories/{category}" class="text-muted-foreground text-sm hover:underline">
 			{category}
 		</a>
 	{/each}

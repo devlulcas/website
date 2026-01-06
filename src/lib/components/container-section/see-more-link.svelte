@@ -27,7 +27,7 @@
 	{href}
 	{target}
 	{rel}
-	class="mt-8 flex items-center gap-2 rounded-lg border px-4 py-2 text-accent-foreground"
+	class="text-accent-foreground mt-8 flex items-center gap-2 rounded-lg border px-4 py-2"
 >
 	{@render props.startIcon?.()}
 

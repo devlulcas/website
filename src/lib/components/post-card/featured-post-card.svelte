@@ -24,7 +24,7 @@
 	</a>
 
 	<div class="lc-gradient col-span-3 rounded-lg p-[2px] lg:col-span-1">
-		<section class="flex h-full flex-col rounded-md border bg-background p-3 shadow-lg">
+		<section class="bg-background flex h-full flex-col rounded-md border p-3 shadow-lg">
 			<PostData {post} featured />
 		</section>
 	</div>

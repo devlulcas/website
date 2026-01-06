@@ -11,7 +11,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		<IconUimLinkedinAlt/>
+		<IconUimLinkedinAlt />
 		Lucas Alves Rego
 	</a>
 
@@ -21,7 +21,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		<IconUimGithubAlt/>
+		<IconUimGithubAlt />
 		github.com/devlulcas
 	</a>
 </p>

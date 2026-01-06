@@ -28,7 +28,7 @@
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<IconUimGithub/>
+				<IconUimGithub />
 				<span>Github</span>
 			</a>
 
@@ -39,7 +39,7 @@
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<IconUimLinkedin/>
+				<IconUimLinkedin />
 				<span>LinkedIn</span>
 			</a>
 		</div>
@@ -50,13 +50,13 @@
 				href="#contact"
 			>
 				<span class="font-bold"> {$t('home.about.callToAction.contact')} </span>
-				<IconDuoMessage2/>
+				<IconDuoMessage2 />
 			</a>
 
 			<a href="/about" class="mt-2 flex items-center gap-2 text-neutral-700 dark:text-neutral-300">
 				{$t('home.about.callToAction.or')}
 				{$t('home.about.callToAction.seeMore')}
-				<IconUimAngleRight/>
+				<IconUimAngleRight />
 			</a>
 		</p>
 	</article>
@@ -66,7 +66,7 @@
 			<Eye />
 
 			<div class="lc-image">
-				<IconHeroiconsSolidCode/>
+				<IconHeroiconsSolidCode />
 			</div>
 		</div>
 	</div>
@@ -103,7 +103,7 @@
 			transform: rotate(360deg);
 		}
 	}
-	
+
 	.lc-image {
 		position: absolute;
 		top: 50%;
@@ -126,7 +126,8 @@
 			position: absolute;
 			inset: 0;
 			background-size: 1em 1em;
-			background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em),
+			background-image:
+				linear-gradient(rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em),
 				linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em);
 		}
 	}

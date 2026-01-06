@@ -9,7 +9,7 @@
 </script>
 
 <a
-	class="rounded-full border border-foreground/25 bg-foreground/10 p-4 hover:bg-foreground/25"
+	class="border-foreground/25 bg-foreground/10 hover:bg-foreground/25 rounded-full border p-4"
 	{href}
 	target="_blank"
 	rel="noopener noreferrer"

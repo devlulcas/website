@@ -40,7 +40,7 @@
 					onclick={closeModal}
 					in:fly={{ y: 100, duration: 350, delay: getDelay(index) }}
 					href={link.href}
-					class="flex h-12 items-center rounded-xl border bg-background p-2 px-4 text-sm font-medium text-foreground"
+					class="bg-background text-foreground flex h-12 items-center rounded-xl border p-2 px-4 text-sm font-medium"
 				>
 					{$t(link.label)}
 				</a>

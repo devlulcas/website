@@ -15,9 +15,9 @@
 
 <article class="flex w-full flex-col overflow-hidden rounded-xl border shadow-lg">
 	<a href={project.url ?? project.code} target="_blank" class="relative h-2/3">
-		<div class="absolute left-2 top-2 z-10 flex w-1/3 flex-wrap gap-1">
+		<div class="absolute top-2 left-2 z-10 flex w-1/3 flex-wrap gap-1">
 			{#each languages as language}
-				<span class="w-fit rounded border bg-background px-2 py-1 text-xs text-foreground">
+				<span class="bg-background text-foreground w-fit rounded border px-2 py-1 text-xs">
 					{language.name}
 				</span>
 			{/each}
@@ -25,7 +25,7 @@
 
 		<span
 			title={$t('common.projects.visit')}
-			class="absolute right-2 top-2 z-10 flex aspect-square w-8 items-center justify-center rounded-md border bg-background text-foreground"
+			class="bg-background text-foreground absolute top-2 right-2 z-10 flex aspect-square w-8 items-center justify-center rounded-md border"
 		>
 			<IconUimArrowUpRight class="tranform -rotate-45" />
 		</span>
@@ -39,7 +39,7 @@
 		</div>
 	</a>
 
-	<div class="flex h-40 flex-col bg-card p-3 text-card-foreground">
+	<div class="bg-card text-card-foreground flex h-40 flex-col p-3">
 		<ProjectData
 			name={project.name}
 			description={project.description}

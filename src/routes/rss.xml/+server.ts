@@ -4,10 +4,10 @@ import { GLOBAL_POSTS } from '$/lib/server/posts/services/get-posts';
 export const prerender = true;
 
 type FeedItem = {
-  title: string;
-  slug: string;
-  publishDate: string;
-  content: string;
+	title: string;
+	slug: string;
+	publishDate: string;
+	content: string;
 };
 
 const feedUpdated = new Date();
@@ -25,8 +25,8 @@ const xml = (posts: FeedItem[]) => `<?xml version="1.0" encoding="utf-8"?>
     <subtitle>${website.description}</subtitle>
     <generator>SvelteKit</generator>
 ${posts
-    .map(
-      (post) => `    <entry>
+	.map(
+		(post) => `    <entry>
         <title>${post.title}</title>
         <link href="${website.url}/blog/${post.slug}/"/>
         <id>${website.url}/blog/${post.slug}/</id>
@@ -34,25 +34,24 @@ ${posts
         <published>${new Date(post.publishDate).toISOString()}</published>
         <content type="html"><![CDATA[${post.content}]]></content>
       </entry>`
-    )
-    .join('\n')}
+	)
+	.join('\n')}
   </feed>`;
 
-
 export async function GET() {
-  const feedItems: FeedItem[] = GLOBAL_POSTS.map((post) => ({
-    title: post.title,
-    slug: post.slug,
-    publishDate: post.date,
-    content: post.renderedHtml,
-  }));
+	const feedItems: FeedItem[] = GLOBAL_POSTS.map((post) => ({
+		title: post.title,
+		slug: post.slug,
+		publishDate: post.date,
+		content: post.renderedHtml
+	}));
 
-  const headers = {
-    'Cache-Control': 'max-age=0, s-maxage=3600',
-    'Content-Type': 'application/xml'
-  };
+	const headers = {
+		'Cache-Control': 'max-age=0, s-maxage=3600',
+		'Content-Type': 'application/xml'
+	};
 
-  const body = xml(feedItems);
+	const body = xml(feedItems);
 
-  return new Response(body, { headers });
+	return new Response(body, { headers });
 }

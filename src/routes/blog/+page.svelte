@@ -29,7 +29,7 @@
 			</div>
 
 			<section class="flex w-full flex-col justify-center">
-				<h1 class="text-lg text-muted-foreground">{$t('blog.presentation')}</h1>
+				<h1 class="text-muted-foreground text-lg">{$t('blog.presentation')}</h1>
 
 				<p class="mt-4 text-xl">
 					{$t('blog.welcome')}
@@ -40,7 +40,7 @@
 						<li>
 							<a
 								href={`/blog/category/${category}`}
-								class="rounded-md border-2 bg-card px-2 py-1 font-mono text-sm hover:bg-brand-400 hover:text-brand-900"
+								class="bg-card hover:bg-brand-400 hover:text-brand-900 rounded-md border-2 px-2 py-1 font-mono text-sm"
 							>
 								{category}
 							</a>

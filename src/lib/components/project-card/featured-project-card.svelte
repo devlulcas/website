@@ -14,7 +14,7 @@
 </script>
 
 <article class="flex w-full flex-col gap-2 lg:h-80 lg:flex-row lg:even:flex-row-reverse">
-	<div class="flex min-h-[200px] w-full select-none gap-2 lg:w-4/6">
+	<div class="flex min-h-[200px] w-full gap-2 select-none lg:w-4/6">
 		{#each project.images as image, index}
 			<button
 				onclick={() => (expandedImageIndex = index)}
@@ -31,7 +31,7 @@
 		{/each}
 	</div>
 
-	<div class="flex flex-col rounded-xl border bg-card p-3 text-card-foreground lg:w-2/6">
+	<div class="bg-card text-card-foreground flex flex-col rounded-xl border p-3 lg:w-2/6">
 		<ProjectData
 			name={project.name}
 			url={project.url}

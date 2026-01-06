@@ -5,28 +5,28 @@
 </script>
 
 <footer
-	class="flex h-[--footer-height] items-center justify-center p-3 text-brand-700 print:hidden"
+	class="text-brand-700 flex h-[--footer-height] items-center justify-center p-3 print:hidden"
 >
 	<a
-		class="flex h-10 w-10 items-center justify-center gap-2 rounded bg-white bg-opacity-0 hover:bg-opacity-50"
+		class="bg-opacity-0 hover:bg-opacity-50 flex h-10 w-10 items-center justify-center gap-2 rounded bg-white"
 		href={website.social.linkedIn}
 		title="LinkedIn"
 		aria-label="LinkedIn"
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		<IconUimLinkedin/>
+		<IconUimLinkedin />
 	</a>
 
 	<a
-		class="flex h-10 w-10 items-center justify-center gap-2 rounded bg-white bg-opacity-0 hover:bg-opacity-50"
+		class="bg-opacity-0 hover:bg-opacity-50 flex h-10 w-10 items-center justify-center gap-2 rounded bg-white"
 		href={website.social.github}
 		target="_blank"
 		title="GitHub"
 		aria-label="GitHub"
 		rel="noopener noreferrer"
 	>
-		<IconUimGithub/>
+		<IconUimGithub />
 	</a>
 </footer>
 
@@ -55,7 +55,8 @@
 			position: absolute;
 			inset: 0;
 			background-size: 1em 1em;
-			background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em),
+			background-image:
+				linear-gradient(rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em),
 				linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0.1em, transparent 0.1em);
 		}
 	}

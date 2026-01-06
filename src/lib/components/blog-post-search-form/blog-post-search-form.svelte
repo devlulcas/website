@@ -20,11 +20,11 @@
 				id="search-blog-post"
 				name="search"
 				placeholder={$t('blog.search')}
-				class="w-full bg-background p-2 outline-none"
+				class="bg-background w-full p-2 outline-none"
 				defaultValue={page.url.searchParams.get('search') ?? ''}
 			/>
 
-			<button title="Search" type="submit" class="h-10 w-10 bg-background p-2 focus:bg-transparent">
+			<button title="Search" type="submit" class="bg-background h-10 w-10 p-2 focus:bg-transparent">
 				<IconFaSearch />
 			</button>
 		</div>

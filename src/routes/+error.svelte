@@ -18,7 +18,7 @@
 
 	<a
 		href="/"
-		class="lc-background rounded-md bg-brand-700 px-4 py-2 text-center text-lg font-bold text-white shadow-md transition-all duration-300 hover:bg-brand-700"
+		class="lc-background bg-brand-700 hover:bg-brand-700 rounded-md px-4 py-2 text-center text-lg font-bold text-white shadow-md transition-all duration-300"
 	>
 		{$t('common.goBackHome')}
 	</a>

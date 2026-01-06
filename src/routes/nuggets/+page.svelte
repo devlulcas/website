@@ -26,9 +26,9 @@
 
 				<div class="lc-content flex w-full flex-col md:flex-row-reverse">
 					<div class="lc-tab relative flex flex-col justify-start md:items-center">
-						<div class="left-full top-0 h-10 w-fit origin-top-left md:absolute md:rotate-90">
+						<div class="top-0 left-full h-10 w-fit origin-top-left md:absolute md:rotate-90">
 							<p
-								class="flex h-10 w-fit translate-y-[1x] items-center justify-center text-nowrap rounded-t-lg border border-b-2 border-b-background px-3 font-serif italic"
+								class="border-b-background flex h-10 w-fit translate-y-[1x] items-center justify-center rounded-t-lg border border-b-2 px-3 font-serif text-nowrap italic"
 							>
 								{title}
 								<IconFaCircle class="mx-2 size-1" />

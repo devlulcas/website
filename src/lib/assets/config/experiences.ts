@@ -30,7 +30,7 @@ export const experiences = {
 						'React',
 						'React Hook Forms',
 						'MUI',
-						'Storybook',
+						'Storybook'
 					]
 				}
 			]
@@ -42,7 +42,8 @@ export const experiences = {
 			projects: [
 				{
 					name: 'Sistema de venda e gerenciamento de info-produtos',
-					description: 'Aplicações administrativas, de gerenciamento de conteúdos e vendas para SaaS do ramo de info-produtos',
+					description:
+						'Aplicações administrativas, de gerenciamento de conteúdos e vendas para SaaS do ramo de info-produtos',
 					stack: [
 						'NextJS',
 						'Tanstack Query',
@@ -50,7 +51,7 @@ export const experiences = {
 						'Typescript',
 						'React',
 						'React Hook Forms',
-						'Chackra UI',
+						'Chackra UI'
 					]
 				}
 			]
@@ -69,7 +70,7 @@ export const experiences = {
 						'Typescript',
 						'Sistemas de pagamentos',
 						'React',
-						'React Hook Forms',
+						'React Hook Forms'
 					]
 				},
 				{
@@ -83,7 +84,7 @@ export const experiences = {
 						'Typescript',
 						'React',
 						'Kotlin',
-						'Expo',
+						'Expo'
 					]
 				}
 			]
@@ -94,7 +95,8 @@ export const experiences = {
 			projects: [
 				{
 					name: 'Plataforma de eventos esportivos',
-					description: 'Plataforma online de eventos esportivos, focada na venda de ingressos para eventos locais',
+					description:
+						'Plataforma online de eventos esportivos, focada na venda de ingressos para eventos locais',
 					stack: [
 						'NextJS',
 						'TipTap',
@@ -110,7 +112,8 @@ export const experiences = {
 				},
 				{
 					name: 'Dantas Bikes',
-					description: 'Plataforma de e-commerce focada no setor de ciclismo integrado com sistemas ERP internos da empresa. Trabalhei a maior parte do tempo no desenvolvimento front-end da aplicação, implementando funcionalidades como carrinho de compras, autenticação, pagamento, listagem de seções, filtros, e fornecendo ajuda e orientação a outros desenvolvedores e estagiários no uso de tecnologias modernas e melhores práticas de desenvolvimento',
+					description:
+						'Plataforma de e-commerce focada no setor de ciclismo integrado com sistemas ERP internos da empresa. Trabalhei a maior parte do tempo no desenvolvimento front-end da aplicação, implementando funcionalidades como carrinho de compras, autenticação, pagamento, listagem de seções, filtros, e fornecendo ajuda e orientação a outros desenvolvedores e estagiários no uso de tecnologias modernas e melhores práticas de desenvolvimento',
 					stack: [
 						'NextJS',
 						'Tanstack Query',
@@ -124,12 +127,14 @@ export const experiences = {
 				},
 				{
 					name: 'Gestão de contas a pagar',
-					description: 'Desenvolvimento de uma aplicação para gerenciamento de contas a pagar onde mantive uma versão interna de uma biblioteca para validação de notas fiscais (boleto)',
+					description:
+						'Desenvolvimento de uma aplicação para gerenciamento de contas a pagar onde mantive uma versão interna de uma biblioteca para validação de notas fiscais (boleto)',
 					stack: ['Vite', 'React', 'React Hook Forms', 'Recoil', 'PHP', 'Firebird']
 				},
 				{
 					name: 'Luthier PHP Web Framework',
-					description: 'Desenvolvimento de um framework PHP para desenvolvimento de aplicações web, especialmente APIs REST, com foco em performance e simplicidade de uso',
+					description:
+						'Desenvolvimento de um framework PHP para desenvolvimento de aplicações web, especialmente APIs REST, com foco em performance e simplicidade de uso',
 					stack: ['PHP', 'PHP PDO', 'Firebird']
 				}
 			]
@@ -150,7 +155,7 @@ export const experiences = {
 						'React',
 						'React Hook Forms',
 						'MUI',
-						'Storybook',
+						'Storybook'
 					]
 				}
 			]
@@ -162,7 +167,8 @@ export const experiences = {
 			projects: [
 				{
 					name: 'System of sales and management of info-products',
-					description: 'Management applications, content management and sales for SaaS of info-products',
+					description:
+						'Management applications, content management and sales for SaaS of info-products',
 					stack: [
 						'NextJS',
 						'Tanstack Query',
@@ -170,7 +176,7 @@ export const experiences = {
 						'Typescript',
 						'React',
 						'React Hook Forms',
-						'Chackra UI',
+						'Chackra UI'
 					]
 				}
 			]
@@ -189,7 +195,7 @@ export const experiences = {
 						'Typescript',
 						'Payment Systems',
 						'React',
-						'React Hook Forms',
+						'React Hook Forms'
 					]
 				},
 				{
@@ -203,7 +209,7 @@ export const experiences = {
 						'Typescript',
 						'React',
 						'Kotlin',
-						'Expo',
+						'Expo'
 					]
 				}
 			]
@@ -214,7 +220,8 @@ export const experiences = {
 			projects: [
 				{
 					name: 'Plataforma de eventos esportivos',
-					description: 'Plataforma online de eventos esportivos, focada na venda de ingressos para eventos locais',
+					description:
+						'Plataforma online de eventos esportivos, focada na venda de ingressos para eventos locais',
 					stack: [
 						'NextJS',
 						'TipTap',
@@ -230,7 +237,8 @@ export const experiences = {
 				},
 				{
 					name: 'Dantas Bikes',
-					description: "E-commerce platform focused on the cycling sector integrated with the company's internal ERP systems. I spent most of my time developing the application on the front-end, implementing features such as shopping cart, authentication, payment, section listings, filters, and providing help and guidance to other developers and interns on using modern technologies and development best practices.",
+					description:
+						"E-commerce platform focused on the cycling sector integrated with the company's internal ERP systems. I spent most of my time developing the application on the front-end, implementing features such as shopping cart, authentication, payment, section listings, filters, and providing help and guidance to other developers and interns on using modern technologies and development best practices.",
 					stack: [
 						'NextJS',
 						'Tanstack Query',
@@ -244,12 +252,14 @@ export const experiences = {
 				},
 				{
 					name: 'Accounts Payable Management',
-					description: "Development of an application for managing accounts payable where I maintained an internal version of a library for validating invoices (bills)",
+					description:
+						'Development of an application for managing accounts payable where I maintained an internal version of a library for validating invoices (bills)',
 					stack: ['Vite', 'React', 'React Hook Forms', 'Recoil', 'PHP', 'Firebird']
 				},
 				{
 					name: 'Luthier PHP Web Framework',
-					description: 'Development of a PHP framework for developing web applications, especially REST APIs, with a focus on performance and ease of use',
+					description:
+						'Development of a PHP framework for developing web applications, especially REST APIs, with a focus on performance and ease of use',
 					stack: ['PHP', 'PHP PDO', 'Firebird']
 				}
 			]
