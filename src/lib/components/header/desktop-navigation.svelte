@@ -49,6 +49,8 @@
 </div>
 
 <style lang="postcss">
+	@reference "tailwindcss";
+
 	.lc-active::before {
 		content: '';
 		position: absolute;

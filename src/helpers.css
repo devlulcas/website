@@ -1,3 +1,8 @@
+@reference "tailwindcss";
+@reference "./app.css";
+
+/* Custom classes */
+
 .lc-grid {
 	display: grid;
 	grid-template-columns: repeat(12, minmax(0, 1fr));

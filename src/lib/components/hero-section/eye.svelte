@@ -41,6 +41,8 @@
 </div>
 
 <style lang="postcss">
+	@reference "tailwindcss";
+
 	.eye {
 		position: absolute;
 		top: 50%;

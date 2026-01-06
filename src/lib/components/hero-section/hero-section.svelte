@@ -72,7 +72,9 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
+	@reference "tailwindcss";
+
 	.lc-circle {
 		z-index: -1;
 		width: clamp(18rem, 40vw, 35rem);

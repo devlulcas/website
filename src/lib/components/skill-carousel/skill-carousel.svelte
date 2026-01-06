@@ -30,6 +30,8 @@
 </div>
 
 <style lang="postcss">
+	@reference "tailwindcss";
+
 	.lc-scroll-container {
 		overflow-x: hidden;
 		position: relative;

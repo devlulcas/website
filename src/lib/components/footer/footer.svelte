@@ -30,7 +30,9 @@
 	</a>
 </footer>
 
-<style>
+<style lang="postcss">
+	@reference "tailwindcss";
+
 	footer {
 		position: relative;
 		z-index: 10;

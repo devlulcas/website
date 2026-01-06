@@ -1,10 +1,10 @@
 <script lang="ts">
+	import BlogCard from '$lib/components/blog-card/blog-card.svelte';
 	import ContainerSection from '$lib/components/container-section/default.svelte';
+	import SeoHead from '$lib/components/seo-head/seo-head.svelte';
 	import { t } from '$lib/i18n';
 	import { GenericSearchStore } from '$lib/stores/generic-search.svelte';
-	import SeoHead from '$lib/components/seo-head/seo-head.svelte';
 	import type { PageServerData } from './$types';
-	import BlogCard from '$lib/components/blog-card/blog-card.svelte';
 
 	type Props = {
 		data: PageServerData;
@@ -52,6 +52,8 @@
 </main>
 
 <style lang="postcss">
+	@reference "tailwindcss";
+
 	.lc-card-grid {
 		margin-top: 2rem;
 		display: grid;

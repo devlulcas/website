@@ -3,7 +3,7 @@
 	import { t } from '$/lib/i18n';
 	import { GenericSearchStore } from '$/lib/stores/generic-search.svelte';
 	import { scale } from 'svelte/transition';
-	// import { createSearchStore } from '$lib/stores/generic-search';
+// import { createSearchStore } from '$lib/stores/generic-search';
 	import BookmarkCard from '$/lib/components/bookmark-card/bookmark-card.svelte';
 	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
 	import type { PageServerData } from './$types';
@@ -88,6 +88,8 @@
 </main>
 
 <style lang="postcss">
+	@reference "tailwindcss";
+
 	:root {
 		--bg-color: hsl(0, 0%, 80%);
 		--card-color: hsl(0, 0%, 90%);

@@ -25,6 +25,3 @@
 
 	<img src={skill.image} alt={skill.name} class="aspect-square w-1/2 animate-pulse opacity-75" />
 </a>
-
-<style lang="postcss">
-</style>
