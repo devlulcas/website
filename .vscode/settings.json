@@ -1,17 +1,5 @@
 {
+	"biome.enabled": false,
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"cSpell.words": [
-		"devlulcas",
-		"firestore",
-		"hehe",
-		"ilike",
-		"Linkedin",
-		"lucasalvesregodev",
-		"mdsvex",
-		"nextjs",
-		"Plin",
-		"rehype",
-		"Venturix"
-	]
+	"typescript.enablePromptUseWorkspaceTsdk": true
 }
