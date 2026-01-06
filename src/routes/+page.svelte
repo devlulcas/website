@@ -1,4 +1,6 @@
 <script lang="ts">
+	import IconSvgSpinners3DotsBounce from '$/lib/assets/icons/icon-svg-spinners3-dots-bounce.svelte';
+	import IconUimArrowUpRight from '$/lib/assets/icons/icon-uim-arrow-up-right.svelte';
 	import ContactForm from '$/lib/components/contact-form/contact-form.svelte';
 	import ContainerSection from '$/lib/components/container-section/default.svelte';
 	import SeeMoreLink from '$/lib/components/container-section/see-more-link.svelte';
@@ -9,8 +11,6 @@
 	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
 	import SkillCarousel from '$/lib/components/skill-carousel/skill-carousel.svelte';
 	import { t } from '$/lib/i18n';
-	import { faArrowRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
-	import { Fa } from 'svelte-fa';
 	import HeroSection from '../lib/components/hero-section/hero-section.svelte';
 	import type { PageData } from './$types';
 
@@ -63,11 +63,11 @@
 
 		<SeeMoreLink href="/blog">
 			{#snippet startIcon()}
-				<Fa icon={faArrowRight} />
+				<IconUimArrowUpRight class="tranform -rotate-45" />
 			{/snippet}
 			{$t('home.blog.seeMore')}
 			{#snippet endIcon()}
-				<Fa icon={faArrowRight} />
+				<IconUimArrowUpRight />
 			{/snippet}
 		</SeeMoreLink>
 	</ContainerSection>
@@ -77,7 +77,7 @@
 			<div
 				class="flex h-96 w-full animate-pulse items-center justify-center rounded border border-brand-500 bg-foreground/10 text-brand-500"
 			>
-				<Fa icon={faSpinner} class="animate-spin" />
+				<IconSvgSpinners3DotsBounce  />
 			</div>
 		{:then projects}
 			{#if projects.length > 0}

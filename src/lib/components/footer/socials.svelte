@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { website } from '$/lib/assets/config/website';
-	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-	import { Fa } from 'svelte-fa';
+	import IconUimGithubAlt from '$/lib/assets/icons/icon-uim-github-alt.svelte';
+	import IconUimLinkedinAlt from '$/lib/assets/icons/icon-uim-linkedin-alt.svelte';
 </script>
 
 <p class="flex w-full flex-col gap-2">
@@ -11,7 +11,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		<Fa icon={faLinkedin} />
+		<IconUimLinkedinAlt/>
 		Lucas Alves Rego
 	</a>
 
@@ -21,8 +21,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		<Fa icon={faGithub} />
-
+		<IconUimGithubAlt/>
 		github.com/devlulcas
 	</a>
 </p>

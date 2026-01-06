@@ -1,8 +1,10 @@
 <script lang="ts">
+	import IconDuoMessage2 from '$/lib/assets/icons/icon-duo-message2.svelte';
+	import IconHeroiconsSolidCode from '$/lib/assets/icons/icon-heroicons-solid-code.svelte';
+	import IconUimAngleRight from '$/lib/assets/icons/icon-uim-angle-right.svelte';
+	import IconUimGithub from '$/lib/assets/icons/icon-uim-github.svelte';
+	import IconUimLinkedin from '$/lib/assets/icons/icon-uim-linkedin.svelte';
 	import { t } from '$/lib/i18n';
-	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-	import { faArrowRight, faCode, faCoffee } from '@fortawesome/free-solid-svg-icons';
-	import Fa from 'svelte-fa';
 	import Eye from './eye.svelte';
 </script>
 
@@ -26,7 +28,7 @@
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<Fa icon={faGithub} class="size-6" />
+				<IconUimGithub/>
 				<span>Github</span>
 			</a>
 
@@ -37,7 +39,7 @@
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<Fa icon={faLinkedin} class="size-6" />
+				<IconUimLinkedin/>
 				<span>LinkedIn</span>
 			</a>
 		</div>
@@ -48,13 +50,13 @@
 				href="#contact"
 			>
 				<span class="font-bold"> {$t('home.about.callToAction.contact')} </span>
-				<Fa icon={faCoffee} class="size-6" />
+				<IconDuoMessage2/>
 			</a>
 
 			<a href="/about" class="mt-2 flex items-center gap-2 text-neutral-700 dark:text-neutral-300">
 				{$t('home.about.callToAction.or')}
 				{$t('home.about.callToAction.seeMore')}
-				<Fa icon={faArrowRight} class="size-6" />
+				<IconUimAngleRight/>
 			</a>
 		</p>
 	</article>
@@ -64,13 +66,13 @@
 			<Eye />
 
 			<div class="lc-image">
-				<Fa icon={faCode} class="size-68" />
+				<IconHeroiconsSolidCode/>
 			</div>
 		</div>
 	</div>
 </div>
 
-<style lang="postcss">
+<style>
 	.lc-circle {
 		z-index: -1;
 		width: clamp(18rem, 40vw, 35rem);
@@ -78,7 +80,7 @@
 		border-radius: 50%;
 		position: relative;
 
-		&::before {
+		::before {
 			content: '';
 			border-radius: 50%;
 			position: absolute;
@@ -101,7 +103,7 @@
 			transform: rotate(360deg);
 		}
 	}
-
+	
 	.lc-image {
 		position: absolute;
 		top: 50%;
@@ -118,7 +120,7 @@
 		justify-content: center;
 		align-items: center;
 
-		&::before {
+		::before {
 			content: '';
 			border-radius: 50%;
 			position: absolute;

@@ -1,8 +1,7 @@
 <script lang="ts">
+	import IconFaSearch from '$/lib/assets/icons/icon-fa-search.svelte';
 	import { t } from '$/lib/i18n';
 	import { page } from '$app/state';
-	import { faSearch } from '@fortawesome/free-solid-svg-icons';
-	import { Fa } from 'svelte-fa';
 
 	type Props = {
 		class?: string;
@@ -26,7 +25,7 @@
 			/>
 
 			<button title="Search" type="submit" class="h-10 w-10 bg-background p-2 focus:bg-transparent">
-				<Fa icon={faSearch} class="h-6 w-6" />
+				<IconFaSearch />
 			</button>
 		</div>
 	</div>

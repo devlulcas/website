@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { website } from '$/lib/assets/config/website';
+	import IconDuoMessage2 from '$/lib/assets/icons/icon-duo-message2.svelte';
+	import IconUimGithubAlt from '$/lib/assets/icons/icon-uim-github-alt.svelte';
+	import IconUimLinkedinAlt from '$/lib/assets/icons/icon-uim-linkedin-alt.svelte';
 	import { locale, t } from '$/lib/i18n';
 	import { enhance } from '$app/forms';
 	import customContactDrawingSvg from '$lib/assets/images/contact.svg';
-	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import type { SubmitFunction } from '@sveltejs/kit';
-	import Fa from 'svelte-fa';
 	import SocialMediaLink from './social-media-link.svelte';
 
 	type FormResult = {
@@ -51,13 +51,13 @@
 		/>
 		<nav class="mt-12 flex justify-center gap-2">
 			<SocialMediaLink href={website.social.github} title="/"
-				><Fa icon={faGithub} /></SocialMediaLink
+				><IconUimGithubAlt/></SocialMediaLink
 			>
 			<SocialMediaLink href={website.social.linkedIn} title="/"
-				><Fa icon={faLinkedin} /></SocialMediaLink
+				><IconUimLinkedinAlt/></SocialMediaLink
 			>
 			<SocialMediaLink href={website.social.email} title="/"
-				><Fa icon={faEnvelope} /></SocialMediaLink
+				><IconDuoMessage2/></SocialMediaLink
 			>
 		</nav>
 	</div>

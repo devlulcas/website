@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { website } from '$/lib/assets/config/website';
-	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-	import { Fa } from 'svelte-fa';
+	import IconUimGithub from '$/lib/assets/icons/icon-uim-github.svelte';
+	import IconUimLinkedin from '$/lib/assets/icons/icon-uim-linkedin.svelte';
 </script>
 
 <footer
@@ -15,7 +15,7 @@
 		target="_blank"
 		rel="noopener noreferrer"
 	>
-		<Fa icon={faLinkedin} />
+		<IconUimLinkedin/>
 	</a>
 
 	<a
@@ -26,16 +26,16 @@
 		aria-label="GitHub"
 		rel="noopener noreferrer"
 	>
-		<Fa icon={faGithub} />
+		<IconUimGithub/>
 	</a>
 </footer>
 
-<style lang="postcss">
+<style>
 	footer {
 		position: relative;
 		z-index: 10;
 
-		&::before {
+		::before {
 			content: '';
 			position: absolute;
 			inset: 0;
@@ -49,7 +49,7 @@
 			);
 		}
 
-		&::after {
+		::after {
 			z-index: -1;
 			content: '';
 			position: absolute;

@@ -1,8 +1,7 @@
 <script lang="ts">
+	import IconUimArrowUpRight from '$/lib/assets/icons/icon-uim-arrow-up-right.svelte';
 	import { t } from '$/lib/i18n';
 	import type { Project } from '$/lib/server/projects/types/project';
-	import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-	import Fa from 'svelte-fa';
 	import ProjectData from './project-data.svelte';
 
 	type Props = {
@@ -11,7 +10,7 @@
 
 	let { project }: Props = $props();
 
-	const languages = project.languages ?? [];
+	const languages = $derived(project.languages ?? []);
 </script>
 
 <article class="flex w-full flex-col overflow-hidden rounded-xl border shadow-lg">
@@ -28,7 +27,7 @@
 			title={$t('common.projects.visit')}
 			class="absolute right-2 top-2 z-10 flex aspect-square w-8 items-center justify-center rounded-md border bg-background text-foreground"
 		>
-			<Fa icon={faArrowRight} class="tranform -rotate-45" />
+			<IconUimArrowUpRight class="tranform -rotate-45" />
 		</span>
 
 		<div class="h-52 w-full">

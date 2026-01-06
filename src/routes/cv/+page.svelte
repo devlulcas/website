@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { experiences } from '$/lib/assets/config/experiences';
+	import IconDuoWorld from '$/lib/assets/icons/icon-duo-world.svelte';
+	import IconUimExclamationTriangle from '$/lib/assets/icons/icon-uim-exclamation-triangle.svelte';
+	import IconUimGithub from '$/lib/assets/icons/icon-uim-github.svelte';
+	import IconUimLinkedin from '$/lib/assets/icons/icon-uim-linkedin.svelte';
 	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
 	import { locale, t } from '$/lib/i18n';
-	import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-	import { faEarthAmericas, faWarning } from '@fortawesome/free-solid-svg-icons';
-	import { Fa } from 'svelte-fa';
 
 	let translatedExperiences = $derived(experiences[$locale === 'en' ? 'en' : 'ptBr']);
 </script>
@@ -30,7 +31,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<Fa icon={faEarthAmericas} class="h-5 w-5" />
+			<IconDuoWorld class="size-5" />
 			<span class="block">Website</span>
 			<span class="hidden">{$t('cv.website')}</span>
 		</a>
@@ -40,7 +41,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<Fa icon={faGithub} class="h-5 w-5" />
+			<IconUimGithub class="size-5" />
 			<span class="block">GitHub</span>
 			<span class="hidden">{$t('cv.github')}</span>
 		</a>
@@ -50,7 +51,7 @@
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<Fa icon={faLinkedin} class="h-5 w-5" />
+			<IconUimLinkedin class="size-5" />
 			<span class="block">LinkedIn</span>
 			<span class="hidden">{$t('cv.linkedin')}</span>
 		</a>
@@ -70,7 +71,7 @@
 							<p
 								class="ml-1 flex h-5 w-fit items-center gap-1 rounded-full border border-yellow-200 bg-yellow-50 px-2 text-sm font-normal lowercase text-yellow-500 dark:border-yellow-800 dark:bg-yellow-500/20 dark:text-yellow-300"
 							>
-								<Fa icon={faWarning} class="size-3" />
+								<IconUimExclamationTriangle class="size-3" />
 								{warning}
 							</p>
 						{/if}

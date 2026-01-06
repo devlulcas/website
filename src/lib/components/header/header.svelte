@@ -1,7 +1,6 @@
 <script lang="ts">
+	import IconDeviconSvelte from '$/lib/assets/icons/icon-devicon-svelte.svelte';
 	import icon from '$/lib/assets/images/icon.svg';
-	import { faBars } from '@fortawesome/free-solid-svg-icons';
-	import { Fa } from 'svelte-fa';
 	import DesktopNavigation from './desktop-navigation.svelte';
 	import LocaleForm from './locale-form.svelte';
 	import MobileNavigation from './mobile-navigation.svelte';
@@ -31,7 +30,7 @@
 				onclick={() => (open = !open)}
 				class="flex h-10 w-10 items-center justify-center rounded-lg border bg-background/90 text-foreground backdrop-blur-md md:rounded-xl lg:hidden"
 			>
-				<Fa icon={faBars} class="h-6 w-6" />
+				<IconDeviconSvelte/>
 			</button>
 		</div>
 	</nav>

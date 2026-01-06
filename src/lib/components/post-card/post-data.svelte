@@ -1,8 +1,9 @@
 <script lang="ts">
+	import IconFaCircle from '$/lib/assets/icons/icon-fa-circle.svelte';
+	import IconFaHashtag from '$/lib/assets/icons/icon-fa-hashtag.svelte';
+	import IconUimArrowUpRight from '$/lib/assets/icons/icon-uim-arrow-up-right.svelte';
 	import { locale, t } from '$/lib/i18n';
 	import type { PostMetadata } from '$/lib/server/posts/types/post-metadata';
-	import { faArrowRight, faCircle, faHashtag } from '@fortawesome/free-solid-svg-icons';
-	import Fa from 'svelte-fa';
 
 	type Props = {
 		post: PostMetadata;
@@ -25,7 +26,7 @@
 		{post.language.niceName}
 	</strong>
 
-	<Fa icon={faCircle} class="mx-2 size-2" />
+	<IconFaCircle class="mx-2 size-2" />
 
 	<time class="text-muted-foreground" datetime={post.date}>
 		{i18nReleaseDate}
@@ -46,7 +47,7 @@
 {/if}
 
 <div class="group flex flex-wrap items-center gap-2">
-	<Fa icon={faHashtag} class="text-muted-foreground group-hover:text-brand-600" />
+	<IconFaHashtag class="text-muted-foreground group-hover:text-brand-600" />
 
 	{#each post.categories as category}
 		<a href="/blog/categories/{category}" class="text-sm text-muted-foreground hover:underline">
@@ -63,6 +64,6 @@
 
 	<a href="/blog/{post.slug}" class="flex items-center gap-1">
 		{$t('common.posts.seeMore')}
-		<Fa icon={faArrowRight} class="tranform size-4 -rotate-45" />
+		<IconUimArrowUpRight class="tranform size-4 -rotate-45" />
 	</a>
 </footer>

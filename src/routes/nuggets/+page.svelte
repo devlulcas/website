@@ -1,8 +1,7 @@
 <script lang="ts">
+	import IconFaCircle from '$/lib/assets/icons/icon-fa-circle.svelte';
 	import NuggetContainer from '$/lib/components/nugget-container/nugget-container.svelte';
 	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
-	import { faCircle } from '@fortawesome/free-solid-svg-icons';
-	import { Fa } from 'svelte-fa';
 
 	let { data } = $props();
 </script>
@@ -32,9 +31,9 @@
 								class="flex h-10 w-fit translate-y-[1x] items-center justify-center text-nowrap rounded-t-lg border border-b-2 border-b-background px-3 font-serif italic"
 							>
 								{title}
-								<Fa icon={faCircle} class="mx-2 size-1" />
+								<IconFaCircle class="mx-2 size-1" />
 								{nugget.language.niceName}
-								<Fa icon={faCircle} class="mx-2 size-1" />
+								<IconFaCircle class="mx-2 size-1" />
 								{nugget.year}
 							</p>
 						</div>

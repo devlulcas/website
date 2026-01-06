@@ -1,9 +1,8 @@
 <script lang="ts">
+	import IconUimArrowUpRight from '$/lib/assets/icons/icon-uim-arrow-up-right.svelte';
 	import BlogPostLayout from '$/lib/components/blog-post/blog-post-layout.svelte';
 	import PostCard from '$/lib/components/post-card/post-card.svelte';
 	import SeoHead from '$/lib/components/seo-head/seo-head.svelte';
-	import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-	import { Fa } from 'svelte-fa';
 	import type { PageData } from './$types';
 
 	type Props = {
@@ -42,6 +41,6 @@
 		onclick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
 	>
 		<span class="sr-only font-semibold lg:not-sr-only"> Ir para o topo </span>
-		<Fa icon={faArrowUp} class="flex-shrink-0" />
+		<IconUimArrowUpRight class="flex-shrink-0 tranform rotate-45" />
 	</button>
 </div>

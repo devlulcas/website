@@ -1,24 +1,8 @@
 <script lang="ts">
+	import IconFaCode from '$/lib/assets/icons/icon-fa-code.svelte';
+	import IconUimArrowUpRight from '$/lib/assets/icons/icon-uim-arrow-up-right.svelte';
+	import IconUimGithub from '$/lib/assets/icons/icon-uim-github.svelte';
 	import { t } from '$/lib/i18n';
-	import {
-		faCss3Alt,
-		faGithub,
-		faGolang,
-		faHtml5,
-		faJs,
-		faPhp,
-		faVuejs
-	} from '@fortawesome/free-brands-svg-icons';
-	import {
-		faArrowRight,
-		faCode,
-		faFile,
-		faFlask,
-		faK,
-		faTerminal,
-		type IconDefinition
-	} from '@fortawesome/free-solid-svg-icons';
-	import Fa from 'svelte-fa';
 
 	type Props = {
 		name: string;
@@ -31,23 +15,23 @@
 
 	let { name, description, url, code, tags, details }: Props = $props();
 
-	const langIcons: Record<string, IconDefinition> = {
-		shell: faTerminal,
-		html: faHtml5,
-		css: faCss3Alt,
-		typescript: faCode,
-		javascript: faJs,
-		rescript: faCode,
-		makefile: faFile,
-		svelte: faCode,
-		vue: faVuejs,
-		php: faPhp,
-		kotlin: faK,
-		elixir: faFlask,
-		go: faGolang
+	const langIcons: Record<string, typeof IconFaCode> = {
+		shell: IconFaCode,
+		html: IconFaCode,
+		css: IconFaCode,
+		typescript: IconFaCode,
+		javascript: IconFaCode,
+		rescript: IconFaCode,
+		makefile: IconFaCode,
+		svelte: IconFaCode,
+		vue: IconFaCode,
+		php: IconFaCode,
+		kotlin: IconFaCode,
+		elixir: IconFaCode,
+		go: IconFaCode
 	};
 
-	const renderIcon = (lang: string) => langIcons[lang.toLowerCase()] ?? faCode;
+	const renderIcon = (lang: string) => langIcons[lang.toLowerCase()] ?? IconFaCode;
 </script>
 
 <h3 class="line-clamp-1 text-xl font-semibold uppercase" title={name}>
@@ -67,11 +51,12 @@
 {#if tags.length > 0}
 	<div class="mb-3 mt-auto flex flex-wrap gap-1 pt-2">
 		{#each tags as tag}
+			{@const Icon = renderIcon(tag)}
 			<span class="flex items-center text-xs">
 				<span
 					class="flex size-5 items-center justify-center rounded-l bg-muted text-muted-foreground"
 				>
-					<Fa icon={renderIcon(tag)} class="size-2.5" />
+					<Icon class="size-2.5" />
 				</span>
 				<span
 					class="flex h-5 items-center justify-center rounded-r bg-muted pr-1 lowercase leading-none text-muted-foreground"
@@ -86,13 +71,13 @@
 <footer class="mt-auto flex items-center justify-between">
 	{#if code}
 		<a href={code} target="_blank" class="flex items-center gap-1 text-sm leading-none">
-			<Fa icon={faGithub} class="size-4" />
+			<IconUimGithub class="size-4" />
 			{$t('common.projects.seeCode')}
 		</a>
 	{/if}
 
 	<a href={url ?? code} target="_blank" class="flex items-center gap-1 text-sm leading-none">
 		{$t('common.projects.seeMore')}
-		<Fa icon={faArrowRight} class="size-4" />
+		<IconUimArrowUpRight class="size-4" />
 	</a>
 </footer>
